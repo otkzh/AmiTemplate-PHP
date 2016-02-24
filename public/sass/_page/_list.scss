@@ -1,0 +1,207 @@
+body.list {
+	.row {
+		@include clearfix();
+	}
+	.box-goods {
+		@include min-screen($width-m + 1px) {
+			@include column(4);
+		}
+		@include max-screen($width-m) {
+			@include column(6);
+			margin-bottom: $bm*3;
+		}
+		@include max-screen($width-s) {
+			@include column(12);
+			margin-bottom: $bm*3;
+		}
+		height: 268px;
+		.icon-gift {
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+		.img {
+			height: image-height("list/gift-kiwami-9-icon.png");
+			width: image-width("list/gift-kiwami-9-icon.png");
+			margin: $bm*2 auto;
+		}
+		&.gift-tanakami-2k .img {
+			height: image-height("list/gift-tanakami-2k-icon.png");
+			width: image-width("list/gift-tanakami-2k-icon.png");
+		}
+		.text {
+			@include bg-img(list/gift-kiwami-9-text, png);
+			margin: 0 auto;
+		}
+		@each $class in gift-kiwami-9,
+		gift-kiwami-12,
+		gift-tanakami-9,
+		gift-tanakami-12,
+		gift-tanakami-2k,
+		tohome-koshi-5k,
+		tohome-koshi-10k,
+		tohome-hino-5k,
+		tohome-hino-10k{
+			&.#{$class} .text {
+				@include bg-img(list/#{$class}-text, png);
+			}
+		} //each
+		p {
+			text-align: center;
+			padding: 0;
+			span {
+				font-size: 1.1rem;
+			}
+		}
+		p.cap {
+			position: absolute;
+			width: 100%;
+			text-align: center;
+			bottom: 4px;
+			margin: 0;
+		}
+		.bt-buy {
+			width: 100%;
+			position: absolute;
+			left: 50%;
+			margin-left: - 165px/2;
+			bottom: $bm*3;
+			a {
+				@include box-sizing(border-box);
+				display: block;
+				background: $color-point;
+				padding: $bm/2;
+				text-align: center;
+				color: #fff;
+				text-decoration: none;
+				width: 165px;
+				@include trim-link-bt;
+			}
+		}
+		.bt-soldout {
+			@include box-sizing(border-box);
+			font-size: 12px;
+			font-size: 1.2rem;
+			display: block;
+			background: $color-light;
+			padding: $bm/2;
+			text-align: center;
+			color: $color-dark;
+			text-decoration: none;
+			width: 165px;
+			margin: 0 auto;
+		}
+	}
+	#main {
+		&.main {
+			height: 344px;
+			@include max-screen($width-s) {
+				height: 200px;
+			}
+			.page-title {
+				position: relative;
+				z-index: 1;
+			}
+		}
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			text-align: center;
+			position: relative;
+			top: 45px;
+			li {
+				@include inline-block();
+				position: relative;
+				.img {
+					position: relative;
+				}
+				a {
+					position: absolute;
+					bottom: 0;
+					left: 50%;
+					margin-left: - image-width("list/bt-gift.png")/2;
+					@include hang;
+					@include max-screen($width-s) {
+						position: relative;
+						top: 30px;
+					}
+				}
+				span {}
+				@each $class in gift,
+				tohome {
+					&.#{$class} {
+						.img {
+							@include bg-img(list/main-#{$class}, png);
+							@include max-screen($width-m) {
+								@include bg-img(list/main-#{$class}-m, png);
+							}
+							@include max-screen($width-s) {
+								display: none;
+							}
+						}
+						a {
+							@include inline-block();
+							span {
+								@include bg-img(list/bt-#{$class}, png);
+							}
+						}
+					}
+				} //each
+				&.gift {
+					.img {}
+					a {}
+				}
+				&.tohome {
+					margin-left: 70px;
+					.img {}
+					a {}
+				}
+			} //li
+		}
+	} //main
+	.title-img {
+		.img,
+		.text {
+			@include min-screen($width-m + 1px) {
+				@include column(6);
+			}
+		}
+		.h-large {
+			@include min-screen($width-m + 1px) {
+				margin-top: 0;
+			}
+		}
+	}
+	@each $class in gift-kiwami-ttl,
+	gift-tanakami-ttl,
+	tohome-hino-ttl,
+	tohome-koshi-ttl {
+		.#{$class} {
+			@include bg-img(list/#{$class}, png);
+			margin-top: $bm*7;
+		}
+	} //each
+	.postage {
+		h3 span {
+			display: block;
+			@include min-screen($width-m + 1px) {
+				display: none;
+			}
+		}
+		.box-table {
+			overflow: auto;
+			@include box-sizing(border-box);
+			padding: $bm*3;
+			@include img(common/footer/footer-base, png);
+		}
+		.table-postage {
+			background: #fff;
+			width: 700px;
+			margin: 0 auto;
+			td {
+				text-align: center;
+			}
+		}
+	}
+}

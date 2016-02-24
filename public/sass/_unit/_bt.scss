@@ -1,0 +1,19 @@
+
+.bt{
+  @include border-radius(3px);
+  @include box-shadow();
+  @include gradient-top-lighten($color-brand);
+  color:#fff;
+  padding: $bm $margin-s;
+  @include display-flex;
+  @include align-items(center);
+  @include justify-content(space-between);
+  max-width: 250px;
+  &:after{
+    @include icon-font();
+  }
+  &:hover{
+    @include gradient-top-lighten($color-brand-lighten);
+    color:#fff;
+  }
+}

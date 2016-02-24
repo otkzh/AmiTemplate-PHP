@@ -1,0 +1,19 @@
+#pan{
+	border-bottom: solid 1px $color-light-darken;
+	li{
+		@include inline-block();
+		margin-right: $bm;
+		a{
+			font-size: 1.2rem;
+			&:before{
+				@include icon-font("\f105");
+				margin-right: $bm;
+			}
+		}
+		&:first-child{
+			a:before{
+				content: "\f015";
+			}
+		}
+	}
+}

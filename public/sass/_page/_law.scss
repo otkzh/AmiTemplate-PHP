@@ -1,0 +1,71 @@
+body.law {
+	table.table-list {
+		margin-bottom: $bm*2;
+		.col01 {
+			width: 150px;
+			@include max-screen($width-m) {
+				width: 100px;
+			}
+		}
+		@include max-screen($width-s) {
+			tr,
+			th,
+			td {
+				.hdg_th {
+					display: none;
+				}
+				display: block;
+				margin: 0 !important;
+				width: 100% !important;
+			}
+			border: solid 1px $color-dark;
+			th {
+				border: none;
+				&.vertical {
+					background: $color-dark;
+					color: #fff;
+				}
+			}
+			td {
+				border: none;
+			}
+			.postage-area {
+				.cap {
+					color: $color-brand !important;
+				}
+				.area {
+					width: 290px;
+					margin: 0 auto;
+					@include box-sizing(border-box);
+					overflow: scroll !important;
+					background: $color-brand;
+					padding: $bm;
+					table.table-postage {
+						display: table !important;
+						border: solid 1px $color-light;
+						width: 700px !important;
+						background: #fff;
+						tr {
+							display: table-row !important;
+						}
+						th,
+						td {
+							display: table-cell !important;
+							border: solid 1px $color-light;
+							width: 100px !important;
+						}
+					}
+				}
+			}
+		}
+		.col02 {
+			width: 150px;
+			@include max-screen($width-m) {
+				width: 100px;
+			}
+			@include max-screen($width-s) {
+				width: 70px;
+			}
+		}
+	}
+}

@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+// ゴシック体 
+@mixin gothic {
+font-family:  "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN",Arial, Roboto, "Droid Sans", "游ゴシック", YuGothic, "メイリオ", Meiryo, sans-serif;
+} 
+
+// 明朝体 - コンテンツ用
+@mixin mincho {
+font-family: "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN","游明朝", YuMincho, メイリオ,Meiryo,"ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
+} 
+
+// 明朝体 - タイトル用
+@mixin mincho-str {
+font-family: "Georgia", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ", Meiryo,"ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
+} 
+
+// 等幅書体
+@mixin mono {
+font-family: "Osaka－等幅", Osaka-mono, "ＭＳ ゴシック", "MS Gothic", monospace;
+}
+
+@mixin hiraginoMaruGothic {
+font-family: "ヒラギノ丸ゴ ProN W4", "Hiragino Maru Gothic ProN", "メイリオ", Meiryo, fantasy;
+}
+
+@mixin icon-font($icon:"\f14a"){
+  content: $icon;
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome; // shortening font declaration
+  font-size: inherit; // can't have font-size inherit on line above, so need to override
+  text-rendering: auto; // optimizelegibility throws things off #1094
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

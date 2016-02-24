@@ -1,0 +1,53 @@
+@charset "utf-8";
+
+//--------------------ベースマージンの設定
+
+$bm:8px;//ベースマージンサイズ 8pxは扱いやすい
+
+$margin:$bm*6;//ブロック間の大きいマージン 通常48px
+$margin-inner:$bm*3;//ブロック内で使うマージン 通常24px
+$margin-s:$bm*1.5;//要素同士のマージンとか 通常12px
+
+//--------------------横幅の設定
+
+$width-xs:320px; //iphone5
+$width-s:480px; //LG G3など、5.5incタイプの大型スマートフォン
+$width-m:768px; //ipad
+$width-l:980px; //ちょっと古いモニターの横幅
+$width-xl:1280px -18px;//MackBook 12/Pro 13/Surface2/3/Pro/Nexus10 からスクロールバー幅マイナス
+
+//--------------------色設定
+
+//暗い色
+$color-dark: #333;
+$color-dark-darken: darken($color-dark,5%);
+$color-dark-lighten: lighten($color-dark,15%);
+
+//明るい色
+$color-light: #eee;
+$color-light-darken: darken($color-light,15%);
+$color-light-lighten: lighten($color-light,5%);
+
+//ブランドカラー
+$color-brand:#b8a37c;
+$color-brand-darken: darken($color-brand,15%);
+$color-brand-lighten: lighten($color-brand,15%);
+
+//強調カラー
+$color-strong:#fffc00;
+
+//ポイントカラー
+$color-point:#C42316;
+$color-point-darken: darken($color-point,15%);
+$color-point-lighten: lighten($color-point,15%);
+
+//snsカラー
+$color-line:#61AD53;
+$color-facebook:#39579A;
+$color-twitter:#39579A;
+
+//--------------------compass 設定
+
+//box-shadow
+$default-box-shadow-color:#afafaf;
+$default-box-shadow-blur: 3px;

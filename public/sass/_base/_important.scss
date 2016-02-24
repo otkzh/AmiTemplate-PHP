@@ -1,0 +1,42 @@
+
+//margin-bottom
+@for $num from 0 through 10 {
+	.mb#{$num} {
+		margin-bottom: #{$num*8}px !important;
+	}
+}
+
+//margin-top
+@for $num from 0 through 10 {
+	.mt#{$num} {
+		margin-top: #{$num*8}px !important;
+	}
+}
+
+//padding-top
+@for $num from 0 through 10 {
+	.pt#{$num} {
+		padding-top: #{$num*8}px !important;
+	}
+}
+
+//padding-bottom
+@for $num from 0 through 10 {
+	.pb#{$num} {
+		padding-top: #{$num*8}px !important;
+	}
+}
+
+.fl{
+	float: left !important;
+	margin-right: $margin-s !important;
+}
+
+.fr{
+	float: right !important;
+	margin-left: $margin-s !important;
+}
+
+.center{
+	text-align: center !important;
+}

@@ -1,0 +1,269 @@
+@charset "utf-8";
+
+//remベース
+
+html{
+	font-size: 62.5%;
+	-webkit-text-size-adjust: 100%; //スマフォ縦横切替時設定
+}
+
+body{
+	font-size:1.6rem;
+	@include gothic;
+}
+
+//img
+
+img{
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+	vertical-align: bottom;//画像下の空白削除
+}
+
+//テキストリンク
+
+a {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0); //タップ時のハイライト削除
+	outline: none;
+	color: $color-brand;
+	text-decoration: none;
+	&:hover,
+	&.hover {
+		//text-decoration: underline;
+		color: $color-point;
+	}
+	&:focus {
+		text-decoration: underline;
+	}
+	&:active {
+		outline: 0;
+	}
+
+	&[rel="nofollow"]{
+		&:after{
+		@include icon-font("\f14c");
+		margin-right: $bm/2;
+		margin-left: $bm/2;
+		}
+	}
+	&:hover{
+		img{
+			@include opacity(0.8);
+		}
+	}
+} //a
+
+//文字選択
+::-moz-selection,
+::selection {
+	background: black;
+	text-shadow: none;
+}
+
+//区切り
+
+hr {
+	clear: both;
+	border: none;
+	border-top: solid 1px $color-light-darken;
+	border-bottom: solid 1px darken(#fff, 1%);
+	margin: 1em 0;
+}
+
+h1[class*="title"],
+h2[class*="title"],
+h3[class*="title"],
+h4[class*="title"],
+h5[class*="title"],
+h6[class*="title"] {
+	word-wrap: break-word;
+	line-height: 1.4;
+	margin: .5em 0;
+	font-weight: bold;
+}
+
+
+.page-title {
+	font-size: 2.6rem;
+}
+
+.section-title {
+	font-size: 2.2rem;
+}
+
+.aside-title{
+	font-size: 1.8rem;
+}
+
+.large-title {
+	font-size: 2.4rem;
+	font-weight: normal;
+	color: $color-brand;
+}
+
+.small-title {
+	font-size: 1.6rem;
+	font-weight: normal;
+	color: $color-brand;
+}
+
+//文章
+
+em,
+p,
+ul,
+ol,
+dl,
+dd,
+dt,
+blockquote,
+td,
+th {
+	line-height: 1.7;
+	word-wrap: break-word;
+	margin: .5em 0;
+	color: $color-dark-lighten;
+	&strong,
+	&b {
+		font-weight: bold;
+		background-image: linear-gradient(rgba(0,0,0,0) 45%,lighten($color-brand,30%) 40%);
+	}
+}
+
+ul,
+ol,
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+	list-style-position: inside;
+}
+
+ul {
+	&.list {
+			margin-left: $bm*3;
+			list-style-type: square;
+			list-style-position: outside;
+	}
+}
+
+ol{
+	&.list{
+		margin-left: $bm*3;
+		list-style-type: decimal;
+		list-style-position: outside;
+	}
+}
+
+dl {
+	dt {}
+	dd {}
+}
+
+blockquote {
+	position: relative;
+	padding: 1em;
+	border-bottom: solid 1px $color-dark;
+	&:before {
+		@include icon-font("\f10d");
+		display: block;
+		font-size: 3rem;
+		margin-bottom: -10px;
+	}
+}
+
+blockquote small,
+cite {
+	color: $color-dark;
+	font-style: normal;
+}
+
+blockquote p {
+	margin-bottom: $bm/4;
+}
+
+small,
+blockquote cite {
+	font-size: 10rem;
+	line-height: 1;
+}
+
+blockquote .pull-right,
+.units-row blockquote .pull-right {
+	float: none;
+	text-align: right;
+	display: block;
+}
+
+address {
+	font-style: italic;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+	border-bottom: 1px dotted #000;
+	cursor: help;
+}
+
+sub,
+sup {
+	font-size: 1rem;
+	line-height: 0;
+	position: relative;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+pre,
+//code,
+kbd,
+samp {
+	font-size: 90%;
+}
+
+pre {
+	font-size: 90%;
+	color: #444;
+	padding: .85em;
+	overflow: auto;
+}
+
+code {
+	@include border-radius(2px);
+	@include inline-block();
+	background: darken($color-light, 25%);
+	color: $color-light;
+	padding: 0px 7px;
+	margin-right: 2px;
+	margin-left: 2px;
+	line-height: 1.5;
+	font-weight: normal !important;
+	position: relative;
+	top: -2px;
+}
+
+kbd {
+	padding: 2px 6px 1px 6px;
+	line-height: 1;
+	display: inline-block;
+	border-radius: .3em;
+	box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px white inset;
+	background-color: #fafafa;
+	border-color: #ccc #ccc white;
+	border-style: solid solid none;
+	border-width: 1px 1px medium;
+	color: #444;
+	font-weight: normal;
+	white-space: nowrap;
+}
