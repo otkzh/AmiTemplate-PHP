@@ -1,73 +1,35 @@
-//記述例
-
-//require(['require-plugins/css.min!test']); //css読み込み
-
-//jqueryプラグイン
-
-require(['plugins/scroll']);
-
-//動き
-
-//個別ページ
-
-if($("body.home").length){
-
-require(['page/home']);
-
-};//home
-
-
-
-//共通
-
-
-//pagetop
-
-
-$(function() {
-	var topBtn = $('#pagetop a');
-	topBtn.hide();
-	$(window).scroll(function () {
-		if ($(this).scrollTop() > 100) {
-			topBtn.fadeIn();
-		} else {
-			topBtn.fadeOut();
-		}
-	});
+require.config({
+  paths: {
+    // モジュール
+    jquery: 'vendor/jquery-2.2.0.min',
+    waypoints: 'plugins/waypoints.min',
+  },
 });
 
+//hover-touch events
+requirejs(['jquery','plugins/ami.touchevents']);
 
-//add class メニュープルダウン用
+//waypoint
+requirejs(['jquery','waypoints'], function () {
+  var waypoint = new Waypoint({
+    element: document.getElementById('conts'),
+    handler: function(direction) {
+      console.log("waypoint-test");
+    }
+  })
+});
 
-$(function(){
-  $("#menu,.close-bt").on("click", function() {
-      $("#menu,#gnav").toggleClass("close"); 
+//スムーズスクロール
+requirejs(["plugins/smooth-scroll"], function(smoothScroll) {
+  smoothScroll.init({
+    speed: 1000 ,
+    updateURL: false
   });
 });
 
-//--------------------all
 
+requirejs(['jquery'], function ($) {
+//------------jqueryの記述はここから
 
-require(['plugins/jquery.waypoints.min'], function() {
-	
-$(function() { //jqueryを使うおまじない。
-    $("#conts").waypoint({// #kirikae を基準に下記を実行
-      handler: function(direction) {
-         $(".banner").toggleClass("close");//#headerに.scrollクラスをつけたりけしたりするよ
-      }
-    });
-
-    $("#asides").waypoint({// #kirikae を基準に下記を実行
-      handler: function(direction) {
-         $(".banner").toggleClass("close");//#headerに.scrollクラスをつけたりけしたりするよ
-      }
-    });
-
+//------------jqueryの記述はここまで
 });
-
-
-});//require
-
-
-
-

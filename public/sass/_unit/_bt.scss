@@ -12,7 +12,7 @@
   &:after{
     @include icon-font();
   }
-  &:hover{
+  @include touch-hover(){
     @include gradient-top-lighten($color-brand-lighten);
     color:#fff;
   }

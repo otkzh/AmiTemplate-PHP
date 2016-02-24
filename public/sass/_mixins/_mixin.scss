@@ -36,6 +36,18 @@
    }
 }
 
+//---------------- touch-hover
+
+@mixin touch-hover() {
+    .no-js &:hover, // the fallback
+    .no-js &:focus,
+    .js.no-touchevents &:hover, // enhanced for no-touch
+    .js.no-touchevents &:focus,
+    .js.touchevents &.touch { // relay same styles to active for touch devices
+        @content;
+    }
+}
+
 //-----------------ずるいシリーズ
 
 //ずるいグラデーション 上部明るい

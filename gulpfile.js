@@ -14,8 +14,10 @@ var dir = {
 var paths = {
 	"scss": dir.base + "/**/*.scss",
 	"css"	: dir.base + "/**/*.css",
-	"php"	: dir.base + "/**/*.php",
+	"php"	: dir.base + "/**/*.{php,html}",
 	"js"	: dir.base + "/**/*.js",
+  "img"	: dir.base + "/**/*.{png,jpg,gif,pdf}",
+  "font"	: dir.base + "/**/*.{eot,svg,ttf,woff,woff2,otf}",
 }
 
 var plumberErrorHandler = {
@@ -51,4 +53,9 @@ gulp.task('bs-reload', function () {
 gulp.task('default', ['compass', 'browser-sync'], function () {
 	gulp.watch(paths.scss, ['compass']);
 	gulp.watch([paths.css, paths.php, paths.js], ['bs-reload']);
+});
+
+gulp.task('dest', function() {
+    gulp.src([ paths.css, paths.php ,paths.js ,paths.img,paths.font])
+    .pipe(gulp.dest('./dest/'));
 });
