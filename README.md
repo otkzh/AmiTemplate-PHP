@@ -6,32 +6,44 @@
 
 - amishiro
 
+※絶賛参加者募集中！
 
-##必要なの
+##必要なもの
 
-- vagrant / vertical box
-- sass / compass
-- node / gulp
-
+- ローカルサーバー構築のために
+ - [vagrant](https://www.vagrantup.com/)
+ - [Virtualbox](https://www.virtualbox.org/)
+- 作業の自動化のために
+ - [node.js](http://nodejs.jp/)
+ - [gulp](http://gulpjs.com/)
+- cssコーディングの効率アップのために
+ - [sass](http://sass-lang.com/)
+ - [compass](http://compass-style.org/)
 
 ##環境構築
 
 macのやり方しかわかりませぬ。そして、ざっくりな説明しか書いておりませぬ。
 
-## vagrantの設定
+## ローカルサーバー構築 - vagrantの設定
 
-前提：vagrant と vertical box はインストールされている
+前提：[vagrant](https://www.vagrantup.com/) と [Virtualbox](https://www.virtualbox.org/) をインストール。LocalhostNameを任意に変更したい場合は、[vagrant-hostsupdater](https://github.com/cogitatio/vagrant-hostsupdater)を追加インストールして、vagrant 実行時に***/etc/hosts***を自動で書き換えできるようにしておく。
 
-0. ipアドレスだけじゃ気持ち悪い。LocalhostNameを任意に変更したい場合は…
-  0. **vagrant plugin install vagrant-hostsupdater** で、hostnameを簡単に作るvagrantプラグインをインストール
-0. vagrantfileを修正
-  0. 自分のローカル環境に合わせて・・・ipアドレスを変更
-  0. hostnameを任意に変更
-0. **vagrant UP** で実行
+- vagrantfileを修正
+~~~ruby
+#↓自分の環境に合わせてIPアドレスを変更
+config.vm.network "private_network", ip: "192.168.33.50"
+#↓vagrant-hostsupdaterをインストール済みであれば、好きなLocalhostNameが使える。
+config.vm.hostname = "base.dev"
+~~~
 
-2案件目からは、2からの設定でOK。
+- ターミナルを開いて、該当ディレクトリでvagrantを立ち上げ
+~~~
+$ vagrant up
+~~~
 
-----
+###### 追記
+
+SCOTCH BOX(https://box.scotch.io/) というboxファイルを利用してLAMP環境を一発構築します。これ以上に簡単なvagrantでの環境づくりは（amishiroが探した限りでは）たぶんない。初回実行時は重たいboxをダウンロードするために時間がかかるが、２回目以降は（PC環境にもよるけど）30s〜5mぐらいで終わる。最強。
 
 ## gulpの設定
 
@@ -54,6 +66,7 @@ macのやり方しかわかりませぬ。そして、ざっくりな説明し�
 
 まだまだ甘いところがあるので、いろいろ悩み中。
 
+- 160225/README.mdを更新。vagrant周りについて少し整理した。
 - 160224/gulp dest で納品データーをdestディレクトリにまとめるようにした
 - 160224/スマホhover問題に対応したよ
 - 160224/README.md更新
