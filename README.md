@@ -24,7 +24,7 @@
 
 macのやり方しかわかりませぬ。そして、ざっくりな説明しか書いておりませぬ。
 
-## ローカルサーバー構築 - vagrantの設定
+#### ローカルサーバー構築 - vagrantの設定
 
 前提：[vagrant](https://www.vagrantup.com/) と [Virtualbox](https://www.virtualbox.org/) をインストール。LocalhostNameを任意に変更したい場合は、[vagrant-hostsupdater](https://github.com/cogitatio/vagrant-hostsupdater)を追加インストールして、vagrant 実行時に***/etc/hosts***を自動で書き換えできるようにしておく。
 
@@ -45,16 +45,14 @@ $ vagrant up
 
 SCOTCH BOX(https://box.scotch.io/) というboxファイルを利用してLAMP環境を一発構築します。これ以上に簡単なvagrantでの環境づくりは（amishiroが探した限りでは）たぶんない。初回実行時は重たいboxをダウンロードするために時間がかかるが、２回目以降は（PC環境にもよるけど）30s〜5mぐらいで終わる。最強。
 
-## gulpの設定
+#### gulpの設定
 
 前提：node.js と gulp はインストールされている
 
 0. **npm install** でpackage.jsonに記載されているものをインストール
 0. **gulp** で実行
 
-----
-
-## SCSS Compassのインストール
+#### SCSS Compassのインストール
 
 前提：基本、最新の安定版使っています。旧バージョンを使いたい場合は、bundlerを使って案件ごとにコントロール。※使い方は別途。
 
