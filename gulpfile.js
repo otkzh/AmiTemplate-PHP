@@ -5,7 +5,7 @@ var browserSync = require('browser-sync');
 var plumber = require('gulp-plumber');
 var notify = require('gulp-notify');
 
-var hostName = "base.dev/";
+var hostName = "192.168.33.50";
 
 var dir = {
 	"base": "./public"
@@ -42,7 +42,8 @@ gulp.task('compass', function () {
 
 gulp.task('browser-sync', function () {
 	browserSync({
-		proxy: hostName
+		proxy: hostName,
+		port: 4000
 	});
 });
 
