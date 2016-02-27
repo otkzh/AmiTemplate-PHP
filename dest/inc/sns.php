@@ -1,2 +1,3 @@
-<a href="http://twitter.com/share?text=【ツイート文】&url=【共有するURL】&hashtags=【ハッシュタグ】" onClick="window.open(encodeURI(decodeURI(this.href)), 'tweetwindow', 'width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1'); return false;" rel="nofollow" class="tweet">ツイート</a>
-<a href="http://www.facebook.com/sharer.php?u=`シェアしたいurl`&amp;t=`シェアしたいタイトル`" onClick="window.open(encodeURI(decodeURI(this.href)),'sharewindow','width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;" class="facebook">facebook</a>
+<a href="http://twitter.com/share?text=【ツイート文】&url=【共有するURL】&hashtags=【ハッシュタグ】" onClick="window.open(encodeURI(decodeURI(this.href)), 'tweetwindow', 'width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1'); return false;" rel="nofollow"
+class="tweet">ツイート</a> <a href="http://www.facebook.com/sharer.php?u=`シェアしたいurl`&amp;t=`シェアしたいタイトル`" onClick="window.open(encodeURI(decodeURI(this.href)),'sharewindow','width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'); return false;"
+class="facebook">facebook</a>
