@@ -1,11 +1,19 @@
 var gulp = require('gulp');
 var path = require('path');
-var compass = require('gulp-compass');
-var cssmin = require('gulp-cssmin');
+
+//基礎
 var browserSync = require('browser-sync');
 var plumber = require('gulp-plumber');
 var notify = require('gulp-notify');
+
+//css/scss/compass用
+var compass = require('gulp-compass');
+var cssmin = require('gulp-cssmin');
+
+//html php 整形
 var prettify = require('gulp-prettify');
+
+//画像ファイル用
 var imagemin = require('gulp-imagemin');
 var pngquant  = require ('imagemin-pngquant');
 
@@ -22,11 +30,23 @@ var dir = {
 var paths = {
 	"scss": dir.base + "/**/*.scss",
 	"css"	: dir.base + "/**/*.css",
-	"php"	: dir.base + "/**/*.{php,html}",
+	"html"	: dir.base + "/**/*.{php,html}",
 	"js"	: dir.base + "/**/*.{js,htc}",
   "img"	: dir.base + "/**/*.{png,jpg,gif,pdf}",
   "font"	: dir.base + "/**/*.{eot,svg,ttf,woff,woff2,otf}",
 }
+
+// browser-sync
+gulp.task('browser-sync', function () {
+	browserSync({
+		proxy: hostName,
+		//port: 4000
+	});
+});
+
+gulp.task('bs-reload', function () {
+	browserSync.reload();
+});
 
 //エラー表記
 var plumberErrorHandler = {
@@ -36,8 +56,8 @@ var plumberErrorHandler = {
 };
 
 //css圧縮 / scss/compassコンパイル
-gulp.task('compass', function () {
-  gulp.src(paths.scss)
+gulp.task('css', function () {
+  return　gulp.src(paths.scss)
   .pipe(plumber(plumberErrorHandler))
   .pipe(compass({
     config_file : dir.base + "/config.rb",
@@ -50,31 +70,32 @@ gulp.task('compass', function () {
   }))
   .pipe(cssmin())
   .pipe(gulp.dest(dir.dest + "/css"));
+
+  gulp.src(dir.base + "/**/*.css")
+  .pipe(cssmin())
+  .pipe(gulp.dest(dir.dest));
+
 });
 
-//cssの圧縮
-gulp.task('css', function () {
-    gulp.src(dir.base + "/**/*.css")
-    .pipe(cssmin())
-    .pipe(gulp.dest(dir.dest));
+gulp.task('css-reload', ['css'], function() {
+  browserSync.reload();
 });
 
 //php・html 整形
 gulp.task('html', function () {
-  gulp.src(paths.php)
-  .pipe(prettify({
-    indent_size: 2,
-//    indent_inner_html: true,
-    unformatted: ['pre', 'code','a'],
-  }))
-  .pipe(gulp.dest(dir.base))
+  return gulp.src(paths.html)
   .pipe(prettify({indent_size: 0}))
   .pipe(gulp.dest(dir.dest))
 });
 
+gulp.task('html-reload', ['html'], function() {
+  browserSync.reload();
+});
+
+
 //画像圧縮
 gulp.task('img', function () {
-  gulp.src(paths.img)
+  return gulp.src(paths.img)
   .pipe(gulp.dest(dir.base))
   .pipe(imagemin({
     progressive: true,
@@ -84,37 +105,42 @@ gulp.task('img', function () {
   .pipe(gulp.dest(dir.dest))
 });
 
+gulp.task('img-reload', ['img'], function() {
+  browserSync.reload();
+});
+
+
 //font周り 将来的にはsvgをiconfontにまとめるようする
 gulp.task('font', function () {
-  gulp.src(paths.font)
+  return gulp.src(paths.font)
   .pipe(gulp.dest(dir.dest))
+});
+
+gulp.task('font-reload', ['font'], function() {
+  browserSync.reload();
 });
 
 //js関連　お好みで改造する。coffeeお好き？
 gulp.task('js', function () {
-  gulp.src(paths.js)
+  return gulp.src(paths.js)
   .pipe(gulp.dest(dir.dest))
 });
 
-
-// browser-sync
-gulp.task('browser-sync', function () {
-	browserSync({
-		proxy: hostName,
-		port: 4000
-	});
-});
-
-gulp.task('bs-reload', function () {
-	browserSync.reload();
+gulp.task('js-reload', ['js'], function() {
+  browserSync.reload();
 });
 
 //納品ファイル書き出し用の記述
-gulp.task('dest',['img','font','js','compass','css','html']);
+//gulp.task('dest',['img','font','js','css','html']);
+
+gulp.task('dest',['img','font','js','css','html']);
 
 //gulp
+
 gulp.task('default', ['browser-sync'], function () {
-	gulp.watch(paths.php ,['html'], function () {
-    browserSync.reload();
-  });
+  gulp.watch(paths.scss ,['css-reload']);
+  gulp.watch(paths.html ,['html-reload']);
+  gulp.watch(paths.img ,['img-reload']);
+  gulp.watch(paths.font ,['font-reload']);
+  gulp.watch(paths.js ,['js-reload']);
 });

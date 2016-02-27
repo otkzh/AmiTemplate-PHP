@@ -1,5 +1,5 @@
 {
-  "name": "base.dev",
+  "name": "amiten.net",
   "version": "1.0.0",
   "description": "AmiTemplatePHP",
   "main": "index.js",
@@ -8,23 +8,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/scotch-io/scotch-box.git"
+    "url": "git+https://github.com/amishiro/AmiTemplate-PHP.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/scotch-io/scotch-box/issues"
+    "url": "https://github.com/amishiro/AmiTemplate-PHP/issues"
   },
-  "homepage": "",
+  "homepage": "https://github.com/amishiro/AmiTemplate-PHP#readme",
   "devDependencies": {
-    "browser-sync": "^2.11.0",
     "gulp": "^3.9.0",
+    "browser-sync": "^2.11.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-notify": "^2.2.0",
     "gulp-compass": "^2.1.0",
     "gulp-cssmin": "^0.1.7",
+    "gulp-prettify": "^0.4.0",
     "gulp-imagemin": "^2.4.0",
-    "gulp-notify": "^2.2.0",
-    "gulp-plumber": "^1.0.1",
-    "gulp-prettify": "^0.4.0"
+    "imagemin-pngquant": "^4.2.2",
   },
   "dependencies": {}
 }
