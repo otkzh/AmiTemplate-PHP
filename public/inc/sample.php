@@ -27,6 +27,7 @@
 <h1 class="section-title">文章 p：タグとか</h1>
 <p>pタグ：テキストダミー漢字ABCabcqpテキスト<strong>strong:テキストダミー漢字ABCabcqp</strong>ダミー漢字ABCabcqpテキストダミー漢字ABCabcqpテキストダミー漢字ABCabcqpテキストダミー漢字ABCabcqpテキストダミー漢字ABCabcqpテキストダミー漢字ABCabcqpテキストダミー漢字ABCabcqpテキストダミー漢字ABCabcqpテキストダミー漢字ABCabcqpテキストダミー漢字ABCabcqpテキストダミー漢字ABCabcqp</p>
 <p>pタグ：テキストダミー漢字ABCabcqpテキスト<a href="#">strong:テキストダミー漢字ABCabcqp</a>ダミー漢字ABCabcqpテキスト<a href="#" target="_blank" rel="nofollow">ダミー漢字ABCabcqpテキストダミー漢字ABCabcqpテキストダミー漢字ABCabc</a>qpテキストダミー漢字ABCabcqpテキストダミー漢字ABCabcqpテキストダミー漢字ABCabcqpテキストダミー漢字ABCabcqpテキストダミー漢字ABCabcqpテキストダミー漢字ABCabcqpテキストダミー漢字ABCabcqp</p>
+<p class="cap">※注釈ダミーダミーダミーダミーダミーダミーダミーダミー</p>
 <hr>
 <h2 class="small-title">classなし</h2>
 <ul>
