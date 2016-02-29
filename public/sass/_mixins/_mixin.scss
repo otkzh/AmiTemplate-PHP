@@ -1,80 +1,86 @@
-@charset "utf-8";
-
 //--------------------自作mixin
 
 //画像のサイズを取得
-@mixin img-size($imgURL,$extension:png){
-	width: image-width($imgURL + '.' + $extension);
-	height: image-height($imgURL + '.' + $extension);
+@mixin img-size($imgURL, $extension:png) {
+  width: image-width($imgURL + '.' + $extension);
+  height: image-height($imgURL + '.' + $extension);
 }
 
 //背景画像
-@mixin img($imgURL,$extension:png){
-	background-image: image-url($imgURL + '.' + $extension);
-	$width: image-width($imgURL + '.' + $extension);
-	$height: image-height($imgURL + '.' + $extension);
-	@media (min--moz-device-pixel-ratio: 1.3),(-o-min-device-pixel-ratio: 2.6/2),(-webkit-min-device-pixel-ratio: 1.3),(min-device-pixel-ratio: 1.3),(min-resolution: 1.3dppx) {
-	          background-image: image-url($imgURL + '@2x' + '.' + $extension) ;
-	          background-size: $width $height;
-	}
+@mixin img($imgURL, $extension:png) {
+  background-image: image-url($imgURL + '.' + $extension);
+  $width: image-width($imgURL + '.' + $extension);
+  $height: image-height($imgURL + '.' + $extension);
+  @media (min--moz-device-pixel-ratio: 1.3),
+  (-o-min-device-pixel-ratio: 2.6/2),
+  (-webkit-min-device-pixel-ratio: 1.3),
+  (min-device-pixel-ratio: 1.3),
+  (min-resolution: 1.3dppx) {
+    background-image: image-url($imgURL + '@2x' + '.' + $extension);
+    background-size: $width $height;
+  }
 }
-
 //画像置換
-@mixin bg-img($imgURL,$extension:png){
-	@include hide-text();
-	br { display: none;}
-	display: block;
-	background-image: image-url($imgURL + '.' + $extension);
-	$width: image-width($imgURL + '.' + $extension);
-	$height: image-height($imgURL + '.' + $extension);
-   width: $width;
-   height: $height;
-   background-repeat: no-repeat;
-	@media (min--moz-device-pixel-ratio: 1.3),(-o-min-device-pixel-ratio: 2.6/2),(-webkit-min-device-pixel-ratio: 1.3),(min-device-pixel-ratio: 1.3),(min-resolution: 1.3dppx) {
-       background-image: image-url($imgURL + '@2x' + '.' + $extension) ;
-       background-size: $width $height;
-   }
+@mixin bg-img($imgURL, $extension:png) {
+  @include hide-text();
+  br {
+    display: none;
+  }
+  display: block;
+  background-image: image-url($imgURL + '.' + $extension);
+  $width: image-width($imgURL + '.' + $extension);
+  $height: image-height($imgURL + '.' + $extension);
+  width: $width;
+  height: $height;
+  background-repeat: no-repeat;
+  @media (min--moz-device-pixel-ratio: 1.3),
+  (-o-min-device-pixel-ratio: 2.6/2),
+  (-webkit-min-device-pixel-ratio: 1.3),
+  (min-device-pixel-ratio: 1.3),
+  (min-resolution: 1.3dppx) {
+    background-image: image-url($imgURL + '@2x' + '.' + $extension);
+    background-size: $width $height;
+  }
 }
 
 //---------------- touch-hover
 
 @mixin touch-hover() {
-    .no-js &:hover, // the fallback
-    .no-js &:focus,
-    .js.no-touchevents &:hover, // enhanced for no-touch
-    .js.no-touchevents &:focus,
-    .js.touchevents &.touch { // relay same styles to active for touch devices
-        @content;
-    }
+  .no-js & :hover, // the fallback
+  .no-js & :focus,
+  .js.no-touchevents &:focus, //enhanced for no-touch
+  .js.touchevents &.touch { // relay same styles to active for touch devices
+    @content;
+  }
 }
 
 //-----------------ずるいシリーズ
 
 //ずるいグラデーション 上部明るい
-@mixin gradient-top-lighten($color:#666, $lighten:10%){
+@mixin gradient-top-lighten($color:#666, $lighten:10%) {
   background-color: $color;
   @include filter-gradient(lighten($color, $lighten), $color, vertical);
   @include background-image(linear-gradient(lighten($color, $lighten) 0%, $color 100%));
 }
 
 //ずるいグラデーション上部くらい
-@mixin gradient-top-darken($color:#666, $darken:10%){
+@mixin gradient-top-darken($color:#666, $darken:10%) {
   background-color: $color;
   @include filter-gradient(darken($color, $darken), $color, vertical);
-  @include background-image(linear-gradient(darken($color,  $darken) 0%, $color 100%));
+  @include background-image(linear-gradient(darken($color, $darken) 0%, $color 100%));
 }
-
 
 //-----------------簡単加工
 
 // generic transform
 @mixin transform($transforms) {
-	   -moz-transform: $transforms;
-	     -o-transform: $transforms;
-	    -ms-transform: $transforms;
-	-webkit-transform: $transforms;
-          transform: $transforms;
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
 }
+
 // rotate
 @mixin rotate ($deg) {
   @include transform(rotate(#{$deg}deg));
@@ -82,22 +88,24 @@
 
 // scale
 @mixin scale($scale) {
-	 @include transform(scale($scale));
+  @include transform(scale($scale));
 }
+
 // translate
 @mixin translate ($x, $y) {
-   @include transform(translate($x, $y));
+  @include transform(translate($x, $y));
 }
+
 // skew
 @mixin skew ($x, $y) {
-   @include transform(skew(#{$x}deg, #{$y}deg));
+  @include transform(skew(#{$x}deg, #{$y}deg));
 }
 
 //transform origin
 @mixin transform-origin ($origin) {
-    moz-transform-origin: $origin;
-	     -o-transform-origin: $origin;
-	    -ms-transform-origin: $origin;
-	-webkit-transform-origin: $origin;
-          transform-origin: $origin;
+  -moz-transform-origin: $origin;
+  -o-transform-origin: $origin;
+  -ms-transform-origin: $origin;
+  -webkit-transform-origin: $origin;
+  transform-origin: $origin;
 }

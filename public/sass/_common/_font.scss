@@ -1,23 +1,22 @@
-@charset "utf-8";
-
 a {
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0); //タップ時のハイライト削除	
-	outline: none;
-	&:hover,
-	&.hover {
-		text-decoration: none;
-		outline: none;
-	}
-	&:focus {
-		text-decoration: none;
-		outline: none;
-	}
-	&:active {
-		outline: 0;
-	}
-} //a
-::-moz-selection,
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); //タップ時のハイライト削除
+  outline: none;
+  &:hover,
+  &.hover {
+    text-decoration: none;
+    outline: none;
+  }
+  &:focus {
+    text-decoration: none;
+    outline: none;
+  }
+  &:active {
+    outline: 0;
+  }
+}
+//a
+ ::-moz-selection,
 ::selection {
-	background: black;
-	text-shadow: none;
+  background: black;
+  text-shadow: none;
 }

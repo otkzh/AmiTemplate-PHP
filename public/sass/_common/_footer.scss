@@ -1,301 +1,287 @@
-@charset "utf-8";
 #footer {
-	position: relative;
-	background-color: #fff;
-	@include img(common/footer/footer-img, png);
-	background-position: top center;
-	@include min-screen($width-m + 1px) {
-		//@include img(common/footer/footer-img, png);
-		padding-top: image-height("common/footer/footer-img.png");
-	}
-	@include max-screen($width-m) {
-		padding-top: $bm*3;
-	}
-	@include max-screen($width-s) {}
+  position: relative;
+  background-color: #fff;
+  @include img(common/footer/footer-img, png);
+  background-position: top center;
+  @include min-screen($width-m + 1px) {
+    //@include img(common/footer/footer-img, png);
+    padding-top: image-height("common/footer/footer-img.png");
+  }
+  @include max-screen($width-m) {
+    padding-top: $bm*3;
+  }
+  @include max-screen($width-s) {}
 }
-
 #fnav {
-	&.fnav {}
+  &.fnav {}
 }
-
 .foot-inq {
-	a {
-		&:hover {}
-	}
-	span {}
+  a {
+    &:hover {}
+  }
+  span {}
 }
-
 .footer-bottom {
-	.wrapper {
-		background: none;
-	}
-	@include img(common/footer/footer-base, png);
+  .wrapper {
+    background: none;
+  }
+  @include img(common/footer/footer-base, png);
 }
-
 .wrapper {}
-
 .text {
-	span {}
+  span {}
 }
-
 .logo {
-	span {
-		@include bg-img(common/footer/footer-logo, png);
-		margin: 0 auto $bm*4;
-	}
+  span {
+    @include bg-img(common/footer/footer-logo, png);
+    margin: 0 auto $bm*4;
+  }
 }
-
 .nav {
-	padding: 0;
-	margin: 0;
-	li {
-		list-style: none;
-		@include inline-block();
-		margin-right: $bm;
-	}
-	a {
-		color: $color-light;
-		font-size: 1.2rem;
-		&:hover {}
-	}
-	span {}
+  padding: 0;
+  margin: 0;
+  li {
+    list-style: none;
+    @include inline-block();
+    margin-right: $bm;
+  }
+  a {
+    color: $color-light;
+    font-size: 1.2rem;
+    &:hover {}
+  }
+  span {}
 }
-
 .contact {
-	a {
-		&:hover {}
-	}
-	span {}
+  a {
+    &:hover {}
+  }
+  span {}
 }
-
 .copyright {
-	color: $color-light;
-	font-size: 10px;
-	span {
-		font-size: 18px;
-		position: relative;
-		left: -3px;
-		top: 3px;
-	}
+  color: $color-light;
+  font-size: 10px;
+  span {
+    font-size: 18px;
+    position: relative;
+    left: -3px;
+    top: 3px;
+  }
 }
-
 @include min-screen($width-m + 1px) {
-	#fnav {
-		&.fnav {
-			position: absolute;
-			top: 50px;
-			left: 0;
-			width: 100%;
-			text-align: center;
-			padding: 0;
-			margin: 0;
-		}
-		li {
-			@include inline-block();
-			margin: 0 $bm;
-			a {
-				display: block;
-				padding: 0 $bm $bm $bm;
-				border-bottom: solid 1px #fff;
-				@include underline-from-center-nav;
-			}
-		}
-		@each $class in home,
-		news,
-		list,
-		about,
-		howto {
-			.#{$class} {
-				a {
-					&:hover {}
-				}
-				span {
-					@include bg-img(common/header/#{$class}, png);
-				}
-				body.#{$class} & {
-					border-bottom: solid 2px black;
-				}
-			}
-		} //each
-	} //#fnav
-	.foot-inq {
-		position: absolute;
-		top: 200px;
-		width: 100%;
-		text-align: center;
-		a {
-			@include inline-block();
-			//@include float-shadow();
-			@include ripple-out-inq;
-			&:hover {}
-		}
-		span {
-			@include bg-img(common/footer/footer-bt, png);
-		}
-	}
-	.footer-bottom {
-		padding: $bm*4;
-		.text {
-			span {
-				@include bg-img(common/footer/footer-text, png);
-				margin: 0 auto $bm*4;
-			}
-		}
-		.nav {
-			float: left;
-		}
-		.copyright {
-			position: relative;
-			top: -3px;
-			float: right;
-		}
-	}
+  #fnav {
+    &.fnav {
+      position: absolute;
+      top: 50px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      padding: 0;
+      margin: 0;
+    }
+    li {
+      @include inline-block();
+      margin: 0 $bm;
+      a {
+        display: block;
+        padding: 0 $bm $bm;
+        border-bottom: solid 1px #fff;
+        @include underline-from-center-nav;
+      }
+    }
+    @each $class in home,
+    news,
+    list,
+    about,
+    howto {
+      .#{$class} {
+        a {
+          &:hover {}
+        }
+        span {
+          @include bg-img(common/header/#{$class}, png);
+        }
+        body.#{$class} & {
+          border-bottom: solid 2px black;
+        }
+      }
+    }
+    //each
+  }
+  //#fnav
+  .foot-inq {
+    position: absolute;
+    top: 200px;
+    width: 100%;
+    text-align: center;
+    a {
+      @include inline-block();
+      //@include float-shadow();
+      @include ripple-out-inq;
+      &:hover {}
+    }
+    span {
+      @include bg-img(common/footer/footer-bt, png);
+    }
+  }
+  .footer-bottom {
+    padding: $bm*4;
+    .text {
+      span {
+        @include bg-img(common/footer/footer-text, png);
+        margin: 0 auto $bm*4;
+      }
+    }
+    .nav {
+      float: left;
+    }
+    .copyright {
+      position: relative;
+      top: -3px;
+      float: right;
+    }
+  }
 }
-
 //タブレット以下
 @include max-screen($width-m) {
-	#footer {}
-	#fnav {
-		&.fnav {
-			@include box-sizing(border-box);
-			@include opacity(0.9);
-			//background: $color-dark; 
-			@include img(common/footer/footer-base, png);
-			width: 90%;
-			list-style: none;
-			margin: 0 auto;
-			padding: 0;
-			overflow: hidden;
-			@include border-radius(8px 8px 0 0);
-			border: solid 2px black;
-			li {
-				margin: 0;
-				padding: 0;
-				a {
-					display: block;
-					position: relative;
-					padding: $bm*2;
-					padding-left: 45px;
-					border-bottom: solid 2px darken($color-dark, 30%);
-					text-decoration: none;
-					font-size: 1.4rem;
-					color: #fff;
-					letter-spacing: 1px;
-					&:before {
-						@include icon-font("\f061");
-						margin-right: $bm/2;
-						position: absolute;
-						top: 13px;
-						left: $bm*2;
-						font-size: 24px;
-						color: black;
-					}
-					&:hover {
-						&:before {
-							color: $color-brand;
-						}
-					}
-				}
-				&:last-child a {
-					border: none;
-				}
-			}
-		}
-	}
-	.foot-inq {
-		@include box-sizing(border-box);
-		width: 90%;
-		border: solid 2px black;
-		border-top: none;
-		@include border-radius( 0 0 8px 8px);
-		margin: 0 auto $bm*4;
-		overflow: hidden;
-		a {
-			display: block;
-			background: $color-point;
-			position: relative;
-			padding: $bm*3;
-			padding-left: 60px;
-			text-decoration: none;
-			font-size: 1.4rem;
-			color: #fff;
-			letter-spacing: 1px;
-			&:before {
-				@include icon-font("\f218");
-				margin-right: $bm/2;
-				position: absolute;
-				top: 16px;
-				left: $bm*2;
-				font-size: 35px;
-				color: #fff;
-			}
-		}
-		span {}
-	}
-	.footer-bottom {
-		.wrapper {
-			margin: 0;
-			padding: 0;
-		}
-		.text {
-			color: #fff;
-			@include mincho;
-			font-size: 16px;
-			text-align: center;
-			padding: $bm*4 $bm;
-		}
-		.nav {
-			width: 100%;
-			@include clearfix();
-			padding-bottom: $bm*2;
-			li {
-				@include box-sizing(border-box);
-				display: block;
-				width: 50%;
-				padding: $bm;
-				float: left;
-				margin-right: 0;
-			}
-			a {
-				text-decoration: none;
-				display: block;
-				@include box-sizing(border-box);
-				background: $color-dark;
-				border: solid 2px black;
-				padding: $bm;
-				text-align: center;
-				&:hover {}
-			}
-			span {}
-		}
-		.copyright {
-			background: $color-dark;
-			padding: $bm;
-			text-align: center;
-			border-top: solid 2px black;
-		}
-	}
+  #footer {}
+  #fnav {
+    &.fnav {
+      @include box-sizing(border-box);
+      @include opacity(0.9);
+      //background: $color-dark;
+      @include img(common/footer/footer-base, png);
+      width: 90%;
+      list-style: none;
+      margin: 0 auto;
+      padding: 0;
+      overflow: hidden;
+      @include border-radius(8px 8px 0 0);
+      border: solid 2px black;
+      li {
+        margin: 0;
+        padding: 0;
+        a {
+          display: block;
+          position: relative;
+          padding: $bm*2 $bm*2 $bm*2 45px;
+          border-bottom: solid 2px darken($color-dark, 30%);
+          text-decoration: none;
+          font-size: 1.4rem;
+          color: #fff;
+          letter-spacing: 1px;
+          &:before {
+            @include icon-font("\f061");
+            margin-right: $bm/2;
+            position: absolute;
+            top: 13px;
+            left: $bm*2;
+            font-size: 24px;
+            color: black;
+          }
+          &:hover {
+            &:before {
+              color: $color-brand;
+            }
+          }
+        }
+        &:last-child a {
+          border: none;
+        }
+      }
+    }
+  }
+  .foot-inq {
+    @include box-sizing(border-box);
+    width: 90%;
+    border: solid 2px black;
+    border-top: none;
+    @include border-radius( 0 0 8px 8px);
+    margin: 0 auto $bm*4;
+    overflow: hidden;
+    a {
+      display: block;
+      background: $color-point;
+      position: relative;
+      padding: $bm*3 $bm*3 $bm*3 60px;
+      text-decoration: none;
+      font-size: 1.4rem;
+      color: #fff;
+      letter-spacing: 1px;
+      &:before {
+        @include icon-font("\f218");
+        margin-right: $bm/2;
+        position: absolute;
+        top: 16px;
+        left: $bm*2;
+        font-size: 35px;
+        color: #fff;
+      }
+    }
+    span {}
+  }
+  .footer-bottom {
+    .wrapper {
+      margin: 0;
+      padding: 0;
+    }
+    .text {
+      color: #fff;
+      @include mincho;
+      font-size: 16px;
+      text-align: center;
+      padding: $bm*4 $bm;
+    }
+    .nav {
+      width: 100%;
+      @include clearfix();
+      padding-bottom: $bm*2;
+      li {
+        @include box-sizing(border-box);
+        display: block;
+        width: 50%;
+        padding: $bm;
+        float: left;
+        margin-right: 0;
+      }
+      a {
+        text-decoration: none;
+        display: block;
+        @include box-sizing(border-box);
+        background: $color-dark;
+        border: solid 2px black;
+        padding: $bm;
+        text-align: center;
+        &:hover {}
+      }
+      span {}
+    }
+    .copyright {
+      background: $color-dark;
+      padding: $bm;
+      text-align: center;
+      border-top: solid 2px black;
+    }
+  }
 }
-
 @include max-screen($width-s) {
-	.footer-bottom {
-		.nav {
-			li {
-				width: 100%;
-				float: none;
-			}
-		}
-	}
+  .footer-bottom {
+    .nav {
+      li {
+        width: 100%;
+        float: none;
+      }
+    }
+  }
 }
-
 #pagetop {
-	position: fixed;
-	bottom: $bm;
-	right: $bm;
-	a {
-		&:hover {}
-		span {
-			@include bg-img(common/footer/pagetop, png);
-		}
-	}
+  position: fixed;
+  bottom: $bm;
+  right: $bm;
+  a {
+    &:hover {}
+    span {
+      @include bg-img(common/footer/pagetop, png);
+    }
+  }
 }

@@ -5,7 +5,7 @@ $meta_title ="".$title." | ".$sitename."";
 $meta_description ="メタディスクリプション";
 $meta_keywords = "".$keywords."";
 $body_class ="home";
-?> テスト
+?>
 <?php include ($inc_path."/inc/head.php") ?>
 <?php include ($inc_path."/inc/header.php") ?>
 <?php include ($inc_path."/inc/pan.php") ?>

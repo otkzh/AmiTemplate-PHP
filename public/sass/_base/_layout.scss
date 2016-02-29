@@ -1,78 +1,62 @@
-@charset "utf-8";
-
 //高さと幅基準
 html,
 body,
 #all {
-	width: 100%;
-	height: 100%;
-	overflow-x: hidden;
-	position: relative;
-	z-index: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  position: relative;
+  z-index: 0;
 }
-
 @media all and (-ms-high-contrast:none) {
-	html,
-	body {
-		height: 100% !important;
-		overflow: auto !important;
-	}
+  html,
+  body {
+    height: 100% !important;
+    overflow: auto !important;
+  }
 }//IE10・11用 fixedのバグ対策、scroll量を取得する場合はbodyから取得してください。
-
 //layout用設定
-
 header,
 footer,
 article,
 section,
 .wrapper {
-	@include box-sizing(border-box);
-	@include clearfix();
+  @include box-sizing(border-box);
+  @include clearfix();
 }
-
 .wrapper {
-	margin: 0 auto;
-	width: 100%;
-	@include min-screen($width-m + 1px) {
-		max-width: $width-l;
-		padding: 0 $bm*2;
-	}
-	@include max-screen($width-m) {
-		padding: 0 $bm*4;
-	}
-	@include max-screen($width-s) {
-		padding: 0 $bm;
-	}
+  margin: 0 auto;
+  width: 100%;
+  @include min-screen($width-m + 1px) {
+    max-width: $width-l;
+    padding: 0 $bm*2;
+  }
+  @include max-screen($width-m) {
+    padding: 0 $bm*4;
+  }
+  @include max-screen($width-s) {
+    padding: 0 $bm;
+  }
 }
-
 section {
-	padding-bottom: $margin;
-	margin-bottom: $margin;
-	border-bottom:solid 1px $color-brand;
+  padding-bottom: $margin;
+  margin-bottom: $margin;
+  border-bottom: solid 1px $color-brand;
 }
-
 #header {
-	z-index: 2;
+  z-index: 2;
 }
-
 #gnav {
-	z-index: 3;
+  z-index: 3;
 }
-
 #pan {}
-
 #contents {}
-
 #conts {}
-
-#side{}
-
+#side {}
 #footer {
-	z-index: 2;
+  z-index: 2;
 }
-
-#fnav{}
-
+#fnav {}
 #pagetop {
-	z-index: 3;
+  z-index: 3;
 }
