@@ -1,16 +1,14 @@
 # AmiTemplate-PHP
 
-コレはdevブランチです。
-
 普段使っている中規模サイト制作用の雛形です。LAMP環境構築から、gulp設定、scss/compassのmixin、require.jsを使ったjsファイルの管理などなど…ノウハウ詰まっている。ベストとは言えないけど、ベタープラクティスをまとめて随時更新。
 
-##メンバー
+### メンバー
 
 - amishiro
 
 ※絶賛参加者募集中！
 
-##必要なもの
+### 必要なもの
 
 - ローカルサーバー構築のために
  - [vagrant](https://www.vagrantup.com/)
@@ -22,11 +20,11 @@
  - [sass](http://sass-lang.com/)
  - [compass](http://compass-style.org/)
 
-##環境構築
+# 環境構築
 
 macのやり方しかわかりませぬ。そして、ざっくりな説明しか書いておりませぬ。
 
-#### ローカルサーバー構築 - vagrantの設定
+## ローカルサーバー構築 - vagrantの設定
 
 前提：[vagrant](https://www.vagrantup.com/) と [Virtualbox](https://www.virtualbox.org/) をインストール。LocalhostNameを任意に変更したい場合は、[vagrant-hostsupdater](https://github.com/cogitatio/vagrant-hostsupdater)を追加インストールして、vagrant 実行時に***/etc/hosts***を自動で書き換えできるようにしておく。
 
@@ -47,14 +45,34 @@ $ vagrant up
 
 SCOTCH BOX(https://box.scotch.io/) というboxファイルを利用してLAMP環境を一発構築します。これ以上に簡単なvagrantでの環境づくりは（amishiroが探した限りでは）たぶんない。初回実行時は重たいboxをダウンロードするために時間がかかるが、２回目以降は（PC環境にもよるけど）30s〜5mぐらいで終わる。最強。
 
-#### gulpの設定
+## gulpの設定と実行
 
 前提：node.js と gulp はインストールされている
 
-0. **npm install** でpackage.jsonに記載されているものをインストール
-0. **gulp** で実行
+0. package.jsonに記載されているGulpプラグインをインストールするために、ターミナルでnpmインストールを実行。
+~~~
+$ npm install
+~~~
+0. ファイル監視実行
+~~~
+$ gulp
+~~~
+0. 納品用ファイル書き出しだけをしたい場合は…
+~~~
+$ gulp dest
+~~~
 
-#### SCSS Compassのインストール
+###### 追記
+
+Gulpでは、publicフォルダー内にある、各種ファイル監視しつつ、納品用ファイルの書き出しを実行します。主な実行内容は
+
+- scss/compassのコンパイル
+- 画像ファイルの圧縮
+- php/htmlファイルの整形
+
+です。jsファイル周りは好みが別れるので、特に記述はしていない。お好みでカスタマイズすればいいと思う。そう思う。
+
+## SCSS Compassのインストール
 
 前提：基本、最新の安定版使っています。旧バージョンを使いたい場合は、bundlerを使って案件ごとにコントロール。※使い方は別途。
 
@@ -64,4 +82,4 @@ SCOTCH BOX(https://box.scotch.io/) というboxファイルを利用してLAMP�
 
 # 注意事項
 
-まだまだ甘いところがあるので、いろいろ悩み中。issuesでタスク管理しています。
+まだまだ甘いところがあるので、いろいろ悩み中。[issues](https://github.com/amishiro/AmiTemplate-PHP/issues)でタスク管理しています。
