@@ -1,20 +1,23 @@
 require.config({
   paths: {
-    // モジュール
     jquery: 'vendor/jquery-2.2.0.min',
-    waypoints: 'plugins/waypoints.min',
+    touchevents: 'plugins/ami.touchevents',
+    waypoints: 'plugins/jquery.waypoints.min',
   },
+  shim: {
+        'touchevents': ['jquery'],
+        'waypoints': ['jquery']
+  }
 });
 
 //hover-touch events
-requirejs(['jquery','plugins/ami.touchevents']);
+requirejs(['touchevents']);
 
 //waypoint
-requirejs(['jquery','waypoints'], function () {
-  var waypoint = new Waypoint({
-    element: document.getElementById('conts'),
+requirejs(['waypoints'], function () {
+  var waypoints = $('#gnav').waypoint({
     handler: function(direction) {
-      console.log("waypoint-test");
+      console.log("Hello world");
     }
   })
 });
