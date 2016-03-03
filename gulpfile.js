@@ -43,7 +43,6 @@ gulp.task('browser-sync', function() {
     //port: 4000
   });
 });
-
 gulp.task('bs-reload', function() {
   browserSync.reload();
 });
@@ -71,12 +70,11 @@ gulp.task('css', function() {
     .pipe(cssmin())
     .pipe(gulp.dest(dir.dest + "/css"));
 
-  gulp.src(dir.base + "/**/*.css")
+  return gulp.src(dir.base + "/**/*.css")
     .pipe(cssmin())
     .pipe(gulp.dest(dir.dest));
 
 });
-
 gulp.task('css-reload', ['css'], function() {
   browserSync.reload();
 });
@@ -89,7 +87,6 @@ gulp.task('html', function() {
     }))
     .pipe(gulp.dest(dir.dest))
 });
-
 gulp.task('html-reload', ['html'], function() {
   browserSync.reload();
 });
@@ -108,18 +105,15 @@ gulp.task('img', function() {
     }))
     .pipe(gulp.dest(dir.dest))
 });
-
 gulp.task('img-reload', ['img'], function() {
   browserSync.reload();
 });
-
 
 //font周り 将来的にはsvgをiconfontにまとめるようする
 gulp.task('font', function() {
   return gulp.src(paths.font)
     .pipe(gulp.dest(dir.dest))
 });
-
 gulp.task('font-reload', ['font'], function() {
   browserSync.reload();
 });
@@ -135,8 +129,6 @@ gulp.task('js-reload', ['js'], function() {
 });
 
 //納品ファイル書き出し用の記述
-//gulp.task('dest',['img','font','js','css','html']);
-
 gulp.task('dest', ['img', 'font', 'js', 'css', 'html']);
 
 //gulp
