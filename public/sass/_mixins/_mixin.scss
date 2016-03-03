@@ -46,10 +46,11 @@
 //---------------- touch-hover
 
 @mixin touch-hover() {
-  .no-js & :hover, // the fallback
+  .no-js & :hover,
   .no-js & :focus,
-  .js.no-touchevents &:focus, //enhanced for no-touch
-  .js.touchevents &.touch { // relay same styles to active for touch devices
+  .js.no-touchevents &:hover,
+  .js.no-touchevents &:focus,
+  .js.touchevents &.touch {
     @content;
   }
 }
