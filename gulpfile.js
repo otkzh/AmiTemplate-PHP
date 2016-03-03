@@ -54,8 +54,8 @@ var plumberErrorHandler = {
   })
 };
 
-//css圧縮 / scss/compassコンパイル
-gulp.task('css', function() {
+//scss & compassコンパイル - css圧縮
+gulp.task('compass', function() {
   return　 gulp.src(paths.scss)
     .pipe(plumber(plumberErrorHandler))
     .pipe(compass({
@@ -66,14 +66,12 @@ gulp.task('css', function() {
       style: "expanded",
       comments: true,
       time: true
-    }))
-    .pipe(cssmin())
-    .pipe(gulp.dest(dir.dest + "/css"));
-
+    }));
+});
+gulp.task('css',['compass'], function() {
   return gulp.src(dir.base + "/**/*.css")
     .pipe(cssmin())
     .pipe(gulp.dest(dir.dest));
-
 });
 gulp.task('css-reload', ['css'], function() {
   browserSync.reload();
@@ -90,7 +88,6 @@ gulp.task('html', function() {
 gulp.task('html-reload', ['html'], function() {
   browserSync.reload();
 });
-
 
 //画像圧縮
 gulp.task('img', function() {
@@ -123,7 +120,6 @@ gulp.task('js', function() {
   return gulp.src(paths.js)
     .pipe(gulp.dest(dir.dest))
 });
-
 gulp.task('js-reload', ['js'], function() {
   browserSync.reload();
 });
@@ -131,8 +127,7 @@ gulp.task('js-reload', ['js'], function() {
 //納品ファイル書き出し用の記述
 gulp.task('dest', ['img', 'font', 'js', 'css', 'html']);
 
-//gulp
-
+//gulp watchタスク
 gulp.task('default', ['browser-sync'], function() {
   gulp.watch(paths.scss, ['css-reload']);
   gulp.watch(paths.html, ['html-reload']);
