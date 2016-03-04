@@ -80,8 +80,13 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+<<<<<<< HEAD
 /* line 49, ../sass/_mixins/_mixin.scss */
 .no-js .bt.base :hover, .no-js .bt.base :focus, .js.no-touchevents .bt.base:hover, .js.no-touchevents .bt.base:focus, .js.touchevents .bt.base.touch {
+=======
+/* line 50, ../sass/_mixins/_mixin.scss */
+.no-js .bt :hover, .js.no-touchevents .bt:hover, .js.touchevents .bt.touch {
+>>>>>>> master
   background-color: #d3c6ae;
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFE5DDCF', endColorstr='#FFD3C6AE');
