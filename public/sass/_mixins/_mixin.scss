@@ -70,6 +70,16 @@
   @include background-image(linear-gradient(darken($color, $darken) 0%, $color 100%));
 }
 
+//-----------------よく使うもの
+
+@mixin clearfix{
+  &:after {
+      content:"";
+      display:block;
+      clear:both;
+  }
+}
+
 //-----------------簡単加工
 
 // generic transform
