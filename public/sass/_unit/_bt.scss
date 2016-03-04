@@ -1,5 +1,5 @@
 
-.bt{
+.bt.base{
   @include border-radius(3px);
   @include box-shadow();
   @include gradient-top-lighten($color-brand);
@@ -16,4 +16,8 @@
     @include gradient-top-lighten($color-brand-lighten);
     color:#fff;
   }
+}
+
+.bt.push{
+
 }
