@@ -15,7 +15,16 @@ body,
     overflow: auto !important;
   }
 }//IE10・11用 fixedのバグ対策、scroll量を取得する場合はbodyから取得してください。
-//layout用設定
+
+.browsehappy{
+  background: $color-point;
+  p{
+    color:#fff;
+    text-align: center;
+    padding: $bm*2;
+  }
+}
+
 header,
 footer,
 article,
