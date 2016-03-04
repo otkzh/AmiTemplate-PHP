@@ -12,6 +12,8 @@
 <p>画像リンク</p>
 <a href="#"><img src="<?php echo $base_url ?>/img/dummy/img.png" alt="ダミー" width="200" height="120" /></a>
 <hr>
+<p>sns</p>
+<?php include ($inc_path."/inc/sns.php") ?>
 </section>
 
 <section>

@@ -3,7 +3,9 @@
 <section>
 <h1 class="section-title">リンク関連</h1> <a href="#">テキストリンク</a> <br> <a href="#" target="_blank" rel="nofollow">外部リンク</a> <a href="#" class="bt">テキストリンク</a>
 <p>画像リンク</p> <a href="#"><img src="<?php echo $base_url ?>/img/dummy/img.png" alt="ダミー" width="200" height="120" /></a>
-<hr> </section>
+<hr>
+<p>sns</p>
+<?php include ($inc_path."/inc/sns.php") ?> </section>
 <section>
 <h1 class="section-title">見だし</h1>
 <h2 class="page-title">.page-title ページタイトル</h2>
