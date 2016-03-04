@@ -20,6 +20,7 @@
     background-size: $width $height;
   }
 }
+
 //画像置換
 @mixin bg-img($imgURL, $extension:png) {
   @include hide-text();
@@ -47,9 +48,7 @@
 
 @mixin touch-hover() {
   .no-js & :hover,
-  .no-js & :focus,
   .js.no-touchevents &:hover,
-  .js.no-touchevents &:focus,
   .js.touchevents &.touch {
     @content;
   }
