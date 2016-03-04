@@ -230,7 +230,7 @@ body {
 }
 
 /* line 12, ../sass/_base/_typo.scss */
-img {
+#all img {
   width: 100%;
   max-width: 100%;
   height: auto;

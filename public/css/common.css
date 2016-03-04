@@ -81,7 +81,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 /* line 49, ../sass/_mixins/_mixin.scss */
-.no-js .bt :hover, .no-js .bt :focus, .js.no-touchevents .bt:focus, .js.touchevents .bt.touch {
+.no-js .bt :hover, .no-js .bt :focus, .js.no-touchevents .bt:hover, .js.no-touchevents .bt:focus, .js.touchevents .bt.touch {
   background-color: #d3c6ae;
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFE5DDCF', endColorstr='#FFD3C6AE');
