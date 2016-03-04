@@ -44,7 +44,7 @@
 }
 
 /* line 2, ../sass/_unit/_bt.scss */
-.bt {
+.bt.base {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
@@ -71,7 +71,7 @@
   max-width: 250px;
 }
 /* line 12, ../sass/_unit/_bt.scss */
-.bt:after {
+.bt.base:after {
   content: "";
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
@@ -81,7 +81,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 /* line 49, ../sass/_mixins/_mixin.scss */
-.no-js .bt :hover, .no-js .bt :focus, .js.no-touchevents .bt:focus, .js.touchevents .bt.touch {
+.no-js .bt.base :hover, .no-js .bt.base :focus, .js.no-touchevents .bt.base:hover, .js.no-touchevents .bt.base:focus, .js.touchevents .bt.base.touch {
   background-color: #d3c6ae;
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFE5DDCF', endColorstr='#FFD3C6AE');
