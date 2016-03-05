@@ -1,57 +1,52 @@
-@charset "utf-8";
 //remベース
 html {
   font-size: 62.5%;
   -webkit-text-size-adjust: 100%; //スマフォ縦横切替時設定
 }
+
 body {
   font-size: 1.6rem;
   @include gothic;
 }
-//img
-#all img {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  vertical-align: bottom; //画像下の空白削除
+
+//画像関連
+header,
+footer,
+article,
+section {
+  img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom; //画像下の空白削除
+  }
 }
+
 //テキストリンク
 a {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0); //タップ時のハイライト削除
   outline: none;
   color: $color-brand;
   text-decoration: none;
-  &:hover,
-  &.hover {
-    //text-decoration: underline;
-    color: $color-point;
+  &:hover {
+    text-decoration: none;
+    color: $color-brand-darken;
   }
   &:focus {
-    text-decoration: underline;
+    text-decoration: none;
   }
   &:active {
     outline: 0;
   }
-  &[rel="nofollow"] {
-    &:after {
-      @include icon-font("\f14c");
-      margin-right: $bm/2;
-      margin-left: $bm/2;
-    }
-  }
-  &:hover {
-    img {
-      @include opacity(0.8);
-    }
-  }
 }
-//a
+
 //文字選択
- ::-moz-selection,
+::-moz-selection,
 ::selection {
   background: black;
   text-shadow: none;
 }
+
 //区切り
 hr {
   clear: both;
@@ -60,6 +55,7 @@ hr {
   border-bottom: solid 1px darken(#fff, 1%);
   margin: 1em 0;
 }
+
 h1[class*="title"],
 h2[class*="title"],
 h3[class*="title"],
@@ -71,25 +67,33 @@ h6[class*="title"] {
   margin: 0.5em 0;
   font-weight: bold;
 }
+
 .page-title {
   font-size: 2.6rem;
+  text-align: center;
+  background: $color-dark;
+  color: aliceblue;
+  padding: $margin-inner;
 }
+
 .section-title {
   font-size: 2.2rem;
+  border-bottom: solid 2px $color-brand;
 }
+
 .aside-title {
   font-size: 1.8rem;
 }
+
 .large-title {
-  font-size: 2.4rem;
-  font-weight: normal;
-  color: $color-brand;
+  font-size: 2.2rem;
+  font-weight: normal !important;
 }
+
 .small-title {
   font-size: 1.6rem;
-  font-weight: normal;
-  color: $color-brand;
 }
+
 //文章
 em,
 p,
@@ -108,35 +112,22 @@ th {
   &strong,
   &b {
     font-weight: bold;
-    background-image: linear-gradient(rgba(0,0,0,0) 45%,lighten($color-brand,30%) 40%);
+    background-image: linear-gradient(rgba(0, 0, 0, 0) 45%, lighten($color-brand, 30%) 40%);
   }
 }
+
 ul,
 ol,
 ul ul,
 ol ol,
 ul ol,
-ol ul {
-  list-style-position: inside;
-}
-ul {
-  &.list {
-    margin-left: $bm*3;
-    list-style-type: square;
-    list-style-position: outside;
-  }
-}
-ol {
-  &.list {
-    margin-left: $bm*3;
-    list-style-type: decimal;
-    list-style-position: outside;
-  }
-}
+ol ul {}
+
 dl {
   dt {}
   dd {}
 }
+
 blockquote {
   position: relative;
   padding: 1em;
@@ -148,60 +139,66 @@ blockquote {
     margin-bottom: -10px;
   }
 }
+
 blockquote small,
 cite {
   color: $color-dark;
   font-style: normal;
 }
+
 blockquote p {
   margin-bottom: $bm/4;
 }
+
 small,
 blockquote cite {
-  font-size: 10rem;
+  font-size: 1rem;
   line-height: 1;
 }
-blockquote .pull-right,
-.units-row blockquote .pull-right {
-  float: none;
-  text-align: right;
-  display: block;
-}
+
 address {
   font-style: italic;
 }
+
 del {
   text-decoration: line-through;
 }
+
 abbr[title],
 dfn[title] {
   border-bottom: 1px dotted #000;
   cursor: help;
 }
+
 sub,
 sup {
   font-size: 1rem;
   line-height: 0;
   position: relative;
 }
+
 sup {
   top: -0.5em;
 }
+
 sub {
   bottom: -0.25em;
 }
+
 //code,
 pre,
 kbd,
 samp {
   font-size: 90%;
 }
+
 pre {
   font-size: 90%;
   color: #444;
   padding: 0.85em;
   overflow: auto;
 }
+
 code {
   @include border-radius(2px);
   @include inline-block();
@@ -215,6 +212,7 @@ code {
   position: relative;
   top: -2px;
 }
+
 kbd {
   padding: 2px 6px 1px;
   line-height: 1;
