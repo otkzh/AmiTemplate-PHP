@@ -43,8 +43,30 @@
   content: "\f015";
 }
 
-/* line 2, ../sass/_unit/_bt.scss */
-.bt.base {
+/* line 2, ../sass/_common/_unit/_a.scss */
+a.a-text {
+  position: relative;
+  display: inline-block;
+  transition: .3s;
+}
+/* line 6, ../sass/_common/_unit/_a.scss */
+a.a-text::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: '';
+  width: 0;
+  height: 1px;
+  background-color: #b8a37c;
+  transition: .3s;
+}
+/* line 16, ../sass/_common/_unit/_a.scss */
+a.a-text:hover::after {
+  width: 100%;
+}
+
+/* line 2, ../sass/_common/_unit/_bt.scss */
+.bt-base {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
@@ -70,8 +92,8 @@
   justify-content: space-between;
   max-width: 250px;
 }
-/* line 12, ../sass/_unit/_bt.scss */
-.bt.base:after {
+/* line 12, ../sass/_common/_unit/_bt.scss */
+.bt-base:after {
   content: "";
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
@@ -80,13 +102,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-<<<<<<< HEAD
-/* line 49, ../sass/_mixins/_mixin.scss */
-.no-js .bt.base :hover, .no-js .bt.base :focus, .js.no-touchevents .bt.base:hover, .js.no-touchevents .bt.base:focus, .js.touchevents .bt.base.touch {
-=======
 /* line 50, ../sass/_mixins/_mixin.scss */
-.no-js .bt :hover, .js.no-touchevents .bt:hover, .js.touchevents .bt.touch {
->>>>>>> master
+.no-js .bt-base :hover, .js.no-touchevents .bt-base:hover, .js.touchevents .bt-base.touch {
   background-color: #d3c6ae;
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFE5DDCF', endColorstr='#FFD3C6AE');
