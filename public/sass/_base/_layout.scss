@@ -1,4 +1,5 @@
 //高さと幅基準
+
 html,
 body,
 #all {
@@ -8,6 +9,7 @@ body,
   position: relative;
   z-index: 0;
 }
+
 @media all and (-ms-high-contrast:none) {
   html,
   body {
@@ -28,12 +30,13 @@ body,
 header,
 footer,
 article,
-section,
-.wrapper {
+section{
   @include box-sizing(border-box);
   @include clearfix();
 }
+
 .wrapper {
+  @include clearfix();
   margin: 0 auto;
   width: 100%;
   @include min-screen($width-m + 1px) {
@@ -41,31 +44,39 @@ section,
     padding: 0 $bm*2;
   }
   @include max-screen($width-m) {
-    padding: 0 $bm*4;
+    padding: 0 $bm*2;
   }
   @include max-screen($width-s) {
     padding: 0 $bm;
   }
 }
+
 section {
   padding-bottom: $margin;
   margin-bottom: $margin;
-  border-bottom: solid 1px $color-brand;
 }
+
 #header {
   z-index: 2;
 }
+
 #gnav {
   z-index: 3;
 }
+
 #pan {}
+
 #contents {}
+
 #conts {}
+
 #side {}
+
 #footer {
   z-index: 2;
 }
 #fnav {}
+
 #pagetop {
   z-index: 3;
 }
