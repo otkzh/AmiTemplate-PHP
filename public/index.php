@@ -1,6 +1,6 @@
 <?php
 include ("function.php");
-$title ="HOME";
+$title ="AmiTemplate-表示サンプル";
 $meta_title ="".$title." | ".$sitename."";
 $meta_description ="メタディスクリプション";
 $meta_keywords = "".$keywords."";
