@@ -43,25 +43,25 @@
   content: "\f015";
 }
 
-/* line 2, ../sass/_common/_unit/_a.scss */
-a.a-text {
+/* line 3, ../sass/_common/_unit/_a.scss */
+.a-underline {
   position: relative;
   display: inline-block;
   transition: .3s;
 }
-/* line 6, ../sass/_common/_unit/_a.scss */
-a.a-text::after {
+/* line 7, ../sass/_common/_unit/_a.scss */
+.a-underline::after {
   position: absolute;
   bottom: 0;
   left: 0;
   content: '';
   width: 0;
   height: 1px;
-  background-color: #b8a37c;
+  background-color: #C42316;
   transition: .3s;
 }
-/* line 16, ../sass/_common/_unit/_a.scss */
-a.a-text:hover::after {
+/* line 17, ../sass/_common/_unit/_a.scss */
+.a-underline:hover::after {
   width: 100%;
 }
 
