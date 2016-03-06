@@ -3,11 +3,7 @@
   
   <section>
     <h1 class="section-title">リンク関連</h1>
-
-    <div><a href="#">テキストリンク</a></div>
-    <div><a href="#" target="_blank" rel="nofollow">外部リンク</a></div>
-    <div><a href="#" class="a-text">かっこいいテキストリンク</a></div>
-    <div><a href="#" class="bt">テキストリンク</a></div>
+    <div><a href="<?php echo $base_url ?>/units">[a]タグのリンク集は、AmiTemplate-表示サンプル-unitsへ</a></div>
     <h2 class="large-title">画像リンク</h2>
     <a href="#"><img src="<?php echo $base_url ?>/img/dummy/img.png" alt="ダミー" ></a>
     <hr>

@@ -1,0 +1,6 @@
+.assist{
+  @include box-sizing(border-box);
+  border:solid 1px $color-light;
+  padding: $margin-inner;
+  margin-bottom: $margin-inner;
+}

@@ -1,23 +1,75 @@
+[class*="btn-"] {
 
-.bt-base{
-  @include border-radius(3px);
-  @include box-shadow();
-  @include gradient-top-lighten($color-brand);
-  color:#fff;
-  padding: $bm $margin-s;
-  @include display-flex;
-  @include align-items(center);
-  @include justify-content(space-between);
-  max-width: 250px;
-  &:after{
-    @include icon-font();
+  //矢印  
+  &[class*="arrow"] {
+    @include justify-content(space-between);
+    &::after {
+      @include icon-font("\f061");
+      margin-left: $bm/2;
+    }
+    //外部リンク
+    &[rel="nofollow"] {
+      &::after {
+        content: "\f14c";
+      }
+    }
+    //pdfファイルへのリンク
+    &[href$=".pdf"] {
+      &:after {
+        content: "\f1c1";
+      }
+    }
   }
-  @include touch-hover(){
-    @include gradient-top-lighten($color-brand-lighten);
-    color:#fff;
+
+  //基本ボタン
+  &[class*="base"] {
+    @include border-radius(3px);
+    @include box-shadow();
+    @include gradient-top-lighten($color-brand);
+    height: 36px;
+    color: #fff;
+    padding: $bm $margin-s;
+    @include display-flex;
+    @include align-items(center);
+    @include touch-hover() {
+      @include gradient-top-lighten($color-brand-lighten);
+      color: #fff;
+      text-decoration: none;
+    }
+    //強調ボタン
+    &[class*="point"] {
+      @include gradient-top-lighten($color-point);
+      @include touch-hover() {
+        @include gradient-top-lighten($color-point-lighten);
+      }
+    }
   }
-}
-
-.bt.push{
-
-}
+  
+  //pushボタン
+  &[class*="push"] {
+    @include display-flex;
+    @include align-items(center);
+    @include border-radius(3px);
+    background-color: $color-brand;
+    @include box-shadow(0 5px $color-brand-darken);
+    color: #fff;
+    height: 42px;
+    padding: $bm $margin-s;
+    position: relative;
+    top: 0;
+    @include touch-hover() {
+      text-decoration: none;
+      top: 3px;
+      @include box-shadow(0 2px $color-brand-darken);
+      @include transition(0.1s 0s);
+    }
+    //強調ボタン
+    &[class*="point"] {
+      background-color: $color-point;
+      @include box-shadow(0 5px $color-point-darken);
+      @include touch-hover() {
+        @include box-shadow(0 2px $color-point-darken);
+      }
+    }
+  }
+} //btn

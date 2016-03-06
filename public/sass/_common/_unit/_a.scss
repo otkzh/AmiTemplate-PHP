@@ -1,19 +1,41 @@
-//かっこいいテキストリンク
-a.a-text {
-  position: relative;
-  display: inline-block;
-  transition: .3s;
-  &::after {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    content: '';
-    width: 0;
-    height: 1px;
-    background-color: $color-brand;
+
+[class*="a-"] {
+  
+  //矢印  
+  &[class*="arrow"] {
+    &::after {
+      @include icon-font("\f061");
+      margin-left: $bm/2;
+    }
+    //外部リンク
+    &[rel="nofollow"] {
+      &::after {
+        content: "\f14c";
+      }
+    }
+  }
+  
+  //かっこいいテキストリンク  
+  &[class*="underline"] {
+    position: relative;
+    display: inline-block;
     transition: .3s;
-  }
-  &:hover::after {
-    width: 100%;
-  }
-}
+    &::before {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      content: '';
+      width: 0;
+      height: 1px;
+      background-color: $color-point;
+      transition: .3s;
+    }
+    @include touch-hover() {
+      text-decoration: none;
+      &::before {
+        width: 100%;
+      }
+    }
+  } //underline
+
+} //a

@@ -26,17 +26,19 @@ section {
 a {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0); //タップ時のハイライト削除
   outline: none;
-  color: $color-brand;
+  color: $color-point;
   text-decoration: none;
+  font-weight: bold;
   &:hover {
-    text-decoration: none;
-    color: $color-brand-darken;
+    text-decoration: underline;
+    color: $color-point-darken;
   }
   &:focus {
     text-decoration: none;
   }
   &:active {
-    outline: 0;
+    text-decoration: none;
+    outline: none;
   }
 }
 
