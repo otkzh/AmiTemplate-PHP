@@ -29,16 +29,15 @@ a {
   color: $color-point;
   text-decoration: none;
   font-weight: bold;
+  &:active,
+  &:focus,
   &:hover {
-    text-decoration: underline;
-    color: $color-point-darken;
-  }
-  &:focus {
-    text-decoration: none;
-  }
-  &:active {
     text-decoration: none;
     outline: none;
+  }
+  @include touch-hover(){
+    text-decoration: underline;
+    color: $color-point-darken;
   }
 }
 
