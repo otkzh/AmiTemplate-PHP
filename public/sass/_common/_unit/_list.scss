@@ -1,0 +1,20 @@
+ul.list {
+  & > li{
+    list-style:square inside;
+  }
+}
+
+ol.list{
+  & > li{
+    list-style:decimal inside;
+  }
+}
+
+[class*="list-"] {
+  &[class*="base"] > li{
+    list-style: square inside;
+  }
+  &[class*="num"] > li{
+    list-style: decimal inside;
+  }
+} //list
