@@ -12,7 +12,6 @@
     <li><a href="<?php echo $link_url ?>/units" class="units"><span>units-sample</span></a></li>
     <li><a href="#"><span>menu</span></a></li>
     <li><a href="#"><span>menu</span></a></li>
-    <li><a href="#"><span>menu</span></a></li>
   </ul>
   </div>
 </nav>
