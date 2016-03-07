@@ -6,7 +6,7 @@
 <h2 class="large-title">画像リンク</h2> <a href="#"><img src="<?php echo $base_url ?>/img/dummy/img.png" alt="ダミー" ></a>
 <hr>
 <p>sns</p>
-<?php include ($inc_path."/inc/sns.php") ?> </section>
+<?php include($inc_path.'/inc/sns.php') ?> </section>
 <section>
 <h1 class="section-title">見だし</h1>
 <h2 class="page-title">.page-title ページタイトル</h2>
