@@ -1,6 +1,6 @@
 <article class="wrapper">
   <h1 class="page-title"><?php echo $title ?></h1>
-  
+
   <section>
     <h1 class="section-title">リンク関連</h1>
     <div><a href="<?php echo $base_url ?>/units">[a]タグのリンク集は、AmiTemplate-表示サンプル-unitsへ</a></div>
@@ -8,7 +8,7 @@
     <a href="#"><img src="<?php echo $base_url ?>/img/dummy/img.png" alt="ダミー" ></a>
     <hr>
     <p>sns</p>
-    <?php include ($inc_path."/inc/sns.php") ?>
+    <?php include($inc_path.'/inc/sns.php') ?>
   </section>
 
   <section>
