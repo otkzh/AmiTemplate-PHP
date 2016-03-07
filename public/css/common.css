@@ -4,10 +4,89 @@
   background: #333;
   width: 100%;
 }
+/* line 5, ../sass/_common/_header.scss */
+#header .head-logo {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  height: 100px;
+}
 
 /* line 1, ../sass/_common/_gnav.scss */
 #gnav {
-  background: #d3c6ae;
+  padding-bottom: 8px;
+}
+/* line 4, ../sass/_common/_gnav.scss */
+body.home #gnav ul li a.home {
+  background-color: #967e51;
+  color: #fff;
+}
+/* line 4, ../sass/_common/_gnav.scss */
+body.units #gnav ul li a.units {
+  background-color: #967e51;
+  color: #fff;
+}
+@media only screen and (min-width: 768px) {
+  /* line 11, ../sass/_common/_gnav.scss */
+  #gnav .js-menu {
+    display: none;
+  }
+  /* line 14, ../sass/_common/_gnav.scss */
+  #gnav ul {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    margin: -8px;
+  }
+  /* line 18, ../sass/_common/_gnav.scss */
+  #gnav ul li {
+    -webkit-flex: 1;
+    flex: 1;
+    padding: 0 8px;
+  }
+  /* line 21, ../sass/_common/_gnav.scss */
+  #gnav ul li a {
+    display: block;
+    background: #595959;
+    height: 45px;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+  /* line 50, ../sass/_mixins/_mixin.scss */
+  .no-js #gnav ul li a :hover, .js.no-touchevents #gnav ul li a:hover, .js.touchevents #gnav ul li a.touch {
+    background-color: #C42316;
+    color: #fff;
+    text-decoration: none;
+  }
+}
+@media only screen and (max-width: 767px) {
+  /* line 41, ../sass/_common/_gnav.scss */
+  #gnav ul li a {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    padding-left: 24px;
+    height: 42px;
+    border-bottom: solid 1px #967e51;
+  }
+  /* line 50, ../sass/_mixins/_mixin.scss */
+  .no-js #gnav ul li a :hover, .js.no-touchevents #gnav ul li a:hover, .js.touchevents #gnav ul li a.touch {
+    background-color: #C42316;
+    color: #fff;
+    text-decoration: none;
+  }
 }
 
 /* line 1, ../sass/_common/_pan.scss */

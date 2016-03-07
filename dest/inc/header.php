@@ -1,14 +1,21 @@
 <header id="header">
 <div class="wrapper">
-<div class="head-logo"><a href="<?php echo $link_url ?>/"><span><?php echo $title?></a></div>
+<div class="head-logo">
+<a href="<?php echo $link_url ?>">
+<?php echo $title?>
+</a>
 </div>
-<nav id="gnav">
-<ul class="wrapper js-close">
-<li><a href="<?php echo $link_url ?>/"><span>ホーム</span></a></li>
-<li><a href="<?php echo $link_url ?>/units"><span>units-sample</span></a></li>
-<li><a href="<?php echo $link_url ?>/#"><span>アバウト</span></a></li>
-<li><a href="<?php echo $link_url ?>/#"><span>お問い合わせ</span></a></li>
-<li><span>close</span></li>
+</div>
+<nav id="gnav" class="js-close">
+<div class="wrapper">
+<div class="js-menu"><span>menu</span></div>
+<ul>
+<li><a href="<?php echo $link_url ?>/" class="home"><span>ホーム</span></a></li>
+<li><a href="<?php echo $link_url ?>/units" class="units"><span>units-sample</span></a></li>
+<li><a href="#"><span>menu</span></a></li>
+<li><a href="#"><span>menu</span></a></li>
+<li><a href="#"><span>menu</span></a></li>
 </ul>
+</div>
 </nav>
 </header>
