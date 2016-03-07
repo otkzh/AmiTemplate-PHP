@@ -229,19 +229,33 @@
 
 /* line 2, ../sass/_common/_unit/_list.scss */
 ul.list > li {
-  list-style: square inside;
+  list-style: square outside;
+  margin-left: 1.5em;
 }
 
-/* line 8, ../sass/_common/_unit/_list.scss */
+/* line 9, ../sass/_common/_unit/_list.scss */
 ol.list > li {
-  list-style: decimal inside;
+  list-style: decimal outside;
+  margin-left: 1.5em;
 }
 
-/* line 14, ../sass/_common/_unit/_list.scss */
+/* line 16, ../sass/_common/_unit/_list.scss */
 [class*="list-"][class*="base"] > li {
-  list-style: square inside;
+  list-style: square outside;
+  margin-left: 1.5em;
 }
-/* line 17, ../sass/_common/_unit/_list.scss */
+/* line 20, ../sass/_common/_unit/_list.scss */
 [class*="list-"][class*="num"] > li {
-  list-style: decimal inside;
+  list-style: decimal outside;
+  margin-left: 1.5em;
+}
+/* line 24, ../sass/_common/_unit/_list.scss */
+[class*="list-"][class*="line"] > li {
+  padding-left: 24px;
+  border-left: solid 4px #b8a37c;
+  margin: 12px 0;
+}
+/* line 28, ../sass/_common/_unit/_list.scss */
+[class*="list-"][class*="line"] > li:last-child, [class*="list-"][class*="line"] > li:first-child {
+  margin: 0;
 }

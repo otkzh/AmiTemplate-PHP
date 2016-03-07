@@ -271,28 +271,24 @@ a {
   font-weight: bold;
 }
 /* line 32, ../sass/_base/_typo.scss */
-a:hover {
-  text-decoration: underline;
-  color: #7f170e;
-}
-/* line 36, ../sass/_base/_typo.scss */
-a:focus {
-  text-decoration: none;
-}
-/* line 39, ../sass/_base/_typo.scss */
-a:active {
+a:active, a:focus, a:hover {
   text-decoration: none;
   outline: none;
 }
+/* line 50, ../sass/_mixins/_mixin.scss */
+.no-js a :hover, .js.no-touchevents a:hover, .js.touchevents a.touch {
+  text-decoration: underline;
+  color: #7f170e;
+}
 
-/* line 46, ../sass/_base/_typo.scss */
+/* line 45, ../sass/_base/_typo.scss */
 ::-moz-selection,
 ::selection {
   background: black;
   text-shadow: none;
 }
 
-/* line 53, ../sass/_base/_typo.scss */
+/* line 52, ../sass/_base/_typo.scss */
 hr {
   clear: both;
   border: none;
@@ -301,7 +297,7 @@ hr {
   margin: 1em 0;
 }
 
-/* line 61, ../sass/_base/_typo.scss */
+/* line 60, ../sass/_base/_typo.scss */
 h1[class*="title"],
 h2[class*="title"],
 h3[class*="title"],
@@ -314,7 +310,7 @@ h6[class*="title"] {
   font-weight: bold;
 }
 
-/* line 73, ../sass/_base/_typo.scss */
+/* line 72, ../sass/_base/_typo.scss */
 .page-title {
   font-size: 2.6rem;
   text-align: center;
@@ -323,29 +319,29 @@ h6[class*="title"] {
   padding: 24px;
 }
 
-/* line 81, ../sass/_base/_typo.scss */
+/* line 80, ../sass/_base/_typo.scss */
 .section-title {
   font-size: 2.2rem;
   border-bottom: solid 2px #b8a37c;
 }
 
-/* line 86, ../sass/_base/_typo.scss */
+/* line 85, ../sass/_base/_typo.scss */
 .aside-title {
   font-size: 1.8rem;
 }
 
-/* line 90, ../sass/_base/_typo.scss */
+/* line 89, ../sass/_base/_typo.scss */
 .large-title {
   font-size: 2.2rem;
   font-weight: normal !important;
 }
 
-/* line 95, ../sass/_base/_typo.scss */
+/* line 94, ../sass/_base/_typo.scss */
 .small-title {
   font-size: 1.6rem;
 }
 
-/* line 100, ../sass/_base/_typo.scss */
+/* line 99, ../sass/_base/_typo.scss */
 em,
 p,
 ul,
@@ -361,7 +357,7 @@ th {
   margin: 0.5em 0;
   color: #595959;
 }
-/* line 114, ../sass/_base/_typo.scss */
+/* line 113, ../sass/_base/_typo.scss */
 emstrong, emb,
 pstrong,
 pb,
@@ -385,13 +381,13 @@ thb {
   background-image: linear-gradient(rgba(0, 0, 0, 0) 45%, #eee9df 40%);
 }
 
-/* line 133, ../sass/_base/_typo.scss */
+/* line 132, ../sass/_base/_typo.scss */
 blockquote {
   position: relative;
   padding: 1em;
   border-bottom: solid 1px #333;
 }
-/* line 137, ../sass/_base/_typo.scss */
+/* line 136, ../sass/_base/_typo.scss */
 blockquote:before {
   content: "";
   display: inline-block;
@@ -405,43 +401,43 @@ blockquote:before {
   margin-bottom: -10px;
 }
 
-/* line 145, ../sass/_base/_typo.scss */
+/* line 144, ../sass/_base/_typo.scss */
 blockquote small,
 cite {
   color: #333;
   font-style: normal;
 }
 
-/* line 151, ../sass/_base/_typo.scss */
+/* line 150, ../sass/_base/_typo.scss */
 blockquote p {
   margin-bottom: 2px;
 }
 
-/* line 155, ../sass/_base/_typo.scss */
+/* line 154, ../sass/_base/_typo.scss */
 small,
 blockquote cite {
   font-size: 1rem;
   line-height: 1;
 }
 
-/* line 161, ../sass/_base/_typo.scss */
+/* line 160, ../sass/_base/_typo.scss */
 address {
   font-style: italic;
 }
 
-/* line 165, ../sass/_base/_typo.scss */
+/* line 164, ../sass/_base/_typo.scss */
 del {
   text-decoration: line-through;
 }
 
-/* line 169, ../sass/_base/_typo.scss */
+/* line 168, ../sass/_base/_typo.scss */
 abbr[title],
 dfn[title] {
   border-bottom: 1px dotted #000;
   cursor: help;
 }
 
-/* line 175, ../sass/_base/_typo.scss */
+/* line 174, ../sass/_base/_typo.scss */
 sub,
 sup {
   font-size: 1rem;
@@ -449,24 +445,24 @@ sup {
   position: relative;
 }
 
-/* line 182, ../sass/_base/_typo.scss */
+/* line 181, ../sass/_base/_typo.scss */
 sup {
   top: -0.5em;
 }
 
-/* line 186, ../sass/_base/_typo.scss */
+/* line 185, ../sass/_base/_typo.scss */
 sub {
   bottom: -0.25em;
 }
 
-/* line 191, ../sass/_base/_typo.scss */
+/* line 190, ../sass/_base/_typo.scss */
 pre,
 kbd,
 samp {
   font-size: 90%;
 }
 
-/* line 197, ../sass/_base/_typo.scss */
+/* line 196, ../sass/_base/_typo.scss */
 pre {
   font-size: 90%;
   color: #444;
@@ -474,7 +470,7 @@ pre {
   overflow: auto;
 }
 
-/* line 204, ../sass/_base/_typo.scss */
+/* line 203, ../sass/_base/_typo.scss */
 code {
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
@@ -495,7 +491,7 @@ code {
   top: -2px;
 }
 
-/* line 218, ../sass/_base/_typo.scss */
+/* line 217, ../sass/_base/_typo.scss */
 kbd {
   padding: 2px 6px 1px;
   line-height: 1;

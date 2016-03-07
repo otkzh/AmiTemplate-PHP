@@ -49,6 +49,37 @@ $body_class ="units";
 <div class="assist"> <a href="<?php echo $no_link ?>" class="btn-push-point">プッシュコンバージョンボタン</a> </div>
 <div class="assist"> <a href="<?php echo $no_link ?>" class="btn-push-arrow">矢印付きプッシュボタン</a> </div>
 </section>
+<section class="wrapper">
+<h1 class="section-title">list</h1>
+<div class="assist">
+<ul>
+<li>ダミーテキストダミーテキストダミーテキストダミーテキスト</li>
+<li>ダミーテキストダミーテキストダミーテキストダミーテキスト</li>
+<li>ダミーテキストダミーテキストダミーテキストダミーテキスト</li>
+</ul>
+</div>
+<div class="assist">
+<ul class="list-line">
+<li>ダミーテキストダミーテキストダミーテキストダミーテキスト</li>
+<li>ダミーテキストダミーテキストダミーテキストダミーテキスト</li>
+<li>ダミーテキストダミーテキストダミーテキストダミーテキスト
+<ul class="list-base">
+<li>ダミーテキストダミーテキストダミーテキストダミーテキスト</li>
+<li>ダミーテキストダミーテキストダミーテキストダミーテキスト</li>
+<li>ダミーテキストダミーテキストダミーテキストダミーテキスト</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="assist">
+<ul class="list-num">
+<li>ダミーテキストダミーテキストダミーテキストダミーテキスト</li>
+<li>ダミーテキストダミーテキストダミーテキストダミーテキスト</li>
+<li>ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト</li>
+<li>ダミーテキストダミーテキストダミーテキストダミーテキスト<a href="" class="a-underline-arrow">リンク</a></li>
+</ul>
+</div>
+</section>
 </article>
 </div>
 <?php include ($inc_path."/inc/footer.php") ?>

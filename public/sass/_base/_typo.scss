@@ -35,7 +35,7 @@ a {
     text-decoration: none;
     outline: none;
   }
-  @include touch-hover(){
+  @include touch-hover() {
     text-decoration: underline;
     color: $color-point-darken;
   }
