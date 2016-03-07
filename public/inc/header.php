@@ -10,9 +10,8 @@
   <ul>
     <li><a href="<?php echo $link_url ?>/" class="home"><span>ホーム</span></a></li>
     <li><a href="<?php echo $link_url ?>/units" class="units"><span>units-sample</span></a></li>
-    <li><a href="#"><span>menu</span></a></li>
-    <li><a href="#"><span>menu</span></a></li>
-    <li><a href="#"><span>menu</span></a></li>
+    <li><a href="#"><span>menu2</span></a></li>
+    <li><a href="#"><span>menu3</span></a></li>
   </ul>
   </div>
 </nav>
