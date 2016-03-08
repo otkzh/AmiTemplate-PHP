@@ -23,8 +23,8 @@ var pngquant = require('imagemin-pngquant');
 var hostName = "192.168.33.50"; //browserSyncするローカルIPか localHostNameを記載
 
 var dir = {
-  "base": "./public", // 作業用フォルダ
-  "dest": "./dest" //納品用データー格納フォルダ
+  "base": "public", // 作業用フォルダ
+  "dest": "dest" //納品用データー格納フォルダ
 }
 
 //各種パス関連

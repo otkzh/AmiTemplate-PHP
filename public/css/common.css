@@ -10,11 +10,11 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+      align-items: center;
   -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+      justify-content: center;
   height: 100px;
 }
 
@@ -43,15 +43,15 @@ body.units #gnav ul li a.units {
     display: -ms-flexbox;
     display: flex;
     -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+        align-items: center;
     margin: -8px;
   }
   /* line 18, ../sass/_common/_gnav.scss */
   #gnav ul li {
     -webkit-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+    -ms-flex: 1;
+        flex: 1;
     padding: 0 8px;
   }
   /* line 21, ../sass/_common/_gnav.scss */
@@ -63,11 +63,11 @@ body.units #gnav ul li a.units {
     display: -ms-flexbox;
     display: flex;
     -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+        align-items: center;
     -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+        justify-content: center;
   }
   /* line 50, ../sass/_mixins/_mixin.scss */
   .no-js #gnav ul li a :hover, .js.no-touchevents #gnav ul li a:hover, .js.touchevents #gnav ul li a.touch {
@@ -84,8 +84,8 @@ body.units #gnav ul li a.units {
     display: -ms-flexbox;
     display: flex;
     -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+        align-items: center;
     padding-left: 24px;
     height: 42px;
     border-bottom: solid 1px #967e51;
@@ -175,8 +175,8 @@ body.units #gnav ul li a.units {
 /* line 4, ../sass/_common/_unit/_bt.scss */
 [class*="btn-"][class*="arrow"] {
   -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
 }
 /* line 6, ../sass/_common/_unit/_bt.scss */
 [class*="btn-"][class*="arrow"]::after {
@@ -214,8 +214,8 @@ body.units #gnav ul li a.units {
   display: -ms-flexbox;
   display: flex;
   -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+      align-items: center;
 }
 /* line 50, ../sass/_mixins/_mixin.scss */
 .no-js [class*="btn-"][class*="base"] :hover, .js.no-touchevents [class*="btn-"][class*="base"]:hover, .js.touchevents [class*="btn-"][class*="base"].touch {
@@ -252,8 +252,8 @@ body.units #gnav ul li a.units {
   display: -ms-flexbox;
   display: flex;
   -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+      align-items: center;
   border-radius: 3px;
   background-color: #b8a37c;
   box-shadow: 0 5px #967e51;
