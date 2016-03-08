@@ -73,7 +73,6 @@ gulp.task('compass', function () {
       //browsers: ['last 2 versions', 'IE 9'],// ie9対応
     }))
     .pipe(gulp.dest(dir.base + "/css"));
-
 });
 gulp.task('css', ['compass'], function () {
   return gulp.src(dir.base + "/**/*.css")
@@ -122,7 +121,7 @@ gulp.task('font-reload', ['font'], function () {
   browserSync.reload();
 });
 
-//js関連　お好みで改造する。coffeeお好き？
+//js関連 お好みで改造する。coffeeお好き？
 gulp.task('js', function () {
   return gulp.src(paths.js)
     .pipe(gulp.dest(dir.dest))
