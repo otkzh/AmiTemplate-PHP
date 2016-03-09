@@ -26,7 +26,7 @@ $host = ($_SERVER["HTTP_HOST"]);
 $base_url = ("");
 
 //フルパスリンクURL
-$link_url = ("http://".$host.$base_url);
+$link_url = ('http://'.$host.$base_url);
 
 //$ssl_url = ("http://".$host.$base_url);  //httpバージョン
 $ssl_url = ("https://".$host.$base_url);  //httpsバージョン

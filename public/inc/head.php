@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="<?php echo $meta_description; ?>">
   <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-  <meta name="Identifier-URL" content="<?php echo $base_url ?>/">
+  <meta name="Identifier-URL" content="<?php echo $link_url ?>/">
   <script src="<?php echo $base_url ?>/js/vendor/modernizr.min.js"></script>
   <link rel="stylesheet" href="<?php echo $base_url ?>/css/base.css">
   <link rel="stylesheet" href="<?php echo $base_url ?>/css/common.css">
