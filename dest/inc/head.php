@@ -22,7 +22,8 @@
   <meta property="og:description" content="<?php echo $meta_description; ?>" />
   <meta property="og:url" content="<?php echo $_SERVER[" REQUEST_URI "]; ?>" />
   <!-- meta property="og:image" content="" -->
-  <meta property="og:site_name" content="<?php echo $sitename ?>" /> </head>
+  <meta property="og:site_name" content="<?php echo $sitename ?>" />
+</head>
 
 <body class="<?php echo $body_class." ".$mydir." ".$filename ?>">
 <?php include ($inc_path."/inc/ie10.php") ?>
