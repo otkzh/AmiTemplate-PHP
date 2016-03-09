@@ -3,12 +3,11 @@
 #######################################
 #メタデーター管理
 
-$keywords = "キーワード,キーワード";
-
-$sitename = "サイト名";
+$sitename = 'AmiTemplate-PHP';//サイト名
+$description = '短くてセンスあるサイト内説明。腕の見せどころ…サイト共通のディスクリプションですから。';
 
 function my_head_meta(){
-//global $keywords;
+  global $sitename,$description;
 }
 
 #######################################
