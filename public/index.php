@@ -1,9 +1,8 @@
 <?php
 include 'function.php';
-$title = 'AmiTemplate-表示サンプル';
+$title = 'トップページ';
 $meta_title = ''.$title.' | '.$sitename.'';
-$meta_description = 'メタディスクリプション';
-$meta_keywords = ''.$keywords.'';
+$meta_description = 'メタディスクリプション。'.$description;
 $body_class = 'home';
 ?>
 <?php include($inc_path.'/inc/head.php') ?>
