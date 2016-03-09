@@ -3,15 +3,15 @@
 <footer id="footer">
 
   <nav class="footer-nav">
-    <ul class="fnav">
-      <li class="home"><a href="<?php echo $link_url ?>/"><span>ホーム</span></a></li>
-      <li class="about"><a href="<?php echo $link_url ?>/#about"><span>about</span></a></li>
-      <li class="list"><a href="<?php echo $link_url ?>/list"><span>list</span></a></li>
-      <li class="howto"><a href="<?php echo $link_url ?>/howto"><span>howto</span></a></li>
+    <ul id="fnav">
+      <li><a href="<?php echo $link_url ?>/" class="home"><span>ホーム</span></a></li>
+      <li><a href="<?php echo $link_url ?>/units" class="units"><span>units-sample</span></a></li>
+      <li><a href="#"><span>menu1</span></a></li>
+      <li><a href="#"><span>menu2</span></a></li>
     </ul>
   </nav>
 
-   <address>
+  <address>
      <p><?php echo $sitename ?>は、<a href="http://amiten.net" target="_blank">株式会社アミテン</a>によって運営されています。</p>
      <a href="" target="_blank" rel="nofollow" class="arrow">GitHub</a>
      <a href="" target="_blank" rel="nofollow" class="arrow">Facebook</a>
