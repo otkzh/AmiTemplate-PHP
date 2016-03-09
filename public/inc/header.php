@@ -1,10 +1,10 @@
 <header id="header">
   <div class="wrapper">
 
-    <hgroup class="header-hgroup">
+    <div class="header-hgroup">
       <h1 class="logo"><a href="<?php echo $link_url ?>/"><?php echo $sitename ?></a></h1>
       <p class="description"><?php echo $description ?></p>
-    </hgroup>
+    </div>
 
     <nav class="header-nav js-close">
       <div class="js-menu"><span>menu</span></div>

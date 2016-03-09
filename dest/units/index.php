@@ -1,9 +1,8 @@
 <?php
 include ("../function.php");
-$title ="AmiTemplate-表示サンプル-units";
-$meta_title ="".$title." | ".$sitename."";
-$meta_description ="メタディスクリプション";
-$meta_keywords = "".$keywords."";
+$title ='units-sample';
+$meta_title = ''.$title.' | '.$sitename.'';
+$meta_description = 'メタディスクリプション。'.$description;
 $body_class ="units";
 ?>
 <?php include ($inc_path."/inc/head.php") ?>
