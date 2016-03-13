@@ -2,14 +2,17 @@
 include ("../function.php");
 $title ='units-sample';
 $meta_title = ''.$title.' | '.$sitename.'';
-$meta_description = 'メタディスクリプション。'.$description;
+$meta_description = $title.'のページです。メタディスクリプション。'.$description;
 $body_class ="units";
 ?>
 <?php include ($inc_path."/inc/head.php") ?>
 <?php include ($inc_path."/inc/header.php") ?>
 <?php include ($inc_path."/inc/pan.php") ?>
-<div id="contents">
+<main class="main-container">
 <article id="conts">
+<header id="main-area">
+<h1><?php echo $title ?></h1> </header>
+<div id="js-conts-container">
 <section class="wrapper">
 <h1 class="section-title">基本設計について</h1>
 <h2 class="large-title">classの指定の仕方を統一するが・・・</h2>
@@ -79,8 +82,9 @@ $body_class ="units";
 </ul>
 </div>
 </section>
-</article>
 </div>
+</article>
+</main>
 <?php include ($inc_path."/inc/footer.php") ?>
 <!-- add scripts -->
 <!-- //add scripts -->

@@ -7,11 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="<?php echo $meta_description; ?>">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<<<<<<< Updated upstream
 <meta name="Identifier-URL" content="<?php echo $link_url ?>/">
-=======
-<meta name="Identifier-URL" content="<?php echo $base_url ?>/">
->>>>>>> Stashed changes
 <script src="<?php echo $base_url ?>/js/vendor/modernizr.min.js"></script>
 <link rel="stylesheet" href="<?php echo $base_url ?>/css/base.css">
 <link rel="stylesheet" href="<?php echo $base_url ?>/css/common.css">
@@ -22,21 +18,12 @@
 <?php echo $meta_title ?>
 </title>
 <!-- OGP -->
-<<<<<<< Updated upstream
 <meta property="og:title" content="<?php echo $title ?>">
 <meta property="og:type" content="website">
 <meta property="og:description" content="<?php echo $meta_description ?>">
 <meta property="og:url" content="<?php echo $link_url ?>/">
 <!-- meta property="og:image" content="" -->
 <meta property="og:site_name" content="<?php echo $sitename ?>"> </head>
-=======
-<meta property="og:title" content="<?php echo $title ?>" />
-<meta property="og:type" content="website" />
-<meta property="og:description" content="<?php echo $meta_description; ?>" />
-<meta property="og:url" content="<?php echo $_SERVER[" REQUEST_URI "]; ?>" />
-<!-- meta property="og:image" content="" -->
-<meta property="og:site_name" content="<?php echo $sitename ?>" /> </head>
->>>>>>> Stashed changes
 
 <body class="<?php echo $body_class." ".$mydir." ".$filename ?>">
 <?php include ($inc_path."/inc/ie10.php") ?>

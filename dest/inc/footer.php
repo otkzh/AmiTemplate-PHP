@@ -1,11 +1,15 @@
-<div id="pagetop"><a href="#all"><span>ページのトップへ</span></a></div>
+<div id="pagetop"><a href="#all" data-scroll><span>ページのトップへ</span></a></div>
 <footer id="footer">
 <nav class="footer-nav">
-<ul id="fnav">
-<li><a href="<?php echo $link_url ?>/" class="home"><span>ホーム</span></a></li>
-<li><a href="<?php echo $link_url ?>/units" class="units"><span>units-sample</span></a></li>
-<li><a href="#"><span>menu1</span></a></li>
-<li><a href="#"><span>menu2</span></a></li>
+<ul class="gnav">
+<li><a href="<?php echo $base_url ?>/" class="home"><span>HOME</span></a></li>
+<li><a href="<?php echo $base_url ?>/units" class="units"><span>UNITS</span></a></li>
+<li><a href="#"><span>MENU1</span></a></li>
+<li><a href="#"><span>MENU2</span></a></li>
+</ul>
+<ul class="snav">
+<li><a href="#" class="js"><span>JP</span></a></li>
+<li><a href="#" class="en"><span>EN</span></a></li>
 </ul>
 </nav> <address>
      <p><?php echo $sitename ?>は、<a href="http://amiten.net" target="_blank">株式会社アミテン</a>によって運営されています。</p>
