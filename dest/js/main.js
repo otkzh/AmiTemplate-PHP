@@ -28,8 +28,8 @@ requirejs(['pjax'], function () {
   ],
     load: {
       head: 'base, meta, link',
-            css: true,
-            script: true
+//            css: true,
+//            script: true
     },
     cache: {
       click: true,
