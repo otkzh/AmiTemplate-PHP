@@ -1,136 +1,268 @@
 @charset "UTF-8";
 /* line 1, ../sass/_common/_header.scss */
 #header {
-  background: #333;
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 100%;
+  padding: 24px;
+  border-bottom: 1px solid #eee;
 }
-/* line 5, ../sass/_common/_header.scss */
-#header .head-logo {
+/* line 8, ../sass/_common/_header.scss */
+#header .header-hgroup {
+  -webkit-flex: 0 0 250px;
+      -ms-flex: 0 0 250px;
+          flex: 0 0 250px;
+}
+/* line 11, ../sass/_common/_header.scss */
+#header .header-nav {
+  width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+@media only screen and (max-width: 768px) {
+  /* line 1, ../sass/_common/_header.scss */
+  #header {
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  /* line 19, ../sass/_common/_header.scss */
+  #header .header-hgroup {
+    -webkit-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    margin-bottom: 24px;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  /* line 25, ../sass/_common/_header.scss */
+  #header .header-nav {
+    width: 100%;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+/* line 34, ../sass/_common/_header.scss */
+#header .logo a {
+  box-sizing: border-box;
+}
+/* line 50, ../sass/_mixins/_mixin.scss */
+.no-js #header .logo a :hover, .js.no-touchevents #header .logo a:hover, .js.touchevents #header .logo a.touch {
+  border-bottom: 1px solid #b8a37c;
+}
+/* line 41, ../sass/_common/_header.scss */
+#header .description {
+  display: none;
+}
+/* line 44, ../sass/_common/_header.scss */
+#header .gnav,
+#header .snav,
+#header .js-menu {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-      align-items: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-      justify-content: center;
-  height: 100px;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 1em;
 }
-
-/* line 1, ../sass/_common/_gnav.scss */
-#gnav {
-  padding-bottom: 8px;
+/* line 50, ../sass/_common/_header.scss */
+#header .gnav li,
+#header .snav li,
+#header .js-menu li {
+  margin: 0;
 }
-/* line 4, ../sass/_common/_gnav.scss */
-body.home #gnav ul li a.home {
-  background-color: #967e51;
-  color: #fff;
+/* line 53, ../sass/_common/_header.scss */
+#header .gnav a,
+#header .snav a,
+#header .js-menu a {
+  display: block;
+  padding: 0 8px;
 }
-/* line 4, ../sass/_common/_gnav.scss */
-body.units #gnav ul li a.units {
-  background-color: #967e51;
-  color: #fff;
+/* line 59, ../sass/_common/_header.scss */
+body.home #header .home, body.units #header .units {
+  text-decoration: underline;
 }
-@media only screen and (min-width: 768px) {
-  /* line 11, ../sass/_common/_gnav.scss */
-  #gnav .js-menu {
+@media only screen and (max-width: 768px) {
+  /* line 64, ../sass/_common/_header.scss */
+  #header .snav, #header .js-menu {
     display: none;
   }
-  /* line 14, ../sass/_common/_gnav.scss */
-  #gnav ul {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-        align-items: center;
-    margin: -8px;
-  }
-  /* line 18, ../sass/_common/_gnav.scss */
-  #gnav ul li {
-    -webkit-flex: 1;
-    -ms-flex: 1;
-        flex: 1;
-    padding: 0 8px;
-  }
-  /* line 21, ../sass/_common/_gnav.scss */
-  #gnav ul li a {
-    display: block;
-    background: #595959;
-    height: 45px;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-        align-items: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-        justify-content: center;
-  }
-  /* line 50, ../sass/_mixins/_mixin.scss */
-  .no-js #gnav ul li a :hover, .js.no-touchevents #gnav ul li a:hover, .js.touchevents #gnav ul li a.touch {
-    background-color: #C42316;
-    color: #fff;
-    text-decoration: none;
-  }
 }
-@media only screen and (max-width: 767px) {
-  /* line 41, ../sass/_common/_gnav.scss */
-  #gnav ul li a {
-    box-sizing: border-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-        align-items: center;
-    padding-left: 24px;
-    height: 42px;
-    border-bottom: solid 1px #967e51;
-  }
-  /* line 50, ../sass/_mixins/_mixin.scss */
-  .no-js #gnav ul li a :hover, .js.no-touchevents #gnav ul li a:hover, .js.touchevents #gnav ul li a.touch {
-    background-color: #C42316;
-    color: #fff;
-    text-decoration: none;
+@media only screen and (min-width: 768px) {
+  /* line 68, ../sass/_common/_header.scss */
+  #header .js-menu {
+    display: none;
   }
 }
 
 /* line 1, ../sass/_common/_pan.scss */
 #pan {
-  border-bottom: solid 1px #c8c8c8;
+  position: absolute;
+  width: 100%;
+  padding: 4px 24px;
+  border-bottom: 1px solid #eee;
+  -webkit-animation: opa1 1s;
+          animation: opa1 1s;
+  background: #fff;
+  z-index: 100;
 }
-/* line 3, ../sass/_common/_pan.scss */
-#pan li {
-  display: inline-block;
-  vertical-align: middle;
-  *vertical-align: auto;
-  *zoom: 1;
-  *display: inline;
-  margin-right: 8px;
+/* line 9, ../sass/_common/_pan.scss */
+#pan ul {
+  width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
 }
-/* line 6, ../sass/_common/_pan.scss */
-#pan li a {
+/* line 15, ../sass/_common/_pan.scss */
+#pan li:not(:last-child)::after {
+  content: "-";
+  color: #C42316;
+  margin: 0 8px;
+}
+/* line 21, ../sass/_common/_pan.scss */
+#pan a {
   font-size: 1.2rem;
 }
-/* line 8, ../sass/_common/_pan.scss */
-#pan li a:before {
-  content: "";
-  display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  margin-right: 8px;
-}
-/* line 14, ../sass/_common/_pan.scss */
-#pan li:first-child a:before {
-  content: "\f015";
+/* line 25, ../sass/_common/_pan.scss */
+body.home #pan {
+  display: none;
 }
 
+@-webkit-keyframes example {
+  0% {
+    opacity: 1;
+    display: block;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes example {
+  0% {
+    opacity: 1;
+    display: block;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+@-webkit-keyframes opa1 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes opa1 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* line 1, ../sass/_common/_conts.scss */
+#main-area {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 250px;
+  background-color: #000;
+}
+/* line 8, ../sass/_common/_conts.scss */
+#main-area h1 {
+  padding-top: 2rem;
+  -webkit-animation: up 1s;
+          animation: up 1s;
+  font-size: 2rem;
+  color: #d3c6ae;
+}
+/* line 13, ../sass/_common/_conts.scss */
+body.home #main-area h1 {
+  padding: 0;
+}
+@media only screen and (max-width: 480px) {
+  /* line 1, ../sass/_common/_conts.scss */
+  #main-area {
+    height: 150px;
+  }
+}
+
+/* line 23, ../sass/_common/_conts.scss */
+#conts #js-conts-container {
+  -webkit-animation: up 1s;
+          animation: up 1s;
+}
+
+@-webkit-keyframes up {
+  from {
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes up {
+  from {
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+  }
+}
 /* line 6, ../sass/_common/_unit/_a.scss */
 [class*="a-"][class*="arrow"]::after {
   content: "";

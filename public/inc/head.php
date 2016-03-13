@@ -30,4 +30,3 @@
 <body class="<?php echo $body_class." ".$mydir." ".$filename ?>">
 <?php include ($inc_path."/inc/ie10.php") ?>
 <div id="all">
-

@@ -227,12 +227,29 @@ section {
   z-index: 3;
 }
 
-/* line 75, ../sass/_base/_layout.scss */
+@-webkit-keyframes home-main-area {
+  from {
+    height: 250px;
+  }
+  to {
+    height: 500px;
+  }
+}
+
+@keyframes home-main-area {
+  from {
+    height: 250px;
+  }
+  to {
+    height: 500px;
+  }
+}
+/* line 84, ../sass/_base/_layout.scss */
 #footer {
   z-index: 2;
 }
 
-/* line 80, ../sass/_base/_layout.scss */
+/* line 89, ../sass/_base/_layout.scss */
 #pagetop {
   z-index: 3;
 }

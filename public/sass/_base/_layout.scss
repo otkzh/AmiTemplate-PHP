@@ -66,6 +66,15 @@ section {
 
 #pan {}
 
+#main-container{}
+
+#main-area{}
+
+@keyframes home-main-area {
+  from { height: 250px; }
+  to { height: 500px; }
+}
+
 #contents {}
 
 #conts {}
