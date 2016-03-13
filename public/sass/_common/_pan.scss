@@ -1,19 +1,52 @@
 #pan {
-  border-bottom: solid 1px $color-light-darken;
+  position: absolute;
+  width: 100%;
+  padding: $bm/2 $margin-inner;
+  border-bottom: 1px solid $color-light;
+  animation: opa1 1s;
+  background: #fff;
+  z-index: 100;
+  ul {
+    width: 100%;
+    display: flex;
+    margin: 0;
+  }
   li {
-    @include inline-block();
-    margin-right: $bm;
-    a {
-      font-size: 1.2rem;
-      &:before {
-        @include icon-font("\f105");
-        margin-right: $bm;
-      }
+    &:not(:last-child)::after {
+      content: "-";
+      color: $color-point;
+      margin: 0 $bm;
     }
-    &:first-child {
-      a:before {
-        content: "\f015";
-      }
-    }
+  }
+  a {
+    font-size: 1.2rem;
+    @include touch-hover() {}
+  }
+  body.home & {
+    display: none;
+
+  }
+}
+
+@keyframes example {
+  0% {
+    opacity: 1;
+    display: block;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes opa1 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

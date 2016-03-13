@@ -9,16 +9,16 @@ $body_class = 'home';
 <?php include($inc_path.'/inc/header.php') ?>
 <?php include($inc_path.'/inc/pan.php') ?>
 
-<main class="main-contents wrapper">
+<main class="main-container">
 
 <article id="conts">
 
-  <header>
+  <header id="main-area">
     <h1 class="main-title"><?php echo $title ?></h1>
-    <p class="main-description"><?php echo $meta_description ?></p>
   </header>
 
-  <section>
+  <div id="js-conts-container">
+  <section  class="wrapper">
     <h2 class="conts-section-title">セクションごとのタイトル</h1>
     <p>記事内容が入ります。</p>
     <p>記事内容が入ります。</p>
@@ -26,15 +26,23 @@ $body_class = 'home';
     <p>記事内容が入ります。</p>
   </section>
 
-  <aside class="banner">
+  <section class="wrapper">
+    <h2 class="conts-section-title">セクションごとのタイトル</h1>
+    <p>記事内容が入ります。</p>
+    <p>記事内容が入ります。</p>
+    <p>記事内容が入ります。</p>
+    <p>記事内容が入ります。</p>
+  </section>
+
+  <aside class="banner wrapper">
     <a href="">banner</a>
     <a href="">banner</a>
     <a href="">banner</a>
   </aside>
-
+  </div>
 </article>
 
-<article id="side">
+<article id="side" class="wrapper">
 
   <header>
     <h3>サイドバー</h3>

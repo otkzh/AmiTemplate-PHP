@@ -1,0 +1,38 @@
+#main-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 250px;
+  background-color: #000;
+  h1 {
+    padding-top: 2rem;
+    animation: up 1s;
+    font-size: 2rem;
+    color: $color-brand-lighten;
+    body.home &{
+      padding: 0;
+    }
+  }
+  @include max-screen($width-s) {
+    height: 150px;
+  }
+}
+
+#conts{
+  #js-conts-container{
+    animation: up 1s;
+  }
+}
+
+@keyframes up {
+  from { 
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to { 
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
