@@ -19,3 +19,4 @@
    </address> <small class="copyright"><span>&copy;</span>AMITEN Inc. All Rights Reserved.</small> </footer>
 </div>
 <script data-main="<?php echo $base_url ?>/js/main" src="<?php echo $base_url ?>/js/require.js"></script>
+<div id="page-scripts">

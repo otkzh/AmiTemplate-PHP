@@ -29,3 +29,5 @@
 </div>
 
 <script data-main="<?php echo $base_url ?>/js/main" src="<?php echo $base_url ?>/js/require.js"></script>
+
+<div id="page-scripts">

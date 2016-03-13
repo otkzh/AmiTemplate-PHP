@@ -65,5 +65,6 @@ $body_class = 'home';
 
 <?php include($inc_path.'/inc/footer.php') ?>
 <!-- add scripts -->
+<script>console.log("page-script-<?php echo $title ?>");</script>
 <!-- //add scripts -->
 <?php include($inc_path.'/inc/foot.php') ?>

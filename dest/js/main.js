@@ -22,14 +22,13 @@ requirejs(['pjax'], function () {
 
   $.pjax({
     area: [
-    //'#pan ul, .main-contents',
-    '#pan ul , #main-title',
+    '#pan ul , #main-title , #page-scripts',
     'body'
   ],
     load: {
       head: 'base, meta, link',
-//            css: true,
-//            script: true
+      //      css: true,
+            script: true,
     },
     cache: {
       click: true,
@@ -54,7 +53,7 @@ requirejs(['pjax'], function () {
       timeout: 2000
     },
     wait: 700,
-    speedcheck: true
+//    speedcheck: true
   });
 
   // 6 events and 30 callbacks exists.
