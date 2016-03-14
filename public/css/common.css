@@ -197,7 +197,7 @@ body.home #pan {
   }
 }
 /* line 1, ../sass/_common/_conts.scss */
-#main-area {
+.main-head {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -214,26 +214,28 @@ body.home #pan {
   background-color: #000;
 }
 /* line 8, ../sass/_common/_conts.scss */
-#main-area h1 {
-  padding-top: 2rem;
+.main-head .main-ttl {
   -webkit-animation: up 1s;
           animation: up 1s;
-  font-size: 2rem;
+  font-size: 2.6rem;
   color: #d3c6ae;
+  font-family: "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN","游明朝", YuMincho, メイリオ,Meiryo,"ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
+  font-weight: normal;
+  padding: 0;
 }
-/* line 13, ../sass/_common/_conts.scss */
-body.home #main-area h1 {
+/* line 15, ../sass/_common/_conts.scss */
+body.home .main-head .main-ttl {
   padding: 0;
 }
 @media only screen and (max-width: 480px) {
   /* line 1, ../sass/_common/_conts.scss */
-  #main-area {
+  .main-head {
     height: 150px;
   }
 }
 
-/* line 23, ../sass/_common/_conts.scss */
-#conts #js-conts-container {
+/* line 24, ../sass/_common/_conts.scss */
+#conts {
   -webkit-animation: up 1s;
           animation: up 1s;
 }

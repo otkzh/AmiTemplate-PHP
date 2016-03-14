@@ -1,0 +1,114 @@
+/* line 1, ../sass/_page/_home.scss */
+.links {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 1em -1em;
+}
+/* line 5, ../sass/_page/_home.scss */
+.links li {
+  -webkit-flex: 1 0 25%;
+      -ms-flex: 1 0 25%;
+          flex: 1 0 25%;
+  margin: 1em;
+}
+@media only screen and (max-width: 768px) {
+  /* line 1, ../sass/_page/_home.scss */
+  .links {
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  /* line 11, ../sass/_page/_home.scss */
+  .links li {
+    -webkit-flex: 1 0 auto;
+        -ms-flex: 1 0 auto;
+            flex: 1 0 auto;
+  }
+}
+/* line 13, ../sass/_page/_home.scss */
+.links a {
+  display: block;
+  box-sizing: border-box;
+  -webkit-animation: hover-out .3s;
+          animation: hover-out .3s;
+}
+/* line 50, ../sass/_mixins/_mixin.scss */
+.no-js .links a :hover, .js.no-touchevents .links a:hover, .js.touchevents .links a.touch {
+  -webkit-animation: hover-up .3s;
+          animation: hover-up .3s;
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
+/* line 20, ../sass/_page/_home.scss */
+.no-js .links a :hover figure, .js.no-touchevents .links a:hover figure, .js.touchevents .links a.touch figure {
+  box-shadow: 0px 0px 3px #afafaf;
+}
+@-webkit-keyframes hover-up {
+  from {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  to {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+    figure {
+      box-shadow: 0px 0px 3px #afafaf;
+    }
+  }
+}
+@keyframes hover-up {
+  from {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  to {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+    figure {
+      box-shadow: 0px 0px 3px #afafaf;
+    }
+  }
+}
+@-webkit-keyframes hover-out {
+  from {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+    figure {
+      box-shadow: 0px 0px 3px #afafaf;
+    }
+  }
+  to {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+@keyframes hover-out {
+  from {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+    figure {
+      box-shadow: 0px 0px 3px #afafaf;
+    }
+  }
+  to {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+/* line 51, ../sass/_page/_home.scss */
+.links figure {
+  margin: 0;
+}
+/* line 54, ../sass/_page/_home.scss */
+.links figcaption {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}

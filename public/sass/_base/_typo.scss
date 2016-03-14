@@ -57,43 +57,37 @@ hr {
   margin: 1em 0;
 }
 
-h1[class*="title"],
-h2[class*="title"],
-h3[class*="title"],
-h4[class*="title"],
-h5[class*="title"],
-h6[class*="title"] {
+[class*="-ttl"] {
   word-wrap: break-word;
   line-height: 1.4;
   margin: 0.5em 0;
   font-weight: bold;
-}
-
-.page-title {
-  font-size: 2.6rem;
-  text-align: center;
-  background: $color-dark;
-  color: aliceblue;
-  padding: $margin-inner;
-}
-
-.section-title {
-  font-size: 2.2rem;
-  border-bottom: solid 2px $color-brand;
-}
-
-.aside-title {
   font-size: 1.8rem;
 }
 
-.large-title {
-  font-size: 2.2rem;
-  font-weight: normal !important;
+.main-ttl{
+  
 }
 
-.small-title {
-  font-size: 1.6rem;
+.conts-sec-ttl {
+  font-size: 2.4rem;
+  border-bottom: solid 2px $color-brand;
+  padding: .5em 0;
+  margin-bottom: 1em;
 }
+
+.conts-l-ttl{
+  font-size: 2.2rem;
+}
+
+.conts-m-ttl{
+  
+}
+
+.conts-s-ttl{
+  
+}
+
 
 //文章
 em,

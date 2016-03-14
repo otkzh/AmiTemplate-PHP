@@ -1,0 +1,60 @@
+.links {
+  //width: 100%;
+  display: flex;
+  margin: 1em -1em;
+  li {
+    flex: 1 0 25%;
+    margin: 1em;
+  }
+  @include max-screen($width-m) {
+    flex-direction: column;
+    li{flex: 1 0 auto;}
+    }
+  a {
+    display: block;
+    box-sizing: border-box;
+    animation: hover-out .3s;
+    @include touch-hover(){
+      animation: hover-up .3s;
+      transform: translateY(-10px);
+      figure{
+        @include box-shadow();
+      }
+    }
+  }
+  
+  @keyframes hover-up {
+    from { 
+      transform: translateY(0px);
+    }
+    to { 
+      transform: translateY(-10px);
+      figure{
+         @include box-shadow();
+      }
+    }
+  }
+  
+  @keyframes hover-out {
+    from { 
+      transform: translateY(-10px);
+      figure{
+         @include box-shadow();
+      }
+    }
+    to { 
+      transform: translateY(-0px);
+
+    }
+  }
+  
+  figure {
+    margin: 0;
+  }
+  figcaption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+

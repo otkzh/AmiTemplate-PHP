@@ -22,13 +22,13 @@ requirejs(['pjax'], function () {
 
   $.pjax({
     area: [
-    '#pan ul , #main-title , #page-scripts',
+    '#pan, .main-ttl, #conts',
     'body'
   ],
     load: {
       head: 'base, meta, link',
       //      css: true,
-            script: true,
+      script: true,
     },
     cache: {
       click: true,
@@ -53,12 +53,12 @@ requirejs(['pjax'], function () {
       timeout: 2000
     },
     wait: 700,
-//    speedcheck: true
+    //    speedcheck: true
   });
 
   // 6 events and 30 callbacks exists.
   $(document).bind('pjax:fetch', function () {
-    $('#pan,#main-area h1,#js-conts-container').stop()
+    $('#pan,.main-ttl,#conts').stop()
       .animate({
         opacity: 0
       }, 500);

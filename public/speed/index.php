@@ -1,45 +1,47 @@
 <?php
-include 'function.php';
-$title = 'AmiTemplate - php';
+include ("../function.php");
+$title ='表示SPEEDについて ';
 $meta_title = ''.$title.' | '.$sitename.'';
-$meta_description = 'メタディスクリプション。'.$description;
-$body_class = 'home';
+$meta_description = $title.'のページです。'.$description;
+$body_class ="";
 ?>
-<?php include($inc_path.'/inc/head.php') ?>
-<?php include($inc_path.'/inc/header.php') ?>
-<?php include($inc_path.'/inc/pan.php') ?>
+<?php include ($inc_path."/inc/head.php") ?>
+<?php include ($inc_path."/inc/header.php") ?>
+<?php include ($inc_path."/inc/pan.php") ?>
 
 <main id="main">
 <article>
 
   <header class="main-head">
+    <time>2016-03-00</time>
+    <time>UPDATE：2016-03-00</time>
     <h1 class="main-ttl"><?php echo $title ?></h1>
   </header>
 
   <div id="conts">
 
-    <section class="wrap">
-      <ul class="links">
-        <li>
-          <a href="<?php echo $base_url ?>/markup">
-            <figure><img src="img/dummy/img.png" alt=""></figure>
-            <figcaption>MARK UP</figcaption>
-          </a>
+    <nav class="conts-sec wrap">
+      <h2 class="conts-sec-ttl">目次</h2>
+      <p>スピードが早いことは正義…ってどうゆうこと？なんで必要なの？</p>
+      <ul class="list">
+        <li><a href="#" data-scroll>スピードについて</a></li>
+        <li><a href="#" data-scroll>ボイラープレート</a>
+        <ul class="list">
+          <li><a href="#" data-scroll>マークアップ</a></li>
+          <li><a href="#" data-scroll>.htaccess</a></li>
+        </ul>
         </li>
-        <li>
-          <a href="<?php echo $base_url ?>/speed">
-            <figure><img src="img/dummy/img.png" alt=""></figure>
-            <figcaption>SPEED</figcaption>
-          </a>
-        </li>
-        <li>
-          <a href="<?php echo $base_url ?>/responsive">
-            <figure><img src="img/dummy/img.png" alt=""></figure>
-            <figcaption>RESPONSIVE</figcaption>
-          </a>
+        <li><a href="#" data-scroll>非同期通信</a></li>
+        <li><a href="#" data-scroll>PJAX</a></li>
+        <li><a href="#" data-scroll>各種管理</a>
+          <ul class="list">
+            <li><a href="#" data-scroll>HTML/PHP</a></li>
+            <li><a href="#" data-scroll>CSS/COMPASS</a></li>
+            <li><a href="#" data-scroll>JavaScript</a></li>
+          </ul>
         </li>
       </ul>
-    </section>
+    </nav>
 
     <section class="conts-sec wrap">
 
@@ -54,12 +56,27 @@ $body_class = 'home';
 
     </section>
 
+    <footer class="conts-footer wrap">
+      <nav>
+        <ul>
+          <li class="prev"><a href="#">前</a></li>
+          <li class="next"><a href="#">次</a></li>
+        </ul>
+      </nav>
+    </footer>
+
+    <aside class="conts-sec wrap">
+      <h3 class="conts-sec-ttl">関連しないワード</h3>
+      <p>ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
+    </aside>
+
   </div>
+
 </article>
 </main>
 
-<?php include($inc_path.'/inc/footer.php') ?>
+<?php include ($inc_path."/inc/footer.php") ?>
 <!-- add scripts -->
 <script>console.log("page-script-<?php echo $title ?>");</script>
 <!-- //add scripts -->
-<?php include($inc_path.'/inc/foot.php') ?>
+<?php include ($inc_path."/inc/foot.php") ?>

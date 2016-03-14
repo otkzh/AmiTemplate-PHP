@@ -1,27 +1,28 @@
 <?php
 include ("../function.php");
-$title ='units-sample';
+$title ='UNITS - 各種共通パーツについて';
 $meta_title = ''.$title.' | '.$sitename.'';
 $meta_description = $title.'のページです。メタディスクリプション。'.$description;
-$body_class ="units";
+$body_class ="";
 ?>
 <?php include ($inc_path."/inc/head.php") ?>
 <?php include ($inc_path."/inc/header.php") ?>
 <?php include ($inc_path."/inc/pan.php") ?>
 
-<main class="main-container">
-
-<article id="conts">
-
-  <header id="main-area">
-    <h1><?php echo $title ?></h1>
+<main id="main">
+<article>
+ 
+  <header class="main-head">
+    <time>2016-03-11</time>
+    <time>UPDATE：2016-03-11</time>
+    <h1 class="main-ttl"><?php echo $title ?></h1>
   </header>
 
-  <div id="js-conts-container">
+  <div id="conts">
 
-    <section class="wrapper">
-      <h1 class="section-title">基本設計について</h1>
-      <h2 class="large-title">classの指定の仕方を統一するが・・・</h2>
+    <section class="conts-sec wrap">
+      <h1 class="conts-sec-ttl">基本設計について</h1>
+      <h2 class="conts-l-ttl">classの指定の仕方を統一するが・・・</h2>
       <p>unitsで（全ページ共通として）組み込む場合と、各特殊な場合の考え方を変えなければいけないかも知れない・・・けど、現状は以下のようにclass名を記載していく。</p>
       <ol class="assist list-num">
         <li>例：かっこいいテキストリンク（アンダーライン）+ 矢印の場合は[a-underline-arrow]と記述。</li>
@@ -29,8 +30,8 @@ $body_class ="units";
         </ul>
     </section>
 
-    <section class="wrapper">
-      <h1 class="section-title">a-link</h1>
+    <section class="conts-sec wrap">
+      <h1 class="conts-sec-ttl">a-link</h1>
       <ul class="list-base">
         <li>classの指定の仕方は、[a-]でスタートする。装飾は、ハイフン区切りで記載する。</li>
         <li>例：かっこいいリンク（アンダーライン）+ 矢印の場合は[a-underline-arrow]と記述。</li>
@@ -55,8 +56,8 @@ $body_class ="units";
 
     </section>
 
-    <section class="wrapper">
-      <h1 class="section-title">btn-link</h1>
+    <section class="conts-sec wrap">
+      <h1 class="conts-sec-ttl">btn-link</h1>
       <ul class="list">
         <li>classの指定の仕方は、[btn-]でスタートする。装飾は、ハイフン区切りで記載する。</li>
         <li>例：かっこいいボタン（push）+ 矢印の場合は[btn-push-arrow]と記述。</li>
@@ -92,8 +93,8 @@ $body_class ="units";
 
     </section>
 
-    <section class="wrapper">
-      <h1 class="section-title">list</h1>
+    <section class="conts-sec wrap">
+      <h1 class="conts-sec-ttl">list</h1>
 
       <div class="assist">
         <ul>

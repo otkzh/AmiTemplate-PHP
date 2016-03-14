@@ -27,21 +27,13 @@ body,
   }
 }
 
-header,
-footer,
-article,
-section{
-  @include box-sizing(border-box);
-  @include clearfix();
-}
-
-.wrapper {
-  @include clearfix();
+.wrap {
+  box-sizing: border-box;
   margin: 0 auto;
   width: 100%;
   @include min-screen($width-m + 1px) {
-    max-width: $width-l;
-    padding: 0 $bm*2;
+    max-width: $width-xl;
+    padding: 0 $margin-inner;
   }
   @include max-screen($width-m) {
     padding: 0 $bm*2;
@@ -51,7 +43,7 @@ section{
   }
 }
 
-section {
+.conts-sec {
   padding-bottom: $margin;
   margin-bottom: $margin;
 }
@@ -69,11 +61,6 @@ section {
 #main-container{}
 
 #main-area{}
-
-@keyframes home-main-area {
-  from { height: 250px; }
-  to { height: 500px; }
-}
 
 #contents {}
 

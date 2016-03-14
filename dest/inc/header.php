@@ -6,10 +6,11 @@
 </div>
 <nav class="header-nav js-close">
 <ul class="gnav">
-<li><a href="<?php echo $link_url ?>/" class="home"><span>HOME</span></a></li>
-<li><a href="<?php echo $link_url ?>/units" class="units"><span>UNITS</span></a></li>
-<li><a href="#"><span>MENU1</span></a></li>
-<li><a href="#"><span>MENU2</span></a></li>
+<li><a href="<?php echo $base_url ?>/" class="home"><span>HOME</span></a></li>
+<li><a href="<?php echo $base_url ?>/markup" class="markup"><span>MARKUP</span></a></li>
+<li><a href="<?php echo $base_url ?>/speed" class="speed"><span>SPEED</span></a></li>
+<li><a href="<?php echo $base_url ?>/responsive" class="responsive"><span>RESPONSIVE</span></a></li>
+<li><a href="<?php echo $base_url ?>/units" class="units"><span>UNITS</span></a></li>
 </ul>
 <ul class="snav">
 <li><a href="#"><span>JP</span></a></li>

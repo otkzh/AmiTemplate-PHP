@@ -1,16 +1,18 @@
-#main-area {
+.main-head {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   height: 250px;
   background-color: #000;
-  h1 {
-    padding-top: 2rem;
+  .main-ttl {
     animation: up 1s;
-    font-size: 2rem;
+    font-size: 2.6rem;
     color: $color-brand-lighten;
-    body.home &{
+    @include mincho;
+    font-weight: normal;
+    padding: 0;
+    body.home & {
       padding: 0;
     }
   }
@@ -19,20 +21,17 @@
   }
 }
 
-#conts{
-  #js-conts-container{
+#conts {
     animation: up 1s;
-  }
 }
 
 @keyframes up {
-  from { 
+  from {
     transform: translateY(30px);
     opacity: 0;
   }
-  to { 
+  to {
     transform: translateY(0px);
     opacity: 1;
   }
 }
-
