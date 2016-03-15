@@ -16,7 +16,7 @@
   }
   @include max-screen($width-m) {
     flex-direction: column;
-    .header-hgroup{
+    .header-hgroup {
       flex: 0 0 auto;
       margin-bottom: $margin-inner;
       display: flex;
@@ -42,8 +42,7 @@
     display: none;
   }
   .gnav,
-  .snav,
-  .js-menu {
+  .snav {
     display: flex;
     align-items: center;
     margin: 0 1em;
@@ -56,16 +55,23 @@
       @include touch-hover() {}
     }
   }
-  body.home & .home,
-  body.units & .units {
-    text-decoration: underline;
-  }
+  @each $class in home,
+  units,
+  markup,
+  speed,
+  responsive,
+  readme {
+    body.#{$class} & .#{$class} {
+      background-color: $color-light;
+    }
+  } //each
   @include max-screen($width-m) {
-     .snav,.js-menu{
+    .snav,
+    .menu {
       display: none;
     }
   }
-  .js-menu {
+  .menu {
     @include min-screen($width-m) {
       display: none;
     }

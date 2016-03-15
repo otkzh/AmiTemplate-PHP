@@ -69,8 +69,7 @@ gulp.task('compass', function () {
       time: true
     }))
     .pipe(autoprefixer({
-      browsers: ['last 2 versions'],
-      //browsers: ['last 2 versions', 'IE 9'],// ie9対応
+      browsers: ['last 2 versions','android >= 4.1','IE 9'],
     }))
     .pipe(gulp.dest(dir.base + "/css"));
 });
