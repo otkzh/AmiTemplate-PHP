@@ -16,10 +16,9 @@
       <li><a href="<?php echo $base_url ?>/units" class="units"><span>UNITS</span></a></li>
     </ul>
     <ul class="snav">
-      <li><a href="#"><span>JP</span></a></li>
-      <li><a href="#"><span>EN</span></a></li>
+      <li><a href="<?php echo $base_url ?>/readme" class="readme"><span>README</span></a></li>
+      <li><a href="<?php echo $no_link ?>" class="menu"><span>MENU</span></a></li>
     </ul>
-    <div class="js-menu"><a href="<?php echo $no_link ?>"><span>MENU</span></a></div>
   </nav>
 
 </header>

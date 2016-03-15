@@ -9,10 +9,7 @@
       <li><a href="<?php echo $base_url ?>/speed" class="speed"><span>SPEED</span></a></li>
       <li><a href="<?php echo $base_url ?>/responsive" class="responsive"><span>RESPONSIVE</span></a></li>
       <li><a href="<?php echo $base_url ?>/units" class="units"><span>UNITS</span></a></li>
-    </ul>
-    <ul class="snav">
-      <li><a href="#" class="js"><span>JP</span></a></li>
-      <li><a href="#" class="en"><span>EN</span></a></li>
+      <li><a href="<?php echo $base_url ?>/readme" class="readme"><span>README</span></a></li>
     </ul>
   </nav>
 

@@ -337,6 +337,7 @@ tdb,
 thstrong,
 thb {
   font-weight: bold;
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0) 45%, #eee9df 40%);
   background-image: linear-gradient(rgba(0, 0, 0, 0) 45%, #eee9df 40%);
 }
 
