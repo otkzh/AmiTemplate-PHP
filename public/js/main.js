@@ -3,73 +3,24 @@ require.config({
     jquery: 'vendor/jquery-2.2.0.min',
     touchevents: 'plugins/ami.touchevents',
     waypoints: 'plugins/jquery.waypoints.min',
+    lazyload : 'plugins/jquery.lazyload.min',
     pjax: 'plugins/jquery.pjax.min',
+    pjax_setting: 'plugins/jquery.pjax_setting',
   },
   shim: {
     'touchevents': ['jquery'],
     'waypoints': ['jquery'],
-    'pjax': ['jquery'],
+    'lazyload': ['jquery'],
+    'pjax': ['lazyload'],
+    'pjax_setting': ['pjax'],
   }
 });
 
 //hover-touch events
 requirejs(['touchevents']);
 
-
 //pjax
-requirejs(['pjax'], function () {
-  //----------------------
-
-  $.pjax({
-    area: [
-    '#pan, .main-ttl, #conts',
-    'body'
-  ],
-    load: {
-      head: 'base, meta, link',
-      //      css: true,
-      script: true,
-    },
-    cache: {
-      click: true,
-      submit: true,
-      popstate: true,
-      get: true,
-      post: false
-    },
-    scope: {
-      search: ['/search/'],
-      $search: {
-        form: 'form:not([method])'
-      },
-      '/': ['/', '#search', '!/contact/']
-    },
-    rewrite: function (document, area, host) {
-      var newBodyClass = $('body', document).attr('class');
-      $('body').attr('class', newBodyClass);
-    },
-    //scrollTop: null,
-    ajax: {
-      timeout: 2000
-    },
-    wait: 700,
-    //    speedcheck: true
-  });
-
-  // 6 events and 30 callbacks exists.
-  $(document).bind('pjax:fetch', function () {
-    $('#pan,.main-ttl,#conts').stop()
-      .animate({
-        opacity: 0
-      }, 500);
-  });
-  $(document).bind('pjax:ready', function () {
-    //$("img.delay").lazyload();
-  });
-
-
-  //----------------------
-});
+requirejs(['pjax_setting']);
 
 //waypoint
 requirejs(['waypoints'], function () {
