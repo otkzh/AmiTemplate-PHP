@@ -1,12 +1,12 @@
 AddType application/x-httpd-php .php .html
 
-#RewriteEngine on
-#RewriteCond %{THE_REQUEST} ^.*/index.html
-#RewriteRule ^(.*)index.html$ /ha-delicious/gift/$1 [R=301,L]
+RewriteEngine on
+RewriteCond %{THE_REQUEST} ^.*/index.html
+RewriteRule ^(.*)index.html$ /$1 [R=301,L]
 
-#RewriteEngine on
-#RewriteCond %{THE_REQUEST} ^.*/index.php
-#RewriteRule ^(.*)index.php$ /ha-delicious/gift/$1 [R=301,L]
+RewriteEngine on
+RewriteCond %{THE_REQUEST} ^.*/index.php
+RewriteRule ^(.*)index.php$ /$1 [R=301,L]
 
 #ErrorDocument 404 /ha-delicious/gift/
 

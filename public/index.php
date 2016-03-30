@@ -16,42 +16,80 @@ $body_class = 'home';
     <h1 class="main-ttl"><?php echo $title ?></h1>
   </header>
 
-  <div id="conts">
-
-    <section class="wrap">
+  <div id="container" class="wrap">
+    <section class="wide mb3">
       <ul class="links">
         <li>
           <a href="<?php echo $base_url ?>/markup">
-            <figure><img src="img/dummy/img.png" alt="MARK UP"><figcaption>MARK UP</figcaption></figure>
+            <figure><img src="img/dummy/img.png" alt="MARK UP">
+              <figcaption>MARK UP</figcaption>
+            </figure>
           </a>
         </li>
         <li>
           <a href="<?php echo $base_url ?>/speed">
-            <figure><img src="img/dummy/img.png" alt="SPEED"><figcaption>SPEED</figcaption></figure>
+            <figure><img src="img/dummy/img.png" alt="SPEED">
+              <figcaption>SPEED</figcaption>
+            </figure>
           </a>
         </li>
         <li>
           <a href="<?php echo $base_url ?>/responsive">
-            <figure><img src="img/dummy/img.png" alt="RESPONSIVE"><figcaption>RESPONSIVE</figcaption></figure>
+            <figure><img src="img/dummy/img.png" alt="RESPONSIVE">
+              <figcaption>RESPONSIVE</figcaption>
+            </figure>
           </a>
         </li>
       </ul>
     </section>
 
-    <section class="conts-sec wrap">
+    <div id="conts">
+      <section class="conts-sec">
 
-      <h2 class="conts-sec-ttl">conts-sec-ttl（contents-section-title）</h2>
-      <p>ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
-      <h3 class="conts-l-ttl">conts-l-ttl（contents-large-title）</h3>
-      <p>ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
-      <h4 class="conts-m-ttl">conts-m-ttl（contents-middle-title）</h4>
-      <p>ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
-      <h5 class="conts-s-ttl">conts-s-ttl（contents-small-title）</h5>
-      <p>ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
+        <h2 class="conts-sec-ttl mt0 pt0">conts-sec-ttl（contents-section-title）</h2>
+        <p>ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
+        <h3 class="conts-l-ttl">conts-l-ttl（contents-large-title）</h3>
+        <p>ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
+        <h4 class="conts-m-ttl">conts-m-ttl（contents-middle-title）</h4>
+        <p>ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
+        <h5 class="conts-s-ttl">conts-s-ttl（contents-small-title）</h5>
+        <p>ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
 
+      </section>
+      
+      <section class="conts-sec">
+      <h2 class="conts-sec-ttl">３つ並びコンテンツ</h2>
+      <p>３つ並びの時にどう表示されるかテスト。</p>
+      <ul class="links">
+        <li>
+          <a href="<?php echo $base_url ?>/markup">
+            <figure><img src="img/dummy/img.png" alt="MARK UP">
+              <figcaption>MARK UP</figcaption>
+            </figure>
+          </a>
+        </li>
+        <li>
+          <a href="<?php echo $base_url ?>/speed">
+            <figure><img src="img/dummy/img.png" alt="SPEED">
+              <figcaption>SPEED</figcaption>
+            </figure>
+          </a>
+        </li>
+        <li>
+          <a href="<?php echo $base_url ?>/responsive">
+            <figure><img src="img/dummy/img.png" alt="RESPONSIVE">
+              <figcaption>RESPONSIVE</figcaption>
+            </figure>
+          </a>
+        </li>
+      </ul>
     </section>
 
+    </div>
+
+    <?php include($inc_path.'/inc/side.php') ?>
   </div>
+
 </article>
 </div>
 

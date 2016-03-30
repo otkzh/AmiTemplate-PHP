@@ -1,5 +1,4 @@
 //高さと幅基準
-
 html,
 body,
 #all {
@@ -32,7 +31,8 @@ body,
   margin: 0 auto;
   width: 100%;
   @include min-screen($width-m + 1px) {
-    max-width: $width-xl;
+    max-width: $width-xl + $margin-inner;
+    min-width: $width-l + $margin-inner;
     padding: 0 $margin-inner;
   }
   @include max-screen($width-m) {
@@ -58,15 +58,46 @@ body,
 
 #pan {}
 
-#main-container{}
+#container{
+  display: flex;
+  flex-wrap: wrap;
+  .wide{
+    width: 100%;
+    flex: 1 0 100%;
+  }
+}
 
-#main-area{}
+#conts {
+  width: auto;
+  flex: 1 0 50%;
+  box-sizing: border-box;
+  border: 1px solid $color-light;
+  padding: $margin-inner;
+}
 
-#contents {}
-
-#conts {}
-
-#side {}
+#side {
+  flex: 0 0 300px;
+  margin-left: $margin;
+  nav{
+    margin-bottom: $margin;
+  }
+  .page-nav{
+    li{
+      margin-bottom: $bm;
+    }
+    a{
+      display: block;
+      box-sizing: border-box;
+      width: 100%;
+      padding: $bm $bm*2;
+      border: $bm/2 solid $color-point;
+      @include touch-hover(){
+        text-decoration: none;
+        background-color: $color-light;
+      }
+    }
+  }
+}
 
 #footer {
   z-index: 2;

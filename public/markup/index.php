@@ -18,9 +18,11 @@ $body_class ="";
     <h1 class="main-ttl"><?php echo $title ?></h1>
   </header>
 
+  <div id="container" class="wrap">
+
   <div id="conts">
 
-    <nav class="conts-sec wrap">
+    <nav class="conts-sec">
       <h2 class="conts-sec-ttl">目次</h2>
       <p>HTMLのマークアップについて。セマンティック or メンテナンスブルの問題について考える。</p>
       <ul class="list">
@@ -37,7 +39,7 @@ $body_class ="";
       </ul>
     </nav>
     
-    <section class="conts-sec wrap">
+    <section class="conts-sec">
 
       <h2 class="conts-sec-ttl">conts-sec-ttl（contents-section-title）</h2>
       <p>ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
@@ -50,7 +52,7 @@ $body_class ="";
 
     </section>
 
-    <section class="conts-sec wrap">
+    <section class="conts-sec">
 
       <h2 class="conts-sec-ttl">class/idの命名規則メモ</h2>
 
@@ -69,7 +71,7 @@ $body_class ="";
 
     </section>
     
-    <footer class="conts-footer wrap">
+    <footer class="conts-footer">
       <nav>
         <ul>
           <li class="prev"><a href="#">前</a></li>
@@ -78,11 +80,13 @@ $body_class ="";
       </nav>
     </footer>
     
-    <aside class="conts-sec wrap">
+    <aside class="conts-sec">
       <h3 class="conts-sec-ttl">関連しないワード</h3>
       <p>ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
     </aside>
     
+  </div>
+  <?php include($inc_path.'/inc/side.php') ?>
   </div>
   
 </article>
