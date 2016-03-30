@@ -1,136 +1,197 @@
 @charset "UTF-8";
-/*
-YUI 3.18.1 (build f7e7bcb)
-Copyright 2014 Yahoo! Inc. All rights reserved.
-Licensed under the BSD License.
-http://yuilibrary.com/license/
+/* 
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com 
+Twitter: @rich_clark
 */
-/* line 7, ../sass/_base/_yui-3-reset.scss */
-html {
-  color: #000;
-  background: #FFF;
-}
-
-/* line 11, ../sass/_base/_yui-3-reset.scss */
+/* line 9, ../sass/_base/_html5reset-1.6.1.scss */
+html,
 body,
 div,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
+span,
+object,
+iframe,
 h1,
 h2,
 h3,
 h4,
 h5,
 h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
 p,
 blockquote,
-th,
-td {
-  margin: 0;
-  padding: 0;
-}
-
-/* line 39, ../sass/_base/_yui-3-reset.scss */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-/* line 43, ../sass/_base/_yui-3-reset.scss */
-fieldset,
-img {
-  border: 0;
-}
-
-/* line 47, ../sass/_base/_yui-3-reset.scss */
+pre,
+abbr,
 address,
-caption,
 cite,
 code,
+del,
 dfn,
 em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
 strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
 th,
-var {
-  font-style: normal;
-  font-weight: normal;
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
 }
 
-/* line 59, ../sass/_base/_yui-3-reset.scss */
+/* line 87, ../sass/_base/_html5reset-1.6.1.scss */
+body {
+  line-height: 1;
+}
+
+/* line 91, ../sass/_base/_html5reset-1.6.1.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+/* line 105, ../sass/_base/_html5reset-1.6.1.scss */
 ol,
 ul {
   list-style: none;
 }
 
-/* line 63, ../sass/_base/_yui-3-reset.scss */
-caption,
-th {
-  text-align: left;
+/* line 110, ../sass/_base/_html5reset-1.6.1.scss */
+blockquote,
+q {
+  quotes: none;
 }
 
-/* line 67, ../sass/_base/_yui-3-reset.scss */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: 100%;
-  font-weight: normal;
-}
-
-/* line 76, ../sass/_base/_yui-3-reset.scss */
+/* line 115, ../sass/_base/_html5reset-1.6.1.scss */
+blockquote:before,
+blockquote:after,
 q:before,
 q:after {
   content: '';
+  content: none;
 }
 
-/* line 80, ../sass/_base/_yui-3-reset.scss */
-abbr,
-acronym {
-  border: 0;
-  font-variant: normal;
+/* line 123, ../sass/_base/_html5reset-1.6.1.scss */
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
 }
 
-/* line 85, ../sass/_base/_yui-3-reset.scss */
-sup {
-  vertical-align: text-top;
-}
-
-/* line 88, ../sass/_base/_yui-3-reset.scss */
-sub {
-  vertical-align: text-bottom;
-}
-
-/* line 91, ../sass/_base/_yui-3-reset.scss */
-input,
-textarea,
-select {
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: inherit;
-  *font-size: 100%;
-}
-
-/* line 99, ../sass/_base/_yui-3-reset.scss */
-legend {
+/* change colours to suit your needs */
+/* line 134, ../sass/_base/_html5reset-1.6.1.scss */
+ins {
+  background-color: #ff9;
   color: #000;
+  text-decoration: none;
 }
 
-/* line 102, ../sass/_base/_yui-3-reset.scss */
-#yui3-css-stamp.cssreset {
-  display: none;
+/* change colours to suit your needs */
+/* line 143, ../sass/_base/_html5reset-1.6.1.scss */
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* line 150, ../sass/_base/_html5reset-1.6.1.scss */
+del {
+  text-decoration: line-through;
+}
+
+/* line 154, ../sass/_base/_html5reset-1.6.1.scss */
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+/* line 160, ../sass/_base/_html5reset-1.6.1.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* change border colour to suit your needs */
+/* line 168, ../sass/_base/_html5reset-1.6.1.scss */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/* line 177, ../sass/_base/_html5reset-1.6.1.scss */
+input,
+select {
+  vertical-align: middle;
+}
+
+/* line 182, ../sass/_base/_html5reset-1.6.1.scss */
+img {
+  vertical-align: top;
+  font-size: 0;
+  line-height: 0;
 }
 
 /* line 3, ../sass/_base/_layout.scss */
