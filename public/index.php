@@ -9,7 +9,7 @@ $body_class = 'home';
 <?php include($inc_path.'/inc/header.php') ?>
 <?php include($inc_path.'/inc/pan.php') ?>
 
-<main id="main">
+<div role="main">
 <article>
 
   <header class="main-head">
@@ -22,20 +22,17 @@ $body_class = 'home';
       <ul class="links">
         <li>
           <a href="<?php echo $base_url ?>/markup">
-            <figure><img src="img/dummy/img.png" alt=""></figure>
-            <figcaption>MARK UP</figcaption>
+            <figure><img src="img/dummy/img.png" alt="MARK UP"><figcaption>MARK UP</figcaption></figure>
           </a>
         </li>
         <li>
           <a href="<?php echo $base_url ?>/speed">
-            <figure><img src="img/dummy/img.png" alt=""></figure>
-            <figcaption>SPEED</figcaption>
+            <figure><img src="img/dummy/img.png" alt="SPEED"><figcaption>SPEED</figcaption></figure>
           </a>
         </li>
         <li>
           <a href="<?php echo $base_url ?>/responsive">
-            <figure><img src="img/dummy/img.png" alt=""></figure>
-            <figcaption>RESPONSIVE</figcaption>
+            <figure><img src="img/dummy/img.png" alt="RESPONSIVE"><figcaption>RESPONSIVE</figcaption></figure>
           </a>
         </li>
       </ul>
@@ -56,7 +53,7 @@ $body_class = 'home';
 
   </div>
 </article>
-</main>
+</div>
 
 <?php include($inc_path.'/inc/footer.php') ?>
 <!-- add scripts -->

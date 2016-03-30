@@ -9,7 +9,7 @@ $body_class ="";
 <?php include ($inc_path."/inc/header.php") ?>
 <?php include ($inc_path."/inc/pan.php") ?>
 
-<main id="main">
+<div role="main">
 <article>
 
   <header class="main-head">
@@ -86,7 +86,7 @@ $body_class ="";
   </div>
   
 </article>
-</main>
+</div>
 
 <?php include ($inc_path."/inc/footer.php") ?>
 <!-- add scripts -->
