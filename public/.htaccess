@@ -8,7 +8,7 @@ RewriteEngine on
 RewriteCond %{THE_REQUEST} ^.*/index.php
 RewriteRule ^(.*)index.php$ /$1 [R=301,L]
 
-#ErrorDocument 404 /ha-delicious/gift/
+ErrorDocument 404 /404/
 
 # ------------------------------------------------------------------------------
 # | Expires headers (for better cache control)                                 |
