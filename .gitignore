@@ -8,7 +8,8 @@
 # ディレクトリのすべてのファイルを無視します
 node_modules/
 .vagrant
-dest/
+dest
+_psd
 
 #1：touch .gitignore
 #2 : git rm --cached [ファイル名]

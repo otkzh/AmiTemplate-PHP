@@ -21,7 +21,7 @@ $body_class = 'home';
       <ul class="links">
         <li>
           <a href="<?php echo $base_url ?>/markup">
-            <figure><img src="img/dummy/img.png" alt="MARK UP">
+            <figure><img src="<?php echo $base_url ?>/img/dummy/img.png" alt="MARK UP">
               <figcaption>MARK UP</figcaption>
             </figure>
           </a>
