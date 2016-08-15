@@ -10,6 +10,7 @@ node_modules/
 .vagrant
 dest
 _psd
+.sass-cache
 
 #1：touch .gitignore
 #2 : git rm --cached [ファイル名]

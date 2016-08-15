@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var path = require('path');
 
-//基礎
+//ベース
 var browserSync = require('browser-sync');
 var plumber = require('gulp-plumber');
 var notify = require('gulp-notify');
@@ -11,8 +11,7 @@ var compass = require('gulp-compass');
 var autoprefixer = require('gulp-autoprefixer');
 var cssmin = require('gulp-cssmin');
 
-//html php 整形
-var prettify = require('gulp-prettify');
+//html phpは変更なし
 
 //画像ファイル用
 var imagemin = require('gulp-imagemin');
@@ -35,7 +34,8 @@ var paths = {
   "scss": dir.base + "/**/*.scss",
   "css": dir.base + "/**/*.css",
   "html": dir.base + "/**/*.{php,html}",
-  "js": dir.base + "/**/*.{js,htc,ts}",
+  "js": dir.base + "/**/*.{js,htc}",
+  "ts": dir.base + "/**/*.{ts}",
   "img": dir.base + "/**/*.{png,jpg,gif,pdf}",
   "font": dir.base + "/**/*.{eot,svg,ttf,woff,woff2,otf}",
 }
@@ -44,7 +44,7 @@ var paths = {
 gulp.task('browser-sync', function () {
   browserSync({
     proxy: hostName,
-    //port: 4000
+    port: 4000
   });
 });
 gulp.task('bs-reload', function () {
@@ -63,7 +63,6 @@ gulp.task('compass', function () {
   return　 gulp.src(paths.scss)
     .pipe(plumber(plumberErrorHandler))
     .pipe(compass({
-      config_file: dir.base + "/config.rb",
       css: dir.base + "/css",
       sass: dir.base + "/sass",
       image: dir.base + "/img",
@@ -76,29 +75,29 @@ gulp.task('compass', function () {
     }))
     .pipe(gulp.dest(dir.base + "/css"));
 });
-gulp.task('css', ['compass'], function () {
+gulp.task('css-reload', ['compass'], function () {
+  browserSync.reload();
+});
+gulp.task('css-dest', ['compass'], function () {
   return gulp.src(dir.base + "/**/*.css")
     .pipe(cssmin())
     .pipe(gulp.dest(dir.dest));
 });
-gulp.task('css-reload', ['css'], function () {
-  browserSync.reload();
-});
 
-//php・html 整形
-gulp.task('html', function () {
-  return gulp.src(paths.html)
-    .pipe(prettify({
-      indent_size: 0
-    }))
-    .pipe(gulp.dest(dir.dest))
-});
-gulp.task('html-reload', ['html'], function () {
+//php・html
+gulp.task('html-reload', function () {
   browserSync.reload();
+});
+gulp.task('html-dest', function () {
+  return gulp.src(paths.html)
+    .pipe(gulp.dest(dir.dest))
 });
 
 //画像圧縮
-gulp.task('img', function () {
+gulp.task('img-reload', function () {
+  browserSync.reload();
+});
+gulp.task('img-dest', function () {
   return gulp.src(paths.img)
     .pipe(gulp.dest(dir.base))
     .pipe(imagemin({
@@ -110,46 +109,38 @@ gulp.task('img', function () {
     }))
     .pipe(gulp.dest(dir.dest))
 });
-gulp.task('img-reload', ['img'], function () {
-  browserSync.reload();
-});
+
 
 //font周り 将来的にはsvgをiconfontにまとめるようする
-gulp.task('font', function () {
+gulp.task('font-reload', function () {
+  browserSync.reload();
+});
+gulp.task('font-dest', function () {
   return gulp.src(paths.font)
     .pipe(gulp.dest(dir.dest))
-});
-gulp.task('font-reload', ['font'], function () {
-  browserSync.reload();
 });
 
 //js関連：typescript仕様
 gulp.task('ts', function() {
      var options =  {
        target: 'ES6',
-       //removeComments: true,
        sortOutput: true,
        noImplicitAny: true
-        //out: 'typescript.js'
      };
-     return gulp.src(dir.base + '/**/*.ts')
+     return gulp.src(paths.ts)
        .pipe(typescript(options))
        .pipe(gulp.dest(dir.base));
 });
-
-gulp.task('js',['ts'], function () {
+gulp.task('js-reload', ['ts'], function () {
+  browserSync.reload();
+});
+gulp.task('js-dest',['ts'], function () {
   return gulp.src(paths.js)
     .pipe(gulp.dest(dir.dest))
 });
 
-gulp.task('js-reload', ['js'], function () {
-  browserSync.reload();
-});
-
-
-
 //納品ファイル書き出し用の記述
-gulp.task('dest', ['img', 'font','ts', 'js', 'css', 'html']);
+gulp.task('dest', ['img-dest', 'font','ts', 'js-dest', 'css-dest', 'html-dest']);
 
 //gulp watchタスク
 gulp.task('default', ['browser-sync'], function () {
