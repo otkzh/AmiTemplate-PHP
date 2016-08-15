@@ -2,26 +2,26 @@
 
 if (Modernizr.touchevents) {
 
-var linkTouchStart = function(){
+  var linkTouchStart = function () {
     thisAnchor = $(this);
     touchPos = thisAnchor.offset().top;
-    moveCheck = function(){
-        nowPos = thisAnchor.offset().top;
-        if(touchPos == nowPos){
-            thisAnchor.addClass("touch");
-        }
+    moveCheck = function () {
+      nowPos = thisAnchor.offset().top;
+      if (touchPos == nowPos) {
+        thisAnchor.addClass("touch");
+      }
     }
-    setTimeout(moveCheck,100);
-}
-var linkTouchEnd = function(){
+    setTimeout(moveCheck, 100);
+  }
+  var linkTouchEnd = function () {
     thisAnchor = $(this);
-    hoverRemove = function(){
-        thisAnchor.removeClass("touch");
+    hoverRemove = function () {
+      thisAnchor.removeClass("touch");
     }
-    setTimeout(hoverRemove,200);
-}
+    setTimeout(hoverRemove, 200);
+  }
 
-$(document).on('touchstart','a',linkTouchStart);
-$(document).on('touchend','a',linkTouchEnd);
+  $(document).on('touchstart', 'a', linkTouchStart);
+  $(document).on('touchend', 'a', linkTouchEnd);
 
-}// touch event
+} // touch event

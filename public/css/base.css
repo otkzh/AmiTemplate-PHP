@@ -267,18 +267,15 @@ body,
 /* line 61, ../sass/_base/_layout.scss */
 #container {
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 /* line 64, ../sass/_base/_layout.scss */
 #container .wide {
   width: 100%;
   -webkit-box-flex: 1;
-  -webkit-flex: 1 0 100%;
       -ms-flex: 1 0 100%;
           flex: 1 0 100%;
 }
@@ -287,7 +284,6 @@ body,
 #conts {
   width: auto;
   -webkit-box-flex: 1;
-  -webkit-flex: 1 0 50%;
       -ms-flex: 1 0 50%;
           flex: 1 0 50%;
   box-sizing: border-box;
@@ -298,7 +294,6 @@ body,
 /* line 78, ../sass/_base/_layout.scss */
 #side {
   -webkit-box-flex: 0;
-  -webkit-flex: 0 0 300px;
       -ms-flex: 0 0 300px;
           flex: 0 0 300px;
   margin-left: 48px;

@@ -1,6 +1,5 @@
 /* line 1, ../sass/_page/_home.scss */
 .links {
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: -webkit-box;
   display: flex;
@@ -8,27 +7,24 @@
 }
 /* line 5, ../sass/_page/_home.scss */
 .links li {
-  -webkit-flex: 1 0 25%;
-      -ms-flex: 1 0 25%;
-          -webkit-box-flex: 1;
-          flex: 1 0 25%;
+  -ms-flex: 1 0 25%;
+      -webkit-box-flex: 1;
+      flex: 1 0 25%;
   margin: 1em;
 }
 @media only screen and (max-width: 768px) {
   /* line 1, ../sass/_page/_home.scss */
   .links {
-    -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            flex-direction: column;
+    -ms-flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column;
   }
   /* line 11, ../sass/_page/_home.scss */
   .links li {
-    -webkit-flex: 1 0 auto;
-        -ms-flex: 1 0 auto;
-            -webkit-box-flex: 1;
-            flex: 1 0 auto;
+    -ms-flex: 1 0 auto;
+        -webkit-box-flex: 1;
+        flex: 1 0 auto;
   }
 }
 /* line 13, ../sass/_page/_home.scss */
@@ -108,16 +104,13 @@
 }
 /* line 54, ../sass/_page/_home.scss */
 .links figcaption {
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: -webkit-box;
   display: flex;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          -webkit-box-align: center;
-          align-items: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          -webkit-box-pack: center;
-          justify-content: center;
+  -ms-flex-align: center;
+      -webkit-box-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      -webkit-box-pack: center;
+      justify-content: center;
 }
