@@ -11,8 +11,8 @@
 ### 必要なもの
 
 - ローカルサーバー構築のために
- - [vagrant](https://www.vagrantup.com/)
- - [Virtualbox](https://www.virtualbox.org/)
+ -[Virtualbox](https://www.virtualbox.org/)と[vagrant](https://www.vagrantup.com/)
+
 - 作業の自動化のために
  - [node.js](http://nodejs.jp/)
  - [gulp](http://gulpjs.com/)
