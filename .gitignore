@@ -1,16 +1,6 @@
-# コメント。これは無視されます
-# 空白行を自由に入れることができる
-
-
-# 拡張子が.logのファイルを除外
-*.log
-
-# ディレクトリのすべてのファイルを無視します
-node_modules/
+# 以下ディレクトリのすべてのファイルを無視します
+node_modules
 .vagrant
 dest
 _psd
 .sass-cache
-
-#1：touch .gitignore
-#2 : git rm --cached [ファイル名]
