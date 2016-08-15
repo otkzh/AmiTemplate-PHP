@@ -18,6 +18,9 @@ var prettify = require('gulp-prettify');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
 
+//typescript 
+ var typescript = require('gulp-typescript');
+
 //↓setting
 
 var hostName = "192.168.33.50"; //browserSyncするローカルIPか localHostNameを記載
@@ -32,7 +35,7 @@ var paths = {
   "scss": dir.base + "/**/*.scss",
   "css": dir.base + "/**/*.css",
   "html": dir.base + "/**/*.{php,html}",
-  "js": dir.base + "/**/*.{js,htc}",
+  "js": dir.base + "/**/*.{js,htc,ts}",
   "img": dir.base + "/**/*.{png,jpg,gif,pdf}",
   "font": dir.base + "/**/*.{eot,svg,ttf,woff,woff2,otf}",
 }
@@ -120,17 +123,33 @@ gulp.task('font-reload', ['font'], function () {
   browserSync.reload();
 });
 
-//js関連 お好みで改造する。coffeeお好き？
-gulp.task('js', function () {
+//js関連：typescript仕様
+gulp.task('ts', function() {
+     var options =  {
+       target: 'ES6',
+       //removeComments: true,
+       sortOutput: true,
+       noImplicitAny: true
+        //out: 'typescript.js'
+     };
+     return gulp.src(dir.base + '/**/*.ts')
+       .pipe(typescript(options))
+       .pipe(gulp.dest(dir.base));
+});
+
+gulp.task('js',['ts'], function () {
   return gulp.src(paths.js)
     .pipe(gulp.dest(dir.dest))
 });
+
 gulp.task('js-reload', ['js'], function () {
   browserSync.reload();
 });
 
+
+
 //納品ファイル書き出し用の記述
-gulp.task('dest', ['img', 'font', 'js', 'css', 'html']);
+gulp.task('dest', ['img', 'font','ts', 'js', 'css', 'html']);
 
 //gulp watchタスク
 gulp.task('default', ['browser-sync'], function () {
