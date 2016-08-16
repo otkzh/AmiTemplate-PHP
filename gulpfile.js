@@ -33,7 +33,7 @@ var dir = {
 var paths = {
   "scss": dir.base + "/**/*.scss",
   "css": dir.base + "/**/*.css",
-  "html": dir.base + "/**/*.{php,html}",
+  "html": dir.base + "/**/*.{php,html,txt,text}",
   "js": dir.base + "/**/*.{js,htc}",
   "ts": dir.base + "/**/*.{ts}",
   "img": dir.base + "/**/*.{png,jpg,gif,pdf}",
