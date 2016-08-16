@@ -1,4 +1,15 @@
+
+//ゴシック体
+
+@font-face {
+  font-family: 'Noto Sans Japanese';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-DemiLight.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-DemiLight.woff) format('woff'), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-DemiLight.otf) format('opentype');
+}
+
 //remベース
+
 html {
   font-size: 62.5%;
   -webkit-text-size-adjust: 100%; //スマフォ縦横切替時設定
@@ -29,15 +40,9 @@ a {
   color: $color-point;
   text-decoration: none;
   font-weight: bold;
-  &:active,
-  &:focus,
-  &:hover {
-    text-decoration: none;
-    outline: none;
-  }
   @include touch-hover() {
     text-decoration: underline;
-    color: $color-point-darken;
+    color: $color-strong;
   }
 }
 
@@ -53,7 +58,7 @@ hr {
   clear: both;
   border: none;
   border-top: solid 1px $color-light-darken;
-  border-bottom: solid 1px darken(#fff, 1%);
+  border-bottom: solid 1px $color-light-lighten;
   margin: 1em 0;
 }
 
@@ -76,7 +81,7 @@ hr {
   margin-bottom: 1em;
 }
 
-[class*="l-ttl"]{
+.conts-l-ttl{
   font-size: 2.2rem;
 }
 
@@ -104,6 +109,7 @@ th {
   word-wrap: break-word;
   margin: 0.5em 0;
   color: $color-dark-lighten;
+  font-size: 1.4rem;
   &strong,
   &b {
     font-weight: bold;
@@ -221,4 +227,20 @@ kbd {
   color: #444;
   font-weight: normal;
   white-space: nowrap;
+}
+
+figure{
+  display: block;
+  position: relative;
+  figcaption{
+    position: absolute;
+    right: $bm;
+    bottom: $bm;
+    font-size: 1.2rem;
+    text-align: right;
+    font-weight: bold;
+    padding:0;
+    color:#fff;
+    text-shadow: 0px 0px 3px $color-dark;
+  }
 }

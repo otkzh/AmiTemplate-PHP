@@ -34,8 +34,8 @@
   -webkit-animation: hover-out .3s;
           animation: hover-out .3s;
 }
-/* line 50, ../sass/_mixins/_mixin.scss */
-.no-js .links a :hover, .js.no-touchevents .links a:hover, .js.touchevents .links a.touch {
+/* line 62, ../sass/_mixins/_mixin.scss */
+.no-js .links a:hover, .js.no-touchevents .links a:hover, .js.touchevents .links a.touch {
   -webkit-animation: hover-up .3s;
           animation: hover-up .3s;
   -webkit-transform: translateY(-10px);
@@ -43,7 +43,7 @@
           transform: translateY(-10px);
 }
 /* line 20, ../sass/_page/_home.scss */
-.no-js .links a :hover figure, .js.no-touchevents .links a:hover figure, .js.touchevents .links a.touch figure {
+.no-js .links a:hover figure, .js.no-touchevents .links a:hover figure, .js.touchevents .links a.touch figure {
   box-shadow: 0px 0px 3px #afafaf;
 }
 @-webkit-keyframes hover-up {

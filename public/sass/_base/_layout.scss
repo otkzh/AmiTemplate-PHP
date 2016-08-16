@@ -4,25 +4,27 @@ body,
 #all {
   width: 100%;
   min-height: 100%;
-  overflow-x: hidden;
   position: relative;
   z-index: 0;
 }
 
-@media all and (-ms-high-contrast:none) {
-  html,
-  body {
-    min-height: 100% !important;
-    overflow: auto !important;
-  }
-}//IE10・11用 fixedのバグ対策、scroll量を取得する場合はbodyから取得してください。
-
 .browsehappy{
-  background: $color-point;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+  top:0;
+  left: 0;
+  right: 0;
+  background: $color-error-lighten;
   p{
-    color:#fff;
+    color:$color-error;
     text-align: center;
-    padding: $bm*2;
+    padding: $bm;
+    font-size: 1.4rem;
+    &::before{
+      @include icon-font("\f05a");
+      margin-right: $bm;
+    }
   }
 }
 
