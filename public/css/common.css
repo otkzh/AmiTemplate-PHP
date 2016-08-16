@@ -71,8 +71,8 @@
 #header .logo a {
   box-sizing: border-box;
 }
-/* line 50, ../sass/_mixins/_mixin.scss */
-.no-js #header .logo a :hover, .js.no-touchevents #header .logo a:hover, .js.touchevents #header .logo a.touch {
+/* line 62, ../sass/_mixins/_mixin.scss */
+.no-js #header .logo a:hover, .js.no-touchevents #header .logo a:hover, .js.touchevents #header .logo a.touch {
   border-bottom: 1px solid #b8a37c;
 }
 /* line 41, ../sass/_common/_header.scss */
@@ -240,7 +240,7 @@ body.home #pan {
           animation: up 1s;
   font-size: 2.6rem;
   color: #d3c6ae;
-  font-family: "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN","游明朝", YuMincho, メイリオ,Meiryo,"ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
+  font-family: 'Libre Baskerville',"ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN","游明朝", YuMincho, メイリオ,Meiryo,"ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
   font-weight: normal;
   padding: 0;
 }
@@ -320,12 +320,12 @@ body.home .main-head .main-ttl {
   -webkit-transition: .3s;
   transition: .3s;
 }
-/* line 50, ../sass/_mixins/_mixin.scss */
-.no-js [class*="a-"][class*="underline"] :hover, .js.no-touchevents [class*="a-"][class*="underline"]:hover, .js.touchevents [class*="a-"][class*="underline"].touch {
+/* line 62, ../sass/_mixins/_mixin.scss */
+.no-js [class*="a-"][class*="underline"]:hover, .js.no-touchevents [class*="a-"][class*="underline"]:hover, .js.touchevents [class*="a-"][class*="underline"].touch {
   text-decoration: none;
 }
 /* line 35, ../sass/_common/_unit/_a.scss */
-.no-js [class*="a-"][class*="underline"] :hover::before, .js.no-touchevents [class*="a-"][class*="underline"]:hover::before, .js.touchevents [class*="a-"][class*="underline"].touch::before {
+.no-js [class*="a-"][class*="underline"]:hover::before, .js.no-touchevents [class*="a-"][class*="underline"]:hover::before, .js.touchevents [class*="a-"][class*="underline"].touch::before {
   width: 100%;
 }
 
@@ -376,8 +376,8 @@ body.home .main-head .main-ttl {
       -ms-flex-align: center;
           align-items: center;
 }
-/* line 50, ../sass/_mixins/_mixin.scss */
-.no-js [class*="btn-"][class*="base"] :hover, .js.no-touchevents [class*="btn-"][class*="base"]:hover, .js.touchevents [class*="btn-"][class*="base"].touch {
+/* line 62, ../sass/_mixins/_mixin.scss */
+.no-js [class*="btn-"][class*="base"]:hover, .js.no-touchevents [class*="btn-"][class*="base"]:hover, .js.touchevents [class*="btn-"][class*="base"].touch {
   background-color: #d3c6ae;
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFE5DDCF', endColorstr='#FFD3C6AE');
@@ -400,8 +400,8 @@ body.home .main-head .main-ttl {
   background-image: -webkit-linear-gradient(#e73526 0%, #c42316 100%);
   background-image: linear-gradient(#e73526 0%, #c42316 100%);
 }
-/* line 50, ../sass/_mixins/_mixin.scss */
-.no-js [class*="btn-"][class*="base"][class*="point"] :hover, .js.no-touchevents [class*="btn-"][class*="base"][class*="point"]:hover, .js.touchevents [class*="btn-"][class*="base"][class*="point"].touch {
+/* line 62, ../sass/_mixins/_mixin.scss */
+.no-js [class*="btn-"][class*="base"][class*="point"]:hover, .js.no-touchevents [class*="btn-"][class*="base"][class*="point"]:hover, .js.touchevents [class*="btn-"][class*="base"][class*="point"].touch {
   background-color: #e94a3d;
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFEE756B', endColorstr='#FFE94A3D');
@@ -428,8 +428,8 @@ body.home .main-head .main-ttl {
   position: relative;
   top: 0;
 }
-/* line 50, ../sass/_mixins/_mixin.scss */
-.no-js [class*="btn-"][class*="push"] :hover, .js.no-touchevents [class*="btn-"][class*="push"]:hover, .js.touchevents [class*="btn-"][class*="push"].touch {
+/* line 62, ../sass/_mixins/_mixin.scss */
+.no-js [class*="btn-"][class*="push"]:hover, .js.no-touchevents [class*="btn-"][class*="push"]:hover, .js.touchevents [class*="btn-"][class*="push"].touch {
   text-decoration: none;
   top: 3px;
   box-shadow: 0 2px #967e51;
@@ -445,8 +445,8 @@ body.home .main-head .main-ttl {
   background-color: #C42316;
   box-shadow: 0 5px #7f170e;
 }
-/* line 50, ../sass/_mixins/_mixin.scss */
-.no-js [class*="btn-"][class*="push"][class*="point"] :hover, .js.no-touchevents [class*="btn-"][class*="push"][class*="point"]:hover, .js.touchevents [class*="btn-"][class*="push"][class*="point"].touch {
+/* line 62, ../sass/_mixins/_mixin.scss */
+.no-js [class*="btn-"][class*="push"][class*="point"]:hover, .js.no-touchevents [class*="btn-"][class*="push"][class*="point"]:hover, .js.touchevents [class*="btn-"][class*="push"][class*="point"].touch {
   box-shadow: 0 2px #7f170e;
 }
 
