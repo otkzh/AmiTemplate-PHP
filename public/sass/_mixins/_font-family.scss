@@ -5,12 +5,7 @@
 
 // 明朝体 - コンテンツ用
 @mixin mincho {
-  font-family: 'Libre Baskerville',"ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN","游明朝", YuMincho, メイリオ,Meiryo,"ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
-}
-
-// 明朝体 - タイトル用
-@mixin mincho-str {
-  font-family: "Georgia", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ", Meiryo,"ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
+  font-family: 'Libre Baskerville',"ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN","游明朝", "YuMincho", "メイリオ","Meiryo","ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
 }
 
 // 等幅書体
