@@ -68,6 +68,7 @@ figure,
 footer,
 header,
 hgroup,
+main,
 menu,
 nav,
 section,
@@ -85,12 +86,13 @@ video {
   background: transparent;
 }
 
-/* line 87, ../sass/_base/_html5reset-1.6.1.scss */
+/* line 88, ../sass/_base/_html5reset-1.6.1.scss */
 body {
   line-height: 1;
 }
 
-/* line 91, ../sass/_base/_html5reset-1.6.1.scss */
+/* line 92, ../sass/_base/_html5reset-1.6.1.scss */
+main,
 article,
 aside,
 details,
@@ -105,19 +107,19 @@ section {
   display: block;
 }
 
-/* line 105, ../sass/_base/_html5reset-1.6.1.scss */
+/* line 107, ../sass/_base/_html5reset-1.6.1.scss */
 ol,
 ul {
   list-style: none;
 }
 
-/* line 110, ../sass/_base/_html5reset-1.6.1.scss */
+/* line 112, ../sass/_base/_html5reset-1.6.1.scss */
 blockquote,
 q {
   quotes: none;
 }
 
-/* line 115, ../sass/_base/_html5reset-1.6.1.scss */
+/* line 117, ../sass/_base/_html5reset-1.6.1.scss */
 blockquote:before,
 blockquote:after,
 q:before,
@@ -126,7 +128,7 @@ q:after {
   content: none;
 }
 
-/* line 123, ../sass/_base/_html5reset-1.6.1.scss */
+/* line 125, ../sass/_base/_html5reset-1.6.1.scss */
 a {
   margin: 0;
   padding: 0;
@@ -135,14 +137,14 @@ a {
   background: transparent;
 }
 
-/* line 131, ../sass/_base/_html5reset-1.6.1.scss */
+/* line 133, ../sass/_base/_html5reset-1.6.1.scss */
 ins {
   background-color: #ff9;
   color: #000;
   text-decoration: none;
 }
 
-/* line 137, ../sass/_base/_html5reset-1.6.1.scss */
+/* line 139, ../sass/_base/_html5reset-1.6.1.scss */
 mark {
   background-color: #ff9;
   color: #000;
@@ -150,25 +152,25 @@ mark {
   font-weight: bold;
 }
 
-/* line 144, ../sass/_base/_html5reset-1.6.1.scss */
+/* line 146, ../sass/_base/_html5reset-1.6.1.scss */
 del {
   text-decoration: line-through;
 }
 
-/* line 148, ../sass/_base/_html5reset-1.6.1.scss */
+/* line 150, ../sass/_base/_html5reset-1.6.1.scss */
 abbr[title],
 dfn[title] {
   border-bottom: 1px dotted;
   cursor: help;
 }
 
-/* line 154, ../sass/_base/_html5reset-1.6.1.scss */
+/* line 156, ../sass/_base/_html5reset-1.6.1.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 159, ../sass/_base/_html5reset-1.6.1.scss */
+/* line 161, ../sass/_base/_html5reset-1.6.1.scss */
 hr {
   display: block;
   height: 1px;
@@ -178,13 +180,13 @@ hr {
   padding: 0;
 }
 
-/* line 168, ../sass/_base/_html5reset-1.6.1.scss */
+/* line 170, ../sass/_base/_html5reset-1.6.1.scss */
 input,
 select {
   vertical-align: middle;
 }
 
-/* line 173, ../sass/_base/_html5reset-1.6.1.scss */
+/* line 175, ../sass/_base/_html5reset-1.6.1.scss */
 img {
   vertical-align: top;
   font-size: 0;
@@ -231,91 +233,138 @@ body,
 }
 
 /* line 31, ../sass/_base/_layout.scss */
-.wrap {
+.wrap, body.list-page #container, body.single-page #container, body.magazine-page #container {
   box-sizing: border-box;
   margin: 0 auto;
   width: 100%;
 }
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 1025px) {
   /* line 31, ../sass/_base/_layout.scss */
-  .wrap {
+  .wrap, body.list-page #container, body.single-page #container, body.magazine-page #container {
     max-width: 1304px;
-    min-width: 1004px;
     padding: 0 24px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  /* line 31, ../sass/_base/_layout.scss */
+  .wrap, body.list-page #container, body.single-page #container, body.magazine-page #container {
+    padding: 0 16px;
   }
 }
 @media only screen and (max-width: 768px) {
   /* line 31, ../sass/_base/_layout.scss */
-  .wrap {
-    padding: 0 16px;
-  }
-}
-@media only screen and (max-width: 480px) {
-  /* line 31, ../sass/_base/_layout.scss */
-  .wrap {
+  .wrap, body.list-page #container, body.single-page #container, body.magazine-page #container {
     padding: 0 8px;
   }
 }
 
-/* line 48, ../sass/_base/_layout.scss */
-.conts-sec {
-  padding-bottom: 48px;
-  margin-bottom: 48px;
-}
-
-/* line 53, ../sass/_base/_layout.scss */
+/* line 51, ../sass/_base/_layout.scss */
 #header {
   z-index: 2;
 }
 
 /* line 57, ../sass/_base/_layout.scss */
-#gnav {
-  z-index: 3;
+#main {
+  display: block;
 }
 
-/* line 63, ../sass/_base/_layout.scss */
+/* line 61, ../sass/_base/_layout.scss */
 #container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-}
-/* line 66, ../sass/_base/_layout.scss */
-#container .wide {
-  width: 100%;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 100%;
-          flex: 1 0 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 /* line 72, ../sass/_base/_layout.scss */
 #conts {
-  width: auto;
+  width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+}
+/* line 76, ../sass/_base/_layout.scss */
+body.single-page #conts, body.magazine-page #conts {
+  max-width: 720px;
   -webkit-box-flex: 1;
       -ms-flex: 1 0 50%;
           flex: 1 0 50%;
   box-sizing: border-box;
   border: 1px solid #eee;
-  padding: 24px;
+  padding: 0 24px;
+}
+/* line 84, ../sass/_base/_layout.scss */
+body.list-page #conts {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 50%;
+          flex: 1 1 50%;
+  box-sizing: border-box;
 }
 
-/* line 80, ../sass/_base/_layout.scss */
-#side {
+/* line 92, ../sass/_base/_layout.scss */
+body.magazine-page #side {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 270px;
+          flex: 0 0 270px;
+  margin-left: 48px;
+}
+@media only screen and (max-width: 1024px) {
+  /* line 92, ../sass/_base/_layout.scss */
+  body.magazine-page #side {
+    margin-left: 16px;
+  }
+}
+/* line 99, ../sass/_base/_layout.scss */
+body.list-page #side {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 300px;
           flex: 0 0 300px;
-  margin-left: 48px;
+  margin-right: 48px;
 }
-/* line 83, ../sass/_base/_layout.scss */
+@media only screen and (max-width: 1024px) {
+  /* line 99, ../sass/_base/_layout.scss */
+  body.list-page #side {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 270px;
+            flex: 0 0 270px;
+    margin-right: 16px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  /* line 91, ../sass/_base/_layout.scss */
+  #side {
+    -webkit-box-ordinal-group: 5 !important;
+        -ms-flex-order: 4 !important;
+            order: 4 !important;
+    width: 100% !important;
+    -webkit-box-flex: 0 !important;
+        -ms-flex: 0 0 100% !important;
+            flex: 0 0 100% !important;
+    margin: 0 !important;
+  }
+}
+/* line 114, ../sass/_base/_layout.scss */
 #side nav {
   margin-bottom: 48px;
 }
-/* line 87, ../sass/_base/_layout.scss */
+/* line 118, ../sass/_base/_layout.scss */
 #side .page-nav li {
   margin-bottom: 8px;
 }
-/* line 90, ../sass/_base/_layout.scss */
+/* line 121, ../sass/_base/_layout.scss */
 #side .page-nav a {
   display: block;
   box-sizing: border-box;
@@ -329,12 +378,12 @@ body,
   background-color: #eee;
 }
 
-/* line 104, ../sass/_base/_layout.scss */
+/* line 135, ../sass/_base/_layout.scss */
 #footer {
   z-index: 2;
 }
 
-/* line 109, ../sass/_base/_layout.scss */
+/* line 141, ../sass/_base/_layout.scss */
 #pagetop {
   z-index: 3;
 }
@@ -345,19 +394,25 @@ body,
   font-weight: 400;
   src: url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-DemiLight.woff2) format("woff2"), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-DemiLight.woff) format("woff"), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-DemiLight.otf) format("opentype");
 }
-/* line 13, ../sass/_base/_typo.scss */
+@font-face {
+  font-family: 'Noto Sans Japanese';
+  font-style: bord;
+  font-weight: 700;
+  src: url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Bold.woff2) format("woff2"), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Bold.woff) format("woff"), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Bold.otf) format("opentype");
+}
+/* line 19, ../sass/_base/_typo.scss */
 html {
   font-size: 62.5%;
   -webkit-text-size-adjust: 100%;
 }
 
-/* line 18, ../sass/_base/_typo.scss */
+/* line 24, ../sass/_base/_typo.scss */
 body {
   font-size: 1.6rem;
   font-family: 'Noto Sans Japanese', sans-serif;
 }
 
-/* line 28, ../sass/_base/_typo.scss */
+/* line 34, ../sass/_base/_typo.scss */
 header img,
 footer img,
 article img,
@@ -368,21 +423,21 @@ section img {
   vertical-align: bottom;
 }
 
-/* line 37, ../sass/_base/_typo.scss */
+/* line 43, ../sass/_base/_typo.scss */
 a {
   -webkit-tap-highlight-color: transparent;
   outline: none;
-  color: #C42316;
+  color: #ff7c7c;
   text-decoration: none;
   font-weight: bold;
 }
 /* line 62, ../sass/_mixins/_mixin.scss */
 .no-js a:hover, .js.no-touchevents a:hover, .js.touchevents a.touch {
   text-decoration: underline;
-  color: #fffc00;
+  color: #ffc9c9;
 }
 
-/* line 50, ../sass/_base/_typo.scss */
+/* line 56, ../sass/_base/_typo.scss */
 ::-moz-selection,
 ::-moz-selection {
   background: black;
@@ -394,7 +449,7 @@ a {
   text-shadow: none;
 }
 
-/* line 57, ../sass/_base/_typo.scss */
+/* line 63, ../sass/_base/_typo.scss */
 hr {
   clear: both;
   border: none;
@@ -403,7 +458,7 @@ hr {
   margin: 1em 0;
 }
 
-/* line 65, ../sass/_base/_typo.scss */
+/* line 71, ../sass/_base/_typo.scss */
 [class*="-ttl"] {
   word-wrap: break-word;
   line-height: 1.4;
@@ -412,20 +467,7 @@ hr {
   font-size: 1.8rem;
 }
 
-/* line 77, ../sass/_base/_typo.scss */
-.conts-sec-ttl {
-  font-size: 2.4rem;
-  border-bottom: solid 2px #b8a37c;
-  padding: .5em 0;
-  margin-bottom: 1em;
-}
-
-/* line 84, ../sass/_base/_typo.scss */
-.conts-l-ttl {
-  font-size: 2.2rem;
-}
-
-/* line 98, ../sass/_base/_typo.scss */
+/* line 80, ../sass/_base/_typo.scss */
 em,
 p,
 ul,
@@ -442,38 +484,39 @@ th {
   color: #595959;
   font-size: 1.4rem;
 }
-/* line 113, ../sass/_base/_typo.scss */
-emstrong, emb,
-pstrong,
-pb,
-ulstrong,
-ulb,
-olstrong,
-olb,
-dlstrong,
-dlb,
-ddstrong,
-ddb,
-dtstrong,
-dtb,
-blockquotestrong,
-blockquoteb,
-tdstrong,
-tdb,
-thstrong,
-thb {
+/* line 95, ../sass/_base/_typo.scss */
+em strong, em b,
+p strong,
+p b,
+ul strong,
+ul b,
+ol strong,
+ol b,
+dl strong,
+dl b,
+dd strong,
+dd b,
+dt strong,
+dt b,
+blockquote strong,
+blockquote b,
+td strong,
+td b,
+th strong,
+th b {
   font-weight: bold;
-  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0) 45%, #eee9df 40%);
-  background-image: linear-gradient(rgba(0, 0, 0, 0) 45%, #eee9df 40%);
+  color: #000 !important;
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0) 45%, #ffffff 40%);
+  background-image: linear-gradient(rgba(0, 0, 0, 0) 45%, #ffffff 40%);
 }
 
-/* line 132, ../sass/_base/_typo.scss */
+/* line 115, ../sass/_base/_typo.scss */
 blockquote {
   position: relative;
   padding: 1em;
   border-bottom: solid 1px #333;
 }
-/* line 136, ../sass/_base/_typo.scss */
+/* line 119, ../sass/_base/_typo.scss */
 blockquote:before {
   content: "";
   display: inline-block;
@@ -487,43 +530,43 @@ blockquote:before {
   margin-bottom: -10px;
 }
 
-/* line 144, ../sass/_base/_typo.scss */
+/* line 127, ../sass/_base/_typo.scss */
 blockquote small,
 cite {
   color: #333;
   font-style: normal;
 }
 
-/* line 150, ../sass/_base/_typo.scss */
+/* line 133, ../sass/_base/_typo.scss */
 blockquote p {
   margin-bottom: 2px;
 }
 
-/* line 154, ../sass/_base/_typo.scss */
+/* line 137, ../sass/_base/_typo.scss */
 small,
 blockquote cite {
   font-size: 1rem;
   line-height: 1;
 }
 
-/* line 160, ../sass/_base/_typo.scss */
+/* line 143, ../sass/_base/_typo.scss */
 address {
   font-style: italic;
 }
 
-/* line 164, ../sass/_base/_typo.scss */
+/* line 147, ../sass/_base/_typo.scss */
 del {
   text-decoration: line-through;
 }
 
-/* line 168, ../sass/_base/_typo.scss */
+/* line 151, ../sass/_base/_typo.scss */
 abbr[title],
 dfn[title] {
   border-bottom: 1px dotted #000;
   cursor: help;
 }
 
-/* line 174, ../sass/_base/_typo.scss */
+/* line 157, ../sass/_base/_typo.scss */
 sub,
 sup {
   font-size: 1rem;
@@ -531,24 +574,24 @@ sup {
   position: relative;
 }
 
-/* line 181, ../sass/_base/_typo.scss */
+/* line 164, ../sass/_base/_typo.scss */
 sup {
   top: -0.5em;
 }
 
-/* line 185, ../sass/_base/_typo.scss */
+/* line 168, ../sass/_base/_typo.scss */
 sub {
   bottom: -0.25em;
 }
 
-/* line 190, ../sass/_base/_typo.scss */
+/* line 173, ../sass/_base/_typo.scss */
 pre,
 kbd,
 samp {
   font-size: 90%;
 }
 
-/* line 196, ../sass/_base/_typo.scss */
+/* line 179, ../sass/_base/_typo.scss */
 pre {
   font-size: 90%;
   color: #444;
@@ -556,7 +599,7 @@ pre {
   overflow: auto;
 }
 
-/* line 203, ../sass/_base/_typo.scss */
+/* line 186, ../sass/_base/_typo.scss */
 code {
   border-radius: 2px;
   display: inline-block;
@@ -575,7 +618,7 @@ code {
   top: -2px;
 }
 
-/* line 217, ../sass/_base/_typo.scss */
+/* line 200, ../sass/_base/_typo.scss */
 kbd {
   padding: 2px 6px 1px;
   line-height: 1;
@@ -591,12 +634,12 @@ kbd {
   white-space: nowrap;
 }
 
-/* line 232, ../sass/_base/_typo.scss */
+/* line 215, ../sass/_base/_typo.scss */
 figure {
   display: block;
   position: relative;
 }
-/* line 235, ../sass/_base/_typo.scss */
+/* line 218, ../sass/_base/_typo.scss */
 figure figcaption {
   position: absolute;
   right: 8px;

@@ -3,35 +3,174 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 250px;
-  background-color: #000;
-  .main-ttl {
-    animation: up 1s;
-    font-size: 2.6rem;
-    color: $color-brand-lighten;
-    @include mincho;
-    font-weight: normal;
-    padding: 0;
-    body.home & {
-      padding: 0;
+  box-sizing: border-box;
+  padding-top: $margin-inner;
+  padding-bottom: $margin;
+}
+
+.main-ttl {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin: 0 0 $bm*2;
+}
+
+.main-description {
+  margin: 0;
+}
+
+.conts-main-v {
+  margin: 0 (-$margin-inner);
+  position: relative;
+}
+
+.conts-main-v-dates {
+  .conts-main-v-release {
+    &::after {
+      content: "/";
+      margin: 0 $bm;
     }
   }
-  @include max-screen($width-s) {
-    height: 150px;
+}
+
+.conts-sec {
+  margin-bottom: $margin;
+  &:last-child {
+    margin-bottom: 0;
   }
 }
 
-#conts {
-    animation: up 1s;
+.conts-sec-ttl {
+  font-size: 2.4rem;
+  border-bottom: solid 3px $color-dark-darken;
+  padding-bottom: .3em;
+  margin-bottom: 1em;
 }
 
-@keyframes up {
-  from {
-    transform: translateY(30px);
-    opacity: 0;
+.conts-l-ttl {
+  font-size: 2.2rem;
+}
+
+.conts-m-ttl {
+  font-size: 1.8rem;
+  margin-top: 1em;
+}
+
+.conts-s-ttl {
+  font-size: 1.6rem;
+}
+
+//--------------------- conts-art ---------------------//
+.conts-art {
+  padding-bottom: $margin-inner;
+  margin-bottom: $margin-inner;
+  border-bottom: solid 1px $color-light;
+}
+
+.conts-art a {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  color: $color-dark;
+  font-weight: normal;
+  @include touch-hover() {
+    color: $color-dark;
+    text-decoration: none;
   }
-  to {
-    transform: translateY(0px);
-    opacity: 1;
+}
+
+.conts-art-img {
+  max-width: 50%;
+  width: 50%;
+  flex: 0 0 50%;
+  margin-right: $bm*2;
+  background-color: $color-light;
+  background-size: cover;
+  background-position: center;
+  @include touch-hover() {
+    opacity: .8;
   }
+}
+
+.conts-art-ex {
+  max-width: 50%;
+  width: 50%;
+  flex: 0 0 50%;
+}
+
+.conts-art-category,
+.conts-art-date {
+  font-size: 1.2rem;
+  margin: 0;
+  display: inline-block;
+}
+
+.conts-art-category {
+  &::before {
+    @include icon-font("\f07c");
+    margin-right: $bm/2;
+  }
+}
+
+.conts-art-date {
+  &::before {
+    @include icon-font("\f017");
+    margin-right: $bm/2;
+  }
+  time {
+    margin: 0;
+  }
+}
+
+.conts-art-ttl {
+  @include touch-hover() {
+    text-decoration: underline;
+  }
+}
+
+.conts-art-text {
+  min-height: 10em;
+}
+
+//--------------------- conts-footer ---------------------//
+.conts-footer {}
+
+.conts-footer-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  a {
+    display: block;
+    padding: $bm;
+    color: $color-dark;
+  }
+}
+
+.conts-footer-next,
+.conts-footer-prev {
+  margin: 0 $margin-inner;
+}
+
+.conts-footer-prev a {
+  &::before {
+    @include icon-font("\f104");
+    margin-right: $bm;
+  }
+}
+
+.conts-footer-next a {
+  &::after {
+    @include icon-font();
+    margin-left: $bm;
+  }
+}
+
+.conts-footer-aside {
+  box-sizing: border-box;
+  padding: $margin-inner;
+  background-color: $color-light;
+  margin: 0 (-$margin-inner) (-$bm);
+  .conts-m-ttl:first-child{
+    margin-top: $bm;
+    }
 }

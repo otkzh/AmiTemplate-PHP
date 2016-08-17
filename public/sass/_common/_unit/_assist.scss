@@ -1,6 +1,16 @@
 .assist{
-  @include box-sizing(border-box);
+  box-sizing: border-box;
+  position: relative;
   border:solid 1px $color-light;
   padding: $margin-inner;
   margin-bottom: $margin-inner;
+  &.warning{
+    border: none;
+    color: $color-warning;
+    background-color: $color-warning-lighten;
+    &::before{
+      @include icon-font("\f071");
+      margin-right: $bm/2;
+    }
+  }
 }

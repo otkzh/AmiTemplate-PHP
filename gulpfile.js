@@ -142,7 +142,7 @@ gulp.task('js-dest',['ts'], function () {
 });
 
 //納品ファイル書き出し用の記述
-gulp.task('dest', ['img-dest', 'font','ts', 'js-dest', 'css-dest', 'html-dest']);
+gulp.task('dest', ['img-dest', 'font-dest','ts', 'js-dest', 'css-dest', 'html-dest']);
 
 //gulp watchタスク
 gulp.task('default', ['browser-sync'], function () {

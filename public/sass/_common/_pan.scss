@@ -1,52 +1,28 @@
-#pan {
-  position: absolute;
-  width: 100%;
-  padding: $bm/2 $margin-inner;
-  border-bottom: 1px solid $color-light;
-  animation: opa1 1s;
-  background: #fff;
-  z-index: 100;
-  ul {
-    width: 100%;
-    display: flex;
-    margin: 0;
-  }
-  li {
-    &:not(:last-child)::after {
+.pan-nav{
+  padding-top: $bm;
+  padding-bottom: $bm;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  li{
+    margin-right: $bm;
+    &::after{
+      color:$color-light-darken;
       content: "-";
-      color: $color-point;
-      margin: 0 $bm;
+      margin-left: $bm;
     }
+    &:last-child::after{
+      content: none;
+    };
   }
-  a {
-    font-size: 1.2rem;
-    @include touch-hover() {}
-  }
-  body.home & {
-    display: none;
-
-  }
-}
-
-@keyframes example {
-  0% {
-    opacity: 1;
-    display: block;
-  }
-  100% {
-    opacity: 0;
-    display: none;
-  }
-}
-
-@keyframes opa1 {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
+  a{
+    color:$color-light-darken;
+    font-weight: normal;
+    @include touch-hover(){
+    }
+    &.pan-thispage{
+      font-weight: bold;
+      color:$color-brand;
+    }
   }
 }

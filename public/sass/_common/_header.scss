@@ -1,79 +1,91 @@
-#header {
-  box-sizing: border-box;
+#header{
+  box-shadow: 0 0 3px rgba(0, 0, 0, .3);
+  transform: translate3d(0,0,0);
+}
+
+.header-wrap {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  width: 100%;
-  padding: $margin-inner;
-  border-bottom: 1px solid $color-light;
-  .header-hgroup {
-    flex: 0 0 250px;
-  }
-  .header-nav {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    &.js-close {}
-  }
-  @include max-screen($width-m) {
-    flex-direction: column;
-    .header-hgroup {
-      flex: 0 0 auto;
-      margin-bottom: $margin-inner;
-      display: flex;
-      justify-content: center;
-    }
-    .header-nav {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
+  padding-top: $bm;
+  padding-bottom: $bm;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  a {
+    color: $color-dark;
+    font-size: 1.6rem;
+    @include mincho;
+    transition: color .5s;
+    @include touch-hover() {
+      transition: color .5s;
+      color: $color-light-darken;
+      text-decoration: none;
     }
   }
-  .logo {
+}
+
+.header-description {
+  display: none;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+}
+
+.header-hnav,
+.header-gnav {
+  box-sizing: border-box;
+  padding: 0 $bm;
+  display: flex;
+  align-items: center;
+  border-left: solid 1px $color-light;
+  li {
+    box-sizing: border-box;
+    padding: 0 $bm/2;
     a {
+      font-weight: normal;
       box-sizing: border-box;
-      @include touch-hover() {
-        border-bottom: 1px solid $color-brand;
-      }
-    }
-  }
-  .description {
-    display: none;
-  }
-  .gnav,
-  .snav {
-    display: flex;
-    align-items: center;
-    margin: 0 1em;
-    li {
-      margin: 0;
-    }
-    a {
       display: block;
-      padding: 0 $bm;
-      @include touch-hover() {}
-    }
+      padding: $bm;
+      color: $color-dark;
+      font-size: 1.4rem;
+      border-bottom: solid 2px rgba(0, 0, 0, 0);
+      transition: all .5s;
+      @each $class in home,
+      markup,
+      speed,
+      responsive,
+      units,
+      readme {
+        body.#{$class} &.#{$class} {
+          border-color: $color-dark;
+        }
+      } //each
+      @include touch-hover() {
+        transition: all .5s;
+        color: $color-light-darken;
+        text-decoration: none;
+        border-color: $color-light;
+      }
+      &.readme {
+        color: $color-brand;
+        &::before {
+          @include icon-font("\f06e");
+          margin-right: $bm;
+        }
+        body.readme &{
+          color:$color-brand-darken;
+          border-color: $color-brand-darken;
+        }
+      }
+    } //a
   }
-  @each $class in home,
-  units,
-  markup,
-  speed,
-  responsive,
-  readme {
-    body.#{$class} & .#{$class} {
-      background-color: $color-light;
-    }
-  } //each
-  @include max-screen($width-m) {
-    .snav,
-    .menu {
-      display: none;
-    }
-  }
-  .menu {
-    @include min-screen($width-m) {
-      display: none;
-    }
-  }
+}
+
+.header-menu {
+  display: none;
 }

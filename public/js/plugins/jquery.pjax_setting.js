@@ -1,12 +1,14 @@
 $.pjax({
   area: [
-  '#pan, .main-ttl, #conts',
+  //'#pan, .main-ttl, #conts , #main-v',
+  '#all',
   'body'
 ],
   load: {
     head: 'base, meta, link',
-    //      css: true,
+    css: true,
     script: true,
+     reload: '[src*="home.js",src*="type.js"]'
   },
   cache: {
     click: true,
@@ -45,7 +47,8 @@ $.pjax({
 
 // 6 events and 30 callbacks exists.
 $(document).bind('pjax:fetch', function () {
-  $('#pan,.main-ttl,#conts').stop()
+  //$('#pan,.main-ttl,#conts,#main-v').stop()
+   $('#all').stop()
     .animate({
       opacity: 0
     }, 500);

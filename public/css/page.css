@@ -1,49 +1,199 @@
+@charset "UTF-8";
 /* line 1, ../sass/_page/_home.scss */
-.links {
+body.home #main-v {
+  background-color: #ff7c7c;
+  position: relative;
+  height: 100vh;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  opacity: 1;
+  -webkit-animation: identifier .5s;
+          animation: identifier .5s;
+  background-image: url('../img/home/main.png?1471318865');
+  background-repeat: no-repeat;
+  background-position: center 40vh;
+}
+@media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
+  /* line 1, ../sass/_page/_home.scss */
+  body.home #main-v {
+    background-image: url('../img/home/main@2x.png?1471318864');
+    background-size: 302px 763px;
+  }
+}
+@-webkit-keyframes identifier {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes identifier {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* line 18, ../sass/_page/_home.scss */
+body.home #contents {
+  -webkit-animation: identifier 1s;
+          animation: identifier 1s;
+}
+@keyframes identifier {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* line 27, ../sass/_page/_home.scss */
+body.home .main-v-hgroup {
+  text-align: center;
+  padding: 48px 0;
+}
+/* line 32, ../sass/_page/_home.scss */
+body.home .main-v-logo {
+  margin-bottom: 24px;
+}
+/* line 34, ../sass/_page/_home.scss */
+body.home .main-v-logo a {
+  font-family: 'Libre Baskerville',"ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN","游明朝", "YuMincho", "メイリオ","Meiryo","ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
+  font-size: 3rem;
+  color: #fbfbfb;
+}
+/* line 62, ../sass/_mixins/_mixin.scss */
+.no-js body.home .main-v-logo a:hover, .js.no-touchevents body.home .main-v-logo a:hover, .js.touchevents body.home .main-v-logo a.touch {
+  -webkit-transition: color .5s;
+  transition: color .5s;
+  color: #eee;
+  text-decoration: none;
+}
+/* line 46, ../sass/_page/_home.scss */
+body.home .main-v-nav {
+  font-family: 'Libre Baskerville',"ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN","游明朝", "YuMincho", "メイリオ","Meiryo","ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
+}
+/* line 48, ../sass/_page/_home.scss */
+body.home .main-v-nav a {
+  color: #fbfbfb;
+  display: block;
+  box-sizing: border-box;
+  padding: 8px 4px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  border-bottom: solid 4px transparent;
+}
+/* line 62, ../sass/_mixins/_mixin.scss */
+.no-js body.home .main-v-nav a:hover, .js.no-touchevents body.home .main-v-nav a:hover, .js.touchevents body.home .main-v-nav a.touch {
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  color: #eee;
+  text-decoration: none;
+  border-bottom: solid 4px #fff;
+}
+/* line 61, ../sass/_page/_home.scss */
+body.home .main-v-nav a.home {
+  -webkit-animation: header-nav-color-fade 1s;
+          animation: header-nav-color-fade 1s;
+  border-bottom: solid 4px #fbfbfb;
+}
+/* line 68, ../sass/_page/_home.scss */
+body.home .main-v-gnav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 650px;
+  width: 100%;
+  margin: 0 auto;
+}
+/* line 74, ../sass/_page/_home.scss */
+body.home .main-v-gnav li {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  text-align: center;
+}
+/* line 80, ../sass/_page/_home.scss */
+body.home .main-v-hnav {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+}
+/* line 85, ../sass/_page/_home.scss */
+body.home .main-v-hnav a.readme::before {
+  content: "";
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-right: 8px;
+}
+/* line 92, ../sass/_page/_home.scss */
+body.home .main-v-menu {
+  display: none;
+}
+/* line 96, ../sass/_page/_home.scss */
+body.home .links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin: 1em -1em;
 }
-/* line 5, ../sass/_page/_home.scss */
-.links li {
+/* line 100, ../sass/_page/_home.scss */
+body.home .links li {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 25%;
           flex: 1 0 25%;
   margin: 1em;
 }
 @media only screen and (max-width: 768px) {
-  /* line 1, ../sass/_page/_home.scss */
-  .links {
+  /* line 96, ../sass/_page/_home.scss */
+  body.home .links {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  /* line 11, ../sass/_page/_home.scss */
-  .links li {
+  /* line 106, ../sass/_page/_home.scss */
+  body.home .links li {
     -webkit-box-flex: 1;
         -ms-flex: 1 0 auto;
             flex: 1 0 auto;
   }
 }
-/* line 13, ../sass/_page/_home.scss */
-.links a {
+/* line 108, ../sass/_page/_home.scss */
+body.home .links a {
   display: block;
   box-sizing: border-box;
   -webkit-animation: hover-out .3s;
           animation: hover-out .3s;
 }
 /* line 62, ../sass/_mixins/_mixin.scss */
-.no-js .links a:hover, .js.no-touchevents .links a:hover, .js.touchevents .links a.touch {
+.no-js body.home .links a:hover, .js.no-touchevents body.home .links a:hover, .js.touchevents body.home .links a.touch {
   -webkit-animation: hover-up .3s;
           animation: hover-up .3s;
   -webkit-transform: translateY(-10px);
       -ms-transform: translateY(-10px);
           transform: translateY(-10px);
 }
-/* line 20, ../sass/_page/_home.scss */
-.no-js .links a:hover figure, .js.no-touchevents .links a:hover figure, .js.touchevents .links a.touch figure {
+/* line 115, ../sass/_page/_home.scss */
+.no-js body.home .links a:hover figure, .js.no-touchevents body.home .links a:hover figure, .js.touchevents body.home .links a.touch figure {
   box-shadow: 0px 0px 3px #afafaf;
 }
 @-webkit-keyframes hover-up {
@@ -98,12 +248,12 @@
             transform: translateY(0px);
   }
 }
-/* line 51, ../sass/_page/_home.scss */
-.links figure {
+/* line 146, ../sass/_page/_home.scss */
+body.home .links figure {
   margin: 0;
 }
-/* line 54, ../sass/_page/_home.scss */
-.links figcaption {
+/* line 149, ../sass/_page/_home.scss */
+body.home .links figcaption {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

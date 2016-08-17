@@ -1,3 +1,98 @@
+#main-v {
+  background-color: $color-brand;
+  position: relative;
+  height: 100vh;
+  box-shadow: 0 0 5px rgba(0,0,0,.5);
+  z-index: 1000;
+  opacity:1;
+  animation: identifier .5s;
+  @include img(home/main,png,no-repeat);
+  background-position: center 40vh;
+  @keyframes identifier {
+    0% {opacity:0;}
+    50% {opacity:0;}
+    100% {opacity:1;}
+  }
+}
+
+#contents {
+  animation: identifier 1s;
+  @keyframes identifier {
+    0% {opacity:0;}
+    50% {opacity:0;}
+    100% {opacity:1;}
+  }
+}
+
+.main-v-hgroup {
+  text-align: center;
+  padding: $margin 0;
+}
+
+.main-v-logo {
+  margin-bottom: $margin-inner;
+  a {
+    @include mincho;
+    font-size: 3rem;
+    color: $color-light-lighten;
+    @include touch-hover() {
+      transition: color .5s;
+      color: $color-light;
+      text-decoration: none;
+    }
+  }
+}
+
+.main-v-nav {
+  @include mincho;
+  a {
+    color: $color-light-lighten;
+    display: block;
+    box-sizing: border-box;
+    padding: $bm $bm/2;
+    transition: all .3s;
+    border-bottom: solid $bm/2 rgba(0, 0, 0, 0);
+    @include touch-hover() {
+      transition: all .5s;
+      color: $color-light;
+      text-decoration: none;
+      border-bottom: solid $bm/2 #fff;
+    }
+    &.home {
+        animation: header-nav-color-fade 1s;
+        border-bottom: solid $bm/2 $color-light-lighten;
+      }
+  }
+}
+
+.main-v-gnav {
+  display: flex;
+  align-items: center;
+  max-width: 650px;
+  width: 100%;
+  margin: 0 auto;
+  li {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+}
+
+.main-v-hnav {
+  position: absolute;
+  right: $bm;
+  top: $bm;
+  a.readme {
+    &::before {
+      @include icon-font("\f06e");
+      margin-right: $bm;
+    }
+  }
+}
+
+.main-v-menu{
+  display: none;
+}
+
 .links {
   //width: 100%;
   display: flex;

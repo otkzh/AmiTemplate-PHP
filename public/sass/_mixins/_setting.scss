@@ -8,8 +8,8 @@ $margin-s: $bm*1.5; //要素同士のマージンとか 通常12px
 //--------------------横幅の設定
 $width-xs: 320px; //iphone5
 $width-s: 480px; //LG G3など、5.5incタイプの大型スマートフォン
-$width-m: 768px; //ipad
-$width-l: 980px; //ちょっと古いモニターの横幅
+$width-m: 768px; //ipad縦
+$width-l: 1024px; //ipad横
 $width-xl: 1280px; //MackBook 12/Pro 13/Surface2/3/Pro/Nexus10
 
 //--------------------色設定
@@ -34,7 +34,7 @@ $color-strong-darken: darken($color-strong, 5%);
 $color-strong-lighten: lighten($color-strong, 15%);
 
 //ブランドカラー
-$color-brand: #b8a37c;
+$color-brand: #ff7c7c;
 $color-brand-darken: darken($color-brand, 15%);
 $color-brand-lighten: lighten($color-brand, 15%);
 

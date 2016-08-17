@@ -1,55 +1,66 @@
-	
-require(["plugins/imagesLoaded","plugins/jquery.sliderPro/min","require-plugins/css.min!plugins/jquery.sliderPro/css"], function() {
-	
-$(".sp-image").imagesLoaded(function(){
-
-	$(this).fadeIn();
-
-	$(function(){
-	
-		$('#slider_main').sliderPro({
-			
-			width: 720,//横幅
-			height:400,
-			arrows: true,//左右の矢印
-			fadeArrows: false,
-			buttons: false,//ナビゲーションボタン
-			slideDistance:8,//スライド同士の距離
-			visibleSize: '100%',//前後のスライドを表示
-			touchSwipe : false,//タッチスワイプをするか否か 初期:true
-	
-		});
-	
-	});
-
+/// <reference path="../typings/jquery.d.ts"/>
+$(function () {
+    var windowH;
+    var fixedArea = $("#contents");
+    var cHeight;
+    var animationFlag;
+    var timer = false;
+    var scrollSize;
+    //ブラウザのサイズを取得
+    function WH() {
+        return $(window).height();
+    }
+    //console.log("windowの高さ ：　"+WH());
+    windowH = WH();
+    $(window).on('resize', function () {
+        if (timer !== false) {
+            clearTimeout(timer);
+        }
+        timer = setTimeout(function () {
+            windowH = WH();
+            //console.log("リサイズ時：" + windowH);
+        }, 200);
+    });
+    //ios9 fixedフィックスバグ
+    $("#main").css({
+        transform: "translate3d(0,0,0)"
+    });
+    //基本のセット
+    function setA() {
+        fixedArea.css({
+            position: 'fixed',
+            top: -windowH,
+            marginTop: windowH,
+            width: '100%'
+        });
+        //スクロール用に設定
+        $('body').css({
+            height: "3000px"
+        });
+        console.log("test");
+    } //setA
+    setA();
+    //スクロール毎に稼働
+    $(window).on('scroll', function () {
+        scrollSize = $(window).scrollTop();
+        if (animationFlag && windowH >= scrollSize) {
+            animationFlag = false;
+            setA();
+        }
+        else if (!animationFlag && windowH < scrollSize) {
+            animationFlag = true;
+            fixedArea.css({
+                position: "relative"
+            });
+            $('body').css({
+                height: 'auto'
+            });
+            var fixedAreaHeight = fixedArea.height() + windowH;
+            //console.log(fixedAreaHeight);
+            $("#all").css({
+                height: fixedAreaHeight,
+                overflow: 'hidden'
+            });
+        }
+    });
 });
-
-/*
-$(function(){
-	  $('#popularity').sliderPro({
-    width: 265,//横幅
-    arrows: true,//左右の矢印
-    buttons: false,//ナビゲーションボタン
-    slideDistance:32,//スライド同士の距離
-    visibleSize: '100%',//前後のスライドを表示
-    autoHeight:true,
-//	forceSize: 'fullWidth'
-	  });
-});
-
-$(function(){
-	  $('#interview').sliderPro({
-
-    width: 265,//横幅
-    arrows: true,//左右の矢印
-    buttons: false,//ナビゲーションボタン
-    slideDistance:32,//スライド同士の距離
-    visibleSize: '100%',//前後のスライドを表示
-    autoHeight:true,
-//	forceSize: 'fullWidth'
-	  });
-});
- 
- */
-
-});//require

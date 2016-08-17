@@ -1,6 +1,4 @@
-
 //ゴシック体
-
 @font-face {
   font-family: 'Noto Sans Japanese';
   font-style: normal;
@@ -8,8 +6,16 @@
   src: url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-DemiLight.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-DemiLight.woff) format('woff'), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-DemiLight.otf) format('opentype');
 }
 
-//remベース
+@font-face {
+   font-family: 'Noto Sans Japanese';
+   font-style: bord;
+   font-weight: 700;
+   src: url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Bold.woff2) format('woff2'),
+        url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Bold.woff) format('woff'),
+        url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Bold.otf) format('opentype');
+ }
 
+//remベース
 html {
   font-size: 62.5%;
   -webkit-text-size-adjust: 100%; //スマフォ縦横切替時設定
@@ -37,12 +43,12 @@ section {
 a {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0); //タップ時のハイライト削除
   outline: none;
-  color: $color-point;
+  color: $color-brand;
   text-decoration: none;
   font-weight: bold;
   @include touch-hover() {
     text-decoration: underline;
-    color: $color-strong;
+    color: $color-brand-lighten;
   }
 }
 
@@ -70,30 +76,6 @@ hr {
   font-size: 1.8rem;
 }
 
-.main-ttl{
-  
-}
-
-.conts-sec-ttl {
-  font-size: 2.4rem;
-  border-bottom: solid 2px $color-brand;
-  padding: .5em 0;
-  margin-bottom: 1em;
-}
-
-.conts-l-ttl{
-  font-size: 2.2rem;
-}
-
-.conts-m-ttl{
-  
-}
-
-.conts-s-ttl{
-  
-}
-
-
 //文章
 em,
 p,
@@ -110,9 +92,10 @@ th {
   margin: 0.5em 0;
   color: $color-dark-lighten;
   font-size: 1.4rem;
-  &strong,
-  &b {
+  & strong,
+  & b {
     font-weight: bold;
+    color:#000 !important;
     background-image: linear-gradient(rgba(0, 0, 0, 0) 45%, lighten($color-brand, 30%) 40%);
   }
 }
@@ -229,18 +212,18 @@ kbd {
   white-space: nowrap;
 }
 
-figure{
+figure {
   display: block;
   position: relative;
-  figcaption{
+  figcaption {
     position: absolute;
     right: $bm;
     bottom: $bm;
     font-size: 1.2rem;
     text-align: right;
     font-weight: bold;
-    padding:0;
-    color:#fff;
+    padding: 0;
+    color: #fff;
     text-shadow: 0px 0px 3px $color-dark;
   }
 }
