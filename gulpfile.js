@@ -35,7 +35,7 @@ var paths = {
   "css": dir.base + "/**/*.css",
   "html": dir.base + "/**/*.{php,html,txt,text}",
   "js": dir.base + "/**/*.{js,htc}",
-  "ts": dir.base + "/**/*.{ts}",
+  "ts": dir.base + "/**/*.ts",
   "img": dir.base + "/**/*.{png,jpg,gif,pdf}",
   "font": dir.base + "/**/*.{eot,svg,ttf,woff,woff2,otf}",
 }
@@ -60,7 +60,7 @@ var plumberErrorHandler = {
 
 //scss & compassコンパイル - css圧縮
 gulp.task('compass', function () {
-  return　 gulp.src(paths.scss)
+  return gulp.src(paths.scss)
     .pipe(plumber(plumberErrorHandler))
     .pipe(compass({
       css: dir.base + "/css",
@@ -131,9 +131,11 @@ gulp.task('ts', function() {
        .pipe(typescript(options))
        .pipe(gulp.dest(dir.base));
 });
-gulp.task('js-reload', ['ts'], function () {
+
+gulp.task('js-reload', function () {
   browserSync.reload();
 });
+
 gulp.task('js-dest',['ts'], function () {
   return gulp.src(paths.js)
     .pipe(gulp.dest(dir.dest))
@@ -148,5 +150,6 @@ gulp.task('default', ['browser-sync'], function () {
   gulp.watch(paths.html, ['html-reload']);
   gulp.watch(paths.img, ['img-reload']);
   gulp.watch(paths.font, ['font-reload']);
+  gulp.watch(paths.ts, ['ts']);
   gulp.watch(paths.js, ['js-reload']);
 });
