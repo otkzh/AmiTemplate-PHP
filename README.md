@@ -2,6 +2,10 @@
 
 普段使っている中規模サイト制作用の雛形です。LAMP環境構築から、gulp設定、scss/compassのmixin、require.jsを使ったjsファイルの管理などなど…ノウハウ詰まっている。ベストなのは案件ごとに詳細設計することとは言え・・・・そんな、ベタープラクティスをまとめて随時更新。
 
+### TEST-URL
+
+http://amiten.net/sample/amitenp/
+
 ### メンバー
 
 - amishiro
