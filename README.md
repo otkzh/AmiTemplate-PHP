@@ -1,12 +1,17 @@
-# AmiTemplate-PHP
+## about：AmiTemplate-PHP
 
-普段使っている中規模サイト制作用の雛形です。LAMP環境構築から、gulp設定、scss/compassのmixin、require.jsを使ったjsファイルの管理などなど…ノウハウ詰まっている。ベストなのは案件ごとに詳細設計することとは言え・・・・そんな、ベタープラクティスをまとめて随時更新。
+「孤高の戦士たち」に送る、中規模サイト制作用のテンプレートです。
+実制作で培ったノウハウと、新しい技術のテストを兼ね備えた実務に耐えられるテンプレートを目指しています。
 
-### TEST-URL
+###DEMO
 
 http://amiten.net/sample/amitenp/
 
-### メンバー
+###利用
+
+vagrant/gulp/php/scss/compass/pjax/typescript
+
+### Member
 
 - amishiro
 
@@ -24,7 +29,7 @@ http://amiten.net/sample/amitenp/
  - [sass](http://sass-lang.com/)
  - [compass](http://compass-style.org/)
 
-# 環境構築
+### 環境構築
 
 macのやり方しかわかりませぬ。そして、ざっくりな説明しか書いておりませぬ。
 
@@ -72,9 +77,7 @@ Gulpでは、publicフォルダー内にある、各種ファイル監視しつ�
 
 - scss/compassのコンパイル
 - 画像ファイルの圧縮
-- php/htmlファイルの整形
-
-です。jsファイル周りは好みが別れるので、特に記述はしていない。お好みでカスタマイズすればいいと思う。そう思う。
+- typescriptのコンパイル
 
 ## SCSS Compassのインストール
 
