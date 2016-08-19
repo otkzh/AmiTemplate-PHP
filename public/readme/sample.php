@@ -1,49 +1,37 @@
 <?php
 include ("../function.php");
-$title ='デバイス/ブラウザ - RESPONSIVE対応 について ';
+$title ='リストタイプ';
 $meta_title = ''.$title.' | '.$sitename.'';
-$meta_description = $title.'のページです。セマンティックなコーディングを心がける。'.$description;
-$body_class ="single-page";
+$meta_description = $title.'のページです。'.$description;
+$body_class ="list-page";
 ?>
 <?php include ($inc_path."/inc/head.php") ?>
 <?php include ($inc_path."/inc/header.php") ?>
-<?php include ($inc_path."/inc/pan.php") ?>
+<div id="pan">
+  <ul class="pan-nav wrap" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <li><a href="<?php echo $base_url ?>/" itemprop="url"><span itemprop="title">Home</span></a></li>
+    <li><a href="<?php echo $base_url ?>/readme/" itemprop="url"><span itemprop="title">Readme：AmiTemplateについて</span></a></li>
+    <li><a href="./" itemprop="url" class="pan-thispage"><span itemprop="title"><?php echo $title?></span></a></li>
+  </ul>
+</div>
 
 <main id="main">
-<article>
+<header class="main-head wrap">
 
- <header class="main-head wrap">
-    <h1 class="main-ttl"><?php echo $title ?></h1>
-    <p class="main-description">なぜ、レスポンシブデザインが楽しいのか。</p>
-  </header>
+</header>
+<article id="container">
 
-  <div id="container">
   <div id="conts">
-      <figure class="conts-main-v">
-        <img src="<?php echo $base_url ?>/img/dummy/platinum.png" alt="メイン画像">
-        <figcaption class="conts-main-v-dates">
-          <time pubdate class="conts-main-v-release" datetime="2016-08-17">公開日：2016年8月17月</time>
-          <time class="conts-main-v-update" datetime="2016-08-19">更新日：2016年8月19月</time>
-        </figcaption>
-      </figure>
-      
-    <nav class="conts-sec">
-      <h2 class="conts-sec-ttl">目次</h2>
-      <p>なんで？</p>
-      <ul class="list">
-        <li><a href="#" data-scroll>背景</a></li>
-        <li><a href="#" data-scroll>基本設計</a></li>
-        <li><a href="#" data-scroll>各種振り分け方法</a>
-          <ul class="list">
-            <li><a href="#" data-scroll>ユーザーエージェント</a></li>
-            <li><a href="#" data-scroll>サイズ切り替え</a></li>
-            <li><a href="#" data-scroll>機能切り替え</a></li>
-          </ul>
-        </li>
-        <li><a href="#" data-scroll>悩ましい。</a></li>
+    <section class="conts-sec">
+      <h2 class="conts-sec-ttl">マガジンタイプにはつきものの一覧ページです。</h2>
+      <h3 class="conts-m-ttl">ポイント</h3>
+      <ul class="assist list">
+        <li>2カラム（サイドとの一入れ替え）</li>
+        <li>コンテンツエリアの横幅を、広めに設定。</li>
+        <li>添え文の文字量は100文字に設定しています。</li>
       </ul>
-    </nav>
-    
+    </section>
+
     <section class="conts-sec">
 
       <h2 class="conts-sec-ttl">conts-sec-ttl（contents-section-title）</h2>
@@ -56,25 +44,24 @@ $body_class ="single-page";
       <p>ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
 
     </section>
-    
+
       <footer class="conts-footer">
         <nav>
           <ul class="conts-footer-arrow">
-            <li class="conts-footer-prev"><a href="<?php echo $base_url ?>/speed/">Speed</a></li>
-            <li class="conts-footer-next"><a href="<?php echo $base_url ?>/units/">Units</a></li>
+            <li class="conts-footer-prev"><a href="<?php echo $base_url ?>/units/">Units</a></li>
+            <li class="conts-footer-next"><a href="<?php echo $base_url ?>/readme/magazine.php">マガジンタイプ</a></li>
           </ul>
         </nav>
         <aside class="conts-footer-aside">
-          <h3 class="conts-m-ttl">おまけ</h3>
-          <p>ちょっ、ちょっ、まってよ。レスポンシブデザインって、すべてのブラウザで表示されることじゃないから！完璧なんて無理。ましてや、たまたまクライアントがニッチなデバイス持ってるからそれに対応してくれとか、受ける前に頭使ってよ！</p>
-          <p class="assist warning mb0">予算も取らずに対応デバイス増やす依頼をしてくるな。</p>
+          <h3 class="conts-m-ttl">おまけ記事</h3>
+          <h4 class="conts-s-ttl">一行の文字量は「40文字」ぐらい・・・</h3>
+          <p>ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
         </aside>
       </footer>
-    
-  </div>
 
   </div>
-  
+  <?php include($inc_path.'/inc/side.php') ?>
+
 </article>
 </main>
 

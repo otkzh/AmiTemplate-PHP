@@ -6,15 +6,22 @@ $meta_description = 'メタディスクリプション。'.$description;
 $body_class = 'home list-page';
 ?>
 <?php include($inc_path.'/inc/head.php') ?>
-<?php include($inc_path.'/inc/home-main-v.php') ?>
-<div id="contents">
 <?php include($inc_path.'/inc/header.php') ?>
+<?php include($inc_path.'/inc/home-main-v.php') ?>
 
 <main id="main">
-<article id="container" class="pt5">
+<article>
+   <div  id="container">
     
     <div id="conts">
-
+     
+     <section class="conts-sec">
+      <h2 class="conts-s-ttl mt0">New-記事一覧</h2>
+       <?php include ($inc_path."/readme/inc/list-art.php") ?>
+       <?php include ($inc_path."/readme/inc/list-art.php") ?>
+      <div class="more"><a href="<?php echo $base_url ?>/readme/list-small.php" class="a-arrow">新着記事をもっと見る</a></div>
+     </section>
+     
       <section class="conts-sec">
 
         <h2 class="conts-sec-ttl mt0 pt0">conts-sec-ttl（contents-section-title）</h2>
@@ -59,14 +66,13 @@ $body_class = 'home list-page';
     </div>
 
     <?php include($inc_path.'/inc/side.php') ?>
-
+</div>
 </article>
 </main>
 
 <?php include($inc_path.'/inc/footer.php') ?>
-</div>
+
 <!-- add scripts -->
 <script>console.log("page-script-<?php echo $title ?>");</script>
-<script src="<?php echo $base_url ?>/js/page/home.js"></script>
 <!-- //add scripts -->
 <?php include($inc_path.'/inc/foot.php') ?>

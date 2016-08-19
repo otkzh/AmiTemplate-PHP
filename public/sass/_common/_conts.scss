@@ -18,14 +18,15 @@
   margin: 0;
 }
 
+//--------------------- コンテンツメインビジュアル ---------------------//
 .conts-main-v {
   margin: 0 (-$margin-inner);
   position: relative;
 }
 
 .conts-main-v-dates {
-  .conts-main-v-release {
-    &::after {
+  .conts-main-v-update {
+    &::before {
       content: "/";
       margin: 0 $bm;
     }
@@ -60,12 +61,22 @@
 }
 
 //--------------------- conts-art ---------------------//
+
 .conts-art {
+  width: 100%;
+  box-sizing: border-box;
   padding-bottom: $margin-inner;
   margin-bottom: $margin-inner;
   border-bottom: solid 1px $color-light;
 }
 
+.conts-art-small{
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: $margin-inner;
+}
+
+.conts-art-small a,
 .conts-art a {
   position: relative;
   box-sizing: border-box;
@@ -80,7 +91,7 @@
 }
 
 .conts-art-img {
-  max-width: 50%;
+  max-width: 500px;
   width: 50%;
   flex: 0 0 50%;
   margin-right: $bm*2;
@@ -90,12 +101,17 @@
   @include touch-hover() {
     opacity: .8;
   }
+  .conts-art-small &{
+    max-width: 300px;
+    width: 20%;
+    flex: 0 0 20%;
+  }
 }
 
 .conts-art-ex {
-  max-width: 50%;
-  width: 50%;
-  flex: 0 0 50%;
+  //max-width: 50%;
+  //width: 50%;
+  flex: 1 1 30%;
 }
 
 .conts-art-category,
@@ -128,9 +144,7 @@
   }
 }
 
-.conts-art-text {
-  min-height: 10em;
-}
+.conts-art-text {}
 
 //--------------------- conts-footer ---------------------//
 .conts-footer {}
@@ -170,7 +184,10 @@
   padding: $margin-inner;
   background-color: $color-light;
   margin: 0 (-$margin-inner) (-$bm);
-  .conts-m-ttl:first-child{
+  body.list-page & {
+    margin: 0;
+  }
+  .conts-m-ttl:first-child {
     margin-top: $bm;
-    }
+  }
 }

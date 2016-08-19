@@ -1,26 +1,22 @@
 require.config({
   paths: {
-    jquery: 'vendor/jquery-2.2.0.min',
     touchevents: 'plugins/ami.touchevents',
     waypoints: 'plugins/jquery.waypoints.min',
-    lazyload : 'plugins/jquery.lazyload.min',
-    pjax: 'plugins/jquery.pjax.min',
-    pjax_setting: 'plugins/jquery.pjax_setting',
   },
   shim: {
-    'touchevents': ['jquery'],
-    'waypoints': ['jquery'],
-    'lazyload': ['jquery'],
-    'pjax': ['lazyload'],
-    'pjax_setting': ['pjax'],
+    //'touchevents': ['jquery'],
   }
 });
 
+console.log("mainJS読み込み");
+
+$(document).on('ready pjax:ready', function () {
+  console.log("更新ごとに実行");
+});
+
+/*
 //hover-touch events
 requirejs(['touchevents']);
-
-//pjax
-requirejs(['pjax_setting']);
 
 //waypoint
 requirejs(['waypoints'], function () {
@@ -39,9 +35,4 @@ requirejs(["plugins/smooth-scroll"], function (smoothScroll) {
   });
 });
 
-
-requirejs(['jquery'], function ($) {
-  //------------jqueryの記述はここから
-
-  //------------jqueryの記述はここまで
-});
+*/

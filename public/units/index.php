@@ -3,25 +3,31 @@ include ("../function.php");
 $title ='UNITS - 各種共通パーツについて';
 $meta_title = ''.$title.' | '.$sitename.'';
 $meta_description = $title.'のページです。メタディスクリプション。'.$description;
-$body_class ="";
+$body_class ="single-page";
 ?>
 <?php include ($inc_path."/inc/head.php") ?>
 <?php include ($inc_path."/inc/header.php") ?>
 <?php include ($inc_path."/inc/pan.php") ?>
 
-<div role="main">
+<main id="main">
 <article>
 
-  <header class="main-head">
-    <time>2016-03-11</time>
-    <time>UPDATE：2016-03-11</time>
+  <header class="main-head wrap">
     <h1 class="main-ttl"><?php echo $title ?></h1>
+    <p class="main-description">細かいパーツ関連ですな。</p>
   </header>
+    
 
-  <div id="container" class="wrap">
+  <div id="container">
 
     <div id="conts">
-
+      <figure class="conts-main-v">
+        <img src="<?php echo $base_url ?>/img/dummy/platinum.png" alt="メイン画像">
+        <figcaption class="conts-main-v-dates">
+          <time pubdate class="conts-main-v-release" datetime="2016-08-17">公開日：2016年8月17月</time>
+          <time class="conts-main-v-update" datetime="2016-08-19">更新日：2016年8月19月</time>
+        </figcaption>
+      </figure>
       <section class="conts-sec">
         <h1 class="conts-sec-ttl">基本設計について</h1>
         <h2 class="conts-l-ttl">classの指定の仕方を統一するが・・・</h2>
@@ -128,14 +134,26 @@ $body_class ="";
             <li>ダミーテキストダミーテキストダミーテキストダミーテキスト<a href="" class="a-underline-arrow">リンク</a></li>
           </ul>
         </div>
+        
+      <footer class="conts-footer">
+        <nav>
+          <ul class="conts-footer-arrow">
+            <li class="conts-footer-prev"><a href="<?php echo $base_url ?>/responsive/">Responsive</a></li>
+            <li class="conts-footer-next"><a href="<?php echo $base_url ?>/readme/">ReadMe</a></li>
+          </ul>
+        </nav>
+        <aside class="conts-footer-aside">
+          <h3 class="conts-m-ttl">おまけ</h3>
+          <p>各ユニットを少しづつ増やしていく。css3による面白い動きや、jsと連動したホニャララとか。自作のものを増やしていくよ。</p>
+        </aside>
+      </footer>
 
       </section>
     </div>
-    <?php include($inc_path.'/inc/side.php') ?>
   </div>
 
 </article>
-</div>
+</main>
 
 <?php include ($inc_path."/inc/footer.php") ?>
 <!-- add scripts -->
