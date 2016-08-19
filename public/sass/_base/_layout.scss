@@ -32,104 +32,133 @@ body,
   box-sizing: border-box;
   margin: 0 auto;
   width: 100%;
-  
-  @include min-screen($width-l + 1px){
+  @include min-screen($width-l + 1px) {
     max-width: $width-xl + $margin-inner;
     padding: 0 $margin-inner;
   }
-  
   @include max-screen($width-l) {
     padding: 0 $bm*2;
   }
   @include max-screen($width-m) {
     padding: 0 $bm;
   }
-  @include max-screen($width-s) {
-  }
+  @include max-screen($width-s) {}
 }
 
+$headerH: 70px;
 #header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 2;
+  background-color: #fff;
+  height: $headerH;
+  overflow: hidden;
+  box-shadow: 0 0 3px rgba(0, 0, 0, .3);
+  transform: translate3d(0, 0, 0);
 }
 
-#pan {}
+#pan {
+  position: absolute;
+  width: 100%;
+  padding-top: $headerH;
+  z-index: 1;
+  
+}
 
 #main {
-  display: block;
+  box-sizing: border-box;
+  padding-top: $headerH + 40px;
+  z-index: 0;
+}
+
+.main-head{
+  //background-color:red;
+}
+
+#main-v {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+  background-color: rgba($color-brand, .97);
+  height: 100vh;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+  z-index: 1000;
+  transform: translate(0,0);
+  @include img(home/main, png, no-repeat);
+  background-position: center 40vh;
+  animation: main-v-move 1s;
+  @keyframes main-v-move {
+    0% {
+     transform: translate(0,-110vh);
+    }
+    100% {
+      transform: translate(0,0);
+    }
+  }
 }
 
 #container {
   display: flex;
-  flex-wrap: wrap;
+  //flex-wrap: wrap;
   justify-content: center;
   body.list-page &,
   body.single-page &,
-  body.magazine-page &{
+  body.magazine-page & {
     @extend .wrap;
+  }
+  @include max-screen($width-m){
+    flex-direction: column;
   }
 }
 
 #conts {
   width: 100%;
-  flex: 1;
   flex: 0 0 100%;
+  box-sizing: border-box;
   body.single-page &,
-  body.magazine-page &{
-    max-width: 720px;
-    flex: 1 0 50%;
-    box-sizing: border-box;
-    border: 1px solid $color-light;
-    padding:0  $margin-inner;
-  }
-  body.list-page &{
-    order:2;
+  body.magazine-page & {
+    max-width: 780px;
     flex: 1 1 50%;
-    box-sizing: border-box;
+    border: 1px solid $color-light;
+    padding: 0 $margin-inner;
+    
+  }
+  body.list-page & {
+    order: 2;
+    flex: 1 0 50%;
   }
 }
 
 #side {
-  body.magazine-page &{
+  body.magazine-page & {
     flex: 0 0 270px;
     margin-left: $margin;
-    @include max-screen($width-l){
+    @include max-screen($width-l) {
       margin-left: $bm*2;
     }
   }
   body.list-page & {
     order: 1;
+    width: 300px;
     flex: 0 0 300px;
     margin-right: $margin;
-    @include max-screen($width-l){
+    @include max-screen($width-l) {
       flex: 0 0 270px;
-      margin-right: $bm*2;
+      margin-right: 0;
     }
   }
-  @include max-screen($width-m){
+  @include max-screen($width-m) {
     order: 4!important;
     width: 100%!important;
     flex: 0 0 100% !important;
     margin: 0 !important;
-  }
-  nav {
-    margin-bottom: $margin;
-  }
-  .page-nav {
-    li {
-      margin-bottom: $bm;
-    }
-    a {
-      display: block;
-      box-sizing: border-box;
-      width: 100%;
-      padding: $bm $bm*2;
-      border: $bm/2 solid $color-point;
-      @include touch-hover() {
-        text-decoration: none;
-        background-color: $color-light;
-      }
-    }
-  }
+  }//list-page
+
 }
 
 #footer {

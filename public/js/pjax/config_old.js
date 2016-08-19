@@ -1,7 +1,7 @@
 $.pjax({
   area: [
   //'#pan, .main-ttl, #conts , #main-v',
-  '#all',
+  //'#all',
   'body'
 ],
   load: {

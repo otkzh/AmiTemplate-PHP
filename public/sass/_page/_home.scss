@@ -1,18 +1,5 @@
 #main-v {
-  background-color: $color-brand;
-  position: relative;
-  height: 100vh;
-  box-shadow: 0 0 5px rgba(0,0,0,.5);
-  z-index: 1000;
-  opacity:1;
-  animation: identifier .5s;
-  @include img(home/main,png,no-repeat);
-  background-position: center 40vh;
-  @keyframes identifier {
-    0% {opacity:0;}
-    50% {opacity:0;}
-    100% {opacity:1;}
-  }
+
 }
 
 #contents {

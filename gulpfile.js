@@ -125,9 +125,11 @@ gulp.task('ts', function() {
      var options =  {
        target: 'ES6',
        sortOutput: true,
-       noImplicitAny: true
+       noImplicitAny: true,
+       removeComments: true,
+       out: 'js/common.js'
      };
-     return gulp.src(paths.ts)
+     return gulp.src([paths.ts,'!_**/*.ts'])
        .pipe(typescript(options))
        .pipe(gulp.dest(dir.base));
 });

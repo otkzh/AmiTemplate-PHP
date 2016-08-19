@@ -1,24 +1,8 @@
 @charset "UTF-8";
-/* line 1, ../sass/_page/_home.scss */
-body.home #main-v {
-  background-color: #ff7c7c;
-  position: relative;
-  height: 100vh;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-  opacity: 1;
-  -webkit-animation: identifier .5s;
-          animation: identifier .5s;
-  background-image: url('../img/home/main.png?1471318865');
-  background-repeat: no-repeat;
-  background-position: center 40vh;
-}
-@media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
-  /* line 1, ../sass/_page/_home.scss */
-  body.home #main-v {
-    background-image: url('../img/home/main@2x.png?1471318864');
-    background-size: 302px 763px;
-  }
+/* line 5, ../sass/_page/_home.scss */
+body.home #contents {
+  -webkit-animation: identifier 1s;
+          animation: identifier 1s;
 }
 @-webkit-keyframes identifier {
   0% {
@@ -42,32 +26,16 @@ body.home #main-v {
     opacity: 1;
   }
 }
-/* line 18, ../sass/_page/_home.scss */
-body.home #contents {
-  -webkit-animation: identifier 1s;
-          animation: identifier 1s;
-}
-@keyframes identifier {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-/* line 27, ../sass/_page/_home.scss */
+/* line 14, ../sass/_page/_home.scss */
 body.home .main-v-hgroup {
   text-align: center;
   padding: 48px 0;
 }
-/* line 32, ../sass/_page/_home.scss */
+/* line 19, ../sass/_page/_home.scss */
 body.home .main-v-logo {
   margin-bottom: 24px;
 }
-/* line 34, ../sass/_page/_home.scss */
+/* line 21, ../sass/_page/_home.scss */
 body.home .main-v-logo a {
   font-family: 'Libre Baskerville',"ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN","游明朝", "YuMincho", "メイリオ","Meiryo","ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
   font-size: 3rem;
@@ -80,11 +48,11 @@ body.home .main-v-logo a {
   color: #eee;
   text-decoration: none;
 }
-/* line 46, ../sass/_page/_home.scss */
+/* line 33, ../sass/_page/_home.scss */
 body.home .main-v-nav {
   font-family: 'Libre Baskerville',"ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN","游明朝", "YuMincho", "メイリオ","Meiryo","ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
 }
-/* line 48, ../sass/_page/_home.scss */
+/* line 35, ../sass/_page/_home.scss */
 body.home .main-v-nav a {
   color: #fbfbfb;
   display: block;
@@ -102,13 +70,13 @@ body.home .main-v-nav a {
   text-decoration: none;
   border-bottom: solid 4px #fff;
 }
-/* line 61, ../sass/_page/_home.scss */
+/* line 48, ../sass/_page/_home.scss */
 body.home .main-v-nav a.home {
   -webkit-animation: header-nav-color-fade 1s;
           animation: header-nav-color-fade 1s;
   border-bottom: solid 4px #fbfbfb;
 }
-/* line 68, ../sass/_page/_home.scss */
+/* line 55, ../sass/_page/_home.scss */
 body.home .main-v-gnav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -120,20 +88,20 @@ body.home .main-v-gnav {
   width: 100%;
   margin: 0 auto;
 }
-/* line 74, ../sass/_page/_home.scss */
+/* line 61, ../sass/_page/_home.scss */
 body.home .main-v-gnav li {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
   text-align: center;
 }
-/* line 80, ../sass/_page/_home.scss */
+/* line 67, ../sass/_page/_home.scss */
 body.home .main-v-hnav {
   position: absolute;
   right: 8px;
   top: 8px;
 }
-/* line 85, ../sass/_page/_home.scss */
+/* line 72, ../sass/_page/_home.scss */
 body.home .main-v-hnav a.readme::before {
   content: "";
   display: inline-block;
@@ -144,18 +112,18 @@ body.home .main-v-hnav a.readme::before {
   -moz-osx-font-smoothing: grayscale;
   margin-right: 8px;
 }
-/* line 92, ../sass/_page/_home.scss */
+/* line 79, ../sass/_page/_home.scss */
 body.home .main-v-menu {
   display: none;
 }
-/* line 96, ../sass/_page/_home.scss */
+/* line 83, ../sass/_page/_home.scss */
 body.home .links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin: 1em -1em;
 }
-/* line 100, ../sass/_page/_home.scss */
+/* line 87, ../sass/_page/_home.scss */
 body.home .links li {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 25%;
@@ -163,21 +131,21 @@ body.home .links li {
   margin: 1em;
 }
 @media only screen and (max-width: 768px) {
-  /* line 96, ../sass/_page/_home.scss */
+  /* line 83, ../sass/_page/_home.scss */
   body.home .links {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  /* line 106, ../sass/_page/_home.scss */
+  /* line 93, ../sass/_page/_home.scss */
   body.home .links li {
     -webkit-box-flex: 1;
         -ms-flex: 1 0 auto;
             flex: 1 0 auto;
   }
 }
-/* line 108, ../sass/_page/_home.scss */
+/* line 95, ../sass/_page/_home.scss */
 body.home .links a {
   display: block;
   box-sizing: border-box;
@@ -192,7 +160,7 @@ body.home .links a {
       -ms-transform: translateY(-10px);
           transform: translateY(-10px);
 }
-/* line 115, ../sass/_page/_home.scss */
+/* line 102, ../sass/_page/_home.scss */
 .no-js body.home .links a:hover figure, .js.no-touchevents body.home .links a:hover figure, .js.touchevents body.home .links a.touch figure {
   box-shadow: 0px 0px 3px #afafaf;
 }
@@ -248,11 +216,11 @@ body.home .links a {
             transform: translateY(0px);
   }
 }
-/* line 146, ../sass/_page/_home.scss */
+/* line 133, ../sass/_page/_home.scss */
 body.home .links figure {
   margin: 0;
 }
-/* line 149, ../sass/_page/_home.scss */
+/* line 136, ../sass/_page/_home.scss */
 body.home .links figcaption {
   display: -webkit-box;
   display: -ms-flexbox;
