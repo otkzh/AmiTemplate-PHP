@@ -31,5 +31,4 @@ function tochORhover() {
 
     } // touch event
 
-  )
 };

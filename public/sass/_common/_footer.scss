@@ -24,7 +24,6 @@
 #footer{
   margin-top: $margin*2;
   background-color: $color-light;
-
 }
 
 .footer-nav{
@@ -37,6 +36,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 
     a{
       box-sizing: border-box;
