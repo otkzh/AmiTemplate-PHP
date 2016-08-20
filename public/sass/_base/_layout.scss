@@ -29,20 +29,7 @@ body,
 }
 
 .wrap {
-  box-sizing: border-box;
-  margin: 0 auto;
-  width: 100%;
-  @include min-screen($width-l + 1px) {
-    max-width: $width-xl + $margin-inner;
-    padding: 0 $margin-inner;
-  }
-  @include max-screen($width-l) {
-    padding: 0 $bm*2;
-  }
-  @include max-screen($width-m) {
-    padding: 0 $bm;
-  }
-  @include max-screen($width-s) {}
+  @include wrap;
 }
 
 $headerH: 70px;
@@ -55,7 +42,6 @@ $headerH: 70px;
   z-index: 2;
   background-color: #fff;
   height: $headerH;
-  overflow: hidden;
   box-shadow: 0 0 3px rgba(0, 0, 0, .3);
   transform: translate3d(0, 0, 0);
 }
@@ -65,16 +51,16 @@ $headerH: 70px;
   width: 100%;
   padding-top: $headerH;
   z-index: 1;
-  
 }
 
 #main {
+  position: relative;
   box-sizing: border-box;
   padding-top: $headerH + 40px;
   z-index: 0;
 }
 
-.main-head{
+.main-head {
   //background-color:red;
 }
 
@@ -88,16 +74,16 @@ $headerH: 70px;
   height: 100vh;
   box-shadow: 0 0 5px rgba(0, 0, 0, .5);
   z-index: 1000;
-  transform: translate(0,0);
+  transform: translate(0, 0);
   @include img(home/main, png, no-repeat);
   background-position: center 40vh;
   animation: main-v-move 1s;
   @keyframes main-v-move {
     0% {
-     transform: translate(0,-110vh);
+      transform: translate(0, -110vh);
     }
     100% {
-      transform: translate(0,0);
+      transform: translate(0, 0);
     }
   }
 }
@@ -111,7 +97,7 @@ $headerH: 70px;
   body.magazine-page & {
     @extend .wrap;
   }
-  @include max-screen($width-m){
+  @include max-screen($width-m) {
     flex-direction: column;
   }
 }
@@ -126,11 +112,16 @@ $headerH: 70px;
     flex: 1 1 50%;
     border: 1px solid $color-light;
     padding: 0 $margin-inner;
-    
   }
   body.list-page & {
     order: 2;
     flex: 1 0 50%;
+  }
+  &,
+  body.list-page &,
+  body.single-page &,
+  body.magazine-page & {
+    flex: 1 1 auto;
   }
 }
 
@@ -157,8 +148,15 @@ $headerH: 70px;
     width: 100%!important;
     flex: 0 0 100% !important;
     margin: 0 !important;
-  }//list-page
-
+  } //list-page
+  @include max-screen($width-m) {
+    &,
+    body.list-page &,
+    body.single-page &,
+    body.magazine-page & {
+      flex: 1 1 auto;
+    }
+  } //max
 }
 
 #footer {
