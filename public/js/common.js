@@ -1,5 +1,5 @@
 $(window).on('pjax:fetch', function () {
-    $('#main,#pan,#main-v').velocity({
+    $('#main,#pan,#main-v,#footer').velocity({
         opacity: 0
     }, {
         duration: 300,
@@ -7,18 +7,11 @@ $(window).on('pjax:fetch', function () {
     });
 });
 $(document).on('pjax:ready', function () {
-    $("#main,#pan").css({
-        opacity: 0
-    });
-    $('#main').velocity({
-        opacity: 1
-    }, {
+    $('#main,#footer').velocity("fadeIn", {
         duration: 300,
         queue: false
     });
-    $('#pan').velocity({
-        opacity: 1
-    }, {
+    $('#pan').velocity("fadeIn", {
         duration: 700,
         queue: false
     });
@@ -61,51 +54,33 @@ function cutText(num, ele) {
     });
 }
 ;
-$(document).on('click', '#js-menu a', function () {
+$(document).on('click', '#js-menu a', headerMenuOpen);
+$(document).on('click', 'body.open-menu,#js-menu.open-menu a', headerMenuClose);
+$(window).on("load resize", headerMenuClose);
+function headerMenuOpen() {
+    var durationW = $(window).width() / 1.5;
     var allSlide = $(window).width() - 70;
     $("body,#js-menu").addClass("open-menu");
     $("#header,#main-v,#pan,#main,#footer").velocity({
         left: -allSlide
     }, {
-        duration: 500,
+        duration: durationW,
+        easing: "easeOutQuad",
         queue: false
     });
     return false;
-});
-$(document).on('click', 'body.open-menu,#js-menu.open-menu a', function () {
+}
+;
+function headerMenuClose() {
+    var durationW = $(window).width() / 1.5;
     $("#pan,#main-v,#main,#footer,#header").velocity({
         left: 0
     }, {
-        duration: 500,
+        duration: durationW,
+        easing: "easeOutQuad",
         queue: false
     });
     $("#js-menu.open-menu").removeClass("open-menu");
-    return false;
-});
-$(document).on("ready pjax:ready", tochORhover);
-function tochORhover() {
-    if (Modernizr.touchevents) {
-        var linkTouchStart = function () {
-            var thisAnchor = $(this);
-            var touchPos = thisAnchor.offset().top;
-            var moveCheck = function () {
-                var nowPos = thisAnchor.offset().top;
-                if (touchPos == nowPos) {
-                    thisAnchor.addClass("touch");
-                }
-            };
-            setTimeout(moveCheck, 100);
-        };
-        var linkTouchEnd = function () {
-            var thisAnchor = $(this);
-            var hoverRemove = function () {
-                thisAnchor.removeClass("touch");
-            };
-            setTimeout(hoverRemove, 200);
-        };
-        $(document).on('touchstart', 'a', linkTouchStart);
-        $(document).on('touchend', 'a', linkTouchEnd);
-    }
 }
 ;
 $(document).on('ready pjax:ready', function () {
@@ -164,3 +139,29 @@ function homeV() {
         return $(window).height();
     }
 }
+$(document).on("ready pjax:ready", tochORhover);
+function tochORhover() {
+    if (Modernizr.touchevents) {
+        var linkTouchStart = function () {
+            var thisAnchor = $(this);
+            var touchPos = thisAnchor.offset().top;
+            var moveCheck = function () {
+                var nowPos = thisAnchor.offset().top;
+                if (touchPos == nowPos) {
+                    thisAnchor.addClass("touch");
+                }
+            };
+            setTimeout(moveCheck, 100);
+        };
+        var linkTouchEnd = function () {
+            var thisAnchor = $(this);
+            var hoverRemove = function () {
+                thisAnchor.removeClass("touch");
+            };
+            setTimeout(hoverRemove, 200);
+        };
+        $(document).on('touchstart', 'a', linkTouchStart);
+        $(document).on('touchend', 'a', linkTouchEnd);
+    }
+}
+;
