@@ -1,6 +1,6 @@
-# 以下ディレクトリのすべてのファイルを無視します
+#以下ディレクトリを無視
+_psd
+dest
 node_modules
 .vagrant
-dest
-_psd
 .sass-cache
