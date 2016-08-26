@@ -1,3 +1,5 @@
+'use strict';
+
 new window['pjax-api'].Pjax({
 
   areas: [

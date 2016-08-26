@@ -29,7 +29,11 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
-<script src="https://cdn.polyfill.io/v2/polyfill.js?features=default,WeakMap,WeakSet"></script>
+<!--script src="https://cdn.jsdelivr.net/es6-promise/3.1.2/es6-promise.min.js"></script-->
+<!--script src="https://cdn.polyfill.io/v2/polyfill.js?features=default,WeakMap,WeakSet"></script-->
+<!--script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Promise,Object.assign"></script-->
+<!--script src="https://cdn.polyfill.io/v2/polyfill.js?features=Array.prototype.map,modernizr:es5array|always"></script-->
+
 <script src="<?php echo $base_url ?>/js/pjax/spica.js"></script>
 <script src="<?php echo $base_url ?>/js/pjax/localsocket.js"></script>
 <script src="<?php echo $base_url ?>/js/pjax/pjax-api.js"></script>

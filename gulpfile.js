@@ -18,7 +18,8 @@ var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
 
 //typescript 
- var typescript = require('gulp-typescript');
+var typescript = require('gulp-typescript');
+var babel = require("gulp-babel");
 
 //↓setting
 
@@ -36,6 +37,7 @@ var paths = {
   "html": dir.base + "/**/*.{php,html,txt,text}",
   "js": dir.base + "/**/*.{js,htc}",
   "ts": dir.base + "/**/*.ts",
+  "es6": dir.base + "/**/*.es6",
   "img": dir.base + "/**/*.{png,jpg,gif,pdf}",
   "font": dir.base + "/**/*.{eot,svg,ttf,woff,woff2,otf}",
 }
@@ -121,9 +123,18 @@ gulp.task('font-dest', function () {
 });
 
 //js関連：typescript仕様
+
+gulp.task('js', function(){
+  return gulp.src(dir.base + '/js/pjax/localsocket.js')
+       .pipe(babel({
+            presets: ['es2015']
+        }))
+        .pipe(gulp.dest(dir.base + '/js/pjax/babel/'));
+});
+
 gulp.task('ts', function() {
      var options =  {
-       target: 'ES6',
+       target: 'ES5',
        sortOutput: true,
        noImplicitAny: true,
        removeComments: true,
