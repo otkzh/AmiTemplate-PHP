@@ -1,5 +1,5 @@
-$(window).on('pjax:fetch', function () {
-    $('#main,#pan,#main-v,#footer').velocity({
+$(document).on('pjax:fetch', function () {
+    $('#main-v,#main,#pan,#footer').velocity({
         opacity: 0
     }, {
         duration: 300,

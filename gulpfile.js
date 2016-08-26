@@ -11,14 +11,17 @@ var compass = require('gulp-compass');
 var autoprefixer = require('gulp-autoprefixer');
 var cssmin = require('gulp-cssmin');
 
-//html phpは変更なし
+//html phpはなし
 
 //画像ファイル用
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
 
 //typescript 
- var typescript = require('gulp-typescript');
+var typescript = require('gulp-typescript');
+var concat = require("gulp-concat");
+var sourcemaps = require('gulp-sourcemaps');
+
 
 //↓setting
 

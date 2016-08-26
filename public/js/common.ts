@@ -1,9 +1,7 @@
-//--------------------- ページ切替時の挙動 ---------------------//
-
 //切替え準備中
-$(window).on('pjax:fetch', function () {
+$(document).on('pjax:fetch', function () {
 
-  $('#main,#pan,#main-v,#footer').velocity({
+  $('#main-v,#main,#pan,#footer').velocity({
     opacity: 0
   }, {
     duration: 300,
@@ -14,7 +12,7 @@ $(window).on('pjax:fetch', function () {
 
 //切替えスタート
 $(document).on('pjax:ready', function () {
-  //console.timeEnd('pjax: fetch -> ready');
+
   $('#main,#footer').velocity("fadeIn", {
     duration: 300,
     queue: false
@@ -23,6 +21,7 @@ $(document).on('pjax:ready', function () {
     duration: 700,
     queue: false
   });
+
 });
 
 //--------------------- pagetop ---------------------//

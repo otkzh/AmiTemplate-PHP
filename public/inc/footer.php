@@ -29,12 +29,8 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
-<script src="https://cdn.polyfill.io/v2/polyfill.js?features=default,WeakMap,WeakSet"></script>
-<script src="<?php echo $base_url ?>/js/pjax/spica.js"></script>
-<script src="<?php echo $base_url ?>/js/pjax/localsocket.js"></script>
-<script src="<?php echo $base_url ?>/js/pjax/pjax-api.js"></script>
+<script src="<?php echo $base_url ?>/js/pjax/jquery.pjax.min.js"></script>
 <script src="<?php echo $base_url ?>/js/pjax/config.js"></script>
 <script src="<?php echo $base_url ?>/js/vendor/velocity.min.js"></script>
 <script src="<?php echo $base_url ?>/js/plugins/smooth-scroll.js"></script>
 <script src="<?php echo $base_url ?>/js/common.js"></script>
-
