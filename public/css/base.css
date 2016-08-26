@@ -303,7 +303,7 @@ body,
   -webkit-transform: translate(0, 0);
       -ms-transform: translate(0, 0);
           transform: translate(0, 0);
-  background-image: url('../img/home/main.png?1471683069');
+  background-image: url('../img/home/main.png?1471739451');
   background-repeat: no-repeat;
   background-position: center 40vh;
   -webkit-animation: main-v-move 1s;
@@ -312,7 +312,7 @@ body,
 @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
   /* line 67, ../sass/_base/_layout.scss */
   #main-v {
-    background-image: url('../img/home/main@2x.png?1471683069');
+    background-image: url('../img/home/main@2x.png?1471739451');
     background-size: 302px 763px;
   }
 }
