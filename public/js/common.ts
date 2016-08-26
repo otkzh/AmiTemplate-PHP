@@ -24,6 +24,10 @@ $(document).on('pjax:ready', function () {
 
 });
 
+$(document).on('ready pjax:ready', function () {
+  
+});
+
 //--------------------- pagetop ---------------------//
 
 //use：plugins/smooth-scroll.js
@@ -110,3 +114,6 @@ function headerMenuClose() {
   });
   $("#js-menu.open-menu").removeClass("open-menu");
 };
+
+
+$(window).on("load pjax:load", linkTouchFunc());

@@ -1,3 +1,10 @@
+/*!
+ * smooth-scroll v9.3.2: Animate scrolling to anchor links
+ * (c) 2016 Chris Ferdinandi
+ * MIT License
+ * http://github.com/cferdinandi/smooth-scroll
+ */
+
 (function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     define([], factory(root));
@@ -115,7 +122,7 @@
     }
 
     // Get closest match
-    for (; elem && elem !== document; elem = elem.parentNode) {
+    for (; elem && elem !== document && elem.nodeType === 1; elem = elem.parentNode) {
 
       // If selector is a class
       if (firstChar === '.') {
@@ -282,8 +289,17 @@
         anchor = anchor.offsetParent;
       } while (anchor);
     }
-    location = location - headerHeight - offset;
-    return location >= 0 ? location : 0;
+    location = Math.max(location - headerHeight - offset, 0);
+    return Math.min(location, getDocumentHeight() - getViewportHeight());
+  };
+
+  /**
+   * Determine the viewport's height
+   * @private
+   * @returns {Number}
+   */
+  var getViewportHeight = function () {
+    return Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
   };
 
   /**
@@ -340,7 +356,8 @@
 
     // Selectors and variables
     var isNum = Object.prototype.toString.call(anchor) === '[object Number]' ? true : false;
-    var anchorElem = isNum ? null : (anchor === '#' ? root.document.documentElement : root.document.querySelector(anchor));
+    var hash = smoothScroll.escapeCharacters(anchor);
+    var anchorElem = isNum ? null : (hash === '#' ? root.document.documentElement : root.document.querySelector(hash));
     if (!isNum && !anchorElem) return;
     var startLocation = root.pageYOffset; // Current location on the page
     if (!fixedHeader) {
@@ -369,10 +386,19 @@
      */
     var stopAnimateScroll = function (position, endLocation, animationInterval) {
       var currentLocation = root.pageYOffset;
-      if (position == endLocation || currentLocation == endLocation || ((root.innerHeight + currentLocation) >= documentHeight)) {
+      if (position == endLocation || currentLocation == endLocation || ((root.innerHeight + currentLocation) >=
+
+          documentHeight)) {
         clearInterval(animationInterval);
+
+        // If scroll target is an anchor, bring it into focus
         if (!isNum) {
           anchorElem.focus();
+          if (document.activeElement.id !== anchorElem.id) {
+            anchorElem.setAttribute('tabindex', '-1');
+            anchorElem.focus();
+            anchorElem.style.outline = 'none';
+          }
         }
         animateSettings.callback(anchor, toggle); // Run callbacks after animation complete
       }
@@ -425,9 +451,13 @@
     // If a smooth scroll link, animate it
     var toggle = getClosest(event.target, settings.selector);
     if (toggle && toggle.tagName.toLowerCase() === 'a') {
+
+      // Check that link is an anchor and points to current page
+      if (toggle.origin !== location.origin || toggle.pathname !== location.pathname || !/#/.test(toggle.href)) return;
+
       event.preventDefault(); // Prevent default click event
-      var hash = smoothScroll.escapeCharacters(toggle.hash); // Escape hash characters
-      smoothScroll.animateScroll(hash, toggle, settings); // Animate scroll
+      smoothScroll.animateScroll(toggle.hash, toggle, settings); // Animate scroll
+
     }
 
   };

@@ -16,6 +16,8 @@ $(document).on('pjax:ready', function () {
         queue: false
     });
 });
+$(document).on('ready pjax:ready', function () {
+});
 $(document).on("ready pjax:ready", function () {
     var amount = 500;
     var $pagetop = $("#pagetop");
@@ -83,6 +85,7 @@ function headerMenuClose() {
     $("#js-menu.open-menu").removeClass("open-menu");
 }
 ;
+$(window).on("load pjax:load", linkTouchFunc());
 $(document).on('ready pjax:ready', function () {
     if ($("body").hasClass("home")) {
         homeV();
@@ -139,11 +142,11 @@ function homeV() {
         return $(window).height();
     }
 }
-$(document).on("ready pjax:ready", tochORhover);
-function tochORhover() {
+function linkTouchFunc() {
     if (Modernizr.touchevents) {
+        var thisAnchor;
         var linkTouchStart = function () {
-            var thisAnchor = $(this);
+            thisAnchor = $(this);
             var touchPos = thisAnchor.offset().top;
             var moveCheck = function () {
                 var nowPos = thisAnchor.offset().top;
@@ -154,7 +157,7 @@ function tochORhover() {
             setTimeout(moveCheck, 100);
         };
         var linkTouchEnd = function () {
-            var thisAnchor = $(this);
+            thisAnchor = $(this);
             var hoverRemove = function () {
                 thisAnchor.removeClass("touch");
             };
