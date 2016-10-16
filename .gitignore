@@ -1,6 +1,6 @@
-#以下ディレクトリを無視
 _psd
-dest
-node_modules
-.vagrant
-.sass-cache
+/dest
+/node_modules
+/.vagrant
+/.sass-cache
+/public/.sass-cache
