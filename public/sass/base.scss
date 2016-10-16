@@ -4,15 +4,17 @@
 // rest-css
 @import "_base/html5reset-1.6.1";
 
-//layout
-@import "_base/layout";
+//!important
+@import "_base/important";
 
-// typo
-@import "_base/typo";
-@import "_base/_fonts/font-awesome";
+//font
+@import "_base/_font/_font-awesome/_font-awesome";
+@import "_base/_font/_noto-sans";
+@import "_base/_font/_baskerville";
+@import "_base/font";
 
 //form
 @import "_base/formhack";
 
-//!important
-@import "_base/important";
+//layout
+@import "_base/layout";
