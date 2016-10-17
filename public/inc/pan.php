@@ -1,3 +1,4 @@
+<?php if(!$pan == 0){ ?>
 <div class="Pan" id="pan">
 <ul class="Pan-row" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
 <li class="Pan-item"><a href="<?php echo $base_url ?>/" itemprop="url"><span itemprop="title">ホーム</span></a></li>
@@ -17,3 +18,4 @@
 <li class="Pan-item"><a href="<?php echo $my_url ?>" itemprop="url"><span itemprop="title"><?php echo $title?></span></a></li>
 </ul>
 </div>
+<?php }; ?>

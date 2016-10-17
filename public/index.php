@@ -4,7 +4,8 @@ $title = 'AmiTemplate - php';
 $meta_title = ''.$title.' | '.$sitename.'';
 $meta_description = 'メタディスクリプション。'.$description;
 $body_class = 'home list-page';
-$meta_image = $baes_url.'/img/home/main.png'
+$meta_image = $base_url.'/img/home/main.png';
+$pan = 0;//パンくずの表示非表示 0:非表示,1〜:表示
 ?>
 <?php include($inc_path.'/inc/head.php'); ?>
 <?php include($inc_path.'/inc/header.php'); ?>
