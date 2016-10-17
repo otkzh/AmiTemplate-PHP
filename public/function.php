@@ -1,66 +1,19 @@
 <?php
 
-#######################################
-#メタデーター管理
+#1) [ $base_url ]を、ディレクトリ構成に合わせて修正してください
+$base_url = (""); 
 
-$sitename = 'AmiTemplate-PHP';//サイト名
-$description = '短くてセンスあるサイト内説明。腕の見せどころ…サイト共通のディスクリプションですから。';
+#2) 開発環境に合わせて、エラーハンドリングしてください
+ini_set('display_errors', 1);
 
-function my_head_meta(){
-  global $sitename,$description;
-}
-
-#######################################
-#ホスト名取得
-$host = ($_SERVER["HTTP_HOST"]);
-
-#1) [ $base_url ]アドレスを修正してください。
-
-#2) [ $cgi_url ]アドレスを修正してください。
-
-#3) httpsバージョンのコメントアウトを外すとサイト内のフォーム関連へのリンクが[ https ]に置き換わります。
-
-#######################################
-
-//ベースURL
-$base_url = ("");
-
-//フルパスリンクURL
-$link_url = ('http://'.$host.$base_url);
-
-//$ssl_url = ("http://".$host.$base_url);  //httpバージョン
-$ssl_url = ("https://".$host.$base_url);  //httpsバージョン
-
-//画像へのリンク
-$img_url = ($base_url."/img");
-
-
-#######################################################
-#inclideファイルパス取得等
-#######################################################
-
-//サーバーフルパス取得
+#3）開発環境に合わせて、サーバーのフルパスを取得してください
 $inc_path = (dirname(__FILE__));
 
-//ファイル名取得
-$filename = basename($_SERVER["PHP_SELF"],".php");
+#-------- html関連 -------#
 
-//親ディレクト名を取得
-$pat = "/\/([^\/]*)\/[^\/]*$/";
-preg_match($pat, $_SERVER['REQUEST_URI'], $match);
-
-if (empty($match)) {
-  $mydir = "null";
-} else{
-  $mydir = $match[1];
-}
-
-#######################################
-#各種タグ関連　　　#
-#######################################
-
-//no_link
-$no_link = "javascript:void(0);return false;";
+include ($inc_path."/functions/htmlMetas.php");
+include ($inc_path."/functions/htmlLinks.php");
+include ($inc_path."/functions/htmlBodyClass.php");
 
 
 ?>

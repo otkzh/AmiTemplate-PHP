@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  <result>
+
+    <company_cd>hc00000002</company_cd>
+
+    <result_code>00</result_code>
+
+
+    <member_info>
+
+      <member_id>0000100231</member_id>
+
+      <member_card_no>3000000011</member_card_no>
+
+      <member_stage_no>1</member_stage_no>
+
+      <member_stage_name>ステージなし</member_stage_name>
+
+      <member_stage_rank>1</member_stage_rank>
+
+      <member_type_no>1</member_type_no>
+
+      <member_type_name>スタンダード</member_type_name>
+
+      <status>4</status>
+
+      <login_disable_flg>0</login_disable_flg>
+
+      <access_control_div>1</access_control_div>
+
+      <pnt_value>1000</pnt_value>
+
+      <total_pnt_value>1000</total_pnt_value>
+
+      <mail_address_pc/>
+
+      <mail_address_mb/>
+
+      <nickname>ＮＯ＿ＮＡＭＥ</nickname>
+
+      <attention_context/>
+
+      <books_delivery_flg>0</books_delivery_flg>
+
+      <admit_date>2016-04-15T00:00:00</admit_date>
+
+      <renewal_date>2016-09-01T18:56:33</renewal_date>
+
+      <auto_admit_div>0</auto_admit_div>
+
+      <continuation_cnt>1</continuation_cnt>
+
+      <old_member_id/>
+
+      <member_control_cd/>
+
+      <member_control_cd_name/>
+
+      <free1/>
+
+      <free2/>
+
+      <free3/>
+
+      <free4/>
+
+      <free5/>
+
+      <free6/>
+
+      <free7/>
+
+      <free8/>
+
+      <remarks/>
+
+      <family_name>長谷工</family_name>
+
+      <first_name>太郎</first_name>
+
+      <family_kana>ハセコウ</family_kana>
+
+      <first_kana>タロウ</first_kana>
+
+      <sex>1</sex>
+
+      <birthday>1980-05-05</birthday>
+
+      <phone_number_home>0300010001</phone_number_home>
+
+      <mobile_phone_number>09000010001</mobile_phone_number>
+
+      <zip_code>1350091</zip_code>
+
+      <prefecture>13</prefecture>
+
+      <prefecture_name>東京都</prefecture_name>
+
+      <municipality>品川区１</municipality>
+
+      <house_number>日Ａタワー１</house_number>
+
+      <house_number2/>
+
+      <job_no/>
+
+      <job_name/>
+
+
+      <company_group_info>
+
+        <company_group_name/>
+
+        <company_group_kana/>
+
+        <branch_office_name/>
+
+        <representative_family_name/>
+
+        <representative_first_name/>
+
+        <representative_post_name/>
+
+        <charge_dept_name/>
+
+        <charge_post_name/>
+
+      </company_group_info>
+
+      <mail_magazine_info/>
+
+
+      <parent_member_info>
+
+        <parent_member_id/>
+
+        <parent_member_card_no/>
+
+        <parent_member_family_kana/>
+
+        <parent_member_first_kana/>
+
+        <parent_member_birthday/>
+
+      </parent_member_info>
+
+
+      <parent_info>
+
+        <parent_family_name/>
+
+        <parent_first_name/>
+
+        <parent_family_kana/>
+
+        <parent_first_kana/>
+
+      </parent_info>
+
+    </member_info>
+
+  </result>

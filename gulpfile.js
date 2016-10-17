@@ -28,19 +28,20 @@ var modernizr = require('gulp-modernizr');
 var hostName = "192.168.33.50"; //browserSyncするローカルIPを記載
 
 var dir = {
-  "base": "public", // 作業用フォルダ
-  "dest": "dest" //納品用データー格納フォルダ
+  "public": "public", // 作業用フォルダ
+  "dest": "dest", //納品用データー格納フォルダ
+  "no": "!**/_*"
 }
 
 //各種パス関連
 var paths = {
-  "scss": dir.base + "/sass/**/*.scss",
-  "css": ["public/css/**/*.css", '!_**/*', '!**/_*'],
-  "html": ["public/**/*.{php,html,txt,text,xml,tsv}", '!_**/*', '!**/_*'],
-  "js": ["public/**/js/**/*.js", '!**/_*.js'],
-  "ts": [dir.base + "/ts/**/*.ts", '!_**/*', '!**/_*'],
-  "img": dir.base + "/**/*.{png,jpg,gif,pdf}",
-  "font": dir.base + "/**/*.{eot,svg,ttf,woff,woff2,otf}",
+  "scss"  : ["public/sass/**/*.scss", dir.no],
+  "css"   : ["public/css/**/*.css", dir.no],
+  "html"  : ["public/**/*.{php,html,txt,text,xml,tsv}", dir.no],
+  "ts"    : ["public/ts/**/*.ts", dir.no],
+  "js"    : ["public/js/**/*.js", dir.no],
+  "img"   : ["public/**/*.{png,jpg,gif,pdf}",dir.no],
+  "font"  : ["public/**/*.{eot,svg,ttf,woff,woff2,otf}",dir.no],
 }
 
 // browser-sync
@@ -51,9 +52,9 @@ gulp.task('browser-sync', function () {
   });
 });
 
-//gulp.task('bs-reload', function () {
-//  browserSync.reload();
-//});
+gulp.task('bs-reload', function () {
+  browserSync.reload();
+});
 
 //エラー表記
 var plumberErrorHandler = {
@@ -82,7 +83,7 @@ gulp.task('css', function () {
 });
 
 gulp.task('css-dest', ['css'], function () {
-  return gulp.src("public/css/**/*.css")
+  return gulp.src(paths.css)
     .pipe(cssmin())
     .pipe(gulp.dest('dest/css'));
 });
@@ -167,15 +168,11 @@ gulp.task('modernizr', ['webpack'], function () {
         'fnBind',
       ]
     }))
-    .pipe(gulp.dest(dir.base + "/js/"))
+    .pipe(gulp.dest("public/js/"))
     .pipe(browserSync.stream());
 });
 
-gulp.task('js', ['modernizr']),
-  function () {
-
-  }
-
+gulp.task('js',['modernizr']);
 
 gulp.task('js-dest', ['ts', 'modernizr'], function () {
   return gulp.src(paths.js)
