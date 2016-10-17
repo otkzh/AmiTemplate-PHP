@@ -28,7 +28,7 @@
     @include gradient-top-lighten($color-brand);
     height: 36px;
     color: #fff;
-    padding: $bm $margin-s;
+    padding: $bm $margin-inner;
     @include display-flex;
     @include align-items(center);
     @include touch-hover() {
@@ -54,7 +54,7 @@
     @include box-shadow(0 5px $color-brand-darken);
     color: #fff;
     height: 42px;
-    padding: $bm $margin-s;
+    padding: $bm $margin-inner;
     position: relative;
     top: 0;
     @include touch-hover() {

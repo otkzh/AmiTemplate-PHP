@@ -1,0 +1,43 @@
+//高さと幅基準
+html,
+body,
+#all {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100%;
+  position: relative;
+  z-index: 0;
+}
+
+#all{
+  overflow: hidden;
+}
+
+#article,
+#main{
+  display: block;
+}
+
+.browsehappy {
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: $color-error-lighten;
+  p {
+    color: $color-error;
+    text-align: center;
+    padding: $bm;
+    font-size: 1.4rem;
+    &::before {
+      @include icon-font("\f05a");
+      margin-right: $bm;
+    }
+  }
+}
+
+#allCover{
+  z-index: 9999;
+}

@@ -7,13 +7,11 @@
 }
 
 @font-face {
-   font-family: 'Noto Sans Japanese';
-   font-style: bord;
-   font-weight: 700;
-   src: url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Bold.woff2) format('woff2'),
-        url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Bold.woff) format('woff'),
-        url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Bold.otf) format('opentype');
- }
+  font-family: 'Noto Sans Japanese';
+  font-style: bord;
+  font-weight: 700;
+  src: url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Bold.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Bold.woff) format('woff'), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Bold.otf) format('opentype');
+}
 
 //remベース
 html {
@@ -95,10 +93,10 @@ th {
   & strong,
   & b {
     font-weight: bold;
-    color:#000 !important;
+    color: #000 !important;
     //background-image: linear-gradient(rgba(0, 0, 0, 0) 45%, lighten($color-brand, 30%) 40%);
   }
-  @include min-screen($width-l + 1px){
+  @include min-screen($width-l + 1px) {
     font-size: 1.6rem;
   }
 }

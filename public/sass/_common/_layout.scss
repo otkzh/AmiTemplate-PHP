@@ -1,32 +1,4 @@
-//高さと幅基準
-html,
-body,
-#all {
-  width: 100%;
-  min-height: 100%;
-  position: relative;
-  z-index: 0;
-}
 
-.browsehappy {
-  position: fixed;
-  width: 100%;
-  z-index: 9999;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: $color-error-lighten;
-  p {
-    color: $color-error;
-    text-align: center;
-    padding: $bm;
-    font-size: 1.4rem;
-    &::before {
-      @include icon-font("\f05a");
-      margin-right: $bm;
-    }
-  }
-}
 
 .wrap {
   @include wrap;

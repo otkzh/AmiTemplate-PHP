@@ -1,16 +1,20 @@
 @mixin wrap {
   box-sizing: border-box;
-  margin: 0 auto;
   width: 100%;
+  margin-right: auto;
+  margin-left: auto;
   @include min-screen($width-l + 1px) {
     max-width: $width-xl + $margin-inner;
-    padding: 0 $margin-inner;
+    padding-left: $margin-inner;
+    padding-right: $margin-inner;
   }
   @include max-screen($width-l) {
-    padding: 0 $bm*2;
+    padding-left: $bm*2;
+    padding-right: $bm*2;
   }
   @include max-screen($width-m) {
-    padding: 0 $bm;
+    padding-left: $bm;
+    padding-right: $bm;
   }
   @include max-screen($width-s) {}
 }
@@ -20,7 +24,7 @@
 $bm: 8px; //ベースマージンサイズ 8pxは扱いやすい
 $margin: $bm*6; //ブロック間の大きいマージン 通常48px
 $margin-inner: $bm*3; //ブロック内で使うマージン 通常24px
-$margin-s: $bm*1.5; //要素同士のマージンとか 通常12px
+
 
 //--------------------横幅の設定
 $width-xs: 320px; //iphone5

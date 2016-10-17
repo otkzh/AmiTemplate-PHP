@@ -12,26 +12,30 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   box-sizing: border-box;
-  margin: 0 auto;
   width: 100%;
+  margin-right: auto;
+  margin-left: auto;
 }
 @media only screen and (min-width: 1025px) {
   /* line 4, ../sass/_common/_header.scss */
   .header-wrap {
     max-width: 1304px;
-    padding: 0 24px;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 }
 @media only screen and (max-width: 1024px) {
   /* line 4, ../sass/_common/_header.scss */
   .header-wrap {
-    padding: 0 16px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
 @media only screen and (max-width: 768px) {
   /* line 4, ../sass/_common/_header.scss */
   .header-wrap {
-    padding: 0 8px;
+    padding-left: 8px;
+    padding-right: 24px;
   }
 }
 
@@ -832,7 +836,7 @@ body.list-page .conts-footer-aside {
   background-image: linear-gradient(#ffafaf 0%, #ff7c7c 100%);
   height: 36px;
   color: #fff;
-  padding: 8px 12px;
+  padding: 8px 24px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -888,7 +892,7 @@ body.list-page .conts-footer-aside {
   box-shadow: 0 5px #ff3030;
   color: #fff;
   height: 42px;
-  padding: 8px 12px;
+  padding: 8px 24px;
   position: relative;
   top: 0;
 }

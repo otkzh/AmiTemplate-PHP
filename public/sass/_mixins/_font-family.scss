@@ -12,9 +12,6 @@
 @mixin mono {
   font-family: "Osaka－等幅", Osaka-mono, "ＭＳ ゴシック", "MS Gothic", monospace;
 }
-@mixin hiraginoMaruGothic {
-  font-family: "ヒラギノ丸ゴ ProN W4", "Hiragino Maru Gothic ProN", "メイリオ", Meiryo, fantasy;
-}
 
 //iconフォント
 @mixin icon-font($icon:"\f105") {
