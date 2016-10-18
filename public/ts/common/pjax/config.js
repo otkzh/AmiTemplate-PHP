@@ -1,8 +1,8 @@
 $.pjax({
   area: [
     '#pan,#main,#footer',
-    '#all',
-    'body'
+    //'#all',
+    //'body'
   ],
   rewrite: function (document, area, host) {
 

@@ -2,20 +2,20 @@
 
   <div class="Header-row">
 
-    <div class="Header-item hgroup">
-      <h1 class="logo"><a href="<?php echo $base_url ?>/"><?php echo $sitename ?></a></h1>
-      <p class="desc"><?php echo $description; ?></p>
-      <a href="<?php echo $no_link ?>" class="menu"><span>menu</span></a>
+    <div class="Header-item headerGroup">
+      <h1 class="headerGroup-logo"><a href="<?php echo $base_url ?>/"><?php echo $sitename ?></a></h1>
+      <p class="headerGroup-desc"><?php echo $description; ?></p>
+      <div class="headerGroup-menu" id="menu"><span>menu</span></div>
     </div>
 
-    <nav class="Header-item nav">
-      <ul class="gnav">
-        <li class="home"><a href="<?php echo $base_url ?>/"><span>Home</span></a></li>
-        <li class="markup"><a href="<?php echo $base_url ?>/markup/"><span>Markup</span></a></li>
-        <li class="speed"><a href="<?php echo $base_url ?>/speed/"><span>Speed</span></a></li>
-        <li class="responsive"><a href="<?php echo $base_url ?>/responsive/"><span>Responsive</span></a></li>
-        <li class="units"><a href="<?php echo $base_url ?>/units/"><span>Units</span></a></li>
-        <li class="readme"><a href="<?php echo $base_url ?>/readme/"><span>Readme</span></a></li>
+    <nav class="Header-item gNav">
+      <ul class="gNav-row">
+        <li class="gNav-item home"><a href="<?php echo $base_url ?>/"><span>Home</span></a></li>
+        <li class="gNav-item markup"><a href="<?php echo $base_url ?>/markup/"><span>Markup</span></a></li>
+        <li class="gNav-item speed"><a href="<?php echo $base_url ?>/speed/"><span>Speed</span></a></li>
+        <li class="gNav-item responsive"><a href="<?php echo $base_url ?>/responsive/"><span>Responsive</span></a></li>
+        <li class="gNav-item units"><a href="<?php echo $base_url ?>/units/"><span>Units</span></a></li>
+        <li class="gNav-item readme"><a href="<?php echo $base_url ?>/readme/"><span>Readme</span></a></li>
       </ul>
     </nav>
 

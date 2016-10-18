@@ -1,8 +1,7 @@
-$(function () {
+$(document).on('ready pjax:ready', function () {
+  $("#menu,.gNav").removeClass("open");
+});
 
-  $(".HeaderMenu a,.HeaderGnav a").on("click", function () {
-    $(".HeaderMenu,.HeaderGnav").toggleClass('open');
-    return;
-  });
-
+$("#menu").on("click", function () {
+  $("#menu,.gNav").toggleClass("open");
 });

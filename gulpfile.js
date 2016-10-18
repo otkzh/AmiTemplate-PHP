@@ -137,6 +137,7 @@ gulp.task('ts', function () {
     .pipe(typescript(option))
     .pipe(gulp.dest(dir.base + "/ts/"));
 });
+
 gulp.task('webpack', function () {
   return webpack({
       entry: {
@@ -155,8 +156,9 @@ gulp.task('webpack', function () {
         }
       }
     })
-    .pipe(gulp.dest(dir.base + '/js/'));
+    .pipe(gulp.dest('public/js/'));
 });
+
 gulp.task('modernizr', ['webpack'], function () {
   gulp.src(['public/js/**/*.js', '!**/modernizr.js', 'public/css/**/*.css'])
     .pipe(modernizr({

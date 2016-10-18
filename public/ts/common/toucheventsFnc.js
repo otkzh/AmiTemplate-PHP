@@ -1,4 +1,4 @@
-$(function () {
+$(document).on('ready pjax:ready', function () {
 
     if (Modernizr.touchevents) {
         var thisAnchor;
@@ -9,7 +9,7 @@ $(function () {
                 var nowPos = thisAnchor.offset().top;
                 if (touchPos == nowPos) {
                     thisAnchor.addClass("touch");
-                    console.log("addtouch");
+                    //console.log("addtouch");
                 }
             };
             setTimeout(moveCheck, 100);
@@ -18,7 +18,7 @@ $(function () {
             thisAnchor = $(this);
             var hoverRemove = function () {
                 thisAnchor.removeClass("touch");
-                console.log("removetouch");
+                //console.log("removetouch");
             };
             setTimeout(hoverRemove, 200);
         };

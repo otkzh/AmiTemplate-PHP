@@ -1,202 +1,177 @@
-//#all.menu-open{
-#header {}
-
-.header-wrap {
-  height: 100%;
+.Header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  @include wrap;
-}
-
-.header-logo {
-  a {
-    color: $color-dark;
-    font-size: 1.6rem;
-    @include mincho;
-    transition: color .5s;
-    @include touch-hover() {
-      transition: color .5s;
-      color: $color-light-darken;
-      text-decoration: none;
+  &-row {
+    @include wrap;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include max-screen($width-s) {
+      display: block;
     }
+  }
+  &-item {
+    box-sizing: border-box;
   }
 }
 
-.header-description {
+.headerGroup {
+  @include max-screen($width-s) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.headerGroup-logo a {
+  color: $color-dark;
+  font-size: 1.6rem;
+  @include mincho;
+  transition: color .5s;
+  @include touch-hover() {
+    transition: color .5s;
+    color: $color-light-darken;
+    text-decoration: none;
+  }
+}
+
+.headerGroup-desc {
   display: none;
 }
 
-.header-hnav,
-.header-gnav {
-  li {
-    a {
-      box-sizing: border-box;
+.headerGroup-menu {
+  display: none;
+  @include max-screen($width-s) {
+    width: 55px;
+    height: 55px;
+    flex: 0 0 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-weight: normal;
+    color: $color-dark;
+    border: solid 1px $color-light;
+    span {
+      display: none;
+    }
+    &::before {
+      @include icon-font("\f0c9");
       display: block;
-      font-size: 1.4rem;
-      font-weight: normal;
+      font-size: 3rem;
+    }
+    &::after {
+      content: "menu";
+      font-size: 1.2rem;
+    }
+    @include touch-hover() {
+      color: $color-dark;
+      cursor: pointer;
+    }
+    &.open {
+      color: $color-brand-darken;
+      &::before {
+        content: "\f00d";
+      }
+      &::after {
+        content: "close";
+      }
       @include touch-hover() {
-        color: $color-light-darken;
-        text-decoration: none;
+        color: $color-brand;
       }
     }
   }
 }
 
-@include min-screen($width-m + 1px) {
-  .header-nav {
-    display: flex;
-    align-items: center;
-  }
-  .header-gnav {
-    padding: 0 $bm;
-  }
-  .header-hnav {
-    padding-left: $bm;
-  }
-  .header-hnav,
-  .header-gnav {
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    border-left: solid 1px $color-light;
-    li {
-      box-sizing: border-box;
-      padding: 0 $bm/2;
-      a {
-        padding: $bm;
-        color: $color-dark;
-        border-bottom: solid 2px rgba(0, 0, 0, 0);
-        transition: all .5s;
-        @each $class in home,
-        markup,
-        speed,
-        responsive,
-        units,
-        readme {
-          body.#{$class} &.#{$class} {
-            border-color: $color-dark;
-          }
-        } //each
-        @include touch-hover() {
-          transition: all .5s;
-          color: $color-light-darken;
-          text-decoration: none;
-          border-color: $color-light;
-        }
-        &.readme {
-          color: $color-brand-darken;
-          &::before {
-            @include icon-font("\f06e");
-            margin-right: $bm;
-          }
-          body.readme & {
-            color: $color-brand-darken;
-            border-color: $color-brand-darken;
-          }
-        }
-      } //a
+.gNav {
+  margin-left: auto;
+  @include max-screen($width-s) {
+    margin-left: 0;
+    position: fixed;
+    left: 500px;
+    right: 0;
+    text-outline: 0;
+    top: 70px;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, .2);
+    background-color: #fff;
+    opacity: 0;
+    transition: all .5s;
+    &.open {
+      transition: all .5s;
+      opacity: 1;
+      left: 0;
+      right: 0;
     }
-  } //header-gnav,header-hnav
-  .header-menu {
-    display: none;
   }
-}
-
-@include max-screen($width-m) {
-
-  .header-nav {
+  &-row {
+    display: flex;
+    align-items: center;
+    @include max-screen($width-s) {
+      display: block;
+      margin: 0;
+    }
+  }
+  &-item {
     box-sizing: border-box;
-    position: absolute;
-    top: 0;
-    left: 100%;
-    width: calc(100% - 70px);
-    z-index: 2;
-    background-color: $color-dark;
-    height: 100vh;
-  }
-  .header-gnav {
+    padding: 0 $bm;
     margin: 0;
-    li {
-      a {
-        height: 70px;
+    @include max-screen($width-s) {
+      border-top: solid 1px $color-light;
+      padding: 0;
+    }
+    a {
+      box-sizing: border-box;
+      font-size: 1.4rem;
+      font-weight: normal;
+      color: $color-dark;
+      padding: $bm/2 $bm;
+      border-bottom: solid 1px #fff;
+      @include touch-hover() {
+        color: $color-brand;
+        border-bottom: solid 1px $color-brand;
+      }
+      @include max-screen($width-s) {
+        height: 45px;
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        padding: 0 $margin-inner;
-        border-bottom: solid 1px $color-dark-lighten;
-        color: $color-light;
+        width: 100%;
+        padding: 0 $bm*2;
+        margin: 0;
+        background-color: #fff;
         &::after {
           @include icon-font();
           margin-left: auto;
         }
       }
-    } //li
-  }
-  .header-hnav {
-    margin: $margin-inner;
-    a.readme {
-      height: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: solid 1px $color-brand;
-      border-radius: 30px;
-      transition: all .5s;
-      @include touch-hover() {
-        transition: all .5s;
-        color: $color-brand;
-        background-color: #fff;
+    } //a
+    &.readme {
+      border-left: solid 1px $color-light;
+      @include max-screen($width-s) {
+        border-left: none;
+        padding: $bm*2;
       }
-    }
-  }
-  .header-gnav {}
-  .header-menu {
-    position: absolute;
-    right: 0;
-    width: 70px;
-    height: 70px;
-    transition: all .5s;
-    display: block;
-    a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      height: 100%;
-      width: 100%;
-      font-weight: normal;
-      color: $color-dark;
-      span{
-        display: none;
-      }
-      &::before {
-        @include icon-font("\f0c9");
-        display: block;
-        font-size: 3rem;
-      }
-      &::after{
-        content: "menu";
-        font-size: 1.2rem;
-      }
-      @include touch-hover(){
-        color:$color-dark;
-        text-decoration: none;
-      }
-    }
-    &.open-menu {
-      a{
-        color:$color-brand-darken;
-        &::before{
-          content: "\f00d";
+      a {
+        background-color: $color-brand;
+        border-radius: 15px;
+        padding: $bm/2 $bm*2;
+        color: #fff;
+        border: solid 1px $color-brand;
+        &::before {
+          @include icon-font("\f06e");
+          margin-right: $bm/2;
         }
-        &::after{
-          content: "close";
+        @include touch-hover() {
+          background-color: #fff;
+          color: $color-brand;
         }
-        @include touch-hover(){
-          color:$color-brand;
-        }
-      }
+        @include max-screen($width-s) {
+          border-radius: 23px;
+          justify-content: center;
+          &::after {
+            content: none;
+          }
+        } //max
+      } //a
     }
-  }
+  } //item
 }

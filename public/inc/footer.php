@@ -1,9 +1,10 @@
 </article>
 </main>
 
-<div class="pagetop u-hide" id="pagetop"><a href="#all" data-scroll><span>ページのトップへ</span></a></div>
-
 <footer class="Footer" id="footer">
+
+  <div class="pagetop u-hide" id="pagetop"><a href="#all" data-scroll><span>ページのトップへ</span></a></div>
+
   <div class="Footer-row">
 
     <nav class="Footer-item fNav">

@@ -1,6 +1,6 @@
 /*!
  * modernizr v3.3.1
- * Build http://modernizr.com/download?-svg-touchevents-addtest-fnbind-printshiv-setclasses-testprop-dontmin
+ * Build http://modernizr.com/download?-checked-contains-cors-fetch-hidden-history-opacity-search-svg-target-time-touchevents-video-addtest-fnbind-printshiv-setclasses-testprop-dontmin
  *
  * Copyright (c)
  *  Faruk Ates
@@ -1404,6 +1404,164 @@
   }
 
   ;
+/*!
+{
+  "name": "Cross-Origin Resource Sharing",
+  "property": "cors",
+  "caniuse": "cors",
+  "authors": ["Theodoor van Donge"],
+  "notes": [{
+    "name": "MDN documentation",
+    "href": "https://developer.mozilla.org/en-US/docs/HTTP/Access_control_CORS"
+  }],
+  "polyfills": ["pmxdr", "ppx", "flxhr"]
+}
+!*/
+/* DOC
+Detects support for Cross-Origin Resource Sharing: method of performing XMLHttpRequests across domains.
+*/
+
+  Modernizr.addTest('cors', 'XMLHttpRequest' in window && 'withCredentials' in new XMLHttpRequest());
+
+/*!
+{
+  "name": "History API",
+  "property": "history",
+  "caniuse": "history",
+  "tags": ["history"],
+  "authors": ["Hay Kranen", "Alexander Farkas"],
+  "notes": [{
+    "name": "W3C Spec",
+    "href": "https://www.w3.org/TR/html51/browsers.html#the-history-interface"
+  }, {
+    "name": "MDN documentation",
+    "href": "https://developer.mozilla.org/en-US/docs/Web/API/window.history"
+  }],
+  "polyfills": ["historyjs", "html5historyapi"]
+}
+!*/
+/* DOC
+Detects support for the History API for manipulating the browser session history.
+*/
+
+  Modernizr.addTest('history', function() {
+    // Issue #733
+    // The stock browser on Android 2.2 & 2.3, and 4.0.x returns positive on history support
+    // Unfortunately support is really buggy and there is no clean way to detect
+    // these bugs, so we fall back to a user agent sniff :(
+    var ua = navigator.userAgent;
+
+    // We only want Android 2 and 4.0, stock browser, and not Chrome which identifies
+    // itself as 'Mobile Safari' as well, nor Windows Phone (issue #1471).
+    if ((ua.indexOf('Android 2.') !== -1 ||
+        (ua.indexOf('Android 4.0') !== -1)) &&
+        ua.indexOf('Mobile Safari') !== -1 &&
+        ua.indexOf('Chrome') === -1 &&
+        ua.indexOf('Windows Phone') === -1) {
+      return false;
+    }
+
+    // Return the regular check
+    return (window.history && 'pushState' in window.history);
+  });
+
+
+  /**
+   * Modernizr.hasEvent() detects support for a given event
+   *
+   * @memberof Modernizr
+   * @name Modernizr.hasEvent
+   * @optionName Modernizr.hasEvent()
+   * @optionProp hasEvent
+   * @access public
+   * @function hasEvent
+   * @param  {string|*} eventName - the name of an event to test for (e.g. "resize")
+   * @param  {Element|string} [element=HTMLDivElement] - is the element|document|window|tagName to test on
+   * @returns {boolean}
+   * @example
+   *  `Modernizr.hasEvent` lets you determine if the browser supports a supplied event.
+   *  By default, it does this detection on a div element
+   *
+   * ```js
+   *  hasEvent('blur') // true;
+   * ```
+   *
+   * However, you are able to give an object as a second argument to hasEvent to
+   * detect an event on something other than a div.
+   *
+   * ```js
+   *  hasEvent('devicelight', window) // true;
+   * ```
+   *
+   */
+
+  var hasEvent = (function() {
+
+    // Detect whether event support can be detected via `in`. Test on a DOM element
+    // using the "blur" event b/c it should always exist. bit.ly/event-detection
+    var needsFallback = !('onblur' in document.documentElement);
+
+    function inner(eventName, element) {
+
+      var isSupported;
+      if (!eventName) { return false; }
+      if (!element || typeof element === 'string') {
+        element = createElement(element || 'div');
+      }
+
+      // Testing via the `in` operator is sufficient for modern browsers and IE.
+      // When using `setAttribute`, IE skips "unload", WebKit skips "unload" and
+      // "resize", whereas `in` "catches" those.
+      eventName = 'on' + eventName;
+      isSupported = eventName in element;
+
+      // Fallback technique for old Firefox - bit.ly/event-detection
+      if (!isSupported && needsFallback) {
+        if (!element.setAttribute) {
+          // Switch to generic element if it lacks `setAttribute`.
+          // It could be the `document`, `window`, or something else.
+          element = createElement('div');
+        }
+
+        element.setAttribute(eventName, '');
+        isSupported = typeof element[eventName] === 'function';
+
+        if (element[eventName] !== undefined) {
+          // If property was created, "remove it" by setting value to `undefined`.
+          element[eventName] = undefined;
+        }
+        element.removeAttribute(eventName);
+      }
+
+      return isSupported;
+    }
+    return inner;
+  })();
+
+
+  ModernizrProto.hasEvent = hasEvent;
+  
+/*!
+{
+  "name": "input[search] search event",
+  "property": "search",
+  "tags": ["input","search"],
+  "authors": ["Calvin Webster"],
+  "notes": [{
+    "name": "Wufoo demo",
+    "href": "https://www.wufoo.com/html5/types/5-search.html?"
+  }, {
+    "name": "CSS Tricks",
+    "href": "https://css-tricks.com/webkit-html5-search-inputs/"
+  }]
+}
+!*/
+/* DOC
+There is a custom `search` event implemented in webkit browsers when using an `input[search]` element.
+*/
+
+  Modernizr.addTest('inputsearchevent',  hasEvent('search'));
+
 
   /**
    * List of property values to set for css tests. See ticket #21
@@ -1554,6 +1712,217 @@ This test will also return `true` for Firefox 4 Multitouch support.
     }
     return bool;
   });
+
+/*!
+{
+  "name": "HTML5 Video",
+  "property": "video",
+  "caniuse": "video",
+  "tags": ["html5"],
+  "knownBugs": [
+    "Without QuickTime, `Modernizr.video.h264` will be `undefined`; https://github.com/Modernizr/Modernizr/issues/546"
+  ],
+  "polyfills": [
+    "html5media",
+    "mediaelementjs",
+    "sublimevideo",
+    "videojs",
+    "leanbackplayer",
+    "videoforeverybody"
+  ]
+}
+!*/
+/* DOC
+Detects support for the video element, as well as testing what types of content it supports.
+
+Subproperties are provided to describe support for `ogg`, `h264` and `webm` formats, e.g.:
+
+```javascript
+Modernizr.video         // true
+Modernizr.video.ogg     // 'probably'
+```
+*/
+
+  // Codec values from : github.com/NielsLeenheer/html5test/blob/9106a8/index.html#L845
+  //                     thx to NielsLeenheer and zcorpan
+
+  // Note: in some older browsers, "no" was a return value instead of empty string.
+  //   It was live in FF3.5.0 and 3.5.1, but fixed in 3.5.2
+  //   It was also live in Safari 4.0.0 - 4.0.4, but fixed in 4.0.5
+
+  Modernizr.addTest('video', function() {
+    /* jshint -W053 */
+    var elem = createElement('video');
+    var bool = false;
+
+    // IE9 Running on Windows Server SKU can cause an exception to be thrown, bug #224
+    try {
+      if (bool = !!elem.canPlayType) {
+        bool = new Boolean(bool);
+        bool.ogg = elem.canPlayType('video/ogg; codecs="theora"').replace(/^no$/, '');
+
+        // Without QuickTime, this value will be `undefined`. github.com/Modernizr/Modernizr/issues/546
+        bool.h264 = elem.canPlayType('video/mp4; codecs="avc1.42E01E"').replace(/^no$/, '');
+
+        bool.webm = elem.canPlayType('video/webm; codecs="vp8, vorbis"').replace(/^no$/, '');
+
+        bool.vp9 = elem.canPlayType('video/webm; codecs="vp9"').replace(/^no$/, '');
+
+        bool.hls = elem.canPlayType('application/x-mpegURL; codecs="avc1.42E01E"').replace(/^no$/, '');
+      }
+    } catch (e) {}
+
+    return bool;
+  });
+
+/*!
+{
+  "name": "CSS :checked pseudo-selector",
+  "caniuse": "css-sel3",
+  "property": "checked",
+  "tags": ["css"],
+  "notes": [{
+    "name": "Related Github Issue",
+    "href": "https://github.com/Modernizr/Modernizr/pull/879"
+  }]
+}
+!*/
+
+  Modernizr.addTest('checked', function() {
+    return testStyles('#modernizr {position:absolute} #modernizr input {margin-left:10px} #modernizr :checked {margin-left:20px;display:block}', function(elem) {
+      var cb = createElement('input');
+      cb.setAttribute('type', 'checkbox');
+      cb.setAttribute('checked', 'checked');
+      elem.appendChild(cb);
+      return cb.offsetLeft === 20;
+    });
+  });
+
+/*!
+{
+  "name": "CSS Opacity",
+  "caniuse": "css-opacity",
+  "property": "opacity",
+  "tags": ["css"]
+}
+!*/
+
+  // Browsers that actually have CSS Opacity implemented have done so
+  // according to spec, which means their return values are within the
+  // range of [0.0,1.0] - including the leading zero.
+
+  Modernizr.addTest('opacity', function() {
+    var style = createElement('a').style;
+    style.cssText = prefixes.join('opacity:.55;');
+
+    // The non-literal . in this regex is intentional:
+    // German Chrome returns this value as 0,55
+    // github.com/Modernizr/Modernizr/issues/#issue/59/comment/516632
+    return (/^0.55$/).test(style.opacity);
+  });
+
+/*!
+{
+  "name": "CSS :target pseudo-class",
+  "caniuse": "css-sel3",
+  "property": "target",
+  "tags": ["css"],
+  "notes": [{
+    "name": "MDN documentation",
+    "href": "https://developer.mozilla.org/en-US/docs/Web/CSS/:target"
+  }],
+  "authors": ["@zachleat"],
+  "warnings": ["Opera Mini supports :target but doesn't update the hash for anchor links."]
+}
+!*/
+/* DOC
+Detects support for the ':target' CSS pseudo-class.
+*/
+
+  // querySelector
+  Modernizr.addTest('target', function() {
+    var doc = window.document;
+    if (!('querySelectorAll' in doc)) {
+      return false;
+    }
+
+    try {
+      doc.querySelectorAll(':target');
+      return true;
+    } catch (e) {
+      return false;
+    }
+  });
+
+/*!
+{
+  "name": "[hidden] Attribute",
+  "property": "hidden",
+  "tags": ["dom"],
+  "notes": [{
+    "name": "WHATWG: The hidden attribute",
+    "href": "https://developers.whatwg.org/editing.html#the-hidden-attribute"
+  }, {
+    "name": "original implementation of detect code",
+    "href": "https://github.com/aFarkas/html5shiv/blob/bf4fcc4/src/html5shiv.js#L38"
+  }],
+  "polyfills": ["html5shiv"],
+  "authors": ["Ron Waldon (@jokeyrhyme)"]
+}
+!*/
+/* DOC
+Does the browser support the HTML5 [hidden] attribute?
+*/
+
+  Modernizr.addTest('hidden', 'hidden' in createElement('a'));
+
+/*!
+{
+  "name": "time Element",
+  "property": "time",
+  "tags": ["elem"],
+  "builderAliases": ["elem_time"],
+  "notes": [{
+    "name": "WhatWG Spec",
+    "href": "https://html.spec.whatwg.org/multipage/semantics.html#the-time-element"
+  }]
+}
+!*/
+
+  Modernizr.addTest('time', 'valueAsDate' in createElement('time'));
+
+/*!
+{
+  "name": "ES5 String.prototype.contains",
+  "property": "contains",
+  "authors": ["Robert Kowalski"],
+  "tags": ["es6"]
+}
+!*/
+/* DOC
+Check if browser implements ECMAScript 6 `String.prototype.contains` per specification.
+*/
+
+  Modernizr.addTest('contains', is(String.prototype.contains, 'function'));
+
+/*!
+{
+  "name": "Fetch API",
+  "property": "fetch",
+  "tags": ["network"],
+  "caniuse": "fetch",
+  "notes": [{
+    "name": "Fetch Living Standard",
+    "href": "https://fetch.spec.whatwg.org/"
+  }],
+  "polyfills": ["fetch"]
+}
+!*/
+/* DOC
+Detects support for the fetch API, a modern replacement for XMLHttpRequest.
+*/
+
+  Modernizr.addTest('fetch', 'fetch' in window);
 
 /*!
 {
