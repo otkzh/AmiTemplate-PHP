@@ -9,21 +9,26 @@
     padding-right: $margin-inner;
   }
   @include max-screen($width-l) {
-    padding-left: $bm*2;
-    padding-right: $bm*2;
+    padding-left: $margin-inner;
+    padding-right: $margin-inner;
   }
   @include max-screen($width-m) {
+    padding-left: $bm*2;
+    padding-right: $bm*2;
+
+  }
+  @include max-screen($width-s) {
     padding-left: $bm;
     padding-right: $bm;
   }
-  @include max-screen($width-s) {}
 }
+
 
 //--------------------ベースマージンの設定
 
 $bm: 8px; //ベースマージンサイズ 8pxは扱いやすい
-$margin: $bm*6; //ブロック間の大きいマージン 通常48px
 $margin-inner: $bm*3; //ブロック内で使うマージン 通常24px
+$margin: $bm*6; //ブロック間の大きいマージン 通常48px
 
 
 //--------------------横幅の設定

@@ -7,6 +7,7 @@
 //  Version:
 //  1.6.1
 // --- generator ---------------------------------------------------------------
+
 @mixin mq($args...) {
   $media-type: 'only screen';
   $media-type-key: 'media-type';
@@ -28,7 +29,7 @@
 }
 // --- screen ------------------------------------------------------------------
 @mixin screen($min, $max, $orientation: false) {
-  @include mq($min-width: $min, $max-width: $max, $orientation: $orientation) {
+  @include mq($min-width: $min +1px, $max-width: $max, $orientation: $orientation) {
     @content;
   }
 }
@@ -38,7 +39,7 @@
   }
 }
 @mixin min-screen($min) {
-  @include mq($min-width: $min) {
+  @include mq($min-width: $min + 1px) {
     @content;
   }
 }

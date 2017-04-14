@@ -1,234 +1,249 @@
 @charset "UTF-8";
-/* line 5, ../sass/_page/_home.scss */
 body.home #contents {
   -webkit-animation: identifier 1s;
-          animation: identifier 1s;
-}
+          animation: identifier 1s; }
+
 @-webkit-keyframes identifier {
   0% {
-    opacity: 0;
-  }
+    opacity: 0; }
   50% {
-    opacity: 0;
-  }
+    opacity: 0; }
   100% {
-    opacity: 1;
-  }
-}
+    opacity: 1; } }
+
 @keyframes identifier {
   0% {
-    opacity: 0;
-  }
+    opacity: 0; }
   50% {
-    opacity: 0;
-  }
+    opacity: 0; }
   100% {
-    opacity: 1;
-  }
-}
-/* line 14, ../sass/_page/_home.scss */
+    opacity: 1; } }
+
+body.home .BgImgbox {
+  display: block;
+  overflow: hidden;
+  width: 809px;
+  height: 0;
+  padding-top: 500px;
+  background-image: url("../img/readme/noimage.png");
+  background-size: 809px 500px; }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    body.home .BgImgbox {
+      background-image: url("../img/readme/noimage@2x.png"); } }
+
 body.home .main-v-hgroup {
   text-align: center;
-  padding: 48px 0;
-}
-/* line 19, ../sass/_page/_home.scss */
+  padding: 48px 0; }
+
 body.home .main-v-logo {
-  margin-bottom: 24px;
-}
-/* line 21, ../sass/_page/_home.scss */
-body.home .main-v-logo a {
-  font-family: 'Libre Baskerville',"ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN","游明朝", "YuMincho", "メイリオ","Meiryo","ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
-  font-size: 3rem;
-  color: #fbfbfb;
-}
-/* line 62, ../sass/_mixins/_mixin.scss */
-.no-js body.home .main-v-logo a:hover, .js.no-touchevents body.home .main-v-logo a:hover, .js.touchevents body.home .main-v-logo a.touch {
-  -webkit-transition: color .5s;
-  transition: color .5s;
-  color: #eee;
-  text-decoration: none;
-}
-/* line 33, ../sass/_page/_home.scss */
+  margin-bottom: 24px; }
+  body.home .main-v-logo a {
+    font-family: 'Libre Baskerville',"ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN","游明朝", "YuMincho", "メイリオ","Meiryo","ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
+    font-size: 3rem;
+    color: #fbfbfb; }
+    .no-js body.home .main-v-logo a:hover,
+    .js.no-touchevents body.home .main-v-logo a:hover,
+    .js.touchevents body.home .main-v-logo a.touch {
+      -webkit-transition: color .5s;
+      transition: color .5s;
+      color: #eee;
+      text-decoration: none; }
+
 body.home .main-v-nav {
-  font-family: 'Libre Baskerville',"ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN","游明朝", "YuMincho", "メイリオ","Meiryo","ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
-}
-/* line 35, ../sass/_page/_home.scss */
-body.home .main-v-nav a {
-  color: #fbfbfb;
-  display: block;
-  box-sizing: border-box;
-  padding: 8px 4px;
-  -webkit-transition: all .3s;
-  transition: all .3s;
-  border-bottom: solid 4px transparent;
-}
-/* line 62, ../sass/_mixins/_mixin.scss */
-.no-js body.home .main-v-nav a:hover, .js.no-touchevents body.home .main-v-nav a:hover, .js.touchevents body.home .main-v-nav a.touch {
-  -webkit-transition: all .5s;
-  transition: all .5s;
-  color: #eee;
-  text-decoration: none;
-  border-bottom: solid 4px #fff;
-}
-/* line 48, ../sass/_page/_home.scss */
-body.home .main-v-nav a.home {
-  -webkit-animation: header-nav-color-fade 1s;
-          animation: header-nav-color-fade 1s;
-  border-bottom: solid 4px #fbfbfb;
-}
-/* line 55, ../sass/_page/_home.scss */
+  font-family: 'Libre Baskerville',"ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN","游明朝", "YuMincho", "メイリオ","Meiryo","ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif; }
+  body.home .main-v-nav a {
+    color: #fbfbfb;
+    display: block;
+    box-sizing: border-box;
+    padding: 8px 4px;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    border-bottom: solid 4px transparent; }
+    .no-js body.home .main-v-nav a:hover,
+    .js.no-touchevents body.home .main-v-nav a:hover,
+    .js.touchevents body.home .main-v-nav a.touch {
+      -webkit-transition: all .5s;
+      transition: all .5s;
+      color: #eee;
+      text-decoration: none;
+      border-bottom: solid 4px #fff; }
+    body.home .main-v-nav a.home {
+      -webkit-animation: header-nav-color-fade 1s;
+              animation: header-nav-color-fade 1s;
+      border-bottom: solid 4px #fbfbfb; }
+
 body.home .main-v-gnav {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   max-width: 650px;
   width: 100%;
-  margin: 0 auto;
-}
-/* line 61, ../sass/_page/_home.scss */
-body.home .main-v-gnav li {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-  text-align: center;
-}
-/* line 67, ../sass/_page/_home.scss */
+  margin: 0 auto; }
+  body.home .main-v-gnav li {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+    text-align: center; }
+
 body.home .main-v-hnav {
   position: absolute;
   right: 8px;
-  top: 8px;
-}
-/* line 72, ../sass/_page/_home.scss */
-body.home .main-v-hnav a.readme::before {
-  content: "";
-  display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  margin-right: 8px;
-}
-/* line 79, ../sass/_page/_home.scss */
+  top: 8px; }
+  body.home .main-v-hnav a.readme::before {
+    content: "";
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-right: 8px; }
+
 body.home .main-v-menu {
-  display: none;
-}
-/* line 83, ../sass/_page/_home.scss */
+  display: none; }
+
 body.home .links {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 1em -1em;
-}
-/* line 87, ../sass/_page/_home.scss */
-body.home .links li {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 25%;
-          flex: 1 0 25%;
-  margin: 1em;
-}
-@media only screen and (max-width: 768px) {
-  /* line 83, ../sass/_page/_home.scss */
-  body.home .links {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  /* line 93, ../sass/_page/_home.scss */
+  margin: 1em -1em; }
   body.home .links li {
     -webkit-box-flex: 1;
-        -ms-flex: 1 0 auto;
-            flex: 1 0 auto;
-  }
-}
-/* line 95, ../sass/_page/_home.scss */
-body.home .links a {
-  display: block;
-  box-sizing: border-box;
-  -webkit-animation: hover-out .3s;
-          animation: hover-out .3s;
-}
-/* line 62, ../sass/_mixins/_mixin.scss */
-.no-js body.home .links a:hover, .js.no-touchevents body.home .links a:hover, .js.touchevents body.home .links a.touch {
-  -webkit-animation: hover-up .3s;
-          animation: hover-up .3s;
-  -webkit-transform: translateY(-10px);
-      -ms-transform: translateY(-10px);
-          transform: translateY(-10px);
-}
-/* line 102, ../sass/_page/_home.scss */
-.no-js body.home .links a:hover figure, .js.no-touchevents body.home .links a:hover figure, .js.touchevents body.home .links a.touch figure {
-  box-shadow: 0px 0px 3px #afafaf;
-}
+    -webkit-flex: 1 0 25%;
+        -ms-flex: 1 0 25%;
+            flex: 1 0 25%;
+    margin: 1em; }
+  @media only screen and (max-width: 768px) {
+    body.home .links {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column; }
+      body.home .links li {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1 0 auto;
+            -ms-flex: 1 0 auto;
+                flex: 1 0 auto; } }
+  body.home .links a {
+    display: block;
+    box-sizing: border-box;
+    -webkit-animation: hover-out .3s;
+            animation: hover-out .3s; }
+    .no-js body.home .links a:hover,
+    .js.no-touchevents body.home .links a:hover,
+    .js.touchevents body.home .links a.touch {
+      -webkit-animation: hover-up .3s;
+              animation: hover-up .3s;
+      -webkit-transform: translateY(-10px);
+          -ms-transform: translateY(-10px);
+              transform: translateY(-10px); }
+
 @-webkit-keyframes hover-up {
   from {
     -webkit-transform: translateY(0px);
-            transform: translateY(0px);
-  }
+            transform: translateY(0px); }
   to {
     -webkit-transform: translateY(-10px);
             transform: translateY(-10px);
-    figure {
-      box-shadow: 0px 0px 3px #afafaf;
-    }
-  }
-}
+    figure { } } }
+
 @keyframes hover-up {
   from {
     -webkit-transform: translateY(0px);
-            transform: translateY(0px);
-  }
+            transform: translateY(0px); }
   to {
     -webkit-transform: translateY(-10px);
             transform: translateY(-10px);
-    figure {
-      box-shadow: 0px 0px 3px #afafaf;
-    }
-  }
-}
+    figure { } } }
+
 @-webkit-keyframes hover-out {
   from {
     -webkit-transform: translateY(-10px);
             transform: translateY(-10px);
-    figure {
-      box-shadow: 0px 0px 3px #afafaf;
-    }
-  }
+    figure { } }
   to {
     -webkit-transform: translateY(0px);
-            transform: translateY(0px);
-  }
-}
+            transform: translateY(0px); } }
+
 @keyframes hover-out {
   from {
     -webkit-transform: translateY(-10px);
             transform: translateY(-10px);
-    figure {
-      box-shadow: 0px 0px 3px #afafaf;
-    }
-  }
+    figure { } }
   to {
     -webkit-transform: translateY(0px);
-            transform: translateY(0px);
-  }
-}
-/* line 133, ../sass/_page/_home.scss */
-body.home .links figure {
-  margin: 0;
-}
-/* line 136, ../sass/_page/_home.scss */
-body.home .links figcaption {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
+            transform: translateY(0px); } }
+  body.home .links figure {
+    margin: 0; }
+  body.home .links figcaption {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+
+body.home .FlexSample {
+  background-color: black; }
+  body.home .FlexSample-row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-right: -8px;
+    margin-left: -8px; }
+  body.home .FlexSample-item {
+    box-sizing: border-box;
+    max-width: 50%;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 50%;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+    padding: 0 8px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+    @media only screen and (min-width: 481px) and (max-width: 768px) {
+      body.home .FlexSample-item {
+        max-width: 50%;
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 50%;
+            -ms-flex: 0 0 50%;
+                flex: 0 0 50%;
+        margin-bottom: 16px; } }
+    @media only screen and (max-width: 480px) {
+      body.home .FlexSample-item {
+        max-width: 100%;
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 100%;
+            -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+        margin-bottom: 8px; } }
+  body.home .FlexSample-inner {
+    width: 100%; }

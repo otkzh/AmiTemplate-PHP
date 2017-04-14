@@ -11,5 +11,3 @@ require("./common/pjax/config");
 require("./common/headerMenuFnc");
 require("./common/toucheventsFnc");
 require("./common/pageTopFnc");
-
-

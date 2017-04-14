@@ -16,6 +16,56 @@ $pan = 1;//パンくずの表示非表示 0:非表示,1〜:表示
     <h2 class="l-ttl">.l-ttl</h2>
     <p>テストテストテストテストテストテストテスト</p>
   </section>
+  
+  <section class="contSec">
+    <h2 class="l-ttl">.l-ttl</h2>
+    <p>テストテストテストテストテストテストテスト</p>
+    
+    <p>画像置換</p>
+    <div class="BgImgbox">
+      画像置換されて、<br>テキストが消えます。
+    </div>
+    
+    
+    <hr>
+
+   <div class="FlexSample">
+     <div class="FlexSample-row">
+       <div class="FlexSample-item">
+         <div class="FlexSample-inner">
+           <h5 class="s-ttl">テスト</h5>
+           <p>サンプルイメージ</p>
+         </div>
+       </div>
+       <div class="FlexSample-item">
+         <div class="FlexSample-inner">
+           <h5 class="s-ttl">テスト</h5>
+           <p>サンプルイメージ</p>
+         </div>
+       </div>
+       <div class="FlexSample-item">
+         <div class="FlexSample-inner">
+           <h5 class="s-ttl">テスト</h5>
+           <p>サンプルイメージ</p>
+         </div>
+       </div>
+       <div class="FlexSample-item">
+         <div class="FlexSample-inner">
+           <h5 class="s-ttl">テスト</h5>
+           <p>サンプルイメージ</p>
+         </div>
+       </div>
+       <div class="FlexSample-item">
+         <div class="FlexSample-inner">
+           <h5 class="s-ttl">テスト</h5>
+           <p>サンプルイメージ</p>
+         </div>
+       </div>
+     </div>
+   </div>
+    
+    
+  </section>
 
 </div>
 

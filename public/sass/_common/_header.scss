@@ -6,7 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    @include max-screen($width-s) {
+    @include max-screen($width-m) {
       display: block;
     }
   }
@@ -16,7 +16,7 @@
 }
 
 .headerGroup {
-  @include max-screen($width-s) {
+  @include max-screen($width-m) {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -41,7 +41,7 @@
 
 .headerGroup-menu {
   display: none;
-  @include max-screen($width-s) {
+  @include max-screen($width-m) {
     width: 55px;
     height: 55px;
     flex: 0 0 55px;
@@ -85,7 +85,7 @@
 
 .gNav {
   margin-left: auto;
-  @include max-screen($width-s) {
+  @include max-screen($width-m) {
     margin-left: 0;
     position: fixed;
     left: 500px;
@@ -106,7 +106,7 @@
   &-row {
     display: flex;
     align-items: center;
-    @include max-screen($width-s) {
+    @include max-screen($width-m) {
       display: block;
       margin: 0;
     }
@@ -115,7 +115,7 @@
     box-sizing: border-box;
     padding: 0 $bm;
     margin: 0;
-    @include max-screen($width-s) {
+    @include max-screen($width-m) {
       border-top: solid 1px $color-light;
       padding: 0;
     }
@@ -130,7 +130,7 @@
         color: $color-brand;
         border-bottom: solid 1px $color-brand;
       }
-      @include max-screen($width-s) {
+      @include max-screen($width-m) {
         height: 45px;
         display: flex;
         align-items: center;
@@ -146,7 +146,7 @@
     } //a
     &.readme {
       border-left: solid 1px $color-light;
-      @include max-screen($width-s) {
+      @include max-screen($width-m) {
         border-left: none;
         padding: $bm*2;
       }
@@ -164,7 +164,7 @@
           background-color: #fff;
           color: $color-brand;
         }
-        @include max-screen($width-s) {
+        @include max-screen($width-m) {
           border-radius: 23px;
           justify-content: center;
           &::after {

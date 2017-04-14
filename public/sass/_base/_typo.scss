@@ -185,8 +185,8 @@ pre {
 }
 
 code {
-  @include border-radius(2px);
-  @include inline-block();
+  border-radius: 2px;
+  display: inline-block;
   background: darken($color-light, 25%);
   color: $color-light;
   padding: 0 7px;
