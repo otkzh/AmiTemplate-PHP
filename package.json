@@ -1,36 +1,41 @@
 {
-  "name": "amiten.net",
-  "version": "1.0.0",
-  "description": "AmiTemplatePHP",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "name"        : "amiten.net",
+  "version"     : "1.0.1",
+  "description" : "AmiTemplatePHPで利用しているnpm-package",
+  "keywords"    : "",
+  "homepage"    : "https://github.com/amishiro/AmiTemplate-PHP",
+  "bugs"        : {
+    "url"       : "https://github.com/amishiro/AmiTemplate-PHP/issues"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/amishiro/AmiTemplate-PHP.git"
+  "license"     : "MIT",
+  "author"      : { "name" : "Masato Amishiro" },
+  "main"        : "index.js",
+  "repository"  : {
+    "type"      : "git",
+    "url"       : "git+https://github.com/amishiro/AmiTemplate-PHP.git"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/amishiro/AmiTemplate-PHP/issues"
+  "scripts"     : {
+    "test"      : "echo \"Error: no test specified\" && exit 1"
   },
-  "homepage": "https://github.com/amishiro/AmiTemplate-PHP#readme",
   "devDependencies": {
     "browser-sync": "^2.14.0",
+    "expose-loader": "^0.7.1",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
-    "gulp-compass": "^2.1.0",
     "gulp-cssmin": "^0.1.7",
     "gulp-imagemin": "^3.0.3",
     "gulp-modernizr": "1.0.0-alpha",
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-sass-image": "^1.0.2",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-typescript": "^2.13.6",
+    "gulp-uglify": "^2.0.0",
     "gulp-webpack": "^1.5.0",
     "imagemin-pngquant": "^5.0.0",
-    "jquery": "^3.1.0",
+    "jquery": "^2.2.4",
     "velocity-animate": "^1.2.3",
     "webpack": "^1.13.2"
   }
