@@ -108,7 +108,7 @@ gulp.task('html-dest', function () {
 //---------------scss・css
 
 //画像サイズを取得しscssに書き出し
-gulp.task('scss-image', function () {
+gulp.task('scss-img', function () {
 	return gulp.src([paths.img + '/**/*.{png,jpg,gif,svg}', paths.no])
 		.pipe(sassImage({
 			targetFile: '_scss-image.scss',
@@ -198,12 +198,10 @@ gulp.task('webpack', function () {
 					jqueryEasing: __dirname + '/node_modules/jquery.easing/jquery.easing.min.js',
 					Swiper: __dirname + '/node_modules/swiper/dist/js/swiper.js',
 					SwiperCSS: __dirname + '/node_modules/swiper/dist/css/swiper.css',
-					Bxslider: __dirname + '/node_modules/bxslider/dist/jquery.bxslider.min.js',
-					BxsliderCSS: __dirname + '/node_modules/bxslider/dist/jquery.bxslider.css',
 					inView: __dirname + '/node_modules/jquery-inview/jquery.inview.js',
 					magPopup: __dirname + '/node_modules/magnific-popup/dist/jquery.magnific-popup.js',
 					magPopupCSS: __dirname + '/node_modules/magnific-popup/dist/magnific-popup.css',
-					Masonry: __dirname + '/node_modules/masonry-layout/dist/masonry.pkgd.js',
+					Vue: __dirname + '/node_modules/vue/dist/vue.js'
 				}
 			},
 		})
@@ -212,7 +210,7 @@ gulp.task('webpack', function () {
 
 //modernizr
 gulp.task('modernizr', ['webpack'], function () {
-	gulp.src([paths.js + '/**/*.js', paths.css + '/**/*.css', '!**/modernizr.js', '!**/modernizr.custom.min.js'])
+	gulp.src([paths.js + '/**/*.js', paths.css + '/**/*.css', '!**/modernizr.js'])
 		.pipe(modernizr({
 			options: [
         'setClasses',
@@ -253,7 +251,7 @@ gulp.task('default', ['browser-sync'], function () {
 	gulp.watch(paths.dir + '**/*.{html,php}').on("change", browserSync.reload);
 	gulp.watch(paths.css + '/**/*.css').on("change", browserSync.reload);
 	gulp.watch(paths.js + '/**/*.js').on("change", browserSync.reload);
-	gulp.watch(paths.img + '/**/*.{png,jpg,gif,svg,ico}', ['scss-image']);
+	gulp.watch(paths.img + '/**/*.{png,jpg,gif,svg,ico}', ['scss-img']);
 	gulp.watch(paths.scss + '/**/*.scss', ['css']);
 	gulp.watch([paths.ts + '/**/*.js', '!**/modernizr.js'], ['js']);
 });
