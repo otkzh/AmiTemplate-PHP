@@ -11,7 +11,10 @@
 <meta name="description" content="<?php echo $metaDesc; ?>">
 <script src="<?php echo $base_url ?>/lib/js/modernizr.js"></script>
 <link rel="stylesheet" href="<?php echo $base_url ?>/lib/css/styles.css">
-<!--link rel="shortcut icon" href="<?php echo $base_url ?>/lib/img/icons/favicon.ico"-->
+<link rel="apple-touch-icon" href="<?php echo $base_url ?>/lib/img/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="<?php echo $base_url ?>/lib/img/icons/favicon-16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="<?php echo $base_url ?>/lib/img/icons/favicon-32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="<?php echo $base_url ?>/lib/img/icons/favicon-48.png" sizes="48x48">
 
 <!-- OGP -->
 <meta property="og:title" content="<?php echo $metaTtl ?>" />

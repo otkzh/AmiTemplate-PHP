@@ -68,7 +68,7 @@ var dest = {
 gulp.task('browser-sync', function () {
 	browserSync.init({
 		proxy: hostName,
-		port: 3500 //空いているprotを選択
+		port: 4000 //空いているprotを選択
 	});
 });
 
@@ -98,11 +98,11 @@ var plumberErrorHandler = {
 //納品用に整形して書き出し
 gulp.task('html-dest', function () {
 	gulp.src([paths.dir + '/**/*.{html,php}', paths.no])
-//		.pipe(prettify({
-//			indent_char: '	',
-//			indent_size: 2
-//		}))
-		.pipe(gulp.dest(dest.dir))
+	//		.pipe(prettify({
+	//			indent_char: '	',
+	//			indent_size: 2
+	//		}))
+	.pipe(gulp.dest(dest.dir))
 });
 
 //---------------scss・css
@@ -110,32 +110,33 @@ gulp.task('html-dest', function () {
 //画像サイズを取得しscssに書き出し
 gulp.task('scss-img', function () {
 	return gulp.src([paths.img + '/**/*.{png,jpg,gif,svg}', paths.no])
-		.pipe(sassImage({
-			targetFile: '_scss-image.scss',
-			images_path: paths.img,
-			css_path: paths.css,
-			includeData: false,
-			createPlaceholder: false
-		}))
-		.pipe(gulp.dest(paths.scss + '/mixins'));
+	.pipe(sassImage({
+		targetFile: '_scss-image.scss',
+		images_path: paths.img,
+		css_path: paths.css,
+		includeData: false,
+		createPlaceholder: false
+	}))
+	.pipe(gulp.dest(paths.scss + '/mixins'));
 });
 
 //scssをcssへ変換
 gulp.task('css', function () {
 	return gulp.src([paths.scss + '/**/*.scss', paths.no])
-		.pipe(plumber(plumberErrorHandler))
-		.pipe(sass.sync().on('error', sass.logError))
-		.pipe(autoprefixer({
-			browsers: ['last 4 versions', 'android >= 4.1', 'IE 9'],
-		}))
-		.pipe(gulp.dest(paths.css));
+	//.pipe(plumber(plumberErrorHandler))
+	.pipe(sass())//.sync().on('error', sass.logError))
+	.pipe(autoprefixer({
+		browsers: ['last 2 versions', 'android >= 4.4', 'IE 11'],
+		cascade: false,
+	}))
+	.pipe(gulp.dest(paths.css));
 });
 
 //cssを圧縮して納品用に書き出し
 gulp.task('css-dest', function () {
 	return gulp.src([paths.css + '/**/*.css', paths.no])
-		.pipe(cssmin())
-		.pipe(gulp.dest(dest.css));
+	.pipe(cssmin())
+	.pipe(gulp.dest(dest.css));
 });
 
 //---------------image
@@ -143,19 +144,19 @@ gulp.task('css-dest', function () {
 //制作中画像の圧縮
 gulp.task('img-min', function () {
 	return gulp.src([paths.img + '/**/*.{png,jpg,gif}', paths.no])
-		.pipe(imagemin(
-        [pngquant({
-				quality: '40-70',
-				speed: 1
-			})]
-		))
-		.pipe(gulp.dest(paths.img));
+	.pipe(imagemin(
+		[pngquant({
+			quality: '40-70',
+			speed: 1
+		})]
+	))
+	.pipe(gulp.dest(paths.img));
 });
 
 //納品用画像を書き出し
 gulp.task('img-dest', function () {
 	return gulp.src([paths.img + '/**/*.{png,jpg,gif,svg,pdf,ico}', paths.no])
-		.pipe(gulp.dest(dest.img));
+	.pipe(gulp.dest(dest.img));
 });
 
 //---------------js
@@ -163,64 +164,64 @@ gulp.task('img-dest', function () {
 //webpack設定
 gulp.task('webpack', function () {
 	return webpack({
-			entry: {
-				scripts: './' + paths.ts + '/scripts.js',
-				ie: './' + paths.ts + '/ie.js'
-			},
-			output: {
-				filename: '[name].js',
-			},
-			devtool: 'inline-source-map',
-			module: {
-				loaders: [
-					{
-						test: /\.css$/,
-						loader: "style!css"
-          },
-					{
-						test: /\.js$/,
-						exclude: /node_modules/,
-						loader: "babel-loader",
-						query: {
-							presets: ['es2015']
-						}
-          },
-					{
-						test: /\.(jpg|gif|png)$/,
-						loader: 'url?limit=25000'
-          }
-        ]
-			},
-			resolve: {
-				extenstions: ['', '.js', '.json', '.html'],
-				alias: {
-					JQuerys: __dirname + '/node_modules/jquery/dist/jquery.js',
-					jqueryEasing: __dirname + '/node_modules/jquery.easing/jquery.easing.min.js',
-					Swiper: __dirname + '/node_modules/swiper/dist/js/swiper.js',
-					SwiperCSS: __dirname + '/node_modules/swiper/dist/css/swiper.css',
-					inView: __dirname + '/node_modules/jquery-inview/jquery.inview.js',
-					magPopup: __dirname + '/node_modules/magnific-popup/dist/jquery.magnific-popup.js',
-					magPopupCSS: __dirname + '/node_modules/magnific-popup/dist/magnific-popup.css',
-					Vue: __dirname + '/node_modules/vue/dist/vue.js'
+		entry: {
+			scripts: './' + paths.ts + '/scripts.js',
+			ie: './' + paths.ts + '/ie.js'
+		},
+		output: {
+			filename: '[name].js',
+		},
+		devtool: 'inline-source-map',
+		module: {
+			loaders: [
+				{
+					test: /\.css$/,
+					loader: "style!css"
+				},
+				{
+					test: /\.js$/,
+					exclude: /node_modules/,
+					loader: "babel-loader",
+					query: {
+						presets: ['es2015']
+					}
+				},
+				{
+					test: /\.(jpg|gif|png)$/,
+					loader: 'url?limit=25000'
 				}
-			},
-		})
-		.pipe(gulp.dest(paths.js));
+			]
+		},
+		resolve: {
+			extenstions: ['', '.js', '.json', '.html'],
+			alias: {
+				JQuerys: __dirname + '/node_modules/jquery/dist/jquery.js',
+				jqueryEasing: __dirname + '/node_modules/jquery.easing/jquery.easing.min.js',
+				Swiper: __dirname + '/node_modules/swiper/dist/js/swiper.js',
+				SwiperCSS: __dirname + '/node_modules/swiper/dist/css/swiper.css',
+				inView: __dirname + '/node_modules/jquery-inview/jquery.inview.js',
+				magPopup: __dirname + '/node_modules/magnific-popup/dist/jquery.magnific-popup.js',
+				magPopupCSS: __dirname + '/node_modules/magnific-popup/dist/magnific-popup.css',
+				Vue: __dirname + '/node_modules/vue/dist/vue.js'
+			}
+		},
+	})
+	.pipe(gulp.dest(paths.js));
 });
 
 //modernizr
 gulp.task('modernizr', ['webpack'], function () {
 	gulp.src([paths.js + '/**/*.js', paths.css + '/**/*.css', '!**/modernizr.js'])
-		.pipe(modernizr({
-			options: [
-        'setClasses',
-        'addTest',
-        'html5printshiv',
-        'testProp',
-        'fnBind',
-      ]
-		}))
-		.pipe(gulp.dest(paths.js));
+	.pipe(modernizr({
+		options: [
+			'setClasses',
+			'addTest',
+			'html5printshiv',
+			'testProp',
+			'fnBind',
+		]
+	}))
+	.pipe(gulp.dest(paths.js));
 });
 
 //js処理簡略用
@@ -230,8 +231,8 @@ gulp.task('js', ['modernizr']);
 //jsファイルを圧縮して納品用に書き出し
 gulp.task('js-dest', function () {
 	return gulp.src(paths.js + '/**/*.js')
-		.pipe(uglify())
-		.pipe(gulp.dest(dest.js))
+	.pipe(uglify())
+	.pipe(gulp.dest(dest.js))
 });
 
 //---------------その他
@@ -239,7 +240,7 @@ gulp.task('js-dest', function () {
 //納品用書き出し
 gulp.task('etc-dest', function () {
 	return gulp.src(paths.dir + '/**/*.{eot,svg,ttf,woff,woff2,otf,txt,json}')
-		.pipe(gulp.dest(dest.dir))
+	.pipe(gulp.dest(dest.dir))
 });
 
 //------------納品ファイル書き出し

@@ -126,34 +126,84 @@
 $compass-imagehelper-path-prefix: '../img/';
 
 $compass-imagehelper-imagesmap: (
-  'common/logo.png': (
-    width: '283',
-    height: '45',
-    hash: '056e360b5621d6b438980579565b1bec'
+  'dummy/bronze.png': (
+    width: '1652',
+    height: '500',
+    hash: '36deeecf6d60735f852f46d557121e2e'
   ),
-  'common/logo2.png': (
-    width: '479',
-    height: '75',
-    hash: '978915a08b933e262d2ed81f16050072'
+  'dummy/bronze@2x.png': (
+    width: '3303',
+    height: '1000',
+    hash: '2fc8dc4351b44288db984bd9888fdd79'
   ),
-  'common/logo2@2x.png': (
-    width: '958',
-    height: '150',
-    hash: 'f3c7fa743875bbf76090da520b4a9136'
+  'dummy/golden.png': (
+    width: '809',
+    height: '500',
+    hash: '3c68002c058cc548213ee8ab8b7c60b5'
   ),
-  'common/logo@2x.png': (
-    width: '566',
-    height: '89',
-    hash: '193fce1d26c859bf217ad01af0de024a'
+  'dummy/golden@2x.png': (
+    width: '1618',
+    height: '1000',
+    hash: '01d85bcbbe0857b4ba8696c2d8188f5a'
   ),
-  'common/アセット 5.png': (
-    width: '638',
-    height: '433',
-    hash: '7e1195342902f4fd4764f8dd79e96164'
+  'dummy/platinum.png': (
+    width: '809',
+    height: '500',
+    hash: '31ca630ac87ffc73405279e1bdd62c91'
   ),
-  'common/アセット 5@2x.png': (
-    width: '1274',
-    height: '865',
-    hash: '0dcc7aabaaf3418a5e4ee0e7429d68ef'
+  'dummy/platinum@2x.png': (
+    width: '1618',
+    height: '1000',
+    hash: '2ab619b638aaf6bbaf93c18af459ba55'
+  ),
+  'dummy/silver.png': (
+    width: '1207',
+    height: '500',
+    hash: 'f7846278adf83e66de18da9e18925147'
+  ),
+  'dummy/silver@2x.png': (
+    width: '2414',
+    height: '1000',
+    hash: '2e551a414d91512d4c2552dc2e4f00e8'
+  ),
+  'dummy/square.png': (
+    width: '500',
+    height: '500',
+    hash: '03fcff7f8e3d40415556b74cedbc5cfd'
+  ),
+  'dummy/square@2x.png': (
+    width: '1000',
+    height: '1000',
+    hash: 'ab9ee5eadc770eff680bca063cc014f3'
+  ),
+  'dummy/yamato.png': (
+    width: '707',
+    height: '500',
+    hash: '7f0be6a967a903652e79c3d3a945b159'
+  ),
+  'dummy/yamato@2x.png': (
+    width: '1414',
+    height: '1000',
+    hash: '93e43cb8b84cb55a3775f52632285df3'
+  ),
+  'icons/apple-touch-icon.png': (
+    width: '152',
+    height: '152',
+    hash: '86808878396824e717c23a2ec6019549'
+  ),
+  'icons/favicon-16.png': (
+    width: '16',
+    height: '16',
+    hash: 'cf99e57566defffc5b2fa93c5a17aa5b'
+  ),
+  'icons/favicon-32.png': (
+    width: '32',
+    height: '32',
+    hash: '7b44043892edf11f4633022a8cf02aab'
+  ),
+  'icons/favicon-48.png': (
+    width: '48',
+    height: '48',
+    hash: 'a15e09ad89c9405d3df08721a4d100a5'
   ),
 );
