@@ -1,0 +1,16 @@
+
+//mixins
+@import "mixins/mixin";
+@import "mixins/media-queries";
+@import "mixins/scss-image";
+
+//common
+@import "styles/common/header";
+@import "styles/common/footer";
+@import "styles/common/pagetop";
+
+//layout
+@import "styles/layout/index";
+
+//page
+  //@import "_page/home";

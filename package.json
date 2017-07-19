@@ -1,42 +1,57 @@
 {
-  "name"        : "amiten.net",
-  "version"     : "1.0.1",
-  "description" : "AmiTemplatePHPで利用しているnpm-package",
-  "keywords"    : "",
-  "homepage"    : "https://github.com/amishiro/AmiTemplate-PHP",
-  "bugs"        : {
-    "url"       : "https://github.com/amishiro/AmiTemplate-PHP/issues"
-  },
-  "license"     : "MIT",
-  "author"      : { "name" : "Masato Amishiro" },
-  "main"        : "index.js",
-  "repository"  : {
-    "type"      : "git",
-    "url"       : "git+https://github.com/amishiro/AmiTemplate-PHP.git"
-  },
-  "scripts"     : {
-    "test"      : "echo \"Error: no test specified\" && exit 1"
-  },
-  "devDependencies": {
-    "browser-sync": "^2.14.0",
-    "expose-loader": "^0.7.1",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.1",
-    "gulp-cssmin": "^0.1.7",
-    "gulp-imagemin": "^3.0.3",
-    "gulp-modernizr": "1.0.0-alpha",
-    "gulp-notify": "^2.2.0",
-    "gulp-plumber": "^1.1.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.3.2",
-    "gulp-sass-image": "^1.0.2",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-typescript": "^2.13.6",
-    "gulp-uglify": "^2.0.0",
-    "gulp-webpack": "^1.5.0",
-    "imagemin-pngquant": "^5.0.0",
-    "jquery": "^2.2.4",
-    "velocity-animate": "^1.2.3",
-    "webpack": "^1.13.2"
-  }
+	"name": "ami-Template",
+	"description": "for all",
+	"version": "0.0.1",
+	"bugs": {
+		"email": "amishiro@amiten.co.jp"
+	},
+	"license": "LGPL",
+	"author": {
+		"name": "masato amishiro",
+		"email": "amishiro@amiten.co.jp"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://xxxx"
+	},
+	"private": true,
+	"devDependencies": {
+		"babel-core": "^6.23.1",
+		"babel-loader": "^7.0.0",
+		"babel-polyfill": "^6.23.0",
+		"babel-preset-es2015": "^6.22.0",
+		"browser-sync": "^2.18.8",
+		"bxslider": "^4.2.11",
+		"clean-css": "^4.0.11",
+		"css-loader": "^0.28.0",
+		"expose-loader": "^0.7.1",
+		"file-loader": "^0.11.1",
+		"gulp": "^3.9.1",
+		"gulp-autoprefixer": "^4.0.0",
+		"gulp-cssmin": "^0.2.0",
+		"gulp-html-prettify": "0.0.1",
+		"gulp-imagemin": "^3.0.3",
+		"gulp-modernizr": "1.0.0-alpha",
+		"gulp-notify": "^3.0.0",
+		"gulp-plumber": "^1.1.0",
+		"gulp-rename": "^1.2.2",
+		"gulp-sass": "^3.1.0",
+		"gulp-sass-image": "^1.0.2",
+		"gulp-sourcemaps": "^2.5.1",
+		"gulp-uglify": "^3.0.0",
+		"gulp-webpack": "^1.5.0",
+		"imagemin-pngquant": "^5.0.0",
+		"jquery": "^3.2.1",
+		"jquery-inview": "^1.1.2",
+		"jquery.easing": "^1.4.1",
+		"jshint": "^2.8.0",
+		"magnific-popup": "^1.1.0",
+		"masonry-layout": "^4.1.1",
+		"ncp": "^2.0.0",
+		"style-loader": "^0.18.2",
+		"swiper": "^3.4.1",
+		"uglify-js": "^3.0.17",
+		"url-loader": "^0.5.8",
+		"webpack": "^2.3.3"
+	}
 }

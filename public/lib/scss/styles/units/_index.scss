@@ -1,0 +1,25 @@
+
+
+@for $num from 0 through 10 {
+	.mb#{$num} {
+		margin-bottom: #{$num*$bm};
+	}
+}
+
+@for $num from 0 through 10 {
+	.mt#{$num} {
+		margin-top: #{$num*$bm};
+	}
+}
+
+@for $num from 0 through 10 {
+	.pb#{$num} {
+		padding-bottom: #{$num*$bm};
+	}
+}
+
+@for $num from 0 through 10 {
+	.pt#{$num} {
+		padding-top: #{$num*$bm};
+	}
+}

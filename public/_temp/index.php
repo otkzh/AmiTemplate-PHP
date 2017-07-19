@@ -1,13 +1,16 @@
-<?php include ("function.php");
-$metaTtl = $siteName;
-$metaDesc = $siteDescription;
-$body_class ="home";
+<?php include ("../function.php");
+$title = "ページタイトル";
+$metaTtl = $title."-".$siteName;
+$metaDesc = $title."のページです。".$siteDescription;
+$body_class ="temp";
 include ($inc_path."/lib/inc/head.php");
 include ($inc_path."/lib/inc/header.php");
 ?>
 
 <main class="main">
 	<article class="main__row">
+
+	<?php  include ($inc_path."/lib/inc/pan.php"); ?>
 
 		<section class="main__item conts">
 			<header class="conts__head">

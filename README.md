@@ -1,92 +1,92 @@
-## about：AmiTemplate-PHP
+# readme
 
-「孤高の戦士たち」に送る、中規模サイト制作用のテンプレートです。
-実制作で培ったノウハウと、新しい技術のテストを兼ね備えた実務に耐えられるテンプレートを目指しています。
-
-###DEMO
-
-http://amiten.net/sample/amitenp/
-
-###利用
-
-vagrant/gulp/php/scss/compass/pjax/typescript
-
-### Member
-
-- amishiro
-
-※絶賛参加者募集中！
-
-### 必要なもの
-
-- ローカルサーバー構築のために
- -[Virtualbox](https://www.virtualbox.org/)と[vagrant](https://www.vagrantup.com/)
-
-- 作業の自動化のために
- - [node.js](http://nodejs.jp/)
- - [gulp](http://gulpjs.com/)
-- cssコーディングの効率アップのために
- - [sass](http://sass-lang.com/)
- - [compass](http://compass-style.org/)
-
-### 環境構築
-
-macのやり方しかわかりませぬ。そして、ざっくりな説明しか書いておりませぬ。
-
-## ローカルサーバー構築 - vagrantの設定
-
-前提：[vagrant](https://www.vagrantup.com/) と [Virtualbox](https://www.virtualbox.org/) をインストール。LocalhostNameを任意に変更したい場合は、[vagrant-hostsupdater](https://github.com/cogitatio/vagrant-hostsupdater)を追加インストールして、vagrant 実行時に***/etc/hosts***を自動で書き換えできるようにしておく。
-
-- vagrantfileを修正
-~~~ruby
-#↓自分の環境に合わせてIPアドレスを変更
-config.vm.network "private_network", ip: "192.168.33.50"
-#↓vagrant-hostsupdaterをインストール済みであれば、好きなLocalhostNameが使える。
-config.vm.hostname = "base.dev"
-~~~
-
-- ターミナルを開いて、該当ディレクトリでvagrantを立ち上げ
-~~~
-$ vagrant up
-~~~
-
-###### 追記
-
-SCOTCH BOX(https://box.scotch.io/) というboxファイルを利用してLAMP環境を一発構築します。これ以上に簡単なvagrantでの環境づくりは（amishiroが探した限りでは）たぶんない。初回実行時は重たいboxをダウンロードするために時間がかかるが、２回目以降は（PC環境にもよるけど）30s〜5mぐらいで終わる。最強。
-
-## gulpの設定と実行
-
-前提：node.js と gulp はインストールされている
-
-0. package.jsonに記載されているGulpプラグインをインストールするために、ターミナルでnpmインストールを実行。
-~~~
-$ npm install
-~~~
-0. ファイル監視実行
-~~~
-$ gulp
-~~~
-0. 納品用ファイル書き出しだけをしたい場合は…
-~~~
-$ gulp dest
-~~~
-
-###### 追記
-
-Gulpでは、publicフォルダー内にある、各種ファイル監視しつつ、納品用ファイルの書き出しを実行します。主な実行内容は
-
-- scss/compassのコンパイル
-- 画像ファイルの圧縮
-- typescriptのコンパイル
-
-## SCSS Compassのインストール
-
-前提：基本、最新の安定版使っています。旧バージョンを使いたい場合は、bundlerを使って案件ごとにコントロール。※使い方は別途。
-
-0. **sudo gem install sass**
-0. **sudo gem install compass**
+##基本思想
 
 
-# 注意事項
 
-まだまだ甘いところがあるので、いろいろ悩み中。[issues](https://github.com/amishiro/AmiTemplate-PHP/issues)でタスク管理しています。
+## 目次
+
+- 必要なツール
+
+### 必要なツール
+
+以下3つ（Vagrant、VirtualBox、Node.js）をMACにインストール
+
+##### 仮想環境構築用
+
+Vagrant
+[https://www.vagrantup.com/downloads.html](https://www.vagrantup.com/downloads.html)
+
+VirtualBox
+[https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)
+
+
+
+##### 制作環境構築用（gulpによるタスクランナー構築用）
+
+Node.js
+[https://nodejs.org/ja/](https://nodejs.org/ja/)
+
+MAC nodenv
+Win nodist
+
+でバージョン管理すると便利。
+
+http://okakacacao.wpblog.jp/technology/install-nodist087
+
+npm v
+でnpmがインストールされているか。最新のものが入っているか確認。
+
+npm update -g npm
+
+で念のためアップデート
+
+
+### 仮想環境構築手順
+
+パッケージで管理することで、っっｘ
+Amitenpをっっに
+
+##### 仮想環境立ち上げ
+
+1. 利用するローカルIPを指定したい場合は、Vagrantfileの以下の行を編集
+   ``config.vm.network "private_network", ip: "192.168.33.99"``
+2. TerminalでVagrantfileの置かれているディレクトリに移動
+   ``$ cd /xxx/xxx/myDir/``
+3. 以下コマンドでvagrantをインストール
+   ``$ vagarnt up``
+4. 以下コマンドで仮想環境に入ることができたら仮想環境立ち上げ完了
+   ``$ vagrant ssh``
+
+コマンドプロンプトを利用している人は、そのままではsshができないので、事前にopenSSHをインストールして設定しておくこと。
+https://www.eaton-daitron.jp/techblog/4627.html
+
+
+
+##### ドキュメントルートを変更する
+
+初期設定では、ドキュメントルートが「public」フォルダになっている。ドキュメントルートのフォルダを変更したい方向けに方法を記載しておきます。
+
+1. 以下コマンドで仮想環境に入る
+   ``$ vagrant ssh``
+2. 以下コマンドでappach設定ファイルをvimで開く
+   ``sudo vim /etc/apache2/sites-available/000-default.conf``
+3. vimで以下記述を変更
+   ``DocumentRoot /var/www/public`` -> ``DocumentRoot /var/www/xxxx``(自由に変更してください。)
+4. SSHからログアウト
+   ``$ exit``
+5. ターミナルから以下コマンドで、vagrantを再起動
+   ``vagrant reload``
+6. ブラウザで設定したローカルIPを入力して、サイトが表示されたら仮想環境構築完了
+
+※次回より、作業毎（MAC再起動ごとに）にvagrant upを実施
+※vagrantのコマンドは[http://qiita.com/oreo3@github/items/4054a4120ccc249676d9](こちら)をどうぞ
+
+### 制作環境構築手順
+
+1. Terminalでpachage.jsonの置かれているディレクトリに移動
+   ``$ cd /xxx/xxx/myDir/``
+2. 以下コマンドで必要なプラグインをインストール
+   ``$ npm i``
+3. 全てのインストールが完了したら、以下コマンドで作業環境が立ち上がったら無事完了
+   ``$ gulp``
