@@ -42,7 +42,7 @@ var uglify = require('gulp-uglify');
 
 //--------------------- セッティング ---------------------//
 
-var hostName = "192.168.33.99"; //browserSyncするローカルIPを記載
+var hostName = "192.168.99.99"; //browserSyncするローカルIPを記載
 
 
 //各種パス関連
@@ -123,8 +123,8 @@ gulp.task('scss-img', function () {
 //scssをcssへ変換
 gulp.task('css', function () {
 	return gulp.src([paths.scss + '/**/*.scss', paths.no])
-	//.pipe(plumber(plumberErrorHandler))
-	.pipe(sass())//.sync().on('error', sass.logError))
+	.pipe(plumber(plumberErrorHandler))
+	.pipe(sass.sync().on('error', sass.logError))
 	.pipe(autoprefixer({
 		browsers: ['last 2 versions', 'android >= 4.4', 'IE 11'],
 		cascade: false,

@@ -14,8 +14,3 @@ import "./common/index.js"
 
 //home
 //import './page/home/index.js';
-
-//about
-import './page/about/index.js';
-
-

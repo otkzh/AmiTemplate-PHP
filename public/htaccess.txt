@@ -5,7 +5,7 @@ RewriteEngine on
 # === RewriteRuleセット ================================
 
 #↓ドキュメントルートを設定する
-RewriteBase /oji/
+RewriteBase /
 
 # --- index.html/phpなしに統一 ---
 

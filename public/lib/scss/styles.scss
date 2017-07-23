@@ -1,20 +1,21 @@
 
 //mixins
-//@import "mixins/mixin";
-//@import "mixins/media-queries";
-//@import "mixins/scss-image";
+@import "mixins/mixin";
+@import "mixins/media-queries";
+@import "mixins/scss-image";
+
+//base
+@import "styles/base/_html5reset_1.6.1";
+@import "styles/base/_font";
 
 //common
-//@import "styles/common/header";
-//@import "styles/common/footer";
-//@import "styles/common/pagetop";
+@import "styles/common/header";
+@import "styles/common/menubar";
+@import "styles/common/footer";
+@import "styles/common/pagetop";
 
 //layout
-//@import "styles/units/index";
+@import "styles/units/index";
 
 //page
-  //@import "_page/home";
-
-body{
-	background-color: red;
-}
+//@import "_page/home";

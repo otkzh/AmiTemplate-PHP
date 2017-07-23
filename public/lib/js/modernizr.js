@@ -1,6 +1,6 @@
 /*!
  * modernizr v3.5.0
- * Build https://modernizr.com/download?-MessageChannel-appearance-borderradius-boxshadow-boxsizing-checked-contains-contenteditable-cors-cssgradients-displaytable-generatedcontent-hidden-inlinesvg-input-lastchild-opacity-search-svg-target-touchevents-unicode-addtest-fnbind-printshiv-setclasses-testprop-dontmin
+ * Build https://modernizr.com/download?-MessageChannel-checked-contains-cors-hidden-json-opacity-search-svg-target-touchevents-unicode-addtest-fnbind-printshiv-setclasses-testprop-dontmin
  *
  * Copyright (c)
  *  Faruk Ates
@@ -1445,36 +1445,6 @@
   ;
 /*!
 {
-  "name": "Content Editable",
-  "property": "contenteditable",
-  "caniuse": "contenteditable",
-  "notes": [{
-    "name": "WHATWG spec",
-    "href": "https://html.spec.whatwg.org/multipage/interaction.html#contenteditable"
-  }]
-}
-!*/
-/* DOC
-Detects support for the `contenteditable` attribute of elements, allowing their DOM text contents to be edited directly by the user.
-*/
-
-  Modernizr.addTest('contenteditable', function() {
-    // early bail out
-    if (!('contentEditable' in docElement)) {
-      return;
-    }
-
-    // some mobile browsers (android < 3.0, iOS < 5) claim to support
-    // contentEditable, but but don't really. This test checks to see
-    // confirms whether or not it actually supports it.
-
-    var div = createElement('div');
-    div.contentEditable = true;
-    return div.contentEditable === 'true';
-  });
-
-/*!
-{
   "name": "Cross-Origin Resource Sharing",
   "property": "cors",
   "caniuse": "cors",
@@ -1491,71 +1461,6 @@ Detects support for Cross-Origin Resource Sharing: method of performing XMLHttpR
 */
 
   Modernizr.addTest('cors', 'XMLHttpRequest' in window && 'withCredentials' in new XMLHttpRequest());
-
-
-  /**
-   * since we have a fairly large number of input tests that don't mutate the input
-   * we create a single element that can be shared with all of those tests for a
-   * minor perf boost
-   *
-   * @access private
-   * @returns {HTMLInputElement}
-   */
-  var inputElem = createElement('input');
-  
-/*!
-{
-  "name": "Input attributes",
-  "property": "input",
-  "tags": ["forms"],
-  "authors": ["Mike Taylor"],
-  "notes": [{
-    "name": "WHATWG spec",
-    "href": "https://html.spec.whatwg.org/multipage/forms.html#input-type-attr-summary"
-  }],
-  "knownBugs": ["Some blackberry devices report false positive for input.multiple"]
-}
-!*/
-/* DOC
-Detects support for HTML5 `<input>` element attributes and exposes Boolean subproperties with the results:
-
-```javascript
-Modernizr.input.autocomplete
-Modernizr.input.autofocus
-Modernizr.input.list
-Modernizr.input.max
-Modernizr.input.min
-Modernizr.input.multiple
-Modernizr.input.pattern
-Modernizr.input.placeholder
-Modernizr.input.required
-Modernizr.input.step
-```
-*/
-
-  // Run through HTML5's new input attributes to see if the UA understands any.
-  // Mike Taylr has created a comprehensive resource for testing these attributes
-  //   when applied to all input types:
-  //   miketaylr.com/code/input-type-attr.html
-
-  // Only input placeholder is tested while textarea's placeholder is not.
-  // Currently Safari 4 and Opera 11 have support only for the input placeholder
-  // Both tests are available in feature-detects/forms-placeholder.js
-
-  var inputattrs = 'autocomplete autofocus list placeholder max min multiple pattern required step'.split(' ');
-  var attrs = {};
-
-  Modernizr.input = (function(props) {
-    for (var i = 0, len = props.length; i < len; i++) {
-      attrs[ props[i] ] = !!(props[i] in inputElem);
-    }
-    if (attrs.list) {
-      // safari false positive's on datalist: webk.it/74252
-      // see also github.com/Modernizr/Modernizr/issues/146
-      attrs.list = !!(createElement('datalist') && window.HTMLDataListElement);
-    }
-    return attrs;
-  })(inputattrs);
 
 
   /**
@@ -1653,6 +1558,27 @@ There is a custom `search` event implemented in webkit browsers when using an `i
 */
 
   Modernizr.addTest('inputsearchevent',  hasEvent('search'));
+
+/*!
+{
+  "name": "JSON",
+  "property": "json",
+  "caniuse": "json",
+  "notes": [{
+    "name": "MDN documentation",
+    "href": "https://developer.mozilla.org/en-US/docs/Glossary/JSON"
+  }],
+  "polyfills": ["json2"]
+}
+!*/
+/* DOC
+Detects native support for JSON handling functions.
+*/
+
+  // this will also succeed if you've loaded the JSON2.js polyfill ahead of time
+  //   ... but that should be obvious. :)
+
+  Modernizr.addTest('json', 'JSON' in window && 'parse' in JSON && 'stringify' in JSON);
 
 /*!
 {
@@ -1987,48 +1913,6 @@ Check if browser implements ECMAScript 6 `String.prototype.contains` per specifi
 
 /*!
 {
-  "name": "CSS Generated Content",
-  "property": "generatedcontent",
-  "tags": ["css"],
-  "warnings": ["Android won't return correct height for anything below 7px #738"],
-  "notes": [{
-    "name": "W3C CSS Selectors Level 3 spec",
-    "href": "https://www.w3.org/TR/css3-selectors/#gen-content"
-  },{
-    "name": "MDN article on :before",
-    "href": "https://developer.mozilla.org/en-US/docs/Web/CSS/::before"
-  },{
-    "name": "MDN article on :after",
-    "href": "https://developer.mozilla.org/en-US/docs/Web/CSS/::before"
-  }]
-}
-!*/
-
-  testStyles('#modernizr{font:0/0 a}#modernizr:after{content:":)";visibility:hidden;font:7px/1 a}', function(node) {
-    // See bug report on why this value is 6 crbug.com/608142
-    Modernizr.addTest('generatedcontent', node.offsetHeight >= 6);
-  });
-
-/*!
-{
-  "name": "CSS :last-child pseudo-selector",
-  "caniuse": "css-sel3",
-  "property": "lastchild",
-  "tags": ["css"],
-  "builderAliases": ["css_lastchild"],
-  "notes": [{
-    "name": "Related Github Issue",
-    "href": "https://github.com/Modernizr/Modernizr/pull/304"
-  }]
-}
-!*/
-
-  testStyles('#modernizr div {width:100px} #modernizr :last-child{width:200px;display:block}', function(elem) {
-    Modernizr.addTest('lastchild', elem.lastChild.offsetWidth > elem.firstChild.offsetWidth);
-  }, 2);
-
-/*!
-{
   "name": "SVG",
   "property": "svg",
   "caniuse": "svg",
@@ -2051,347 +1935,6 @@ Detects support for SVG in `<embed>` or `<object>` elements.
 */
 
   Modernizr.addTest('svg', !!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect);
-
-
-  /**
-   * If the browsers follow the spec, then they would expose vendor-specific styles as:
-   *   elem.style.WebkitBorderRadius
-   * instead of something like the following (which is technically incorrect):
-   *   elem.style.webkitBorderRadius
-
-   * WebKit ghosts their properties in lowercase but Opera & Moz do not.
-   * Microsoft uses a lowercase `ms` instead of the correct `Ms` in IE8+
-   *   erik.eae.net/archives/2008/03/10/21.48.10/
-
-   * More here: github.com/Modernizr/Modernizr/issues/issue/21
-   *
-   * @access private
-   * @returns {string} The string representing the vendor-specific style properties
-   */
-
-  var omPrefixes = 'Moz O ms Webkit';
-  
-
-  var cssomPrefixes = (ModernizrProto._config.usePrefixes ? omPrefixes.split(' ') : []);
-  ModernizrProto._cssomPrefixes = cssomPrefixes;
-  
-
-  /**
-   * List of JavaScript DOM values used for tests
-   *
-   * @memberof Modernizr
-   * @name Modernizr._domPrefixes
-   * @optionName Modernizr._domPrefixes
-   * @optionProp domPrefixes
-   * @access public
-   * @example
-   *
-   * Modernizr._domPrefixes is exactly the same as [_prefixes](#modernizr-_prefixes), but rather
-   * than kebab-case properties, all properties are their Capitalized variant
-   *
-   * ```js
-   * Modernizr._domPrefixes === [ "Moz", "O", "ms", "Webkit" ];
-   * ```
-   */
-
-  var domPrefixes = (ModernizrProto._config.usePrefixes ? omPrefixes.toLowerCase().split(' ') : []);
-  ModernizrProto._domPrefixes = domPrefixes;
-  
-
-  /**
-   * testDOMProps is a generic DOM property test; if a browser supports
-   *   a certain property, it won't return undefined for it.
-   *
-   * @access private
-   * @function testDOMProps
-   * @param {array.<string>} props - An array of properties to test for
-   * @param {object} obj - An object or Element you want to use to test the parameters again
-   * @param {boolean|object} elem - An Element to bind the property lookup again. Use `false` to prevent the check
-   * @returns {false|*} returns false if the prop is unsupported, otherwise the value that is supported
-   */
-  function testDOMProps(props, obj, elem) {
-    var item;
-
-    for (var i in props) {
-      if (props[i] in obj) {
-
-        // return the property name as a string
-        if (elem === false) {
-          return props[i];
-        }
-
-        item = obj[props[i]];
-
-        // let's bind a function
-        if (is(item, 'function')) {
-          // bind to obj unless overriden
-          return fnBind(item, elem || obj);
-        }
-
-        // return the unbound function or obj or value
-        return item;
-      }
-    }
-    return false;
-  }
-
-  ;
-
-  /**
-   * testPropsAll tests a list of DOM properties we want to check against.
-   * We specify literally ALL possible (known and/or likely) properties on
-   * the element including the non-vendor prefixed one, for forward-
-   * compatibility.
-   *
-   * @access private
-   * @function testPropsAll
-   * @param {string} prop - A string of the property to test for
-   * @param {string|object} [prefixed] - An object to check the prefixed properties on. Use a string to skip
-   * @param {HTMLElement|SVGElement} [elem] - An element used to test the property and value against
-   * @param {string} [value] - A string of a css value
-   * @param {boolean} [skipValueTest] - An boolean representing if you want to test if value sticks when set
-   * @returns {false|string} returns the string version of the property, or false if it is unsupported
-   */
-  function testPropsAll(prop, prefixed, elem, value, skipValueTest) {
-
-    var ucProp = prop.charAt(0).toUpperCase() + prop.slice(1),
-      props = (prop + ' ' + cssomPrefixes.join(ucProp + ' ') + ucProp).split(' ');
-
-    // did they call .prefixed('boxSizing') or are we just testing a prop?
-    if (is(prefixed, 'string') || is(prefixed, 'undefined')) {
-      return testProps(props, prefixed, value, skipValueTest);
-
-      // otherwise, they called .prefixed('requestAnimationFrame', window[, elem])
-    } else {
-      props = (prop + ' ' + (domPrefixes).join(ucProp + ' ') + ucProp).split(' ');
-      return testDOMProps(props, prefixed, elem);
-    }
-  }
-
-  // Modernizr.testAllProps() investigates whether a given style property,
-  // or any of its vendor-prefixed variants, is recognized
-  //
-  // Note that the property names must be provided in the camelCase variant.
-  // Modernizr.testAllProps('boxSizing')
-  ModernizrProto.testAllProps = testPropsAll;
-
-  
-
-  /**
-   * testAllProps determines whether a given CSS property is supported in the browser
-   *
-   * @memberof Modernizr
-   * @name Modernizr.testAllProps
-   * @optionName Modernizr.testAllProps()
-   * @optionProp testAllProps
-   * @access public
-   * @function testAllProps
-   * @param {string} prop - String naming the property to test (either camelCase or kebab-case)
-   * @param {string} [value] - String of the value to test
-   * @param {boolean} [skipValueTest=false] - Whether to skip testing that the value is supported when using non-native detection
-   * @example
-   *
-   * testAllProps determines whether a given CSS property, in some prefixed form,
-   * is supported by the browser.
-   *
-   * ```js
-   * testAllProps('boxSizing')  // true
-   * ```
-   *
-   * It can optionally be given a CSS value in string form to test if a property
-   * value is valid
-   *
-   * ```js
-   * testAllProps('display', 'block') // true
-   * testAllProps('display', 'penguin') // false
-   * ```
-   *
-   * A boolean can be passed as a third parameter to skip the value check when
-   * native detection (@supports) isn't available.
-   *
-   * ```js
-   * testAllProps('shapeOutside', 'content-box', true);
-   * ```
-   */
-
-  function testAllProps(prop, value, skipValueTest) {
-    return testPropsAll(prop, undefined, undefined, value, skipValueTest);
-  }
-  ModernizrProto.testAllProps = testAllProps;
-  
-/*!
-{
-  "name": "Appearance",
-  "property": "appearance",
-  "caniuse": "css-appearance",
-  "tags": ["css"],
-  "notes": [{
-    "name": "MDN documentation",
-    "href": "https://developer.mozilla.org/en-US/docs/Web/CSS/-moz-appearance"
-  },{
-    "name": "CSS-Tricks CSS Almanac: appearance",
-    "href": "https://css-tricks.com/almanac/properties/a/appearance/"
-  }]
-}
-!*/
-/* DOC
-Detects support for the `appearance` css property, which is used to make an
-element inherit the style of a standard user interface element. It can also be
-used to remove the default styles of an element, such as input and buttons.
-*/
-
-  Modernizr.addTest('appearance', testAllProps('appearance'));
-
-/*!
-{
-  "name": "Border Radius",
-  "property": "borderradius",
-  "caniuse": "border-radius",
-  "polyfills": ["css3pie"],
-  "tags": ["css"],
-  "notes": [{
-    "name": "Comprehensive Compat Chart",
-    "href": "https://muddledramblings.com/table-of-css3-border-radius-compliance"
-  }]
-}
-!*/
-
-  Modernizr.addTest('borderradius', testAllProps('borderRadius', '0px', true));
-
-/*!
-{
-  "name": "Box Shadow",
-  "property": "boxshadow",
-  "caniuse": "css-boxshadow",
-  "tags": ["css"],
-  "knownBugs": [
-    "WebOS false positives on this test.",
-    "The Kindle Silk browser false positives"
-  ]
-}
-!*/
-
-  Modernizr.addTest('boxshadow', testAllProps('boxShadow', '1px 1px', true));
-
-/*!
-{
-  "name": "Box Sizing",
-  "property": "boxsizing",
-  "caniuse": "css3-boxsizing",
-  "polyfills": ["borderboxmodel", "boxsizingpolyfill", "borderbox"],
-  "tags": ["css"],
-  "builderAliases": ["css_boxsizing"],
-  "notes": [{
-    "name": "MDN Docs",
-    "href": "https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing"
-  },{
-    "name": "Related Github Issue",
-    "href": "https://github.com/Modernizr/Modernizr/issues/248"
-  }]
-}
-!*/
-
-  Modernizr.addTest('boxsizing', testAllProps('boxSizing', 'border-box', true) && (document.documentMode === undefined || document.documentMode > 7));
-
-/*!
-{
-  "name": "CSS Display table",
-  "property": "displaytable",
-  "caniuse": "css-table",
-  "authors": ["scottjehl"],
-  "tags": ["css"],
-  "builderAliases": ["css_displaytable"],
-  "notes": [{
-    "name": "Detects for all additional table display values",
-    "href": "http://pastebin.com/Gk9PeVaQ"
-  }]
-}
-!*/
-/* DOC
-`display: table` and `table-cell` test. (both are tested under one name `table-cell` )
-*/
-
-  // If a document is in rtl mode this test will fail so we force ltr mode on the injeced
-  // element https://github.com/Modernizr/Modernizr/issues/716
-  testStyles('#modernizr{display: table; direction: ltr}#modernizr div{display: table-cell; padding: 10px}', function(elem) {
-    var ret;
-    var child = elem.childNodes;
-    ret = child[0].offsetLeft < child[1].offsetLeft;
-    Modernizr.addTest('displaytable', ret, {aliases: ['display-table']});
-  }, 2);
-
-/*!
-{
-  "name": "CSS Gradients",
-  "caniuse": "css-gradients",
-  "property": "cssgradients",
-  "tags": ["css"],
-  "knownBugs": ["False-positives on webOS (https://github.com/Modernizr/Modernizr/issues/202)"],
-  "notes": [{
-    "name": "Webkit Gradient Syntax",
-    "href": "https://webkit.org/blog/175/introducing-css-gradients/"
-  },{
-    "name": "Linear Gradient Syntax",
-    "href": "https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient"
-  },{
-    "name": "W3C Gradient Spec",
-    "href": "https://drafts.csswg.org/css-images-3/#gradients"
-  }]
-}
-!*/
-
-
-  Modernizr.addTest('cssgradients', function() {
-
-    var str1 = 'background-image:';
-    var str2 = 'gradient(linear,left top,right bottom,from(#9f9),to(white));';
-    var css = '';
-    var angle;
-
-    for (var i = 0, len = prefixes.length - 1; i < len; i++) {
-      angle = (i === 0 ? 'to ' : '');
-      css += str1 + prefixes[i] + 'linear-gradient(' + angle + 'left top, #9f9, white);';
-    }
-
-    if (Modernizr._config.usePrefixes) {
-    // legacy webkit syntax (FIXME: remove when syntax not in use anymore)
-      css += str1 + '-webkit-' + str2;
-    }
-
-    var elem = createElement('a');
-    var style = elem.style;
-    style.cssText = css;
-
-    // IE6 returns undefined so cast to string
-    return ('' + style.backgroundImage).indexOf('gradient') > -1;
-  });
-
-/*!
-{
-  "name": "Inline SVG",
-  "property": "inlinesvg",
-  "caniuse": "svg-html5",
-  "tags": ["svg"],
-  "notes": [{
-    "name": "Test page",
-    "href": "https://paulirish.com/demo/inline-svg"
-  }, {
-    "name": "Test page and results",
-    "href": "https://codepen.io/eltonmesquita/full/GgXbvo/"
-  }],
-  "polyfills": ["inline-svg-polyfill"],
-  "knownBugs": ["False negative on some Chromia browsers."]
-}
-!*/
-/* DOC
-Detects support for inline SVG in HTML (not within XHTML).
-*/
-
-  Modernizr.addTest('inlinesvg', function() {
-    var div = createElement('div');
-    div.innerHTML = '<svg/>';
-    return (typeof SVGRect != 'undefined' && div.firstChild && div.firstChild.namespaceURI) == 'http://www.w3.org/2000/svg';
-  });
 
 
   // Run each test
