@@ -1,0 +1,37 @@
+.pagetop{
+	z-index: 1;
+	@include wrap;
+	overflow: visible !important;
+	&__row{
+		display: block;
+		margin-right: $bm-inner;
+	}
+	&__item{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 45px;
+		width: 45px;
+		position: relative;
+		text-decoration: none;
+		text-align: center;
+		color:$color-brand;
+		background-color: #fff;
+		border: 2px solid $color-brand;
+		&::before{
+			@include icon-font('\f102');
+			display: block;
+		}
+		span{
+			display: none;
+		}
+		@include touch-hover(){
+			background-color: $color-brand;
+			color:#fff;
+			&::before{
+				transition: transform .5s .3s;
+				transform: translate3d(0,-3px,0);
+			}
+		}
+	}
+}

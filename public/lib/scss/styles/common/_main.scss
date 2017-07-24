@@ -1,0 +1,41 @@
+.main{
+	padding-top: $header-height;
+	&__row{
+		@include wrap;
+	}
+}
+
+.conts{
+	margin-bottom: $bm-outer;
+	padding-top: $bm-outer;
+	img{
+		max-width: 100%;
+		width: auto;
+		height: auto;
+	}
+	@include max-screen($width-s){
+		margin-bottom: $bm-inner;
+		padding-top: $bm-inner;
+	}
+	//↓content-head
+	&__head{
+		margin-bottom: $bm-inner;
+	}
+	&__ttl{
+		font-size: 2.4rem;
+		border-bottom: 1px solid $color-brand;
+	}
+	&__desc{
+
+	}
+	//↓content-body
+	&__body{
+		margin-bottom: $bm-inner;
+	}
+	//↓content-foot
+	&__foot{
+		box-sizing: border-box;
+		border: 1px solid $color-light;
+		padding: $bm;
+	}
+}

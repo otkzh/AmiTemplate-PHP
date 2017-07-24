@@ -1,0 +1,51 @@
+.footer{
+	box-sizing: border-box;
+	margin-top: $bm-outer;
+	border-top: 1px solid $color-light;
+	@include max-screen($width-m){
+		margin-top: $bm;
+	}
+	&__row{
+		@include min-screen($width-s +1px){
+			@include wrap;
+		}
+	}
+	&__nav{
+
+	}
+}
+
+.fnav{
+	&__row{
+		display: flex;
+		align-items: center;
+		@include max-screen($width-s){
+			display: block;
+		}
+	}
+	&__item{
+		a{
+			display: block;
+			padding-right: $bm;
+			@include max-screen($width-m){
+				position: relative;
+				height: 45px;
+				box-sizing: border-box;
+				display: flex;
+				align-items: center;
+				padding: 0 $bm;
+				border-bottom: 1px solid $color-light;
+				&::after{
+					@include icon-font();
+					position: absolute;
+					right: $bm;
+					top:0;
+					bottom: 0;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+				}
+			}
+		}
+	}
+}

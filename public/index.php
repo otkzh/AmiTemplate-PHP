@@ -12,35 +12,17 @@ include ($inc_path."/lib/inc/header.php");
 
 		<section class="main__item conts">
 			<header class="conts__head">
-				<h1 class="conts__ttl">ページタイトル</h1>
+				<h1 class="conts__ttl">セクションタイトル</h1>
 				<p class="conts__desc">ディスクリプション</p>
 			</header>
 			<article class="conts__body">
-				<p>コピー</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores repudiandae, nihil consectetur dignissimos facere, ipsa recusandae. Enim possimus distinctio, vel voluptatibus amet velit nisi iste quisquam tempore voluptates, doloremque impedit.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores repudiandae, nihil consectetur dignissimos facere, ipsa recusandae. Enim possimus distinctio, vel voluptatibus amet velit nisi iste quisquam tempore voluptates, doloremque impedit.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores repudiandae, nihil consectetur dignissimos facere, ipsa recusandae. Enim possimus distinctio, vel voluptatibus amet velit nisi iste quisquam tempore voluptates, doloremque impedit.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores repudiandae, nihil consectetur dignissimos facere, ipsa recusandae. Enim possimus distinctio, vel voluptatibus amet velit nisi iste quisquam tempore voluptates, doloremque impedit.</p>
-			</article>
-			<footer class="conts__foot">
-				<p>contsフッター</p>
-			</footer>
-		</section>
-
-		<section class="main__item conts">
-			<header class="conts__head">
-				<h1 class="conts__ttl">ページタイトル</h1>
-				<p class="conts__desc">ディスクリプション</p>
-			</header>
-			<article class="conts__body">
-				<p>コピー</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores repudiandae, nihil consectetur dignissimos facere, ipsa recusandae. Enim possimus distinctio, vel voluptatibus amet velit nisi iste quisquam tempore voluptates, doloremque impedit.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores repudiandae, nihil consectetur dignissimos facere, ipsa recusandae. Enim possimus distinctio, vel voluptatibus amet velit nisi iste quisquam tempore voluptates, doloremque impedit.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores repudiandae, nihil consectetur dignissimos facere, ipsa recusandae. Enim possimus distinctio, vel voluptatibus amet velit nisi iste quisquam tempore voluptates, doloremque impedit.</p>
+				<div class="conts__img">
+					<img src="./lib/img/dummy/golden@2x.png" alt="dummy">
+				</div>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores repudiandae, nihil consectetur dignissimos facere, ipsa recusandae. Enim possimus distinctio, vel voluptatibus amet velit nisi iste quisquam tempore voluptates, doloremque impedit.</p>
 			</article>
 			<footer class="conts__foot">
-				<p>contsフッター</p>
+				<p>セクションフッター</p>
 			</footer>
 		</section>
 
