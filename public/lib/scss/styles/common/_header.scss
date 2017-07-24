@@ -7,7 +7,10 @@
 		@include wrap;
 	}
 	&__item{
-		&.bg{
+		$this: &;
+		height: auto;
+		&_bg{
+			@extend #{$this};
 			position: absolute;
 			top:0;
 			right: 0;
@@ -18,7 +21,8 @@
 			height: $header-height;
 			z-index: 2;
 		}
-		&.logo{
+		&_logo{
+			@extend #{$this};
 			position: relative;
 			z-index: 2;
 			float: left;
@@ -34,7 +38,8 @@
 				height: auto;
 			}
 		}
-		&.gnav{
+		&_gnav{
+			@extend #{$this};
 			position: relative;
 			z-index: 3;
 			float: right;
@@ -64,6 +69,7 @@
 		}
 	}
 	&__item{
+		$this:&;
 		a{
 			position: relative;
 			display: block;
@@ -75,6 +81,10 @@
 			padding: 0 $bm;
 			text-decoration: none;
 			background-color: #fff;
+			@include touch-hover(){
+				background-color: $color-light;
+				color:#fff;
+			}
 			@include max-screen($width-s){
 				justify-content: flex-start;
 				border-bottom: 1px solid $color-light;
@@ -90,12 +100,19 @@
 				}
 			}
 		}
-		&.contact{
+		&_home{
+			@extend #{$this};
+		}
+		&_sample{
+			@extend #{$this};
+		}
+		&_contact{
+			@extend #{$this};
 			a{
-				background-color: $color-dark;
+				background-color: $color-point;
 				color:$color-light;
 			}
 		}
+	}//item
 
-	}
 }

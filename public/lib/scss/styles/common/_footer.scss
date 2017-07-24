@@ -6,34 +6,54 @@
 		margin-top: $bm;
 	}
 	&__row{
-		@include min-screen($width-s +1px){
-			@include wrap;
-		}
+
 	}
 	&__nav{
 
 	}
+	&__add{
+		box-sizing: border-box;
+		font-size: 1.2rem;
+		text-align: center;
+		padding: $bm;
+	}
 }
 
 .fnav{
+	border-bottom: 1px solid $color-light;
 	&__row{
 		display: flex;
 		align-items: center;
+		justify-content: space-between;
+		@include min-screen($width-s +1px){
+			@include wrap;
+		}
 		@include max-screen($width-s){
 			display: block;
 		}
 	}
 	&__item{
+		$this:&;
+		max-width: 100%;
+		flex: 1 1 100%;
 		a{
-			display: block;
-			padding-right: $bm;
-			@include max-screen($width-m){
-				position: relative;
-				height: 45px;
-				box-sizing: border-box;
-				display: flex;
-				align-items: center;
+			box-sizing: border-box;
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 45px;
+			text-decoration: none;
+			@include min-screen($width-s +1px){
+				border-left: 1px solid $color-light;
+			}
+			@include touch-hover(){
+				background-color: $color-light;
+				color:#fff;
+			}
+			@include max-screen($width-s){
 				padding: 0 $bm;
+				justify-content: flex-start;
 				border-bottom: 1px solid $color-light;
 				&::after{
 					@include icon-font();
@@ -47,5 +67,18 @@
 				}
 			}
 		}
-	}
+		&_home{
+			@extend #{$this};
+		}
+		&_sample{
+			@extend #{$this};
+		}
+		&_contact{
+			@extend #{$this};
+			a{
+				background-color: $color-point;
+				color:$color-light;
+			}
+		}
+	}//item
 }
