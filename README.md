@@ -2,6 +2,10 @@
 
 バージョンアップ予定なので少々お待ちを
 
+vol.2はこちら
+
+https://github.com/amishiro/AmiTemplate-PHP/tree/vol.2_develop
+
 ----
 
 ## about：AmiTemplate-PHP
