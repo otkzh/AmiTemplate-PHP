@@ -26,6 +26,8 @@
 
 [wiki__npm](https://github.com/amishiro/AmiTemplate-PHP/wiki/node%E3%81%AE%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3%E3%82%A2%E3%83%83%E3%83%97%E5%BE%8C%E3%81%AB%E8%A1%8C%E3%81%86%E3%80%81npm%E9%96%A2%E9%80%A3%E3%81%AE%E6%9B%B4%E6%96%B0)
 
+05. gulpのグローバルインストール（新しくインストールしたnodeにgulpをインストール)を忘れないこと。
+
 
 ##基本思想
 
