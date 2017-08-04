@@ -28,7 +28,6 @@
 			max-width: 500px;
 		}
 		&_point{
-			$point:&;
 			@extend #{$this};
 			background-color: $color-point;
 			border-color: $color-point;
