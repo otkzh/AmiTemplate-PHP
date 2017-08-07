@@ -34,7 +34,7 @@ var pngquant = require('imagemin-pngquant');
 
 
 //js/es2015/modernizr
-var webpack = require('gulp-webpack');
+var webpack = require('webpack-stream');
 var webpacks = require("webpack");
 var modernizr = require('gulp-modernizr');
 var uglify = require('gulp-uglify');

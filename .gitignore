@@ -32,3 +32,6 @@ $RECYCLE.BIN/
 /_sample/
 /.vagrant/
 /dest/
+.node-version
+.npm-version
+package-lock.json

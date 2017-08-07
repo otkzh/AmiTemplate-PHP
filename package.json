@@ -5,7 +5,7 @@
 	"bugs": {
 		"email": "amishiro@amiten.co.jp"
 	},
-	"license": "LGPL",
+	"license": "MIT",
 	"author": {
 		"name": "masato amishiro",
 		"email": "amishiro@amiten.co.jp"
@@ -15,6 +15,10 @@
 		"url": "git@github.com:amishiro/AmiTemplate-PHP.git"
 	},
 	"private": true,
+	"scripts": {
+		"preinstall": "npm install -g gulp@3.9.1",
+		"install": "npm rebuild node-sass --force"
+	},
 	"devDependencies": {
 		"babel-core": "^6.25.0",
 		"babel-loader": "^7.1.1",
@@ -32,19 +36,21 @@
 		"gulp-notify": "^3.0.0",
 		"gulp-plumber": "^1.1.0",
 		"gulp-rename": "^1.2.2",
-		"gulp-sass": "^3.1.0",
+		"va": "^3.1.0",
 		"gulp-sass-image": "^1.0.3",
 		"gulp-sourcemaps": "^2.6.0",
 		"gulp-uglify": "^3.0.0",
-		"gulp-webpack": "^1.5.0",
 		"imagemin-pngquant": "^5.0.1",
+		"style-loader": "^0.18.2",
+		"url-loader": "^0.5.9",
+		"webpack": "^3.4.1",
+		"webpack-stream": "^3.2.0"
+	},
+	"dependencies": {
 		"jquery": "^3.2.1",
 		"jquery-inview": "^1.1.2",
 		"magnific-popup": "^1.1.0",
-		"style-loader": "^0.18.2",
 		"swiper": "^3.4.2",
-		"url-loader": "^0.5.9",
-		"vue": "^2.4.2",
-		"webpack": "^3.4.1"
+		"vue": "^2.4.2"
 	}
 }
