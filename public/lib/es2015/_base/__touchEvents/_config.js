@@ -1,4 +1,4 @@
-export default function touchEventsFn() {
+export default function () {
 
   if (Modernizr.touchevents) {
 
@@ -32,4 +32,3 @@ export default function touchEventsFn() {
   }
 
 };
-

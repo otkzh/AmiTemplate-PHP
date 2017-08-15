@@ -1,10 +1,10 @@
 
 //--------------------- common script ---------------------//
 
-import headerScrollFn from './headerFn.js';
+import headerScrollFn from './__header/headerFn.js';
 headerScrollFn();
 
-import snavFn from './snavFn.js';
+import snavFn from './__header/snavFn.js';
 snavFn();
 
 
