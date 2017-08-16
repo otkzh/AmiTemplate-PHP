@@ -1,8 +1,24 @@
+/************************
+magnific-popup
+site: http://dimsemenov.com/plugins/magnific-popup/
+※ajax表示使用不可_エラーが出力されます。
 
+※有料だけどおすすめ高機能ライトボックス↓
+※https://sachinchoolur.github.io/lightgallery.js/
+※npm i -d lightgallery.js
+***********************/
+
+//node_module
+//jsはimportに対応していないため、scripts.jsへrequireで記載
+import "../../../../../node_modules/magnific-popup/dist/magnific-popup.css";
+
+//original-css
+import './_style.scss';
+
+//export
 export default function() {
 
-	$(function(){
-		$('.mfp-popup').magnificPopup({
+		$('.mfp-btn').magnificPopup({
 			type:'inline',
 			fixedContentPos: false,
 			fixedBgPos: true,
@@ -13,7 +29,5 @@ export default function() {
 			removalDelay: 300,
 			mainClass: 'mfp-slide_bottom'
 		});
-
-	});
 
 };

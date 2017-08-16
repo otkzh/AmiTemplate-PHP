@@ -1,3 +1,9 @@
+/************************
+none(ami-original)
+site:none
+***********************/
+
+//export
 export default function () {
 
   if (Modernizr.touchevents) {

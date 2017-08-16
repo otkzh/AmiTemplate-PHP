@@ -1,6 +1,6 @@
 /*!
  * modernizr v3.5.0
- * Build https://modernizr.com/download?-MessageChannel-checked-contains-cors-hidden-json-opacity-search-svg-target-touchevents-unicode-addtest-fnbind-printshiv-setclasses-testprop-dontmin
+ * Build https://modernizr.com/download?-MessageChannel-capture-checked-contains-cors-csstransforms3d-flexbox-hidden-history-json-opacity-performance-placeholder-search-sizes-srcset-svg-target-template-texttrackapi_track-time-touchevents-unicode-addtest-fnbind-printshiv-setclasses-testprop-dontmin
  *
  * Copyright (c)
  *  Faruk Ates
@@ -1462,6 +1462,52 @@ Detects support for Cross-Origin Resource Sharing: method of performing XMLHttpR
 
   Modernizr.addTest('cors', 'XMLHttpRequest' in window && 'withCredentials' in new XMLHttpRequest());
 
+/*!
+{
+  "name": "History API",
+  "property": "history",
+  "caniuse": "history",
+  "tags": ["history"],
+  "authors": ["Hay Kranen", "Alexander Farkas"],
+  "notes": [{
+    "name": "W3C Spec",
+    "href": "https://www.w3.org/TR/html51/browsers.html#the-history-interface"
+  }, {
+    "name": "MDN documentation",
+    "href": "https://developer.mozilla.org/en-US/docs/Web/API/window.history"
+  }],
+  "polyfills": ["historyjs", "html5historyapi"]
+}
+!*/
+/* DOC
+Detects support for the History API for manipulating the browser session history.
+*/
+
+  Modernizr.addTest('history', function() {
+    // Issue #733
+    // The stock browser on Android 2.2 & 2.3, and 4.0.x returns positive on history support
+    // Unfortunately support is really buggy and there is no clean way to detect
+    // these bugs, so we fall back to a user agent sniff :(
+    var ua = navigator.userAgent;
+
+    // We only want Android 2 and 4.0, stock browser, and not Chrome which identifies
+    // itself as 'Mobile Safari' as well, nor Windows Phone (issue #1471).
+    if ((ua.indexOf('Android 2.') !== -1 ||
+        (ua.indexOf('Android 4.0') !== -1)) &&
+        ua.indexOf('Mobile Safari') !== -1 &&
+        ua.indexOf('Chrome') === -1 &&
+        ua.indexOf('Windows Phone') === -1 &&
+    // Since all documents on file:// share an origin, the History apis are
+    // blocked there as well
+        location.protocol !== 'file:'
+    ) {
+      return false;
+    }
+
+    // Return the regular check
+    return (window.history && 'pushState' in window.history);
+  });
+
 
   /**
    * Modernizr.hasEvent() detects support for a given event
@@ -1601,6 +1647,304 @@ Detects support for Message Channels, a way to communicate between different bro
 */
 
   Modernizr.addTest('messagechannel', 'MessageChannel' in window);
+
+
+  /**
+   * If the browsers follow the spec, then they would expose vendor-specific styles as:
+   *   elem.style.WebkitBorderRadius
+   * instead of something like the following (which is technically incorrect):
+   *   elem.style.webkitBorderRadius
+
+   * WebKit ghosts their properties in lowercase but Opera & Moz do not.
+   * Microsoft uses a lowercase `ms` instead of the correct `Ms` in IE8+
+   *   erik.eae.net/archives/2008/03/10/21.48.10/
+
+   * More here: github.com/Modernizr/Modernizr/issues/issue/21
+   *
+   * @access private
+   * @returns {string} The string representing the vendor-specific style properties
+   */
+
+  var omPrefixes = 'Moz O ms Webkit';
+  
+
+  var cssomPrefixes = (ModernizrProto._config.usePrefixes ? omPrefixes.split(' ') : []);
+  ModernizrProto._cssomPrefixes = cssomPrefixes;
+  
+
+  /**
+   * List of JavaScript DOM values used for tests
+   *
+   * @memberof Modernizr
+   * @name Modernizr._domPrefixes
+   * @optionName Modernizr._domPrefixes
+   * @optionProp domPrefixes
+   * @access public
+   * @example
+   *
+   * Modernizr._domPrefixes is exactly the same as [_prefixes](#modernizr-_prefixes), but rather
+   * than kebab-case properties, all properties are their Capitalized variant
+   *
+   * ```js
+   * Modernizr._domPrefixes === [ "Moz", "O", "ms", "Webkit" ];
+   * ```
+   */
+
+  var domPrefixes = (ModernizrProto._config.usePrefixes ? omPrefixes.toLowerCase().split(' ') : []);
+  ModernizrProto._domPrefixes = domPrefixes;
+  
+
+  /**
+   * testDOMProps is a generic DOM property test; if a browser supports
+   *   a certain property, it won't return undefined for it.
+   *
+   * @access private
+   * @function testDOMProps
+   * @param {array.<string>} props - An array of properties to test for
+   * @param {object} obj - An object or Element you want to use to test the parameters again
+   * @param {boolean|object} elem - An Element to bind the property lookup again. Use `false` to prevent the check
+   * @returns {false|*} returns false if the prop is unsupported, otherwise the value that is supported
+   */
+  function testDOMProps(props, obj, elem) {
+    var item;
+
+    for (var i in props) {
+      if (props[i] in obj) {
+
+        // return the property name as a string
+        if (elem === false) {
+          return props[i];
+        }
+
+        item = obj[props[i]];
+
+        // let's bind a function
+        if (is(item, 'function')) {
+          // bind to obj unless overriden
+          return fnBind(item, elem || obj);
+        }
+
+        // return the unbound function or obj or value
+        return item;
+      }
+    }
+    return false;
+  }
+
+  ;
+
+  /**
+   * testPropsAll tests a list of DOM properties we want to check against.
+   * We specify literally ALL possible (known and/or likely) properties on
+   * the element including the non-vendor prefixed one, for forward-
+   * compatibility.
+   *
+   * @access private
+   * @function testPropsAll
+   * @param {string} prop - A string of the property to test for
+   * @param {string|object} [prefixed] - An object to check the prefixed properties on. Use a string to skip
+   * @param {HTMLElement|SVGElement} [elem] - An element used to test the property and value against
+   * @param {string} [value] - A string of a css value
+   * @param {boolean} [skipValueTest] - An boolean representing if you want to test if value sticks when set
+   * @returns {false|string} returns the string version of the property, or false if it is unsupported
+   */
+  function testPropsAll(prop, prefixed, elem, value, skipValueTest) {
+
+    var ucProp = prop.charAt(0).toUpperCase() + prop.slice(1),
+      props = (prop + ' ' + cssomPrefixes.join(ucProp + ' ') + ucProp).split(' ');
+
+    // did they call .prefixed('boxSizing') or are we just testing a prop?
+    if (is(prefixed, 'string') || is(prefixed, 'undefined')) {
+      return testProps(props, prefixed, value, skipValueTest);
+
+      // otherwise, they called .prefixed('requestAnimationFrame', window[, elem])
+    } else {
+      props = (prop + ' ' + (domPrefixes).join(ucProp + ' ') + ucProp).split(' ');
+      return testDOMProps(props, prefixed, elem);
+    }
+  }
+
+  // Modernizr.testAllProps() investigates whether a given style property,
+  // or any of its vendor-prefixed variants, is recognized
+  //
+  // Note that the property names must be provided in the camelCase variant.
+  // Modernizr.testAllProps('boxSizing')
+  ModernizrProto.testAllProps = testPropsAll;
+
+  
+
+  /**
+   * atRule returns a given CSS property at-rule (eg @keyframes), possibly in
+   * some prefixed form, or false, in the case of an unsupported rule
+   *
+   * @memberof Modernizr
+   * @name Modernizr.atRule
+   * @optionName Modernizr.atRule()
+   * @optionProp atRule
+   * @access public
+   * @function atRule
+   * @param {string} prop - String name of the @-rule to test for
+   * @returns {string|boolean} The string representing the (possibly prefixed)
+   * valid version of the @-rule, or `false` when it is unsupported.
+   * @example
+   * ```js
+   *  var keyframes = Modernizr.atRule('@keyframes');
+   *
+   *  if (keyframes) {
+   *    // keyframes are supported
+   *    // could be `@-webkit-keyframes` or `@keyframes`
+   *  } else {
+   *    // keyframes === `false`
+   *  }
+   * ```
+   *
+   */
+
+  var atRule = function(prop) {
+    var length = prefixes.length;
+    var cssrule = window.CSSRule;
+    var rule;
+
+    if (typeof cssrule === 'undefined') {
+      return undefined;
+    }
+
+    if (!prop) {
+      return false;
+    }
+
+    // remove literal @ from beginning of provided property
+    prop = prop.replace(/^@/, '');
+
+    // CSSRules use underscores instead of dashes
+    rule = prop.replace(/-/g, '_').toUpperCase() + '_RULE';
+
+    if (rule in cssrule) {
+      return '@' + prop;
+    }
+
+    for (var i = 0; i < length; i++) {
+      // prefixes gives us something like -o-, and we want O_
+      var prefix = prefixes[i];
+      var thisRule = prefix.toUpperCase() + '_' + rule;
+
+      if (thisRule in cssrule) {
+        return '@-' + prefix.toLowerCase() + '-' + prop;
+      }
+    }
+
+    return false;
+  };
+
+  ModernizrProto.atRule = atRule;
+
+  
+
+  /**
+   * prefixed returns the prefixed or nonprefixed property name variant of your input
+   *
+   * @memberof Modernizr
+   * @name Modernizr.prefixed
+   * @optionName Modernizr.prefixed()
+   * @optionProp prefixed
+   * @access public
+   * @function prefixed
+   * @param {string} prop - String name of the property to test for
+   * @param {object} [obj] - An object to test for the prefixed properties on
+   * @param {HTMLElement} [elem] - An element used to test specific properties against
+   * @returns {string|false} The string representing the (possibly prefixed) valid
+   * version of the property, or `false` when it is unsupported.
+   * @example
+   *
+   * Modernizr.prefixed takes a string css value in the DOM style camelCase (as
+   * opposed to the css style kebab-case) form and returns the (possibly prefixed)
+   * version of that property that the browser actually supports.
+   *
+   * For example, in older Firefox...
+   * ```js
+   * prefixed('boxSizing')
+   * ```
+   * returns 'MozBoxSizing'
+   *
+   * In newer Firefox, as well as any other browser that support the unprefixed
+   * version would simply return `boxSizing`. Any browser that does not support
+   * the property at all, it will return `false`.
+   *
+   * By default, prefixed is checked against a DOM element. If you want to check
+   * for a property on another object, just pass it as a second argument
+   *
+   * ```js
+   * var rAF = prefixed('requestAnimationFrame', window);
+   *
+   * raf(function() {
+   *  renderFunction();
+   * })
+   * ```
+   *
+   * Note that this will return _the actual function_ - not the name of the function.
+   * If you need the actual name of the property, pass in `false` as a third argument
+   *
+   * ```js
+   * var rAFProp = prefixed('requestAnimationFrame', window, false);
+   *
+   * rafProp === 'WebkitRequestAnimationFrame' // in older webkit
+   * ```
+   *
+   * One common use case for prefixed is if you're trying to determine which transition
+   * end event to bind to, you might do something like...
+   * ```js
+   * var transEndEventNames = {
+   *     'WebkitTransition' : 'webkitTransitionEnd', * Saf 6, Android Browser
+   *     'MozTransition'    : 'transitionend',       * only for FF < 15
+   *     'transition'       : 'transitionend'        * IE10, Opera, Chrome, FF 15+, Saf 7+
+   * };
+   *
+   * var transEndEventName = transEndEventNames[ Modernizr.prefixed('transition') ];
+   * ```
+   *
+   * If you want a similar lookup, but in kebab-case, you can use [prefixedCSS](#modernizr-prefixedcss).
+   */
+
+  var prefixed = ModernizrProto.prefixed = function(prop, obj, elem) {
+    if (prop.indexOf('@') === 0) {
+      return atRule(prop);
+    }
+
+    if (prop.indexOf('-') != -1) {
+      // Convert kebab-case to camelCase
+      prop = cssToDOM(prop);
+    }
+    if (!obj) {
+      return testPropsAll(prop, 'pfx');
+    } else {
+      // Testing DOM property e.g. Modernizr.prefixed('requestAnimationFrame', window) // 'mozRequestAnimationFrame'
+      return testPropsAll(prop, obj, elem);
+    }
+  };
+
+  
+/*!
+{
+  "name": "Navigation Timing API",
+  "property": "performance",
+  "caniuse": "nav-timing",
+  "tags": ["performance"],
+  "authors": ["Scott Murphy (@uxder)"],
+  "notes": [{
+    "name": "W3C Spec",
+    "href": "https://www.w3.org/TR/navigation-timing/"
+  },{
+    "name": "HTML5 Rocks article",
+    "href": "http://www.html5rocks.com/en/tutorials/webperformance/basics/"
+  }],
+  "polyfills": ["perfnow"]
+}
+!*/
+/* DOC
+Detects support for the Navigation Timing API, for measuring browser and connection performance.
+*/
+
+  Modernizr.addTest('performance', !!prefixed('performance', window));
 
 
   /**
@@ -1819,6 +2163,70 @@ Detects if unicode characters are supported in the current document.
     });
   });
 
+
+  /**
+   * testAllProps determines whether a given CSS property is supported in the browser
+   *
+   * @memberof Modernizr
+   * @name Modernizr.testAllProps
+   * @optionName Modernizr.testAllProps()
+   * @optionProp testAllProps
+   * @access public
+   * @function testAllProps
+   * @param {string} prop - String naming the property to test (either camelCase or kebab-case)
+   * @param {string} [value] - String of the value to test
+   * @param {boolean} [skipValueTest=false] - Whether to skip testing that the value is supported when using non-native detection
+   * @example
+   *
+   * testAllProps determines whether a given CSS property, in some prefixed form,
+   * is supported by the browser.
+   *
+   * ```js
+   * testAllProps('boxSizing')  // true
+   * ```
+   *
+   * It can optionally be given a CSS value in string form to test if a property
+   * value is valid
+   *
+   * ```js
+   * testAllProps('display', 'block') // true
+   * testAllProps('display', 'penguin') // false
+   * ```
+   *
+   * A boolean can be passed as a third parameter to skip the value check when
+   * native detection (@supports) isn't available.
+   *
+   * ```js
+   * testAllProps('shapeOutside', 'content-box', true);
+   * ```
+   */
+
+  function testAllProps(prop, value, skipValueTest) {
+    return testPropsAll(prop, undefined, undefined, value, skipValueTest);
+  }
+  ModernizrProto.testAllProps = testAllProps;
+  
+/*!
+{
+  "name": "Flexbox",
+  "property": "flexbox",
+  "caniuse": "flexbox",
+  "tags": ["css"],
+  "notes": [{
+    "name": "The _new_ flexbox",
+    "href": "http://dev.w3.org/csswg/css3-flexbox"
+  }],
+  "warnings": [
+    "A `true` result for this detect does not imply that the `flex-wrap` property is supported; see the `flexwrap` detect."
+  ]
+}
+!*/
+/* DOC
+Detects support for the Flexible Box Layout model, a.k.a. Flexbox, which allows easy manipulation of layout order and sizing within a container.
+*/
+
+  Modernizr.addTest('flexbox', testAllProps('flexBasis', '1px', true));
+
 /*!
 {
   "name": "CSS Opacity",
@@ -1877,6 +2285,75 @@ Detects support for the ':target' CSS pseudo-class.
 
 /*!
 {
+  "name": "CSS Supports",
+  "property": "supports",
+  "caniuse": "css-featurequeries",
+  "tags": ["css"],
+  "builderAliases": ["css_supports"],
+  "notes": [{
+    "name": "W3 Spec",
+    "href": "http://dev.w3.org/csswg/css3-conditional/#at-supports"
+  },{
+    "name": "Related Github Issue",
+    "href": "https://github.com/Modernizr/Modernizr/issues/648"
+  },{
+    "name": "W3 Info",
+    "href": "http://dev.w3.org/csswg/css3-conditional/#the-csssupportsrule-interface"
+  }]
+}
+!*/
+
+  var newSyntax = 'CSS' in window && 'supports' in window.CSS;
+  var oldSyntax = 'supportsCSS' in window;
+  Modernizr.addTest('supports', newSyntax || oldSyntax);
+
+/*!
+{
+  "name": "CSS Transforms 3D",
+  "property": "csstransforms3d",
+  "caniuse": "transforms3d",
+  "tags": ["css"],
+  "warnings": [
+    "Chrome may occassionally fail this test on some systems; more info: https://code.google.com/p/chromium/issues/detail?id=129004"
+  ]
+}
+!*/
+
+  Modernizr.addTest('csstransforms3d', function() {
+    var ret = !!testAllProps('perspective', '1px', true);
+    var usePrefix = Modernizr._config.usePrefixes;
+
+    // Webkit's 3D transforms are passed off to the browser's own graphics renderer.
+    //   It works fine in Safari on Leopard and Snow Leopard, but not in Chrome in
+    //   some conditions. As a result, Webkit typically recognizes the syntax but
+    //   will sometimes throw a false positive, thus we must do a more thorough check:
+    if (ret && (!usePrefix || 'webkitPerspective' in docElement.style)) {
+      var mq;
+      var defaultStyle = '#modernizr{width:0;height:0}';
+      // Use CSS Conditional Rules if available
+      if (Modernizr.supports) {
+        mq = '@supports (perspective: 1px)';
+      } else {
+        // Otherwise, Webkit allows this media query to succeed only if the feature is enabled.
+        // `@media (transform-3d),(-webkit-transform-3d){ ... }`
+        mq = '@media (transform-3d)';
+        if (usePrefix) {
+          mq += ',(-webkit-transform-3d)';
+        }
+      }
+
+      mq += '{#modernizr{width:7px;height:18px;margin:0;padding:0;border:0}}';
+
+      testStyles(defaultStyle + mq, function(elem) {
+        ret = elem.offsetWidth === 7 && elem.offsetHeight === 18;
+      });
+    }
+
+    return ret;
+  });
+
+/*!
+{
   "name": "[hidden] Attribute",
   "property": "hidden",
   "tags": ["dom"],
@@ -1899,6 +2376,61 @@ Does the browser support the HTML5 [hidden] attribute?
 
 /*!
 {
+  "name": "Template Tag",
+  "property": "template",
+  "tags": ["elem"],
+  "notes": [{
+    "name": "HTML5Rocks Article",
+    "href": "http://www.html5rocks.com/en/tutorials/webcomponents/template/"
+  },{
+    "name": "W3 Spec",
+    "href": "https://dvcs.w3.org/hg/webcomponents/raw-file/tip/spec/templates/index.html"
+  }]
+}
+!*/
+
+  Modernizr.addTest('template', 'content' in createElement('template'));
+
+/*!
+{
+  "name": "time Element",
+  "property": "time",
+  "tags": ["elem"],
+  "builderAliases": ["elem_time"],
+  "notes": [{
+    "name": "WhatWG Spec",
+    "href": "https://html.spec.whatwg.org/multipage/semantics.html#the-time-element"
+  }]
+}
+!*/
+
+  Modernizr.addTest('time', 'valueAsDate' in createElement('time'));
+
+/*!
+{
+  "name": "Track element and Timed Text Track",
+  "property": ["texttrackapi", "track"],
+  "tags": ["elem"],
+  "builderAliases": ["elem_track"],
+  "authors": ["Addy Osmani"],
+  "notes": [{
+    "name": "W3 track Element Spec",
+    "href": "http://www.w3.org/TR/html5/video.html#the-track-element"
+  },{
+    "name": "W3 track API Spec",
+    "href": "http://www.w3.org/TR/html5/media-elements.html#text-track-api"
+  }],
+  "warnings": ["While IE10 has implemented the track element, IE10 does not expose the underlying APIs to create timed text tracks by JS (really sad)"]
+}
+!*/
+
+  Modernizr.addTest('texttrackapi', typeof (createElement('video').addTextTrack) === 'function');
+
+  // a more strict test for track including UI support: document.createElement('track').kind === 'subtitles'
+  Modernizr.addTest('track', 'kind' in createElement('track'));
+
+/*!
+{
   "name": "ES5 String.prototype.contains",
   "property": "contains",
   "authors": ["Robert Kowalski"],
@@ -1910,6 +2442,104 @@ Check if browser implements ECMAScript 6 `String.prototype.contains` per specifi
 */
 
   Modernizr.addTest('contains', is(String.prototype.contains, 'function'));
+
+/*!
+{
+  "name": "input[capture] Attribute",
+  "property": "capture",
+  "tags": ["video", "image", "audio", "media", "attribute"],
+  "notes": [{
+    "name": "W3C draft: HTML Media Capture",
+    "href": "https://www.w3.org/TR/html-media-capture/"
+  }]
+}
+!*/
+/* DOC
+When used on an `<input>`, this attribute signifies that the resource it takes should be generated via device's camera, camcorder, sound recorder.
+*/
+
+  // testing for capture attribute in inputs
+  Modernizr.addTest('capture', ('capture' in createElement('input')));
+
+/*!
+{
+  "name": "placeholder attribute",
+  "property": "placeholder",
+  "tags": ["forms", "attribute"],
+  "builderAliases": ["forms_placeholder"]
+}
+!*/
+/* DOC
+Tests for placeholder attribute in inputs and textareas
+*/
+
+  Modernizr.addTest('placeholder', ('placeholder' in createElement('input') && 'placeholder' in createElement('textarea')));
+
+/*!
+{
+  "name": "sizes attribute",
+  "async": true,
+  "property": "sizes",
+  "tags": ["image"],
+  "authors": ["Mat Marquis"],
+  "notes": [{
+    "name": "Spec",
+    "href": "http://picture.responsiveimages.org/#parse-sizes-attr"
+    },{
+    "name": "Usage Details",
+    "href": "http://ericportis.com/posts/2014/srcset-sizes/"
+    }]
+}
+!*/
+/* DOC
+Test for the `sizes` attribute on images
+*/
+
+  Modernizr.addAsyncTest(function() {
+    var width1, width2, test;
+    var image = createElement('img');
+    // in a perfect world this would be the test...
+    var isSizes = 'sizes' in image;
+
+    // ... but we need to deal with Safari 9...
+    if (!isSizes && ('srcset' in  image)) {
+      width2 = 'data:image/gif;base64,R0lGODlhAgABAPAAAP///wAAACH5BAAAAAAALAAAAAACAAEAAAICBAoAOw==';
+      width1 = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
+
+      test = function() {
+        addTest('sizes', image.width == 2);
+      };
+
+      image.onload = test;
+      image.onerror = test;
+      image.setAttribute('sizes', '9px');
+
+      image.srcset = width1 + ' 1w,' + width2 + ' 8w';
+      image.src = width1;
+    } else {
+      addTest('sizes', isSizes);
+    }
+  });
+
+/*!
+{
+  "name": "srcset attribute",
+  "property": "srcset",
+  "tags": ["image"],
+  "notes": [{
+    "name": "Smashing Magazine Article",
+    "href": "https://en.wikipedia.org/wiki/APNG"
+    },{
+    "name": "Generate multi-resolution images for srcset with Grunt",
+    "href": "https://addyosmani.com/blog/generate-multi-resolution-images-for-srcset-with-grunt/"
+    }]
+}
+!*/
+/* DOC
+Test for the srcset attribute of images
+*/
+
+  Modernizr.addTest('srcset', 'srcset' in createElement('img'));
 
 /*!
 {

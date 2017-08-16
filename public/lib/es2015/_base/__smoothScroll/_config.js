@@ -1,5 +1,15 @@
+/************************
+スムーズスクロール
+site:https://github.com/cferdinandi/smooth-scroll
+***********************/
 
+//node_module
+import smoothScroll from "./_smoothScroll.js";
 
+//original-css
+//none
+
+//export
 export default function() {
 
 	smoothScroll.init({

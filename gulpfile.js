@@ -170,7 +170,7 @@ gulp.task('webpack', function () {
 		output: {
 			filename: '[name].js',
 		},
-		//devtool: 'inline-source-map',
+		devtool: 'inline-source-map',
 		module: {
 			rules: [
 				{
@@ -206,15 +206,9 @@ gulp.task('webpack', function () {
 		},
 		resolve: {
 			alias: {
-				JQuerys: __dirname + '/node_modules/jquery/dist/jquery.js',
-				Swiper: __dirname + '/node_modules/swiper/dist/js/swiper.js',
-				SwiperCSS: __dirname + '/node_modules/swiper/dist/css/swiper.css',
-				inView: __dirname + '/node_modules/jquery-inview/jquery.inview.js',
-				magPopup: __dirname + '/node_modules/magnific-popup/dist/jquery.magnific-popup.js',
-				magPopupCSS: __dirname + '/node_modules/magnific-popup/dist/magnific-popup.css',
 				Vue: __dirname + '/node_modules/vue/dist/vue.js'
 			}
-		},
+		}
 	})
 	.pipe(gulp.dest(paths.js));
 });
@@ -264,5 +258,5 @@ gulp.task('default', ['browser-sync'], function () {
 	gulp.watch(paths.js + '/**/*.js').on("change", browserSync.reload);
 	gulp.watch(paths.img + '/**/*.{png,jpg,gif,svg,ico}', ['scss-img']);
 	gulp.watch(paths.scss + '/**/*.scss', ['css']);
-	gulp.watch([paths.es2015 + '/**/*.js', '!**/modernizr.js'], ['js']);
+	gulp.watch([paths.es2015 + '/**/*.{js,scss}', '!**/modernizr.js'], ['js']);
 });

@@ -1,12 +1,7 @@
-.u__cm-img,
-.u__bts_icon_kizuita,
-.u__bts_kizuita,
-.u-pict__item,
-.target{
-	opacity: 0;
-	//transition: all 1s;
+.inview-target{
+	transition: all 2s;
 	&.inview{
-		opacity: 1;
-		transition: all 1s;
+		background-color: red;
+		transition: all 2s;
 	}
 }

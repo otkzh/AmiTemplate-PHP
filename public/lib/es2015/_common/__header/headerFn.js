@@ -1,22 +1,8 @@
-export default function headerFn() {
+export default function () {
 
-
-	$(window).scroll(function () {
-
-		var scrollTop =
-			document.documentElement.scrollTop || document.body.scrollTop; // IE、Firefox、Opera || Chrome、Safari
-		if (scrollTop <= 45) {
-			$(".header").removeClass('active');
-		} else {
-			$(".header").addClass('active');
-		}
-
-	});
-
-
-	$('.menu').on('click', function () {
+	$('.menubar').on('click', function () {
+		$(this).toggleClass('active');
 		$('.gnav').toggleClass('active');
 	});
-
 
 };

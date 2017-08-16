@@ -1,29 +1,23 @@
-export default function() {
+/************************
+inview
+site: https://github.com/protonet/jquery.inview
+***********************/
 
-	//m-から始まるclassを取得
-	$.extend($.expr[":"], {
-		"m-": function (el) {
-			return el.className.match(/\m-\S+/g);
-		}
-	});
+//node_module
+import inView from "../../../../../node_modules/jquery-inview/jquery.inview.js";
 
-	//inview設定1
-	$(':m-').on('inview', function (event, isInView, visiblePartX, visiblePartY) {
-		var $this = $(this);
+//original-css
+import './_style.scss';
+
+//export
+export default function(){
+
+	$('.inview-target').on('inview', function(event, isInView) {
 		if (isInView) {
-			$this.addClass('inview');
+			$(this).addClass('inview');
 		} else {
-			$this.removeClass('inview');
+			$(this).removeClass('inview');
 		}
 	});
-
-	$('.u__cm-img,.u__bts_icon_kizuita,.u__bts_kizuita,.u-pict__item,.target').on('inview',function(event, isInView, visiblePartX, visiblePartY){
-				var $this = $(this);
-				if (isInView) {
-					$this.addClass('inview');
-				} else {
-				}
-	});
-
 
 };
