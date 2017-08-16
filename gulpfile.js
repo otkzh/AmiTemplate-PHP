@@ -35,7 +35,6 @@ var pngquant = require('imagemin-pngquant');
 
 //js/es2015/modernizr
 var webpack = require('webpack-stream');
-var webpacks = require("webpack");
 var modernizr = require('gulp-modernizr');
 var uglify = require('gulp-uglify');
 
@@ -51,7 +50,7 @@ var paths = {
 	"scss": "public/lib/scss",
 	"css": "public/lib/css",
 	"js": "public/lib/js",
-	"ts": "public/lib/ts",
+	"es2015": "public/lib/es2015",
 	"img": "public/lib/img",
 	"no": ("!**/_*", "!**/_**"),
 }
@@ -161,50 +160,55 @@ gulp.task('img-dest', function () {
 
 //---------------js
 
+
 //webpack設定
 gulp.task('webpack', function () {
 	return webpack({
 		entry: {
-			scripts: './' + paths.ts + '/scripts.js',
-			ie: './' + paths.ts + '/ie.js'
+			scripts: './' + paths.es2015 + '/scripts.js'
 		},
 		output: {
 			filename: '[name].js',
 		},
 		devtool: 'inline-source-map',
 		module: {
-			loaders: [
+			rules: [
 				{
-					test: /\.css$/,
-					loader: "style!css"
+					test: /\.(css|scss)$/,
+					use: [
+						'style-loader',
+						'css-loader',
+						"autoprefixer-loader?{browsers: ['last 2 versions', 'android >= 4.4', 'IE 11']}",
+						"sass-loader",
+					]
 				},
 				{
 					test: /\.js$/,
-					exclude: /node_modules/,
-					loader: "babel-loader",
-					query: {
-						presets: ['es2015']
-					}
+					exclude: /(node_modules|bower_components)/,
+					use:[
+						{
+							loader:'babel-loader',
+							options: {
+								presets:  [
+									["env", {"targets": {"browsers": ['last 2 versions', 'android >= 4.4', 'IE 11']}}]
+								]
+							}
+						}
+					],//use_end
 				},
 				{
 					test: /\.(jpg|gif|png)$/,
-					loader: 'url?limit=25000'
+					use:[
+						{loader: 'url-loader?limit=25000'}
+					]
 				}
 			]
 		},
 		resolve: {
-			extenstions: ['', '.js', '.json', '.html'],
 			alias: {
-				JQuerys: __dirname + '/node_modules/jquery/dist/jquery.js',
-				jqueryEasing: __dirname + '/node_modules/jquery.easing/jquery.easing.min.js',
-				Swiper: __dirname + '/node_modules/swiper/dist/js/swiper.js',
-				SwiperCSS: __dirname + '/node_modules/swiper/dist/css/swiper.css',
-				inView: __dirname + '/node_modules/jquery-inview/jquery.inview.js',
-				magPopup: __dirname + '/node_modules/magnific-popup/dist/jquery.magnific-popup.js',
-				magPopupCSS: __dirname + '/node_modules/magnific-popup/dist/magnific-popup.css',
 				Vue: __dirname + '/node_modules/vue/dist/vue.js'
 			}
-		},
+		}
 	})
 	.pipe(gulp.dest(paths.js));
 });
@@ -254,5 +258,5 @@ gulp.task('default', ['browser-sync'], function () {
 	gulp.watch(paths.js + '/**/*.js').on("change", browserSync.reload);
 	gulp.watch(paths.img + '/**/*.{png,jpg,gif,svg,ico}', ['scss-img']);
 	gulp.watch(paths.scss + '/**/*.scss', ['css']);
-	gulp.watch([paths.ts + '/**/*.js', '!**/modernizr.js'], ['js']);
+	gulp.watch([paths.es2015 + '/**/*.{js,scss}', '!**/modernizr.js'], ['js']);
 });

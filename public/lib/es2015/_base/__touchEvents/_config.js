@@ -1,4 +1,10 @@
-export default function touchEventsFn() {
+/************************
+none(ami-original)
+site:none
+***********************/
+
+//export
+export default function () {
 
   if (Modernizr.touchevents) {
 
@@ -32,4 +38,3 @@ export default function touchEventsFn() {
   }
 
 };
-
