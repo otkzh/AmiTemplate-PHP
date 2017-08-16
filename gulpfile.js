@@ -47,11 +47,11 @@ var hostName = "192.168.99.99"; //browserSyncするローカルIPを記載
 //各種パス関連
 var paths = {
 	"dir": "public/",
-	"scss": "public/lib/scss",
+	"img": "public/lib/img",
 	"css": "public/lib/css",
 	"js": "public/lib/js",
-	"es2015": "public/lib/es2015",
-	"img": "public/lib/img",
+	"scss": "public/lib/_scss",
+	"es2015": "public/lib/_es2015",
 	"no": ("!**/_*", "!**/_**"),
 }
 
@@ -110,13 +110,13 @@ gulp.task('html-dest', function () {
 gulp.task('scss-img', function () {
 	return gulp.src([paths.img + '/**/*.{png,jpg,gif,svg}', paths.no])
 	.pipe(sassImage({
-		targetFile: '_scss-image.scss',
+		targetFile: '__scss-img.scss',
 		images_path: paths.img,
 		css_path: paths.css,
 		includeData: false,
 		createPlaceholder: false
 	}))
-	.pipe(gulp.dest(paths.scss + '/mixins'));
+	.pipe(gulp.dest(paths.scss + '/mixin/_output/'));
 });
 
 //scssをcssへ変換

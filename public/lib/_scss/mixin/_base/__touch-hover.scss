@@ -1,0 +1,9 @@
+//---------------- touch-hover
+
+@mixin touch-hover() {
+  .no-js &:hover,
+  .js.no-touchevents &:hover,
+  .js.touchevents &.touch {
+    @content;
+  }
+}

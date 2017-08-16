@@ -1,24 +1,27 @@
-
-//mixins
-@import "mixins/mixin";
-@import "mixins/media-queries";
-@import "mixins/scss-image";
+//mixin
+@import "mixin/_setting/__color.scss";
+@import "mixin/_setting/__size.scss";
+@import "mixin/_setting/__wrap.scss";
+@import "mixin/_base/__bg-img.scss";
+@import "mixin/_base/__touch-hover.scss";
+@import "mixin/_base/__media-queries.scss";
+@import "mixin/_output/__scss-img.scss";
 
 //base
-@import "styles/base/_html5reset_1.6.1";
-@import "styles/base/_font";
+@import "base/_reset/__html5reset_1.6.1.scss";
+@import "base/_setting/__font.scss";
 
 //common
-@import "styles/common/header";
-@import "styles/common/menubar";
-@import "styles/common/pan";
-@import "styles/common/main";
-@import "styles/common/footer";
-@import "styles/common/pagetop";
-
-
-//layout
-@import "styles/units/index";
+@import "common/_header/__layout.scss";
+@import "common/_header/__menubar.scss";
+@import "common/_header/__gnav.scss";
+@import "common/_main/__layout.scss";
+@import "common/_main/__pan.scss";
+@import "common/_footer/__layout.scss";
+@import "common/_footer/__pagetop.scss";
+@import "common/_unit/__etc.scss";
 
 //page
-//@import "_page/home";
+body.home{
+	@import "page/_home/__main-v.scss";
+}
