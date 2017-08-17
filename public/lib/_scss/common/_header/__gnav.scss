@@ -57,15 +57,34 @@
 		}
 		&_home{
 			@extend #{$this};
+			body.home & a{
+				background-color: $color-light;
+				color:#fff;
+			}
+		}
+		&_temp{
+			@extend #{$this};
+			body.temp & a{
+				background-color: $color-light;
+				color:#fff;
+			}
 		}
 		&_sample{
 			@extend #{$this};
+			body.sample & a{
+				background-color: $color-light;
+				color:#fff;
+			}
 		}
 		&_contact{
 			@extend #{$this};
 			a{
 				background-color: $color-point;
 				color:$color-light;
+				body.contact &{
+					background-color: $color-light;
+					color:#fff;
+				}
 			}
 		}
 	}//item
