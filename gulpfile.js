@@ -32,9 +32,9 @@ var cssmin = require('gulp-cssmin');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
 
-
 //js/es2015/modernizr
-var webpack = require('webpack-stream');
+var webpacks = require('webpack-stream');
+var webpack = require('webpack');
 var modernizr = require('gulp-modernizr');
 var uglify = require('gulp-uglify');
 
@@ -47,11 +47,11 @@ var hostName = "192.168.99.99"; //browserSyncするローカルIPを記載
 //各種パス関連
 var paths = {
 	"dir": "public/",
-	"scss": "public/lib/scss",
+	"img": "public/lib/img",
 	"css": "public/lib/css",
 	"js": "public/lib/js",
-	"es2015": "public/lib/es2015",
-	"img": "public/lib/img",
+	"scss": "public/lib/_scss",
+	"es2015": "public/lib/_es2015",
 	"no": ("!**/_*", "!**/_**"),
 }
 
@@ -110,13 +110,13 @@ gulp.task('html-dest', function () {
 gulp.task('scss-img', function () {
 	return gulp.src([paths.img + '/**/*.{png,jpg,gif,svg}', paths.no])
 	.pipe(sassImage({
-		targetFile: '_scss-image.scss',
+		targetFile: '__scss-img.scss',
 		images_path: paths.img,
 		css_path: paths.css,
 		includeData: false,
 		createPlaceholder: false
 	}))
-	.pipe(gulp.dest(paths.scss + '/mixins'));
+	.pipe(gulp.dest(paths.scss + '/mixin/_output/'));
 });
 
 //scssをcssへ変換
@@ -163,7 +163,7 @@ gulp.task('img-dest', function () {
 
 //webpack設定
 gulp.task('webpack', function () {
-	return webpack({
+	return webpacks({
 		entry: {
 			scripts: './' + paths.es2015 + '/scripts.js'
 		},
@@ -208,7 +208,17 @@ gulp.task('webpack', function () {
 			alias: {
 				Vue: __dirname + '/node_modules/vue/dist/vue.js'
 			}
-		}
+		},
+		plugins: [
+			new webpack.optimize.DedupePlugin(),  // ライブラリ間で依存しているモジュールが重複している場合、二重に読み込まないようにする
+			new webpack.optimize.AggressiveMergingPlugin(),　//ファイルを細かく分析し、まとめられるところはできるだけまとめてコードを圧縮する
+			new webpack.ProvidePlugin({　//jqueryはグローバルに出す設定。これでrequireせず使えるのでjqueryプラグインもそのまま動く。
+				jQuery: "jquery",
+				$: "jquery",
+				jquery: "jquery",
+				colorbox : 'colorbox',
+			})
+		]
 	})
 	.pipe(gulp.dest(paths.js));
 });
