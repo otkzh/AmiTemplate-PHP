@@ -4,3 +4,5 @@ dest
 node_modules
 .vagrant
 .sass-cache
+.node-version
+package-lock.json
