@@ -163,7 +163,8 @@ gulp.task('img-dest', function () {
 
 //webpack設定
 gulp.task('webpack', function () {
-	return webpacks({
+	return plumber(plumberErrorHandler)
+	.pipe (webpacks({
 		entry: {
 			scripts: './' + paths.es2015 + '/scripts.js'
 		},
@@ -219,7 +220,7 @@ gulp.task('webpack', function () {
 				colorbox : 'colorbox',
 			})
 		]
-	})
+	}))
 	.pipe(gulp.dest(paths.js));
 });
 

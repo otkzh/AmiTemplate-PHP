@@ -5,7 +5,6 @@ import "babel-polyfill";
 import inview_config from './base/_inview/__config.js';
 inview_config();
 
-require("../../../node_modules/magnific-popup/dist/jquery.magnific-popup.js");
 import magPopup_config from  "./base/_mag-popup/__config.js";
 magPopup_config();
 
