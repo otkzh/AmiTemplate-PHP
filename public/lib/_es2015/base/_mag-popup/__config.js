@@ -9,7 +9,7 @@ site: http://dimsemenov.com/plugins/magnific-popup/
 ***********************/
 
 //node_module
-//jsはimportに対応していないため、scripts.jsへrequireで記載
+import "../../../../../node_modules/magnific-popup/dist/jquery.magnific-popup.js";
 import "../../../../../node_modules/magnific-popup/dist/magnific-popup.css";
 
 //original-css
