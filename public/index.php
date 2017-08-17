@@ -1,4 +1,5 @@
 <?php
+$pageTtl = "トップ";
 include ("function.php");
 $metaTtl = $siteName;
 $metaDesc = $siteDescription;
@@ -10,55 +11,62 @@ include ($inc_path."/lib/inc/header.php");
 <main class="main">
 	<article class="main__row">
 
-		<section class="main__item conts">
-			<header class="conts__head">
-				<h1 class="conts__ttl">基本要素（セクションタイトル）</h1>
-				<p class="conts__desc">基本要素の説明（ディスクリプション）</p>
+		<section class="main-v">
+			<div class="main-v__row">
+				<figure class="main-v__item">
+					<img src="<?php echo $base_url ?>/lib/img/dummy/golden@2x.png" alt="dummy" class="u-img__max">
+				</figure>
+				<p class="main-v__desc">数秒後メインビジュアル用の画像が表示されます</p>
+			</div>
+		</section>
+
+		<section class="main__item">
+			<header class="main__head">
+				<h1 class="main__ttl">基本要素（セクションタイトル）</h1>
+				<p class="main__desc">基本要素の説明（ディスクリプション）</p>
 			</header>
-			<article class="conts__body">
-				<div class="conts__img">
-					<img src="<?php echo $base_url ?>/lib/img/dummy/bronze@2x.png" alt="dummy">
-				</div>
+			<article class="main__body">
+				<figure>
+					<img src="<?php echo $base_url ?>/lib/img/dummy/bronze@2x.png" alt="dummy" class="u-img__max">
+				</figure>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores repudiandae, nihil consectetur dignissimos facere, ipsa recusandae. Enim possimus distinctio, vel voluptatibus amet velit nisi iste quisquam tempore voluptates, doloremque impedit.</p>
 			</article>
-			<footer class="conts__foot">
+			<footer class="main__foot">
 				<p>セクションフッター</p>
 			</footer>
 		</section>
 
-		<section class="main__item conts">
-			<header class="conts__head">
-				<h1 class="conts__ttl">inview</h1>
-				<p class="conts__desc">site: https://github.com/protonet/jquery.inview</p>
+		<section class="main__item">
+			<header class="main__head">
+				<h1 class="main__ttl">inview</h1>
+				<p class="main__desc">site: https://github.com/protonet/jquery.inview</p>
 			</header>
-			<article class="conts__body">
+			<article class="main__body">
 				<p class="inview-target">画面内に入ると、classにinviewが追加されます。</p>
 			</article>
 		</section>
 
-		<section class="main__item conts">
-			<header class="conts__head">
-				<h1 class="conts__ttl">colorbox</h1>
-				<p class="conts__desc">site: http://www.jacklmoore.com/colorbox/</p>
+		<section class="main__item">
+			<header class="main__head">
+				<h1 class="main__ttl">colorbox</h1>
+				<p class="main__desc">site: http://www.jacklmoore.com/colorbox/</p>
 			</header>
-			<article class="conts__body">
-				<p><a class="group1" href="<?php echo $base_url; ?>/lib/img/dummy/platinum.png" title="Me and my grandfather on the Ohoopee.">Grouped Photo 1</a></p>
-				<p><a class="group1" href="<?php echo $base_url; ?>/lib/img/dummy/platinum.png" title="On the Ohoopee as a child">Grouped Photo 2</a></p>
-				<p><a class="group1" href="<?php echo $base_url; ?>/lib/img/dummy/platinum.png" title="On the Ohoopee as an adult">Grouped Photo 3</a></p>
+			<article class="main__body">
+				<p><a class="group1" href="<?php echo $base_url; ?>/lib/img/dummy/platinum.png" title="画像タイトル１">Grouped Photo 1</a></p>
+				<p><a class="group1" href="<?php echo $base_url; ?>/lib/img/dummy/platinum.png" title="画像タイトル２">Grouped Photo 2</a></p>
+				<p><a class="group1" href="<?php echo $base_url; ?>/lib/img/dummy/platinum.png" title="画像タイトル３">Grouped Photo 3</a></p>
 			</article>
 		</section>
 
-		<section class="main__item conts">
-			<header class="conts__head">
-				<h1 class="conts__ttl">magnific-popup</h1>
-				<p class="conts__desc">site: http://dimsemenov.com/plugins/magnific-popup/<br>ajax表示使用不可_エラーが出力されます。</p>
+		<section class="main__item">
+			<header class="main__head">
+				<h1 class="main__ttl">magnific-popup</h1>
+				<p class="main__desc">site: http://dimsemenov.com/plugins/magnific-popup/<br>ajax表示使用不可_エラーが出力されます。</p>
 			</header>
-			<article class="conts__body">
+			<article class="main__body">
 				<a class='mfp-btn' href="#inline_content">Click Me (Inline HTML）</a>
 				<div id='inline_content' class="mfp-dialog mfp-hide">
-					<div class="conts__img">
-						<img src="<?php echo $base_url ?>/lib/img/dummy/bronze@2x.png" alt="dummy">
-					</div>
+					<img src="<?php echo $base_url ?>/lib/img/dummy/bronze@2x.png" alt="dummy" class="u-img__max">
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores repudiandae, nihil consectetur dignissimos facere, ipsa recusandae. Enim possimus distinctio, vel voluptatibus amet velit nisi iste quisquam tempore voluptates, doloremque impedit.</p>
 				</div>
 			</article>
@@ -66,11 +74,11 @@ include ($inc_path."/lib/inc/header.php");
 
 
 		<section class="main__item conts">
-			<header class="conts__head">
-				<h1 class="conts__ttl">Swiper</h1>
-				<p class="conts__desc">site:http://idangero.us/swiper/</p>
+			<header class="main__head">
+				<h1 class="main__ttl">Swiper</h1>
+				<p class="main__desc">site:http://idangero.us/swiper/</p>
 			</header>
-			<article class="conts__body">
+			<article class="main__body">
 				<div class="swiper-container">
 					<div class="swiper-wrapper">
 						<div class="swiper-slide">Slide 1</div>
@@ -94,11 +102,11 @@ include ($inc_path."/lib/inc/header.php");
 		</section>
 
 		<section class="main__item conts">
-			<header class="conts__head">
-				<h1 class="conts__ttl">Vue</h1>
-				<p class="conts__desc">site: https://jp.vuejs.org/</p>
+			<header class="main__head">
+				<h1 class="main__ttl">Vue</h1>
+				<p class="main__desc">site: https://jp.vuejs.org/</p>
 			</header>
-			<article class="conts__body">
+			<article class="main__body">
 				<p>以下{{ message }}はVueで出力されています。</p>
 				<div id="app">
 					{{ message }}
@@ -107,11 +115,11 @@ include ($inc_path."/lib/inc/header.php");
 		</section>
 
 		<section class="main__item conts">
-			<header class="conts__head">
-				<h1 class="conts__ttl">セクションタイトル</h1>
-				<p class="conts__desc">ディスクリプション</p>
+			<header class="main__head">
+				<h1 class="main__ttl">_unitシリーズ</h1>
+				<p class="main__desc">ディスクリプション</p>
 			</header>
-			<article class="conts__body">
+			<article class="main__body">
 				<div class="u-btn">
 					<a href="#" class="u-btn__item"><span>標準ボタン</span></a>
 					<a href="#" class="u-btn__item_size-s"><span>小さいボタン</span></a>
@@ -119,10 +127,9 @@ include ($inc_path."/lib/inc/header.php");
 					<a href="#" class="u-btn__item_point"><span>強調ボタン</span></a>
 				</div>
 			</article>
-			<footer class="conts__foot">
+			<footer class="main__foot">
 				<p>セクションフッター</p>
 			</footer>
-
 		</section>
 
 	</article>

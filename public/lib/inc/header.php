@@ -6,12 +6,24 @@
 		</h1>
 		<nav class="header__item_gnav gnav">
 			<ul class="gnav__row">
-				<li class="gnav__item_home"><a href="<?php echo $base_url ?>/">home</a></li>
-				<li class="gnav__item_sample"><a href="<?php echo $base_url ?>/_temp/">sample</a></li>
-				<li class="gnav__item_sample"><a href="<?php echo $base_url ?>/_temp/">sample</a></li>
-				<li class="gnav__item_sample"><a href="<?php echo $base_url ?>/_temp/">sample</a></li>
-				<li class="gnav__item_sample"><a href="<?php echo $base_url ?>/_temp/">sample</a></li>
-				<li class="gnav__item_contact"><a href="<?php echo $base_url ?>/_temp/">contact</a></li>
+				<li class="gnav__item_home">
+					<a href="<?php echo $base_url ?>/">home</a>
+				</li>
+				<li class="gnav__item_temp">
+					<a href="<?php echo $base_url ?>/_temp/">temp</a>
+				</li>
+				<li class="gnav__item">
+					<a href="#">menu</a>
+				</li>
+				<li class="gnav__item">
+					<a href="#">menu</a>
+				</li>
+				<li class="gnav__item">
+					<a href="#">menu</a>
+				</li>
+				<li class="gnav__item_contact">
+					<a href="#">contact</a>
+				</li>
 			</ul>
 		</nav>
 		<label class="header__item_menubar menubar">
