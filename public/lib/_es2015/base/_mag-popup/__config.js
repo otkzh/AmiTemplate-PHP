@@ -13,7 +13,7 @@ site: http://dimsemenov.com/plugins/magnific-popup/
 import "../../../../../node_modules/magnific-popup/dist/magnific-popup.css";
 
 //original-css
-import './_style.scss';
+import './__style.scss';
 
 //export
 export default function() {

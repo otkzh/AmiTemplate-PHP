@@ -7,7 +7,7 @@ site: https://github.com/protonet/jquery.inview
 import inView from "../../../../../node_modules/jquery-inview/jquery.inview.js";
 
 //original-css
-import './_style.scss';
+import './__style.scss';
 
 //export
 export default function(){

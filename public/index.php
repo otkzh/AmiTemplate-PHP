@@ -38,6 +38,18 @@ include ($inc_path."/lib/inc/header.php");
 
 		<section class="main__item conts">
 			<header class="conts__head">
+				<h1 class="conts__ttl">colorbox</h1>
+				<p class="conts__desc">site: http://www.jacklmoore.com/colorbox/</p>
+			</header>
+			<article class="conts__body">
+				<p><a class="group1" href="<?php echo $base_url; ?>/lib/img/dummy/platinum.png" title="Me and my grandfather on the Ohoopee.">Grouped Photo 1</a></p>
+				<p><a class="group1" href="<?php echo $base_url; ?>/lib/img/dummy/platinum.png" title="On the Ohoopee as a child">Grouped Photo 2</a></p>
+				<p><a class="group1" href="<?php echo $base_url; ?>/lib/img/dummy/platinum.png" title="On the Ohoopee as an adult">Grouped Photo 3</a></p>
+			</article>
+		</section>
+
+		<section class="main__item conts">
+			<header class="conts__head">
 				<h1 class="conts__ttl">magnific-popup</h1>
 				<p class="conts__desc">site: http://dimsemenov.com/plugins/magnific-popup/<br>ajax表示使用不可_エラーが出力されます。</p>
 			</header>

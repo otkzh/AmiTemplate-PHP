@@ -4,7 +4,7 @@ site:https://github.com/cferdinandi/smooth-scroll
 ***********************/
 
 //node_module
-import smoothScroll from "./_smoothScroll.js";
+import smoothScroll from "./__smooth-scroll.js";
 
 //original-css
 //none

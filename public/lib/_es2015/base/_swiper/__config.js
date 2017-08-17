@@ -8,7 +8,7 @@ import Swiper from "../../../../../node_modules/swiper/dist/js/swiper.js";
 import "../../../../../node_modules/swiper/dist/css/swiper.css";
 
 //original-css
-import "./_style.scss";
+import "./__style.scss";
 
 //export
 export default function(){

@@ -32,9 +32,9 @@ var cssmin = require('gulp-cssmin');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
 
-
 //js/es2015/modernizr
-var webpack = require('webpack-stream');
+var webpacks = require('webpack-stream');
+var webpack = require('webpack');
 var modernizr = require('gulp-modernizr');
 var uglify = require('gulp-uglify');
 
@@ -163,7 +163,7 @@ gulp.task('img-dest', function () {
 
 //webpack設定
 gulp.task('webpack', function () {
-	return webpack({
+	return webpacks({
 		entry: {
 			scripts: './' + paths.es2015 + '/scripts.js'
 		},
@@ -208,7 +208,17 @@ gulp.task('webpack', function () {
 			alias: {
 				Vue: __dirname + '/node_modules/vue/dist/vue.js'
 			}
-		}
+		},
+		plugins: [
+			new webpack.optimize.DedupePlugin(),  // ライブラリ間で依存しているモジュールが重複している場合、二重に読み込まないようにする
+			new webpack.optimize.AggressiveMergingPlugin(),　//ファイルを細かく分析し、まとめられるところはできるだけまとめてコードを圧縮する
+			new webpack.ProvidePlugin({　//jqueryはグローバルに出す設定。これでrequireせず使えるのでjqueryプラグインもそのまま動く。
+				jQuery: "jquery",
+				$: "jquery",
+				jquery: "jquery",
+				colorbox : 'colorbox',
+			})
+		]
 	})
 	.pipe(gulp.dest(paths.js));
 });
