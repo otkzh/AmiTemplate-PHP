@@ -3,7 +3,8 @@
 /*
 
 $ gulp = scssやjavascriptファイルの更新を検知して、自動で更新。
-$ gulp dest = 納品用に整形してreleaseフォルダーに書き出し。
+$ gulp dest = 納品用に整形してdestフォルダーへ書き出し。
+$ gulp scss-img = 画像のサイズを取得してmixinへ書き出し。
 $ gulp img-min = 画像ファイルを圧縮※たまに実行しておくと便利。
 
 */
@@ -211,13 +212,11 @@ gulp.task('webpack', function () {
 			}
 		},
 		plugins: [
-			new webpack.optimize.DedupePlugin(),  // ライブラリ間で依存しているモジュールが重複している場合、二重に読み込まないようにする
 			new webpack.optimize.AggressiveMergingPlugin(),　//ファイルを細かく分析し、まとめられるところはできるだけまとめてコードを圧縮する
 			new webpack.ProvidePlugin({　//jqueryはグローバルに出す設定。これでrequireせず使えるのでjqueryプラグインもそのまま動く。
 				jQuery: "jquery",
 				$: "jquery",
 				jquery: "jquery",
-				colorbox : 'colorbox',
 			})
 		]
 	}))
