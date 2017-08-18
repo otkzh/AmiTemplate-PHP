@@ -789,55 +789,6 @@ a {
       background-color: #e6e6e6;
       color: #fff; }
 
-.u-img__max {
-  max-width: 100%;
-  width: 100%;
-  height: auto; }
-
-.u-btn__item, .u-btn__item_size-s, .u-btn__item_size-l, .u-btn__item_point {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  text-decoration: none;
-  max-width: 300px;
-  width: 100%;
-  height: 45px;
-  border: 1px solid #3a8de6;
-  color: #3a8de6;
-  border-radius: 4px;
-  margin-bottom: 8px; }
-  .no-js .u-btn__item:hover, .no-js .u-btn__item_size-s:hover, .no-js .u-btn__item_size-l:hover, .no-js .u-btn__item_point:hover,
-  .js.no-touchevents .u-btn__item:hover,
-  .js.no-touchevents .u-btn__item_size-s:hover,
-  .js.no-touchevents .u-btn__item_size-l:hover,
-  .js.no-touchevents .u-btn__item_point:hover,
-  .js.touchevents .u-btn__item.touch,
-  .js.touchevents .touch.u-btn__item_size-s,
-  .js.touchevents .touch.u-btn__item_size-l,
-  .js.touchevents .touch.u-btn__item_point {
-    background-color: #3a8de6;
-    color: #fff; }
-  .u-btn__item_size-s {
-    max-width: 150px; }
-  .u-btn__item_size-l {
-    max-width: 500px; }
-  .u-btn__item_point {
-    background-color: #e12e57;
-    border-color: #e12e57;
-    color: #fff; }
-    .no-js .u-btn__item_point:hover,
-    .js.no-touchevents .u-btn__item_point:hover,
-    .js.touchevents .u-btn__item_point.touch {
-      background-color: #aa183a;
-      border-color: #aa183a; }
-
 .mb0 {
   margin-bottom: 0px; }
 
@@ -969,6 +920,63 @@ a {
 
 .pt10 {
   padding-top: 80px; }
+
+.u-img__max {
+  max-width: 100%;
+  width: 100%;
+  height: auto; }
+
+.u-btn, .u-btn_s, .u-btn_point_s, .u-btn_l, .u-btn_point_l, .u-btn_point {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-decoration: none;
+  max-width: 320px;
+  width: 100%;
+  height: 45px;
+  border: 1px solid #3a8de6;
+  color: #3a8de6;
+  border-radius: 4px;
+  margin-bottom: 8px; }
+  .no-js .u-btn:hover, .no-js .u-btn_s:hover, .no-js .u-btn_point_s:hover, .no-js .u-btn_l:hover, .no-js .u-btn_point_l:hover, .no-js .u-btn_point:hover,
+  .js.no-touchevents .u-btn:hover,
+  .js.no-touchevents .u-btn_s:hover,
+  .js.no-touchevents .u-btn_point_s:hover,
+  .js.no-touchevents .u-btn_l:hover,
+  .js.no-touchevents .u-btn_point_l:hover,
+  .js.no-touchevents .u-btn_point:hover,
+  .js.touchevents .u-btn.touch,
+  .js.touchevents .touch.u-btn_s,
+  .js.touchevents .touch.u-btn_point_s,
+  .js.touchevents .touch.u-btn_l,
+  .js.touchevents .touch.u-btn_point_l,
+  .js.touchevents .touch.u-btn_point {
+    background-color: #3a8de6;
+    color: #fff; }
+  .u-btn_s, .u-btn_point_s {
+    max-width: 160px; }
+  .u-btn_l, .u-btn_point_l {
+    max-width: 666px; }
+  .u-btn_point, .u-btn_point_s, .u-btn_point_l {
+    background-color: #e12e57;
+    border-color: #e12e57;
+    color: #fff; }
+    .no-js .u-btn_point:hover, .no-js .u-btn_point_s:hover, .no-js .u-btn_point_l:hover,
+    .js.no-touchevents .u-btn_point:hover,
+    .js.no-touchevents .u-btn_point_s:hover,
+    .js.no-touchevents .u-btn_point_l:hover,
+    .js.touchevents .u-btn_point.touch,
+    .js.touchevents .touch.u-btn_point_s,
+    .js.touchevents .touch.u-btn_point_l {
+      background-color: #aa183a;
+      border-color: #aa183a; }
 
 body.home .main-v__row {
   position: relative;

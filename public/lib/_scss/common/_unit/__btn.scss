@@ -1,0 +1,47 @@
+.u-btn{
+	$this:&;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	max-width: $width-xs;
+	width: 100%;
+	height: 45px;
+	border: 1px solid $color-brand;
+	color:$color-brand;
+	border-radius: 4px;
+	margin-bottom: $bm;
+	@include touch-hover(){
+		background-color: $color-brand;
+		color:#fff;
+	}
+	&_s{
+		@extend #{$this};
+		max-width: $width-xs/2;
+	}
+	&_l{
+		@extend #{$this};
+		max-width: $width-s;
+	}
+	&_point{
+		@extend #{$this};
+		background-color: $color-point;
+		border-color: $color-point;
+		color:#fff;
+		@include touch-hover(){
+			background-color: $color-point-darken;
+			border-color: $color-point-darken;
+		}
+		&_s{
+			@extend #{$this};
+			@extend #{$this}_point;
+			@extend #{$this}_s;
+		}
+		&_l{
+			@extend #{$this};
+			@extend #{$this}_point;
+			@extend #{$this}_l;
+		}
+	}
+}

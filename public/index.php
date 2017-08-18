@@ -120,12 +120,12 @@ include ($inc_path."/lib/inc/header.php");
 				<p class="main__desc">ディスクリプション</p>
 			</header>
 			<article class="main__body">
-				<div class="u-btn">
-					<a href="#" class="u-btn__item"><span>標準ボタン</span></a>
-					<a href="#" class="u-btn__item_size-s"><span>小さいボタン</span></a>
-					<a href="#" class="u-btn__item_size-l"><span>大きいボタン</span></a>
-					<a href="#" class="u-btn__item_point"><span>強調ボタン</span></a>
-				</div>
+					<a href="#" class="u-btn"><span>標準ボタン</span></a>
+					<a href="#" class="u-btn_s"><span>小さいボタン</span></a>
+					<a href="#" class="u-btn_l"><span>大きいボタン</span></a>
+					<a href="#" class="u-btn_point"><span>強調ボタン</span></a>
+					<a href="#" class="u-btn_point_s"><span>小さい強調ボタン</span></a>
+					<a href="#" class="u-btn_point_l"><span>大きい強調ボタン</span></a>
 			</article>
 			<footer class="main__foot">
 				<p>セクションフッター</p>
