@@ -18,7 +18,12 @@
 	&__ttl{
 		font-size: 2.4rem;
 		border-bottom: 1px solid $color-brand;
-		margin-bottom: .5em;
+		margin: .5em 0;
+		&_s{
+			font-size: 2rem;
+			font-weight: bold;
+			margin: .5em 0;
+		}
 	}
 	&__desc{
 

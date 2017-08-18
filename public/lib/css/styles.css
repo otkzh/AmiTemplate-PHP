@@ -187,7 +187,8 @@ body {
 a {
   -webkit-tap-highlight-color: transparent;
   outline: none;
-  color: #3a8de6; }
+  color: #3a8de6;
+  font-weight: bold; }
   .no-js a:hover,
   .js.no-touchevents a:hover,
   .js.touchevents a.touch {
@@ -526,7 +527,11 @@ a {
   .main__ttl {
     font-size: 2.4rem;
     border-bottom: 1px solid #3a8de6;
-    margin-bottom: .5em; }
+    margin: .5em 0; }
+    .main__ttl_s {
+      font-size: 2rem;
+      font-weight: bold;
+      margin: .5em 0; }
   .main__body {
     margin-bottom: 24px; }
   .main__foot {
@@ -977,6 +982,52 @@ a {
     .js.touchevents .touch.u-btn_point_l {
       background-color: #aa183a;
       border-color: #aa183a; }
+
+.u-a, .u-a_icon {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline-block;
+  font-weight: bold;
+  text-decoration: none;
+  color: #3a8de6;
+  line-height: 1.2;
+  border-bottom: 2px solid transparent;
+  -webkit-transition: border-color .3s;
+  transition: border-color .3s; }
+  .no-js .u-a:hover, .no-js .u-a_icon:hover,
+  .js.no-touchevents .u-a:hover,
+  .js.no-touchevents .u-a_icon:hover,
+  .js.touchevents .u-a.touch,
+  .js.touchevents .touch.u-a_icon {
+    border-color: #3a8de6;
+    -webkit-transition: border-color .1s;
+    transition: border-color .1s; }
+  .u-a_icon::after {
+    content: "";
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0 4px 0 2px;
+    font-weight: bold; }
+  .u-a_icon[target='_blank']::after {
+    content: "\f14c";
+    font-weight: normal; }
+  .u-a_icon[rel='nofollow']::after {
+    content: "\f08e";
+    font-weight: normal; }
+  .u-a_icon[href*='.pdf']::after {
+    content: "\f15c";
+    font-weight: normal; }
+  .no-js .u-a_icon:hover::after,
+  .js.no-touchevents .u-a_icon:hover::after,
+  .js.touchevents .u-a_icon.touch::after {
+    -webkit-transform: translate3d(2px, -2px, 0);
+    transform: translate3d(2px, -2px, 0);
+    -webkit-transition: all .3s;
+    transition: all .3s; }
 
 body.home .main-v__row {
   position: relative;
