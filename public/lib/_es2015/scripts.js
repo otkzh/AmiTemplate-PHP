@@ -6,7 +6,9 @@ import inview_config from './base/_inview/__config.js';
 inview_config();
 
 import magPopup_config from  "./base/_mag-popup/__config.js";
-magPopup_config();
+if($('body.home').length){
+	magPopup_config();
+};
 
 import colorbox_config from  "./base/_colorbox/__config.js";
 colorbox_config() ;
@@ -21,7 +23,9 @@ import touchevents_config from './base/_touch-events/__config.js';
 touchevents_config();
 
 import vue_config from './base/_vue/__config.js';
-vue_config();
+if($('body.home').length){
+	vue_config();
+};
 
 //--------------------- common ---------------------//
 

@@ -17,8 +17,8 @@ export default function() {
 
 		$(".group1").colorbox({
 			rel:'group1',
-			width:"95%",
-			height:"95%",
+			width:"90%",
+			height:"90%",
 			transition:"fade"
 		});
 
