@@ -10,20 +10,28 @@
 //base
 @import "base/_reset/__html5reset_1.6.1.scss";
 @import "base/_setting/__font.scss";
+@import "base/_setting/__body.scss";
 
 //common
 @import "common/_header/__layout.scss";
 @import "common/_header/__menubar.scss";
 @import "common/_header/__gnav.scss";
-@import "common/_main/__layout.scss";
+
+@import "common/_main/__main.scss";
+@import "common/_main/__main-header.scss";
+@import "common/_main/__main-footer.scss";
 @import "common/_main/__pan.scss";
+@import "common/_main/__recommend.scss";
+
 @import "common/_footer/__layout.scss";
 @import "common/_footer/__pagetop.scss";
 @import "common/_footer/__fnav.scss";
+
 @import "common/_unit/__etc.scss";
 @import "common/_unit/__img.scss";
 @import "common/_unit/__btn.scss";
 @import "common/_unit/__a.scss";
+@import "common/_unit/__sns.scss";
 
 //page
 body.home{

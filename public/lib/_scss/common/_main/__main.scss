@@ -3,30 +3,33 @@
 	&__row{
 		@include wrap;
 	}
-	&__item{
+
+	//↓page-header
+	&__header{
+		position: relative;
 		margin-bottom: $bm-outer;
-		padding-top: $bm-outer;
-		@include max-screen($width-s){
-			margin-bottom: $bm-inner;
-			padding-top: $bm-inner;
-		}
 	}
 	//↓content-head
 	&__head{
 		margin-bottom: $bm-inner;
+
 	}
 	&__ttl{
 		font-size: 2.4rem;
-		border-bottom: 1px solid $color-brand;
+		color:$color-dark;
+		border-bottom: 1px solid $color-dark-lighten;
 		margin: .5em 0;
 		&_s{
+			box-sizing: border-box;
 			font-size: 2rem;
+			line-height: 1.2;
 			font-weight: bold;
 			margin: .5em 0;
+			color:$color-dark;
+			border-left: 3px solid $color-dark-lighten;
+			padding: 0;
+			padding-left: $bm/2;
 		}
-	}
-	&__desc{
-
 	}
 	//↓content-body
 	&__body{
@@ -36,7 +39,6 @@
 	&__foot{
 		box-sizing: border-box;
 		border-top: 1px solid $color-light;
-		color:$color-light-darken;
 		padding-top: $bm;
 	}
 }

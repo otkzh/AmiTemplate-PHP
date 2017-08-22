@@ -4,12 +4,12 @@
 	display: inline-block;
 	font-weight: bold;
 	text-decoration: none;
-	color:$color-brand;
+	//color:$color-brand;
 	line-height: 1.2;
 	border-bottom: 2px solid transparent;
 	transition: border-color .3s;
 	@include touch-hover(){
-		border-color: $color-brand;
+		border-color: $color-dark;
 		transition: border-color .1s;
 	}
 	&_icon{

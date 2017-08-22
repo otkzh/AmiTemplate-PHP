@@ -120,7 +120,7 @@ include ($inc_path."/lib/inc/header.php");
 				<p class="main__desc">ディスクリプション</p>
 			</header>
 			<article class="main__body">
-				<h3 class="main_ttl_s">u-a</h3>
+				<h3 class="main__ttl_s">u-a</h3>
 				<p>文章中の<a href="#" >指定なしリンク</a>です</p>
 				<p>文章中の<a href="#" class="u-a">標準リンク</a>です</p>
 				<p>文章中の<a href="#" class="u-a_icon">アイコン付きリンク</a>です</p>
@@ -130,7 +130,7 @@ include ($inc_path."/lib/inc/header.php");
 
 			</article>
 			<article class="main__body">
-				<h3 class="main_ttl_s">u-btn</h3>
+				<h3 class="main__ttl_s">u-btn</h3>
 				<a href="#" class="u-btn"><span>標準ボタン</span></a>
 				<a href="#" class="u-btn_s"><span>小さいボタン</span></a>
 				<a href="#" class="u-btn_l"><span>大きいボタン</span></a>
@@ -139,7 +139,7 @@ include ($inc_path."/lib/inc/header.php");
 				<a href="#" class="u-btn_point_l"><span>大きい強調ボタン</span></a>
 			</article>
 			<article class="main__body">
-				<h3 class="main_ttl_s">u-img</h3>
+				<h3 class="main__ttl_s">u-img</h3>
 				<img src="<?php echo $base_url ?>/lib/img/dummy/bronze@2x.png" alt="dummy" class="u-img__max">
 			</article>
 			<footer class="main__foot">
