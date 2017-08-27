@@ -31,7 +31,7 @@ include ($inc_path."/lib/inc/header.php");
 
 		<section class="main__body">
 			<header class="main__head">
-				<h1 class="main__ttl">セクションタイトル</h1>
+				<h2 lass="main__ttl">セクションタイトル</h2>
 				<p class="main__desc">ディスクリプション</p>
 			</header>
 			<div class="main__body">
@@ -46,7 +46,7 @@ include ($inc_path."/lib/inc/header.php");
 		</section>
 
 		<section class="main__body">
-			<h1 class="main__ttl">セクションタイトル</h1>
+			<h2 class="main__ttl">セクションタイトル</h2>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores repudiandae, nihil consectetur dignissimos facere, ipsa recusandae. Enim possimus distinctio, vel voluptatibus amet velit nisi iste quisquam tempore voluptates, doloremque impedit.</p>
 		</section>
 
@@ -97,10 +97,9 @@ include ($inc_path."/lib/inc/header.php");
 				</div>
 			</aside>
 
-		</div>
-	</footer>
+		</footer>
 
-</article>
+	</article>
 </main>
 
 <?php  include ($inc_path."/lib/inc/pagetop.php"); ?>
