@@ -21,7 +21,7 @@
 	},
 	"devDependencies": {
 		"babel-core": "^6.26.0",
-		"babel-loader": "^7.1.1",
+		"babel-loader": "^7.1.2",
 		"babel-polyfill": "^6.26.0",
 		"babel-preset-env": "^1.6.0",
 		"autoprefixer-loader": "^3.2.0",
@@ -42,7 +42,7 @@
 		"gulp-rename": "^1.2.2",
 		"gulp-sass": "^3.1.0",
 		"gulp-sass-image": "^1.0.4",
-		"gulp-sourcemaps": "^2.6.0",
+		"gulp-sourcemaps": "^2.6.1",
 		"gulp-uglify": "^3.0.0",
 		"browser-sync": "^2.18.13",
 		"imagemin-pngquant": "^5.0.1",
@@ -53,6 +53,8 @@
 		"jquery": "^3.2.1",
 		"jquery-colorbox": "^1.6.4",
 		"jquery-inview": "^1.1.2",
+		"jquery-bridget": "^2.0.1",
+		"masonry-layout": "^4.2.0",
 		"magnific-popup": "^1.1.0",
 		"swiper": "^3.4.2",
 		"vue": "^2.4.2"

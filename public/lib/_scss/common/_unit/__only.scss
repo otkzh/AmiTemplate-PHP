@@ -1,0 +1,14 @@
+.u-only{
+	&__pc{
+		display: none;
+		@include min-screen($width-m + 1px){
+			display: block;
+		}
+	}
+	&__sp{
+		display: none;
+		@include max-screen($width-m){
+			display: block;
+		}
+	}
+}

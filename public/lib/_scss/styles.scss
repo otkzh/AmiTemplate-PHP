@@ -5,6 +5,7 @@
 @import "mixin/_base/__bg-img.scss";
 @import "mixin/_base/__touch-hover.scss";
 @import "mixin/_base/__media-queries.scss";
+@import "mixin/_base/__crearfix.scss";
 @import "mixin/_output/__scss-img.scss";
 
 //base
@@ -32,6 +33,9 @@
 @import "common/_unit/__btn.scss";
 @import "common/_unit/__a.scss";
 @import "common/_unit/__sns.scss";
+@import "common/_unit/__small.scss";
+@import "common/_unit/__figure.scss";
+@import "common/_unit/__only.scss";
 
 //page
 body.home{

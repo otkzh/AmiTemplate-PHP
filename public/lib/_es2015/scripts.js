@@ -22,6 +22,12 @@ swiper_config();
 import touchevents_config from './base/_touch-events/__config.js';
 touchevents_config();
 
+import popwin_config from './base/_popup-window/__config.js';
+popwin_config();
+
+import masonry_config from './base/_masonry/__config.js';
+//masonry_config();
+
 import vue_config from './base/_vue/__config.js';
 if($('body.home').length){
 	vue_config();

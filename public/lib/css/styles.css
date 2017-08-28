@@ -1116,6 +1116,44 @@ html, body {
 .u-sns__item {
   margin: 0 4px; }
 
+.u-small {
+  display: inline-block;
+  font-size: 1.2rem;
+  line-height: 1.6; }
+
+.u-fig {
+  position: relative; }
+  .u-fig__cap, .u-fig__cap_darken, .u-fig__cap_left, .u-fig__cap_left_darken {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    font-size: 1.1rem;
+    display: inline-block;
+    font-weight: bold;
+    line-height: 1.2;
+    color: #e6e6e6;
+    text-shadow: 0px 0px 3px #000; }
+    .u-fig__cap_darken {
+      color: #000; }
+    .u-fig__cap_left {
+      right: auto;
+      left: 8px; }
+      .u-fig__cap_left_darken {
+        color: #000;
+        text-shadow: 0px 0px 3px #fff; }
+
+.u-only__pc {
+  display: none; }
+  @media screen and (min-width: 971px) {
+    .u-only__pc {
+      display: block; } }
+
+.u-only__sp {
+  display: none; }
+  @media screen and (max-width: 970px) {
+    .u-only__sp {
+      display: block; } }
+
 body.home .main-v__row {
   position: relative;
   margin-top: 24px;

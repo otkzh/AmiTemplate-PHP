@@ -1,0 +1,30 @@
+.u-fig{
+	position: relative;
+	&__cap{
+		$cap:&;
+		position: absolute;
+		right: $bm;
+		bottom: $bm;
+		font-size: 1.1rem;
+		display: inline-block;
+		font-weight: bold;
+		line-height: 1.2;
+		color:$color-light;
+		text-shadow: 0px 0px 3px #000;
+		&_darken{
+			@extend #{$cap};
+			color:#000;
+		}
+		&_left{
+			@extend #{$cap};
+			right: auto;
+			left: $bm;
+			&_darken{
+				@extend #{$cap};
+				color:#000;
+				text-shadow: 0px 0px 3px #fff;
+			}
+		}
+
+	}
+}
