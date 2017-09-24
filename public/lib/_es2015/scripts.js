@@ -33,6 +33,17 @@ if($('body.home').length){
 	vue_config();
 };
 
+import layzr_config from './base/_layzr/__config.js';
+layzr_config();
+
+import fullpage_config from './base/_fullpage/__config.js';
+if($('body.fullpage').length){
+fullpage_config();
+};
+
+import snapsvg_config from './base/_snapsvg/__config.js';
+snapsvg_config();
+
 //--------------------- common ---------------------//
 
 import headerFn from './common/_header/__menubar.js';

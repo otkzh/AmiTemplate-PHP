@@ -36,7 +36,11 @@ include ($inc_path."/lib/inc/header.php");
 			</header>
 			<div class="main__body">
 				<figure>
-					<img src="<?php echo $base_url ?>/lib/img/dummy/golden@2x.png" alt="dummy" class="u-img__max">
+					<img
+					data-src="<?php echo $base_url ?>/lib/img/dummy/golden.png"
+					data-retina="<?php echo $base_url ?>/lib/img/dummy/golden@2x.png"
+					alt="dummy"
+					class="u-img__max">
 				</figure>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores repudiandae, nihil consectetur dignissimos facere, ipsa recusandae. Enim possimus distinctio, vel voluptatibus amet velit nisi iste quisquam tempore voluptates, doloremque impedit.</p>
 			</div>
@@ -57,7 +61,10 @@ include ($inc_path."/lib/inc/header.php");
 					<article class="recommend__item">
 						<a href="#" class="recommend__inner">
 							<figure class="recommend__img">
-								<img src="<?php echo $img_url; ?>/dummy/golden.png" alt="dummy">
+								<img
+								data-src="<?php echo $img_url; ?>/dummy/golden.png"
+								data-retina="<?php echo $img_url; ?>/dummy/golden@2x.png"
+								alt="dummy">
 							</figure>
 							<h5 class="recommend__ttl">記事１</h5>
 							<p>この記事はダミーです。記事リストを表示しています。</p>
@@ -66,7 +73,10 @@ include ($inc_path."/lib/inc/header.php");
 					<article class="recommend__item">
 						<a href="#" class="recommend__inner">
 							<figure class="recommend__img">
-								<img src="<?php echo $img_url; ?>/dummy/golden.png" alt="dummy">
+								<img
+								data-src="<?php echo $img_url; ?>/dummy/golden.png"
+								data-retina="<?php echo $img_url; ?>/dummy/golden@2x.png"
+								alt="dummy">
 							</figure>
 							<h5 class="recommend__ttl">記事１</h5>
 							<p>この記事はダミーです。記事リストを表示しています。</p>
@@ -75,7 +85,10 @@ include ($inc_path."/lib/inc/header.php");
 					<article class="recommend__item">
 						<a href="#" class="recommend__inner">
 							<figure class="recommend__img">
-								<img src="<?php echo $img_url; ?>/dummy/golden.png" alt="dummy">
+								<img
+								data-src="<?php echo $img_url; ?>/dummy/golden.png"
+								data-retina="<?php echo $img_url; ?>/dummy/golden@2x.png"
+								alt="dummy">
 							</figure>
 							<h5 class="recommend__ttl">記事１</h5>
 							<p>この記事はダミーです。記事リストを表示しています。</p>
