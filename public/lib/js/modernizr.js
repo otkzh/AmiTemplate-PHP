@@ -1,6 +1,6 @@
 /*!
  * modernizr v3.5.0
- * Build https://modernizr.com/download?-MessageChannel-capture-checked-contains-cors-csstransforms3d-flexbox-hidden-history-json-opacity-performance-placeholder-search-sizes-srcset-svg-target-template-texttrackapi_track-time-touchevents-unicode-addtest-fnbind-printshiv-setclasses-testprop-dontmin
+ * Build https://modernizr.com/download?-MessageChannel-animation-canvas-capture-checked-contains-cors-csstransforms3d-dataset-flexbox-hidden-history-json-opacity-performance-placeholder-search-sizes-srcset-svg-target-template-time-touchevents-unicode-addtest-fnbind-printshiv-setclasses-testprop-dontmin
  *
  * Copyright (c)
  *  Faruk Ates
@@ -1445,6 +1445,27 @@
   ;
 /*!
 {
+  "name": "Canvas",
+  "property": "canvas",
+  "caniuse": "canvas",
+  "tags": ["canvas", "graphics"],
+  "polyfills": ["flashcanvas", "excanvas", "slcanvas", "fxcanvas"]
+}
+!*/
+/* DOC
+Detects support for the `<canvas>` element for 2D drawing.
+*/
+
+  // On the S60 and BB Storm, getContext exists, but always returns undefined
+  // so we actually have to call getContext() to verify
+  // github.com/Modernizr/Modernizr/issues/issue/97/
+  Modernizr.addTest('canvas', function() {
+    var elem = createElement('canvas');
+    return !!(elem.getContext && elem.getContext('2d'));
+  });
+
+/*!
+{
   "name": "Cross-Origin Resource Sharing",
   "property": "cors",
   "caniuse": "cors",
@@ -1946,6 +1967,31 @@ Detects support for the Navigation Timing API, for measuring browser and connect
 
   Modernizr.addTest('performance', !!prefixed('performance', window));
 
+/*!
+{
+  "name": "SVG",
+  "property": "svg",
+  "caniuse": "svg",
+  "tags": ["svg"],
+  "authors": ["Erik Dahlstrom"],
+  "polyfills": [
+    "svgweb",
+    "raphael",
+    "amplesdk",
+    "canvg",
+    "svg-boilerplate",
+    "sie",
+    "dojogfx",
+    "fabricjs"
+  ]
+}
+!*/
+/* DOC
+Detects support for SVG in `<embed>` or `<object>` elements.
+*/
+
+  Modernizr.addTest('svg', !!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect);
+
 
   /**
    * List of property values to set for css tests. See ticket #21
@@ -2139,6 +2185,24 @@ Detects if unicode characters are supported in the current document.
     return bool;
 
   });
+
+/*!
+{
+  "name": "Web Animation API",
+  "property": "animation",
+  "tags": ["webanimations"],
+  "polyfills": ["webanimationsjs"],
+  "notes": [{
+    "name": "Introducing Web Animations",
+    "href": "http://brian.sol1.net/svg/2013/06/26/introducing-web-animations/"
+  }]
+}
+!*/
+/* DOC
+Detects support for the Web Animation API, a way to create css animations in js
+*/
+
+  Modernizr.addTest('webanimations', 'animate' in createElement('div'));
 
 /*!
 {
@@ -2354,6 +2418,24 @@ Detects support for the ':target' CSS pseudo-class.
 
 /*!
 {
+  "name": "dataset API",
+  "caniuse": "dataset",
+  "property": "dataset",
+  "tags": ["dom"],
+  "builderAliases": ["dom_dataset"],
+  "authors": ["@phiggins42"]
+}
+!*/
+
+  // dataset API for data-* attributes
+  Modernizr.addTest('dataset', function() {
+    var n = createElement('div');
+    n.setAttribute('data-a-b', 'c');
+    return !!(n.dataset && n.dataset.aB === 'c');
+  });
+
+/*!
+{
   "name": "[hidden] Attribute",
   "property": "hidden",
   "tags": ["dom"],
@@ -2405,29 +2487,6 @@ Does the browser support the HTML5 [hidden] attribute?
 !*/
 
   Modernizr.addTest('time', 'valueAsDate' in createElement('time'));
-
-/*!
-{
-  "name": "Track element and Timed Text Track",
-  "property": ["texttrackapi", "track"],
-  "tags": ["elem"],
-  "builderAliases": ["elem_track"],
-  "authors": ["Addy Osmani"],
-  "notes": [{
-    "name": "W3 track Element Spec",
-    "href": "http://www.w3.org/TR/html5/video.html#the-track-element"
-  },{
-    "name": "W3 track API Spec",
-    "href": "http://www.w3.org/TR/html5/media-elements.html#text-track-api"
-  }],
-  "warnings": ["While IE10 has implemented the track element, IE10 does not expose the underlying APIs to create timed text tracks by JS (really sad)"]
-}
-!*/
-
-  Modernizr.addTest('texttrackapi', typeof (createElement('video').addTextTrack) === 'function');
-
-  // a more strict test for track including UI support: document.createElement('track').kind === 'subtitles'
-  Modernizr.addTest('track', 'kind' in createElement('track'));
 
 /*!
 {
@@ -2540,31 +2599,6 @@ Test for the srcset attribute of images
 */
 
   Modernizr.addTest('srcset', 'srcset' in createElement('img'));
-
-/*!
-{
-  "name": "SVG",
-  "property": "svg",
-  "caniuse": "svg",
-  "tags": ["svg"],
-  "authors": ["Erik Dahlstrom"],
-  "polyfills": [
-    "svgweb",
-    "raphael",
-    "amplesdk",
-    "canvg",
-    "svg-boilerplate",
-    "sie",
-    "dojogfx",
-    "fabricjs"
-  ]
-}
-!*/
-/* DOC
-Detects support for SVG in `<embed>` or `<object>` elements.
-*/
-
-  Modernizr.addTest('svg', !!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect);
 
 
   // Run each test

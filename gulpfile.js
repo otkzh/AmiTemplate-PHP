@@ -217,6 +217,7 @@ gulp.task('webpack', function () {
 				jQuery: "jquery",
 				$: "jquery",
 				jquery: "jquery",
+				IScroll: "fullpage.js/vendors/scrolloverflow.min"
 			})
 		]
 	}))
