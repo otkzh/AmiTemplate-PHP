@@ -22,7 +22,7 @@
 	"devDependencies": {
 		"autoprefixer-loader": "^3.2.0",
 		"babel-core": "^6.26.0",
-		"babel-loader": "^7.1.2",
+		"babel-loader": "^7.1.1",
 		"babel-polyfill": "^6.26.0",
 		"babel-preset-env": "^1.6.0",
 		"browser-sync": "^2.18.13",
@@ -53,14 +53,14 @@
 	"dependencies": {
 		"fullpage.js": "^2.9.4",
 		"jquery": "^3.2.1",
+		"jquery-bridget": "^2.0.1",
 		"jquery-colorbox": "^1.6.4",
 		"jquery-inview": "^1.1.2",
-		"jquery-bridget": "^2.0.1",
-		"masonry-layout": "^4.2.0",
-		"magnific-popup": "^1.1.0",
 		"layzr.js": "^2.2.2",
+		"magnific-popup": "^1.1.0",
+		"masonry-layout": "^4.2.0",
 		"snapsvg": "^0.5.1",
-		"swiper": "^4.0.0-beta.4",
+		"swiper": "^4.0.0",
 		"vue": "^2.4.4"
 	}
 }
