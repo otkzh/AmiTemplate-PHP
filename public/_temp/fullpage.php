@@ -1,8 +1,8 @@
 <?php
-$title = "サンプルページ";
+$pageTtl = "サンプルページ";
 include ("../function.php");
-$metaTtl = $title."-".$siteName;
-$metaDesc = $title."のページです。".$siteDescription;
+$metaTtl = $pageTtl."-".$siteName;
+$metaDesc = $siteDescription;
 $body_class ="page-temp fullpage";
 include ($inc_path."/lib/inc/head.php");
 include ($inc_path."/lib/inc/header.php");

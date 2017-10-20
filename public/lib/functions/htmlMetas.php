@@ -2,10 +2,9 @@
 
 #メタデーター管理
 
-$siteName = "サイト名";
-$siteDescription = "サイトディスクリプション";
-$keyWords = "xxxx,xxxxx,xxxx";
+$siteName = "AmiTemplate";
+$siteDescription = $siteName."の".$pageTtl."ページです。サイトディスクリプション";
 
-global $siteName,$keyWords,$siteDescription;
+global $pageTtl;
 
 ?>

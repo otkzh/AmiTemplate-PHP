@@ -1,8 +1,8 @@
 <?php
-$title = "サンプルページ";
+$pageTtl = "サンプルページ";
 include ("../function.php");
-$metaTtl = $title."-".$siteName;
-$metaDesc = $title."のページです。".$siteDescription;
+$metaTtl = $pageTtl."-".$siteName;
+$metaDesc = $siteDescription;
 $body_class ="temp sample";
 include ($inc_path."/lib/inc/head.php");
 include ($inc_path."/lib/inc/header.php");
@@ -17,7 +17,7 @@ include ($inc_path."/lib/inc/header.php");
 			$panAry[] = array($base_url ,"パンくず名");
 			include ($inc_path."/lib/inc/pan.php");
 			?>
-			<h1 class="main-header__ttl"><?php echo $title; ?></h1>
+			<h1 class="main-header__ttl"><?php echo $pageTtl; ?></h1>
 			<p class="main-header__desc">ディスクリプション</p>
 		</header>
 
