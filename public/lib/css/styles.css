@@ -1154,39 +1154,4 @@ html, body {
     .u-only__sp {
       display: block; } }
 
-body.home .main-v__row {
-  position: relative;
-  margin-top: 24px;
-  background-color: #e6e6e6; }
-  @media screen and (max-width: 666px) {
-    body.home .main-v__row {
-      margin-top: 8px; } }
-
-body.home .main-v__item {
-  position: relative;
-  z-index: 2;
-  max-width: 100%;
-  width: 100%;
-  height: auto;
-  opacity: 0; }
-  body.home .main-v__item.active {
-    opacity: 1;
-    -webkit-transition: all 1s;
-    transition: all 1s; }
-
-body.home .main-v__desc {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center; }
+/*# sourceMappingURL=styles.css.map */
