@@ -24,6 +24,7 @@ var rename = require('gulp-rename');
 var sass = require('gulp-sass');
 var sassImage = require('gulp-sass-image');
 var autoprefixer = require('gulp-autoprefixer');
+var sourcemaps = require("gulp-sourcemaps");
 var cssmin = require('gulp-cssmin');
 
 //html php
@@ -124,11 +125,13 @@ gulp.task('scss-img', function () {
 gulp.task('css', function () {
 	return gulp.src([paths.scss + '/**/*.scss', paths.no])
 	.pipe(plumber(plumberErrorHandler))
+	.pipe(sourcemaps.init())
 	.pipe(sass.sync().on('error', sass.logError))
 	.pipe(autoprefixer({
 		browsers: ['last 2 versions', 'android >= 4.4', 'IE 11'],
 		cascade: false,
 	}))
+	.pipe(sourcemaps.write('./'))
 	.pipe(gulp.dest(paths.css));
 });
 
