@@ -2,10 +2,12 @@
 
 /*
 
-$ gulp = scssやjavascriptファイルの更新を検知して、自動で更新。
-$ gulp dest = 納品用に整形してdestフォルダーへ書き出し。
-$ gulp scss-img = 画像のサイズを取得してmixinへ書き出し。
-$ gulp img-min = 画像ファイルを圧縮※たまに実行しておくと便利。
+$ npm run gulp = scssやjavascriptファイルの更新を検知して、自動で更新。
+$ npm run gulp dest = 納品用に整形してdestフォルダーへ書き出し。
+$ npm run gulp css = scssをcssへ書き出し
+$ npm run gulp js = es2015をjsへ書き出し
+$ npm run gulp scss-img = 画像のサイズを取得してmixinへ書き出し。
+$ npm run gulp img-min = 画像ファイルを圧縮※たまに実行しておくと便利。
 
 */
 

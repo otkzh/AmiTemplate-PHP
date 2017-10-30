@@ -16,8 +16,8 @@
   },
   "private": true,
   "scripts": {
-    "preinstall": "npm install -g gulp@3.9.1",
-    "install": "npm rebuild node-sass --force"
+    "install": "npm rebuild node-sass --force",
+    "gulp": "gulp"
   },
   "devDependencies": {
     "autoprefixer-loader": "^3.2.0",
