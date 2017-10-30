@@ -7,7 +7,7 @@ inview_config();
 
 import magPopup_config from  "./base/_mag-popup/__config.js";
 if($('body.home').length){
-	magPopup_config();
+  magPopup_config();
 };
 
 import colorbox_config from  "./base/_colorbox/__config.js";
@@ -30,7 +30,7 @@ import masonry_config from './base/_masonry/__config.js';
 
 import vue_config from './base/_vue/__config.js';
 if($('body.home').length){
-	vue_config();
+  vue_config();
 };
 
 import layzr_config from './base/_layzr/__config.js';
@@ -38,7 +38,7 @@ layzr_config();
 
 import fullpage_config from './base/_fullpage/__config.js';
 if($('body.fullpage').length){
-fullpage_config();
+  fullpage_config();
 };
 
 import snapsvg_config from './base/_snapsvg/__config.js';
@@ -57,5 +57,5 @@ import mainV_config from './page/_home/__main-v.js';
 import './page/_home/__main-v.scss';
 
 if($('body.home').length){
-	mainV_config();
+  mainV_config();
 };

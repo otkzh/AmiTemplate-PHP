@@ -13,22 +13,22 @@ import './__style.scss';
 //export
 export default function() {
 
-	$(function(){
+  $(function(){
 
-		$(".group1").colorbox({
-			rel:'group1',
-			width:"90%",
-			height:"90%",
-			transition:"fade"
-		});
+    $(".group1").colorbox({
+      rel:'group1',
+      width:"90%",
+      height:"90%",
+      transition:"fade"
+    });
 
-		$(".group2").colorbox({
-			rel:'group2',
-			width:"95%",
-			height:"95%",
-			transition:"fade"
-		});
+    $(".group2").colorbox({
+      rel:'group2',
+      width:"95%",
+      height:"95%",
+      transition:"fade"
+    });
 
-	});
+  });
 
 };

@@ -12,12 +12,12 @@ import './__style.scss';
 //export
 export default function(){
 
-	$('.inview-target').on('inview', function(event, isInView) {
-		if (isInView) {
-			$(this).addClass('inview');
-		} else {
-			$(this).removeClass('inview');
-		}
-	});
+  $('.inview-target').on('inview', function(event, isInView) {
+    if (isInView) {
+      $(this).addClass('inview');
+    } else {
+      $(this).removeClass('inview');
+    }
+  });
 
 };

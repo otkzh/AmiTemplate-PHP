@@ -19,10 +19,10 @@ jQueryBridget( 'masonry', Masonry, $ );
 //export
 export default function() {
 
-$('.grid').masonry({
-  itemSelector: '.grid-item',
-  // use element for option
-  percentPosition: true
-});
+  $('.grid').masonry({
+    itemSelector: '.grid-item',
+    // use element for option
+    percentPosition: true
+  });
 
 };
