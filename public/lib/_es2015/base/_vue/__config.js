@@ -9,11 +9,11 @@ import Vue from 'Vue';
 //export
 export default function () {
 
-	var app = new Vue({
-		el: '#app',
-		data: {
-			message: 'Hello Vue!'
-		}
-	})
+  var app = new Vue({
+    el: '#app',
+    data: {
+      message: 'Hello Vue!'
+    }
+  })
 
 };
