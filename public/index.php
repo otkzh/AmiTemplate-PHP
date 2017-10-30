@@ -3,7 +3,7 @@ $pageTtl = "トップ";
 include ("function.php");
 $metaTtl = $siteName;
 $metaDesc = $siteDescription;
-$body_class ="home";
+$body_class ="home vue";
 include ($inc_path."/lib/inc/head.php");
 include ($inc_path."/lib/inc/header.php");
 ?>
