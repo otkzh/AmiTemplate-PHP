@@ -4,7 +4,7 @@ site:http://idangero.us/swiper/
 ***********************/
 
 //node_module
-import Swiper from "../../../../../node_modules/swiper/dist/js/swiper.js";
+import Swiper from "swiper";
 import "../../../../../node_modules/swiper/dist/css/swiper.css";
 
 //original-css
