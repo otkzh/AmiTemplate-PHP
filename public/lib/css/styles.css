@@ -1011,17 +1011,21 @@ u-btn(botton)
 
 style comment.
 
-@deprecated
-@非推奨
-@todo
-@your-attribute
-
 ```
 <a href="#" class="u-btn">ボタン</a>
+<a href="#" class="u-btn_s">ボタン</a>
 <a href="#" class="u-btn_l">ボタン</a>
+
+<a href="#" class="u-btn_point">ボタン</a>
+<a href="#" class="u-btn_point_s">ボタン</a>
+<a href="#" class="u-btn_point_l">ボタン</a>
+
+<a href="#" class="u-btn">ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト</a>
 ```
 */
 .u-btn, .u-btn_s, .u-btn_point_s, .u-btn_l, .u-btn_point_l, .u-btn_point {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1035,11 +1039,15 @@ style comment.
   text-decoration: none;
   max-width: 320px;
   width: 100%;
-  height: 45px;
+  min-height: 45px;
+  padding: 8px;
   border: 1px solid #3a8de6;
   color: #3a8de6;
-  border-radius: 4px;
-  margin-bottom: 8px; }
+  border-radius: 3px;
+  margin-bottom: 8px;
+  background-color: #fff;
+  -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); }
   .no-js .u-btn:hover, .no-js .u-btn_s:hover, .no-js .u-btn_point_s:hover, .no-js .u-btn_l:hover, .no-js .u-btn_point_l:hover, .no-js .u-btn_point:hover,
   .no-touchevents .u-btn:hover,
   .no-touchevents .u-btn_s:hover,
