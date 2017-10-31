@@ -128,9 +128,9 @@ gulp.task('scss-img', function () {
 gulp.task('doc', function() {
   gulp.src(paths.scss + '/**/*.scss')
   .pipe(frontNote({
+    title:'AmiTemplate styleguide',
+    overview: 'styleguide-index.md',
     out: './doc',
-    //overview: './overview.md',
-    //includePath: 'assets/**/*',
     css:'../public/lib/css/styles.css',
     script:['../public/lib/js/modernizr.js','../public/lib/js/scripts.js']
   }));

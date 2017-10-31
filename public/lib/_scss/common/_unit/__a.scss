@@ -1,34 +1,23 @@
 /*
 #styleguide
-style title
+.u-a(text-link)
 
 style comment.
 
-@deprecated
-@非推奨
-@todo
-@your-attribute
-
 ```
-sample code here.
+<a href="#">link</a>
+<a href="#" class="u-a__icon">link</a>
+<a href="#" class="u-a__icon" target="_blank">link</a>
+<a href="#" class="u-a__icon" target="_blank" rel="nofollow">link</a>
+<a href="#.pdf" class="u-a__icon">link</a>
 ```
 */
 
 .u-a{
 	$this:&;
 	box-sizing: border-box;
-	display: inline-block;
-	font-weight: bold;
-	text-decoration: none;
-	//color:$color-brand;
-	line-height: 1.2;
-	border-bottom: 2px solid transparent;
-	transition: border-color .3s;
-	@include touch-hover(){
-		border-color: $color-dark;
-		transition: border-color .1s;
-	}
-	&_icon{
+  display: inline-block;
+	&__icon{
 		@extend #{$this};
 		&::after{
 			@include icon-font('\f061');
@@ -56,7 +45,7 @@ sample code here.
 		}
 		@include touch-hover(){
 			&::after{
-				transform: translate3d(2px ,-2px ,0);
+				transform: translate3d(2px ,0 ,0);
 				transition: all .3s;
 			}
 		}

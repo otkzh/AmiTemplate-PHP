@@ -189,8 +189,8 @@ a {
   outline: none;
   color: #595454; }
   .no-js a:hover,
-  .js.no-touchevents a:hover,
-  .js.touchevents a.touch {
+  .no-touchevents a:hover,
+  .touchevents a.touch {
     text-decoration: none; }
 
 ::-moz-selection,
@@ -273,8 +273,8 @@ html, body {
     .menubar {
       display: none; } }
   .no-js .menubar:hover,
-  .js.no-touchevents .menubar:hover,
-  .js.touchevents .menubar.touch {
+  .no-touchevents .menubar:hover,
+  .touchevents .menubar.touch {
     background-color: #e6e6e6;
     cursor: pointer; }
   .menubar__row {
@@ -454,16 +454,16 @@ html, body {
     text-decoration: none;
     background-color: #fff; }
     .no-js .gnav__item a:hover, .no-js .gnav__item_home a:hover, .no-js .gnav__item_temp a:hover, .no-js .gnav__item_sample a:hover, .no-js .gnav__item_contact a:hover,
-    .js.no-touchevents .gnav__item a:hover,
-    .js.no-touchevents .gnav__item_home a:hover,
-    .js.no-touchevents .gnav__item_temp a:hover,
-    .js.no-touchevents .gnav__item_sample a:hover,
-    .js.no-touchevents .gnav__item_contact a:hover,
-    .js.touchevents .gnav__item a.touch,
-    .js.touchevents .gnav__item_home a.touch,
-    .js.touchevents .gnav__item_temp a.touch,
-    .js.touchevents .gnav__item_sample a.touch,
-    .js.touchevents .gnav__item_contact a.touch {
+    .no-touchevents .gnav__item a:hover,
+    .no-touchevents .gnav__item_home a:hover,
+    .no-touchevents .gnav__item_temp a:hover,
+    .no-touchevents .gnav__item_sample a:hover,
+    .no-touchevents .gnav__item_contact a:hover,
+    .touchevents .gnav__item a.touch,
+    .touchevents .gnav__item_home a.touch,
+    .touchevents .gnav__item_temp a.touch,
+    .touchevents .gnav__item_sample a.touch,
+    .touchevents .gnav__item_contact a.touch {
       background-color: #e6e6e6;
       color: #fff; }
     @media screen and (max-width: 666px) {
@@ -614,12 +614,12 @@ html, body {
     text-decoration: none;
     font-size: 1.2rem; }
     .no-js .pan__item a:hover, .no-js .pan__item_home a:hover, .no-js .pan__item_thispage a:hover,
-    .js.no-touchevents .pan__item a:hover,
-    .js.no-touchevents .pan__item_home a:hover,
-    .js.no-touchevents .pan__item_thispage a:hover,
-    .js.touchevents .pan__item a.touch,
-    .js.touchevents .pan__item_home a.touch,
-    .js.touchevents .pan__item_thispage a.touch {
+    .no-touchevents .pan__item a:hover,
+    .no-touchevents .pan__item_home a:hover,
+    .no-touchevents .pan__item_thispage a:hover,
+    .touchevents .pan__item a.touch,
+    .touchevents .pan__item_home a.touch,
+    .touchevents .pan__item_thispage a.touch {
       text-decoration: underline; }
   .pan__item_home a span {
     display: none; }
@@ -746,15 +746,15 @@ html, body {
     .pagetop__item span {
       display: none; }
     .no-js .pagetop__item:hover,
-    .js.no-touchevents .pagetop__item:hover,
-    .js.touchevents .pagetop__item.touch {
+    .no-touchevents .pagetop__item:hover,
+    .touchevents .pagetop__item.touch {
       background-color: #3a8de6;
       color: #fff;
       -webkit-transition: all .5s;
       transition: all .5s; }
       .no-js .pagetop__item:hover::before,
-      .js.no-touchevents .pagetop__item:hover::before,
-      .js.touchevents .pagetop__item.touch::before {
+      .no-touchevents .pagetop__item:hover::before,
+      .touchevents .pagetop__item.touch::before {
         -webkit-transition: -webkit-transform .5s .3s;
         transition: -webkit-transform .5s .3s;
         transition: transform .5s .3s;
@@ -812,16 +812,16 @@ html, body {
         .fnav__item a, .fnav__item_home a, .fnav__item_temp a, .fnav__item_sample a, .fnav__item_contact a {
           border-left: 1px solid #e6e6e6; } }
       .no-js .fnav__item a:hover, .no-js .fnav__item_home a:hover, .no-js .fnav__item_temp a:hover, .no-js .fnav__item_sample a:hover, .no-js .fnav__item_contact a:hover,
-      .js.no-touchevents .fnav__item a:hover,
-      .js.no-touchevents .fnav__item_home a:hover,
-      .js.no-touchevents .fnav__item_temp a:hover,
-      .js.no-touchevents .fnav__item_sample a:hover,
-      .js.no-touchevents .fnav__item_contact a:hover,
-      .js.touchevents .fnav__item a.touch,
-      .js.touchevents .fnav__item_home a.touch,
-      .js.touchevents .fnav__item_temp a.touch,
-      .js.touchevents .fnav__item_sample a.touch,
-      .js.touchevents .fnav__item_contact a.touch {
+      .no-touchevents .fnav__item a:hover,
+      .no-touchevents .fnav__item_home a:hover,
+      .no-touchevents .fnav__item_temp a:hover,
+      .no-touchevents .fnav__item_sample a:hover,
+      .no-touchevents .fnav__item_contact a:hover,
+      .touchevents .fnav__item a.touch,
+      .touchevents .fnav__item_home a.touch,
+      .touchevents .fnav__item_temp a.touch,
+      .touchevents .fnav__item_sample a.touch,
+      .touchevents .fnav__item_contact a.touch {
         background-color: #e6e6e6;
         color: #fff; }
       @media screen and (max-width: 666px) {
@@ -1018,6 +1018,7 @@ style comment.
 
 ```
 <a href="#" class="u-btn">ボタン</a>
+<a href="#" class="u-btn_l">ボタン</a>
 ```
 */
 .u-btn, .u-btn_s, .u-btn_point_s, .u-btn_l, .u-btn_point_l, .u-btn_point {
@@ -1040,18 +1041,18 @@ style comment.
   border-radius: 4px;
   margin-bottom: 8px; }
   .no-js .u-btn:hover, .no-js .u-btn_s:hover, .no-js .u-btn_point_s:hover, .no-js .u-btn_l:hover, .no-js .u-btn_point_l:hover, .no-js .u-btn_point:hover,
-  .js.no-touchevents .u-btn:hover,
-  .js.no-touchevents .u-btn_s:hover,
-  .js.no-touchevents .u-btn_point_s:hover,
-  .js.no-touchevents .u-btn_l:hover,
-  .js.no-touchevents .u-btn_point_l:hover,
-  .js.no-touchevents .u-btn_point:hover,
-  .js.touchevents .u-btn.touch,
-  .js.touchevents .touch.u-btn_s,
-  .js.touchevents .touch.u-btn_point_s,
-  .js.touchevents .touch.u-btn_l,
-  .js.touchevents .touch.u-btn_point_l,
-  .js.touchevents .touch.u-btn_point {
+  .no-touchevents .u-btn:hover,
+  .no-touchevents .u-btn_s:hover,
+  .no-touchevents .u-btn_point_s:hover,
+  .no-touchevents .u-btn_l:hover,
+  .no-touchevents .u-btn_point_l:hover,
+  .no-touchevents .u-btn_point:hover,
+  .touchevents .u-btn.touch,
+  .touchevents .touch.u-btn_s,
+  .touchevents .touch.u-btn_point_s,
+  .touchevents .touch.u-btn_l,
+  .touchevents .touch.u-btn_point_l,
+  .touchevents .touch.u-btn_point {
     background-color: #3a8de6;
     color: #fff; }
   .u-btn_s, .u-btn_point_s {
@@ -1063,49 +1064,34 @@ style comment.
     border-color: #e12e57;
     color: #fff; }
     .no-js .u-btn_point:hover, .no-js .u-btn_point_s:hover, .no-js .u-btn_point_l:hover,
-    .js.no-touchevents .u-btn_point:hover,
-    .js.no-touchevents .u-btn_point_s:hover,
-    .js.no-touchevents .u-btn_point_l:hover,
-    .js.touchevents .u-btn_point.touch,
-    .js.touchevents .touch.u-btn_point_s,
-    .js.touchevents .touch.u-btn_point_l {
+    .no-touchevents .u-btn_point:hover,
+    .no-touchevents .u-btn_point_s:hover,
+    .no-touchevents .u-btn_point_l:hover,
+    .touchevents .u-btn_point.touch,
+    .touchevents .touch.u-btn_point_s,
+    .touchevents .touch.u-btn_point_l {
       background-color: #aa183a;
       border-color: #aa183a; }
 
 /*
 #styleguide
-style title
+.u-a(text-link)
 
 style comment.
 
-@deprecated
-@非推奨
-@todo
-@your-attribute
-
 ```
-sample code here.
+<a href="#">link</a>
+<a href="#" class="u-a__icon">link</a>
+<a href="#" class="u-a__icon" target="_blank">link</a>
+<a href="#" class="u-a__icon" target="_blank" rel="nofollow">link</a>
+<a href="#.pdf" class="u-a__icon">link</a>
 ```
 */
-.u-a, .u-a_icon {
+.u-a, .u-a__icon {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  display: inline-block;
-  font-weight: bold;
-  text-decoration: none;
-  line-height: 1.2;
-  border-bottom: 2px solid transparent;
-  -webkit-transition: border-color .3s;
-  transition: border-color .3s; }
-  .no-js .u-a:hover, .no-js .u-a_icon:hover,
-  .js.no-touchevents .u-a:hover,
-  .js.no-touchevents .u-a_icon:hover,
-  .js.touchevents .u-a.touch,
-  .js.touchevents .touch.u-a_icon {
-    border-color: #595454;
-    -webkit-transition: border-color .1s;
-    transition: border-color .1s; }
-  .u-a_icon::after {
+  display: inline-block; }
+  .u-a__icon::after {
     content: "";
     display: inline-block;
     font: normal normal normal 14px/1 FontAwesome;
@@ -1115,20 +1101,20 @@ sample code here.
     -moz-osx-font-smoothing: grayscale;
     margin: 0 4px 0 2px;
     font-weight: bold; }
-  .u-a_icon[target='_blank']::after {
+  .u-a__icon[target='_blank']::after {
     content: "\f14c";
     font-weight: normal; }
-  .u-a_icon[rel='nofollow']::after {
+  .u-a__icon[rel='nofollow']::after {
     content: "\f08e";
     font-weight: normal; }
-  .u-a_icon[href*='.pdf']::after {
+  .u-a__icon[href*='.pdf']::after {
     content: "\f15c";
     font-weight: normal; }
-  .no-js .u-a_icon:hover::after,
-  .js.no-touchevents .u-a_icon:hover::after,
-  .js.touchevents .u-a_icon.touch::after {
-    -webkit-transform: translate3d(2px, -2px, 0);
-    transform: translate3d(2px, -2px, 0);
+  .no-js .u-a__icon:hover::after,
+  .no-touchevents .u-a__icon:hover::after,
+  .touchevents .u-a__icon.touch::after {
+    -webkit-transform: translate3d(2px, 0, 0);
+    transform: translate3d(2px, 0, 0);
     -webkit-transition: all .3s;
     transition: all .3s; }
 
