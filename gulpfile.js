@@ -28,6 +28,7 @@ var sassImage = require('gulp-sass-image');
 var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require("gulp-sourcemaps");
 var cssmin = require('gulp-cssmin');
+var frontNote = require('gulp-frontnote');
 
 //html php
 //var prettify = require('gulp-html-prettify');
@@ -121,6 +122,18 @@ gulp.task('scss-img', function () {
     createPlaceholder: false
   }))
   .pipe(gulp.dest(paths.scss + '/mixin/_output/'));
+});
+
+//styleguide書き出し
+gulp.task('doc', function() {
+  gulp.src(paths.scss + '/**/*.scss')
+  .pipe(frontNote({
+    out: './doc',
+    //overview: './overview.md',
+    //includePath: 'assets/**/*',
+    css:'../public/lib/css/styles.css',
+    script:['../public/lib/js/modernizr.js','../public/lib/js/scripts.js']
+  }));
 });
 
 //scssをcssへ変換
@@ -273,6 +286,6 @@ gulp.task('default', ['browser-sync'], function () {
   gulp.watch(paths.css + '/**/*.css').on("change", browserSync.reload);
   gulp.watch(paths.js + '/**/*.js').on("change", browserSync.reload);
   gulp.watch(paths.img + '/**/*.{png,jpg,gif,svg,ico}', ['scss-img']);
-  gulp.watch(paths.scss + '/**/*.scss', ['css']);
+  gulp.watch(paths.scss + '/**/*.scss', ['css','doc']);
   gulp.watch([paths.es2015 + '/**/*.{js,scss}', '!**/modernizr.js'], ['js']);
 });

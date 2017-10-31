@@ -1005,6 +1005,21 @@ html, body {
   width: 100%;
   height: auto; }
 
+/*
+#styleguide
+u-btn(botton)
+
+style comment.
+
+@deprecated
+@非推奨
+@todo
+@your-attribute
+
+```
+<a href="#" class="u-btn">ボタン</a>
+```
+*/
 .u-btn, .u-btn_s, .u-btn_point_s, .u-btn_l, .u-btn_point_l, .u-btn_point {
   position: relative;
   display: -webkit-box;
@@ -1057,6 +1072,21 @@ html, body {
       background-color: #aa183a;
       border-color: #aa183a; }
 
+/*
+#styleguide
+style title
+
+style comment.
+
+@deprecated
+@非推奨
+@todo
+@your-attribute
+
+```
+sample code here.
+```
+*/
 .u-a, .u-a_icon {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -1153,5 +1183,42 @@ html, body {
   @media screen and (max-width: 970px) {
     .u-only__sp {
       display: block; } }
+
+body.home .main-v__row {
+  position: relative;
+  margin-top: 24px;
+  background-color: #e6e6e6; }
+  @media screen and (max-width: 666px) {
+    body.home .main-v__row {
+      margin-top: 8px; } }
+
+body.home .main-v__item {
+  position: relative;
+  z-index: 2;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  opacity: 0; }
+  body.home .main-v__item.active {
+    opacity: 1;
+    -webkit-transition: all 1s;
+    transition: all 1s; }
+
+body.home .main-v__desc {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
 
 /*# sourceMappingURL=styles.css.map */
