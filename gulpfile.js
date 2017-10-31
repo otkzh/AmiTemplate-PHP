@@ -130,7 +130,7 @@ gulp.task('doc', function() {
   .pipe(frontNote({
     title:'AmiTemplate styleguide',
     overview: 'styleguide-index.md',
-    out: './doc',
+    out: './styleguide',
     css:'../public/lib/css/styles.css',
     script:['../public/lib/js/modernizr.js','../public/lib/js/scripts.js']
   }));
