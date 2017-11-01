@@ -28,7 +28,7 @@ var sassImage = require('gulp-sass-image');
 var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require("gulp-sourcemaps");
 var cssmin = require('gulp-cssmin');
-var frontNote = require('gulp-frontnote');
+var aigis = require("gulp-aigis");
 
 //html php
 //var prettify = require('gulp-html-prettify');
@@ -44,6 +44,9 @@ var modernizr = require('gulp-modernizr');
 var uglify = require('gulp-uglify');
 
 
+
+
+
 //--------------------- セッティング ---------------------//
 
 var hostName = "192.168.99.99"; //browserSyncするローカルIPを記載
@@ -57,7 +60,7 @@ var paths = {
   "js": "public/lib/js",
   "scss": "public/lib/_scss",
   "es2015": "public/lib/_es2015",
-  "no": ("!**/_*", "!**/_**"),
+  "no": ("!**/_*", "!**/_**","!public/_styleguide/**"),
 }
 
 //各種パス関連(dest)
@@ -125,15 +128,9 @@ gulp.task('scss-img', function () {
 });
 
 //styleguide書き出し
-gulp.task('doc', function() {
-  gulp.src(paths.scss + '/**/*.scss')
-  .pipe(frontNote({
-    title:'AmiTemplate styleguide',
-    overview: 'styleguide-index.md',
-    out: './styleguide',
-    css:'../public/lib/css/styles.css',
-    script:['../public/lib/js/modernizr.js','../public/lib/js/scripts.js']
-  }));
+gulp.task("doc", function() {
+  gulp.src("./styleguide-config/aigis_config.yml")
+  .pipe(aigis());
 });
 
 //scssをcssへ変換
@@ -272,7 +269,7 @@ gulp.task('js-dest', function () {
 
 //納品用書き出し
 gulp.task('etc-dest', function () {
-  return gulp.src(paths.dir + '/**/*.{eot,svg,ttf,woff,woff2,otf,txt,json}')
+  return gulp.src(paths.dir + '/**/*.{eot,svg,ttf,woff,woff2,otf,txt,json,pem}')
   .pipe(gulp.dest(dest.dir))
 });
 

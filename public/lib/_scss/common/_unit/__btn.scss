@@ -1,46 +1,55 @@
 /*
-#styleguide
+---
+name: u-btn
+category:
+  - common/unit/u-btn
+tag:
+  - base
+compile: false
+---
+
 u-btn(botton)
 
 ボタン制作をサポートします。
 ※IE11のみ改行が入ってもボタンサイズ（高さ）が変更にならないので注意。
 
-```
+```html
 <a href="#" class="u-btn__item">w100%ボタン</a>
 <a href="#" class="u-btn__item_s">ボタン</a>
 <a href="#" class="u-btn__item_m">ボタン</a>
 <a href="#" class="u-btn__item_l">ボタン</a>
-
+```
+```html
 <div class="u-btn">
 <a href="#" class="u-btn__item_s">ボタン</a>
 <a href="#" class="u-btn__item_point_s">ボタン</a>
 </div>
-
+```
+```html
 <div class="u-btn">
 <a href="#" class="u-btn__item">ボタン</a>
 <a href="#" class="u-btn__item">ボタン</a>
 <a href="#" class="u-btn__item">ボタン</a>
 </div>
-
+```
+```html
 <div class="u-btn">
 <a href="#" class="u-btn__item">ボタン</a>
 <a href="#" class="u-btn__item">ボタン</a>
 <a href="#" class="u-btn__item">ボタン</a>
 <a href="#" class="u-btn__item">ボタン</a>
 </div>
-
+```
+```html
 <a href="#" class="u-btn__item">ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト</a>
-
 <div class="u-btn">
 <a href="#" class="u-btn__item_s">ボタン</a>
 <a href="#" class="u-btn__item_s">ダミーテキストダミーテキストダミーテキストダミーテキスト</a>
 </div>
-
 <div class="u-btn">
 <a href="#" class="u-btn__item_s u-icon__link">ボタン</a>
 <a href="#" class="u-btn__item_s">ダミーテキストダミーテキストダミーテキストダミーテキスト</a>
 </div>
-
 ```
 */
 
@@ -75,6 +84,8 @@ u-btn(botton)
     text-decoration: none;
     width: 100%;
     min-height: 45px;
+    font-size: 1.6rem;
+    line-height: 1.4;
     @media all and (-ms-high-contrast:none){
       height: 45px; // ie11ハック
     }
