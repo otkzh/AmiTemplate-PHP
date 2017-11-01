@@ -1,4 +1,40 @@
-.u-fig{
+/*
+#styleguide
+u-figure(img)
+
+画像のキャプション表示をサポートします。
+
+```
+
+<figure class="u-figure">
+  <img
+  data-src="../public/lib/img/dummy/bronze.png"
+  alt="dummy"
+  class="u-img__max">
+  <figcaption class="u-figure__cap">キャプションが入ります。</figcaption>
+</figure>
+
+<figure class="u-figure">
+  <img
+  data-src="../public/lib/img/dummy/bronze.png"
+  alt="dummy"
+  class="u-img__max">
+  <figcaption class="u-figure__cap_darken">黒いキャプションが入ります。</figcaption>
+</figure>
+
+<figure class="u-figure">
+  <img
+  data-src="../public/lib/img/dummy/bronze.png"
+  alt="dummy"
+  class="u-img__max">
+  <figcaption class="u-figure__cap_left">キャプションが左に入ります。</figcaption>
+</figure>
+
+```
+*/
+
+
+.u-figure{
 	position: relative;
 	&__cap{
 		$cap:&;
@@ -14,6 +50,7 @@
 		&_darken{
 			@extend #{$cap};
 			color:#000;
+      text-shadow: 0px 0px 3px #fff;
 		}
 		&_left{
 			@extend #{$cap};
@@ -25,6 +62,5 @@
 				text-shadow: 0px 0px 3px #fff;
 			}
 		}
-
 	}
 }

@@ -1,23 +1,22 @@
 /*
 #styleguide
-.u-a(text-link)
+.u-icon(text-link)
 
-style comment.
+リンクなどのアイコン設置をサポートします。
 
 ```
 <a href="#">link</a>
-<a href="#" class="u-a__icon">link</a>
-<a href="#" class="u-a__icon" target="_blank">link</a>
-<a href="#" class="u-a__icon" target="_blank" rel="nofollow">link</a>
-<a href="#.pdf" class="u-a__icon">link</a>
+<a href="#" class="u-icon__link">link</a>
+<a href="#" class="u-icon__link" target="_blank">link</a>
+<a href="#" class="u-icon__link" target="_blank" rel="nofollow">link</a>
+<a href="#.pdf" class="u-icon__link">link</a>
 ```
 */
 
-.u-a{
+.u-icon{
 	$this:&;
 	box-sizing: border-box;
-  display: inline-block;
-	&__icon{
+	&__link{
 		@extend #{$this};
 		&::after{
 			@include icon-font('\f061');

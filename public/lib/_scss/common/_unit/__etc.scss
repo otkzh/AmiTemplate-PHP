@@ -1,3 +1,18 @@
+/*
+#styleguide
+.u-small(caption)
+
+キャプションにします。
+
+```
+
+<small class="u-small">※キャプションです。</small>
+
+<p class="u-small">※キャプションです。</p>
+
+```
+*/
+
 @for $num from 0 through 10 {
 	.mb#{$num} {
 		margin-bottom: #{$num*$bm};

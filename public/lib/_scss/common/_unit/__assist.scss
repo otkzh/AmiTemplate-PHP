@@ -1,0 +1,15 @@
+.u-assist{
+	box-sizing: border-box;
+	background-color: $color-cream;
+	padding: $bm-inner;
+	border: 1px solid $color-light;
+	border-radius: 2px;
+	margin-bottom: 1em;
+	margin-bottom: $bm-inner;
+	@include max-screen($width-s){
+		padding: $bm;
+	}
+	> p:last-child{
+		margin-bottom: 0;
+	}
+}

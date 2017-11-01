@@ -1,0 +1,56 @@
+.u-position{
+	&__center{
+		  text-align: center;
+		  margin-left: auto;
+		  margin-right: auto;
+	}
+
+}
+
+
+
+//old---------
+
+.center {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.center_sp{
+    @include max-screen($width-s) {
+      text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    }
+}
+
+.left {
+  text-align: left !important;
+}
+
+.right {
+  text-align: right !important;
+}
+
+.fl {
+  margin-bottom: $bm/2;
+  @include min-screen($width-m) {
+    float: left;
+    margin-right: $bm;
+  } //min
+  @include max-screen($width-s) {
+    text-align: center;
+  } //max
+}
+
+.fr {
+  margin-bottom: $bm/2;
+  @include min-screen($width-m) {
+    float: right;
+    margin-left: $bm;
+  } //min
+  @include max-screen($width-s) {
+    text-align: center;
+  } //max
+}

@@ -1,5 +1,21 @@
+/*
+#styleguide
+.u-small(caption)
+
+キャプションにします。
+
+```
+
+<small class="u-small">※キャプションです。</small>
+
+<p class="u-small">※キャプションです。</p>
+
+```
+*/
+
+
 .u-small{
-	display: inline-block;
+  color:$color-dark-lighten;
 	font-size: 1.2rem;
 	line-height: 1.6;
 }
