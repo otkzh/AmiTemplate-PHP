@@ -1,6 +1,6 @@
 # Aigisはこの設定ファイルが存在するディレクトリと同じディレクトリから実行されます
 # すべてのパスはそこからの相対パスでなければなりません
-name: Examples Styleguide
+name: AmiTemplate Styleguide
 
 # 再帰的に解析するソースファイルを含むディレクトリ
 source:
@@ -48,7 +48,7 @@ color_palette: true
 #
 transform:
   - html
-  - jade
+#  - jade
 #  - ejs
 #  - hbs
 #  - coffee

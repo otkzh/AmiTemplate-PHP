@@ -1,35 +1,41 @@
 /*
-#styleguide
-u-figure(img)
+---
+name: u-figure
+category:
+  - common/unit/u-figure
+tag:
+  - base
+compile: false
+---
 
 画像のキャプション表示をサポートします。
 
-```
-
+```html
 <figure class="u-figure">
   <img
-  data-src="../public/lib/img/dummy/bronze.png"
+  data-src="../../../../../lib/img/dummy/bronze.png"
   alt="dummy"
   class="u-img__max">
-  <figcaption class="u-figure__cap">キャプションが入ります。</figcaption>
+  <figcaption class="u-figure__cap">右下にキャプションが入ります。</figcaption>
 </figure>
-
+```
+```html
 <figure class="u-figure">
   <img
-  data-src="../public/lib/img/dummy/bronze.png"
+  data-src="../../../../../lib/img/dummy/bronze.png"
   alt="dummy"
   class="u-img__max">
   <figcaption class="u-figure__cap_darken">黒いキャプションが入ります。</figcaption>
 </figure>
-
+```
+```html
 <figure class="u-figure">
   <img
-  data-src="../public/lib/img/dummy/bronze.png"
+  data-src="../../../../../lib/img/dummy/bronze.png"
   alt="dummy"
   class="u-img__max">
   <figcaption class="u-figure__cap_left">キャプションが左に入ります。</figcaption>
 </figure>
-
 ```
 */
 

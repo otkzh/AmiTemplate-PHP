@@ -1,10 +1,16 @@
 /*
-#styleguide
-.u-icon(text-link)
+---
+name: u-icon
+category:
+  - common/unit/u-icon
+tag:
+  - base
+compile: false
+---
 
 リンクなどのアイコン設置をサポートします。
 
-```
+```html
 <a href="#">link</a>
 <a href="#" class="u-icon__link">link</a>
 <a href="#" class="u-icon__link" target="_blank">link</a>

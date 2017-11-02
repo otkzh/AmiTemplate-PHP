@@ -1,23 +1,26 @@
 /*
-#styleguide
-u-ttl(title)
+---
+name: u-ttl(title)
+category:
+  - common/unit/u-ttl
+tag:
+  - base
+compile: false
+---
 
 見出し関連のサイズを調整します。
 
-```
+```html
 <h3 class="u-ttl_l">大きい見出し</h3>
 <p>見出し説明テキスト<br>説明テキスト説明テキスト</p>
-
-<hr>
-
+```
+```html
 <h3 class="u-ttl_m">小見出し見出し</h3>
 <p>見出し説明テキスト<br>説明テキスト説明テキスト</p>
-
-<hr>
-
+```
+```html
 <h3 class="u-ttl_s">小見出し見出し</h3>
 <p>見出し説明テキスト<br>説明テキスト説明テキスト</p>
-
 ```
 */
 

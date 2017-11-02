@@ -1,4 +1,41 @@
+/*
+---
+name: gnav(グローバルナビゲーション)
+category:
+  - common/header/gnav
+tag:
+  - base
+compile: false
+---
 
+見出し関連のサイズを調整します。
+サンプルとして、共通パーツのstyleguideを掲載
+
+```html
+<nav class="gnav">
+  <ul class="gnav__row">
+    <li class="gnav__item">
+      <a href="#">home</a>
+    </li>
+    <li class="gnav__item">
+      <a href="#">temp</a>
+    </li>
+    <li class="gnav__item">
+      <a href="#">menu</a>
+    </li>
+    <li class="gnav__item">
+      <a href="#">menu</a>
+    </li>
+    <li class="gnav__item">
+      <a href="#">menu</a>
+    </li>
+    <li class="gnav__item_contact">
+      <a href="#">contact</a>
+    </li>
+  </ul>
+</nav>
+```
+*/
 .gnav{
 	position: relative;
 	z-index: 3;

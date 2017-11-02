@@ -403,6 +403,44 @@ html, body {
     -webkit-transform: translateY(-10px) rotate(-45deg);
     transform: translateY(-10px) rotate(-45deg); } }
 
+/*
+---
+name: gnav(グローバルナビゲーション)
+category:
+  - common/header/gnav
+tag:
+  - base
+compile: false
+---
+
+見出し関連のサイズを調整します。
+サンプルとして、共通パーツのstyleguideを掲載
+
+```html
+<nav class="gnav">
+  <ul class="gnav__row">
+    <li class="gnav__item">
+      <a href="#">home</a>
+    </li>
+    <li class="gnav__item">
+      <a href="#">temp</a>
+    </li>
+    <li class="gnav__item">
+      <a href="#">menu</a>
+    </li>
+    <li class="gnav__item">
+      <a href="#">menu</a>
+    </li>
+    <li class="gnav__item">
+      <a href="#">menu</a>
+    </li>
+    <li class="gnav__item_contact">
+      <a href="#">contact</a>
+    </li>
+  </ul>
+</nav>
+```
+*/
 .gnav {
   position: relative;
   z-index: 3;
@@ -869,17 +907,26 @@ html, body {
       color: #fff; }
 
 /*
-#styleguide
-.u-small(caption)
+---
+name: etc
+category:
+  - common/unit/etc
+tag:
+  - base
+compile: false
+---
 
-キャプションにします。
+マージン関連のサポート
 
-```
-
-<small class="u-small">※キャプションです。</small>
-
-<p class="u-small">※キャプションです。</p>
-
+```html
+<div class="mb1" style="background:black;">test</div>
+<div class="mb2" style="background:black;">test</div>
+<div class="mb3" style="background:black;">test</div>
+<div class="mb4" style="background:black;">test</div>
+<div class="mt1" style="background:black;">test</div>
+<div class="mt2" style="background:black;">test</div>
+<div class="mt3" style="background:black;">test</div>
+<div class="mt4" style="background:black;">test</div>
 ```
 */
 .mb0 {
@@ -1015,39 +1062,41 @@ html, body {
   padding-top: 80px; }
 
 /*
-#styleguide
-.u-icon(text-link)
+---
+name: u-img
+category:
+  - common/unit/u-img
+tag:
+  - base
+compile: false
+---
 
 画像に対する動作を指定します。
 例：レスポンシブWEBデザイン（リキッド）に対応します。
 
-```
-classなし<br>
+---
 
+classなし
+```html
 <img
-data-src="../public/lib/img/dummy/yamato.png"
+data-src="../../../../../lib/img/dummy/yamato.png"
 alt="dummy">
-
-<hr>
-
-classあり※レスポンシブWEBデザイン（リキッド）<br>
-
+```
+classあり※レスポンシブWEBデザイン（リキッド）
+```html
 <img
-data-src="../public/lib/img/dummy/yamato.png"
+data-src="../../../../../lib/img/dummy/yamato.png"
 alt="dummy"
 class="u-img__max">
+```
 
-<hr>
-
-class/max-widthあり※レスポンシブWEBデザイン（リキッド）<br>
-
+class/max-widthあり※レスポンシブWEBデザイン（リキッド）
+```html
 <img
-data-src="../public/lib/img/dummy/yamato.png"
+data-src="../../../../../lib/img/dummy/yamato.png"
 alt="dummy"
 style="max-width:500px;"
 class="u-img__max">
-
-
 ```
 */
 .u-img__max, .recommend__item img {
@@ -1117,8 +1166,7 @@ u-btn(botton)
   -ms-flex-pack: center;
   justify-content: center;
   margin-left: -8px;
-  margin-right: -8px;
-  margin-bottom: -24px; }
+  margin-right: -8px; }
   @media screen and (max-width: 666px) {
     .u-btn {
       margin-right: 0;
@@ -1230,12 +1278,18 @@ u-btn(botton)
         border-color: #aa183a; }
 
 /*
-#styleguide
-.u-icon(text-link)
+---
+name: u-icon
+category:
+  - common/unit/u-icon
+tag:
+  - base
+compile: false
+---
 
 リンクなどのアイコン設置をサポートします。
 
-```
+```html
 <a href="#">link</a>
 <a href="#" class="u-icon__link">link</a>
 <a href="#" class="u-icon__link" target="_blank">link</a>
@@ -1274,56 +1328,64 @@ u-btn(botton)
     transition: all .3s; }
 
 /*
-#styleguide
-.u-small(caption)
+---
+name: u-small
+category:
+  - common/unit/u-small
+tag:
+  - base
+compile: false
+---
 
 キャプションにします。
 
-```
-
+```html
 <small class="u-small">※キャプションです。</small>
-
 <p class="u-small">※キャプションです。</p>
-
 ```
 */
 .u-small {
   color: #736d6d;
-  font-size: 1.2rem;
-  line-height: 1.6; }
+  font-size: 1.2rem; }
 
 /*
-#styleguide
-u-figure(img)
+---
+name: u-figure
+category:
+  - common/unit/u-figure
+tag:
+  - base
+compile: false
+---
 
 画像のキャプション表示をサポートします。
 
-```
-
+```html
 <figure class="u-figure">
   <img
-  data-src="../public/lib/img/dummy/bronze.png"
+  data-src="../../../../../lib/img/dummy/bronze.png"
   alt="dummy"
   class="u-img__max">
-  <figcaption class="u-figure__cap">キャプションが入ります。</figcaption>
+  <figcaption class="u-figure__cap">右下にキャプションが入ります。</figcaption>
 </figure>
-
+```
+```html
 <figure class="u-figure">
   <img
-  data-src="../public/lib/img/dummy/bronze.png"
+  data-src="../../../../../lib/img/dummy/bronze.png"
   alt="dummy"
   class="u-img__max">
   <figcaption class="u-figure__cap_darken">黒いキャプションが入ります。</figcaption>
 </figure>
-
+```
+```html
 <figure class="u-figure">
   <img
-  data-src="../public/lib/img/dummy/bronze.png"
+  data-src="../../../../../lib/img/dummy/bronze.png"
   alt="dummy"
   class="u-img__max">
   <figcaption class="u-figure__cap_left">キャプションが左に入ります。</figcaption>
 </figure>
-
 ```
 */
 .u-figure {
@@ -1349,17 +1411,20 @@ u-figure(img)
         text-shadow: 0px 0px 3px #fff; }
 
 /*
-#styleguide
-.u-only(hide)
+---
+name: u-only(hide)
+category:
+  - common/unit/u-only(hide)
+tag:
+  - base
+compile: false
+---
 
 PC版（タブレット〜PCサイズ）とSP版で、表示非表示を切り替えます。
 
-```
-
+```html
 <div class="u-only__pc" style="background:yellow">PCサイズのみで表示</div>
-
 <div class="u-only__sp" style="background:red">SPサイズのみで表示</div>
-
 ```
 */
 .u-only__pc {
@@ -1375,25 +1440,28 @@ PC版（タブレット〜PCサイズ）とSP版で、表示非表示を切り�
       display: block; } }
 
 /*
-#styleguide
-u-ttl(title)
+---
+name: u-ttl(title)
+category:
+  - common/unit/u-ttl
+tag:
+  - base
+compile: false
+---
 
 見出し関連のサイズを調整します。
 
-```
+```html
 <h3 class="u-ttl_l">大きい見出し</h3>
 <p>見出し説明テキスト<br>説明テキスト説明テキスト</p>
-
-<hr>
-
+```
+```html
 <h3 class="u-ttl_m">小見出し見出し</h3>
 <p>見出し説明テキスト<br>説明テキスト説明テキスト</p>
-
-<hr>
-
+```
+```html
 <h3 class="u-ttl_s">小見出し見出し</h3>
 <p>見出し説明テキスト<br>説明テキスト説明テキスト</p>
-
 ```
 */
 .u-ttl_l {
@@ -1473,6 +1541,80 @@ compile: false
       padding: 8px; } }
   .u-assist > p:last-child {
     margin-bottom: 0; }
+
+/*
+---
+name: u-position
+category:
+- common/unit/u-position
+tag:
+- base
+compile: false
+---
+
+block要素やblock内の要素の位置を調整します。
+ちょっと使いにくいかな。
+
+---
+
+##### 内包するインライン要素の位置を調整
+
+```html
+<div class="u-position_center" style="background:yellow;">
+center
+</div>
+```
+```html
+<div class="u-position_left" style="background:yellow;">
+center
+</div>
+```
+```html
+<div class="u-position_right" style="background:yellow;">
+center
+</div>
+```
+
+----
+
+##### block要素自身の位置を調整
+
+```html
+<div class="u-position__item_center" style="background:yellow; width:100px;">
+center
+</div>
+```
+
+```html
+<div class="u-position__item_left" style="background:yellow; width:100px;">
+center
+</div>
+```
+
+```html
+<div class="u-position__item_right" style="background:yellow; width:100px;">
+center
+</div>
+```
+*/
+.u-position_center {
+  text-align: center; }
+
+.u-position_left {
+  text-align: left; }
+
+.u-position_right {
+  text-align: right; }
+
+.u-position__item_center {
+  margin-left: auto;
+  margin-right: auto; }
+
+.u-position__item_left {
+  margin-right: auto; }
+
+.u-position__item_right {
+  margin-left: auto; }
 
 body.home .main-v__row {
   position: relative;

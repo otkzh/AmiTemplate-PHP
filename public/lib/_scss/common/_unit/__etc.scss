@@ -1,15 +1,24 @@
 /*
-#styleguide
-.u-small(caption)
+---
+name: etc
+category:
+  - common/unit/etc
+tag:
+  - base
+compile: false
+---
 
-キャプションにします。
+マージン関連のサポート
 
-```
-
-<small class="u-small">※キャプションです。</small>
-
-<p class="u-small">※キャプションです。</p>
-
+```html
+<div class="mb1" style="background:black;">test</div>
+<div class="mb2" style="background:black;">test</div>
+<div class="mb3" style="background:black;">test</div>
+<div class="mb4" style="background:black;">test</div>
+<div class="mt1" style="background:black;">test</div>
+<div class="mt2" style="background:black;">test</div>
+<div class="mt3" style="background:black;">test</div>
+<div class="mt4" style="background:black;">test</div>
 ```
 */
 
