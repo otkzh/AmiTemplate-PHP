@@ -1,0 +1,46 @@
+.header{
+	position: fixed;
+	z-index: 999;
+	top:0;
+	right: 0;
+	left: 0;
+	&__row{
+		@include wrap;
+	}
+	&__item{
+		$this: &;
+		height: auto;
+		&_bg{
+			@extend #{$this};
+			position: absolute;
+			top:0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background-color: #fff;
+			border-bottom: 1px solid $color-light;
+			height: $header-height;
+			z-index: 2;
+		}
+		&_logo{
+			@extend #{$this};
+			position: relative;
+			z-index: 2;
+			float: left;
+			height: $header-height;
+			a{
+				display: block;
+				height: 100%;
+				width: 160px;
+			}
+			img{
+				max-width: 100%;
+				width: 100%;
+				height: auto;
+			}
+		}
+		&_gnav{
+
+		}
+	}//item
+}

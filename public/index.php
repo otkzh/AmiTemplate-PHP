@@ -1,78 +1,153 @@
 <?php
-include 'function.php';
-$title = 'AmiTemplate - php';
-$meta_title = ''.$title.' | '.$sitename.'';
-$meta_description = 'メタディスクリプション。'.$description;
-$body_class = 'home list-page';
+$pageTtl = "トップ";
+include ("function.php");
+$metaTtl = $siteName;
+$metaDesc = $siteDescription;
+$body_class ="home vue";
+include ($inc_path."/lib/inc/head.php");
+include ($inc_path."/lib/inc/header.php");
 ?>
-<?php include($inc_path.'/inc/head.php') ?>
-<?php include($inc_path.'/inc/header.php') ?>
-<?php include($inc_path.'/inc/home-main-v.php') ?>
 
-<main id="main">
-<article>
-   <div  id="container">
-    
-    <div id="conts">
-     
-     <section class="conts-sec">
-      <h2 class="conts-s-ttl mt0">New-記事一覧</h2>
-       <?php include ($inc_path."/readme/inc/list-art.php") ?>
-       <?php include ($inc_path."/readme/inc/list-art.php") ?>
-      <div class="more"><a href="<?php echo $base_url ?>/readme/list-small.php" class="a-arrow">新着記事をもっと見る</a></div>
-     </section>
-     
-      <section class="conts-sec">
+<main class="main">
+  <article class="main__row">
 
-        <h2 class="conts-sec-ttl mt0 pt0">conts-sec-ttl（contents-section-title）</h2>
-        <p>ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
-        <h3 class="conts-l-ttl">conts-l-ttl（contents-large-title）</h3>
-        <p>ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
-        <h4 class="conts-m-ttl">conts-m-ttl（contents-middle-title）</h4>
-        <p>ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
-        <h5 class="conts-s-ttl">conts-s-ttl（contents-small-title）</h5>
-        <p>ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
-
-      </section>
-      
-      <section class="conts-sec">
-      <h2 class="conts-sec-ttl">３つ並びコンテンツ</h2>
-      <p>３つ並びの時にどう表示されるかテスト。</p>
-      <ul class="links">
-        <li>
-          <a href="<?php echo $base_url ?>/markup">
-            <figure><img src="img/dummy/img.png" alt="MARK UP">
-              <figcaption>MARK UP</figcaption>
-            </figure>
-          </a>
-        </li>
-        <li>
-          <a href="<?php echo $base_url ?>/speed">
-            <figure><img src="img/dummy/img.png" alt="SPEED">
-              <figcaption>SPEED</figcaption>
-            </figure>
-          </a>
-        </li>
-        <li>
-          <a href="<?php echo $base_url ?>/responsive">
-            <figure><img src="img/dummy/img.png" alt="RESPONSIVE">
-              <figcaption>RESPONSIVE</figcaption>
-            </figure>
-          </a>
-        </li>
-      </ul>
+    <section class="main-v">
+      <div class="main-v__row">
+        <figure class="main-v__item">
+          <img
+          data-src="<?php echo $base_url ?>/lib/img/dummy/golden.png"
+          data-retina="<?php echo $base_url ?>/lib/img/dummy/golden@2x.png"
+          alt="dummy"
+          class="u-img__max">
+        </figure>
+        <p class="main-v__desc">数秒後メインビジュアル用の画像が表示されます</p>
+      </div>
     </section>
 
-    </div>
+    <section class="main__item">
+      <header class="main__head">
+        <h1 class="main__ttl">基本要素（セクションタイトル）</h1>
+        <p class="main__desc">基本要素の説明（ディスクリプション）</p>
+      </header>
+      <article class="main__body">
+        <figure>
+          <img
+          data-src="<?php echo $base_url ?>/lib/img/dummy/bronze.png"
+          data-retina="<?php echo $base_url ?>/lib/img/dummy/bronze@2x.png"
+          alt="dummy"
+          class="u-img__max">
+        </figure>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores repudiandae, nihil consectetur dignissimos facere, ipsa recusandae. Enim possimus distinctio, vel voluptatibus amet velit nisi iste quisquam tempore voluptates, doloremque impedit.</p>
+      </article>
+      <footer class="main__foot">
+        <p>セクションフッター</p>
+      </footer>
+    </section>
 
-    <?php include($inc_path.'/inc/side.php') ?>
-</div>
-</article>
+    <section class="main__item">
+      <header class="main__head">
+        <h1 class="main__ttl">inview</h1>
+        <p class="main__desc">site: https://github.com/protonet/jquery.inview</p>
+      </header>
+      <article class="main__body">
+        <p class="inview-target">画面内に入ると、classにinviewが追加されます。</p>
+      </article>
+    </section>
+
+    <section class="main__item">
+      <header class="main__head">
+        <h1 class="main__ttl">colorbox</h1>
+        <p class="main__desc">site: http://www.jacklmoore.com/colorbox/</p>
+      </header>
+      <article class="main__body">
+        <p><a class="group1" href="<?php echo $base_url; ?>/lib/img/dummy/platinum.png" title="画像タイトル１">Grouped Photo 1</a></p>
+        <p><a class="group1" href="<?php echo $base_url; ?>/lib/img/dummy/platinum.png" title="画像タイトル２">Grouped Photo 2</a></p>
+        <p><a class="group1" href="<?php echo $base_url; ?>/lib/img/dummy/platinum.png" title="画像タイトル３">Grouped Photo 3</a></p>
+      </article>
+    </section>
+
+    <section class="main__item">
+      <header class="main__head">
+        <h1 class="main__ttl">magnific-popup</h1>
+        <p class="main__desc">site: http://dimsemenov.com/plugins/magnific-popup/<br>ajax表示使用不可_エラーが出力されます。</p>
+      </header>
+      <article class="main__body">
+        <a class='mfp-btn' href="#inline_content">Click Me (Inline HTML）</a>
+        <div id='inline_content' class="mfp-dialog mfp-hide">
+          <img
+          data-src="<?php echo $base_url ?>/lib/img/dummy/bronze.png"
+          data-retina="<?php echo $base_url ?>/lib/img/dummy/bronze@2x.png"
+          alt="dummy"
+          class="u-img__max">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores repudiandae, nihil consectetur dignissimos facere, ipsa recusandae. Enim possimus distinctio, vel voluptatibus amet velit nisi iste quisquam tempore voluptates, doloremque impedit.</p>
+        </div>
+      </article>
+    </section>
+
+
+    <section class="main__item conts">
+      <header class="main__head">
+        <h1 class="main__ttl">Swiper</h1>
+        <p class="main__desc">site:http://idangero.us/swiper/</p>
+      </header>
+      <article class="main__body">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+            <div class="swiper-slide">Slide 4</div>
+            <div class="swiper-slide">Slide 5</div>
+            <div class="swiper-slide">Slide 6</div>
+            <div class="swiper-slide">Slide 7</div>
+            <div class="swiper-slide">Slide 8</div>
+            <div class="swiper-slide">Slide 9</div>
+            <div class="swiper-slide">Slide 10</div>
+          </div>
+          <!-- Add Pagination -->
+          <div class="swiper-pagination"></div>
+          <!-- Add Arrows -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="main__item conts">
+      <header class="main__head">
+        <h1 class="main__ttl">Vue</h1>
+        <p class="main__desc">site: https://jp.vuejs.org/</p>
+      </header>
+      <article class="main__body">
+        <p>以下{{ message }}はVueで出力されています。</p>
+        <div id="app">
+          {{ message }}
+        </div>
+      </article>
+    </section>
+
+    <section class="main__item conts">
+      <header class="main__head">
+        <h1 class="main__ttl">_unitシリーズ</h1>
+        <p class="main__desc">ディスクリプション</p>
+      </header>
+
+      <article class="main__body">
+        <h3 class="main__ttl_s">u-img</h3>
+        <img
+        data-src="<?php echo $base_url ?>/lib/img/dummy/bronze.png"
+        data-retina="<?php echo $base_url ?>/lib/img/dummy/bronze@2x.png"
+        alt="dummy"
+        class="u-img__max">
+      </article>
+      <footer class="main__foot">
+        <p>セクションフッター</p>
+      </footer>
+    </section>
+
+  </article>
 </main>
 
-<?php include($inc_path.'/inc/footer.php') ?>
-
-<!-- add scripts -->
-<script>console.log("page-script-<?php echo $title ?>");</script>
-<!-- //add scripts -->
-<?php include($inc_path.'/inc/foot.php') ?>
+<?php  include ($inc_path."/lib/inc/pagetop.php"); ?>
+<?php  include ($inc_path."/lib/inc/footer.php"); ?>
+<?php  include ($inc_path."/lib/inc/foot.php"); ?>

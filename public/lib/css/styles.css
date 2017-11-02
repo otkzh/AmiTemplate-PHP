@@ -1,0 +1,1656 @@
+@charset "UTF-8";
+/* 
+html5doctor.com Reset Stylesheet v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com 
+Twitter: @rich_clark
+*/
+@import 'https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i';
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+body {
+  line-height: 1; }
+
+main,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block; }
+
+ol,
+ul {
+  list-style: none; }
+
+blockquote,
+q {
+  quotes: none; }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none; }
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none; }
+
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold; }
+
+del {
+  text-decoration: line-through; }
+
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0; }
+
+input,
+select {
+  vertical-align: middle; }
+
+img {
+  vertical-align: top;
+  font-size: 0;
+  line-height: 0; }
+
+/* FONT PATH
+ * -------------------------- */
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("../fonts/fontawesome-webfont.eot?v=4.3.0");
+  src: url("../fonts/fontawesome-webfont.eot?#iefix&v=4.3.0") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff2?v=4.3.0") format("woff2"), url("../fonts/fontawesome-webfont.woff?v=4.3.0") format("woff"), url("../fonts/fontawesome-webfont.ttf?v=4.3.0") format("truetype"), url("../fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+html {
+  font-size: 62.5%;
+  -webkit-text-size-adjust: 100%; }
+
+body {
+  font-size: 1.6rem;
+  -webkit-font-feature-settings: "Kana";
+  font-feature-settings: "Kana";
+  font-family: Linotte, YuGothic, 'Yu Gothic', 游ゴシック体, 游ゴシック, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Roboto, メイリオ, Meiryo, 'ＭＳ Ｐゴシック', Osaka, 'MS PGothic', Arial, Helvetica, Verdana, sans-serif;
+  line-height: 1.8;
+  color: #736d6d; }
+
+a {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  color: #595454; }
+  .no-js a:hover,
+  .no-touchevents a:hover,
+  .touchevents a.touch {
+    text-decoration: none; }
+
+::-moz-selection,
+::-moz-selection {
+  background: transparent;
+  text-shadow: none; }
+
+::-moz-selection,
+::selection {
+  background: transparent;
+  text-shadow: none; }
+
+html, body {
+  width: 100%;
+  overflow-x: hidden; }
+
+#all {
+  width: 100%; }
+
+.header {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  left: 0; }
+  .header__row {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    max-width: 1360px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 24px; }
+    @media screen and (max-width: 666px) {
+      .header__row {
+        padding: 0 8px; } }
+  .header__item, .header__item_bg, .header__item_logo {
+    height: auto; }
+    .header__item_bg {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: #fff;
+      border-bottom: 1px solid #e6e6e6;
+      height: 48px;
+      z-index: 2; }
+    .header__item_logo {
+      position: relative;
+      z-index: 2;
+      float: left;
+      height: 48px; }
+      .header__item_logo a {
+        display: block;
+        height: 100%;
+        width: 160px; }
+      .header__item_logo img {
+        max-width: 100%;
+        width: 100%;
+        height: auto; }
+
+.menubar {
+  display: block;
+  height: 48px;
+  width: 48px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  @media screen and (min-width: 667px) {
+    .menubar {
+      display: none; } }
+  .no-js .menubar:hover,
+  .no-touchevents .menubar:hover,
+  .touchevents .menubar.touch {
+    background-color: #e6e6e6;
+    cursor: pointer; }
+  .menubar__row {
+    position: relative;
+    width: 25px;
+    height: 22px; }
+  .menubar__item {
+    display: inline-block;
+    -webkit-transition: all .4s;
+    transition: all .4s;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #595454;
+    border-radius: 3px; }
+    .menubar__item:nth-of-type(1) {
+      top: 0;
+      -webkit-animation: menu-bar01 .75s forwards;
+      animation: menu-bar01 .75s forwards; }
+    .menubar__item:nth-of-type(2) {
+      top: 10px;
+      -webkit-transition: all .25s .25s;
+      transition: all .25s .25s;
+      opacity: 1; }
+    .menubar__item:nth-of-type(3) {
+      bottom: 0;
+      -webkit-animation: menu-bar02 .75s forwards;
+      animation: menu-bar02 .75s forwards; }
+  .menubar.active .menubar__item:nth-of-type(1) {
+    -webkit-animation: active-menu-bar01 .75s forwards;
+    animation: active-menu-bar01 .75s forwards; }
+  .menubar.active .menubar__item:nth-of-type(2) {
+    opacity: 0; }
+  .menubar.active .menubar__item:nth-of-type(3) {
+    -webkit-animation: active-menu-bar03 .75s forwards;
+    animation: active-menu-bar03 .75s forwards; }
+
+@-webkit-keyframes menu-bar01 {
+  0% {
+    -webkit-transform: translateY(10px) rotate(45deg);
+    transform: translateY(10px) rotate(45deg); }
+  50% {
+    -webkit-transform: translateY(10px) rotate(0);
+    transform: translateY(10px) rotate(0); }
+  100% {
+    -webkit-transform: translateY(0) rotate(0);
+    transform: translateY(0) rotate(0); } }
+
+@keyframes menu-bar01 {
+  0% {
+    -webkit-transform: translateY(10px) rotate(45deg);
+    transform: translateY(10px) rotate(45deg); }
+  50% {
+    -webkit-transform: translateY(10px) rotate(0);
+    transform: translateY(10px) rotate(0); }
+  100% {
+    -webkit-transform: translateY(0) rotate(0);
+    transform: translateY(0) rotate(0); } }
+
+@-webkit-keyframes menu-bar02 {
+  0% {
+    -webkit-transform: translateY(-10px) rotate(-45deg);
+    transform: translateY(-10px) rotate(-45deg); }
+  50% {
+    -webkit-transform: translateY(-10px) rotate(0);
+    transform: translateY(-10px) rotate(0); }
+  100% {
+    -webkit-transform: translateY(0) rotate(0);
+    transform: translateY(0) rotate(0); } }
+
+@keyframes menu-bar02 {
+  0% {
+    -webkit-transform: translateY(-10px) rotate(-45deg);
+    transform: translateY(-10px) rotate(-45deg); }
+  50% {
+    -webkit-transform: translateY(-10px) rotate(0);
+    transform: translateY(-10px) rotate(0); }
+  100% {
+    -webkit-transform: translateY(0) rotate(0);
+    transform: translateY(0) rotate(0); } }
+
+@-webkit-keyframes active-menu-bar01 {
+  0% {
+    -webkit-transform: translateY(0) rotate(0);
+    transform: translateY(0) rotate(0); }
+  50% {
+    -webkit-transform: translateY(10px) rotate(0);
+    transform: translateY(10px) rotate(0); }
+  100% {
+    -webkit-transform: translateY(10px) rotate(45deg);
+    transform: translateY(10px) rotate(45deg); } }
+
+@keyframes active-menu-bar01 {
+  0% {
+    -webkit-transform: translateY(0) rotate(0);
+    transform: translateY(0) rotate(0); }
+  50% {
+    -webkit-transform: translateY(10px) rotate(0);
+    transform: translateY(10px) rotate(0); }
+  100% {
+    -webkit-transform: translateY(10px) rotate(45deg);
+    transform: translateY(10px) rotate(45deg); } }
+
+@-webkit-keyframes active-menu-bar03 {
+  0% {
+    -webkit-transform: translateY(0) rotate(0);
+    transform: translateY(0) rotate(0); }
+  50% {
+    -webkit-transform: translateY(-10px) rotate(0);
+    transform: translateY(-10px) rotate(0); }
+  100% {
+    -webkit-transform: translateY(-10px) rotate(-45deg);
+    transform: translateY(-10px) rotate(-45deg); } }
+
+@keyframes active-menu-bar03 {
+  0% {
+    -webkit-transform: translateY(0) rotate(0);
+    transform: translateY(0) rotate(0); }
+  50% {
+    -webkit-transform: translateY(-10px) rotate(0);
+    transform: translateY(-10px) rotate(0); }
+  100% {
+    -webkit-transform: translateY(-10px) rotate(-45deg);
+    transform: translateY(-10px) rotate(-45deg); } }
+
+/*
+---
+name: gnav(グローバルナビゲーション)
+category:
+  - common/header/gnav
+tag:
+  - base
+compile: false
+---
+
+見出し関連のサイズを調整します。
+サンプルとして、共通パーツのstyleguideを掲載
+
+```html
+<nav class="gnav">
+  <ul class="gnav__row">
+    <li class="gnav__item">
+      <a href="#">home</a>
+    </li>
+    <li class="gnav__item">
+      <a href="#">temp</a>
+    </li>
+    <li class="gnav__item">
+      <a href="#">menu</a>
+    </li>
+    <li class="gnav__item">
+      <a href="#">menu</a>
+    </li>
+    <li class="gnav__item">
+      <a href="#">menu</a>
+    </li>
+    <li class="gnav__item_contact">
+      <a href="#">contact</a>
+    </li>
+  </ul>
+</nav>
+```
+*/
+.gnav {
+  position: relative;
+  z-index: 3;
+  float: right; }
+  @media screen and (max-width: 666px) {
+    .gnav {
+      z-index: 1;
+      position: absolute;
+      top: 48px;
+      left: 0;
+      float: none;
+      width: 100%;
+      -webkit-transition: -webkit-transform .5s;
+      transition: -webkit-transform .5s;
+      transition: transform .5s;
+      transition: transform .5s, -webkit-transform .5s;
+      -webkit-transform: translate3d(0, -400px, 0);
+      transform: translate3d(0, -400px, 0); }
+      .gnav.active {
+        -webkit-transition: -webkit-transform .5s;
+        transition: -webkit-transform .5s;
+        transition: transform .5s;
+        transition: transform .5s, -webkit-transform .5s;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0); } }
+  .gnav__row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+    @media screen and (max-width: 666px) {
+      .gnav__row {
+        display: block; } }
+  .gnav__item a, .gnav__item_home a, .gnav__item_temp a, .gnav__item_sample a, .gnav__item_contact a {
+    position: relative;
+    display: block;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 48px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 0 8px;
+    text-decoration: none;
+    background-color: #fff; }
+    .no-js .gnav__item a:hover, .no-js .gnav__item_home a:hover, .no-js .gnav__item_temp a:hover, .no-js .gnav__item_sample a:hover, .no-js .gnav__item_contact a:hover,
+    .no-touchevents .gnav__item a:hover,
+    .no-touchevents .gnav__item_home a:hover,
+    .no-touchevents .gnav__item_temp a:hover,
+    .no-touchevents .gnav__item_sample a:hover,
+    .no-touchevents .gnav__item_contact a:hover,
+    .touchevents .gnav__item a.touch,
+    .touchevents .gnav__item_home a.touch,
+    .touchevents .gnav__item_temp a.touch,
+    .touchevents .gnav__item_sample a.touch,
+    .touchevents .gnav__item_contact a.touch {
+      background-color: #e6e6e6;
+      color: #fff; }
+    @media screen and (max-width: 666px) {
+      .gnav__item a, .gnav__item_home a, .gnav__item_temp a, .gnav__item_sample a, .gnav__item_contact a {
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        border-bottom: 1px solid #e6e6e6; }
+        .gnav__item a::after, .gnav__item_home a::after, .gnav__item_temp a::after, .gnav__item_sample a::after, .gnav__item_contact a::after {
+          content: "";
+          display: inline-block;
+          font: normal normal normal 14px/1 FontAwesome;
+          font-size: inherit;
+          text-rendering: auto;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          position: absolute;
+          top: 0;
+          right: 24px;
+          bottom: 0;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center; } }
+  body.home .gnav__item_home a {
+    background-color: #e6e6e6;
+    color: #fff; }
+  body.temp .gnav__item_temp a {
+    background-color: #e6e6e6;
+    color: #fff; }
+  body.sample .gnav__item_sample a {
+    background-color: #e6e6e6;
+    color: #fff; }
+  .gnav__item_contact a {
+    background-color: #e12e57;
+    color: #e6e6e6; }
+    body.contact .gnav__item_contact a {
+      background-color: #e6e6e6;
+      color: #fff; }
+
+.main {
+  padding-top: 48px; }
+  .main__row {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    max-width: 1360px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 24px; }
+    @media screen and (max-width: 666px) {
+      .main__row {
+        padding: 0 8px; } }
+  .main__header {
+    position: relative;
+    margin-bottom: 48px; }
+  .main__head {
+    margin-bottom: 24px; }
+  .main__ttl {
+    font-size: 2.4rem;
+    color: #595454;
+    border-bottom: 1px solid #736d6d;
+    margin: .5em 0; }
+    .main__ttl_s {
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      font-size: 2rem;
+      line-height: 1.2;
+      font-weight: bold;
+      margin: .5em 0;
+      color: #595454;
+      border-left: 3px solid #736d6d;
+      padding: 0;
+      padding-left: 4px; }
+  .main__body {
+    margin-bottom: 24px; }
+  .main__foot {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-top: 1px solid #e6e6e6;
+    padding-top: 8px; }
+
+.main-header__bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0 -500px;
+  padding: 0 -500px;
+  z-index: -1;
+  background-color: silver; }
+
+.main-header__ttl {
+  font-size: 2.4rem; }
+
+.main-footer__body {
+  margin-bottom: 24px; }
+
+.main-footer__ttl {
+  font-size: 2rem;
+  color: #595454;
+  border-bottom: 1px solid #000;
+  margin-bottom: .5em; }
+
+.pan__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.pan__item, .pan__item_home, .pan__item_thispage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-right: 4px; }
+  .pan__item::after, .pan__item_home::after, .pan__item_thispage::after {
+    content: "";
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-left: 4px; }
+  .pan__item a, .pan__item_home a, .pan__item_thispage a {
+    height: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.2rem; }
+    .no-js .pan__item a:hover, .no-js .pan__item_home a:hover, .no-js .pan__item_thispage a:hover,
+    .no-touchevents .pan__item a:hover,
+    .no-touchevents .pan__item_home a:hover,
+    .no-touchevents .pan__item_thispage a:hover,
+    .touchevents .pan__item a.touch,
+    .touchevents .pan__item_home a.touch,
+    .touchevents .pan__item_thispage a.touch {
+      text-decoration: underline; }
+  .pan__item_home a span {
+    display: none; }
+  .pan__item_home a::before {
+    content: "";
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
+  .pan__item_thispage::after {
+    display: none; }
+
+.recommend__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-right: -24px;
+  margin-left: -24px; }
+  @media screen and (max-width: 970px) {
+    .recommend__row {
+      margin-right: -8px;
+      margin-left: -8px; } }
+
+.recommend__item {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  max-width: 33.33333%;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 33.33333%;
+  flex: 0 0 33.33333%;
+  padding-left: 24px;
+  padding-right: 24px;
+  margin-bottom: 24px; }
+  @media screen and (max-width: 970px) {
+    .recommend__item {
+      max-width: 50%;
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+      flex: 0 0 50%;
+      padding-right: 8px;
+      padding-left: 8px;
+      margin-bottom: 8px; } }
+  @media screen and (max-width: 666px) {
+    .recommend__item {
+      max-width: 100%;
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+      flex: 0 0 100%; } }
+
+.footer {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-top: 48px;
+  border-top: 1px solid #e6e6e6; }
+  @media screen and (max-width: 970px) {
+    .footer {
+      margin-top: 8px; } }
+  .footer__add {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 8px; }
+
+.pagetop {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  max-width: 1360px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px; }
+  @media screen and (max-width: 666px) {
+    .pagetop {
+      padding: 0 8px; } }
+  .pagetop__row {
+    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end; }
+    @media screen and (max-width: 666px) {
+      .pagetop__row {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        margin-bottom: 24px; } }
+  .pagetop__item {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 45px;
+    width: 45px;
+    position: relative;
+    text-decoration: none;
+    color: #3a8de6;
+    background-color: #fff;
+    border: 2px solid #3a8de6; }
+    .pagetop__item::before {
+      content: "";
+      display: inline-block;
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: inherit;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      display: block; }
+    .pagetop__item span {
+      display: none; }
+    .no-js .pagetop__item:hover,
+    .no-touchevents .pagetop__item:hover,
+    .touchevents .pagetop__item.touch {
+      background-color: #3a8de6;
+      color: #fff;
+      -webkit-transition: all .5s;
+      transition: all .5s; }
+      .no-js .pagetop__item:hover::before,
+      .no-touchevents .pagetop__item:hover::before,
+      .touchevents .pagetop__item.touch::before {
+        -webkit-transition: -webkit-transform .5s .3s;
+        transition: -webkit-transform .5s .3s;
+        transition: transform .5s .3s;
+        transition: transform .5s .3s, -webkit-transform .5s .3s;
+        -webkit-transform: translate3d(0, -3px, 0);
+        transform: translate3d(0, -3px, 0); }
+
+.fnav {
+  border-bottom: 1px solid #e6e6e6; }
+  .fnav__row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    @media screen and (min-width: 667px) {
+      .fnav__row {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        max-width: 1360px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 24px; } }
+  @media screen and (min-width: 667px) and (max-width: 666px) {
+    .fnav__row {
+      padding: 0 8px; } }
+    @media screen and (max-width: 666px) {
+      .fnav__row {
+        display: block; } }
+  .fnav__item, .fnav__item_home, .fnav__item_temp, .fnav__item_sample, .fnav__item_contact {
+    max-width: 100%;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 100%;
+    flex: 1 1 100%; }
+    .fnav__item a, .fnav__item_home a, .fnav__item_temp a, .fnav__item_sample a, .fnav__item_contact a {
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      position: relative;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      height: 45px;
+      text-decoration: none; }
+      @media screen and (min-width: 667px) {
+        .fnav__item a, .fnav__item_home a, .fnav__item_temp a, .fnav__item_sample a, .fnav__item_contact a {
+          border-left: 1px solid #e6e6e6; } }
+      .no-js .fnav__item a:hover, .no-js .fnav__item_home a:hover, .no-js .fnav__item_temp a:hover, .no-js .fnav__item_sample a:hover, .no-js .fnav__item_contact a:hover,
+      .no-touchevents .fnav__item a:hover,
+      .no-touchevents .fnav__item_home a:hover,
+      .no-touchevents .fnav__item_temp a:hover,
+      .no-touchevents .fnav__item_sample a:hover,
+      .no-touchevents .fnav__item_contact a:hover,
+      .touchevents .fnav__item a.touch,
+      .touchevents .fnav__item_home a.touch,
+      .touchevents .fnav__item_temp a.touch,
+      .touchevents .fnav__item_sample a.touch,
+      .touchevents .fnav__item_contact a.touch {
+        background-color: #e6e6e6;
+        color: #fff; }
+      @media screen and (max-width: 666px) {
+        .fnav__item a, .fnav__item_home a, .fnav__item_temp a, .fnav__item_sample a, .fnav__item_contact a {
+          padding: 0 8px;
+          -webkit-box-pack: start;
+          -ms-flex-pack: start;
+          justify-content: flex-start;
+          border-bottom: 1px solid #e6e6e6; }
+          .fnav__item a::after, .fnav__item_home a::after, .fnav__item_temp a::after, .fnav__item_sample a::after, .fnav__item_contact a::after {
+            content: "";
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            position: absolute;
+            right: 8px;
+            top: 0;
+            bottom: 0;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center; } }
+    body.home .fnav__item_home a {
+      background-color: #e6e6e6;
+      color: #fff; }
+    body.temp .fnav__item_temp a {
+      background-color: #e6e6e6;
+      color: #fff; }
+    body.sample .fnav__item_sample a {
+      background-color: #e6e6e6;
+      color: #fff; }
+    .fnav__item_contact a {
+      background-color: #e12e57;
+      color: #e6e6e6; }
+    body.contact .fnav__item_contact a {
+      background-color: #e6e6e6;
+      color: #fff; }
+
+/*
+---
+name: etc
+category:
+  - common/unit/etc
+tag:
+  - base
+compile: false
+---
+
+マージン関連のサポート
+
+```html
+<div class="mb1" style="background:black;">test</div>
+<div class="mb2" style="background:black;">test</div>
+<div class="mb3" style="background:black;">test</div>
+<div class="mb4" style="background:black;">test</div>
+<div class="mt1" style="background:black;">test</div>
+<div class="mt2" style="background:black;">test</div>
+<div class="mt3" style="background:black;">test</div>
+<div class="mt4" style="background:black;">test</div>
+```
+*/
+.mb0 {
+  margin-bottom: 0px; }
+
+.mb1 {
+  margin-bottom: 8px; }
+
+.mb2 {
+  margin-bottom: 16px; }
+
+.mb3 {
+  margin-bottom: 24px; }
+
+.mb4 {
+  margin-bottom: 32px; }
+
+.mb5 {
+  margin-bottom: 40px; }
+
+.mb6 {
+  margin-bottom: 48px; }
+
+.mb7 {
+  margin-bottom: 56px; }
+
+.mb8 {
+  margin-bottom: 64px; }
+
+.mb9 {
+  margin-bottom: 72px; }
+
+.mb10 {
+  margin-bottom: 80px; }
+
+.mt0 {
+  margin-top: 0px; }
+
+.mt1 {
+  margin-top: 8px; }
+
+.mt2 {
+  margin-top: 16px; }
+
+.mt3 {
+  margin-top: 24px; }
+
+.mt4 {
+  margin-top: 32px; }
+
+.mt5 {
+  margin-top: 40px; }
+
+.mt6 {
+  margin-top: 48px; }
+
+.mt7 {
+  margin-top: 56px; }
+
+.mt8 {
+  margin-top: 64px; }
+
+.mt9 {
+  margin-top: 72px; }
+
+.mt10 {
+  margin-top: 80px; }
+
+.pb0 {
+  padding-bottom: 0px; }
+
+.pb1 {
+  padding-bottom: 8px; }
+
+.pb2 {
+  padding-bottom: 16px; }
+
+.pb3 {
+  padding-bottom: 24px; }
+
+.pb4 {
+  padding-bottom: 32px; }
+
+.pb5 {
+  padding-bottom: 40px; }
+
+.pb6 {
+  padding-bottom: 48px; }
+
+.pb7 {
+  padding-bottom: 56px; }
+
+.pb8 {
+  padding-bottom: 64px; }
+
+.pb9 {
+  padding-bottom: 72px; }
+
+.pb10 {
+  padding-bottom: 80px; }
+
+.pt0 {
+  padding-top: 0px; }
+
+.pt1 {
+  padding-top: 8px; }
+
+.pt2 {
+  padding-top: 16px; }
+
+.pt3 {
+  padding-top: 24px; }
+
+.pt4 {
+  padding-top: 32px; }
+
+.pt5 {
+  padding-top: 40px; }
+
+.pt6 {
+  padding-top: 48px; }
+
+.pt7 {
+  padding-top: 56px; }
+
+.pt8 {
+  padding-top: 64px; }
+
+.pt9 {
+  padding-top: 72px; }
+
+.pt10 {
+  padding-top: 80px; }
+
+/*
+---
+name: u-img
+category:
+  - common/unit/u-img
+tag:
+  - base
+compile: false
+---
+
+画像に対する動作を指定します。
+例：レスポンシブWEBデザイン（リキッド）に対応します。
+
+---
+
+classなし
+```html
+<img
+data-src="../../../../../lib/img/dummy/yamato.png"
+alt="dummy">
+```
+classあり※レスポンシブWEBデザイン（リキッド）
+```html
+<img
+data-src="../../../../../lib/img/dummy/yamato.png"
+alt="dummy"
+class="u-img__max">
+```
+
+class/max-widthあり※レスポンシブWEBデザイン（リキッド）
+```html
+<img
+data-src="../../../../../lib/img/dummy/yamato.png"
+alt="dummy"
+style="max-width:500px;"
+class="u-img__max">
+```
+*/
+.u-img__max, .recommend__item img {
+  max-width: 100%;
+  width: 100%;
+  height: auto; }
+
+/*
+---
+name: u-btn
+category:
+  - common/unit/u-btn
+tag:
+  - base
+compile: false
+---
+
+u-btn(botton)
+
+ボタン制作をサポートします。
+※IE11のみ改行が入ってもボタンサイズ（高さ）が変更にならないので注意。
+
+```html
+<a href="#" class="u-btn__item">w100%ボタン</a>
+<a href="#" class="u-btn__item_s">ボタン</a>
+<a href="#" class="u-btn__item_m">ボタン</a>
+<a href="#" class="u-btn__item_l">ボタン</a>
+```
+```html
+<div class="u-btn">
+<a href="#" class="u-btn__item_s">ボタン</a>
+<a href="#" class="u-btn__item_point_s">ボタン</a>
+</div>
+```
+```html
+<div class="u-btn">
+<a href="#" class="u-btn__item">ボタン</a>
+<a href="#" class="u-btn__item">ボタン</a>
+<a href="#" class="u-btn__item">ボタン</a>
+</div>
+```
+```html
+<div class="u-btn">
+<a href="#" class="u-btn__item">ボタン</a>
+<a href="#" class="u-btn__item">ボタン</a>
+<a href="#" class="u-btn__item">ボタン</a>
+<a href="#" class="u-btn__item">ボタン</a>
+</div>
+```
+```html
+<a href="#" class="u-btn__item">ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト</a>
+<div class="u-btn">
+<a href="#" class="u-btn__item_s">ボタン</a>
+<a href="#" class="u-btn__item_s">ダミーテキストダミーテキストダミーテキストダミーテキスト</a>
+</div>
+<div class="u-btn">
+<a href="#" class="u-btn__item_s u-icon__link">ボタン</a>
+<a href="#" class="u-btn__item_s">ダミーテキストダミーテキストダミーテキストダミーテキスト</a>
+</div>
+```
+*/
+.u-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: -8px;
+  margin-right: -8px; }
+  @media screen and (max-width: 666px) {
+    .u-btn {
+      margin-right: 0;
+      margin-left: 0;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap; } }
+  .u-btn > .u-btn__item, .u-btn > .u-btn__item_s, .u-btn > .u-btn__item_point_s, .u-btn > .u-btn__item_weak_s, .u-btn > .u-btn__item_m, .u-btn > .u-btn__item_point_m, .u-btn > .u-btn__item_weak_m, .u-btn > .u-btn__item_l, .u-btn > .u-btn__item_point_l, .u-btn > .u-btn__item_weak_l, .u-btn > .u-btn__item_point, .u-btn > .u-btn__item_weak {
+    margin-right: 8px;
+    margin-left: 8px; }
+    @media screen and (max-width: 666px) {
+      .u-btn > .u-btn__item, .u-btn > .u-btn__item_s, .u-btn > .u-btn__item_point_s, .u-btn > .u-btn__item_weak_s, .u-btn > .u-btn__item_m, .u-btn > .u-btn__item_point_m, .u-btn > .u-btn__item_weak_m, .u-btn > .u-btn__item_l, .u-btn > .u-btn__item_point_l, .u-btn > .u-btn__item_weak_l, .u-btn > .u-btn__item_point, .u-btn > .u-btn__item_weak {
+        margin-right: 0;
+        margin-left: 0;
+        max-width: 100%;
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%; } }
+  .u-btn__item, .u-btn__item_s, .u-btn__item_point_s, .u-btn__item_weak_s, .u-btn__item_m, .u-btn__item_point_m, .u-btn__item_weak_m, .u-btn__item_l, .u-btn__item_point_l, .u-btn__item_weak_l, .u-btn__item_point, .u-btn__item_weak {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-decoration: none;
+    width: 100%;
+    min-height: 45px;
+    font-size: 1.6rem;
+    line-height: 1.4;
+    padding: 8px;
+    border: 1px solid #3a8de6;
+    color: #3a8de6;
+    border-radius: 3px;
+    margin-bottom: 16px;
+    background-color: #fff;
+    -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); }
+    @media all and (-ms-high-contrast: none) {
+      .u-btn__item, .u-btn__item_s, .u-btn__item_point_s, .u-btn__item_weak_s, .u-btn__item_m, .u-btn__item_point_m, .u-btn__item_weak_m, .u-btn__item_l, .u-btn__item_point_l, .u-btn__item_weak_l, .u-btn__item_point, .u-btn__item_weak {
+        height: 45px; } }
+    .no-js .u-btn__item:hover, .no-js .u-btn__item_s:hover, .no-js .u-btn__item_point_s:hover, .no-js .u-btn__item_weak_s:hover, .no-js .u-btn__item_m:hover, .no-js .u-btn__item_point_m:hover, .no-js .u-btn__item_weak_m:hover, .no-js .u-btn__item_l:hover, .no-js .u-btn__item_point_l:hover, .no-js .u-btn__item_weak_l:hover, .no-js .u-btn__item_point:hover, .no-js .u-btn__item_weak:hover,
+    .no-touchevents .u-btn__item:hover,
+    .no-touchevents .u-btn__item_s:hover,
+    .no-touchevents .u-btn__item_point_s:hover,
+    .no-touchevents .u-btn__item_weak_s:hover,
+    .no-touchevents .u-btn__item_m:hover,
+    .no-touchevents .u-btn__item_point_m:hover,
+    .no-touchevents .u-btn__item_weak_m:hover,
+    .no-touchevents .u-btn__item_l:hover,
+    .no-touchevents .u-btn__item_point_l:hover,
+    .no-touchevents .u-btn__item_weak_l:hover,
+    .no-touchevents .u-btn__item_point:hover,
+    .no-touchevents .u-btn__item_weak:hover,
+    .touchevents .u-btn__item.touch,
+    .touchevents .touch.u-btn__item_s,
+    .touchevents .touch.u-btn__item_point_s,
+    .touchevents .touch.u-btn__item_weak_s,
+    .touchevents .touch.u-btn__item_m,
+    .touchevents .touch.u-btn__item_point_m,
+    .touchevents .touch.u-btn__item_weak_m,
+    .touchevents .touch.u-btn__item_l,
+    .touchevents .touch.u-btn__item_point_l,
+    .touchevents .touch.u-btn__item_weak_l,
+    .touchevents .touch.u-btn__item_point,
+    .touchevents .touch.u-btn__item_weak {
+      background-color: #3a8de6;
+      color: #fff; }
+    .u-btn__item_s, .u-btn__item_point_s, .u-btn__item_weak_s {
+      max-width: 160px; }
+    .u-btn__item_m, .u-btn__item_point_m, .u-btn__item_weak_m {
+      max-width: 320px; }
+    .u-btn__item_l, .u-btn__item_point_l, .u-btn__item_weak_l {
+      max-width: 666px; }
+    .u-btn__item_point, .u-btn__item_point_s, .u-btn__item_point_m, .u-btn__item_point_l, .u-btn__item_weak_s, .u-btn__item_weak_m, .u-btn__item_weak_l {
+      background-color: #e12e57;
+      border-color: #e12e57;
+      color: #fff; }
+      .no-js .u-btn__item_point:hover, .no-js .u-btn__item_point_s:hover, .no-js .u-btn__item_point_m:hover, .no-js .u-btn__item_point_l:hover, .no-js .u-btn__item_weak_s:hover, .no-js .u-btn__item_weak_m:hover, .no-js .u-btn__item_weak_l:hover,
+      .no-touchevents .u-btn__item_point:hover,
+      .no-touchevents .u-btn__item_point_s:hover,
+      .no-touchevents .u-btn__item_point_m:hover,
+      .no-touchevents .u-btn__item_point_l:hover,
+      .no-touchevents .u-btn__item_weak_s:hover,
+      .no-touchevents .u-btn__item_weak_m:hover,
+      .no-touchevents .u-btn__item_weak_l:hover,
+      .touchevents .u-btn__item_point.touch,
+      .touchevents .touch.u-btn__item_point_s,
+      .touchevents .touch.u-btn__item_point_m,
+      .touchevents .touch.u-btn__item_point_l,
+      .touchevents .touch.u-btn__item_weak_s,
+      .touchevents .touch.u-btn__item_weak_m,
+      .touchevents .touch.u-btn__item_weak_l {
+        background-color: #aa183a;
+        border-color: #aa183a; }
+    .u-btn__item_weak {
+      background-color: #e6e6e6;
+      border-color: #e12e57;
+      color: #fff; }
+      .no-js .u-btn__item_weak:hover,
+      .no-touchevents .u-btn__item_weak:hover,
+      .touchevents .u-btn__item_weak.touch {
+        background-color: #aa183a;
+        border-color: #aa183a; }
+
+/*
+---
+name: u-icon
+category:
+  - common/unit/u-icon
+tag:
+  - base
+compile: false
+---
+
+リンクなどのアイコン設置をサポートします。
+
+```html
+<a href="#">link</a>
+<a href="#" class="u-icon__link">link</a>
+<a href="#" class="u-icon__link" target="_blank">link</a>
+<a href="#" class="u-icon__link" target="_blank" rel="nofollow">link</a>
+<a href="#.pdf" class="u-icon__link">link</a>
+```
+*/
+.u-icon, .u-icon__link {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+  .u-icon__link::after {
+    content: "";
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0 4px 0 2px;
+    font-weight: bold; }
+  .u-icon__link[target='_blank']::after {
+    content: "\f14c";
+    font-weight: normal; }
+  .u-icon__link[rel='nofollow']::after {
+    content: "\f08e";
+    font-weight: normal; }
+  .u-icon__link[href*='.pdf']::after {
+    content: "\f15c";
+    font-weight: normal; }
+  .no-js .u-icon__link:hover::after,
+  .no-touchevents .u-icon__link:hover::after,
+  .touchevents .u-icon__link.touch::after {
+    -webkit-transform: translate3d(2px, 0, 0);
+    transform: translate3d(2px, 0, 0);
+    -webkit-transition: all .3s;
+    transition: all .3s; }
+
+/*
+---
+name: u-small
+category:
+  - common/unit/u-small
+tag:
+  - base
+compile: false
+---
+
+キャプションにします。
+
+```html
+<small class="u-small">※キャプションです。</small>
+<p class="u-small">※キャプションです。</p>
+```
+*/
+.u-small {
+  color: #736d6d;
+  font-size: 1.2rem; }
+
+/*
+---
+name: u-figure
+category:
+  - common/unit/u-figure
+tag:
+  - base
+compile: false
+---
+
+画像のキャプション表示をサポートします。
+
+```html
+<figure class="u-figure">
+  <img
+  data-src="../../../../../lib/img/dummy/bronze.png"
+  alt="dummy"
+  class="u-img__max">
+  <figcaption class="u-figure__cap">右下にキャプションが入ります。</figcaption>
+</figure>
+```
+```html
+<figure class="u-figure">
+  <img
+  data-src="../../../../../lib/img/dummy/bronze.png"
+  alt="dummy"
+  class="u-img__max">
+  <figcaption class="u-figure__cap_darken">黒いキャプションが入ります。</figcaption>
+</figure>
+```
+```html
+<figure class="u-figure">
+  <img
+  data-src="../../../../../lib/img/dummy/bronze.png"
+  alt="dummy"
+  class="u-img__max">
+  <figcaption class="u-figure__cap_left">キャプションが左に入ります。</figcaption>
+</figure>
+```
+*/
+.u-figure {
+  position: relative; }
+  .u-figure__cap, .u-figure__cap_darken, .u-figure__cap_left, .u-figure__cap_left_darken {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    font-size: 1.1rem;
+    display: inline-block;
+    font-weight: bold;
+    line-height: 1.2;
+    color: #e6e6e6;
+    text-shadow: 0px 0px 3px #000; }
+    .u-figure__cap_darken {
+      color: #000;
+      text-shadow: 0px 0px 3px #fff; }
+    .u-figure__cap_left {
+      right: auto;
+      left: 8px; }
+      .u-figure__cap_left_darken {
+        color: #000;
+        text-shadow: 0px 0px 3px #fff; }
+
+/*
+---
+name: u-only(hide)
+category:
+  - common/unit/u-only(hide)
+tag:
+  - base
+compile: false
+---
+
+PC版（タブレット〜PCサイズ）とSP版で、表示非表示を切り替えます。
+
+```html
+<div class="u-only__pc" style="background:yellow">PCサイズのみで表示</div>
+<div class="u-only__sp" style="background:red">SPサイズのみで表示</div>
+```
+*/
+.u-only__pc {
+  display: none; }
+  @media screen and (min-width: 971px) {
+    .u-only__pc {
+      display: block; } }
+
+.u-only__sp {
+  display: none; }
+  @media screen and (max-width: 970px) {
+    .u-only__sp {
+      display: block; } }
+
+/*
+---
+name: u-ttl(title)
+category:
+  - common/unit/u-ttl
+tag:
+  - base
+compile: false
+---
+
+見出し関連のサイズを調整します。
+
+```html
+<h3 class="u-ttl_l">大きい見出し</h3>
+<p>見出し説明テキスト<br>説明テキスト説明テキスト</p>
+```
+```html
+<h3 class="u-ttl_m">小見出し見出し</h3>
+<p>見出し説明テキスト<br>説明テキスト説明テキスト</p>
+```
+```html
+<h3 class="u-ttl_s">小見出し見出し</h3>
+<p>見出し説明テキスト<br>説明テキスト説明テキスト</p>
+```
+*/
+.u-ttl_l {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 4em 0 1em;
+  padding-bottom: .9em;
+  -webkit-font-feature-settings: 'palt';
+  font-feature-settings: 'palt';
+  line-height: 1.4;
+  font-size: 2.4rem;
+  color: #000;
+  border-bottom: 2px solid #595454; }
+  .u-ttl_l:first-child {
+    margin-top: 0; }
+  @media screen and (max-width: 666px) {
+    .u-ttl_l {
+      font-size: 2rem; } }
+
+.u-ttl_m {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 3em 0 1em;
+  padding-bottom: .5em;
+  -webkit-font-feature-settings: 'palt';
+  font-feature-settings: 'palt';
+  line-height: 1.4;
+  font-size: 2rem;
+  color: #000;
+  border-bottom: 2px dotted #e6e6e6; }
+  @media screen and (max-width: 666px) {
+    .u-ttl_m {
+      font-size: 1.8rem; } }
+  .u-ttl_m:first-child {
+    margin-top: 0; }
+
+.u-ttl_s {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #000;
+  margin-bottom: 1em;
+  line-height: 1.4;
+  margin: 2em 0 1em;
+  -webkit-font-feature-settings: 'palt';
+  font-feature-settings: 'palt'; }
+  .u-ttl_s:first-child {
+    margin-top: 0; }
+
+/*
+---
+name: u-assit(box)
+category:
+  - common/unit/u-assist
+tag:
+  - base
+compile: false
+---
+
+サポート情報用のエリアを制作します。
+
+```html
+<aside class="u-assist">
+<p>サポート情報</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur cumque, inventore, voluptatem eaque quaerat voluptas sapiente itaque quae unde ea praesentium vel magni. Deserunt dolor, velit adipisci unde, recusandae reprehenderit.</p>
+</aside>
+```
+*/
+.u-assist {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: #f3f3f3;
+  padding: 24px;
+  border: 1px solid #e6e6e6;
+  border-radius: 2px; }
+  @media screen and (max-width: 666px) {
+    .u-assist {
+      padding: 8px; } }
+  .u-assist > p:last-child {
+    margin-bottom: 0; }
+
+/*
+---
+name: u-position
+category:
+- common/unit/u-position
+tag:
+- base
+compile: false
+---
+
+block要素やblock内の要素の位置を調整します。
+ちょっと使いにくいかな。
+
+---
+
+##### 内包するインライン要素の位置を調整
+
+```html
+<div class="u-position_center" style="background:yellow;">
+center
+</div>
+```
+```html
+<div class="u-position_left" style="background:yellow;">
+center
+</div>
+```
+```html
+<div class="u-position_right" style="background:yellow;">
+center
+</div>
+```
+
+----
+
+##### block要素自身の位置を調整
+
+```html
+<div class="u-position__item_center" style="background:yellow; width:100px;">
+center
+</div>
+```
+
+```html
+<div class="u-position__item_left" style="background:yellow; width:100px;">
+center
+</div>
+```
+
+```html
+<div class="u-position__item_right" style="background:yellow; width:100px;">
+center
+</div>
+```
+*/
+.u-position_center {
+  text-align: center; }
+
+.u-position_left {
+  text-align: left; }
+
+.u-position_right {
+  text-align: right; }
+
+.u-position__item_center {
+  margin-left: auto;
+  margin-right: auto; }
+
+.u-position__item_left {
+  margin-right: auto; }
+
+.u-position__item_right {
+  margin-left: auto; }
+
+body.home .main-v__row {
+  position: relative;
+  margin-top: 24px;
+  background-color: #e6e6e6; }
+  @media screen and (max-width: 666px) {
+    body.home .main-v__row {
+      margin-top: 8px; } }
+
+body.home .main-v__item {
+  position: relative;
+  z-index: 2;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  opacity: 0; }
+  body.home .main-v__item.active {
+    opacity: 1;
+    -webkit-transition: all 1s;
+    transition: all 1s; }
+
+body.home .main-v__desc {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+/*# sourceMappingURL=styles.css.map */
