@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Linux #
 
 *~
@@ -35,13 +34,4 @@ $RECYCLE.BIN/
 /dest/
 .node-version
 .npm-version
-=======
-#以下ディレクトリを無視
-_psd
-dest
-node_modules
-.vagrant
-.sass-cache
-.node-version
->>>>>>> master
 package-lock.json
