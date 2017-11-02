@@ -189,8 +189,8 @@ a {
   outline: none;
   color: #595454; }
   .no-js a:hover,
-  .js.no-touchevents a:hover,
-  .js.touchevents a.touch {
+  .no-touchevents a:hover,
+  .touchevents a.touch {
     text-decoration: none; }
 
 ::-moz-selection,
@@ -273,8 +273,8 @@ html, body {
     .menubar {
       display: none; } }
   .no-js .menubar:hover,
-  .js.no-touchevents .menubar:hover,
-  .js.touchevents .menubar.touch {
+  .no-touchevents .menubar:hover,
+  .touchevents .menubar.touch {
     background-color: #e6e6e6;
     cursor: pointer; }
   .menubar__row {
@@ -403,6 +403,44 @@ html, body {
     -webkit-transform: translateY(-10px) rotate(-45deg);
     transform: translateY(-10px) rotate(-45deg); } }
 
+/*
+---
+name: gnav(グローバルナビゲーション)
+category:
+  - common/header/gnav
+tag:
+  - base
+compile: false
+---
+
+見出し関連のサイズを調整します。
+サンプルとして、共通パーツのstyleguideを掲載
+
+```html
+<nav class="gnav">
+  <ul class="gnav__row">
+    <li class="gnav__item">
+      <a href="#">home</a>
+    </li>
+    <li class="gnav__item">
+      <a href="#">temp</a>
+    </li>
+    <li class="gnav__item">
+      <a href="#">menu</a>
+    </li>
+    <li class="gnav__item">
+      <a href="#">menu</a>
+    </li>
+    <li class="gnav__item">
+      <a href="#">menu</a>
+    </li>
+    <li class="gnav__item_contact">
+      <a href="#">contact</a>
+    </li>
+  </ul>
+</nav>
+```
+*/
 .gnav {
   position: relative;
   z-index: 3;
@@ -454,16 +492,16 @@ html, body {
     text-decoration: none;
     background-color: #fff; }
     .no-js .gnav__item a:hover, .no-js .gnav__item_home a:hover, .no-js .gnav__item_temp a:hover, .no-js .gnav__item_sample a:hover, .no-js .gnav__item_contact a:hover,
-    .js.no-touchevents .gnav__item a:hover,
-    .js.no-touchevents .gnav__item_home a:hover,
-    .js.no-touchevents .gnav__item_temp a:hover,
-    .js.no-touchevents .gnav__item_sample a:hover,
-    .js.no-touchevents .gnav__item_contact a:hover,
-    .js.touchevents .gnav__item a.touch,
-    .js.touchevents .gnav__item_home a.touch,
-    .js.touchevents .gnav__item_temp a.touch,
-    .js.touchevents .gnav__item_sample a.touch,
-    .js.touchevents .gnav__item_contact a.touch {
+    .no-touchevents .gnav__item a:hover,
+    .no-touchevents .gnav__item_home a:hover,
+    .no-touchevents .gnav__item_temp a:hover,
+    .no-touchevents .gnav__item_sample a:hover,
+    .no-touchevents .gnav__item_contact a:hover,
+    .touchevents .gnav__item a.touch,
+    .touchevents .gnav__item_home a.touch,
+    .touchevents .gnav__item_temp a.touch,
+    .touchevents .gnav__item_sample a.touch,
+    .touchevents .gnav__item_contact a.touch {
       background-color: #e6e6e6;
       color: #fff; }
     @media screen and (max-width: 666px) {
@@ -614,12 +652,12 @@ html, body {
     text-decoration: none;
     font-size: 1.2rem; }
     .no-js .pan__item a:hover, .no-js .pan__item_home a:hover, .no-js .pan__item_thispage a:hover,
-    .js.no-touchevents .pan__item a:hover,
-    .js.no-touchevents .pan__item_home a:hover,
-    .js.no-touchevents .pan__item_thispage a:hover,
-    .js.touchevents .pan__item a.touch,
-    .js.touchevents .pan__item_home a.touch,
-    .js.touchevents .pan__item_thispage a.touch {
+    .no-touchevents .pan__item a:hover,
+    .no-touchevents .pan__item_home a:hover,
+    .no-touchevents .pan__item_thispage a:hover,
+    .touchevents .pan__item a.touch,
+    .touchevents .pan__item_home a.touch,
+    .touchevents .pan__item_thispage a.touch {
       text-decoration: underline; }
   .pan__item_home a span {
     display: none; }
@@ -746,15 +784,15 @@ html, body {
     .pagetop__item span {
       display: none; }
     .no-js .pagetop__item:hover,
-    .js.no-touchevents .pagetop__item:hover,
-    .js.touchevents .pagetop__item.touch {
+    .no-touchevents .pagetop__item:hover,
+    .touchevents .pagetop__item.touch {
       background-color: #3a8de6;
       color: #fff;
       -webkit-transition: all .5s;
       transition: all .5s; }
       .no-js .pagetop__item:hover::before,
-      .js.no-touchevents .pagetop__item:hover::before,
-      .js.touchevents .pagetop__item.touch::before {
+      .no-touchevents .pagetop__item:hover::before,
+      .touchevents .pagetop__item.touch::before {
         -webkit-transition: -webkit-transform .5s .3s;
         transition: -webkit-transform .5s .3s;
         transition: transform .5s .3s;
@@ -812,16 +850,16 @@ html, body {
         .fnav__item a, .fnav__item_home a, .fnav__item_temp a, .fnav__item_sample a, .fnav__item_contact a {
           border-left: 1px solid #e6e6e6; } }
       .no-js .fnav__item a:hover, .no-js .fnav__item_home a:hover, .no-js .fnav__item_temp a:hover, .no-js .fnav__item_sample a:hover, .no-js .fnav__item_contact a:hover,
-      .js.no-touchevents .fnav__item a:hover,
-      .js.no-touchevents .fnav__item_home a:hover,
-      .js.no-touchevents .fnav__item_temp a:hover,
-      .js.no-touchevents .fnav__item_sample a:hover,
-      .js.no-touchevents .fnav__item_contact a:hover,
-      .js.touchevents .fnav__item a.touch,
-      .js.touchevents .fnav__item_home a.touch,
-      .js.touchevents .fnav__item_temp a.touch,
-      .js.touchevents .fnav__item_sample a.touch,
-      .js.touchevents .fnav__item_contact a.touch {
+      .no-touchevents .fnav__item a:hover,
+      .no-touchevents .fnav__item_home a:hover,
+      .no-touchevents .fnav__item_temp a:hover,
+      .no-touchevents .fnav__item_sample a:hover,
+      .no-touchevents .fnav__item_contact a:hover,
+      .touchevents .fnav__item a.touch,
+      .touchevents .fnav__item_home a.touch,
+      .touchevents .fnav__item_temp a.touch,
+      .touchevents .fnav__item_sample a.touch,
+      .touchevents .fnav__item_contact a.touch {
         background-color: #e6e6e6;
         color: #fff; }
       @media screen and (max-width: 666px) {
@@ -868,6 +906,29 @@ html, body {
       background-color: #e6e6e6;
       color: #fff; }
 
+/*
+---
+name: etc
+category:
+  - common/unit/etc
+tag:
+  - base
+compile: false
+---
+
+マージン関連のサポート
+
+```html
+<div class="mb1" style="background:black;">test</div>
+<div class="mb2" style="background:black;">test</div>
+<div class="mb3" style="background:black;">test</div>
+<div class="mb4" style="background:black;">test</div>
+<div class="mt1" style="background:black;">test</div>
+<div class="mt2" style="background:black;">test</div>
+<div class="mt3" style="background:black;">test</div>
+<div class="mt4" style="background:black;">test</div>
+```
+*/
 .mb0 {
   margin-bottom: 0px; }
 
@@ -1000,82 +1061,246 @@ html, body {
 .pt10 {
   padding-top: 80px; }
 
+/*
+---
+name: u-img
+category:
+  - common/unit/u-img
+tag:
+  - base
+compile: false
+---
+
+画像に対する動作を指定します。
+例：レスポンシブWEBデザイン（リキッド）に対応します。
+
+---
+
+classなし
+```html
+<img
+data-src="../../../../../lib/img/dummy/yamato.png"
+alt="dummy">
+```
+classあり※レスポンシブWEBデザイン（リキッド）
+```html
+<img
+data-src="../../../../../lib/img/dummy/yamato.png"
+alt="dummy"
+class="u-img__max">
+```
+
+class/max-widthあり※レスポンシブWEBデザイン（リキッド）
+```html
+<img
+data-src="../../../../../lib/img/dummy/yamato.png"
+alt="dummy"
+style="max-width:500px;"
+class="u-img__max">
+```
+*/
 .u-img__max, .recommend__item img {
   max-width: 100%;
   width: 100%;
   height: auto; }
 
-.u-btn, .u-btn_s, .u-btn_point_s, .u-btn_l, .u-btn_point_l, .u-btn_point {
-  position: relative;
+/*
+---
+name: u-btn
+category:
+  - common/unit/u-btn
+tag:
+  - base
+compile: false
+---
+
+u-btn(botton)
+
+ボタン制作をサポートします。
+※IE11のみ改行が入ってもボタンサイズ（高さ）が変更にならないので注意。
+
+```html
+<a href="#" class="u-btn__item">w100%ボタン</a>
+<a href="#" class="u-btn__item_s">ボタン</a>
+<a href="#" class="u-btn__item_m">ボタン</a>
+<a href="#" class="u-btn__item_l">ボタン</a>
+```
+```html
+<div class="u-btn">
+<a href="#" class="u-btn__item_s">ボタン</a>
+<a href="#" class="u-btn__item_point_s">ボタン</a>
+</div>
+```
+```html
+<div class="u-btn">
+<a href="#" class="u-btn__item">ボタン</a>
+<a href="#" class="u-btn__item">ボタン</a>
+<a href="#" class="u-btn__item">ボタン</a>
+</div>
+```
+```html
+<div class="u-btn">
+<a href="#" class="u-btn__item">ボタン</a>
+<a href="#" class="u-btn__item">ボタン</a>
+<a href="#" class="u-btn__item">ボタン</a>
+<a href="#" class="u-btn__item">ボタン</a>
+</div>
+```
+```html
+<a href="#" class="u-btn__item">ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト</a>
+<div class="u-btn">
+<a href="#" class="u-btn__item_s">ボタン</a>
+<a href="#" class="u-btn__item_s">ダミーテキストダミーテキストダミーテキストダミーテキスト</a>
+</div>
+<div class="u-btn">
+<a href="#" class="u-btn__item_s u-icon__link">ボタン</a>
+<a href="#" class="u-btn__item_s">ダミーテキストダミーテキストダミーテキストダミーテキスト</a>
+</div>
+```
+*/
+.u-btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  text-decoration: none;
-  max-width: 320px;
-  width: 100%;
-  height: 45px;
-  border: 1px solid #3a8de6;
-  color: #3a8de6;
-  border-radius: 4px;
-  margin-bottom: 8px; }
-  .no-js .u-btn:hover, .no-js .u-btn_s:hover, .no-js .u-btn_point_s:hover, .no-js .u-btn_l:hover, .no-js .u-btn_point_l:hover, .no-js .u-btn_point:hover,
-  .js.no-touchevents .u-btn:hover,
-  .js.no-touchevents .u-btn_s:hover,
-  .js.no-touchevents .u-btn_point_s:hover,
-  .js.no-touchevents .u-btn_l:hover,
-  .js.no-touchevents .u-btn_point_l:hover,
-  .js.no-touchevents .u-btn_point:hover,
-  .js.touchevents .u-btn.touch,
-  .js.touchevents .touch.u-btn_s,
-  .js.touchevents .touch.u-btn_point_s,
-  .js.touchevents .touch.u-btn_l,
-  .js.touchevents .touch.u-btn_point_l,
-  .js.touchevents .touch.u-btn_point {
-    background-color: #3a8de6;
-    color: #fff; }
-  .u-btn_s, .u-btn_point_s {
-    max-width: 160px; }
-  .u-btn_l, .u-btn_point_l {
-    max-width: 666px; }
-  .u-btn_point, .u-btn_point_s, .u-btn_point_l {
-    background-color: #e12e57;
-    border-color: #e12e57;
-    color: #fff; }
-    .no-js .u-btn_point:hover, .no-js .u-btn_point_s:hover, .no-js .u-btn_point_l:hover,
-    .js.no-touchevents .u-btn_point:hover,
-    .js.no-touchevents .u-btn_point_s:hover,
-    .js.no-touchevents .u-btn_point_l:hover,
-    .js.touchevents .u-btn_point.touch,
-    .js.touchevents .touch.u-btn_point_s,
-    .js.touchevents .touch.u-btn_point_l {
-      background-color: #aa183a;
-      border-color: #aa183a; }
+  margin-left: -8px;
+  margin-right: -8px; }
+  @media screen and (max-width: 666px) {
+    .u-btn {
+      margin-right: 0;
+      margin-left: 0;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap; } }
+  .u-btn > .u-btn__item, .u-btn > .u-btn__item_s, .u-btn > .u-btn__item_point_s, .u-btn > .u-btn__item_weak_s, .u-btn > .u-btn__item_m, .u-btn > .u-btn__item_point_m, .u-btn > .u-btn__item_weak_m, .u-btn > .u-btn__item_l, .u-btn > .u-btn__item_point_l, .u-btn > .u-btn__item_weak_l, .u-btn > .u-btn__item_point, .u-btn > .u-btn__item_weak {
+    margin-right: 8px;
+    margin-left: 8px; }
+    @media screen and (max-width: 666px) {
+      .u-btn > .u-btn__item, .u-btn > .u-btn__item_s, .u-btn > .u-btn__item_point_s, .u-btn > .u-btn__item_weak_s, .u-btn > .u-btn__item_m, .u-btn > .u-btn__item_point_m, .u-btn > .u-btn__item_weak_m, .u-btn > .u-btn__item_l, .u-btn > .u-btn__item_point_l, .u-btn > .u-btn__item_weak_l, .u-btn > .u-btn__item_point, .u-btn > .u-btn__item_weak {
+        margin-right: 0;
+        margin-left: 0;
+        max-width: 100%;
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%; } }
+  .u-btn__item, .u-btn__item_s, .u-btn__item_point_s, .u-btn__item_weak_s, .u-btn__item_m, .u-btn__item_point_m, .u-btn__item_weak_m, .u-btn__item_l, .u-btn__item_point_l, .u-btn__item_weak_l, .u-btn__item_point, .u-btn__item_weak {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-decoration: none;
+    width: 100%;
+    min-height: 45px;
+    font-size: 1.6rem;
+    line-height: 1.4;
+    padding: 8px;
+    border: 1px solid #3a8de6;
+    color: #3a8de6;
+    border-radius: 3px;
+    margin-bottom: 16px;
+    background-color: #fff;
+    -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); }
+    @media all and (-ms-high-contrast: none) {
+      .u-btn__item, .u-btn__item_s, .u-btn__item_point_s, .u-btn__item_weak_s, .u-btn__item_m, .u-btn__item_point_m, .u-btn__item_weak_m, .u-btn__item_l, .u-btn__item_point_l, .u-btn__item_weak_l, .u-btn__item_point, .u-btn__item_weak {
+        height: 45px; } }
+    .no-js .u-btn__item:hover, .no-js .u-btn__item_s:hover, .no-js .u-btn__item_point_s:hover, .no-js .u-btn__item_weak_s:hover, .no-js .u-btn__item_m:hover, .no-js .u-btn__item_point_m:hover, .no-js .u-btn__item_weak_m:hover, .no-js .u-btn__item_l:hover, .no-js .u-btn__item_point_l:hover, .no-js .u-btn__item_weak_l:hover, .no-js .u-btn__item_point:hover, .no-js .u-btn__item_weak:hover,
+    .no-touchevents .u-btn__item:hover,
+    .no-touchevents .u-btn__item_s:hover,
+    .no-touchevents .u-btn__item_point_s:hover,
+    .no-touchevents .u-btn__item_weak_s:hover,
+    .no-touchevents .u-btn__item_m:hover,
+    .no-touchevents .u-btn__item_point_m:hover,
+    .no-touchevents .u-btn__item_weak_m:hover,
+    .no-touchevents .u-btn__item_l:hover,
+    .no-touchevents .u-btn__item_point_l:hover,
+    .no-touchevents .u-btn__item_weak_l:hover,
+    .no-touchevents .u-btn__item_point:hover,
+    .no-touchevents .u-btn__item_weak:hover,
+    .touchevents .u-btn__item.touch,
+    .touchevents .touch.u-btn__item_s,
+    .touchevents .touch.u-btn__item_point_s,
+    .touchevents .touch.u-btn__item_weak_s,
+    .touchevents .touch.u-btn__item_m,
+    .touchevents .touch.u-btn__item_point_m,
+    .touchevents .touch.u-btn__item_weak_m,
+    .touchevents .touch.u-btn__item_l,
+    .touchevents .touch.u-btn__item_point_l,
+    .touchevents .touch.u-btn__item_weak_l,
+    .touchevents .touch.u-btn__item_point,
+    .touchevents .touch.u-btn__item_weak {
+      background-color: #3a8de6;
+      color: #fff; }
+    .u-btn__item_s, .u-btn__item_point_s, .u-btn__item_weak_s {
+      max-width: 160px; }
+    .u-btn__item_m, .u-btn__item_point_m, .u-btn__item_weak_m {
+      max-width: 320px; }
+    .u-btn__item_l, .u-btn__item_point_l, .u-btn__item_weak_l {
+      max-width: 666px; }
+    .u-btn__item_point, .u-btn__item_point_s, .u-btn__item_point_m, .u-btn__item_point_l, .u-btn__item_weak_s, .u-btn__item_weak_m, .u-btn__item_weak_l {
+      background-color: #e12e57;
+      border-color: #e12e57;
+      color: #fff; }
+      .no-js .u-btn__item_point:hover, .no-js .u-btn__item_point_s:hover, .no-js .u-btn__item_point_m:hover, .no-js .u-btn__item_point_l:hover, .no-js .u-btn__item_weak_s:hover, .no-js .u-btn__item_weak_m:hover, .no-js .u-btn__item_weak_l:hover,
+      .no-touchevents .u-btn__item_point:hover,
+      .no-touchevents .u-btn__item_point_s:hover,
+      .no-touchevents .u-btn__item_point_m:hover,
+      .no-touchevents .u-btn__item_point_l:hover,
+      .no-touchevents .u-btn__item_weak_s:hover,
+      .no-touchevents .u-btn__item_weak_m:hover,
+      .no-touchevents .u-btn__item_weak_l:hover,
+      .touchevents .u-btn__item_point.touch,
+      .touchevents .touch.u-btn__item_point_s,
+      .touchevents .touch.u-btn__item_point_m,
+      .touchevents .touch.u-btn__item_point_l,
+      .touchevents .touch.u-btn__item_weak_s,
+      .touchevents .touch.u-btn__item_weak_m,
+      .touchevents .touch.u-btn__item_weak_l {
+        background-color: #aa183a;
+        border-color: #aa183a; }
+    .u-btn__item_weak {
+      background-color: #e6e6e6;
+      border-color: #e12e57;
+      color: #fff; }
+      .no-js .u-btn__item_weak:hover,
+      .no-touchevents .u-btn__item_weak:hover,
+      .touchevents .u-btn__item_weak.touch {
+        background-color: #aa183a;
+        border-color: #aa183a; }
 
-.u-a, .u-a_icon {
+/*
+---
+name: u-icon
+category:
+  - common/unit/u-icon
+tag:
+  - base
+compile: false
+---
+
+リンクなどのアイコン設置をサポートします。
+
+```html
+<a href="#">link</a>
+<a href="#" class="u-icon__link">link</a>
+<a href="#" class="u-icon__link" target="_blank">link</a>
+<a href="#" class="u-icon__link" target="_blank" rel="nofollow">link</a>
+<a href="#.pdf" class="u-icon__link">link</a>
+```
+*/
+.u-icon, .u-icon__link {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  display: inline-block;
-  font-weight: bold;
-  text-decoration: none;
-  line-height: 1.2;
-  border-bottom: 2px solid transparent;
-  -webkit-transition: border-color .3s;
-  transition: border-color .3s; }
-  .no-js .u-a:hover, .no-js .u-a_icon:hover,
-  .js.no-touchevents .u-a:hover,
-  .js.no-touchevents .u-a_icon:hover,
-  .js.touchevents .u-a.touch,
-  .js.touchevents .touch.u-a_icon {
-    border-color: #595454;
-    -webkit-transition: border-color .1s;
-    transition: border-color .1s; }
-  .u-a_icon::after {
+  box-sizing: border-box; }
+  .u-icon__link::after {
     content: "";
     display: inline-block;
     font: normal normal normal 14px/1 FontAwesome;
@@ -1085,45 +1310,87 @@ html, body {
     -moz-osx-font-smoothing: grayscale;
     margin: 0 4px 0 2px;
     font-weight: bold; }
-  .u-a_icon[target='_blank']::after {
+  .u-icon__link[target='_blank']::after {
     content: "\f14c";
     font-weight: normal; }
-  .u-a_icon[rel='nofollow']::after {
+  .u-icon__link[rel='nofollow']::after {
     content: "\f08e";
     font-weight: normal; }
-  .u-a_icon[href*='.pdf']::after {
+  .u-icon__link[href*='.pdf']::after {
     content: "\f15c";
     font-weight: normal; }
-  .no-js .u-a_icon:hover::after,
-  .js.no-touchevents .u-a_icon:hover::after,
-  .js.touchevents .u-a_icon.touch::after {
-    -webkit-transform: translate3d(2px, -2px, 0);
-    transform: translate3d(2px, -2px, 0);
+  .no-js .u-icon__link:hover::after,
+  .no-touchevents .u-icon__link:hover::after,
+  .touchevents .u-icon__link.touch::after {
+    -webkit-transform: translate3d(2px, 0, 0);
+    transform: translate3d(2px, 0, 0);
     -webkit-transition: all .3s;
     transition: all .3s; }
 
-.u-sns__row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center; }
+/*
+---
+name: u-small
+category:
+  - common/unit/u-small
+tag:
+  - base
+compile: false
+---
 
-.u-sns__item {
-  margin: 0 4px; }
+キャプションにします。
 
+```html
+<small class="u-small">※キャプションです。</small>
+<p class="u-small">※キャプションです。</p>
+```
+*/
 .u-small {
-  display: inline-block;
-  font-size: 1.2rem;
-  line-height: 1.6; }
+  color: #736d6d;
+  font-size: 1.2rem; }
 
-.u-fig {
+/*
+---
+name: u-figure
+category:
+  - common/unit/u-figure
+tag:
+  - base
+compile: false
+---
+
+画像のキャプション表示をサポートします。
+
+```html
+<figure class="u-figure">
+  <img
+  data-src="../../../../../lib/img/dummy/bronze.png"
+  alt="dummy"
+  class="u-img__max">
+  <figcaption class="u-figure__cap">右下にキャプションが入ります。</figcaption>
+</figure>
+```
+```html
+<figure class="u-figure">
+  <img
+  data-src="../../../../../lib/img/dummy/bronze.png"
+  alt="dummy"
+  class="u-img__max">
+  <figcaption class="u-figure__cap_darken">黒いキャプションが入ります。</figcaption>
+</figure>
+```
+```html
+<figure class="u-figure">
+  <img
+  data-src="../../../../../lib/img/dummy/bronze.png"
+  alt="dummy"
+  class="u-img__max">
+  <figcaption class="u-figure__cap_left">キャプションが左に入ります。</figcaption>
+</figure>
+```
+*/
+.u-figure {
   position: relative; }
-  .u-fig__cap, .u-fig__cap_darken, .u-fig__cap_left, .u-fig__cap_left_darken {
+  .u-figure__cap, .u-figure__cap_darken, .u-figure__cap_left, .u-figure__cap_left_darken {
     position: absolute;
     right: 8px;
     bottom: 8px;
@@ -1133,15 +1400,33 @@ html, body {
     line-height: 1.2;
     color: #e6e6e6;
     text-shadow: 0px 0px 3px #000; }
-    .u-fig__cap_darken {
-      color: #000; }
-    .u-fig__cap_left {
+    .u-figure__cap_darken {
+      color: #000;
+      text-shadow: 0px 0px 3px #fff; }
+    .u-figure__cap_left {
       right: auto;
       left: 8px; }
-      .u-fig__cap_left_darken {
+      .u-figure__cap_left_darken {
         color: #000;
         text-shadow: 0px 0px 3px #fff; }
 
+/*
+---
+name: u-only(hide)
+category:
+  - common/unit/u-only(hide)
+tag:
+  - base
+compile: false
+---
+
+PC版（タブレット〜PCサイズ）とSP版で、表示非表示を切り替えます。
+
+```html
+<div class="u-only__pc" style="background:yellow">PCサイズのみで表示</div>
+<div class="u-only__sp" style="background:red">SPサイズのみで表示</div>
+```
+*/
 .u-only__pc {
   display: none; }
   @media screen and (min-width: 971px) {
@@ -1153,6 +1438,183 @@ html, body {
   @media screen and (max-width: 970px) {
     .u-only__sp {
       display: block; } }
+
+/*
+---
+name: u-ttl(title)
+category:
+  - common/unit/u-ttl
+tag:
+  - base
+compile: false
+---
+
+見出し関連のサイズを調整します。
+
+```html
+<h3 class="u-ttl_l">大きい見出し</h3>
+<p>見出し説明テキスト<br>説明テキスト説明テキスト</p>
+```
+```html
+<h3 class="u-ttl_m">小見出し見出し</h3>
+<p>見出し説明テキスト<br>説明テキスト説明テキスト</p>
+```
+```html
+<h3 class="u-ttl_s">小見出し見出し</h3>
+<p>見出し説明テキスト<br>説明テキスト説明テキスト</p>
+```
+*/
+.u-ttl_l {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 4em 0 1em;
+  padding-bottom: .9em;
+  -webkit-font-feature-settings: 'palt';
+  font-feature-settings: 'palt';
+  line-height: 1.4;
+  font-size: 2.4rem;
+  color: #000;
+  border-bottom: 2px solid #595454; }
+  .u-ttl_l:first-child {
+    margin-top: 0; }
+  @media screen and (max-width: 666px) {
+    .u-ttl_l {
+      font-size: 2rem; } }
+
+.u-ttl_m {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 3em 0 1em;
+  padding-bottom: .5em;
+  -webkit-font-feature-settings: 'palt';
+  font-feature-settings: 'palt';
+  line-height: 1.4;
+  font-size: 2rem;
+  color: #000;
+  border-bottom: 2px dotted #e6e6e6; }
+  @media screen and (max-width: 666px) {
+    .u-ttl_m {
+      font-size: 1.8rem; } }
+  .u-ttl_m:first-child {
+    margin-top: 0; }
+
+.u-ttl_s {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #000;
+  margin-bottom: 1em;
+  line-height: 1.4;
+  margin: 2em 0 1em;
+  -webkit-font-feature-settings: 'palt';
+  font-feature-settings: 'palt'; }
+  .u-ttl_s:first-child {
+    margin-top: 0; }
+
+/*
+---
+name: u-assit(box)
+category:
+  - common/unit/u-assist
+tag:
+  - base
+compile: false
+---
+
+サポート情報用のエリアを制作します。
+
+```html
+<aside class="u-assist">
+<p>サポート情報</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur cumque, inventore, voluptatem eaque quaerat voluptas sapiente itaque quae unde ea praesentium vel magni. Deserunt dolor, velit adipisci unde, recusandae reprehenderit.</p>
+</aside>
+```
+*/
+.u-assist {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: #f3f3f3;
+  padding: 24px;
+  border: 1px solid #e6e6e6;
+  border-radius: 2px; }
+  @media screen and (max-width: 666px) {
+    .u-assist {
+      padding: 8px; } }
+  .u-assist > p:last-child {
+    margin-bottom: 0; }
+
+/*
+---
+name: u-position
+category:
+- common/unit/u-position
+tag:
+- base
+compile: false
+---
+
+block要素やblock内の要素の位置を調整します。
+ちょっと使いにくいかな。
+
+---
+
+##### 内包するインライン要素の位置を調整
+
+```html
+<div class="u-position_center" style="background:yellow;">
+center
+</div>
+```
+```html
+<div class="u-position_left" style="background:yellow;">
+center
+</div>
+```
+```html
+<div class="u-position_right" style="background:yellow;">
+center
+</div>
+```
+
+----
+
+##### block要素自身の位置を調整
+
+```html
+<div class="u-position__item_center" style="background:yellow; width:100px;">
+center
+</div>
+```
+
+```html
+<div class="u-position__item_left" style="background:yellow; width:100px;">
+center
+</div>
+```
+
+```html
+<div class="u-position__item_right" style="background:yellow; width:100px;">
+center
+</div>
+```
+*/
+.u-position_center {
+  text-align: center; }
+
+.u-position_left {
+  text-align: left; }
+
+.u-position_right {
+  text-align: right; }
+
+.u-position__item_center {
+  margin-left: auto;
+  margin-right: auto; }
+
+.u-position__item_left {
+  margin-right: auto; }
+
+.u-position__item_right {
+  margin-left: auto; }
 
 body.home .main-v__row {
   position: relative;

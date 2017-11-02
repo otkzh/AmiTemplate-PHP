@@ -131,25 +131,7 @@ include ($inc_path."/lib/inc/header.php");
         <h1 class="main__ttl">_unitシリーズ</h1>
         <p class="main__desc">ディスクリプション</p>
       </header>
-      <article class="main__body">
-        <h3 class="main__ttl_s">u-a</h3>
-        <p>文章中の<a href="#" >指定なしリンク</a>です</p>
-        <p>文章中の<a href="#" class="u-a">標準リンク</a>です</p>
-        <p>文章中の<a href="#" class="u-a_icon">アイコン付きリンク</a>です</p>
-        <p>文章中の<a href="#" target="_blank" class="u-a_icon">ブランクリンク</a>です</p>
-        <p>文章中の<a href="#" target="_blank" rel="nofollow" class="u-a_icon">外部サイトリンク</a>です</p>
-        <p>文章中の<a href="dummy.pdf" target="_blank" class="u-a_icon">PDFアイコンリンク</a>です</p>
 
-      </article>
-      <article class="main__body">
-        <h3 class="main__ttl_s">u-btn</h3>
-        <a href="#" class="u-btn"><span>標準ボタン</span></a>
-        <a href="#" class="u-btn_s"><span>小さいボタン</span></a>
-        <a href="#" class="u-btn_l"><span>大きいボタン</span></a>
-        <a href="#" class="u-btn_point"><span>強調ボタン</span></a>
-        <a href="#" class="u-btn_point_s"><span>小さい強調ボタン</span></a>
-        <a href="#" class="u-btn_point_l"><span>大きい強調ボタン</span></a>
-      </article>
       <article class="main__body">
         <h3 class="main__ttl_s">u-img</h3>
         <img

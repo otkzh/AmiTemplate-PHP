@@ -28,6 +28,7 @@ var sassImage = require('gulp-sass-image');
 var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require("gulp-sourcemaps");
 var cssmin = require('gulp-cssmin');
+var aigis = require("gulp-aigis");
 
 //html php
 //var prettify = require('gulp-html-prettify');
@@ -43,6 +44,9 @@ var modernizr = require('gulp-modernizr');
 var uglify = require('gulp-uglify');
 
 
+
+
+
 //--------------------- セッティング ---------------------//
 
 var hostName = "192.168.99.99"; //browserSyncするローカルIPを記載
@@ -56,7 +60,7 @@ var paths = {
   "js": "public/lib/js",
   "scss": "public/lib/_scss",
   "es2015": "public/lib/_es2015",
-  "no": ("!**/_*", "!**/_**"),
+  "no": ("!**/_*", "!**/_**","!public/_styleguide/**"),
 }
 
 //各種パス関連(dest)
@@ -121,6 +125,12 @@ gulp.task('scss-img', function () {
     createPlaceholder: false
   }))
   .pipe(gulp.dest(paths.scss + '/mixin/_output/'));
+});
+
+//styleguide書き出し
+gulp.task("doc", function() {
+  gulp.src("./styleguide-config/aigis_config.yml")
+  .pipe(aigis());
 });
 
 //scssをcssへ変換
@@ -259,7 +269,7 @@ gulp.task('js-dest', function () {
 
 //納品用書き出し
 gulp.task('etc-dest', function () {
-  return gulp.src(paths.dir + '/**/*.{eot,svg,ttf,woff,woff2,otf,txt,json}')
+  return gulp.src(paths.dir + '/**/*.{eot,svg,ttf,woff,woff2,otf,txt,json,pem}')
   .pipe(gulp.dest(dest.dir))
 });
 
@@ -273,6 +283,6 @@ gulp.task('default', ['browser-sync'], function () {
   gulp.watch(paths.css + '/**/*.css').on("change", browserSync.reload);
   gulp.watch(paths.js + '/**/*.js').on("change", browserSync.reload);
   gulp.watch(paths.img + '/**/*.{png,jpg,gif,svg,ico}', ['scss-img']);
-  gulp.watch(paths.scss + '/**/*.scss', ['css']);
+  gulp.watch(paths.scss + '/**/*.scss', ['css','doc']);
   gulp.watch([paths.es2015 + '/**/*.{js,scss}', '!**/modernizr.js'], ['js']);
 });
