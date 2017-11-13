@@ -60,6 +60,7 @@
     "layzr.js": "^2.2.2",
     "magnific-popup": "^1.1.0",
     "masonry-layout": "^4.2.0",
+    "smooth-scroll": "^12.1.5",
     "snapsvg": "^0.5.1",
     "swiper": "^3.4.2",
     "vue": "^2.5.2"

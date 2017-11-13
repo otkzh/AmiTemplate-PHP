@@ -1,6 +1,7 @@
 /************************
 layzr.js
 site: https://github.com/callmecavs/layzr.js
+npm:https://www.npmjs.com/package/layzr.js
 ***********************/
 
 //node_module

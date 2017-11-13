@@ -1,11 +1,12 @@
 /************************
 colorbox
 site: http://www.jacklmoore.com/colorbox/
+npm:https://www.npmjs.com/package/jquery-colorbox
 ***********************/
 
 //node_module
-import "../../../../../node_modules/jquery-colorbox/jquery.colorbox.js";
-import "../../../../../node_modules/jquery-colorbox/example3/colorbox.css";
+import "jquery-colorbox";
+import "jquery-colorbox/example3/colorbox.css";
 
 //original-css
 import './__style.scss';

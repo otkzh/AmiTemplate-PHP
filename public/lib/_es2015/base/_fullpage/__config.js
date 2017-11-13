@@ -1,6 +1,7 @@
 /************************
 fullPage.js
 site: https://github.com/alvarotrigo/fullPage.js
+npm:https://www.npmjs.com/package/fullpage.js
 
 ※scrollOverflow機能をtrueにしたい場合の注意事項。
 fullpage.jsのimport利用時、IScrollとの依存関係が正しく読み込まれない。対策として、IScrollをグローバルスコープに設定すること。
