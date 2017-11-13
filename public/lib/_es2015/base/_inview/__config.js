@@ -1,10 +1,11 @@
 /************************
 inview
 site: https://github.com/protonet/jquery.inview
+npm:https://www.npmjs.com/package/jquery-inview
 ***********************/
 
 //node_module
-import inView from "../../../../../node_modules/jquery-inview/jquery.inview.js";
+import inView from "jquery-inview";
 
 //original-css
 import './__style.scss';
