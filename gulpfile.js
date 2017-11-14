@@ -107,15 +107,15 @@ gulp.task('html-dest', function () {
 
 //画像サイズを取得しscssに書き出し
 gulp.task('scss-img', function () {
-  return gulp.src([paths.img + '/**/*.{png,jpg,gif,svg}', paths.no])
+  return gulp.src('./public/lib/img/**/*.{png,jpg,gif,svg}')
   .pipe(sassImage({
     targetFile: '__scss-img.scss',
-    images_path: paths.img,
-    css_path: paths.css,
+    images_path: './public/lib/img/',
+    css_path: './public/lib/css/',
     includeData: false,
     createPlaceholder: false
   }))
-  .pipe(gulp.dest(paths.scss + '/mixin/_output/'));
+  .pipe(gulp.dest('./public/lib/_scss/mixin/_output/'));
 });
 
 //styleguide書き出し
