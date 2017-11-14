@@ -31,7 +31,7 @@ var cssmin = require('gulp-cssmin');
 var aigis = require("gulp-aigis");
 
 //html php
-//var prettify = require('gulp-html-prettify');
+var htmlbeautify = require('gulp-html-beautify');
 
 //images
 var imagemin = require('gulp-imagemin');
@@ -51,6 +51,7 @@ var uglify = require('gulp-uglify');
 
 var hostName = "192.168.99.99"; //browserSyncするローカルIPを記載
 
+var basePath = "./";
 
 //各種パス関連
 var paths = {
@@ -92,24 +93,14 @@ var plumberErrorHandler = {
 
 //---------------html
 
-//作業用※必要であれば利用
-//gulp.task('html', function () {
-//	gulp.src([paths.dir + '/**/*.{html,php}', paths.no])
-//		.pipe(prettify({
-//			indent_char: '	',
-//			indent_size: 2
-//		}))
-//		.pipe(gulp.dest(paths.dir))
-//});
-
 //納品用に整形して書き出し
 gulp.task('html-dest', function () {
-  gulp.src([paths.dir + '/**/*.{html,php}', paths.no])
-  //		.pipe(prettify({
-  //			indent_char: '	',
-  //			indent_size: 2
-  //		}))
-  .pipe(gulp.dest(dest.dir))
+  gulp.src('./public/**/*.{html,php}')
+  		.pipe(htmlbeautify({
+  			indent_char: ' ',
+  			indent_size: 2
+  		}))
+  .pipe(gulp.dest('./dest'))
 });
 
 //---------------scss・css
