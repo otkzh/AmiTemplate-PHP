@@ -181,7 +181,7 @@ gulp.task('webpack', function () {
   return plumber(plumberErrorHandler)
   .pipe (webpacks({
     entry: {
-      scripts: './' + paths.es2015 + '/scripts.js'
+      scripts: './public/lib/_es2015/scripts.js'
     },
     output: {
       filename: '[name].js',
@@ -235,12 +235,12 @@ gulp.task('webpack', function () {
       })
     ]
   }))
-  .pipe(gulp.dest(paths.js));
+  .pipe(gulp.dest('./public/lib/js'));
 });
 
 //modernizr
 gulp.task('modernizr', ['webpack'], function () {
-  gulp.src([paths.js + '/**/*.js', paths.css + '/**/*.css', '!**/modernizr.js'])
+  gulp.src(['./public/lib/js/**/*.js', './public/lib/css/**/*.css', '!**/modernizr.js'])
   .pipe(modernizr({
     options: [
       'setClasses',
@@ -250,7 +250,7 @@ gulp.task('modernizr', ['webpack'], function () {
       'fnBind',
     ]
   }))
-  .pipe(gulp.dest(paths.js));
+  .pipe(gulp.dest('./public/lib/js'));
 });
 
 //js処理簡略用
