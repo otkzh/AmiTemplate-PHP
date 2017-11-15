@@ -140,9 +140,9 @@ gulp.task('css', function () {
 
 //cssを圧縮して納品用に書き出し
 gulp.task('css-dest', function () {
-  return gulp.src([paths.css + '/**/*.css', paths.no])
+  return gulp.src(['./public/**/*.css','!**/_styleguide/**'])
   .pipe(cssmin())
-  .pipe(gulp.dest(dest.css));
+  .pipe(gulp.dest('./dest'));
 });
 
 //---------------image
