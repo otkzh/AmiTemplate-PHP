@@ -2,12 +2,12 @@
 
 /*
 
-$ npm run gulp = scssやjavascriptファイルの更新を検知して、自動で更新。
-$ npm run gulp dest = 納品用に整形してdestフォルダーへ書き出し。
+$ npm run gulp = scssやjavascriptファイルの更新を検知して、自動で更新
+$ npm run gulp dest = 納品用に整形してdestフォルダーへ書き出し
 $ npm run gulp css = scssをcssへ書き出し
 $ npm run gulp js = es2015をjsへ書き出し
-$ npm run gulp scss-img = 画像のサイズを取得してmixinへ書き出し。
-$ npm run gulp img-min = 画像ファイルを圧縮※たまに実行しておくと便利。
+$ npm run gulp scss-img = 画像のサイズを取得してmixinへ書き出し
+$ npm run gulp img-min = 書き出した画像ファイルを圧縮
 
 */
 
@@ -36,6 +36,7 @@ var htmlbeautify = require('gulp-html-beautify');
 //images
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
+var mozjpeg = require('imagemin-mozjpeg');
 
 //js/es2015/modernizr
 var webpacks = require('webpack-stream');
@@ -96,10 +97,10 @@ var plumberErrorHandler = {
 //納品用に整形して書き出し
 gulp.task('html-dest', function () {
   gulp.src('./public/**/*.{html,php}')
-  		.pipe(htmlbeautify({
-  			indent_char: ' ',
-  			indent_size: 2
-  		}))
+  .pipe(htmlbeautify({
+    indent_char: ' ',
+    indent_size: 2
+  }))
   .pipe(gulp.dest('./dest'))
 });
 
@@ -147,22 +148,29 @@ gulp.task('css-dest', function () {
 
 //---------------image
 
-//制作中画像の圧縮
-gulp.task('img-min', function () {
-  return gulp.src([paths.img + '/**/*.{png,jpg,gif}', paths.no])
-  .pipe(imagemin(
-    [pngquant({
-      quality: '40-70',
-      speed: 1
-    })]
-  ))
-  .pipe(gulp.dest(paths.img));
-});
-
 //納品用画像を書き出し
 gulp.task('img-dest', function () {
   return gulp.src([paths.img + '/**/*.{png,jpg,gif,svg,pdf,ico}', paths.no])
   .pipe(gulp.dest(dest.img));
+});
+
+//書き出した画像の圧縮
+gulp.task('img-min', function () {
+  return gulp.src('./dest/**/*.{png,jpg}')
+  .pipe(imagemin(
+    [
+      pngquant({
+        quality: '100',
+        speed: 1,
+        floyd:0
+      }),
+      mozjpeg({
+        quality:85,
+        progressive: true
+      })
+    ]
+  ))
+  .pipe(gulp.dest('./dest'));
 });
 
 //---------------js
