@@ -126,7 +126,7 @@ gulp.task("doc", function() {
 
 //scssをcssへ変換
 gulp.task('css', function () {
-  return gulp.src([paths.scss + '/**/*.scss', paths.no])
+  return gulp.src('./public/lib/_scss/**/*.scss')
   .pipe(plumber(plumberErrorHandler))
   .pipe(sourcemaps.init())
   .pipe(sass.sync().on('error', sass.logError))
@@ -135,7 +135,7 @@ gulp.task('css', function () {
     cascade: false,
   }))
   .pipe(sourcemaps.write('./'))
-  .pipe(gulp.dest(paths.css));
+  .pipe(gulp.dest('./public/lib/css'));
 });
 
 //cssを圧縮して納品用に書き出し
