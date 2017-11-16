@@ -42,7 +42,7 @@ var mozjpeg = require('imagemin-mozjpeg');
 var webpacks = require('webpack-stream');
 var webpack = require('webpack');
 var modernizr = require('gulp-modernizr');
-var uglify = require('gulp-uglify');
+var uglify = require('gulp-uglify-es').default;
 
 
 
@@ -256,20 +256,21 @@ gulp.task('modernizr', ['webpack'], function () {
 //js処理簡略用
 gulp.task('js', ['modernizr']);
 
-
 //jsファイルを圧縮して納品用に書き出し
 gulp.task('js-dest', function () {
-  return gulp.src(paths.js + '/**/*.js')
-  .pipe(uglify())
-  .pipe(gulp.dest(dest.js))
+  return gulp.src('./public/**/*.js')
+  .pipe(uglify().on('error', function(e){
+      console.log(e);
+    }) )
+  .pipe(gulp.dest('./dest'))
 });
 
 //---------------その他
 
 //納品用書き出し
 gulp.task('etc-dest', function () {
-  return gulp.src(paths.dir + '/**/*.{eot,svg,ttf,woff,woff2,otf,txt,json,pem}')
-  .pipe(gulp.dest(dest.dir))
+  return gulp.src(['./public/**/*.{eot,svg,ttf,woff,woff2,otf,txt,json,pem}','./public/**/.htaccess'])
+  .pipe(gulp.dest('./dest'))
 });
 
 //------------納品ファイル書き出し
@@ -278,10 +279,10 @@ gulp.task('dest', ['img-dest', 'js-dest', 'css-dest', 'html-dest', 'etc-dest']);
 
 //gulp watchタスク
 gulp.task('default', ['browser-sync'], function () {
-  gulp.watch(paths.dir + '**/*.{html,php}').on("change", browserSync.reload);
-  gulp.watch(paths.css + '/**/*.css').on("change", browserSync.reload);
-  gulp.watch(paths.js + '/**/*.js').on("change", browserSync.reload);
-  gulp.watch(paths.img + '/**/*.{png,jpg,gif,svg,ico}', ['scss-img']);
-  gulp.watch(paths.scss + '/**/*.scss', ['css','doc']);
-  gulp.watch([paths.es2015 + '/**/*.{js,scss}', '!**/modernizr.js'], ['js']);
+  gulp.watch('./public/**/*.{html,php}').on("change", browserSync.reload);
+  gulp.watch('./public/**/*.css').on("change", browserSync.reload);
+  gulp.watch('./public/**/*.js').on("change", browserSync.reload);
+  gulp.watch('./public/lib/img/**/*.{png,jpg,gif,svg}', ['scss-img']);
+  gulp.watch('./public/lib/_scss/**/*.scss', ['css','doc']);
+  gulp.watch(['./public/lib/_es2015/**/*.{js,scss}', '!**/modernizr.js'], ['js']);
 });
