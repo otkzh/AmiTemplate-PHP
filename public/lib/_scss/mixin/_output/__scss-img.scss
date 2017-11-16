@@ -126,26 +126,6 @@
 $compass-imagehelper-path-prefix: '../img/';
 
 $compass-imagehelper-imagesmap: (
-  'icons/apple-touch-icon.png': (
-    width: '152',
-    height: '152',
-    hash: '86808878396824e717c23a2ec6019549'
-  ),
-  'icons/favicon-16.png': (
-    width: '16',
-    height: '16',
-    hash: 'cf99e57566defffc5b2fa93c5a17aa5b'
-  ),
-  'icons/favicon-32.png': (
-    width: '32',
-    height: '32',
-    hash: '7b44043892edf11f4633022a8cf02aab'
-  ),
-  'icons/favicon-48.png': (
-    width: '48',
-    height: '48',
-    hash: 'a15e09ad89c9405d3df08721a4d100a5'
-  ),
   'dummy/bronze.png': (
     width: '1652',
     height: '500',
@@ -205,5 +185,35 @@ $compass-imagehelper-imagesmap: (
     width: '1414',
     height: '1000',
     hash: '93e43cb8b84cb55a3775f52632285df3'
+  ),
+  'icons/apple-touch-icon.png': (
+    width: '152',
+    height: '152',
+    hash: '86808878396824e717c23a2ec6019549'
+  ),
+  'icons/favicon-16.png': (
+    width: '16',
+    height: '16',
+    hash: 'cf99e57566defffc5b2fa93c5a17aa5b'
+  ),
+  'icons/favicon-32.png': (
+    width: '32',
+    height: '32',
+    hash: '7b44043892edf11f4633022a8cf02aab'
+  ),
+  'icons/favicon-48.png': (
+    width: '48',
+    height: '48',
+    hash: 'a15e09ad89c9405d3df08721a4d100a5'
+  ),
+  'thum/home.png': (
+    width: '600',
+    height: '315',
+    hash: '0d9a45c94c7151100de0e733291a7b30'
+  ),
+  'thum/home@2x.png': (
+    width: '1200',
+    height: '630',
+    hash: '7e34b8e200e20f9534e1de39df1ec92c'
   ),
 );
