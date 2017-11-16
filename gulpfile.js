@@ -44,33 +44,27 @@ var webpack = require('webpack');
 var modernizr = require('gulp-modernizr');
 var uglify = require('gulp-uglify-es').default;
 
-
-
-
-
 //--------------------- セッティング ---------------------//
 
 var hostName = "192.168.99.99"; //browserSyncするローカルIPを記載
 
-var basePath = "./";
+var basePath = ".";
+var devPath = basePath + "/public";
+var destPath = basePath + "/dest"
 
 //各種パス関連
 var paths = {
-  "dir": "public/",
-  "img": "public/lib/img",
-  "css": "public/lib/css",
-  "js": "public/lib/js",
-  "scss": "public/lib/_scss",
-  "es2015": "public/lib/_es2015",
-  "no": ("!**/_*", "!**/_**","!public/_styleguide/**"),
-}
-
-//各種パス関連(dest)
-var dest = {
-  "dir": "dest",
-  "css": "dest/lib/css",
-  "js": "dest/lib/js",
-  "img": "dest/lib/img",
+  "dir": devPath,
+  "dir_dest": destPath,
+  "img": devPath + "/lib/img",
+  "css": devPath + "/lib/css",
+  "js": devPath + "/lib/js",
+  "scss": devPath + "/lib/_scss",
+  "es2015": devPath + "/lib/_es2015",
+  "no_styleguide": '!' + devPath + '/_styleguide/**',
+  "no_template": '!' + devPath + '/_template/**',
+  "no_modernizr": '!**/modernizr.js',
+  //"no": ("!**/_*", "!**/_**","")
 }
 
 // browser-sync
@@ -96,27 +90,31 @@ var plumberErrorHandler = {
 
 //納品用に整形して書き出し
 gulp.task('html-dest', function () {
-  gulp.src('./public/**/*.{html,php}')
+  gulp.src([
+    paths.dir + '/**/*.{html,php}',
+    paths.no_styleguide,
+    paths.no_template
+  ])
   .pipe(htmlbeautify({
     indent_char: ' ',
     indent_size: 2
   }))
-  .pipe(gulp.dest('./dest'))
+  .pipe(gulp.dest(paths.dir_dest))
 });
 
 //---------------scss・css
 
 //画像サイズを取得しscssに書き出し
 gulp.task('scss-img', function () {
-  return gulp.src('./public/lib/img/**/*.{png,jpg,gif,svg}')
+  return gulp.src(paths.img + '/**/*.{png,jpg,gif,svg}')
   .pipe(sassImage({
     targetFile: '__scss-img.scss',
-    images_path: './public/lib/img/',
-    css_path: './public/lib/css/',
+    images_path: paths.img,
+    css_path: paths.css,
     includeData: false,
     createPlaceholder: false
   }))
-  .pipe(gulp.dest('./public/lib/_scss/mixin/_output/'));
+  .pipe(gulp.dest(paths.scss + '/mixin/_output'));
 });
 
 //styleguide書き出し
@@ -127,7 +125,7 @@ gulp.task("doc", function() {
 
 //scssをcssへ変換
 gulp.task('css', function () {
-  return gulp.src('./public/lib/_scss/**/*.scss')
+  return gulp.src(paths.scss + '/**/*.scss')
   .pipe(plumber(plumberErrorHandler))
   .pipe(sourcemaps.init())
   .pipe(sass.sync().on('error', sass.logError))
@@ -136,27 +134,34 @@ gulp.task('css', function () {
     cascade: false,
   }))
   .pipe(sourcemaps.write('./'))
-  .pipe(gulp.dest('./public/lib/css'));
+  .pipe(gulp.dest(paths.css));
 });
 
 //cssを圧縮して納品用に書き出し
 gulp.task('css-dest', function () {
-  return gulp.src(['./public/**/*.css','!**/_styleguide/**'])
+  return gulp.src([
+    paths.dir + '/**/*.css',
+    '!' + paths.scss + '/**',
+    paths.no_styleguide
+  ])
   .pipe(cssmin())
-  .pipe(gulp.dest('./dest'));
+  .pipe(gulp.dest(paths.dir_dest));
 });
 
 //---------------image
 
 //納品用画像を書き出し
 gulp.task('img-dest', function () {
-  return gulp.src([paths.img + '/**/*.{png,jpg,gif,svg,pdf,ico}', paths.no])
-  .pipe(gulp.dest(dest.img));
+  return gulp.src([
+    paths.dir + '/**/*.{png,jpg,gif,svg,pdf,ico}',
+    paths.no_styleguide
+  ])
+  .pipe(gulp.dest(paths.dir_dest));
 });
 
 //書き出した画像の圧縮
 gulp.task('img-min', function () {
-  return gulp.src('./dest/**/*.{png,jpg}')
+  return gulp.src(paths.dir_dest + '/**/*.{png,jpg}')
   .pipe(imagemin(
     [
       pngquant({
@@ -170,7 +175,7 @@ gulp.task('img-min', function () {
       })
     ]
   ))
-  .pipe(gulp.dest('./dest'));
+  .pipe(gulp.dest(paths.dir_dest));
 });
 
 //---------------js
@@ -181,7 +186,7 @@ gulp.task('webpack', function () {
   return plumber(plumberErrorHandler)
   .pipe (webpacks({
     entry: {
-      scripts: './public/lib/_es2015/scripts.js'
+      scripts: paths.es2015 + '/scripts.js'
     },
     output: {
       filename: '[name].js',
@@ -235,12 +240,16 @@ gulp.task('webpack', function () {
       })
     ]
   }))
-  .pipe(gulp.dest('./public/lib/js'));
+  .pipe(gulp.dest(paths.js));
 });
 
 //modernizr
 gulp.task('modernizr', ['webpack'], function () {
-  gulp.src(['./public/lib/js/**/*.js', './public/lib/css/**/*.css', '!**/modernizr.js'])
+  gulp.src([
+    paths.js + '/**/*.js',
+    paths.css + '/**/*.css',
+    paths.no_modernizr
+  ])
   .pipe(modernizr({
     options: [
       'setClasses',
@@ -250,7 +259,7 @@ gulp.task('modernizr', ['webpack'], function () {
       'fnBind',
     ]
   }))
-  .pipe(gulp.dest('./public/lib/js'));
+  .pipe(gulp.dest(paths.js));
 });
 
 //js処理簡略用
@@ -258,19 +267,24 @@ gulp.task('js', ['modernizr']);
 
 //jsファイルを圧縮して納品用に書き出し
 gulp.task('js-dest', function () {
-  return gulp.src('./public/**/*.js')
-  .pipe(uglify().on('error', function(e){
-      console.log(e);
-    }) )
-  .pipe(gulp.dest('./dest'))
+  return gulp.src([
+    paths.dir + '/**/*.js',
+    '!' + paths.es2015 + "/**"
+  ])
+  .pipe(uglify())
+  .pipe(gulp.dest(paths.dir_dest))
 });
 
 //---------------その他
 
 //納品用書き出し
 gulp.task('etc-dest', function () {
-  return gulp.src(['./public/**/*.{eot,svg,ttf,woff,woff2,otf,txt,json,pem}','./public/**/.htaccess'])
-  .pipe(gulp.dest('./dest'))
+  return gulp.src([
+    paths.dir + '/**/*.{eot,svg,ttf,woff,woff2,otf,txt,json,pem}',
+    paths.dir + '/**/.htaccess',
+    paths.no_styleguide
+  ])
+  .pipe(gulp.dest(paths.dir_dest))
 });
 
 //------------納品ファイル書き出し
@@ -279,10 +293,13 @@ gulp.task('dest', ['img-dest', 'js-dest', 'css-dest', 'html-dest', 'etc-dest']);
 
 //gulp watchタスク
 gulp.task('default', ['browser-sync'], function () {
-  gulp.watch('./public/**/*.{html,php}').on("change", browserSync.reload);
-  gulp.watch('./public/**/*.css').on("change", browserSync.reload);
-  gulp.watch('./public/**/*.js').on("change", browserSync.reload);
-  gulp.watch('./public/lib/img/**/*.{png,jpg,gif,svg}', ['scss-img']);
-  gulp.watch('./public/lib/_scss/**/*.scss', ['css','doc']);
-  gulp.watch(['./public/lib/_es2015/**/*.{js,scss}', '!**/modernizr.js'], ['js']);
+  gulp.watch(paths.dir + '/**/*.{html,php}').on("change", browserSync.reload);
+  gulp.watch(paths.dir + '/**/*.css').on("change", browserSync.reload);
+  gulp.watch(paths.dir + '/**/*.js').on("change", browserSync.reload);
+  gulp.watch(paths.img + '/**/*.{png,jpg,gif,svg}', ['scss-img']);
+  gulp.watch(paths.scss + '/**/*.scss', ['css','doc']);
+  gulp.watch([
+    paths.dir + 'lib/_es2015/**/*.{js,scss}',
+    paths.no_modernizr
+  ], ['js']);
 });
