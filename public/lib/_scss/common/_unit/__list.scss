@@ -1,0 +1,86 @@
+/*
+---
+name: u-list
+category:
+- common/unit/u-lsit
+tag:
+- base
+compile: false
+---
+
+リストからテーブルまで
+
+```html
+<ul class="u-list__ul">
+<li>dummy</li>
+<li>dummy</li>
+<li>dummy</li>
+</ul>
+```
+```html
+
+
+*/
+
+.u-list{
+  $this:&;
+  margin-bottom: 0;
+  & > li{
+    color:#000;
+  }
+  &__ul{
+    @extend #{$this};
+    & > li{
+      list-style: disc;
+      margin-left: $bm-inner;
+    }
+  }
+  &__table{
+    border-collapse: collapse;
+    width: 100%;
+    tr{
+      border: 1px solid $color-light-darken;
+
+    }
+    th,
+    td{
+      border: 1px solid $color-light-darken;
+      padding: $bm/2;
+      span{
+        display: none;
+      }
+    }
+    th{
+      background-color: $color-brand-lighten;
+      color:#000;
+      vertical-align: middle;
+    }
+    @include max-screen($width-s){
+      font-size: 1.4rem;
+      tr{
+        display: block;
+        border: none;
+        padding-bottom: $bm;
+        margin-bottom: $bm;
+        border-bottom: 1px solid $color-light;
+      }
+      &_th{
+        display: none !important;
+      }
+      th,
+      td{
+        display: flex;
+        border: none;
+        span{
+          box-sizing: border-box;
+          background-color: $color-brand-lighten;
+          color:#000;
+          width: 120px;
+          margin-right: $bm;
+          padding: 0 $bm;
+          font-weight: bold;
+        }
+      }
+    }
+  }//table
+}

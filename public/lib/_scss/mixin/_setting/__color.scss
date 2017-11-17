@@ -1,28 +1,28 @@
 //--------------------Color
 
 //暗い色
-$color-dark: #595454;
+$color-dark: #141102;
 $color-dark-darken: darken($color-dark, 5%);
 $color-dark-lighten: lighten($color-dark, 10%);
 $color-dark-more-lighten: lighten($color-dark, 35%);
 
 //明るい色
-$color-light: #e6e6e6;
+$color-light: #eee;
 $color-light-darken: darken($color-light, 15%);
 $color-light-lighten: lighten($color-light, 5%);
 
 //ブランドカラー
-$color-brand:#3a8de6;
+$color-brand:#CEC089;
 $color-brand-darken: darken($color-brand, 15%);
 $color-brand-lighten: lighten($color-brand, 15%);
 
 //ポイントカラー
-$color-point:#e12e57;
+$color-point:#A2324E;
 $color-point-darken: darken($color-point, 15%);
 $color-point-lighten: lighten($color-point, 15%);
 
 //その他
-$color-etc:#fffc00;
+$color-etc:#3D2F28;
 $color-etc-darken: darken($color-etc, 5%);
 $color-etc-lighten: lighten($color-etc, 15%);
 

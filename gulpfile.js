@@ -295,11 +295,14 @@ gulp.task('dest', ['img-dest', 'js-dest', 'css-dest', 'html-dest', 'etc-dest']);
 gulp.task('default', ['browser-sync'], function () {
   gulp.watch(paths.dir + '/**/*.{html,php}').on("change", browserSync.reload);
   gulp.watch(paths.dir + '/**/*.css').on("change", browserSync.reload);
-  gulp.watch(paths.dir + '/**/*.js').on("change", browserSync.reload);
   gulp.watch(paths.img + '/**/*.{png,jpg,gif,svg}', ['scss-img']);
   gulp.watch(paths.scss + '/**/*.scss', ['css','doc']);
   gulp.watch([
     paths.es2015 + '/**/*.{js,scss}',
     paths.no_modernizr
   ], ['js']);
+  gulp.watch([
+    paths.js + '/**/*.js',
+    paths.no_modernizr
+  ]).on("change", browserSync.reload);
 });

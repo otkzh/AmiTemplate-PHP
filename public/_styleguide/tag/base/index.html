@@ -13,7 +13,7 @@
       <div class="aigis-sidemenu">
         <header class="aigis-header"><a href="../../index.html">AmiTemplate Styleguide</a></header>
         <h2 class="aigis-sidemenu__heading">Category</h2>
-        <nav class="aigis-categoryList"><ul data-path-depth="0"><li data-path-depth="0"><a>common</a><ul data-path-depth="1"><li data-path-depth="1"><a>header</a><ul data-path-depth="2"><li data-path-depth="2"><a href="../../category/common/header/gnav">gnav</a></li></ul></li><li data-path-depth="1"><a>unit</a><ul data-path-depth="2"><li data-path-depth="2"><a href="../../category/common/unit/etc">etc</a></li><li data-path-depth="2"><a href="../../category/common/unit/u-assist">u-assist</a></li><li data-path-depth="2"><a href="../../category/common/unit/u-btn">u-btn</a></li><li data-path-depth="2"><a href="../../category/common/unit/u-figure">u-figure</a></li><li data-path-depth="2"><a href="../../category/common/unit/u-icon">u-icon</a></li><li data-path-depth="2"><a href="../../category/common/unit/u-img">u-img</a></li><li data-path-depth="2"><a href="../../category/common/unit/u-only(hide)">u-only(hide)</a></li><li data-path-depth="2"><a href="../../category/common/unit/u-position">u-position</a></li><li data-path-depth="2"><a href="../../category/common/unit/u-small">u-small</a></li><li data-path-depth="2"><a href="../../category/common/unit/u-ttl">u-ttl</a></li></ul></li></ul></li></ul>
+        <nav class="aigis-categoryList"><ul data-path-depth="0"><li data-path-depth="0"><a>common</a><ul data-path-depth="1"><li data-path-depth="1"><a>header</a><ul data-path-depth="2"><li data-path-depth="2"><a href="../../category/common/header/gnav">gnav</a></li></ul></li><li data-path-depth="1"><a>unit</a><ul data-path-depth="2"><li data-path-depth="2"><a href="../../category/common/unit/etc">etc</a></li><li data-path-depth="2"><a href="../../category/common/unit/u-assist">u-assist</a></li><li data-path-depth="2"><a href="../../category/common/unit/u-btn">u-btn</a></li><li data-path-depth="2"><a href="../../category/common/unit/u-figure">u-figure</a></li><li data-path-depth="2"><a href="../../category/common/unit/u-icon">u-icon</a></li><li data-path-depth="2"><a href="../../category/common/unit/u-img">u-img</a></li><li data-path-depth="2"><a href="../../category/common/unit/u-lsit">u-lsit</a></li><li data-path-depth="2"><a href="../../category/common/unit/u-only(hide)">u-only(hide)</a></li><li data-path-depth="2"><a href="../../category/common/unit/u-pagination">u-pagination</a></li><li data-path-depth="2"><a href="../../category/common/unit/u-position">u-position</a></li><li data-path-depth="2"><a href="../../category/common/unit/u-small">u-small</a></li><li data-path-depth="2"><a href="../../category/common/unit/u-ttl">u-ttl</a></li></ul></li></ul></li></ul>
         </nav>
         <h2 class="aigis-sidemenu__heading">Tag</h2>
         <nav class="aigis-tags aigis-tagList"><a href="../../tag/base/index.html" class="aigis-tags__item aigis-tags__item--base">base</a>
@@ -32,7 +32,9 @@
               <li class="aigis-moduleList__item"><a href="#u-figure">u-figure</a></li>
               <li class="aigis-moduleList__item"><a href="#u-icon">u-icon</a></li>
               <li class="aigis-moduleList__item"><a href="#u-img">u-img</a></li>
+              <li class="aigis-moduleList__item"><a href="#u-list">u-list</a></li>
               <li class="aigis-moduleList__item"><a href="#u-only(hide)">u-only(hide)</a></li>
+              <li class="aigis-moduleList__item"><a href="#u-pagination(hide)">u-pagination(hide)</a></li>
               <li class="aigis-moduleList__item"><a href="#u-position">u-position</a></li>
               <li class="aigis-moduleList__item"><a href="#u-small">u-small</a></li>
               <li class="aigis-moduleList__item"><a href="#u-ttl(title)">u-ttl(title)</a></li>
@@ -290,11 +292,48 @@
 
           </div>
           <div class="aigis-module">
+            <h2 id="u-list" class="aigis-module__heading">u-list</h2>
+            <div class="aigis-module__filepath">/public/lib/_scss/common/_unit/__list.scss</div>
+            <ul class="aigis-tags">
+              <li class="aigis-tags__item aigis-tags__item--base">base</li>
+            </ul><p>リストからテーブルまで</p>
+<div class="aigis-preview">
+  <ul class="u-list__ul">
+    <li>dummy</li>
+    <li>dummy</li>
+    <li>dummy</li>
+</ul></div>
+
+<pre><code class="language-html"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>ul</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>u-list__ul<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>li</span><span class="token punctuation" >></span></span>dummy<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>li</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>li</span><span class="token punctuation" >></span></span>dummy<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>li</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>li</span><span class="token punctuation" >></span></span>dummy<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>li</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>ul</span><span class="token punctuation" >></span></span>
+</code></pre>
+<p>```html</p>
+
+          </div>
+          <div class="aigis-module">
             <h2 id="u-only(hide)" class="aigis-module__heading">u-only(hide)</h2>
             <div class="aigis-module__filepath">/public/lib/_scss/common/_unit/__only.scss</div>
             <ul class="aigis-tags">
               <li class="aigis-tags__item aigis-tags__item--base">base</li>
             </ul><p>PC版（タブレット〜PCサイズ）とSP版で、表示非表示を切り替えます。</p>
+<div class="aigis-preview">
+  <div class="u-only__pc" style="background:yellow">PCサイズのみで表示</div>
+<div class="u-only__sp" style="background:red">SPサイズのみで表示</div></div>
+
+<pre><code class="language-html"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>u-only__pc<span class="token punctuation" >"</span></span><span class="token style-attr language-css" ><span class="token attr-name" > <span class="token attr-name" >style</span></span><span class="token punctuation" >="</span><span class="token attr-value" ><span class="token property" >background</span><span class="token punctuation" >:</span>yellow</span><span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>PCサイズのみで表示<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>u-only__sp<span class="token punctuation" >"</span></span><span class="token style-attr language-css" ><span class="token attr-name" > <span class="token attr-name" >style</span></span><span class="token punctuation" >="</span><span class="token attr-value" ><span class="token property" >background</span><span class="token punctuation" >:</span>red</span><span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>SPサイズのみで表示<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+</code></pre>
+
+          </div>
+          <div class="aigis-module">
+            <h2 id="u-pagination(hide)" class="aigis-module__heading">u-pagination(hide)</h2>
+            <div class="aigis-module__filepath">/public/lib/_scss/common/_unit/__pagination.scss</div>
+            <ul class="aigis-tags">
+              <li class="aigis-tags__item aigis-tags__item--base">base</li>
+            </ul><p>ページネーションを調整します</p>
 <div class="aigis-preview">
   <div class="u-only__pc" style="background:yellow">PCサイズのみで表示</div>
 <div class="u-only__sp" style="background:red">SPサイズのみで表示</div></div>

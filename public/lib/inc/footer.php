@@ -6,8 +6,8 @@
         <li class="fnav__item_home">
           <a href="<?php echo $base_url ?>/">home</a>
         </li>
-        <li class="fnav__item_temp">
-          <a href="<?php echo $base_url ?>/_temp/">temp</a>
+        <li class="fnav__item_template">
+          <a href="<?php echo $base_url ?>/_template/">temp</a>
         </li>
         <li class="fnav__item">
           <a href="#">menu</a>

@@ -54,9 +54,9 @@
 				color:#fff;
 			}
 		}
-		&_temp{
+		&_template{
 			@extend #{$this};
-			body.temp & a{
+			body._template & a{
 				background-color: $color-light;
 				color:#fff;
 			}
