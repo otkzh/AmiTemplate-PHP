@@ -18,7 +18,7 @@ compile: false
       <a href="#">home</a>
     </li>
     <li class="gnav__item">
-      <a href="#">temp</a>
+      <a href="#">sample</a>
     </li>
     <li class="gnav__item">
       <a href="#">menu</a>
@@ -99,9 +99,9 @@ compile: false
 				color:#fff;
 			}
 		}
-		&_template{
+		&_sample{
 			@extend #{$this};
-			body._template & a{
+			body._sample & a{
 				background-color: $color-light;
 				color:#fff;
 			}
@@ -109,6 +109,13 @@ compile: false
 		&_sample{
 			@extend #{$this};
 			body.sample & a{
+				background-color: $color-light;
+				color:#fff;
+			}
+		}
+    &_layout{
+			@extend #{$this};
+			body._layout & a{
 				background-color: $color-light;
 				color:#fff;
 			}

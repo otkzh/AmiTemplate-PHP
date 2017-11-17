@@ -182,12 +182,12 @@ body {
   font-feature-settings: "Kana";
   font-family: Linotte, YuGothic, 'Yu Gothic', 游ゴシック体, 游ゴシック, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Roboto, メイリオ, Meiryo, 'ＭＳ Ｐゴシック', Osaka, 'MS PGothic', Arial, Helvetica, Verdana, sans-serif;
   line-height: 1.8;
-  color: #423807; }
+  color: #535364; }
 
 a {
   -webkit-tap-highlight-color: transparent;
   outline: none;
-  color: #141102; }
+  color: #3C3C48; }
   .no-js a:hover,
   .no-touchevents a:hover,
   .touchevents a.touch {
@@ -215,7 +215,8 @@ html, body {
   z-index: 999;
   top: 0;
   right: 0;
-  left: 0; }
+  left: 0;
+  border-top: 4px solid #A2324E; }
   .header__row {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -226,38 +227,46 @@ html, body {
     @media screen and (max-width: 666px) {
       .header__row {
         padding: 0 8px; } }
-  .header__item, .header__item_bg, .header__item_logo {
-    height: auto; }
-    .header__item_bg {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-color: #fff;
-      border-bottom: 1px solid #eee;
-      height: 48px;
-      z-index: 2; }
-    .header__item_logo {
-      position: relative;
-      z-index: 2;
-      float: left;
-      height: 48px; }
-      .header__item_logo a {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        height: 100%; }
-      .header__item_logo img {
-        max-width: 100%;
-        width: 100%;
-        height: auto; }
+  .header__bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    -webkit-box-shadow: 0 0px 24px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0px 24px rgba(0, 0, 0, 0.25);
+    height: 48px;
+    z-index: 2; }
+  .header__logo {
+    position: relative;
+    z-index: 2;
+    float: left;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 48px; }
+    .header__logo a {
+      display: block;
+      overflow: hidden;
+      width: 142px;
+      height: 0;
+      padding-top: 26px;
+      background-image: url("../img/common/header/logo.png");
+      background-size: 142px 26px; }
+      @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+        .header__logo a {
+          background-image: url("../img/common/header/logo@2x.png"); } }
+    .header__logo img {
+      max-width: 100%;
+      width: 100%;
+      height: auto; }
 
 .menubar {
   display: block;
@@ -298,7 +307,7 @@ html, body {
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: #141102;
+    background-color: #3C3C48;
     border-radius: 3px; }
     .menubar__item:nth-of-type(1) {
       top: 0;
@@ -430,7 +439,7 @@ compile: false
       <a href="#">home</a>
     </li>
     <li class="gnav__item">
-      <a href="#">temp</a>
+      <a href="#">sample</a>
     </li>
     <li class="gnav__item">
       <a href="#">menu</a>
@@ -480,7 +489,7 @@ compile: false
     @media screen and (max-width: 666px) {
       .gnav__row {
         display: block; } }
-  .gnav__item a, .gnav__item_home a, .gnav__item_template a, .gnav__item_sample a, .gnav__item_contact a {
+  .gnav__item a, .gnav__item_home a, .gnav__item_sample a, .gnav__item_layout a, .gnav__item_contact a {
     position: relative;
     display: block;
     -webkit-box-sizing: border-box;
@@ -498,26 +507,26 @@ compile: false
     padding: 0 8px;
     text-decoration: none;
     background-color: #fff; }
-    .no-js .gnav__item a:hover, .no-js .gnav__item_home a:hover, .no-js .gnav__item_template a:hover, .no-js .gnav__item_sample a:hover, .no-js .gnav__item_contact a:hover,
+    .no-js .gnav__item a:hover, .no-js .gnav__item_home a:hover, .no-js .gnav__item_sample a:hover, .no-js .gnav__item_layout a:hover, .no-js .gnav__item_contact a:hover,
     .no-touchevents .gnav__item a:hover,
     .no-touchevents .gnav__item_home a:hover,
-    .no-touchevents .gnav__item_template a:hover,
     .no-touchevents .gnav__item_sample a:hover,
+    .no-touchevents .gnav__item_layout a:hover,
     .no-touchevents .gnav__item_contact a:hover,
     .touchevents .gnav__item a.touch,
     .touchevents .gnav__item_home a.touch,
-    .touchevents .gnav__item_template a.touch,
     .touchevents .gnav__item_sample a.touch,
+    .touchevents .gnav__item_layout a.touch,
     .touchevents .gnav__item_contact a.touch {
       background-color: #eee;
       color: #fff; }
     @media screen and (max-width: 666px) {
-      .gnav__item a, .gnav__item_home a, .gnav__item_template a, .gnav__item_sample a, .gnav__item_contact a {
+      .gnav__item a, .gnav__item_home a, .gnav__item_sample a, .gnav__item_layout a, .gnav__item_contact a {
         -webkit-box-pack: start;
         -ms-flex-pack: start;
         justify-content: flex-start;
         border-bottom: 1px solid #eee; }
-        .gnav__item a::after, .gnav__item_home a::after, .gnav__item_template a::after, .gnav__item_sample a::after, .gnav__item_contact a::after {
+        .gnav__item a::after, .gnav__item_home a::after, .gnav__item_sample a::after, .gnav__item_layout a::after, .gnav__item_contact a::after {
           content: "";
           display: inline-block;
           font: normal normal normal 14px/1 FontAwesome;
@@ -541,10 +550,13 @@ compile: false
   body.home .gnav__item_home a {
     background-color: #eee;
     color: #fff; }
-  body._template .gnav__item_template a {
+  body._sample .gnav__item_sample a {
     background-color: #eee;
     color: #fff; }
   body.sample .gnav__item_sample a {
+    background-color: #eee;
+    color: #fff; }
+  body._layout .gnav__item_layout a {
     background-color: #eee;
     color: #fff; }
   .gnav__item_contact a {
@@ -566,9 +578,6 @@ compile: false
     @media screen and (max-width: 666px) {
       .main__row {
         padding: 0 8px; } }
-  .main__header {
-    position: relative;
-    margin-bottom: 48px; }
   .main__item {
     padding-top: 48px;
     margin-bottom: 48px; }
@@ -580,30 +589,53 @@ compile: false
     border-top: 1px solid #eee;
     padding-top: 8px;
     margin-top: 24px; }
+  .main p {
+    margin: .5em 0; }
 
 .main-header {
+  position: relative;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 24px 0; }
+  padding: 24px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  min-height: 200px; }
   .main-header__bg {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    margin: 0 -500px;
-    padding: 0 -500px;
+    margin: 0 -1000px;
+    padding: 0 -1000px;
     z-index: -1;
-    background-color: #eee; }
+    background-color: #3C3C48; }
+  @media screen and (min-width: 667px) {
+    .main-header__row {
+      text-align: center; } }
   .main-header__ttl {
-    font-size: 2.4rem; }
+    font-size: 3rem;
+    font-weight: normal;
+    color: #fff; }
+    @media screen and (max-width: 666px) {
+      .main-header__ttl {
+        font-size: 2.4rem; } }
+  .main-header__desc {
+    color: #fff; }
 
 .main-footer__body {
   margin-bottom: 24px; }
 
 .main-footer__ttl {
   font-size: 2rem;
-  color: #141102;
+  color: #3C3C48;
   border-bottom: 1px solid #000;
   margin-bottom: .5em; }
 
@@ -1341,7 +1373,7 @@ compile: false
 ```
 */
 .u-small {
-  color: #423807;
+  color: #535364;
   font-size: 1.2rem; }
 
 /*
@@ -1464,18 +1496,18 @@ compile: false
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin: 4em 0 1em;
-  padding-bottom: .9em;
   -webkit-font-feature-settings: 'palt';
   font-feature-settings: 'palt';
   line-height: 1.4;
-  font-size: 2.4rem;
-  color: #000;
-  border-bottom: 2px solid #141102; }
+  font-size: 3rem;
+  color: #3C3C48; }
   .u-ttl_l:first-child {
     margin-top: 0; }
+  .u-ttl_l + P {
+    margin-top: -0.5em; }
   @media screen and (max-width: 666px) {
     .u-ttl_l {
-      font-size: 2rem; } }
+      font-size: 2.4rem; } }
 
 .u-ttl_m {
   -webkit-box-sizing: border-box;
@@ -1665,13 +1697,13 @@ compile: false
       <label class="u-pagination__link_prev"><span>&lt;</span></label>
     </li>
     <li class="u-pagination__item">
-      <label class="u-pagination__link">i</label>
+      <label class="u-pagination__link">1</label>
     </li>
     <li class="u-pagination__item">
-      <label class="u-pagination__link">i</label>
+      <label class="u-pagination__link">2</label>
     </li>
     <li class="u-pagination__item">
-      <label class="u-pagination__link">i</label>
+      <label class="u-pagination__link">3</label>
     </li>
     <li class="u-pagination__item">
       <label class="u-pagination__link_next"><span>&gt;</span></label>

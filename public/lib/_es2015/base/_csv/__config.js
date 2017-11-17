@@ -46,7 +46,7 @@ export default function () {
 		data : {
 			currentPage: 0,   // 現在のページ番号
 			size: 10,         // 1ページに表示するアイテムの上限
-			pageRange: 10,    // ページネーションに表示するページ数の上限
+			pageRange: 5,    // ページネーションに表示するページ数の上限
 			items: []         // 表示するアイテムリスト
 		},
 		computed: {

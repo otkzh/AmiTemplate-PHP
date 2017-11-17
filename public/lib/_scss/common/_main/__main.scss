@@ -5,13 +5,13 @@
 	}
 	//↓page-header
 	&__header{
-		position: relative;
-		margin-bottom: $bm-outer;
+
 	}
 	//↓content-item
 	&__item{
     padding-top: $bm-outer;
 		margin-bottom: $bm-outer;
+
 	}
   //↓content-head
 	&__head{
@@ -24,4 +24,8 @@
 		padding-top: $bm;
     margin-top: $bm-inner;
 	}
+  //↓content tag
+  p{
+    margin: .5em 0;
+  }
 }

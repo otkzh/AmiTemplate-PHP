@@ -68,6 +68,13 @@
 				color:#fff;
 			}
 		}
+    &_layout{
+			@extend #{$this};
+			body._layout & a{
+				background-color: $color-light;
+				color:#fff;
+			}
+		}
 		&_contact{
 			@extend #{$this};
 			a{

@@ -1,5 +1,5 @@
 <?php
-$pageTtl = "csvサンプルページ";
+$pageTtl = "CSVサンプルページ";
 include ("../../function.php");
 $metaTtl = $pageTtl."-".$siteName;
 $metaDesc = $siteDescription;
@@ -13,20 +13,27 @@ include ($inc_path."/lib/inc/header.php");
 
     <header class="main__header main-header">
       <div class="main-header__bg"></div>
-      <?php
-      $panAry[] = array($base_url."/_template/" ,"テンプレート");
-      include ($inc_path."/lib/inc/pan.php");
-      ?>
-      <h1 class="main-header__ttl"><?php echo $pageTtl; ?></h1>
+      <div class="main-header__row">
+        <h1 class="main-header__ttl"><?php echo $pageTtl; ?></h1>
+        <p class="main-header__desc">CSVファイルを読んでVue.jsでページネーション付きリストを表示</p>
+      </div>
     </header>
+    <?php
+    $panAry[] = array("/_sample" ,"サンプル集");
+    include ($inc_path."/lib/inc/pan.php");
+    ?>
+    <section class="main__item">
+      <h2 class="u-ttl_l">表示速度確認サンプル</h2>
+      <ul class="u-list__ul">
+        <li>仕様CSVは【<a href="http://jusyo.jp/" target="_blank" class="u-icon__link">住所.jp</a>】から埼玉住所をダウンロード（3643件）</li>
+        <li>Ajaxで非同期通信</li>
+      </ul>
+    </section>
 
-    <section class="main__body" id="app">
-      <p>Ajaxを利用して非同期でCSVファイルを取得</p>
-      <p>サンプルCSVは【<a href="http://jusyo.jp/" target="_blank" class="u-icon__link">住所.jp</a>】から埼玉住所をピックアップ（3643件）</p>
+    <section class="main__item" id="app">
+      <h2 class="u-ttl_l">リスト表示</h2>
 
-      <hr>
-
-      <div id="csv_output">読み込み中</div>
+      <div id="csv_output">CSVファイルを読み込み中</div>
 
       <nav>
         <ul class="u-pagination mb3">

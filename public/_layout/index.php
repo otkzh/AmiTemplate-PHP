@@ -1,9 +1,9 @@
 <?php
-$pageTtl = "404ページ";
-include ("function.php");
-$metaTtl = $siteName;
+$pageTtl = "レイアウト集";
+include ("../function.php");
+$metaTtl = $pageTtl."-".$siteName;
 $metaDesc = $siteDescription;
-$body_class ="http404";
+$body_class ="";
 include ($inc_path."/lib/inc/head.php");
 include ($inc_path."/lib/inc/header.php");
 ?>
@@ -14,12 +14,17 @@ include ($inc_path."/lib/inc/header.php");
       <div class="main-header__bg"></div>
       <div class="main-header__row">
         <h1 class="main-header__ttl"><?php echo $pageTtl; ?></h1>
-        <p class="main-header__desc">音速で探しましたが見つかりませんでした。</p>
+        <p class="main-header__desc">AmiTemplateに初めから組み込まれているアレコレ（レイアウト）</p>
       </div>
     </header>
     <?php
     include ($inc_path."/lib/inc/pan.php");
     ?>
+    <section class="main__item">
+      <div class="u-assist">
+        <p>まだないよ</p>
+      </div>
+    </section>
   </article>
 </main>
 
