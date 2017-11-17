@@ -1,5 +1,7 @@
 
 .main-header{
+  box-sizing: border-box;
+  padding: $bm-inner 0;
 	&__bg{
 		position: absolute;
 		top:0;
@@ -9,9 +11,7 @@
 		margin:0 -500px;
 		padding: 0 -500px;
 		z-index: -1;
-		background-color: $color-light-darken;
-	}
-	&__row{
+		background-color: $color-light;
 	}
 	&__ttl{
 		font-size: 2.4rem;

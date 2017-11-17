@@ -244,9 +244,16 @@ html, body {
       float: left;
       height: 48px; }
       .header__item_logo a {
-        display: block;
-        height: 100%;
-        width: 160px; }
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        height: 100%; }
       .header__item_logo img {
         max-width: 100%;
         width: 100%;
@@ -562,45 +569,34 @@ compile: false
   .main__header {
     position: relative;
     margin-bottom: 48px; }
+  .main__item {
+    padding-top: 48px;
+    margin-bottom: 48px; }
   .main__head {
-    margin-bottom: 24px; }
-  .main__ttl {
-    font-size: 2.4rem;
-    color: #141102;
-    border-bottom: 1px solid #423807;
-    margin: .5em 0; }
-    .main__ttl_s {
-      -webkit-box-sizing: border-box;
-      box-sizing: border-box;
-      font-size: 2rem;
-      line-height: 1.2;
-      font-weight: bold;
-      margin: .5em 0;
-      color: #141102;
-      border-left: 3px solid #423807;
-      padding: 0;
-      padding-left: 4px; }
-  .main__body {
     margin-bottom: 24px; }
   .main__foot {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     border-top: 1px solid #eee;
-    padding-top: 8px; }
+    padding-top: 8px;
+    margin-top: 24px; }
 
-.main-header__bg {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: 0 -500px;
-  padding: 0 -500px;
-  z-index: -1;
-  background-color: #c8c8c8; }
-
-.main-header__ttl {
-  font-size: 2.4rem; }
+.main-header {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 24px 0; }
+  .main-header__bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0 -500px;
+    padding: 0 -500px;
+    z-index: -1;
+    background-color: #eee; }
+  .main-header__ttl {
+    font-size: 2.4rem; }
 
 .main-footer__body {
   margin-bottom: 24px; }
@@ -1626,7 +1622,7 @@ tag:
 compile: false
 ---
 
-リストからテーブルまで
+リストまで
 
 ```html
 <ul class="u-list__ul">
@@ -1646,49 +1642,6 @@ compile: false
   .u-list__ul > li {
     list-style: disc;
     margin-left: 24px; }
-  .u-list__table {
-    border-collapse: collapse;
-    width: 100%; }
-    .u-list__table tr {
-      border: 1px solid #c8c8c8; }
-    .u-list__table th,
-    .u-list__table td {
-      border: 1px solid #c8c8c8;
-      padding: 4px; }
-      .u-list__table th span,
-      .u-list__table td span {
-        display: none; }
-    .u-list__table th {
-      background-color: #e4ddbf;
-      color: #000;
-      vertical-align: middle; }
-    @media screen and (max-width: 666px) {
-      .u-list__table {
-        font-size: 1.4rem; }
-        .u-list__table tr {
-          display: block;
-          border: none;
-          padding-bottom: 8px;
-          margin-bottom: 8px;
-          border-bottom: 1px solid #eee; }
-        .u-list__table_th {
-          display: none !important; }
-        .u-list__table th,
-        .u-list__table td {
-          display: -webkit-box;
-          display: -ms-flexbox;
-          display: flex;
-          border: none; }
-          .u-list__table th span,
-          .u-list__table td span {
-            -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-            background-color: #e4ddbf;
-            color: #000;
-            width: 120px;
-            margin-right: 8px;
-            padding: 0 8px;
-            font-weight: bold; } }
 
 /*
 ---
@@ -1703,8 +1656,31 @@ compile: false
 ページネーションを調整します
 
 ```html
-<div class="u-only__pc" style="background:yellow">PCサイズのみで表示</div>
-<div class="u-only__sp" style="background:red">SPサイズのみで表示</div>
+<nav>
+  <ul class="u-pagination">
+    <li class="u-pagination__item">
+      <label class="u-pagination__link_first"><span>&laquo;</span></label>
+    </li>
+    <li class="u-pagination__item">
+      <label class="u-pagination__link_prev"><span>&lt;</span></label>
+    </li>
+    <li class="u-pagination__item">
+      <label class="u-pagination__link">1</label>
+    </li>
+    <li class="u-pagination__item">
+      <label class="u-pagination__link">2</label>
+    </li>
+    <li class="u-pagination__item">
+      <label class="u-pagination__link">3</label>
+    </li>
+    <li class="u-pagination__item">
+      <label class="u-pagination__link_next"><span>&gt;</span></label>
+    </li>
+    <li class="u-pagination__item">
+      <label class="u-pagination__link_last"><span>&raquo;</span></label>
+    </li>
+  </ul>
+</nav>
 ```
 */
 .u-pagination {
@@ -1792,27 +1768,117 @@ compile: false
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale; }
 
-body.home .main-v__row {
+/*
+---
+name: u-table
+category:
+- common/unit/u-table
+tag:
+- base
+compile: false
+---
+
+テーブル
+
+```html
+<table class="u-table">
+  <tr class="u-table_th">
+    <th>{{ key }}</th>
+    <th>{{ key }}</th>
+    <th>{{ key }}</th>
+    <th>{{ key }}</th>
+    <th>{{ key }}</th>
+  </tr>
+  <tr>
+    <td><span>{{ key }}</span>{{ value }}</td>
+    <td><span>{{ key }}</span>{{ value }}</td>
+    <td><span>{{ key }}</span>{{ value }}</td>
+    <td><span>{{ key }}</span>{{ value }}</td>
+    <td><span>{{ key }}</span>{{ value }}</td>
+  </tr>
+  <tr>
+    <td><span>{{ key }}</span>{{ value }}</td>
+    <td><span>{{ key }}</span>{{ value }}</td>
+    <td><span>{{ key }}</span>{{ value }}</td>
+    <td><span>{{ key }}</span>{{ value }}</td>
+    <td><span>{{ key }}</span>{{ value }}</td>
+  </tr>
+  <tr>
+    <td><span>{{ key }}</span>{{ value }}</td>
+    <td><span>{{ key }}</span>{{ value }}</td>
+    <td><span>{{ key }}</span>{{ value }}</td>
+    <td><span>{{ key }}</span>{{ value }}</td>
+    <td><span>{{ key }}</span>{{ value }}</td>
+  </tr>
+</table>
+```
+*/
+.u-table {
+  border-collapse: collapse;
+  width: 100%; }
+  .u-table tr {
+    border: 1px solid #c8c8c8; }
+  .u-table th,
+  .u-table td {
+    border: 1px solid #c8c8c8;
+    padding: 4px; }
+    @media screen and (min-width: 667px) {
+      .u-table th span,
+      .u-table td span {
+        display: none; } }
+  .u-table th {
+    background-color: #e4ddbf;
+    color: #000;
+    vertical-align: middle; }
+  @media screen and (max-width: 666px) {
+    .u-table {
+      font-size: 1.4rem; }
+      .u-table tr {
+        display: block;
+        border: none;
+        padding-bottom: 8px;
+        margin-bottom: 8px;
+        border-bottom: 1px solid #eee; }
+      .u-table_th {
+        display: none !important; }
+      .u-table th,
+      .u-table td {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        border: none; }
+        .u-table th span,
+        .u-table td span {
+          -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+          background-color: #e4ddbf;
+          color: #000;
+          width: 120px;
+          margin-right: 8px;
+          padding: 0 8px;
+          font-weight: bold; } }
+
+body._etc .main-v__row {
   position: relative;
   margin-top: 24px;
   background-color: #eee; }
   @media screen and (max-width: 666px) {
-    body.home .main-v__row {
+    body._etc .main-v__row {
       margin-top: 8px; } }
 
-body.home .main-v__item {
+body._etc .main-v__item {
   position: relative;
   z-index: 2;
   max-width: 100%;
   width: 100%;
   height: auto;
   opacity: 0; }
-  body.home .main-v__item.active {
+  body._etc .main-v__item.active {
     opacity: 1;
     -webkit-transition: all 1s;
     transition: all 1s; }
 
-body.home .main-v__desc {
+body._etc .main-v__desc {
   position: absolute;
   z-index: 1;
   top: 0;

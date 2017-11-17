@@ -48,8 +48,8 @@ include ($inc_path."/lib/inc/header.php");
         </ul>
       </nav>
 
-      <table class="u-list__table">
-        <tr v-for="(line,index) in displayItems"  v-if="index < 1" class="u-list__table_th">
+      <table class="u-table">
+        <tr v-for="(line,index) in displayItems"  v-if="index < 1" class="u-table_th">
           <th v-for="(value, key,index) in line">{{ key }}</th>
         </tr>
         <tr v-for="line in displayItems">

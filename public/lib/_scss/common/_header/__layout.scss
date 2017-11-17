@@ -29,9 +29,10 @@
 			float: left;
 			height: $header-height;
 			a{
-				display: block;
+				display: flex;
+				align-items: center;
+				justify-content: center;
 				height: 100%;
-				width: 160px;
 			}
 			img{
 				max-width: 100%;

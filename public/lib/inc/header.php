@@ -2,7 +2,14 @@
   <div class="header__row">
     <div class="header__item_bg"></div>
     <h1 class="header__item_logo">
-      <a href="<?php echo $base_url ?>/"><img src="<?php echo $base_url ?>/lib/img/dummy/bronze.png" alt="<?php echo $metaTtl ?>"></a>
+      <a href="<?php echo $base_url ?>/">
+        <img
+        src="<?php echo $base_url; ?>/lib/img/common/header/logo@2x.png"
+        alt="<?php echo $metaTtl ?>"
+        style="max-width:158px;"
+        class="u-img__max"
+        >
+      </a>
     </h1>
     <nav class="header__item_gnav gnav">
       <ul class="gnav__row">

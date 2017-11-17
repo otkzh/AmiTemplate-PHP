@@ -20,11 +20,18 @@ include ($inc_path."/lib/inc/header.php");
       <p class="main-header__desc">AmiTemplateに初めから組み込まれているテンプレート（というかサンプル）</p>
     </header>
 
-    <section class="main-footer__body">
+    <section class="main__body">
       <h3 class="main-footer__ttl ">
         <a href="./_csv/index.php">csvサンプルページ</a>
       </h3>
       <p>CSVファイルを読み込んで、Vue.jsでページネーション付きリストを表示</p>
+    </section>
+
+    <section class="main__body">
+      <h3 class="main-footer__ttl ">
+        <a href="./_etc/index.php">未整理サンプルページ</a>
+      </h3>
+      <p>組み込み済みのJS関連中心</p>
     </section>
 
 

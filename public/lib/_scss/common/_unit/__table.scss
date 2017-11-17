@@ -1,0 +1,96 @@
+/*
+---
+name: u-table
+category:
+- common/unit/u-table
+tag:
+- base
+compile: false
+---
+
+テーブル
+
+```html
+<table class="u-table">
+  <tr class="u-table_th">
+    <th>{{ key }}</th>
+    <th>{{ key }}</th>
+    <th>{{ key }}</th>
+    <th>{{ key }}</th>
+    <th>{{ key }}</th>
+  </tr>
+  <tr>
+    <td><span>{{ key }}</span>{{ value }}</td>
+    <td><span>{{ key }}</span>{{ value }}</td>
+    <td><span>{{ key }}</span>{{ value }}</td>
+    <td><span>{{ key }}</span>{{ value }}</td>
+    <td><span>{{ key }}</span>{{ value }}</td>
+  </tr>
+  <tr>
+    <td><span>{{ key }}</span>{{ value }}</td>
+    <td><span>{{ key }}</span>{{ value }}</td>
+    <td><span>{{ key }}</span>{{ value }}</td>
+    <td><span>{{ key }}</span>{{ value }}</td>
+    <td><span>{{ key }}</span>{{ value }}</td>
+  </tr>
+  <tr>
+    <td><span>{{ key }}</span>{{ value }}</td>
+    <td><span>{{ key }}</span>{{ value }}</td>
+    <td><span>{{ key }}</span>{{ value }}</td>
+    <td><span>{{ key }}</span>{{ value }}</td>
+    <td><span>{{ key }}</span>{{ value }}</td>
+  </tr>
+</table>
+```
+*/
+
+.u-table{
+  border-collapse: collapse;
+  width: 100%;
+  tr{
+    border: 1px solid $color-light-darken;
+  }
+  th,
+  td{
+    border: 1px solid $color-light-darken;
+    padding: $bm/2;
+    @include min-screen($width-s +1px){
+      span{
+        display: none;
+      }
+    }
+  }
+  th{
+    background-color: $color-brand-lighten;
+    color:#000;
+    vertical-align: middle;
+  }
+  @include max-screen($width-s){
+    font-size: 1.4rem;
+    tr{
+      display: block;
+      border: none;
+      padding-bottom: $bm;
+      margin-bottom: $bm;
+      border-bottom: 1px solid $color-light;
+    }
+    &_th{
+      display: none !important;
+    }
+    th,
+    td{
+
+      display: flex;
+      border: none;
+      span{
+        box-sizing: border-box;
+        background-color: $color-brand-lighten;
+        color:#000;
+        width: 120px;
+        margin-right: $bm;
+        padding: 0 $bm;
+        font-weight: bold;
+      }
+    }
+  }
+}

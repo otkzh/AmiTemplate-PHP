@@ -3,36 +3,18 @@
 	&__row{
 		@include wrap;
 	}
-
 	//↓page-header
 	&__header{
 		position: relative;
 		margin-bottom: $bm-outer;
 	}
-	//↓content-head
+	//↓content-item
+	&__item{
+    padding-top: $bm-outer;
+		margin-bottom: $bm-outer;
+	}
+  //↓content-head
 	&__head{
-		margin-bottom: $bm-inner;
-
-	}
-	&__ttl{
-		font-size: 2.4rem;
-		color:$color-dark;
-		border-bottom: 1px solid $color-dark-lighten;
-		margin: .5em 0;
-		&_s{
-			box-sizing: border-box;
-			font-size: 2rem;
-			line-height: 1.2;
-			font-weight: bold;
-			margin: .5em 0;
-			color:$color-dark;
-			border-left: 3px solid $color-dark-lighten;
-			padding: 0;
-			padding-left: $bm/2;
-		}
-	}
-	//↓content-body
-	&__body{
 		margin-bottom: $bm-inner;
 	}
 	//↓content-foot
@@ -40,5 +22,6 @@
 		box-sizing: border-box;
 		border-top: 1px solid $color-light;
 		padding-top: $bm;
+    margin-top: $bm-inner;
 	}
 }
