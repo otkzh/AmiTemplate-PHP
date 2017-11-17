@@ -22,19 +22,17 @@ include ($inc_path."/lib/inc/header.php");
     </header>
 
     <section class="main__body">
-      <header class="main__head">
-        <h2 lass="main__ttl">CSV</h2>
-      </header>
-      <div class="main__body">
 
-				CSV内容出力
+      <div id="csv_output">読み込み中</div>
+      <table id="app" style="border:1px solid #000;">
+        <tr v-for="(line,index) in app"  v-if="index < 1">
+          <th v-for="(value, key,index) in line">{{ key }}</th>
+        </tr>
+        <tr v-for="line in app">
+          <td v-for="(value, key, index) in line">{{ value }}</td>
+        </tr>
+      </table>
 
-        <div id="csv_output">読み込み中</div>
-
-      </div>
-      <footer class="main__foot">
-        <p>セクションフッター</p>
-      </footer>
     </section>
 
   </article>
