@@ -299,7 +299,7 @@ gulp.task('default', ['browser-sync'], function () {
   gulp.watch(paths.img + '/**/*.{png,jpg,gif,svg}', ['scss-img']);
   gulp.watch(paths.scss + '/**/*.scss', ['css','doc']);
   gulp.watch([
-    paths.dir + 'lib/_es2015/**/*.{js,scss}',
+    paths.es2015 + '/**/*.{js,scss}',
     paths.no_modernizr
   ], ['js']);
 });

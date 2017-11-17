@@ -60,6 +60,10 @@ if($('body.fullpage').length){
   fullpage_config();
 };
 
+import csv_config from './base/_csv/__config.js';
+if($('body.csv').length){
+  csv_config();
+};
 
 //--------------------- common ---------------------//
 
