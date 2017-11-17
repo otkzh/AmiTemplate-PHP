@@ -6,11 +6,11 @@
         <li class="fnav__item_home">
           <a href="<?php echo $base_url ?>/">home</a>
         </li>
-        <li class="fnav__item_temp">
-          <a href="<?php echo $base_url ?>/_temp/">temp</a>
+        <li class="fnav__item_sample">
+          <a href="<?php echo $base_url ?>/_sample/">sample</a>
         </li>
-        <li class="fnav__item">
-          <a href="#">menu</a>
+        <li class="fnav__item_layout">
+          <a href="<?php echo $base_url ?>/_layout/">layout</a>
         </li>
         <li class="fnav__item">
           <a href="#">menu</a>
@@ -24,7 +24,7 @@
       </ul>
     </nav>
     <address class="footer__add footadr">
-      <div class="footadr__copyright"><span>&copy;</span> xxxxxxxx Inc. All Rights Reserved.</div>
+      <div class="footadr__copyright"><span>&copy;</span> amiten Inc. All Rights Reserved.</div>
     </address>
   </div>
 </footer>

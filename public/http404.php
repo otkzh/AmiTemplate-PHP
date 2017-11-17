@@ -1,30 +1,25 @@
-<?php include ("function.php");
-$title = "404";
-$metaTtl = $title."-".$siteName;
-$metaDesc = $title."のページです。".$siteDescription;
-$body_class ="404";
+<?php
+$pageTtl = "404ページ";
+include ("function.php");
+$metaTtl = $siteName;
+$metaDesc = $siteDescription;
+$body_class ="http404";
 include ($inc_path."/lib/inc/head.php");
 include ($inc_path."/lib/inc/header.php");
 ?>
 
 <main class="main">
   <article class="main__row">
-
-    <?php  include ($inc_path."/lib/inc/pan.php"); ?>
-
-    <section class="main__item conts">
-      <header class="conts__head">
-        <h1 class="conts__ttl">ページタイトル</h1>
-        <p class="conts__desc">ディスクリプション</p>
-      </header>
-      <article class="conts__body">
-        <p>コピー</p>
-      </article>
-      <footer class="conts__foot">
-        <p>contsフッター</p>
-      </footer>
-    </section>
-
+    <header class="main__header main-header">
+      <div class="main-header__bg"></div>
+      <div class="main-header__row">
+        <h1 class="main-header__ttl"><?php echo $pageTtl; ?></h1>
+        <p class="main-header__desc">音速で探しましたが見つかりませんでした。</p>
+      </div>
+    </header>
+    <?php
+    include ($inc_path."/lib/inc/pan.php");
+    ?>
   </article>
 </main>
 

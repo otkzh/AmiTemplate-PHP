@@ -62,7 +62,8 @@ var paths = {
   "scss": devPath + "/lib/_scss",
   "es2015": devPath + "/lib/_es2015",
   "no_styleguide": '!' + devPath + '/_styleguide/**',
-  "no_template": '!' + devPath + '/_template/**',
+  "no_sample": '!' + devPath + '/_sample/**',
+  "no_layout": '!' + devPath + '/_layout/**',
   "no_modernizr": '!**/modernizr.js',
   //"no": ("!**/_*", "!**/_**","")
 }
@@ -93,7 +94,8 @@ gulp.task('html-dest', function () {
   gulp.src([
     paths.dir + '/**/*.{html,php}',
     paths.no_styleguide,
-    paths.no_template
+    paths.no_sample,
+    paths.no_layout
   ])
   .pipe(htmlbeautify({
     indent_char: ' ',
@@ -227,7 +229,7 @@ gulp.task('webpack', function () {
     },
     resolve: {
       alias: {
-        Vue: __dirname + '/node_modules/vue/dist/vue.js'
+        Vue: __dirname + '/node_modules/vue/dist/vue.min.js'
       }
     },
     plugins: [
@@ -282,7 +284,8 @@ gulp.task('etc-dest', function () {
   return gulp.src([
     paths.dir + '/**/*.{eot,svg,ttf,woff,woff2,otf,txt,json,pem}',
     paths.dir + '/**/.htaccess',
-    paths.no_styleguide
+    paths.no_sample,
+    paths.no_layout
   ])
   .pipe(gulp.dest(paths.dir_dest))
 });
@@ -295,11 +298,14 @@ gulp.task('dest', ['img-dest', 'js-dest', 'css-dest', 'html-dest', 'etc-dest']);
 gulp.task('default', ['browser-sync'], function () {
   gulp.watch(paths.dir + '/**/*.{html,php}').on("change", browserSync.reload);
   gulp.watch(paths.dir + '/**/*.css').on("change", browserSync.reload);
-  gulp.watch(paths.dir + '/**/*.js').on("change", browserSync.reload);
   gulp.watch(paths.img + '/**/*.{png,jpg,gif,svg}', ['scss-img']);
   gulp.watch(paths.scss + '/**/*.scss', ['css','doc']);
   gulp.watch([
     paths.es2015 + '/**/*.{js,scss}',
     paths.no_modernizr
   ], ['js']);
+  gulp.watch([
+    paths.js + '/**/*.js',
+    paths.no_modernizr
+  ]).on("change", browserSync.reload);
 });

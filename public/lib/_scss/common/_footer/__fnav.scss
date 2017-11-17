@@ -54,9 +54,9 @@
 				color:#fff;
 			}
 		}
-		&_temp{
+		&_template{
 			@extend #{$this};
-			body.temp & a{
+			body._template & a{
 				background-color: $color-light;
 				color:#fff;
 			}
@@ -64,6 +64,13 @@
 		&_sample{
 			@extend #{$this};
 			body.sample & a{
+				background-color: $color-light;
+				color:#fff;
+			}
+		}
+    &_layout{
+			@extend #{$this};
+			body._layout & a{
 				background-color: $color-light;
 				color:#fff;
 			}

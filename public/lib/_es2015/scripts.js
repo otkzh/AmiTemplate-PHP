@@ -60,6 +60,10 @@ if($('body.fullpage').length){
   fullpage_config();
 };
 
+import csv_config from './base/_csv/__config.js';
+if($('body.csv').length){
+  csv_config();
+};
 
 //--------------------- common ---------------------//
 
@@ -81,6 +85,6 @@ popwin_config();
 import mainV_config from './page/_home/__main-v.js';
 import './page/_home/__main-v.scss';
 
-if($('body.home').length){
+if($('body._etc').length){
   mainV_config();
 };
