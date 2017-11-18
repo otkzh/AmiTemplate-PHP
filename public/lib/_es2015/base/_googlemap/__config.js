@@ -5,27 +5,11 @@ npm:load-google-maps-api-2
 ***********************/
 
 //node_module
-import loadGoogleMapsApi from 'load-google-maps-api-2';
-
-//APIキー入力
-loadGoogleMapsApi.key = 'AIzaSyAwM3YlNU_nPJaQyg_wPkiDsdkvBOEQVmU';
-
-//言語 ディフォルトauto
-//loadGoogleMapsApi.language = 'cs';
-
-loadGoogleMapsApi().then(function (googleMaps) {
-  //読み込み後処理
-  GoogleMapSetting_sample();
-
-}).catch(function (err) {
-  //エラー処理
-  console.error(err);
-});
-
+//import loadGoogleMapsApi from 'load-google-maps-api-2';
 
 //セッティングサンプル　--------------------
 
-function GoogleMapSetting_sample(){
+export function sample1(){
 
   var myLatlng = new google.maps.LatLng(35.658720, 139.745421);
 
