@@ -854,12 +854,12 @@ compile: false
     @media screen and (max-width: 666px) {
       .fnav__row {
         display: block; } }
-  .fnav__item, .fnav__item_home, .fnav__item_template, .fnav__item_sample, .fnav__item_contact {
+  .fnav__item, .fnav__item_home, .fnav__item_template, .fnav__item_sample, .fnav__item_layout, .fnav__item_contact {
     max-width: 100%;
     -webkit-box-flex: 1;
     -ms-flex: 1 1 100%;
     flex: 1 1 100%; }
-    .fnav__item a, .fnav__item_home a, .fnav__item_template a, .fnav__item_sample a, .fnav__item_contact a {
+    .fnav__item a, .fnav__item_home a, .fnav__item_template a, .fnav__item_sample a, .fnav__item_layout a, .fnav__item_contact a {
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
       position: relative;
@@ -875,29 +875,31 @@ compile: false
       height: 45px;
       text-decoration: none; }
       @media screen and (min-width: 667px) {
-        .fnav__item a, .fnav__item_home a, .fnav__item_template a, .fnav__item_sample a, .fnav__item_contact a {
+        .fnav__item a, .fnav__item_home a, .fnav__item_template a, .fnav__item_sample a, .fnav__item_layout a, .fnav__item_contact a {
           border-left: 1px solid #eee; } }
-      .no-js .fnav__item a:hover, .no-js .fnav__item_home a:hover, .no-js .fnav__item_template a:hover, .no-js .fnav__item_sample a:hover, .no-js .fnav__item_contact a:hover,
+      .no-js .fnav__item a:hover, .no-js .fnav__item_home a:hover, .no-js .fnav__item_template a:hover, .no-js .fnav__item_sample a:hover, .no-js .fnav__item_layout a:hover, .no-js .fnav__item_contact a:hover,
       .no-touchevents .fnav__item a:hover,
       .no-touchevents .fnav__item_home a:hover,
       .no-touchevents .fnav__item_template a:hover,
       .no-touchevents .fnav__item_sample a:hover,
+      .no-touchevents .fnav__item_layout a:hover,
       .no-touchevents .fnav__item_contact a:hover,
       .touchevents .fnav__item a.touch,
       .touchevents .fnav__item_home a.touch,
       .touchevents .fnav__item_template a.touch,
       .touchevents .fnav__item_sample a.touch,
+      .touchevents .fnav__item_layout a.touch,
       .touchevents .fnav__item_contact a.touch {
         background-color: #eee;
         color: #fff; }
       @media screen and (max-width: 666px) {
-        .fnav__item a, .fnav__item_home a, .fnav__item_template a, .fnav__item_sample a, .fnav__item_contact a {
+        .fnav__item a, .fnav__item_home a, .fnav__item_template a, .fnav__item_sample a, .fnav__item_layout a, .fnav__item_contact a {
           padding: 0 8px;
           -webkit-box-pack: start;
           -ms-flex-pack: start;
           justify-content: flex-start;
           border-bottom: 1px solid #eee; }
-          .fnav__item a::after, .fnav__item_home a::after, .fnav__item_template a::after, .fnav__item_sample a::after, .fnav__item_contact a::after {
+          .fnav__item a::after, .fnav__item_home a::after, .fnav__item_template a::after, .fnav__item_sample a::after, .fnav__item_layout a::after, .fnav__item_contact a::after {
             content: "";
             display: inline-block;
             font: normal normal normal 14px/1 FontAwesome;
@@ -925,6 +927,9 @@ compile: false
       background-color: #eee;
       color: #fff; }
     body.sample .fnav__item_sample a {
+      background-color: #eee;
+      color: #fff; }
+    body._layout .fnav__item_layout a {
       background-color: #eee;
       color: #fff; }
     .fnav__item_contact a {
@@ -1889,6 +1894,21 @@ compile: false
           margin-right: 8px;
           padding: 0 8px;
           font-weight: bold; } }
+
+.u-iframe {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  background-color: #3C3C48; }
+  .u-iframe > iframe,
+  .u-iframe > object,
+  .u-iframe > embed {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%; }
 
 body._etc .main-v__row {
   position: relative;

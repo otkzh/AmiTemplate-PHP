@@ -61,8 +61,18 @@ if($('body.fullpage').length){
 };
 
 import csv_config from './base/_csv/__config.js';
-if($('body.csv').length){
+if($('body._csv').length){
   csv_config();
+};
+
+//googlemap
+import loadGoogleMapsApi from 'load-google-maps-api-2';
+import * as gmap_setting from './base/_googlemap/__config.js';
+if($('body._googlemap').length){
+  loadGoogleMapsApi.key = 'AIzaSyAwM3YlNU_nPJaQyg_wPkiDsdkvBOEQVmU';//APIキー入力
+  loadGoogleMapsApi().then(function (googleMaps) {
+    gmap_setting.sample1();//googlemapのセッティング
+  }).catch(function (err) {console.error(err);});
 };
 
 //--------------------- common ---------------------//
