@@ -61,8 +61,13 @@ if($('body.fullpage').length){
 };
 
 import csv_config from './base/_csv/__config.js';
-if($('body.csv').length){
+if($('body._csv').length){
   csv_config();
+};
+
+import googlemap_config from './base/_googlemap/__config.js';
+if($('body._googlemap').length){
+  googlemap_config();
 };
 
 //--------------------- common ---------------------//
