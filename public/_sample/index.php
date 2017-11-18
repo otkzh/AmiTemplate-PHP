@@ -30,7 +30,7 @@ include ($inc_path."/lib/inc/header.php");
     </section>
     <section class="main__item">
       <h2 class="u-ttl_l"><a href="./_googlemap/index.php" class="u-icon__link">GoogleMapサンプルページ</a></h2>
-      <p>埋め込みGoogleMap（API-KEYなし・あり版）のサンプル</p>
+      <p>埋め込みGoogleMap（APIキーなし・あり版）のサンプル</p>
     </section>
   </article>
 </main>
