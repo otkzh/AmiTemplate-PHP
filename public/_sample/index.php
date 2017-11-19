@@ -32,6 +32,10 @@ include ($inc_path."/lib/inc/header.php");
       <h2 class="u-ttl_l"><a href="./_googlemap/index.php" class="u-icon__link">GoogleMapサンプルページ</a></h2>
       <p>埋め込みGoogleMap（APIキーなし・あり版）のサンプル</p>
     </section>
+    <section class="main__item">
+      <h2 class="u-ttl_l"><a href="./_form/index.php" class="u-icon__link">フォームサンプルページ(作成中)</a></h2>
+      <p>フォームのサンプルデザイン</p>
+    </section>
   </article>
 </main>
 
