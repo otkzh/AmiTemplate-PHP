@@ -54,9 +54,11 @@
   },
   "dependencies": {
     "fullpage.js": "^2.9.5",
+    "iscroll": "^5.2.0",
     "jquery": "^3.2.1",
     "jquery-bridget": "^2.0.1",
     "jquery-colorbox": "^1.6.4",
+    "jquery-drawer": "^3.2.2",
     "jquery-inview": "^1.1.2",
     "layzr.js": "^2.2.2",
     "load-google-maps-api-2": "^1.0.2",

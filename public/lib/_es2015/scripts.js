@@ -75,6 +75,11 @@ if($('body._googlemap').length){
   }).catch(function (err) {console.error(err);});
 };
 
+import drawer_config from './base/_drawer/__config.js';
+if($('body._drawer').length){
+  drawer_config();
+};
+
 //--------------------- common ---------------------//
 
 import headerFn from './common/_header/__menubar.js';
