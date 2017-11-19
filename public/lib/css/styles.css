@@ -1910,6 +1910,44 @@ compile: false
 .pt10 {
   padding-top: 80px; }
 
+/*
+---
+name: l-full
+category:
+- common/layout/l-full
+tag:
+- base
+compile: false
+---
+
+親要素から子要素をはみ出して表示
+
+```html
+<br>
+<div class="l-full" style="height:100px;">
+  <div class="l-full__row">
+    <div class="l-full__item" style="background:yellow;height:100px;">
+      fullspace
+    </div>
+  </div>
+</div>
+<br>
+```
+*/
+.l-full {
+  position: relative; }
+  .l-full__row {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0 -1000px;
+    padding: 0 -1000px; }
+  .l-full__item {
+    width: 100vw;
+    margin: 8px auto; }
+
 body._etc .main-v__row {
   position: relative;
   margin-top: 24px;

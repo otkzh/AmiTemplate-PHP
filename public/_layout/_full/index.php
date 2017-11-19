@@ -1,6 +1,6 @@
 <?php
-$pageTtl = "レイアウト集";
-include ("../function.php");
+$pageTtl = "親要素から子要素をはみ出して表示";
+include ("../../function.php");
 $metaTtl = $pageTtl."-".$siteName;
 $metaDesc = $siteDescription;
 $body_class ="";
@@ -14,16 +14,26 @@ include ($inc_path."/lib/inc/header.php");
       <div class="main-header__bg"></div>
       <div class="main-header__row">
         <h1 class="main-header__ttl"><?php echo $pageTtl; ?></h1>
-        <p class="main-header__desc">AmiTemplateに初めから組み込まれているアレコレ（レイアウト）</p>
+        <p class="main-header__desc">.l-full</p>
       </div>
     </header>
     <?php
+    $panAry[] = array("/_layout" ,"レイアウト集");
     include ($inc_path."/lib/inc/pan.php");
     ?>
-    <section class="main__item">
-      <h2 class="u-ttl_l"><a href="./_full/index.php" class="u-icon__link">親要素から子要素をはみ出して表示</a></h2>
-      <p>.l-full</p>
+    <section class="main__item" style="background:red;">
+      <br>
+      <div class="l-full" style="height:100px;">
+        <div class="l-full__row">
+          <div class="l-full__item" style="background:yellow;height:100px;">
+            fullspace
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
     </section>
+
   </article>
 </main>
 
