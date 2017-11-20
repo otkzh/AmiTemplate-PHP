@@ -36,6 +36,10 @@ include ($inc_path."/lib/inc/header.php");
       <h2 class="u-ttl_l"><a href="./_drawer/index.php" class="u-icon__link">Drawerサンプルページ</a></h2>
       <p>スムーズなドロワーメニューのサンプル</p>
     </section>
+    <section class="main__item">
+      <h2 class="u-ttl_l"><a href="./_fullpage/index.php" class="u-icon__link">fullpageのサンプルページ</a></h2>
+      <p>fullpageのサンプル</p>
+    </section>
   </article>
 </main>
 

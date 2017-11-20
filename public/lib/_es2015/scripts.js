@@ -56,7 +56,7 @@ import masonry_config from './base/_masonry/__config.js';
 //masonry_config();
 
 import fullpage_config from './base/_fullpage/__config.js';
-if($('body.fullpage').length){
+if($('body._fullpage').length){
   fullpage_config();
 };
 
