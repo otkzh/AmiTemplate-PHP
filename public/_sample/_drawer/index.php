@@ -16,7 +16,7 @@ include ($inc_path."/lib/inc/head.php");
       <span class="sr-only">toggle navigation</span>
       <span class="drawer-hamburger-icon"></span>
     </button>
-    <nav class="drawer-nav" role="navigation">
+    <nav class="drawer-nav">
       <ul class="drawer-menu">
         <!--li><a class="drawer-brand" href="#">Home</a></li-->
         <li><a class="drawer-menu-item" href="<?php echo $base_url; ?>/">home</a></li>
