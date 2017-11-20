@@ -1,5 +1,5 @@
 <?php
-$pageTtl = "カラムレイアウト表示";
+$pageTtl = "シングルレイアウト";
 include ("../../function.php");
 $metaTtl = $pageTtl."-".$siteName;
 $metaDesc = $siteDescription;
@@ -14,7 +14,7 @@ include ($inc_path."/lib/inc/header.php");
       <div class="main-header__bg"></div>
       <div class="main-header__row">
         <h1 class="main-header__ttl"><?php echo $pageTtl; ?></h1>
-        <p class="main-header__desc">body.page-column（右サイドエリア追加）</p>
+        <p class="main-header__desc">body.l-page-single</p>
       </div>
     </header>
     <?php
@@ -24,23 +24,16 @@ include ($inc_path."/lib/inc/header.php");
 
     <div class="main__conts">
       <section class="conts__item">
-        <h2 class="u-ttl_l">カラムレイアウト</h2>
-        <p>表示サンプル</p>
+        <h2 class="u-ttl_l">シングルレイアウト</h2>
         <div class="u-assist mb">
+          <h4 class="u-ttl_s">bodyclass↓</h4>
+          <p>body.l-page-single</p>
           <h4 class="u-ttl_s">scssファイル↓</h4>
-          <p>参照：..../_scss/_main/_page-column.scss</p>
-        </div>
-        <div class="u-assist">
-          <h4 class="u-ttl_s">html(php)へ↓</h4>
-          <p>.main__conts/.main__sideを追加</p>
+          <p>参照：..../_scss/_lauout/_page-single/xxxxx.scss</p>
         </div>
       </section>
       <section class="conts__item">
-        <h2 class="u-ttl_l">テスト</h2>
-        <img
-        data-src="<?php echo $img_url; ?>/dummy/golden@2x.png"
-        alt=""
-        class="u-img__max">
+          <?php  include ($inc_path."/_layout/sample-article.php"); ?>
       </section>
     </div>
 

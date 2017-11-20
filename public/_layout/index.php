@@ -21,6 +21,21 @@ include ($inc_path."/lib/inc/header.php");
     include ($inc_path."/lib/inc/pan.php");
     ?>
     <div class="main__conts conts">
+
+      <section class="conts__item">
+        <h2 class="u-ttl_l">ページレイアウト</h2>
+        <p>bodyタグにclassを追加することでページレイアウトが変更。</p>
+        <h3 class="u-ttl_s"><a href="./_page-free/" class="u-icon__link">page-free</a></h3>
+        <p>何もしてない状態</p>
+        <h3 class="u-ttl_s"><a href="./_page-single/" class="u-icon__link">page-single</a></h3>
+        <p>標準的なシングルカラム</p>
+        <h3 class="u-ttl_s"><a href="./_page-column/" class="u-icon__link">page-column</a></h3>
+        <p>標準的な２カラム表示</p>
+        <h3 class="u-ttl_s"><a href="./_page-full/" class="u-icon__link">page-full</a></h3>
+        <p>画面横幅サイズいっぱいのページ</p>
+        <h3 class="u-ttl_s"><a href="./_page-card/" class="u-icon__link">page-card</a></h3>
+        <p>カード表示(表示方法検討中)</p>
+      </section>
       <section class="conts__item">
         <h2 class="u-ttl_l">レイアウト用パーツ</h2>
         <h4 class="u-ttl_s">
@@ -31,20 +46,6 @@ include ($inc_path."/lib/inc/header.php");
           <a href="<?php echo $base_url; ?>/_styleguide/category/common/layout/l-column/" target="_blank" class="u-icon__link">.l-culumn</a>
         </h4>
         <p>要素の隙間ありのカラムレイアウト</p>
-      </section>
-      <section class="conts__item">
-        <h2 class="u-ttl_l">ページレイアウト</h2>
-        <p>bodyタグにclassを追加することでページレイアウトが変更・・・出来たらいいな。</p>
-        <h3 class="u-ttl_m"><a href="./_page-free/" class="u-icon">page-free</a></h3>
-        <p>何もしてない状態</p>
-        <h3 class="u-ttl_m"><a href="./_page-single/">page-single</a></h3>
-        <p>標準的なシングルカラム</p>
-        <h3 class="u-ttl_m"><a href="./_page-column/">page-column</a></h3>
-        <p>標準的な２カラム表示</p>
-        <h3 class="u-ttl_m"><a href="./_page-full/">page-full</a></h3>
-        <p>画面いっぱいのページ</p>
-        <h3 class="u-ttl_m"><a href="./_page-card/">page-card</a></h3>
-        <p>カード表示</p>
       </section>
     </div>
   </article>

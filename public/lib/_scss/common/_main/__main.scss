@@ -3,27 +3,20 @@
   &__row{
     @include wrap;
   }
-  //↓page-header
-  &__header{
+  //↓page-head
+  &__head{
     max-width: 100%;
     flex: 0 0 100%;
   }
-  //↓content-item
-  &__item{
-    margin-top: $bm-outer;
-    margin-bottom: $bm-outer;
-    &:first-child{
-      margin-top: 0;
-    }
-    &:last-child{
-      margin-bottom: 0;
-    }
+  //↓content
+  &__conts{
+    margin-top: $bm-inner;
   }
-  //↓content-head
-  &__head{
-    margin-bottom: $bm-inner;
+  //↓side
+  &__side{
+    margin-top: $bm-inner;
   }
-  //↓content-foot
+  //↓page-foot
   &__foot{
     box-sizing: border-box;
     border-top: 1px solid $color-light;
