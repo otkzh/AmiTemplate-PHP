@@ -22,6 +22,13 @@ compile: false
 ```
 */
 
+.mb{
+  margin-bottom: $bm-inner;
+  @include max-screen($width-s){
+    margin-bottom: $bm;
+  }
+}
+
 @for $num from 0 through 10 {
 	.mb#{$num} {
 		margin-bottom: #{$num*$bm};

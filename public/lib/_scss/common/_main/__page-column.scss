@@ -1,0 +1,31 @@
+body.page-column .main{
+  $side-width:'350px';
+  $space:$bm-inner;
+
+  &__row{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__conts{
+    box-sizing: border-box;
+    max-width: calc(100% - #{$side-width} - #{$space});
+    flex: 1 1 calc(100% - #{$side-width} - #{$space});
+    padding: $bm-inner;
+    border: 1px solid $color-light;
+    @include max-screen($width-m){
+      max-width: 100%;
+      flex: 0 0 100%;
+      margin-bottom: $bm-inner;
+    }
+  }
+  &__side{
+    max-width: #{$side-width};
+    flex: 0 0 #{$side-width};
+    margin-left: #{$space};
+    @include max-screen($width-m){
+      margin-left: 0;
+      max-width: 100%;
+      flex: 0 0 100%;
+    }
+  }
+}

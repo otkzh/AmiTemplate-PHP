@@ -21,8 +21,30 @@ include ($inc_path."/lib/inc/header.php");
     include ($inc_path."/lib/inc/pan.php");
     ?>
     <section class="main__item">
-      <h2 class="u-ttl_l"><a href="<?php echo $base_url; ?>/_styleguide/" class="u-icon__link">親要素から子要素をはみ出して表示</a></h2>
+      <h3 class="u-ttl_m">
+        <a href="<?php echo $base_url; ?>/_styleguide/category/common/layout/l-full/" target="_blank" class="u-icon__link">親要素から子要素をはみ出して表示</a>
+      </h3>
       <p>.l-full</p>
+      <h3 class="u-ttl_m">
+        <a href="<?php echo $base_url; ?>/_styleguide/category/common/layout/l-column/" target="_blank" class="u-icon__link">一定の間隔をあけた、カラムレイアウト</a>
+      </h3>
+      <p>.l-culumn</p>
+    </section>
+
+    <section class="main__item">
+      <h2 class="u-ttl_l">ページレイアウト</h2>
+      <p>bodyタグにclassを追加することでページレイアウトが変更します。</p>
+
+      <h3 class="u-ttl_m">カラムなし</h3>
+      <p>noclass</p>
+      <h3 class="u-ttl_m"><a href="./_page-column/" class="u-icon__link">カラム表示（two-columns)</a></h3>
+      <p>body.page-column</p>
+
+
+
+
+
+
     </section>
   </article>
 </main>
