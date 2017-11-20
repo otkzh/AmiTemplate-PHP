@@ -1910,6 +1910,7 @@ compile: false
 .pt10 {
   padding-top: 80px; }
 
+<<<<<<< HEAD
 /*
 ---
 name: l-full
@@ -1950,6 +1951,8 @@ basebox
     width: 100vw;
     margin: 8px auto; }
 
+=======
+>>>>>>> master
 body._etc .main-v__row {
   position: relative;
   margin-top: 24px;

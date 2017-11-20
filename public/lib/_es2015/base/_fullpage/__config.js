@@ -3,6 +3,8 @@ fullPage.js
 site: https://github.com/alvarotrigo/fullPage.js
 npm:https://www.npmjs.com/package/fullpage.js
 
+---
+
 ※scrollOverflow機能をtrueにしたい場合の注意事項。
 fullpage.jsのimport利用時、IScrollとの依存関係が正しく読み込まれない。対策として、IScrollをグローバルスコープに設定すること。
 ↓
@@ -10,6 +12,10 @@ fullpage.jsのimport利用時、IScrollとの依存関係が正しく読み込�
 new webpack.ProvidePlugin({
 IScroll: "fullpage.js/vendors/scrolloverflow.min"
 })
+
+ただし、他のiScrollを利用したプラグインとの共存ができなくなるので注意。
+現在「iScroll」使用中のプラグインリスト↓
+- drawer
 
 ***********************/
 
@@ -25,6 +31,10 @@ export default function(){
 
   $(function() {
     $('#fullpage').fullpage({
+
+      //Custom selectors
+      sectionSelector: '.main__item',
+      slideSelector: '.main__slide',
 
       //Navigation
       menu: '#menu',
@@ -58,7 +68,7 @@ export default function(){
       resetSliders: false,
       fadingEffect: false,
       normalScrollElements: '#element1, .element2',
-      scrollOverflow: true,
+      scrollOverflow: false, // ページ上部の注意事項参照
       scrollOverflowReset: false,
       scrollOverflowOptions: null,
       touchSensitivity: 15,
@@ -73,7 +83,7 @@ export default function(){
       //Design
       controlArrows: true,
       verticalCentered: true,
-      //sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke', '#000'],
+      sectionsColor: ['#7BAABE', '#4BBFC3', '#7BAABE', 'whitesmoke', '#000'],
       paddingTop: '0px',
       paddingBottom: '0px',
       fixedElements: '#header, .footer',
@@ -82,10 +92,6 @@ export default function(){
       responsiveSlides: false,
       parallax: false,
       parallaxOptions: {type: 'reveal', percentage: 62, property: 'translate'},
-
-      //Custom selectors
-      sectionSelector: '.main__item',
-      slideSelector: '.main__slide',
 
       lazyLoading: true,
 

@@ -56,7 +56,7 @@ import masonry_config from './base/_masonry/__config.js';
 //masonry_config();
 
 import fullpage_config from './base/_fullpage/__config.js';
-if($('body.fullpage').length){
+if($('body._fullpage').length){
   fullpage_config();
 };
 
@@ -73,6 +73,11 @@ if($('body._googlemap').length){
   loadGoogleMapsApi().then(function (googleMaps) {
     gmap_setting.sample1();//googlemapのセッティング
   }).catch(function (err) {console.error(err);});
+};
+
+import drawer_config from './base/_drawer/__config.js';
+if($('body._drawer').length){
+  drawer_config();
 };
 
 //--------------------- common ---------------------//

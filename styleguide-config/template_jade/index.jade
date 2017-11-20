@@ -7,11 +7,12 @@ html
     link(href=root + 'aigis_assets/css/highlight/okadia.css', rel='stylesheet')
     link(href=root + 'aigis_assets/css/theme.css', rel='stylesheet')
     link(href=root + '../lib/css/styles.css', rel='stylesheet')
-  body
-    .aigis-container
-      include ./sidemenu
-      .aigis-contents
-        .aigis-contents__body
-          include ./components
-          footer.aigis-footer &copy;amiten
+  body.drawer.drawer--right._drawer
+    .all
+      header.header
+        include ./sidemenu
+      main.main
+      article.main__row
+        include ./components
+      footer.aigis-footer &copy;amiten
     script(src=root + '../lib/js/scripts.js')
