@@ -1946,7 +1946,6 @@ compile: false
 親要素から子要素をはみ出して表示
 
 ```html
-
 <div class="l-column" style="height:100px;">
   <div class="l-full__row">
     <div class="l-full__item" style="background:yellow;height:100px;">
@@ -1954,7 +1953,6 @@ compile: false
     </div>
   </div>
 </div>
-<br>
 ```
 */
 .l-full {
