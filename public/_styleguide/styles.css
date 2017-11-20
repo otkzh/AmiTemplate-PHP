@@ -1910,7 +1910,6 @@ compile: false
 .pt10 {
   padding-top: 80px; }
 
-<<<<<<< HEAD
 /*
 ---
 name: l-full
@@ -1924,17 +1923,15 @@ compile: false
 親要素から子要素をはみ出して表示
 
 ```html
-<div style="background:red">
-basebox
-<div class="l-full">
-<div class="l-full__row">
-<div class="l-full__item" style="min-height:200px;">
-fullspace
+<br>
+<div class="l-full" style="height:100px;">
+  <div class="l-full__row">
+    <div class="l-full__item" style="background:yellow;height:100px;">
+      fullspace
+    </div>
+  </div>
 </div>
-</div>
-</div>
-basebox
-</div>
+<br>
 ```
 */
 .l-full {
@@ -1951,8 +1948,6 @@ basebox
     width: 100vw;
     margin: 8px auto; }
 
-=======
->>>>>>> master
 body._etc .main-v__row {
   position: relative;
   margin-top: 24px;
