@@ -3,7 +3,7 @@ $pageTtl = "カラムレイアウト表示";
 include ("../../function.php");
 $metaTtl = $pageTtl."-".$siteName;
 $metaDesc = $siteDescription;
-$body_class ="page-column";
+$body_class ="l-page-column";
 include ($inc_path."/lib/inc/head.php");
 include ($inc_path."/lib/inc/header.php");
 ?>
@@ -23,7 +23,7 @@ include ($inc_path."/lib/inc/header.php");
     ?>
 
     <div class="main__conts">
-      <section class="main__item">
+      <section class="conts__item">
         <h2 class="u-ttl_l">カラムレイアウト</h2>
         <p>表示サンプル</p>
         <div class="u-assist mb">
@@ -35,8 +35,7 @@ include ($inc_path."/lib/inc/header.php");
           <p>.main__conts/.main__sideを追加</p>
         </div>
       </section>
-
-      <section class="main__item">
+      <section class="conts__item">
         <h2 class="u-ttl_l">テスト</h2>
         <img
         data-src="<?php echo $img_url; ?>/dummy/golden@2x.png"
@@ -56,9 +55,11 @@ include ($inc_path."/lib/inc/header.php");
           <li><a href="#">navi5</a></li>
         </ul>
       </nav>
-
+      <section class="side__item">
+      サイドコンテンツsection
+      </section>
       <aside class="side__item">
-      サイドコンテンツ
+      サイドコンテンツaside
       </aside>
     </div>
 

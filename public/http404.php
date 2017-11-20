@@ -20,6 +20,9 @@ include ($inc_path."/lib/inc/header.php");
     <?php
     include ($inc_path."/lib/inc/pan.php");
     ?>
+    <div class="main__conts conts">
+      <p><a href="<?php echo $base_url; ?>/" class="u-icon">トップはこちら</a></p>
+    </div>
   </article>
 </main>
 

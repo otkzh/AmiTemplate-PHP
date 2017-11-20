@@ -3,7 +3,7 @@ $pageTtl = "カラムレイアウト表示";
 include ("../../function.php");
 $metaTtl = $pageTtl."-".$siteName;
 $metaDesc = $siteDescription;
-$body_class ="l-page-single";
+$body_class ="l-page-full";
 include ($inc_path."/lib/inc/head.php");
 include ($inc_path."/lib/inc/header.php");
 ?>
