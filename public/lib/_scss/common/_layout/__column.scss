@@ -1,0 +1,58 @@
+/*
+---
+name: l-culumn
+category:
+- common/layout/l-column
+tag:
+- layout
+compile: false
+---
+
+親要素から子要素をはみ出して表示
+
+```html
+<div class="l-column">
+<div class="l-column__row">
+<div class="l-column__item">
+<div class="l-column__inner">one</div>
+</div>
+<div class="l-column__item">
+<div class="l-column__inner">two</div>
+</div>
+<div class="l-column__item">
+<div class="l-column__inner">three</div>
+</div>
+<div class="l-column__item">
+<div class="l-column__inner">four</div>
+</div>
+<div class="l-column__item">
+<div class="l-column__inner">five</div>
+</div>
+</div>
+</div>
+```
+*/
+
+.l-column{
+  $this:".l-column";
+  &_2{
+
+  }
+  &__row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-left: -$bm;
+    margin-right: -$bm;
+  }
+  &__item{
+    box-sizing: border-box;
+    max-width: 50%;
+    flex: 0 0 50%;
+    padding: $bm;
+  }
+  &__inner{
+    background-color: red;
+  }
+}

@@ -1916,15 +1916,15 @@ name: l-full
 category:
 - common/layout/l-full
 tag:
-- base
+- layout
 compile: false
 ---
 
 親要素から子要素をはみ出して表示
 
 ```html
-<br>
-<div class="l-full" style="height:100px;">
+
+<div class="l-column" style="height:100px;">
   <div class="l-full__row">
     <div class="l-full__item" style="background:yellow;height:100px;">
       fullspace
@@ -1947,6 +1947,67 @@ compile: false
   .l-full__item {
     width: 100vw;
     margin: 8px auto; }
+
+/*
+---
+name: l-culumn
+category:
+- common/layout/l-column
+tag:
+- layout
+compile: false
+---
+
+親要素から子要素をはみ出して表示
+
+```html
+<div class="l-column">
+<div class="l-column__row">
+<div class="l-column__item">
+<div class="l-column__inner">one</div>
+</div>
+<div class="l-column__item">
+<div class="l-column__inner">two</div>
+</div>
+<div class="l-column__item">
+<div class="l-column__inner">three</div>
+</div>
+<div class="l-column__item">
+<div class="l-column__inner">four</div>
+</div>
+<div class="l-column__item">
+<div class="l-column__inner">five</div>
+</div>
+</div>
+</div>
+```
+*/
+.l-column__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-left: -8px;
+  margin-right: -8px; }
+
+.l-column__item {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  max-width: 50%;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
+  padding: 8px; }
+
+.l-column__inner {
+  background-color: red; }
 
 body._etc .main-v__row {
   position: relative;

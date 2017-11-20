@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="../../../../../lib/js/modernizr.js"></script>
+    <link href="../../../../aigis_assets/css/highlight/okadia.css" rel="stylesheet">
+    <link href="../../../../aigis_assets/css/theme.css" rel="stylesheet">
+    <link href="../../../../../lib/css/styles.css" rel="stylesheet">
+  </head>
+  <body class="drawer drawer--left _drawer">
+    <div class="all">
+      <header class="header">
+        <div class="header_row wrap">
+          <button type="button" class="drawer-toggle drawer-hamburger"><span class="sr-only">toggle navigation</span><span class="drawer-hamburger-icon"></span></button>
+          <nav class="drawer-nav aigis-categoryList">
+            <h2>_scss</h2><ul data-path-depth="0"><li data-path-depth="0"><a>common</a><ul data-path-depth="1"><li data-path-depth="1"><a>header</a><ul data-path-depth="2"><li data-path-depth="2"><a href="../../../../category/common/header/gnav">gnav</a></li></ul></li><li data-path-depth="1"><a>layout</a><ul data-path-depth="2"><li data-path-depth="2"><a href="../../../../category/common/layout/l-column" data-tree-current>l-column</a></li><li data-path-depth="2"><a href="../../../../category/common/layout/l-full">l-full</a></li></ul></li><li data-path-depth="1"><a>unit</a><ul data-path-depth="2"><li data-path-depth="2"><a href="../../../../category/common/unit/etc">etc</a></li><li data-path-depth="2"><a href="../../../../category/common/unit/u-assist">u-assist</a></li><li data-path-depth="2"><a href="../../../../category/common/unit/u-btn">u-btn</a></li><li data-path-depth="2"><a href="../../../../category/common/unit/u-figure">u-figure</a></li><li data-path-depth="2"><a href="../../../../category/common/unit/u-icon">u-icon</a></li><li data-path-depth="2"><a href="../../../../category/common/unit/u-img">u-img</a></li><li data-path-depth="2"><a href="../../../../category/common/unit/u-lsit">u-lsit</a></li><li data-path-depth="2"><a href="../../../../category/common/unit/u-only(hide)">u-only(hide)</a></li><li data-path-depth="2"><a href="../../../../category/common/unit/u-pagination">u-pagination</a></li><li data-path-depth="2"><a href="../../../../category/common/unit/u-position">u-position</a></li><li data-path-depth="2"><a href="../../../../category/common/unit/u-small">u-small</a></li><li data-path-depth="2"><a href="../../../../category/common/unit/u-table">u-table</a></li><li data-path-depth="2"><a href="../../../../category/common/unit/u-ttl">u-ttl</a></li></ul></li></ul></li></ul>
+          </nav>
+        </div>
+      </header>
+      <main class="main">
+        <article class="main__row">
+          <nav class="main__item">
+            <h2 class="u-ttl_l">Components</h2>
+            <ul class="aigis-moduleList">
+              <li class="aigis-moduleList__item"><a href="#l-culumn">l-culumn</a></li>
+            </ul>
+          </nav>
+          <section class="main__item">
+            <h2 id="l-culumn" class="u-ttl_l">l-culumn</h2>
+            <p>/public/lib/_scss/common/_layout/__column.scss</p>
+            <ul class="aigis-tags">
+              <li class="aigis-tags__item aigis-tags__item--layout">layout</li>
+            </ul>
+          </section>
+          <section class="main__item">
+            <h2 class="u-ttl_l">サンプル</h2>
+            <div class="aigis-module"><p>親要素から子要素をはみ出して表示</p>
+<div class="aigis-preview">
+  <div class="l-column">
+    <div class="l-column__row">
+        <div class="l-column__item">
+            <div class="l-column__inner">one</div>
+        </div>
+        <div class="l-column__item">
+            <div class="l-column__inner">two</div>
+        </div>
+        <div class="l-column__item">
+            <div class="l-column__inner">three</div>
+        </div>
+        <div class="l-column__item">
+            <div class="l-column__inner">four</div>
+        </div>
+        <div class="l-column__item">
+            <div class="l-column__inner">five</div>
+        </div>
+    </div>
+</div></div>
+
+<pre><code class="language-html"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>l-column<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>l-column__row<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>l-column__item<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>l-column__inner<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>one<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>l-column__item<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>l-column__inner<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>two<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>l-column__item<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>l-column__inner<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>three<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>l-column__item<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>l-column__inner<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>four<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>l-column__item<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>l-column__inner<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>five<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+</code></pre>
+
+            </div>
+          </section>
+        </article>
+      </main>
+      <footer class="footer">
+        <div class="footer__row">
+          <address class="footer__add footabr">
+            <div class="footadr__cupyright">&copy; amiten Inc. All Rights Reserved.</div>
+          </address>
+        </div>
+      </footer>
+    </div>
+    <script src="../../../../../lib/js/scripts.js"></script>
+  </body>
+</html>
