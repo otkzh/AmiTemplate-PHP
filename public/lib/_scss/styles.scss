@@ -48,6 +48,11 @@
 
 @import "common/_layout/__full.scss";
 @import "common/_layout/__column.scss";
+@import "common/_layout/__page-card/_index.scss";
+@import "common/_layout/__page-column/_index.scss";
+@import "common/_layout/__page-free/_index.scss";
+@import "common/_layout/__page-full/_index.scss";
+@import "common/_layout/__page-single/_index.scss";
 
 //page
 @import "page/_home/__main-v.scss";
