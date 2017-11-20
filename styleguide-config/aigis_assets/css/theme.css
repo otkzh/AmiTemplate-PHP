@@ -1,75 +1,4 @@
-/*
----
-name: Paragraph
-category: body
----
 
-```html
-<p>
-The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
-</p>
-```
-
-*/
-
-/*
----
-name: Heading
-category: body
----
-
-```html
-<h1>Heading1</h1>
-<h2>Heading2</h2>
-<h3>Heading3</h3>
-<h4>Heading4</h4>
-<h5>Heading5</h5>
-<h6>Heading6</h6>
-```
-
-*/
-
-
-/*
----
-name: Header
-category: layout/header
-tag:
-  - deprecated
----
-
-```html
-<header class="aigis-header">
-  <a href="#">Styleguide</a>
-</header>
-```
-
-*/
-.aigis-header {
-  line-height: 1.5em;
-  padding-left: 10px;
-  font-size: 22px;
-  font-weight: 600;
-  color: #33331a;
-  padding: 10px;
-  margin-top: 10px;
-  margin-bottom: 20px; }
-.aigis-header a {
-  text-decoration: none;
-  color: inherit; }
-
-/*
----
-name: Footer
-category: layout/footer
-tag: latest
----
-
-```html
-<footer class="aigis-footer">Last update at 2016/03/23 20:48</footer>
-```
-
-*/
 .aigis-footer {
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -80,27 +9,15 @@ tag: latest
   text-align: center;
   font-size: 16px; }
 
-/*
----
-name: Preview
-category: body
-tag: latest
----
+.aigis-preview{
+  padding-top: 24px;
+  margin-bottom: 24px;
+}
 
-```html
-<div class="aigis-preview">
-  <a class="ex-ag-btn">Button</a>
-  <button class="ex-ag-btn ex-ag-btn--primary">Button</button>
-</div>
-```
-
-*/
-.aigis-codeblock, .aigis-preview {
+.aigis-codeblock {
   position: relative;
   margin: 0;
-  overflow: scroll; }
-.aigis-preview {
-background: url( 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAAF0lEQVR4AWP4DwVvoWCgBGAMmMQACQAAuK72AWHjK4wAAAAASUVORK5CYII=' );
+  overflow: scroll;
 }
 .aigis-preview + pre {
   margin-top: 0;
@@ -122,20 +39,6 @@ background: url( 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6
   color: black;
   background-color: #FFEA3A; }
 
-
-/*
----
-name: Codeblock
-category: body
-tag: latest
----
-
-```html
-<pre><code class="lang-html"><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>div</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>class</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span>aigis-header</span><span class="punctuation definition string end html"><span>"</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;hoge</span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>div</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
-</code></pre>
-```
-
-*/
 .aigis-module > pre {
   background-color: #272822;
   color: #f8f8f2;
@@ -147,100 +50,22 @@ tag: latest
   overflow: scroll;
   border: 1px solid #A0A0A0; }
 
-.aigis-preview {
-  border: 1px solid #A0A0A0;
-  border-radius: 3px;
-  border-radius: 3px 3px 0 0;
-  padding: 20px 10px;
-  padding: 16px;
-  margin: 0;
-  margin-top: 10px; }
-
 .aigis-preview + pre {
   border-radius: 0 0 3px 3px;
   border-top: none;
   margin-top: 0; }
 
-/*
----
-name: Sidemenu
-category: layout/sidemenu
-tag: latest
----
-
-```html
-<div class="aigis-sidemenu">
-  <header class="aigis-header">
-    <a href="../../index.html">Styleguide</a>
-  </header>
-  <h2 class="aigis-sidemenu__heading">Category</h2>
-  <nav class="aigis-categoryList">
-
-  </nav>
-  <h2 class="aigis-sidemenu__heading">Tag</h2>
-  <nav class="aigis-tags aigis-tagList">
-
-  </nav>
-  <h2 class="aigis-sidemenu__heading"><a href="../../color.html">All Colors</a></h2>
-</div>
-```
-
-*/
-.aigis-sidemenu {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 280px;
-  box-sizing: border-box;
-  background-color: #f9faf9;
-  color: #33331a;
-  overflow-x: scroll;
-  height: 100%; }
-.aigis-sidemenu__heading {
-  font-size: 20px;
-  margin: 12px 0;
-  color: #33331a;
-  font-weight: normal;
-  padding-left: 10px;
-  line-height: 1em; }
-.aigis-sidemenu__heading a {
-  color: inherit;
-  text-decoration: none; }
-
 .aigis-preview .aigis-sidemenu {
   position: relative;
 }
 
-/*
----
-name: Category list
-category: layout/sidemenu
-tag: latest
----
-
-```html
-<h2 class="aigis-sidemenu__heading">Category</h2>
-<nav class="aigis-categoryList">
-  <ul data-path-depth="0">
-    <li data-path-depth="0"><a href="#">body</a></li>
-    <li data-path-depth="0"><a href="#">layout</a>
-      <ul data-path-depth="1">
-        <li data-path-depth="1"><a href="#">sidemenu</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-```
-
-*/
 .aigis-categoryList ul {
-  padding: 3px 10px;
-  font-size: 14px; }
+  font-size: 1.2rem
+}
 .aigis-categoryList li a{
   display: block;
   position: relative;
-  padding: 3px 10px 3px 10px;
+  padding: 4px;
   color: #454545;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -252,18 +77,19 @@ tag: latest
 .aigis-categoryList li:hover a[href]:hover{
   box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.1);
   background-color: #5D5D5D;
-  color: #fff; }
+  color: #fff;
+}
 .aigis-categoryList li[data-path-depth] a:before {
   content: "└";
-  margin-right: 10px; }
+  margin-right: 4px; }
 .aigis-categoryList li[data-path-depth="1"] a:before {
-  margin-left: 1em; }
+  margin-left: .5em; }
 .aigis-categoryList li[data-path-depth="2"] a:before {
-  margin-left: 2em; }
+  margin-left: 1em; }
 .aigis-categoryList li[data-path-depth="3"] a:before {
-  margin-left: 3em; }
+  margin-left: 1.5em; }
 .aigis-categoryList li[data-path-depth="4"] a:before {
-  margin-left: 4em; }
+  margin-left: 2em; }
 .aigis-categoryList li[data-path-depth] [data-tree-current] {
   background-color: #8C8C8C;
   color: #fff;

@@ -1,10 +1,9 @@
 .header_row.wrap
-  h1.header__rogo
-    a(href=root + "../") AmiTemplate
   button(type="button").drawer-toggle.drawer-hamburger
     span.sr-only toggle navigation
     span.drawer-hamburger-icon
-  nav.drawer-nav
+  nav.drawer-nav.aigis-categoryList
+    h2 _scss
     != helper.renderCollectionTree('category')
 
 
