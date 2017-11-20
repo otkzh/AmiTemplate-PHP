@@ -18,16 +18,24 @@
 @import "common/_header/__menubar.scss";
 @import "common/_header/__gnav.scss";
 
+//メインエリア
 @import "common/_main/__main.scss";
 @import "common/_main/__main-header.scss";
 @import "common/_main/__main-footer.scss";
 @import "common/_main/__pan.scss";
-@import "common/_main/__recommend.scss";
 
+//コンテンツエリア
+@import "common/_conts/__index.scss";
+
+//サイドエリア
+@import "common/_side/__index.scss";
+
+//フッター
 @import "common/_footer/__layout.scss";
 @import "common/_footer/__pagetop.scss";
 @import "common/_footer/__fnav.scss";
 
+//ユニット
 @import "common/_unit/__img.scss";
 @import "common/_unit/__btn.scss";
 @import "common/_unit/__icon.scss";
@@ -41,8 +49,18 @@
 @import "common/_unit/__pagination.scss";
 @import "common/_unit/__table.scss";
 @import "common/_unit/__iframe.scss";
-
 @import "common/_unit/__etc.scss";
 
-//page
+//ページレイアウト
+@import "common/_layout/__page-card/_index.scss";
+@import "common/_layout/__page-column/_index.scss";
+@import "common/_layout/__page-free/_index.scss";
+@import "common/_layout/__page-full/_index.scss";
+@import "common/_layout/__page-single/_index.scss";
+
+//レイアウトコンポーネント
+@import "common/_layout/__full.scss";
+@import "common/_layout/__column.scss";
+
+//ページ個別
 @import "page/_home/__main-v.scss";

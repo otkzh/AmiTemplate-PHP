@@ -10,25 +10,24 @@ include ($inc_path."/lib/inc/header.php");
 
 <main class="main" id="fullpage">
   <article class="main__row">
-
-    <div class="main__item">
-      <div class="main-header__row">
-        <h1 class="main-header__ttl"><?php echo $pageTtl; ?></h1>
-        <p class="main-header__desc">fullpage</p>
+    <div class="main__conts conts">
+      <div class="conts__item">
+        <div class="main-header__row">
+          <h1 class="main-header__ttl"><?php echo $pageTtl; ?></h1>
+          <p class="main-header__desc">fullpage</p>
+        </div>
+        <div class="u-position__item_center" style="width:250px;">
+          <?php
+          $panAry[] = array("/_sample" ,"サンプル集");
+          include ($inc_path."/lib/inc/pan.php");
+          ?>
+        </div>
       </div>
-      <div class="u-position__item_center" style="width:250px;">
-        <?php
-        $panAry[] = array("/_sample" ,"サンプル集");
-        include ($inc_path."/lib/inc/pan.php");
-        ?>
-      </div>
+      <section class="conts__item u-position_center">one</section>
+      <section class="conts__item u-position_center">two</section>
+      <section class="conts__item u-position_center">three</section>
+      <section class="conts__item u-position_center">four</section>
     </div>
-
-    <section class="main__item u-position_center">one</section>
-    <section class="main__item u-position_center">two</section>
-    <section class="main__item u-position_center">three</section>
-    <section class="main__item u-position_center">four</section>
-
   </article>
 </main>
 
