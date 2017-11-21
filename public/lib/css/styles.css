@@ -1988,31 +1988,34 @@ tag:
 compile: false
 ---
 
-親要素から子要素をはみ出して表示
+親要素から子要素をはみ出して表示。
+item要素の高さに合わせて親要素も高さを調整。
 
 ```html
-<div class="l-column" style="height:100px;">
-  <div class="l-full__row">
-    <div class="l-full__item" style="background:yellow;height:100px;">
+<div class="l-full" style="background:#eee">
+  <br>
+  <div class="l-full__row" style="background:blue;">
+    <br>
+    <div class="l-full__item" style="background:yellow;">
       fullspace
+      <br>
+      <br>
+      <br>
+      <br>
     </div>
+    <br>
   </div>
+  <br>
 </div>
 ```
 */
-.l-full {
-  position: relative; }
-  .l-full__row {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: 0 -1000px;
-    padding: 0 -1000px; }
-  .l-full__item {
-    width: 100vw;
-    margin: 8px auto; }
+.l-full__row {
+  margin: 0 -1000px; }
+
+.l-full__item {
+  width: 100vw;
+  margin-left: auto;
+  margin-right: auto; }
 
 /*
 ---

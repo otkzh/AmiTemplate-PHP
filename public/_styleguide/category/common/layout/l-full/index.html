@@ -36,20 +36,27 @@
             </section>
             <section class="conts__item">
               <h2 class="u-ttl_l">サンプル</h2>
-              <div class="aigis-module"><p>親要素から子要素をはみ出して表示</p>
+              <div class="aigis-module"><p>親要素から子要素をはみ出して表示。
+item要素の高さに合わせて親要素も高さを調整。</p>
 <div class="aigis-preview">
-  <div class="l-column" style="height:100px;">
-    <div class="l-full__row">
-        <div class="l-full__item" style="background:yellow;height:100px;"> fullspace </div>
-    </div>
-</div></div>
+  <div class="l-full" style="background:#eee"> <br>
+    <div class="l-full__row" style="background:blue;"> <br>
+        <div class="l-full__item" style="background:yellow;"> fullspace <br> <br> <br> <br> </div> <br> </div> <br> </div></div>
 
-<pre><code class="language-html"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>l-column<span class="token punctuation" >"</span></span><span class="token style-attr language-css" ><span class="token attr-name" > <span class="token attr-name" >style</span></span><span class="token punctuation" >="</span><span class="token attr-value" ><span class="token property" >height</span><span class="token punctuation" >:</span><span class="token number" >100</span>px<span class="token punctuation" >;</span></span><span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
-  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>l-full__row<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
-    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>l-full__item<span class="token punctuation" >"</span></span><span class="token style-attr language-css" ><span class="token attr-name" > <span class="token attr-name" >style</span></span><span class="token punctuation" >="</span><span class="token attr-value" ><span class="token property" >background</span><span class="token punctuation" >:</span>yellow<span class="token punctuation" >;</span><span class="token property" >height</span><span class="token punctuation" >:</span><span class="token number" >100</span>px<span class="token punctuation" >;</span></span><span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+<pre><code class="language-html"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>l-full<span class="token punctuation" >"</span></span><span class="token style-attr language-css" ><span class="token attr-name" > <span class="token attr-name" >style</span></span><span class="token punctuation" >="</span><span class="token attr-value" ><span class="token property" >background</span><span class="token punctuation" >:</span><span class="token hexcode" >#eee</span></span><span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>br</span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>l-full__row<span class="token punctuation" >"</span></span><span class="token style-attr language-css" ><span class="token attr-name" > <span class="token attr-name" >style</span></span><span class="token punctuation" >="</span><span class="token attr-value" ><span class="token property" >background</span><span class="token punctuation" >:</span>blue<span class="token punctuation" >;</span></span><span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>br</span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>l-full__item<span class="token punctuation" >"</span></span><span class="token style-attr language-css" ><span class="token attr-name" > <span class="token attr-name" >style</span></span><span class="token punctuation" >="</span><span class="token attr-value" ><span class="token property" >background</span><span class="token punctuation" >:</span>yellow<span class="token punctuation" >;</span></span><span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
       fullspace
+      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>br</span><span class="token punctuation" >></span></span>
+      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>br</span><span class="token punctuation" >></span></span>
+      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>br</span><span class="token punctuation" >></span></span>
+      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>br</span><span class="token punctuation" >></span></span>
     <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>br</span><span class="token punctuation" >></span></span>
   <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>br</span><span class="token punctuation" >></span></span>
 <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
 </code></pre>
 
