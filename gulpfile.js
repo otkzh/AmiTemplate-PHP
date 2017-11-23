@@ -15,6 +15,7 @@ $ npm run gulp img-min = 書き出した画像ファイルを圧縮
 
 var gulp = require('gulp');
 var path = require('path');
+var del = require('del');
 
 //base
 var browserSync = require('browser-sync');
@@ -62,6 +63,7 @@ var paths = {
   "js": devPath + "/lib/js",
   "scss": devPath + "/lib/_scss",
   "es2015": devPath + "/lib/_es2015",
+  "styleguide": devPath + "/_styleguide",
   "no_styleguide": '!' + devPath + '/_styleguide/**',
   "no_sample": '!' + devPath + '/_sample/**',
   "no_layout": '!' + devPath + '/_layout/**',
@@ -122,8 +124,10 @@ gulp.task('scss-img', function () {
 
 //styleguide書き出し
 gulp.task("doc", function() {
-  gulp.src("./styleguide-config/aigis_config.yml")
-  .pipe(aigis());
+  del(paths.styleguide).then(function(){
+    return gulp.src("./styleguide-config/aigis_config.yml")
+    .pipe(aigis());
+  });
 });
 
 //scssをcssへ変換
@@ -182,7 +186,6 @@ gulp.task('img-min', function () {
 });
 
 //---------------js
-
 
 //webpack設定
 gulp.task('webpack', function () {
@@ -299,31 +302,31 @@ gulp.task('dest', ['img-dest', 'js-dest', 'css-dest', 'html-dest', 'etc-dest']);
 gulp.task('default', ['browser-sync', 'watch']);
 gulp.task('watch', function () {
 
-	watch([
-		paths.dir + '/**/*.{html,php}',
-		paths.no_styleguide
-	]).on("change", browserSync.reload);
+  watch([
+    paths.dir + '/**/*.{html,php}',
+    paths.no_styleguide
+  ]).on("change", browserSync.reload);
 
-	watch(paths.scss + '/**/*.scss',function(event){
-		gulp.start(['css','doc']);
-	});
+  watch(paths.scss + '/**/*.scss',function(event){
+    gulp.start(['css','doc']);
+  });
 
-	watch([
-		paths.css + '/**/*.css'
-	]).on("change", browserSync.reload);
+  watch([
+    paths.css + '/**/*.css'
+  ]).on("change", browserSync.reload);
 
-	watch([
-		paths.img + '/**/*.{png,jpg,gif,svg}',
-		paths.no_styleguide
-	],function(event){
-		gulp.start(['scss-img']);
-	});
+  watch([
+    paths.img + '/**/*.{png,jpg,gif,svg}',
+    paths.no_styleguide
+  ],function(event){
+    gulp.start(['scss-img']);
+  });
 
-	watch(paths.es2015 + '/**/*.{js,scss}',function(event){
-		gulp.start(['js']);
-	});
-	watch([
-		paths.js + '/**/modernizr.js',
-	]).on("change", browserSync.reload);
+  watch(paths.es2015 + '/**/*.{js,scss}',function(event){
+    gulp.start(['js']);
+  });
+  watch([
+    paths.js + '/**/modernizr.js',
+  ]).on("change", browserSync.reload);
 
 });
