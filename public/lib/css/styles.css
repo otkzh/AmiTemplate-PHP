@@ -1331,7 +1331,7 @@ compile: false
   color: #000;
   margin-bottom: 1em;
   line-height: 1.4;
-  margin: 2em 0 1em;
+  margin: 1em 0 .5em;
   -webkit-font-feature-settings: 'palt';
   font-feature-settings: 'palt'; }
   .u-ttl_s:first-child {
