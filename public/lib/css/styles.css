@@ -924,6 +924,43 @@ compile: false
 
 /*
 ---
+name: footadr
+category:
+  - common/footer/footadr
+tag:
+  - base
+compile: false
+---
+
+フッターの諸情報（コピーライト等）を整理します
+
+```html
+<address class="footer__add footadr">
+  <div class="footadr__copyright"><span class="footadr__mark">&copy;</span> amiten Inc. All Rights Reserved.</div>
+</address>
+```
+*/
+.footadr__copyright {
+  font-style: normal;
+  font-size: 1.4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+.footadr__mark {
+  font-size: 1.6rem;
+  margin-right: 4px;
+  position: relative;
+  top: 1px; }
+
+/*
+---
 name: u-img
 category:
   - common/unit/u-img
