@@ -21,6 +21,7 @@ var browserSync = require('browser-sync');
 var plumber = require('gulp-plumber');
 var notify = require('gulp-notify');
 var rename = require('gulp-rename');
+var watch = require('gulp-watch');
 
 //css/scss
 var sass = require('gulp-sass');
@@ -295,17 +296,34 @@ gulp.task('etc-dest', function () {
 gulp.task('dest', ['img-dest', 'js-dest', 'css-dest', 'html-dest', 'etc-dest']);
 
 //gulp watchタスク
-gulp.task('default', ['browser-sync'], function () {
-  gulp.watch(paths.dir + '/**/*.{html,php}').on("change", browserSync.reload);
-  gulp.watch(paths.dir + '/**/*.css').on("change", browserSync.reload);
-  gulp.watch(paths.img + '/**/*.{png,jpg,gif,svg}', ['scss-img']);
-  gulp.watch(paths.scss + '/**/*.scss', ['css','doc']);
-  gulp.watch([
-    paths.es2015 + '/**/*.{js,scss}',
-    paths.no_modernizr
-  ], ['js']);
-  gulp.watch([
-    paths.js + '/**/*.js',
-    paths.no_modernizr
-  ]).on("change", browserSync.reload);
+gulp.task('default', ['browser-sync', 'watch']);
+gulp.task('watch', function () {
+
+	watch([
+		paths.dir + '/**/*.{html,php}',
+		paths.no_styleguide
+	]).on("change", browserSync.reload);
+
+	watch(paths.scss + '/**/*.scss',function(event){
+		gulp.start(['css','doc']);
+	});
+
+	watch([
+		paths.css + '/**/*.css'
+	]).on("change", browserSync.reload);
+
+	watch([
+		paths.img + '/**/*.{png,jpg,gif,svg}',
+		paths.no_styleguide
+	],function(event){
+		gulp.start(['scss-img']);
+	});
+
+	watch(paths.es2015 + '/**/*.{js,scss}',function(event){
+		gulp.start(['js']);
+	});
+	watch([
+		paths.js + '/**/modernizr.js',
+	]).on("change", browserSync.reload);
+
 });
