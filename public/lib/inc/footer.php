@@ -24,7 +24,7 @@
       </ul>
     </nav>
     <address class="footer__add footadr">
-      <div class="footadr__copyright"><span>&copy;</span> amiten Inc. All Rights Reserved.</div>
+      <div class="footadr__copyright"><span class="footadr__mark">&copy;</span> amiten Inc. All Rights Reserved.</div>
     </address>
   </div>
 </footer>

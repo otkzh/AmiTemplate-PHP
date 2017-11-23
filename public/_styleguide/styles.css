@@ -740,77 +740,6 @@ compile: false
     text-align: center;
     padding: 8px; }
 
-.pagetop {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  max-width: 1360px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 24px; }
-  @media screen and (max-width: 666px) {
-    .pagetop {
-      padding: 0 16px; } }
-  .pagetop__row {
-    display: block;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: end;
-    -ms-flex-pack: end;
-    justify-content: flex-end; }
-    @media screen and (max-width: 666px) {
-      .pagetop__row {
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        margin-bottom: 24px; } }
-  .pagetop__item {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    height: 45px;
-    width: 45px;
-    position: relative;
-    text-decoration: none;
-    color: #CEC089;
-    background-color: #fff;
-    border: 2px solid #CEC089; }
-    .pagetop__item::before {
-      content: "";
-      display: inline-block;
-      font: normal normal normal 14px/1 FontAwesome;
-      font-size: inherit;
-      text-rendering: auto;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      display: block; }
-    .pagetop__item span {
-      display: none; }
-    .no-js .pagetop__item:hover,
-    .no-touchevents .pagetop__item:hover,
-    .touchevents .pagetop__item.touch {
-      background-color: #CEC089;
-      color: #fff;
-      -webkit-transition: all .5s;
-      transition: all .5s; }
-      .no-js .pagetop__item:hover::before,
-      .no-touchevents .pagetop__item:hover::before,
-      .touchevents .pagetop__item.touch::before {
-        -webkit-transition: -webkit-transform .5s .3s;
-        transition: -webkit-transform .5s .3s;
-        transition: transform .5s .3s;
-        transition: transform .5s .3s, -webkit-transform .5s .3s;
-        -webkit-transform: translate3d(0, -3px, 0);
-        transform: translate3d(0, -3px, 0); }
-
 .fnav {
   border-bottom: 1px solid #eee; }
   .fnav__row {
@@ -921,6 +850,43 @@ compile: false
     body.contact .fnav__item_contact a {
       background-color: #eee;
       color: #fff; }
+
+/*
+---
+name: footadr
+category:
+  - common/footer/footadr
+tag:
+  - base
+compile: false
+---
+
+フッターの諸情報（コピーライト等）を整理します
+
+```html
+<address class="footer__add footadr">
+  <div class="footadr__copyright"><span class="footadr__mark">&copy;</span> amiten Inc. All Rights Reserved.</div>
+</address>
+```
+*/
+.footadr__copyright {
+  font-style: normal;
+  font-size: 1.4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+.footadr__mark {
+  font-size: 1.6rem;
+  margin-right: 4px;
+  position: relative;
+  top: 1px; }
 
 /*
 ---
@@ -1898,6 +1864,109 @@ compile: false
 
 .pt10 {
   padding-top: 80px; }
+
+/*
+---
+name: u-sns
+category:
+- common/unit/u-sns
+tag:
+- base
+compile: false
+---
+
+SNSボタンを追加します
+
+```html
+<ul class="u-sns">
+  <li class="u-sns__item">
+    <a href="#" target="_blank" class="u-sns__icon_twitter"><span class="u-sns__label">Twitter</span></a>
+  </li>
+  <li class="u-sns__item">
+    <a href="#" target="_blank" class="u-sns__icon_facebook"><span class="u-sns__label">Facebook</span></a>
+  </li>
+  <li class="u-sns__item">
+    <a href="#" target="_blank" class="u-sns__icon_youtube"><span class="u-sns__label">Youtube</span></a>
+  </li>
+  <li class="u-sns__item">
+    <a href="#" target="_blank" class="u-sns__icon_instagram"><span class="u-sns__label">Instagram</span></a>
+  </li>
+</ul>
+```
+*/
+.u-sns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  .u-sns__item {
+    margin: 0 4px; }
+  .u-sns__icon, .u-sns__icon_facebook, .u-sns__icon_twitter, .u-sns__icon_youtube, .u-sns__icon_instagram {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border-radius: 50%;
+    text-decoration: none; }
+    .u-sns__icon::before, .u-sns__icon_facebook::before, .u-sns__icon_twitter::before, .u-sns__icon_youtube::before, .u-sns__icon_instagram::before {
+      content: "";
+      display: inline-block;
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: inherit;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      color: #fff;
+      font-size: 1.8rem;
+      font-weight: normal; }
+    .no-js .u-sns__icon:hover, .no-js .u-sns__icon_facebook:hover, .no-js .u-sns__icon_twitter:hover, .no-js .u-sns__icon_youtube:hover, .no-js .u-sns__icon_instagram:hover,
+    .no-touchevents .u-sns__icon:hover,
+    .no-touchevents .u-sns__icon_facebook:hover,
+    .no-touchevents .u-sns__icon_twitter:hover,
+    .no-touchevents .u-sns__icon_youtube:hover,
+    .no-touchevents .u-sns__icon_instagram:hover,
+    .touchevents .u-sns__icon.touch,
+    .touchevents .touch.u-sns__icon_facebook,
+    .touchevents .touch.u-sns__icon_twitter,
+    .touchevents .touch.u-sns__icon_youtube,
+    .touchevents .touch.u-sns__icon_instagram {
+      -webkit-transition: all .5s;
+      transition: all .5s;
+      opacity: .8;
+      -webkit-transform: translateY(-5px);
+      transform: translateY(-5px); }
+    .u-sns__icon_facebook {
+      background-color: #3B5998; }
+      .u-sns__icon_facebook::before {
+        content: "\f09a"; }
+    .u-sns__icon_twitter {
+      background-color: #55acee; }
+      .u-sns__icon_twitter::before {
+        content: "\f099"; }
+    .u-sns__icon_youtube {
+      background-color: #EC3324; }
+      .u-sns__icon_youtube::before {
+        content: "\f167"; }
+    .u-sns__icon_instagram {
+      background-color: #CDA98A; }
+      .u-sns__icon_instagram::before {
+        content: "\f16d"; }
+  .u-sns__label {
+    display: none; }
 
 body.l-page-column .main__row {
   display: -webkit-box;
