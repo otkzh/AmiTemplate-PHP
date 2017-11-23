@@ -89,6 +89,10 @@ headerFn();
 import touchevents_config from './common/_unit/_touch-events/__config.js';
 touchevents_config();
 
+//ページトップへボタンのフェード
+import pagetop_config from './common/_unit/_pagetop/__config.js';
+pagetop_config();
+
 //別ページでのポップアップ
 import popwin_config from './common/_unit/_popup-window/__config.js';
 popwin_config();

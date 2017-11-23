@@ -6,6 +6,7 @@
 @import "mixin/_base/__touch-hover.scss";
 @import "mixin/_base/__media-queries.scss";
 @import "mixin/_base/__crearfix.scss";
+@import "mixin/_base/__icon-font.scss";
 @import "mixin/_output/__scss-img.scss";
 
 //base
@@ -32,7 +33,6 @@
 
 //フッター
 @import "common/_footer/__layout.scss";
-@import "common/_footer/__pagetop.scss";
 @import "common/_footer/__fnav.scss";
 @import "common/_footer/__footadr.scss";
 
