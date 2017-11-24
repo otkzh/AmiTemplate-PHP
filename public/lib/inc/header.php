@@ -15,8 +15,18 @@
         <li class="gnav__item_layout">
           <a href="<?php echo $base_url ?>/_layout/">layout</a>
         </li>
-        <li class="gnav__item">
-          <a href="#">menu</a>
+        <li class="gnav__item_styleguide gnav-deep">
+          <a href="<?php echo $base_url ?>/_styleguide/">styleguide</a>
+          <nav class="gnav-deep__nav">
+            <ul class="gnav-deep__row">
+              <li class="gnav-deep__item">
+                <a href="<?php echo $base_url ?>/_styleguide/">top</a>
+              </li>
+              <li class="gnav-deep__item">
+                <a href="<?php echo $base_url ?>/_styleguide/common/unit/u-assist/">u-assist</a>
+              </li>
+            </ul>
+          </nav>
         </li>
         <li class="gnav__item">
           <a href="#">menu</a>
