@@ -215,29 +215,36 @@ html, body {
   z-index: 999;
   top: 0;
   right: 0;
-  left: 0;
-  border-top: 4px solid #A2324E; }
+  left: 0; }
   .header__row {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     max-width: 1360px;
     width: 100%;
     margin: 0 auto;
-    padding: 0 24px; }
+    padding: 0 24px;
+    border-top: 4px solid transparent; }
     @media screen and (max-width: 666px) {
       .header__row {
         padding: 0 16px; } }
   .header__bg {
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     background-color: #fff;
+    border-top: 4px solid #A2324E;
     -webkit-box-shadow: 0 0px 24px rgba(0, 0, 0, 0.25);
     box-shadow: 0 0px 24px rgba(0, 0, 0, 0.25);
     height: 48px;
     z-index: 2; }
+    @media screen and (max-width: 666px) {
+      .header__bg {
+        -webkit-box-shadow: 0 0px 10px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.25); } }
   .header__logo {
     position: relative;
     z-index: 2;
@@ -267,6 +274,8 @@ html, body {
       max-width: 100%;
       width: 100%;
       height: auto; }
+  .header__menubar {
+    margin-top: 4px; }
 
 .menubar {
   display: block;
@@ -473,8 +482,10 @@ compile: false
       transition: -webkit-transform .5s;
       transition: transform .5s;
       transition: transform .5s, -webkit-transform .5s;
-      -webkit-transform: translate3d(0, -400px, 0);
-      transform: translate3d(0, -400px, 0); }
+      -webkit-transform: translate3d(0, -1000px, 0);
+      transform: translate3d(0, -1000px, 0);
+      -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); }
       .gnav.active {
         -webkit-transition: -webkit-transform .5s;
         transition: -webkit-transform .5s;
@@ -549,6 +560,8 @@ compile: false
           -webkit-box-pack: center;
           -ms-flex-pack: center;
           justify-content: center; } }
+  .gnav__item:last-of-type > a, .gnav__item_home:last-of-type > a, .gnav__item_sample:last-of-type > a, .gnav__item_styleguide:last-of-type > a, .gnav__item_layout:last-of-type > a, .gnav__item_contact:last-of-type > a {
+    border-bottom: none; }
   body.home .gnav__item_home a {
     background-color: #eee;
     color: #fff; }
@@ -568,35 +581,64 @@ compile: false
       background-color: #eee;
       color: #fff; }
 
-.gnav-deep {
-  position: relative;
-  background-color: red; }
-  .gnav-deep__nav {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    position: absolute;
-    left: 50%;
-    min-width: 200px;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
-    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
-    margin-top: 16px; }
-    .gnav-deep__nav::after {
-      content: ' ';
-      display: block;
+@media screen and (min-width: 667px) {
+  .gnav-deep {
+    position: relative;
+    background-color: red; }
+    .gnav-deep__nav {
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
       position: absolute;
-      top: -8px;
-      left: calc(50% - 8px);
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 0 4px 8px 4px;
-      border-color: transparent transparent #CEC089 transparent; }
-  .gnav-deep__row {
-    border-top: 6px solid #CEC089;
-    border-radius: 3px;
-    overflow: hidden; }
+      left: 50%;
+      min-width: 200px;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+      -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+      margin-top: 16px; }
+      .gnav-deep__nav::after {
+        content: ' ';
+        display: block;
+        position: absolute;
+        top: -8px;
+        left: calc(50% - 8px);
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 4px 8px 4px;
+        border-color: transparent transparent #CEC089 transparent; }
+    .gnav-deep__row {
+      border-top: 6px solid #CEC089;
+      border-radius: 3px;
+      overflow: hidden; }
+    .gnav-deep__item {
+      border-bottom: 1px solid #eee; }
+      .gnav-deep__item > a {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        text-decoration: none;
+        background-color: #fff;
+        min-height: 45px;
+        line-height: 1.2;
+        padding: 4px 8px; }
+        .no-js .gnav-deep__item > a:hover,
+        .no-touchevents .gnav-deep__item > a:hover,
+        .touchevents .gnav-deep__item > a.touch {
+          color: #fff;
+          background-color: #CEC089; }
+      .gnav-deep__item:last-child {
+        border-bottom: none; } }
+
+@media screen and (max-width: 666px) {
+  .gnav-deep__nav {
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25) inset;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25) inset; }
   .gnav-deep__item {
     border-bottom: 1px solid #eee; }
     .gnav-deep__item > a {
@@ -609,17 +651,24 @@ compile: false
       -ms-flex-align: center;
       align-items: center;
       text-decoration: none;
-      background-color: #fff;
+      background-color: #fbfbfb;
       min-height: 45px;
       line-height: 1.2;
-      padding: 4px 8px; }
+      padding: 4px 8px 4px 16px; }
+      .gnav-deep__item > a::before {
+        content: "└";
+        margin-right: 8px; }
       .no-js .gnav-deep__item > a:hover,
       .no-touchevents .gnav-deep__item > a:hover,
       .touchevents .gnav-deep__item > a.touch {
         color: #fff;
         background-color: #CEC089; }
-    .gnav-deep__item:last-child {
-      border-bottom: none; }
+    .gnav-deep__item:first-child > a {
+      -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15) inset;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15) inset; }
+    .gnav-deep__item:last-child > a {
+      -webkit-box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05) inset;
+      box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05) inset; } }
 
 .main {
   padding-top: 48px; }
