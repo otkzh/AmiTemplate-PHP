@@ -25,6 +25,9 @@
               <li class="gnav-deep__item">
                 <a href="<?php echo $base_url ?>/_styleguide/common/unit/u-assist/">u-assist</a>
               </li>
+              <li class="gnav-deep__item">
+                <a href="#">長いページ名ダミーダミーダミーダミーダミー</a>
+              </li>
             </ul>
           </nav>
         </li>

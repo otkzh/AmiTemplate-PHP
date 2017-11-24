@@ -62,7 +62,7 @@ compile: false
 	}
 	&__item{
 		$this:&;
-		a{
+		& > a{
 			position: relative;
 			display: block;
 			box-sizing: border-box;
@@ -106,9 +106,9 @@ compile: false
 				color:#fff;
 			}
 		}
-		&_sample{
+		&_styleguide{
 			@extend #{$this};
-			body.sample & a{
+			body._styleguide & a{
 				background-color: $color-light;
 				color:#fff;
 			}

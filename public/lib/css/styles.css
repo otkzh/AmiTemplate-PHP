@@ -489,7 +489,7 @@ compile: false
     @media screen and (max-width: 666px) {
       .gnav__row {
         display: block; } }
-  .gnav__item a, .gnav__item_home a, .gnav__item_sample a, .gnav__item_layout a, .gnav__item_contact a {
+  .gnav__item > a, .gnav__item_home > a, .gnav__item_sample > a, .gnav__item_styleguide > a, .gnav__item_layout > a, .gnav__item_contact > a {
     position: relative;
     display: block;
     -webkit-box-sizing: border-box;
@@ -507,26 +507,28 @@ compile: false
     padding: 0 8px;
     text-decoration: none;
     background-color: #fff; }
-    .no-js .gnav__item a:hover, .no-js .gnav__item_home a:hover, .no-js .gnav__item_sample a:hover, .no-js .gnav__item_layout a:hover, .no-js .gnav__item_contact a:hover,
-    .no-touchevents .gnav__item a:hover,
-    .no-touchevents .gnav__item_home a:hover,
-    .no-touchevents .gnav__item_sample a:hover,
-    .no-touchevents .gnav__item_layout a:hover,
-    .no-touchevents .gnav__item_contact a:hover,
-    .touchevents .gnav__item a.touch,
-    .touchevents .gnav__item_home a.touch,
-    .touchevents .gnav__item_sample a.touch,
-    .touchevents .gnav__item_layout a.touch,
-    .touchevents .gnav__item_contact a.touch {
+    .no-js .gnav__item > a:hover, .no-js .gnav__item_home > a:hover, .no-js .gnav__item_sample > a:hover, .no-js .gnav__item_styleguide > a:hover, .no-js .gnav__item_layout > a:hover, .no-js .gnav__item_contact > a:hover,
+    .no-touchevents .gnav__item > a:hover,
+    .no-touchevents .gnav__item_home > a:hover,
+    .no-touchevents .gnav__item_sample > a:hover,
+    .no-touchevents .gnav__item_styleguide > a:hover,
+    .no-touchevents .gnav__item_layout > a:hover,
+    .no-touchevents .gnav__item_contact > a:hover,
+    .touchevents .gnav__item > a.touch,
+    .touchevents .gnav__item_home > a.touch,
+    .touchevents .gnav__item_sample > a.touch,
+    .touchevents .gnav__item_styleguide > a.touch,
+    .touchevents .gnav__item_layout > a.touch,
+    .touchevents .gnav__item_contact > a.touch {
       background-color: #eee;
       color: #fff; }
     @media screen and (max-width: 666px) {
-      .gnav__item a, .gnav__item_home a, .gnav__item_sample a, .gnav__item_layout a, .gnav__item_contact a {
+      .gnav__item > a, .gnav__item_home > a, .gnav__item_sample > a, .gnav__item_styleguide > a, .gnav__item_layout > a, .gnav__item_contact > a {
         -webkit-box-pack: start;
         -ms-flex-pack: start;
         justify-content: flex-start;
         border-bottom: 1px solid #eee; }
-        .gnav__item a::after, .gnav__item_home a::after, .gnav__item_sample a::after, .gnav__item_layout a::after, .gnav__item_contact a::after {
+        .gnav__item > a::after, .gnav__item_home > a::after, .gnav__item_sample > a::after, .gnav__item_styleguide > a::after, .gnav__item_layout > a::after, .gnav__item_contact > a::after {
           content: "";
           display: inline-block;
           font: normal normal normal 14px/1 FontAwesome;
@@ -553,7 +555,7 @@ compile: false
   body._sample .gnav__item_sample a {
     background-color: #eee;
     color: #fff; }
-  body.sample .gnav__item_sample a {
+  body._styleguide .gnav__item_styleguide a {
     background-color: #eee;
     color: #fff; }
   body._layout .gnav__item_layout a {
@@ -565,6 +567,59 @@ compile: false
     body.contact .gnav__item_contact a {
       background-color: #eee;
       color: #fff; }
+
+.gnav-deep {
+  position: relative;
+  background-color: red; }
+  .gnav-deep__nav {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: absolute;
+    left: 50%;
+    min-width: 200px;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    margin-top: 16px; }
+    .gnav-deep__nav::after {
+      content: ' ';
+      display: block;
+      position: absolute;
+      top: -8px;
+      left: calc(50% - 8px);
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 4px 8px 4px;
+      border-color: transparent transparent #CEC089 transparent; }
+  .gnav-deep__row {
+    border-top: 6px solid #CEC089;
+    border-radius: 3px;
+    overflow: hidden; }
+  .gnav-deep__item {
+    border-bottom: 1px solid #eee; }
+    .gnav-deep__item > a {
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      text-decoration: none;
+      background-color: #fff;
+      min-height: 45px;
+      line-height: 1.2;
+      padding: 4px 8px; }
+      .no-js .gnav-deep__item > a:hover,
+      .no-touchevents .gnav-deep__item > a:hover,
+      .touchevents .gnav-deep__item > a.touch {
+        color: #fff;
+        background-color: #CEC089; }
+    .gnav-deep__item:last-child {
+      border-bottom: none; }
 
 .main {
   padding-top: 48px; }
