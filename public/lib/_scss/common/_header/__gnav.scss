@@ -78,6 +78,7 @@ compile: false
       @include touch-hover(){
         background-color: $color-light;
         color:#fff;
+        cursor: pointer;
       }
       @include max-screen($width-s){
         justify-content: flex-start;
@@ -138,5 +139,4 @@ compile: false
       }
     }
   }//item
-
 }

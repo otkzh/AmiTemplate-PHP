@@ -548,7 +548,8 @@ compile: false
     .touchevents .gnav__item_layout > a.touch,
     .touchevents .gnav__item_contact > a.touch {
       background-color: #eee;
-      color: #fff; }
+      color: #fff;
+      cursor: pointer; }
     @media screen and (max-width: 666px) {
       .gnav__item > label, .gnav__item_home > label, .gnav__item_sample > label, .gnav__item_styleguide > label, .gnav__item_layout > label, .gnav__item_contact > label,
       .gnav__item > a, .gnav__item_home > a, .gnav__item_sample > a, .gnav__item_styleguide > a, .gnav__item_layout > a, .gnav__item_contact > a {

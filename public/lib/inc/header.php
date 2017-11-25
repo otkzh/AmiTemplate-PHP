@@ -31,8 +31,21 @@
             </ul>
           </nav>
         </li>
-        <li class="gnav__item">
-          <a href="#">menu</a>
+        <li class="gnav__item gnav-deep">
+          <label >menu</label>
+          <nav class="gnav-deep__nav">
+            <ul class="gnav-deep__row">
+              <li class="gnav-deep__item">
+                <a href="#">dummy</a>
+              </li>
+              <li class="gnav-deep__item">
+                <a href="#">dummy</a>
+              </li>
+              <li class="gnav-deep__item">
+                <a href="#">dummy</a>
+              </li>
+            </ul>
+          </nav>
         </li>
         <li class="gnav__item_contact">
           <a href="#">contact</a>
