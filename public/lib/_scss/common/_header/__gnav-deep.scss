@@ -1,7 +1,6 @@
 @include min-screen($width-s + 1px){
   .gnav-deep{
     position: relative;
-    background-color: red;
     &__nav{
       box-sizing: border-box;
       position: absolute;

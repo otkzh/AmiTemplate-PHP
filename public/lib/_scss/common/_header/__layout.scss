@@ -4,7 +4,6 @@
   top:0;
   right: 0;
   left: 0;
-
   &__row{
     @include wrap;
     border-top: 4px solid transparent;
@@ -43,7 +42,12 @@
     }
   }
   &__gnav{
-
+    position: relative;
+    z-index: 3;
+    float: right;
+    @include max-screen($width-s){
+      margin-top: 4px;
+    }
   }
   &__menubar{
     margin-top: 4px;

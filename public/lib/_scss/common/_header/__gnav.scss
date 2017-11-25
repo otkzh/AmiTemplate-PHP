@@ -12,47 +12,87 @@ compile: false
 サンプルとして、共通パーツのstyleguideを掲載
 
 ```html
-<nav class="gnav">
-<ul class="gnav__row">
-<li class="gnav__item">
-<a href="#">home</a>
-</li>
-<li class="gnav__item">
-<a href="#">sample</a>
-</li>
-<li class="gnav__item">
-<a href="#">menu</a>
-</li>
-<li class="gnav__item">
-<a href="#">menu</a>
-</li>
-<li class="gnav__item">
-<a href="#">menu</a>
-</li>
-<li class="gnav__item_contact">
-<a href="#">contact</a>
-</li>
-</ul>
+
+<nav class="header__gnav gnav">
+  <ul class="gnav__row">
+    <li class="gnav__item">
+      <a href="#" class="gnav__link">menu</a>
+    </li>
+    <li class="gnav__item">
+      <a href="#" class="gnav__link">menu</a>
+    </li>
+    <li class="gnav__item">
+      <a href="#" class="gnav__link">menu</a>
+    </li>
+    <li class="gnav__item gnav-deep">
+      <label class="gnav__link">menu</label>
+
+      <nav class="gnav-deep__nav">
+        <ul class="gnav-deep__row">
+          <li class="gnav-deep__item">
+            <a href="#" class="gnav-deep__link">deep-menu</a>
+          </li>
+          <li class="gnav-deep__item">
+            <a href="#" class="gnav-deep__link">deep-menu</a>
+          </li>
+          <li class="gnav-deep__item">
+            <a href="#" class="gnav-deep__link">deep-menu</a>
+          </li>
+        </ul>
+      </nav>
+
+    </li>
+    <li class="gnav__item gnav-deep">
+      <label class="gnav__link">menu</label>
+
+      <nav class="gnav-deep__nav">
+        <ul class="gnav-deep__row">
+          <li class="gnav-deep__item">
+            <a href="#" class="gnav-deep__link">deep-menu</a>
+          </li>
+        </ul>
+      </nav>
+
+    </li>
+    <li class="gnav__item">
+      <a href="#" class="gnav__link_contact">contact</a>
+    </li>
+  </ul>
 </nav>
+<label class="header__menubar menubar">
+  <div class="menubar__row">
+    <span class="menubar__item"></span>
+    <span class="menubar__item"></span>
+    <span class="menubar__item"></span>
+  </div>
+</label>
 ```
 */
+
 .gnav{
+  $thisClass:".gnav";
   position: relative;
-  z-index: 3;
-  float: right;
+  background-color: #fff;
   @include max-screen($width-s){
-    z-index: 1;
     position: absolute;
+    z-index: 1;
     top:$header-height;
     left: 0;
     float: none;
     width: 100%;
     transition: transform .5s;
-    transform: translate3d(0,-1000px,0);
+    transform: translate3d(0,-500px,0);
     box-shadow: 0 2px 10px rgba(0,0,0,.3);
+    opacity: 0;
     &.active{
-      transition: transform .5s;
+      transition: transform 1s;
       transform: translate3d(0,0,0);
+      animation: fade 1s;
+      opacity: 1;
+      @keyframes fade {
+        from {opacity: 0;}
+        to {opacity: 1}
+      }
     }
   }
   &__row{
@@ -63,80 +103,60 @@ compile: false
   }
   &__item{
     $this:&;
-    & > label,
-    & > a{
-      position: relative;
-      display: block;
-      box-sizing: border-box;
-      height:  $header-height;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0 $bm;
-      text-decoration: none;
-      background-color: #fff;
-      @include touch-hover(){
-        background-color: $color-light;
-        color:#fff;
-        cursor: pointer;
-      }
-      @include max-screen($width-s){
-        justify-content: flex-start;
-        border-bottom: 1px solid $color-light;
-        &::after{
-          @include icon-font();
-          position: absolute;
-          top:0;
-          right: $bm-inner;
-          bottom: 0;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-      }
-    }
     &:last-of-type > a{
       border-bottom: none;
     }
-    &_home{
-      @extend #{$this};
-      body.home & a{
-        background-color: $color-light;
-        color:#fff;
+  }//item
+  &__link{
+    $link:&;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:  $header-height;
+    padding: 0 $bm*1.5;
+    text-decoration: none;
+    @include touch-hover(){
+      background-color: $color-light;
+      color:$color-brand-darken;
+      cursor: pointer;
+    }
+    @include max-screen($width-s){
+      justify-content: flex-start;
+      border-bottom: 1px solid $color-light;
+      &::after{
+        @include icon-font();
+        position: absolute;
+        top:0;
+        right: $bm-inner;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
     }
-    &_sample{
-      @extend #{$this};
-      body._sample & a{
-        background-color: $color-light;
-        color:#fff;
-      }
-    }
-    &_styleguide{
-      @extend #{$this};
-      body._styleguide & a{
-        background-color: $color-light;
-        color:#fff;
-      }
-    }
-    &_layout{
-      @extend #{$this};
-      body._layout & a{
-        background-color: $color-light;
-        color:#fff;
-      }
-    }
-    &_contact{
-      @extend #{$this};
-      a{
-        background-color: $color-point;
-        color:$color-light;
-        body.contact &{
-          background-color: $color-light;
-          color:#fff;
+    @each $class in home,contact {
+      &_#{$class}{
+        @extend #{$link};
+        body.#{$class} & {
+          color:$color-brand;
         }
       }
+    }//each
+    &_contact{
+      background-color: $color-point;
+      color:$color-light;
     }
-  }//item
+
+    //以下AmiTemplate用
+    @each $class in sample,layout,styleguide {
+      &_#{$class}{
+        @extend #{$link};
+        body._#{$class} & {
+          color:$color-brand;
+        }
+      }
+    }//each
+  }//link
 }

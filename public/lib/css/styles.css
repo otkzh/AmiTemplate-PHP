@@ -274,6 +274,13 @@ html, body {
       max-width: 100%;
       width: 100%;
       height: auto; }
+  .header__gnav {
+    position: relative;
+    z-index: 3;
+    float: right; }
+    @media screen and (max-width: 666px) {
+      .header__gnav {
+        margin-top: 4px; } }
   .header__menubar {
     margin-top: 4px; }
 
@@ -442,38 +449,69 @@ compile: false
 サンプルとして、共通パーツのstyleguideを掲載
 
 ```html
-<nav class="gnav">
-<ul class="gnav__row">
-<li class="gnav__item">
-<a href="#">home</a>
-</li>
-<li class="gnav__item">
-<a href="#">sample</a>
-</li>
-<li class="gnav__item">
-<a href="#">menu</a>
-</li>
-<li class="gnav__item">
-<a href="#">menu</a>
-</li>
-<li class="gnav__item">
-<a href="#">menu</a>
-</li>
-<li class="gnav__item_contact">
-<a href="#">contact</a>
-</li>
-</ul>
+
+<nav class="header__gnav gnav">
+  <ul class="gnav__row">
+    <li class="gnav__item">
+      <a href="#" class="gnav__link">menu</a>
+    </li>
+    <li class="gnav__item">
+      <a href="#" class="gnav__link">menu</a>
+    </li>
+    <li class="gnav__item">
+      <a href="#" class="gnav__link">menu</a>
+    </li>
+    <li class="gnav__item gnav-deep">
+      <label class="gnav__link">menu</label>
+
+      <nav class="gnav-deep__nav">
+        <ul class="gnav-deep__row">
+          <li class="gnav-deep__item">
+            <a href="#" class="gnav-deep__link">deep-menu</a>
+          </li>
+          <li class="gnav-deep__item">
+            <a href="#" class="gnav-deep__link">deep-menu</a>
+          </li>
+          <li class="gnav-deep__item">
+            <a href="#" class="gnav-deep__link">deep-menu</a>
+          </li>
+        </ul>
+      </nav>
+
+    </li>
+    <li class="gnav__item gnav-deep">
+      <label class="gnav__link">menu</label>
+
+      <nav class="gnav-deep__nav">
+        <ul class="gnav-deep__row">
+          <li class="gnav-deep__item">
+            <a href="#" class="gnav-deep__link">deep-menu</a>
+          </li>
+        </ul>
+      </nav>
+
+    </li>
+    <li class="gnav__item">
+      <a href="#" class="gnav__link_contact">contact</a>
+    </li>
+  </ul>
 </nav>
+<label class="header__menubar menubar">
+  <div class="menubar__row">
+    <span class="menubar__item"></span>
+    <span class="menubar__item"></span>
+    <span class="menubar__item"></span>
+  </div>
+</label>
 ```
 */
 .gnav {
   position: relative;
-  z-index: 3;
-  float: right; }
+  background-color: #fff; }
   @media screen and (max-width: 666px) {
     .gnav {
-      z-index: 1;
       position: absolute;
+      z-index: 1;
       top: 48px;
       left: 0;
       float: none;
@@ -482,17 +520,31 @@ compile: false
       transition: -webkit-transform .5s;
       transition: transform .5s;
       transition: transform .5s, -webkit-transform .5s;
-      -webkit-transform: translate3d(0, -1000px, 0);
-      transform: translate3d(0, -1000px, 0);
+      -webkit-transform: translate3d(0, -500px, 0);
+      transform: translate3d(0, -500px, 0);
       -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); }
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      opacity: 0; }
       .gnav.active {
-        -webkit-transition: -webkit-transform .5s;
-        transition: -webkit-transform .5s;
-        transition: transform .5s;
-        transition: transform .5s, -webkit-transform .5s;
+        -webkit-transition: -webkit-transform 1s;
+        transition: -webkit-transform 1s;
+        transition: transform 1s;
+        transition: transform 1s, -webkit-transform 1s;
         -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0); } }
+        transform: translate3d(0, 0, 0);
+        -webkit-animation: fade 1s;
+        animation: fade 1s;
+        opacity: 1; }
+    @-webkit-keyframes fade {
+      from {
+        opacity: 0; }
+      to {
+        opacity: 1; } }
+    @keyframes fade {
+      from {
+        opacity: 0; }
+      to {
+        opacity: 1; } } }
   .gnav__row {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -500,13 +552,12 @@ compile: false
     @media screen and (max-width: 666px) {
       .gnav__row {
         display: block; } }
-  .gnav__item > label, .gnav__item_home > label, .gnav__item_sample > label, .gnav__item_styleguide > label, .gnav__item_layout > label, .gnav__item_contact > label,
-  .gnav__item > a, .gnav__item_home > a, .gnav__item_sample > a, .gnav__item_styleguide > a, .gnav__item_layout > a, .gnav__item_contact > a {
-    position: relative;
-    display: block;
+  .gnav__item:last-of-type > a {
+    border-bottom: none; }
+  .gnav__link, .gnav__link_home, .gnav__link_contact, .gnav__link_sample, .gnav__link_layout, .gnav__link_styleguide {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    height: 48px;
+    position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -516,49 +567,32 @@ compile: false
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    padding: 0 8px;
-    text-decoration: none;
-    background-color: #fff; }
-    .no-js .gnav__item > label:hover, .no-js .gnav__item_home > label:hover, .no-js .gnav__item_sample > label:hover, .no-js .gnav__item_styleguide > label:hover, .no-js .gnav__item_layout > label:hover, .no-js .gnav__item_contact > label:hover,
-    .no-touchevents .gnav__item > label:hover,
-    .no-touchevents .gnav__item_home > label:hover,
-    .no-touchevents .gnav__item_sample > label:hover,
-    .no-touchevents .gnav__item_styleguide > label:hover,
-    .no-touchevents .gnav__item_layout > label:hover,
-    .no-touchevents .gnav__item_contact > label:hover,
-    .touchevents .gnav__item > label.touch,
-    .touchevents .gnav__item_home > label.touch,
-    .touchevents .gnav__item_sample > label.touch,
-    .touchevents .gnav__item_styleguide > label.touch,
-    .touchevents .gnav__item_layout > label.touch,
-    .touchevents .gnav__item_contact > label.touch, .no-js
-    .gnav__item > a:hover, .no-js .gnav__item_home > a:hover, .no-js .gnav__item_sample > a:hover, .no-js .gnav__item_styleguide > a:hover, .no-js .gnav__item_layout > a:hover, .no-js .gnav__item_contact > a:hover,
-    .no-touchevents
-    .gnav__item > a:hover,
-    .no-touchevents .gnav__item_home > a:hover,
-    .no-touchevents .gnav__item_sample > a:hover,
-    .no-touchevents .gnav__item_styleguide > a:hover,
-    .no-touchevents .gnav__item_layout > a:hover,
-    .no-touchevents .gnav__item_contact > a:hover,
-    .touchevents
-    .gnav__item > a.touch,
-    .touchevents .gnav__item_home > a.touch,
-    .touchevents .gnav__item_sample > a.touch,
-    .touchevents .gnav__item_styleguide > a.touch,
-    .touchevents .gnav__item_layout > a.touch,
-    .touchevents .gnav__item_contact > a.touch {
+    height: 48px;
+    padding: 0 12px;
+    text-decoration: none; }
+    .no-js .gnav__link:hover, .no-js .gnav__link_home:hover, .no-js .gnav__link_contact:hover, .no-js .gnav__link_sample:hover, .no-js .gnav__link_layout:hover, .no-js .gnav__link_styleguide:hover,
+    .no-touchevents .gnav__link:hover,
+    .no-touchevents .gnav__link_home:hover,
+    .no-touchevents .gnav__link_contact:hover,
+    .no-touchevents .gnav__link_sample:hover,
+    .no-touchevents .gnav__link_layout:hover,
+    .no-touchevents .gnav__link_styleguide:hover,
+    .touchevents .gnav__link.touch,
+    .touchevents .touch.gnav__link_home,
+    .touchevents .touch.gnav__link_contact,
+    .touchevents .touch.gnav__link_sample,
+    .touchevents .touch.gnav__link_layout,
+    .touchevents .touch.gnav__link_styleguide {
       background-color: #eee;
-      color: #fff;
+      color: #b8a353;
       cursor: pointer; }
     @media screen and (max-width: 666px) {
-      .gnav__item > label, .gnav__item_home > label, .gnav__item_sample > label, .gnav__item_styleguide > label, .gnav__item_layout > label, .gnav__item_contact > label,
-      .gnav__item > a, .gnav__item_home > a, .gnav__item_sample > a, .gnav__item_styleguide > a, .gnav__item_layout > a, .gnav__item_contact > a {
+      .gnav__link, .gnav__link_home, .gnav__link_contact, .gnav__link_sample, .gnav__link_layout, .gnav__link_styleguide {
         -webkit-box-pack: start;
         -ms-flex-pack: start;
         justify-content: flex-start;
         border-bottom: 1px solid #eee; }
-        .gnav__item > label::after, .gnav__item_home > label::after, .gnav__item_sample > label::after, .gnav__item_styleguide > label::after, .gnav__item_layout > label::after, .gnav__item_contact > label::after,
-        .gnav__item > a::after, .gnav__item_home > a::after, .gnav__item_sample > a::after, .gnav__item_styleguide > a::after, .gnav__item_layout > a::after, .gnav__item_contact > a::after {
+        .gnav__link::after, .gnav__link_home::after, .gnav__link_contact::after, .gnav__link_sample::after, .gnav__link_layout::after, .gnav__link_styleguide::after {
           content: "";
           display: inline-block;
           font: normal normal normal 14px/1 FontAwesome;
@@ -579,31 +613,23 @@ compile: false
           -webkit-box-pack: center;
           -ms-flex-pack: center;
           justify-content: center; } }
-  .gnav__item:last-of-type > a, .gnav__item_home:last-of-type > a, .gnav__item_sample:last-of-type > a, .gnav__item_styleguide:last-of-type > a, .gnav__item_layout:last-of-type > a, .gnav__item_contact:last-of-type > a {
-    border-bottom: none; }
-  body.home .gnav__item_home a {
-    background-color: #eee;
-    color: #fff; }
-  body._sample .gnav__item_sample a {
-    background-color: #eee;
-    color: #fff; }
-  body._styleguide .gnav__item_styleguide a {
-    background-color: #eee;
-    color: #fff; }
-  body._layout .gnav__item_layout a {
-    background-color: #eee;
-    color: #fff; }
-  .gnav__item_contact a {
-    background-color: #A2324E;
-    color: #eee; }
-    body.contact .gnav__item_contact a {
-      background-color: #eee;
-      color: #fff; }
+    body.home .gnav__link_home {
+      color: #CEC089; }
+    body.contact .gnav__link_contact {
+      color: #CEC089; }
+    .gnav__link_contact {
+      background-color: #A2324E;
+      color: #eee; }
+    body._sample .gnav__link_sample {
+      color: #CEC089; }
+    body._layout .gnav__link_layout {
+      color: #CEC089; }
+    body._styleguide .gnav__link_styleguide {
+      color: #CEC089; }
 
 @media screen and (min-width: 667px) {
   .gnav-deep {
-    position: relative;
-    background-color: red; }
+    position: relative; }
     .gnav-deep__nav {
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
