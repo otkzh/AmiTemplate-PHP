@@ -35,4 +35,4 @@ $RECYCLE.BIN/
 .node-version
 .npm-version
 package-lock.json
-/**/*.map
+**/*.map

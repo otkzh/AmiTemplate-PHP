@@ -85,6 +85,9 @@ if($('body._drawer').length){
 import headerFn from './common/_header/__menubar.js';
 headerFn();
 
+import gnavDeepFn from './common/_header/__gnav-deep.js';
+gnavDeepFn();
+
 //タッチホバーイベント
 import touchevents_config from './common/_unit/_touch-events/__config.js';
 touchevents_config();

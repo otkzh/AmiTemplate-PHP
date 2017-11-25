@@ -432,9 +432,9 @@ html, body {
 ---
 name: gnav(グローバルナビゲーション)
 category:
-  - common/header/gnav
+- common/header/gnav
 tag:
-  - base
+- base
 compile: false
 ---
 
@@ -443,26 +443,26 @@ compile: false
 
 ```html
 <nav class="gnav">
-  <ul class="gnav__row">
-    <li class="gnav__item">
-      <a href="#">home</a>
-    </li>
-    <li class="gnav__item">
-      <a href="#">sample</a>
-    </li>
-    <li class="gnav__item">
-      <a href="#">menu</a>
-    </li>
-    <li class="gnav__item">
-      <a href="#">menu</a>
-    </li>
-    <li class="gnav__item">
-      <a href="#">menu</a>
-    </li>
-    <li class="gnav__item_contact">
-      <a href="#">contact</a>
-    </li>
-  </ul>
+<ul class="gnav__row">
+<li class="gnav__item">
+<a href="#">home</a>
+</li>
+<li class="gnav__item">
+<a href="#">sample</a>
+</li>
+<li class="gnav__item">
+<a href="#">menu</a>
+</li>
+<li class="gnav__item">
+<a href="#">menu</a>
+</li>
+<li class="gnav__item">
+<a href="#">menu</a>
+</li>
+<li class="gnav__item_contact">
+<a href="#">contact</a>
+</li>
+</ul>
 </nav>
 ```
 */
@@ -500,6 +500,7 @@ compile: false
     @media screen and (max-width: 666px) {
       .gnav__row {
         display: block; } }
+  .gnav__item > label, .gnav__item_home > label, .gnav__item_sample > label, .gnav__item_styleguide > label, .gnav__item_layout > label, .gnav__item_contact > label,
   .gnav__item > a, .gnav__item_home > a, .gnav__item_sample > a, .gnav__item_styleguide > a, .gnav__item_layout > a, .gnav__item_contact > a {
     position: relative;
     display: block;
@@ -518,14 +519,29 @@ compile: false
     padding: 0 8px;
     text-decoration: none;
     background-color: #fff; }
-    .no-js .gnav__item > a:hover, .no-js .gnav__item_home > a:hover, .no-js .gnav__item_sample > a:hover, .no-js .gnav__item_styleguide > a:hover, .no-js .gnav__item_layout > a:hover, .no-js .gnav__item_contact > a:hover,
-    .no-touchevents .gnav__item > a:hover,
+    .no-js .gnav__item > label:hover, .no-js .gnav__item_home > label:hover, .no-js .gnav__item_sample > label:hover, .no-js .gnav__item_styleguide > label:hover, .no-js .gnav__item_layout > label:hover, .no-js .gnav__item_contact > label:hover,
+    .no-touchevents .gnav__item > label:hover,
+    .no-touchevents .gnav__item_home > label:hover,
+    .no-touchevents .gnav__item_sample > label:hover,
+    .no-touchevents .gnav__item_styleguide > label:hover,
+    .no-touchevents .gnav__item_layout > label:hover,
+    .no-touchevents .gnav__item_contact > label:hover,
+    .touchevents .gnav__item > label.touch,
+    .touchevents .gnav__item_home > label.touch,
+    .touchevents .gnav__item_sample > label.touch,
+    .touchevents .gnav__item_styleguide > label.touch,
+    .touchevents .gnav__item_layout > label.touch,
+    .touchevents .gnav__item_contact > label.touch, .no-js
+    .gnav__item > a:hover, .no-js .gnav__item_home > a:hover, .no-js .gnav__item_sample > a:hover, .no-js .gnav__item_styleguide > a:hover, .no-js .gnav__item_layout > a:hover, .no-js .gnav__item_contact > a:hover,
+    .no-touchevents
+    .gnav__item > a:hover,
     .no-touchevents .gnav__item_home > a:hover,
     .no-touchevents .gnav__item_sample > a:hover,
     .no-touchevents .gnav__item_styleguide > a:hover,
     .no-touchevents .gnav__item_layout > a:hover,
     .no-touchevents .gnav__item_contact > a:hover,
-    .touchevents .gnav__item > a.touch,
+    .touchevents
+    .gnav__item > a.touch,
     .touchevents .gnav__item_home > a.touch,
     .touchevents .gnav__item_sample > a.touch,
     .touchevents .gnav__item_styleguide > a.touch,
@@ -534,11 +550,13 @@ compile: false
       background-color: #eee;
       color: #fff; }
     @media screen and (max-width: 666px) {
+      .gnav__item > label, .gnav__item_home > label, .gnav__item_sample > label, .gnav__item_styleguide > label, .gnav__item_layout > label, .gnav__item_contact > label,
       .gnav__item > a, .gnav__item_home > a, .gnav__item_sample > a, .gnav__item_styleguide > a, .gnav__item_layout > a, .gnav__item_contact > a {
         -webkit-box-pack: start;
         -ms-flex-pack: start;
         justify-content: flex-start;
         border-bottom: 1px solid #eee; }
+        .gnav__item > label::after, .gnav__item_home > label::after, .gnav__item_sample > label::after, .gnav__item_styleguide > label::after, .gnav__item_layout > label::after, .gnav__item_contact > label::after,
         .gnav__item > a::after, .gnav__item_home > a::after, .gnav__item_sample > a::after, .gnav__item_styleguide > a::after, .gnav__item_layout > a::after, .gnav__item_contact > a::after {
           content: "";
           display: inline-block;
