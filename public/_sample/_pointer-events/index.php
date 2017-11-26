@@ -30,7 +30,7 @@ include ($inc_path."/lib/inc/header.php");
         <div id="caniuse">確認中</div>
         <h3 class="u-ttl_m">2. polyfillでつかえるようになったか確認</h3>
         <div id="caniuse_polyfill" touch-action="none">クリックしてね</div>
-        <div class="u-assist">
+        <div class="u-assist mt3">
           <h5 class="u-ttl_s">注意</h5>
           <p>polyfill利用時は、該当箇所に「touch-action="xxx"」のdata属性をつけること。</p>
         </div>
