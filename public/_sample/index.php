@@ -38,6 +38,10 @@ include ($inc_path."/lib/inc/header.php");
         <p>スムーズなドロワーメニューのサンプル</p>
       </section>
       <section class="conts__item">
+        <h2 class="u-ttl_l"><a href="./_pointer-events/index.php" class="u-icon__link">PointerEventsサンプルページ</a></h2>
+        <p>mouseEvents/touchEvents/pointerEventsの動作表</p>
+      </section>
+      <section class="conts__item">
         <h2 class="u-ttl_l"><a href="./_fullpage/index.php" class="u-icon__link">fullpageのサンプルページ</a></h2>
         <p>fullpageのサンプル</p>
       </section>
