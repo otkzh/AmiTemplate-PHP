@@ -15,7 +15,7 @@ include ($inc_path."/lib/inc/header.php");
       <div class="main-header__bg"></div>
       <div class="main-header__row">
         <h1 class="main-header__ttl"><?php echo $pageTtl; ?></h1>
-        <p class="main-header__desc">mouseEvents/touchEvents/pointerEventsの動作表</p>
+        <p class="main-header__desc">pointerEnventsの動作サンプルとmouse/touch/pointerの動作表</p>
       </div>
     </header>
     <?php
@@ -26,33 +26,73 @@ include ($inc_path."/lib/inc/header.php");
     <div class="main__conts conts">
 
       <section class="conts__item">
-        <h2>1. PointerEventsがつかえるブラウザかどうか確認</h2>
+        <h3 class="u-ttl_m">1. PointerEventsがつかえるブラウザかどうか確認</h3>
         <div id="caniuse">確認中</div>
-        <h2>2. polyfillでつかえるようになったか確認</h2>
-        <div id="caniuse_polyfill">クリックしてね</div>
+        <h3 class="u-ttl_m">2. polyfillでつかえるようになったか確認</h3>
+        <div id="caniuse_polyfill" touch-action="none">クリックしてね</div>
+        <div class="u-assist">
+          <h5 class="u-ttl_s">注意</h5>
+          <p>polyfill利用時は、該当箇所に「touch-action="xxx"」のdata属性をつけること。</p>
+        </div>
       </section>
 
       <section class="conts__item">
-        <h2>対応表</h2>
+        <h2 class="u-ttl_l">対応表</h2>
         <table class="u-table">
           <thead>
-            <tr><th>マウス</th><th>タッチ</th><th>総合（ポインタ）</th></tr>
+            <tr>
+              <th>マウス</th>
+              <th>タッチ</th>
+              <th>総合（ポインタ）</th>
+            </tr>
           </thead>
           <tbody>
-            <tr><td><span>マウス：</span>mousedown</td><td><span>タッチ</span>touchstart</td><td><span>総合（ポインタ）</span>pointerdown</td></tr>
-            <tr><td><span>マウス：</span>mouseenter</td><td><span>タッチ</span>touchenter</td><td><span>総合（ポインタ）</span>pointerenter</td></tr>
-            <tr><td><span>マウス：</span>mouseleave</td><td><span>タッチ</span>touchleave</td><td><span>総合（ポインタ）</span>pointerleave</td></tr>
-            <tr><td><span>マウス：</span>mousemove</td><td><span>タッチ</span>touchmove</td><td><span>総合（ポインタ）</span>pointermove</td></tr>
-            <tr><td><span>マウス：</span>mouseout</td><td>-</td><td><span>総合（ポインタ）</span>pointerout</td></tr>
-            <tr><td><span>マウス：</span>mouseover</td><td>-</td><td><span>総合（ポインタ）</span>pointerover</td></tr>
-            <tr><td><span>マウス：</span>mouseup</td><td><span>タッチ</span>touchend</td><td><span>総合（ポインタ）</span>pointerup</td></tr>
-            <tr><td>-</td><td><span>タッチ</span>touchcancel</td><td> <span>総合（ポインタ）</span>pointercancel </td></tr>
+            <tr>
+              <td data-label="マウス">mousedown</td>
+              <td data-label="タッチ">touchstart</td>
+              <td data-label="ポインタ">pointerdown</td>
+            </tr>
+            <tr>
+              <td data-label="マウス">mouseenter</td>
+              <td data-label="タッチ">touchenter</td>
+              <td data-label="ポインタ">pointerenter</td>
+            </tr>
+            <tr>
+              <td data-label="マウス">mouseleave</td>
+              <td data-label="タッチ">touchleave</td>
+              <td data-label="ポインタ">pointerleave</td>
+            </tr>
+            <tr>
+              <td data-label="マウス">mousemove</td>
+              <td data-label="タッチ">touchmove</td>
+              <td data-label="ポインタ">pointermove</td>
+            </tr>
+            <tr>
+              <td data-label="マウス">mouseout</td>
+              <td data-label="タッチ">-</td>
+              <td data-label="ポインタ">pointerout</td>
+            </tr>
+            <tr>
+              <td data-label="マウス">mouseover</td>
+              <td data-label="タッチ">-</td>
+              <td data-label="ポインタ">pointerover</td>
+            </tr>
+            <tr>
+              <td data-label="マウス">mouseup</td>
+              <td data-label="タッチ">touchend</td>
+              <td data-label="ポインタ">pointerup</td>
+            </tr>
+            <tr>
+              <td data-label="マウス">-</td>
+              <td data-label="タッチ">touchcancel</td>
+              <td data-label="ポインタ">pointercancel</td>
+            </tr>
           </tbody>
         </table>
       </section>
 
       <section class="conts__item">
-        <h2>動作テスト</h2>
+        <h2 class="u-ttl_l">:hoverに近い動作のテスト</h2>
         <style>
         #enter-test{
           height: 100px;
@@ -63,7 +103,7 @@ include ($inc_path."/lib/inc/header.php");
       </section>
 
       <section class="conts__item">
-        <h2>アンカーサンプル</h2>
+        <h2 class="u-ttl_l">a/labelタグのサンプル</h2>
         <style>
         .enter-test-anchor{
           display: block;
@@ -75,7 +115,6 @@ include ($inc_path."/lib/inc/header.php");
         <a href="#all" class="enter-test-anchor" data-scroll>aタグ</a>
         <br>
         <label class="enter-test-anchor">labelタグ</label>
-
       </section>
 
     </div>
