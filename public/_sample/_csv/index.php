@@ -58,10 +58,13 @@ include ($inc_path."/lib/inc/header.php");
         </nav>
 
         <table class="u-table">
+          <colgroup>
+            <col span="22" style="width:4%;">
+          </colgroup>
           <thead>
-          <tr v-for="(line,index) in displayItems"  v-if="index < 1" class="u-table_th">
-            <th v-for="(value, key,index) in line">{{ key }}</th>
-          </tr>
+            <tr v-for="(line,index) in displayItems"  v-if="index < 1" class="u-table_th">
+              <th v-for="(value, key,index) in line">{{ key }}</th>
+            </tr>
           </thead>
           <tr v-for="line in displayItems">
             <td v-for="(value, key, index) in line" v-bind:data-label="key">{{ value }}</td>
