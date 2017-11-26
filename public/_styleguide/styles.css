@@ -1613,34 +1613,44 @@ compile: false
 
 ```html
 <table class="u-table">
-  <tr class="u-table_th">
-    <th>{{ key }}</th>
-    <th>{{ key }}</th>
-    <th>{{ key }}</th>
-    <th>{{ key }}</th>
-    <th>{{ key }}</th>
-  </tr>
-  <tr>
-    <td><span>{{ key }}</span>{{ value }}</td>
-    <td><span>{{ key }}</span>{{ value }}</td>
-    <td><span>{{ key }}</span>{{ value }}</td>
-    <td><span>{{ key }}</span>{{ value }}</td>
-    <td><span>{{ key }}</span>{{ value }}</td>
-  </tr>
-  <tr>
-    <td><span>{{ key }}</span>{{ value }}</td>
-    <td><span>{{ key }}</span>{{ value }}</td>
-    <td><span>{{ key }}</span>{{ value }}</td>
-    <td><span>{{ key }}</span>{{ value }}</td>
-    <td><span>{{ key }}</span>{{ value }}</td>
-  </tr>
-  <tr>
-    <td><span>{{ key }}</span>{{ value }}</td>
-    <td><span>{{ key }}</span>{{ value }}</td>
-    <td><span>{{ key }}</span>{{ value }}</td>
-    <td><span>{{ key }}</span>{{ value }}</td>
-    <td><span>{{ key }}</span>{{ value }}</td>
-  </tr>
+  <caption class='u-ttl_m'>テーブルサンプル</caption>
+  <colgroup>
+    <col span="1" style="width:30%;">
+    <col span="3" style="width:20%;">
+    <col span="1" style="width:10%;">
+  </colgroup>
+  <thead>
+    <tr>
+      <th>{{ key }}</th>
+      <th>{{ key }}</th>
+      <th>{{ key }}</th>
+      <th>{{ key }}</th>
+      <th>{{ key }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="key">長いvalueです。ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</td>
+      <td data-label="長いkeyです。ダミーダミーダミーダミー。">{{ value }}</td>
+      <td data-label="key">{{ value }}</td>
+      <td data-label="key">{{ value }}</td>
+      <td data-label="key">{{ value }}</td>
+    </tr>
+    <tr>
+      <td data-label="key">{{ value }}</td>
+      <td data-label="key">{{ value }}</td>
+      <td data-label="key">{{ value }}</td>
+      <td data-label="key">{{ value }}</td>
+      <td data-label="key">{{ value }}</td>
+    </tr>
+    <tr>
+      <td data-label="key">{{ value }}</td>
+      <td data-label="key">{{ value }}</td>
+      <td data-label="key">{{ value }}</td>
+      <td data-label="key">{{ value }}</td>
+      <td data-label="key">{{ value }}</td>
+    </tr>
+  </tbody>
 </table>
 ```
 */
@@ -1664,29 +1674,44 @@ compile: false
   @media screen and (max-width: 666px) {
     .u-table {
       font-size: 1.4rem; }
+      .u-table thead {
+        display: none; }
       .u-table tr {
         display: block;
         border: none;
-        padding-bottom: 8px;
-        margin-bottom: 8px;
-        border-bottom: 1px solid #eee; }
-      .u-table_th {
-        display: none !important; }
+        margin-bottom: 8px; }
+        .u-table tr:last-child {
+          margin-bottom: 0; }
       .u-table th,
       .u-table td {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
-        border: none; }
-        .u-table th span,
-        .u-table td span {
+        width: 100%;
+        margin-top: -1px;
+        padding: 8px;
+        line-height: 1.4; }
+        .u-table th::before,
+        .u-table td::before {
+          content: attr(data-label);
+          max-width: 100px;
+          -webkit-box-flex: 0;
+          -ms-flex: 0 0 100px;
+          flex: 0 0 100px;
           -webkit-box-sizing: border-box;
           box-sizing: border-box;
-          background-color: #e4ddbf;
-          color: #000;
-          width: 120px;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          padding: 8px;
+          margin: -8px;
           margin-right: 8px;
-          padding: 0 8px;
+          background-color: #eee;
           font-weight: bold; } }
 
 .u-iframe {
