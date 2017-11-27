@@ -29,8 +29,8 @@ include ($inc_path."/lib/inc/header.php");
         <div class="main-v__row">
           <figure class="main-v__item">
             <img
-            data-src="<?php echo $base_url ?>/lib/img/dummy/golden.png"
-            data-retina="<?php echo $base_url ?>/lib/img/dummy/golden@2x.png"
+            data-src="<?php echo $base_url; ?>/lib/img/dummy/golden.png"
+            data-retina="<?php echo $base_url; ?>/lib/img/dummy/golden@2x.png"
             alt="dummy"
             class="u-img__max">
           </figure>
@@ -58,8 +58,8 @@ include ($inc_path."/lib/inc/header.php");
         <a class='mfp-btn' href="#inline_content">Click Me (Inline HTML）</a>
         <div id='inline_content' class="mfp-dialog mfp-hide">
           <img
-          data-src="<?php echo $base_url ?>/lib/img/dummy/bronze.png"
-          data-retina="<?php echo $base_url ?>/lib/img/dummy/bronze@2x.png"
+          data-src="<?php echo $base_url; ?>/lib/img/dummy/bronze.png"
+          data-retina="<?php echo $base_url; ?>/lib/img/dummy/bronze@2x.png"
           alt="dummy"
           class="u-img__max">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores repudiandae, nihil consectetur dignissimos facere, ipsa recusandae. Enim possimus distinctio, vel voluptatibus amet velit nisi iste quisquam tempore voluptates, doloremque impedit.</p>
