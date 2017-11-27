@@ -1,40 +1,22 @@
 /************************
 none(ami-original)
 site:none
+need:pepjs（pointerEventsを利用する場合に必要なポリフィル）
 ***********************/
 
 //export
 export default function () {
 
-  if (Modernizr.touchevents) {
+  var element = 'a,label,button';
 
-    var thisAnchor;
+  $(element).attr('touch-action', 'pan-y');
 
-    var linkTouchStart = function () {
-      thisAnchor = $(this);
-      var touchPos = thisAnchor.offset().top;
-      var moveCheck = function () {
-        var nowPos = thisAnchor.offset().top;
-        if (touchPos == nowPos) {
-          thisAnchor.addClass("touch");
-          //console.log("addtouch");
-        }
-      };
-      setTimeout(moveCheck, 100);
-    };
+  $(document).on('pointerenter', element, function(){
+    $(this).addClass("touch");
+  });
 
-    var linkTouchEnd = function () {
-      thisAnchor = $(this);
-      var hoverRemove = function () {
-        thisAnchor.removeClass("touch");
-        //console.log("removetouch");
-      };
-      setTimeout(hoverRemove, 200);
-    };
-
-    $(document).on('touchstart', 'a,label', linkTouchStart);
-    $(document).on('touchend', 'a,label', linkTouchEnd);
-
-  }
+  $(document).on('pointerleave', element, function(){
+    $(this).removeClass("touch");
+  });
 
 };

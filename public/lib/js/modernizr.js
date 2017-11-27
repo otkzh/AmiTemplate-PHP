@@ -1,6 +1,6 @@
 /*!
  * modernizr v3.5.0
- * Build https://modernizr.com/download?-MessageChannel-animation-canvas-capture-checked-contains-cors-csstransforms3d-dataset-flexbox-hidden-history-json-opacity-placeholder-search-sizes-srcset-svg-target-template-time-touchevents-unicode-addtest-fnbind-printshiv-setclasses-testprop-dontmin
+ * Build https://modernizr.com/download?-MessageChannel-animation-canvas-capture-checked-contains-cors-csstransforms3d-flexbox-hidden-history-json-opacity-placeholder-pointerevents-search-sizes-srcset-svg-target-template-texttrackapi_track-time-touchevents-unicode-addtest-fnbind-printshiv-setclasses-testprop-dontmin
  *
  * Copyright (c)
  *  Faruk Ates
@@ -1669,6 +1669,85 @@ Detects support for Message Channels, a way to communicate between different bro
 
   Modernizr.addTest('messagechannel', 'MessageChannel' in window);
 
+
+  /**
+   * If the browsers follow the spec, then they would expose vendor-specific styles as:
+   *   elem.style.WebkitBorderRadius
+   * instead of something like the following (which is technically incorrect):
+   *   elem.style.webkitBorderRadius
+
+   * WebKit ghosts their properties in lowercase but Opera & Moz do not.
+   * Microsoft uses a lowercase `ms` instead of the correct `Ms` in IE8+
+   *   erik.eae.net/archives/2008/03/10/21.48.10/
+
+   * More here: github.com/Modernizr/Modernizr/issues/issue/21
+   *
+   * @access private
+   * @returns {string} The string representing the vendor-specific style properties
+   */
+
+  var omPrefixes = 'Moz O ms Webkit';
+  
+
+  /**
+   * List of JavaScript DOM values used for tests
+   *
+   * @memberof Modernizr
+   * @name Modernizr._domPrefixes
+   * @optionName Modernizr._domPrefixes
+   * @optionProp domPrefixes
+   * @access public
+   * @example
+   *
+   * Modernizr._domPrefixes is exactly the same as [_prefixes](#modernizr-_prefixes), but rather
+   * than kebab-case properties, all properties are their Capitalized variant
+   *
+   * ```js
+   * Modernizr._domPrefixes === [ "Moz", "O", "ms", "Webkit" ];
+   * ```
+   */
+
+  var domPrefixes = (ModernizrProto._config.usePrefixes ? omPrefixes.toLowerCase().split(' ') : []);
+  ModernizrProto._domPrefixes = domPrefixes;
+  
+/*!
+{
+  "name": "DOM Pointer Events API",
+  "property": "pointerevents",
+  "tags": ["input"],
+  "authors": ["Stu Cox"],
+  "notes": [
+    {
+      "name": "W3C spec",
+      "href": "https://www.w3.org/TR/pointerevents/"
+    }
+  ],
+  "warnings": ["This property name now refers to W3C DOM PointerEvents: https://github.com/Modernizr/Modernizr/issues/548#issuecomment-12812099"],
+  "polyfills": ["handjs","pep"]
+}
+!*/
+/* DOC
+Detects support for the DOM Pointer Events API, which provides a unified event interface for pointing input devices, as implemented in IE10+.
+*/
+
+  // **Test name hijacked!**
+  // Now refers to W3C DOM PointerEvents spec rather than the CSS pointer-events property.
+  Modernizr.addTest('pointerevents', function() {
+    // Cannot use `.prefixed()` for events, so test each prefix
+    var bool = false,
+      i = domPrefixes.length;
+
+    // Don't forget un-prefixed...
+    bool = Modernizr.hasEvent('pointerdown');
+
+    while (i-- && !bool) {
+      if (hasEvent(domPrefixes[i] + 'pointerdown')) {
+        bool = true;
+      }
+    }
+    return bool;
+  });
+
 /*!
 {
   "name": "SVG",
@@ -1930,49 +2009,8 @@ Detects support for the Web Animation API, a way to create css animations in js
   });
 
 
-  /**
-   * If the browsers follow the spec, then they would expose vendor-specific styles as:
-   *   elem.style.WebkitBorderRadius
-   * instead of something like the following (which is technically incorrect):
-   *   elem.style.webkitBorderRadius
-
-   * WebKit ghosts their properties in lowercase but Opera & Moz do not.
-   * Microsoft uses a lowercase `ms` instead of the correct `Ms` in IE8+
-   *   erik.eae.net/archives/2008/03/10/21.48.10/
-
-   * More here: github.com/Modernizr/Modernizr/issues/issue/21
-   *
-   * @access private
-   * @returns {string} The string representing the vendor-specific style properties
-   */
-
-  var omPrefixes = 'Moz O ms Webkit';
-  
-
   var cssomPrefixes = (ModernizrProto._config.usePrefixes ? omPrefixes.split(' ') : []);
   ModernizrProto._cssomPrefixes = cssomPrefixes;
-  
-
-  /**
-   * List of JavaScript DOM values used for tests
-   *
-   * @memberof Modernizr
-   * @name Modernizr._domPrefixes
-   * @optionName Modernizr._domPrefixes
-   * @optionProp domPrefixes
-   * @access public
-   * @example
-   *
-   * Modernizr._domPrefixes is exactly the same as [_prefixes](#modernizr-_prefixes), but rather
-   * than kebab-case properties, all properties are their Capitalized variant
-   *
-   * ```js
-   * Modernizr._domPrefixes === [ "Moz", "O", "ms", "Webkit" ];
-   * ```
-   */
-
-  var domPrefixes = (ModernizrProto._config.usePrefixes ? omPrefixes.toLowerCase().split(' ') : []);
-  ModernizrProto._domPrefixes = domPrefixes;
   
 
   /**
@@ -2244,24 +2282,6 @@ Detects support for the ':target' CSS pseudo-class.
 
 /*!
 {
-  "name": "dataset API",
-  "caniuse": "dataset",
-  "property": "dataset",
-  "tags": ["dom"],
-  "builderAliases": ["dom_dataset"],
-  "authors": ["@phiggins42"]
-}
-!*/
-
-  // dataset API for data-* attributes
-  Modernizr.addTest('dataset', function() {
-    var n = createElement('div');
-    n.setAttribute('data-a-b', 'c');
-    return !!(n.dataset && n.dataset.aB === 'c');
-  });
-
-/*!
-{
   "name": "[hidden] Attribute",
   "property": "hidden",
   "tags": ["dom"],
@@ -2313,6 +2333,29 @@ Does the browser support the HTML5 [hidden] attribute?
 !*/
 
   Modernizr.addTest('time', 'valueAsDate' in createElement('time'));
+
+/*!
+{
+  "name": "Track element and Timed Text Track",
+  "property": ["texttrackapi", "track"],
+  "tags": ["elem"],
+  "builderAliases": ["elem_track"],
+  "authors": ["Addy Osmani"],
+  "notes": [{
+    "name": "W3 track Element Spec",
+    "href": "http://www.w3.org/TR/html5/video.html#the-track-element"
+  },{
+    "name": "W3 track API Spec",
+    "href": "http://www.w3.org/TR/html5/media-elements.html#text-track-api"
+  }],
+  "warnings": ["While IE10 has implemented the track element, IE10 does not expose the underlying APIs to create timed text tracks by JS (really sad)"]
+}
+!*/
+
+  Modernizr.addTest('texttrackapi', typeof (createElement('video').addTextTrack) === 'function');
+
+  // a more strict test for track including UI support: document.createElement('track').kind === 'subtitles'
+  Modernizr.addTest('track', 'kind' in createElement('track'));
 
 /*!
 {

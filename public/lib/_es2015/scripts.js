@@ -3,6 +3,9 @@
 //Babelで変換したコードを利用する場合に必要なポリフィル
 import "babel-polyfill";
 
+//pointerEventsを利用する場合に必要なポリフィル
+import 'pepjs';
+
 //jqueryをグローバル化する場合は、以下をコメントアウトを解除
 //window.$ = window.jQuery = $;
 
@@ -98,6 +101,7 @@ import popwin_config from './common/_unit/_popup-window/__config.js';
 popwin_config();
 
 
+
 //--------------------- page ---------------------//
 
 //home
@@ -106,4 +110,10 @@ import './page/_home/__main-v.scss';
 
 if($('body._etc').length){
   mainV_config();
+};
+
+//PointerEventsのサンプル
+import pointerEvents_config from './page/_pointer-events/__config.js';
+if($('body._pointer-events').length){
+pointerEvents_config();
 };
