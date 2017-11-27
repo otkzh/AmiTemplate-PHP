@@ -1,6 +1,6 @@
 /*!
  * modernizr v3.5.0
- * Build https://modernizr.com/download?-MessageChannel-animation-canvas-capture-checked-contains-cors-csstransforms3d-dataset-flexbox-hidden-history-json-opacity-placeholder-pointerevents-search-sizes-srcset-svg-target-template-time-touchevents-unicode-addtest-fnbind-printshiv-setclasses-testprop-dontmin
+ * Build https://modernizr.com/download?-MessageChannel-animation-canvas-capture-checked-contains-cors-csstransforms3d-flexbox-hidden-history-json-opacity-placeholder-pointerevents-search-sizes-srcset-svg-target-template-texttrackapi_track-time-touchevents-unicode-addtest-fnbind-printshiv-setclasses-testprop-dontmin
  *
  * Copyright (c)
  *  Faruk Ates
@@ -2282,24 +2282,6 @@ Detects support for the ':target' CSS pseudo-class.
 
 /*!
 {
-  "name": "dataset API",
-  "caniuse": "dataset",
-  "property": "dataset",
-  "tags": ["dom"],
-  "builderAliases": ["dom_dataset"],
-  "authors": ["@phiggins42"]
-}
-!*/
-
-  // dataset API for data-* attributes
-  Modernizr.addTest('dataset', function() {
-    var n = createElement('div');
-    n.setAttribute('data-a-b', 'c');
-    return !!(n.dataset && n.dataset.aB === 'c');
-  });
-
-/*!
-{
   "name": "[hidden] Attribute",
   "property": "hidden",
   "tags": ["dom"],
@@ -2351,6 +2333,29 @@ Does the browser support the HTML5 [hidden] attribute?
 !*/
 
   Modernizr.addTest('time', 'valueAsDate' in createElement('time'));
+
+/*!
+{
+  "name": "Track element and Timed Text Track",
+  "property": ["texttrackapi", "track"],
+  "tags": ["elem"],
+  "builderAliases": ["elem_track"],
+  "authors": ["Addy Osmani"],
+  "notes": [{
+    "name": "W3 track Element Spec",
+    "href": "http://www.w3.org/TR/html5/video.html#the-track-element"
+  },{
+    "name": "W3 track API Spec",
+    "href": "http://www.w3.org/TR/html5/media-elements.html#text-track-api"
+  }],
+  "warnings": ["While IE10 has implemented the track element, IE10 does not expose the underlying APIs to create timed text tracks by JS (really sad)"]
+}
+!*/
+
+  Modernizr.addTest('texttrackapi', typeof (createElement('video').addTextTrack) === 'function');
+
+  // a more strict test for track including UI support: document.createElement('track').kind === 'subtitles'
+  Modernizr.addTest('track', 'kind' in createElement('track'));
 
 /*!
 {
