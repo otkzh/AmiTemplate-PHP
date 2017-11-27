@@ -4,6 +4,7 @@
     <h1 class="header__logo">
       <a href="<?php echo $base_url ?>/"><?php echo $metaTtl ?></a>
     </h1>
+    <div class="gnav__bg"></div>
     <nav class="header__gnav gnav">
       <ul class="gnav__row">
         <li class="gnav__item">
@@ -39,13 +40,40 @@
           <nav class="gnav-deep__nav">
             <ul class="gnav-deep__row">
               <li class="gnav-deep__item">
-                <a href="#" class="gnav-deep__link">dummy</a>
+                <a href="<?php echo $base_url; ?>" class="gnav-deep__link">dummy</a>
               </li>
               <li class="gnav-deep__item">
-                <a href="#" class="gnav-deep__link">dummy</a>
+                <a href="<?php echo $base_url; ?>" class="gnav-deep__link">dummy</a>
               </li>
               <li class="gnav-deep__item">
-                <a href="#" class="gnav-deep__link">dummy</a>
+                <a href="<?php echo $base_url; ?>" class="gnav-deep__link">dummy</a>
+              </li>
+              <li class="gnav-deep__item">
+                <a href="<?php echo $base_url; ?>" class="gnav-deep__link">dummy</a>
+              </li>
+              <li class="gnav-deep__item">
+                <a href="<?php echo $base_url; ?>" class="gnav-deep__link">dummy</a>
+              </li>
+              <li class="gnav-deep__item">
+                <a href="<?php echo $base_url; ?>" class="gnav-deep__link">dummy</a>
+              </li>
+              <li class="gnav-deep__item">
+                <a href="<?php echo $base_url; ?>" class="gnav-deep__link">dummy</a>
+              </li>
+              <li class="gnav-deep__item">
+                <a href="<?php echo $base_url; ?>" class="gnav-deep__link">dummy</a>
+              </li>
+              <li class="gnav-deep__item">
+                <a href="<?php echo $base_url; ?>" class="gnav-deep__link">dummy</a>
+              </li>
+              <li class="gnav-deep__item">
+                <a href="<?php echo $base_url; ?>" class="gnav-deep__link">dummy</a>
+              </li>
+              <li class="gnav-deep__item">
+                <a href="<?php echo $base_url; ?>" class="gnav-deep__link">dummy</a>
+              </li>
+              <li class="gnav-deep__item">
+                <a href="<?php echo $base_url; ?>" class="gnav-deep__link">dummy</a>
               </li>
             </ul>
           </nav>
