@@ -451,57 +451,57 @@ compile: false
 ```html
 
 <nav class="header__gnav gnav">
-  <ul class="gnav__row">
-    <li class="gnav__item">
-      <a href="#" class="gnav__link">menu</a>
-    </li>
-    <li class="gnav__item">
-      <a href="#" class="gnav__link">menu</a>
-    </li>
-    <li class="gnav__item">
-      <a href="#" class="gnav__link">menu</a>
-    </li>
-    <li class="gnav__item gnav-deep">
-      <label class="gnav__link">menu</label>
+<ul class="gnav__row">
+<li class="gnav__item">
+<a href="#" class="gnav__link">menu</a>
+</li>
+<li class="gnav__item">
+<a href="#" class="gnav__link">menu</a>
+</li>
+<li class="gnav__item">
+<a href="#" class="gnav__link">menu</a>
+</li>
+<li class="gnav__item gnav-deep">
+<label class="gnav__link">menu</label>
 
-      <nav class="gnav-deep__nav">
-        <ul class="gnav-deep__row">
-          <li class="gnav-deep__item">
-            <a href="#" class="gnav-deep__link">deep-menu</a>
-          </li>
-          <li class="gnav-deep__item">
-            <a href="#" class="gnav-deep__link">deep-menu</a>
-          </li>
-          <li class="gnav-deep__item">
-            <a href="#" class="gnav-deep__link">deep-menu</a>
-          </li>
-        </ul>
-      </nav>
+<nav class="gnav-deep__nav">
+<ul class="gnav-deep__row">
+<li class="gnav-deep__item">
+<a href="#" class="gnav-deep__link">deep-menu</a>
+</li>
+<li class="gnav-deep__item">
+<a href="#" class="gnav-deep__link">deep-menu</a>
+</li>
+<li class="gnav-deep__item">
+<a href="#" class="gnav-deep__link">deep-menu</a>
+</li>
+</ul>
+</nav>
 
-    </li>
-    <li class="gnav__item gnav-deep">
-      <label class="gnav__link">menu</label>
+</li>
+<li class="gnav__item gnav-deep">
+<label class="gnav__link">menu</label>
 
-      <nav class="gnav-deep__nav">
-        <ul class="gnav-deep__row">
-          <li class="gnav-deep__item">
-            <a href="#" class="gnav-deep__link">deep-menu</a>
-          </li>
-        </ul>
-      </nav>
+<nav class="gnav-deep__nav">
+<ul class="gnav-deep__row">
+<li class="gnav-deep__item">
+<a href="#" class="gnav-deep__link">deep-menu</a>
+</li>
+</ul>
+</nav>
 
-    </li>
-    <li class="gnav__item">
-      <a href="#" class="gnav__link_contact">contact</a>
-    </li>
-  </ul>
+</li>
+<li class="gnav__item">
+<a href="#" class="gnav__link_contact">contact</a>
+</li>
+</ul>
 </nav>
 <label class="header__menubar menubar">
-  <div class="menubar__row">
-    <span class="menubar__item"></span>
-    <span class="menubar__item"></span>
-    <span class="menubar__item"></span>
-  </div>
+<div class="menubar__row">
+<span class="menubar__item"></span>
+<span class="menubar__item"></span>
+<span class="menubar__item"></span>
+</div>
 </label>
 ```
 */
@@ -601,18 +601,9 @@ compile: false
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
           position: absolute;
-          top: 0;
+          top: 50%;
           right: 24px;
-          bottom: 0;
-          display: -webkit-box;
-          display: -ms-flexbox;
-          display: flex;
-          -webkit-box-align: center;
-          -ms-flex-align: center;
-          align-items: center;
-          -webkit-box-pack: center;
-          -ms-flex-pack: center;
-          justify-content: center; } }
+          margin-top: -.5em; } }
     body.home .gnav__link_home {
       color: #CEC089; }
     body.contact .gnav__link_contact {
@@ -626,6 +617,38 @@ compile: false
       color: #CEC089; }
     body._styleguide .gnav__link_styleguide {
       color: #CEC089; }
+  @media screen and (min-width: 667px) {
+    .gnav .gnav-deep .gnav__link, .gnav .gnav-deep .gnav__link_home, .gnav .gnav-deep .gnav__link_contact, .gnav .gnav-deep .gnav__link_sample, .gnav .gnav-deep .gnav__link_layout, .gnav .gnav-deep .gnav__link_styleguide {
+      border: 4px solid transparent;
+      border-left: none;
+      border-right: none; } }
+  .gnav .gnav-deep .gnav__link::after, .gnav .gnav-deep .gnav__link_home::after, .gnav .gnav-deep .gnav__link_contact::after, .gnav .gnav-deep .gnav__link_sample::after, .gnav .gnav-deep .gnav__link_layout::after, .gnav .gnav-deep .gnav__link_styleguide::after {
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    content: "";
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-left: 4px; }
+  @media screen and (max-width: 666px) {
+    .gnav .gnav-deep .gnav__link::after, .gnav .gnav-deep .gnav__link_home::after, .gnav .gnav-deep .gnav__link_contact::after, .gnav .gnav-deep .gnav__link_sample::after, .gnav .gnav-deep .gnav__link_layout::after, .gnav .gnav-deep .gnav__link_styleguide::after {
+      content: "";
+      display: inline-block;
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: inherit;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale; } }
+  .gnav .gnav-deep.active .gnav__link, .gnav .gnav-deep.active .gnav__link_home, .gnav .gnav-deep.active .gnav__link_contact, .gnav .gnav-deep.active .gnav__link_sample, .gnav .gnav-deep.active .gnav__link_layout, .gnav .gnav-deep.active .gnav__link_styleguide {
+    border-bottom-color: #CEC089; }
+    .gnav .gnav-deep.active .gnav__link::after, .gnav .gnav-deep.active .gnav__link_home::after, .gnav .gnav-deep.active .gnav__link_contact::after, .gnav .gnav-deep.active .gnav__link_sample::after, .gnav .gnav-deep.active .gnav__link_layout::after, .gnav .gnav-deep.active .gnav__link_styleguide::after {
+      -webkit-transition: all .3s;
+      transition: all .3s;
+      -webkit-transform: rotate(-180deg);
+      transform: rotate(-180deg); }
 
 @media screen and (min-width: 667px) {
   .gnav-deep {

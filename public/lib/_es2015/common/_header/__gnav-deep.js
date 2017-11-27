@@ -54,7 +54,7 @@ export default function () {
 
   //クリックした対象が「gnav-deep」か「gnav-deep以外」か判定
   function onClickFn(){
-    $(document).on('click', function(event) {
+    $(document).on('pointerdown', function(event) {
       var item = $(event.target);
       var item_deep = item.closest(deepClass);
       if (item_deep.length) { // deepNav

@@ -14,57 +14,57 @@ compile: false
 ```html
 
 <nav class="header__gnav gnav">
-  <ul class="gnav__row">
-    <li class="gnav__item">
-      <a href="#" class="gnav__link">menu</a>
-    </li>
-    <li class="gnav__item">
-      <a href="#" class="gnav__link">menu</a>
-    </li>
-    <li class="gnav__item">
-      <a href="#" class="gnav__link">menu</a>
-    </li>
-    <li class="gnav__item gnav-deep">
-      <label class="gnav__link">menu</label>
+<ul class="gnav__row">
+<li class="gnav__item">
+<a href="#" class="gnav__link">menu</a>
+</li>
+<li class="gnav__item">
+<a href="#" class="gnav__link">menu</a>
+</li>
+<li class="gnav__item">
+<a href="#" class="gnav__link">menu</a>
+</li>
+<li class="gnav__item gnav-deep">
+<label class="gnav__link">menu</label>
 
-      <nav class="gnav-deep__nav">
-        <ul class="gnav-deep__row">
-          <li class="gnav-deep__item">
-            <a href="#" class="gnav-deep__link">deep-menu</a>
-          </li>
-          <li class="gnav-deep__item">
-            <a href="#" class="gnav-deep__link">deep-menu</a>
-          </li>
-          <li class="gnav-deep__item">
-            <a href="#" class="gnav-deep__link">deep-menu</a>
-          </li>
-        </ul>
-      </nav>
+<nav class="gnav-deep__nav">
+<ul class="gnav-deep__row">
+<li class="gnav-deep__item">
+<a href="#" class="gnav-deep__link">deep-menu</a>
+</li>
+<li class="gnav-deep__item">
+<a href="#" class="gnav-deep__link">deep-menu</a>
+</li>
+<li class="gnav-deep__item">
+<a href="#" class="gnav-deep__link">deep-menu</a>
+</li>
+</ul>
+</nav>
 
-    </li>
-    <li class="gnav__item gnav-deep">
-      <label class="gnav__link">menu</label>
+</li>
+<li class="gnav__item gnav-deep">
+<label class="gnav__link">menu</label>
 
-      <nav class="gnav-deep__nav">
-        <ul class="gnav-deep__row">
-          <li class="gnav-deep__item">
-            <a href="#" class="gnav-deep__link">deep-menu</a>
-          </li>
-        </ul>
-      </nav>
+<nav class="gnav-deep__nav">
+<ul class="gnav-deep__row">
+<li class="gnav-deep__item">
+<a href="#" class="gnav-deep__link">deep-menu</a>
+</li>
+</ul>
+</nav>
 
-    </li>
-    <li class="gnav__item">
-      <a href="#" class="gnav__link_contact">contact</a>
-    </li>
-  </ul>
+</li>
+<li class="gnav__item">
+<a href="#" class="gnav__link_contact">contact</a>
+</li>
+</ul>
 </nav>
 <label class="header__menubar menubar">
-  <div class="menubar__row">
-    <span class="menubar__item"></span>
-    <span class="menubar__item"></span>
-    <span class="menubar__item"></span>
-  </div>
+<div class="menubar__row">
+<span class="menubar__item"></span>
+<span class="menubar__item"></span>
+<span class="menubar__item"></span>
+</div>
 </label>
 ```
 */
@@ -128,12 +128,9 @@ compile: false
       &::after{
         @include icon-font();
         position: absolute;
-        top:0;
+        top:50%;
         right: $bm-inner;
-        bottom: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        margin-top: -.5em;
       }
     }
     @each $class in home,contact {
@@ -159,4 +156,32 @@ compile: false
       }
     }//each
   }//link
+  .gnav-deep{
+    .gnav__link{
+      @include min-screen($width-s + 1px){
+        border: 4px solid transparent;
+        border-left: none;
+        border-right: none;
+      }
+      &::after{
+        transition: all .3s;
+        @include icon-font('\f103');
+        margin-left: $bm/2;
+      }
+      @include max-screen($width-s){
+        &::after{
+          @include icon-font('\f103');
+        }
+      }
+    }
+    &.active{
+      .gnav__link{
+        border-bottom-color: $color-brand;
+        &::after{
+          transition: all .3s;
+          transform: rotate(-180deg);
+        }
+      }
+    }
+  }
 }
