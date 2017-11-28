@@ -10,7 +10,7 @@ include ($inc_path."/lib/inc/head.php");
 <header class="header">
   <div class="header__row wrap">
     <h1 class="header__logo">
-      <a href="<?php echo $base_url ?>/"><?php echo $metaTtl ?></a>
+      <a href="<?php echo $base_url; ?>/"><?php echo $metaTtl; ?></a>
     </h1>
     <button type="button" class="drawer-toggle drawer-hamburger">
       <span class="sr-only">toggle navigation</span>
