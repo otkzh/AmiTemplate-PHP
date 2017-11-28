@@ -2,34 +2,30 @@ export default function () {
 
 
 
-  //要素を生成
-
+  //gnav_bg要素を生成
   var gnavBg = $('<div class="gnav__bg" style="display:none;"></div>');
   $('body').append(gnavBg);
 
 
-  //スクロールを止める
-  var state = false;
+  //クリック時にスクロールを止める
   var scrollpos;
 
   $('.menubar').on('pointerdown', function(){
-    if(state == false) {
+    if(!$(this).hasClass('active')) {
       scrollpos = $(window).scrollTop();
       $('body').css({
         position: 'fixed',
         top: -1 * scrollpos
       });
-      $('.menubar').toggleClass('active');
-      $('.gnav').toggleClass('active');
+      $('.menubar').addClass('active');
+      $('.gnav').addClass('active');
       $('.gnav__bg').fadeIn();
-      state = true;
     } else {
       $('body').attr({style:''});
       window.scrollTo( 0 , scrollpos );
-      $('.menubar').toggleClass('active');
-      $('.gnav').toggleClass('active');
+      $('.menubar').removeClass('active');
+      $('.gnav').removeClass('active');
       $('.gnav__bg').fadeOut();
-      state = false;
     }
   });
 
