@@ -4,7 +4,6 @@
     <h1 class="header__logo">
       <a href="<?php echo $base_url; ?>/"><?php echo $metaTtl; ?></a>
     </h1>
-    <div class="gnav__bg"></div>
     <nav class="header__gnav gnav">
       <ul class="gnav__row">
         <li class="gnav__item">

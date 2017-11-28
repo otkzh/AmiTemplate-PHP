@@ -69,12 +69,6 @@ compile: false
 ```
 */
 
-.fixed{
-  position: fixed;
-  height: 100%;
-  overflow: hidden;
-}
-
 .gnav{
   $thisClass:".gnav";
   position: relative;
@@ -89,22 +83,22 @@ compile: false
     transition: all .5s;
     transform: translateY(-500px);
     opacity: 0;
-
     &.active{
-      transition: transform .5s .5s, opacity .5s  ;
+      transition: all .5s;
       opacity: 1;
       transform: translateY(0px);
-      position: fixed;
-      top:49px;
-      right: 0;
-      bottom: 0;
-      left: 0;
+      height: 100vh;
       overflow-y: scroll;
-      -webkit-overflow-scrolling:touch;
+      //-webkit-overflow-scrolling:touch;
     }
   }
   &__bg{
-
+		position: fixed;
+		top:0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-color: rgba(0,0,0,.5);
   }
   &__row{
     display: flex;
