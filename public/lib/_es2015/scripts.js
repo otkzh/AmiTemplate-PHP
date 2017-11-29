@@ -83,6 +83,11 @@ if($('body._drawer').length){
   drawer_config();
 };
 
+import interSO_config from './base/_intersection-observer/__config.js';
+if($('body._intersection-observer').length){
+  interSO_config();
+};
+
 //--------------------- common ---------------------//
 
 import headerFn from './common/_header/__menubar.js';
