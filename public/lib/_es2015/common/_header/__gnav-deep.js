@@ -36,16 +36,16 @@ export default function () {
 
   //------リサイズ時に、deepNavのstyleをd:nのみにする
 
-  var timer = false;
-  $(window).resize(function() {
-      if (timer !== false) {
-          clearTimeout(timer);
-      }
-      timer = setTimeout(function() {
-        $(deepClass).removeClass(addDeepClassName);
-        $(navClass).removeAttr('style').css({'display':'none'});
-      }, 200);
-  });
+  // var timer = false;
+  // $(window).resize(function() {
+  //     if (timer !== false) {
+  //         clearTimeout(timer);
+  //     }
+  //     timer = setTimeout(function() {
+  //       $(deepClass).removeClass(addDeepClassName);
+  //       $(navClass).removeAttr('style').css({'display':'none'});
+  //     }, 200);
+  // });
 
   //--------以下クリック時の挙動
 
@@ -69,6 +69,7 @@ export default function () {
   function allDell(){
     $(deepClass).removeClass(addDeepClassName);
     $(navClass).deepOut();
+    $('.menubar').removeClass('active');
   }
 
   //クリックした対象が、activeClassを持っていれば -> .active削除・deepNavを非表示

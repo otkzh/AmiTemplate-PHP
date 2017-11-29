@@ -81,16 +81,16 @@ compile: false
     width: 100%;
     box-shadow: 0 2px 10px rgba(0,0,0,.3);
     transition: all .5s;
-    transform: translateY(-500px);
-    opacity: 0;
-    &.active{
-      transition: all .5s;
-      opacity: 1;
-      transform: translateY(0px);
-      height: 100vh;
-      overflow-y: scroll;
-      //-webkit-overflow-scrolling:touch;
-    }
+/*     transform: translateY(-500px);
+opacity: 0;
+&.active{
+  transition: all .5s;
+  opacity: 1;
+  transform: translateY(0px);
+  height: 100vh;
+  overflow-y: scroll;
+  //-webkit-overflow-scrolling:touch;
+} */
   }
   &__bg{
 		position: fixed;
