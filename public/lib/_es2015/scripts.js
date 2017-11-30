@@ -9,6 +9,9 @@ import 'pepjs';
 //IntersectionObserverを利用する場合に必要なポリフィル
 import 'intersection-observer';
 
+//Web Animations APIをフルで利用する場合に必要なポリフィル
+import 'web-animations-js';
+
 //jqueryをグローバル化する場合は、以下をコメントアウトを解除
 //window.$ = window.jQuery = $;
 
@@ -96,6 +99,7 @@ import * as webAnimations_config from './base/_web-animations/__config.js';
 if($('body._web-animations').length){
   webAnimations_config.caniuse();
   webAnimations_config.caniuse_polyfill();
+  webAnimations_config.sample1();
 };
 
 //--------------------- common ---------------------//
