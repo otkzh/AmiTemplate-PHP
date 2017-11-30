@@ -22,27 +22,31 @@ include ($inc_path."/lib/inc/header.php");
     ?>
     <div class="main__conts conts">
       <section class="conts__item">
-        <h2 class="u-ttl_l"><a href="./_etc/index.php" class="u-icon__link">未整理サンプルページ</a></h2>
+        <h3 class="u-ttl_m"><a href="./_etc/index.php" class="u-icon__link">未整理サンプルページ</a></h3>
         <p>組み込み済みのJS関連中心</p>
       </section>
       <section class="conts__item">
-        <h2 class="u-ttl_l"><a href="./_csv/index.php" class="u-icon__link">CSVサンプルページ</a></h2>
+        <h3 class="u-ttl_m"><a href="./_csv/index.php" class="u-icon__link">CSVサンプルページ</a></h3>
         <p>CSVファイルを読んでVue.jsでページネーション付きリストを表示</p>
       </section>
       <section class="conts__item">
-        <h2 class="u-ttl_l"><a href="./_googlemap/index.php" class="u-icon__link">GoogleMapサンプルページ</a></h2>
+        <h3 class="u-ttl_m"><a href="./_googlemap/index.php" class="u-icon__link">GoogleMapサンプルページ</a></h3>
         <p>埋め込みGoogleMap（APIキーなし・あり版）のサンプル</p>
       </section>
       <section class="conts__item">
-        <h2 class="u-ttl_l"><a href="./_drawer/index.php" class="u-icon__link">Drawerサンプルページ</a></h2>
+        <h3 class="u-ttl_m"><a href="./_drawer/index.php" class="u-icon__link">Drawerサンプルページ</a></h3>
         <p>スムーズなドロワーメニューのサンプル</p>
       </section>
       <section class="conts__item">
-        <h2 class="u-ttl_l"><a href="./_pointer-events/index.php" class="u-icon__link">PointerEventsサンプルページ</a></h2>
+        <h3 class="u-ttl_m"><a href="./_intersection-observer/index.php" class="u-icon__link">IntersectionObserverサンプルページ</a></h3>
+        <p>IntersectionObserverの動作サンプルとよくありそうな動き</p>
+      </section>
+      <section class="conts__item">
+        <h3 class="u-ttl_m"><a href="./_pointer-events/index.php" class="u-icon__link">PointerEventsサンプルページ</a></h3>
         <p>pointerEnventsの動作サンプルとmouse/touch/pointerの動作表</p>
       </section>
       <section class="conts__item">
-        <h2 class="u-ttl_l"><a href="./_fullpage/index.php" class="u-icon__link">fullpageのサンプルページ</a></h2>
+        <h3 class="u-ttl_m"><a href="./_fullpage/index.php" class="u-icon__link">fullpageのサンプルページ</a></h3>
         <p>fullpageのサンプル</p>
       </section>
     </div>

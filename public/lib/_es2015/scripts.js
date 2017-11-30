@@ -86,9 +86,10 @@ if($('body._drawer').length){
   drawer_config();
 };
 
-import interSO_config from './base/_intersection-observer/__config.js';
+import * as interSO_config from './base/_intersection-observer/__config.js';
 if($('body._intersection-observer').length){
-  interSO_config();
+  interSO_config.base();
+	interSO_config.sample();
 };
 
 //--------------------- common ---------------------//

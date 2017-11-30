@@ -15,7 +15,7 @@ include ($inc_path."/lib/inc/header.php");
       <div class="main-header__bg"></div>
       <div class="main-header__row">
         <h1 class="main-header__ttl"><?php echo $pageTtl; ?></h1>
-        <p class="main-header__desc">IntersectionObserverの動作サンプル</p>
+        <p class="main-header__desc">IntersectionObserverの動作サンプルとよくありそうな動き</p>
       </div>
     </header>
     <?php
@@ -27,40 +27,98 @@ include ($inc_path."/lib/inc/header.php");
 
       <section class="conts__item">
         <h3 class="u-ttl_m">1. IntersectionObserverがつかえるブラウザかどうか確認</h3>
-        <div class="interso-target">target1（まだ監視してないよ）</div>
-        ↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>
-        <div class="interso-target">target2（まだ監視してないよ）</div>
-        ↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>
-        <div class="interso-target">target3（まだ監視してないよ）</div>
-        <br>
+        <p>modernizrによる検出項目なし。</p>
 
-
+        <h3 class="u-ttl_m">2. polyfillでつかえるようになったか確認</h3>
+        <p>viewportからmargin:-20%に入ったかどうかの判定。</p>
         <style>
-        .interso-target-2{
+        .interso-target{
           padding: 20px;
-          min-height: 50px;
+          border: 1px solid #eee;
+          background-color: #fff;
         }
-        .bgc{
+        .interso-target.js-inview{
           background-color: #eee;
         }
-        .bgc .bgc{
-          background-color: yellow;
-        }
         </style>
-        <div class="interso-target-2">
+        <div class="u-position_center">
+          <div class="interso-target">target1（まだ監視してないよ）</div>
+          ↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>
+          <div class="interso-target">target2（まだ監視してないよ）</div>
+          ↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>
+          <div class="interso-target">target3（まだ監視してないよ）</div>
           <br>
-          入れ子構造のテスト（classがつくよ）
-          <div class="interso-target-2">入れ子構造のテスト（classがつくよ）</div>
-          <br>
+          <div class="interso-target">target3（まだ監視してないよ）</div>
         </div>
 
 
-        <h3 class="u-ttl_m">2. polyfillでつかえるようになったか確認</h3>
-        <div id="caniuse_polyfill">クリックしてね</div>
+
       </section>
 
       <section class="conts__item">
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <h2 class="u-ttl_l">よくありそうな動き</h2>
+        <p>要素がフェード&スライドイン</p>
+        <style>
+        .l-column__inner{
+          background:#eee;
+          box-sizing: border-box;
+          padding: 20px;
+          text-align: center;
+        }
+
+        </style>
+        <div class="l-column_3 js-target" style="border:1px solid #eee; padding:10px;">
+          <div class="l-column__row">
+            <div class="l-column__item">
+              <article class="l-column__inner js-target">box</article>
+            </div>
+            <div class="l-column__item">
+              <article class="l-column__inner js-target">box</article>
+            </div>
+            <div class="l-column__item">
+              <article class="l-column__inner js-target">box</article>
+            </div>
+            <div class="l-column__item">
+              <article class="l-column__inner js-target">box</article>
+            </div>
+            <div class="l-column__item">
+              <article class="l-column__inner js-target">box</article>
+            </div>
+            <div class="l-column__item">
+              <article class="l-column__inner js-target">box</article>
+            </div>
+            <div class="l-column__item">
+              <article class="l-column__inner js-target">box</article>
+            </div>
+            <div class="l-column__item">
+              <article class="l-column__inner js-target">box</article>
+            </div>
+            <div class="l-column__item">
+              <article class="l-column__inner js-target">box</article>
+            </div>
+            <div class="l-column__item">
+              <article class="l-column__inner js-target">box</article>
+            </div>
+            <div class="l-column__item">
+              <article class="l-column__inner js-target">box</article>
+            </div>
+            <div class="l-column__item">
+              <article class="l-column__inner js-target">box</article>
+            </div>
+            <div class="l-column__item">
+              <article class="l-column__inner js-target">box</article>
+            </div>
+            <div class="l-column__item">
+              <article class="l-column__inner js-target">box</article>
+            </div>
+            <div class="l-column__item">
+              <article class="l-column__inner js-target">box</article>
+            </div>
+          </div>
+        </div>
+        <br>
+        <br>
+        <br>
       </section>
 
     </div>
