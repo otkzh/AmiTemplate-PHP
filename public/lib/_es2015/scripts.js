@@ -6,6 +6,9 @@ import "babel-polyfill";
 //pointerEventsを利用する場合に必要なポリフィル
 import 'pepjs';
 
+//IntersectionObserverを利用する場合に必要なポリフィル
+import 'intersection-observer';
+
 //jqueryをグローバル化する場合は、以下をコメントアウトを解除
 //window.$ = window.jQuery = $;
 
@@ -81,6 +84,12 @@ if($('body._googlemap').length){
 import drawer_config from './base/_drawer/__config.js';
 if($('body._drawer').length){
   drawer_config();
+};
+
+import * as interSO_config from './base/_intersection-observer/__config.js';
+if($('body._intersection-observer').length){
+  interSO_config.base();
+	interSO_config.sample();
 };
 
 //--------------------- common ---------------------//
