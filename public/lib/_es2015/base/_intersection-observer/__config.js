@@ -1,38 +1,86 @@
 export default function () {
 
-  //監視対象のセレクター
-  const targets = document.querySelectorAll('.interso-target');
+base();
+test2();
 
-  //セレクターの数だけ実行
-  for (let el of targets){
-    observerFn(el);
-  };
+  function base(){
 
-  //実行内容
-  function observerFn(target){
+    //監視対象のセレクター
+    const targets = document.querySelectorAll('.interso-target');
 
-    // オプションを指定する。
-    const options = {
-      //root: document.querySelector('#all'),
-      rootMargin: '-20%',　//root（通常はviewpoert）のmarginをコントロール
-      threshold: [0, 0.5, 1] //発火のタイミング(0=bttom,1=top)
-    }
+    //セレクターの数だけ実行
+    for (let el of targets){
+      observerFn(el);
+    };
 
-    // オプションとともにIntersectionObserverオブジェクトを作成する。
-    const observer = new IntersectionObserver((entry) => {
+    //実行内容
+    function observerFn(target){
 
-      let e = entry[0];
-
-      if(e.isIntersecting == true){
-        e.target.innerHTML = '入ってるよ（監視中）';
-      }else{
-        e.target.innerHTML = '出てるよ（監視中）';
+      // オプションを指定する。
+      const options = {
+        //root: document.querySelector('#all'),
+        rootMargin: '-20%',　//root（通常はviewpoert）のmarginをコントロール
+        threshold: [0, 0.5, 1] //発火のタイミング(0=bttom,1=top)
       }
 
-    }, options);
+      // オプションとともにIntersectionObserverオブジェクトを作成する。
+      const observer = new IntersectionObserver((entry) => {
 
-    // 監視したい要素をobserve
-    observer.observe(target);
-  };
+        let e = entry[0];
+
+        if(e.isIntersecting == true){
+          e.target.innerHTML = '入ってるよ（監視中）';
+        }else{
+          e.target.innerHTML = '出てるよ（監視中）';
+        }
+
+      }, options);
+
+      // 監視したい要素をobserve
+      observer.observe(target);
+    };
+
+  }//base
+
+
+
+  function test2(){
+
+    //監視対象のセレクター
+    const targets = document.querySelectorAll('.interso-target-2');
+
+    //セレクターの数だけ実行
+    for (let el of targets){
+      observerFn(el);
+    };
+
+    //実行内容
+    function observerFn(target){
+
+      // オプションを指定する。
+      const options = {
+        //root: document.querySelector('#all'),
+        rootMargin: '-20%',　//root（通常はviewpoert）のmarginをコントロール
+        threshold: [0, 0.5, 1] //発火のタイミング(0=bttom,1=top)
+      }
+
+      // オプションとともにIntersectionObserverオブジェクトを作成する。
+      const observer = new IntersectionObserver((entry) => {
+
+        let e = entry[0];
+
+        if(e.isIntersecting == true){
+          e.target.classList.add('bgc');
+        }else{
+          e.target.classList.remove('bgc');
+        }
+
+      }, options);
+
+      // 監視したい要素をobserve
+      observer.observe(target);
+    };
+
+  }//base
 
 };

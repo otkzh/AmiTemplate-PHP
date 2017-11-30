@@ -33,7 +33,28 @@ include ($inc_path."/lib/inc/header.php");
         ↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>
         <div class="interso-target">target3（まだ監視してないよ）</div>
         <br>
-        <div class="interso-target">target4（まだ監視してないよ）</div>
+
+
+        <style>
+        .interso-target-2{
+          padding: 20px;
+          min-height: 50px;
+        }
+        .bgc{
+          background-color: #eee;
+        }
+        .bgc .bgc{
+          background-color: yellow;
+        }
+        </style>
+        <div class="interso-target-2">
+          <br>
+          入れ子構造のテスト（classがつくよ）
+          <div class="interso-target-2">入れ子構造のテスト（classがつくよ）</div>
+          <br>
+        </div>
+
+
         <h3 class="u-ttl_m">2. polyfillでつかえるようになったか確認</h3>
         <div id="caniuse_polyfill">クリックしてね</div>
       </section>
