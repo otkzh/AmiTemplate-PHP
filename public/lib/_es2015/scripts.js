@@ -92,6 +92,12 @@ if($('body._intersection-observer').length){
 	interSO_config.sample();
 };
 
+import * as webAnimations_config from './base/_web-animations/__config.js';
+if($('body._web-animations').length){
+  webAnimations_config.caniuse();
+  webAnimations_config.caniuse_polyfill();
+};
+
 //--------------------- common ---------------------//
 
 import headerFn from './common/_header/__menubar.js';
