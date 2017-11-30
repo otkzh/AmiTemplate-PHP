@@ -27,10 +27,13 @@ include ($inc_path."/lib/inc/header.php");
 
       <section class="conts__item">
         <h3 class="u-ttl_m">1. IntersectionObserverがつかえるブラウザかどうか確認</h3>
+        <div class="interso-target">target1（まだ監視してないよ）</div>
         ↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>
-        <div class="interso-target">target1</div>
-        ↑<br>↑<br>↑<br>↑<br>↑<br>↑<br>↑<br>↑<br>↑<br>↑<br>↑<br>
-        <div class="interso-target">target2</div>
+        <div class="interso-target">target2（まだ監視してないよ）</div>
+        ↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>↓<br>
+        <div class="interso-target">target3（まだ監視してないよ）</div>
+        <br>
+        <div class="interso-target">target4（まだ監視してないよ）</div>
         <h3 class="u-ttl_m">2. polyfillでつかえるようになったか確認</h3>
         <div id="caniuse_polyfill">クリックしてね</div>
       </section>
