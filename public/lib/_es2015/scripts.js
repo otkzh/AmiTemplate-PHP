@@ -6,6 +6,9 @@ import "babel-polyfill";
 //pointerEventsを利用する場合に必要なポリフィル
 import 'pepjs';
 
+//IntersectionObserverを利用する場合に必要なポリフィル
+import 'intersection-observer';
+
 //jqueryをグローバル化する場合は、以下をコメントアウトを解除
 //window.$ = window.jQuery = $;
 
