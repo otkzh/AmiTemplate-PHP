@@ -15,7 +15,7 @@ include ($inc_path."/lib/inc/header.php");
       <div class="main-header__bg"></div>
       <div class="main-header__row">
         <h1 class="main-header__ttl"><?php echo $pageTtl; ?></h1>
-        <p class="main-header__desc">IntersectionObserverの動作サンプルとよくありそうな動き</p>
+        <p class="main-header__desc">要素がViewpoertに入ったか非同期に監視。軽い・快適でナウい。</p>
       </div>
     </header>
     <?php
@@ -67,7 +67,7 @@ include ($inc_path."/lib/inc/header.php");
         }
 
         </style>
-        <div class="l-column_3 js-target" style="border:1px solid #eee; padding:10px;">
+        <div class="l-column_3" style="border:1px solid #eee; padding:10px;">
           <div class="l-column__row">
             <div class="l-column__item">
               <article class="l-column__inner js-target">box</article>
@@ -116,9 +116,6 @@ include ($inc_path."/lib/inc/header.php");
             </div>
           </div>
         </div>
-        <br>
-        <br>
-        <br>
       </section>
 
     </div>

@@ -46,32 +46,38 @@ export function sample() {
   const targets = document.querySelectorAll('.js-target');
   for (let el of targets){
     observerFn(el);
-    $(el).css({
-      'opacity':'0',
-      'position':'relative',
-      'top':'50'
-    });
   };
 
   //実行内容
   function observerFn(el){
 
     const options = {
-      rootMargin: '-10%'
+      rootMargin: '20px'
     };
 
     const observer = new IntersectionObserver((entry) => {
       let e = entry[0];
       if(e.isIntersecting == true){
-        $(e.target).animate({
-          opacity: 1,
-          top:0,
-        },500);
+
+        e.target.animate({
+          opacity: [0, 1],
+          transform: ['translateY(50px)', 'translateY(0)'],
+          backgroundColor:['red','#eee']
+        }, {
+          duration: 500,
+          fill:'forwards'
+        });
+
       }else{
-        $(e.target).animate({
-          opacity: 0,
-          top:50,
-        },300);
+
+        e.target.animate({
+          opacity: [1, 0],
+          transform: ['translateY(0)', 'translateY(50px)'],
+        }, {
+          duration: 500,
+          fill:'forwards'
+        });
+
       }
     }, options);
 
