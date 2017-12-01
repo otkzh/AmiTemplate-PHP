@@ -22,16 +22,19 @@ include ($inc_path."/lib/inc/header.php");
     ?>
     <div class="main__conts conts">
       <section class="conts__item">
-        <h2 class="u-ttl_l">DOM</h2>
+        <h2 class="u-ttl_l">Web API Interface</h2>
+        <p><a href="https://developer.mozilla.org/ja/docs/Web/API" target="_blank" class="u-icon__link">一覧（MDN web docs）</a></p>
+
+        <h3 class="u-ttl_m">polyfill導入済みのナウい奴ら</h3>
 
         <h4 class="u-ttl_s"><a href="./_web-animations" class="u-icon__link">Web Animations APIサンプルページ</a></h4>
-        <p>webアニメーションの決定版となる（なりそうな）JavaScript API。Animationプラグイン難民にならないように動作サンプルを先取り。</p>
+        <p>webアニメーションの決定版となる（なりそうな）JavaScript API。プラグイン難民から脱出すべく動作サンプルを先取り。</p>
 
         <h4 class="u-ttl_s"><a href="./_intersection-observer/index.php" class="u-icon__link">IntersectionObserverサンプルページ</a></h4>
-        <p>IntersectionObserverの動作サンプルとよくありそうな動き</p>
+        <p>要素がViewpoertに入ったか非同期に監視。軽い・快適でナウい。</p>
 
         <h4 class="u-ttl_s"><a href="./_pointer-events/index.php" class="u-icon__link">PointerEventsサンプルページ</a></h4>
-        <p>pointerEnventsの動作サンプルとmouse/touch/pointerの動作表</p>
+        <p>mouseEventsとtouchEventsをpointerEventsにまとめてくれるナウいやつ。jqueryにも対応できるpolyfill導入</p>
 
       </section>
       <section class="conts__item">

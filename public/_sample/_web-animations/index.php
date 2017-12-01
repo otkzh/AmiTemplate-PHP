@@ -15,7 +15,7 @@ include ($inc_path."/lib/inc/header.php");
       <div class="main-header__bg"></div>
       <div class="main-header__row">
         <h1 class="main-header__ttl"><?php echo $pageTtl; ?></h1>
-        <p class="main-header__desc">Web Animations APIの動作サンプル</p>
+        <p class="main-header__desc">webアニメーションの決定版となる（なりそうな）JavaScript API</p>
       </div>
     </header>
     <?php
