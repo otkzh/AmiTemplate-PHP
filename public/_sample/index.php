@@ -37,7 +37,7 @@ include ($inc_path."/lib/inc/header.php");
         <p>mouseEventsとtouchEventsをpointerEventsにまとめてくれるナウいやつ。jqueryにも対応できるpolyfill導入</p>
 
         <h4 class="u-ttl_s"><a href="./_mutation-observer/index.php" class="u-icon__link">mutationObserverサンプルページ</a></h4>
-        <p></p>
+        <p>読み方は「ミューテイション」。DOMの変化を監視するナウいやつ。</p>
 
       </section>
       <section class="conts__item">
