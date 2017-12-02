@@ -36,13 +36,9 @@ export function caniuse_polyfill() {
   });
 
   //監視オプションの作成
+  //監視プションの一覧：https://developer.mozilla.org/ja/docs/Web/API/MutationObserver#MutationObserverInit
   const options = {
-    attributes: true,
-    attributeOldValue: true,
-    characterData: true,
-    characterDataOldValue: true,
-    childList: true,
-    subtree: true
+    childList : true
   };
 
   //監視の開始

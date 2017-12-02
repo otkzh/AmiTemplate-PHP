@@ -30,75 +30,28 @@ include ($inc_path."/lib/inc/header.php");
         <p id="caniuse">確認中</p>
 
         <h3 class="u-ttl_m">2. 動作確認</h3>
-        <p>viewportからmargin:-20%に入ったかどうかの判定。</p>
+        <p>テキスト内容の変更を監視しています。</p>
+        <style>
+        #caniuse_test{
+          box-sizing: border-box;
+          background-color: #eee;
+          padding: 24px;
+        }
 
+        </style>
         <div id="caniuse_test">クリック</div>
-
-
 
       </section>
 
       <section class="conts__item">
-        <h2 class="u-ttl_l">よくありそうな動き</h2>
-        <p>要素がフェード&スライドイン</p>
-        <style>
-        .l-column__inner{
-          background:#eee;
-          box-sizing: border-box;
-          padding: 20px;
-          text-align: center;
-        }
+        <h2 class="u-ttl_l">MutationObserverInit(監視オプション一覧)</h2>
+        <p>Opstionにてプロパティ（対象のどの変更に反応するか）を指定できます。</p>
+        <a href="https://developer.mozilla.org/ja/docs/Web/API/MutationObserver#MutationObserverInit" target="_blank" class="u-icon__link">MutationObserver - Web API インターフェイス | MDN</a>
+      </section>
 
-        </style>
-        <div class="l-column_3" style="border:1px solid #eee; padding:10px;">
-          <div class="l-column__row">
-            <div class="l-column__item">
-              <article class="l-column__inner js-target">box</article>
-            </div>
-            <div class="l-column__item">
-              <article class="l-column__inner js-target">box</article>
-            </div>
-            <div class="l-column__item">
-              <article class="l-column__inner js-target">box</article>
-            </div>
-            <div class="l-column__item">
-              <article class="l-column__inner js-target">box</article>
-            </div>
-            <div class="l-column__item">
-              <article class="l-column__inner js-target">box</article>
-            </div>
-            <div class="l-column__item">
-              <article class="l-column__inner js-target">box</article>
-            </div>
-            <div class="l-column__item">
-              <article class="l-column__inner js-target">box</article>
-            </div>
-            <div class="l-column__item">
-              <article class="l-column__inner js-target">box</article>
-            </div>
-            <div class="l-column__item">
-              <article class="l-column__inner js-target">box</article>
-            </div>
-            <div class="l-column__item">
-              <article class="l-column__inner js-target">box</article>
-            </div>
-            <div class="l-column__item">
-              <article class="l-column__inner js-target">box</article>
-            </div>
-            <div class="l-column__item">
-              <article class="l-column__inner js-target">box</article>
-            </div>
-            <div class="l-column__item">
-              <article class="l-column__inner js-target">box</article>
-            </div>
-            <div class="l-column__item">
-              <article class="l-column__inner js-target">box</article>
-            </div>
-            <div class="l-column__item">
-              <article class="l-column__inner js-target">box</article>
-            </div>
-          </div>
-        </div>
+      <section class="conts__item">
+        <h2 class="u-ttl_l">よくありそうな動き</h2>
+
       </section>
 
     </div>
