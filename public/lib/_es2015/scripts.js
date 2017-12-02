@@ -6,6 +6,12 @@ import "babel-polyfill";
 //pointerEventsを利用する場合に必要なポリフィル
 import 'pepjs';
 
+//IntersectionObserverを利用する場合に必要なポリフィル
+import 'intersection-observer';
+
+//Web Animations APIをフルで利用する場合に必要なポリフィル
+import 'web-animations-js';
+
 //jqueryをグローバル化する場合は、以下をコメントアウトを解除
 //window.$ = window.jQuery = $;
 
@@ -81,6 +87,27 @@ if($('body._googlemap').length){
 import drawer_config from './base/_drawer/__config.js';
 if($('body._drawer').length){
   drawer_config();
+};
+
+import * as interSO_config from './base/_intersection-observer/__config.js';
+if($('body._intersection-observer').length){
+  interSO_config.base();
+	interSO_config.sample();
+};
+
+import * as webAnimations_config from './base/_web-animations/__config.js';
+if($('body._web-animations').length){
+  webAnimations_config.caniuse();
+  webAnimations_config.caniuse_polyfill();
+  webAnimations_config.sample1();
+};
+
+import * as mutationObserver_config from './base/_mutation-observer/__config.js';
+if($('body._mutation-observer').length){
+  mutationObserver_config.caniuse();
+  mutationObserver_config.caniuse_polyfill();
+  mutationObserver_config.sample1();
+  mutationObserver_config.sample2();
 };
 
 //--------------------- common ---------------------//

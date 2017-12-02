@@ -1,6 +1,5 @@
 .footer{
 	box-sizing: border-box;
-	margin-top: $bm-outer;
 	border-top: 1px solid $color-light;
 	@include max-screen($width-m){
 		margin-top: $bm;

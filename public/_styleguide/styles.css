@@ -285,25 +285,24 @@ html, body {
     margin-top: 4px; }
 
 .menubar {
-  display: block;
+  display: none;
   height: 48px;
   width: 48px;
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 100;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center; }
-  @media screen and (min-width: 667px) {
+  z-index: 100; }
+  @media screen and (max-width: 666px) {
     .menubar {
-      display: none; } }
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center; } }
   .no-js .menubar:hover,
   .no-touchevents .menubar:hover,
   .touchevents .menubar.touch {
@@ -732,7 +731,8 @@ opacity: 0;
       box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05) inset; } }
 
 .main {
-  padding-top: 48px; }
+  padding-top: 48px;
+  margin-bottom: 48px; }
   .main__row {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -893,7 +893,6 @@ opacity: 0;
 .footer {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  margin-top: 48px;
   border-top: 1px solid #eee; }
   @media screen and (max-width: 970px) {
     .footer {
