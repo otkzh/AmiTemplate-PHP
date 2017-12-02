@@ -434,120 +434,14 @@ html, body {
     -webkit-transform: translateY(-10px) rotate(-45deg);
     transform: translateY(-10px) rotate(-45deg); } }
 
-/*
----
-name: gnav(グローバルナビゲーション)
-category:
-- common/header/gnav
-tag:
-- base
-compile: false
----
-
-見出し関連のサイズを調整します。
-サンプルとして、共通パーツのstyleguideを掲載
-
-```html
-
-<nav class="header__gnav gnav">
-<ul class="gnav__row">
-<li class="gnav__item">
-<a href="#" class="gnav__link">menu</a>
-</li>
-<li class="gnav__item">
-<a href="#" class="gnav__link">menu</a>
-</li>
-<li class="gnav__item">
-<a href="#" class="gnav__link">menu</a>
-</li>
-<li class="gnav__item gnav-deep">
-<label class="gnav__link">menu</label>
-
-<nav class="gnav-deep__nav">
-<ul class="gnav-deep__row">
-<li class="gnav-deep__item">
-<a href="#" class="gnav-deep__link">deep-menu</a>
-</li>
-<li class="gnav-deep__item">
-<a href="#" class="gnav-deep__link">deep-menu</a>
-</li>
-<li class="gnav-deep__item">
-<a href="#" class="gnav-deep__link">deep-menu</a>
-</li>
-</ul>
-</nav>
-
-</li>
-<li class="gnav__item gnav-deep">
-<label class="gnav__link">menu</label>
-
-<nav class="gnav-deep__nav">
-<ul class="gnav-deep__row">
-<li class="gnav-deep__item">
-<a href="#" class="gnav-deep__link">deep-menu</a>
-</li>
-</ul>
-</nav>
-
-</li>
-<li class="gnav__item">
-<a href="#" class="gnav__link_contact">contact</a>
-</li>
-</ul>
-</nav>
-<label class="header__menubar menubar">
-<div class="menubar__row">
-<span class="menubar__item"></span>
-<span class="menubar__item"></span>
-<span class="menubar__item"></span>
-</div>
-</label>
-```
-*/
-.gnav {
-  position: relative; }
-  @media screen and (max-width: 666px) {
-    .gnav {
-      position: absolute;
-      z-index: 1;
-      top: 48px;
-      left: 0;
-      float: none;
-      width: 100%;
-      -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-      -webkit-transition: all .5s;
-      transition: all .5s;
-      /*     transform: translateY(-500px);
-opacity: 0;
-&.active{
-  transition: all .5s;
-  opacity: 1;
-  transform: translateY(0px);
-  height: 100vh;
-  overflow-y: scroll;
-  //-webkit-overflow-scrolling:touch;
-} */ } }
-  .gnav__bg {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.5); }
+@media screen and (min-width: 667px) {
   .gnav__row {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
-    @media screen and (max-width: 666px) {
-      .gnav__row {
-        display: block; } }
-  .gnav__item:last-of-type > a {
-    border-bottom: none; }
-  .gnav__link, .gnav__link_home, .gnav__link_contact, .gnav__link_sample, .gnav__link_layout, .gnav__link_styleguide {
+  .gnav__link, .gnav__link_home, .gnav__link_contact, .gnav__link__sample, .gnav__link__layout, .gnav__link__styleguide {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -558,103 +452,66 @@ opacity: 0;
     -ms-flex-pack: center;
     justify-content: center;
     height: 48px;
-    padding: 0 12px;
-    text-decoration: none;
-    background-color: #fff; }
-    .no-js .gnav__link:hover, .no-js .gnav__link_home:hover, .no-js .gnav__link_contact:hover, .no-js .gnav__link_sample:hover, .no-js .gnav__link_layout:hover, .no-js .gnav__link_styleguide:hover,
+    padding: 0 8px;
+    text-decoration: none; }
+    .no-js .gnav__link:hover, .no-js .gnav__link_home:hover, .no-js .gnav__link_contact:hover, .no-js .gnav__link__sample:hover, .no-js .gnav__link__layout:hover, .no-js .gnav__link__styleguide:hover,
     .no-touchevents .gnav__link:hover,
     .no-touchevents .gnav__link_home:hover,
     .no-touchevents .gnav__link_contact:hover,
-    .no-touchevents .gnav__link_sample:hover,
-    .no-touchevents .gnav__link_layout:hover,
-    .no-touchevents .gnav__link_styleguide:hover,
+    .no-touchevents .gnav__link__sample:hover,
+    .no-touchevents .gnav__link__layout:hover,
+    .no-touchevents .gnav__link__styleguide:hover,
     .touchevents .gnav__link.touch,
     .touchevents .touch.gnav__link_home,
     .touchevents .touch.gnav__link_contact,
-    .touchevents .touch.gnav__link_sample,
-    .touchevents .touch.gnav__link_layout,
-    .touchevents .touch.gnav__link_styleguide {
-      background-color: #eee;
-      color: #b8a353;
-      cursor: pointer; }
-    @media screen and (max-width: 666px) {
-      .gnav__link, .gnav__link_home, .gnav__link_contact, .gnav__link_sample, .gnav__link_layout, .gnav__link_styleguide {
-        -webkit-box-pack: start;
-        -ms-flex-pack: start;
-        justify-content: flex-start;
-        border-bottom: 1px solid #eee; }
-        .gnav__link::after, .gnav__link_home::after, .gnav__link_contact::after, .gnav__link_sample::after, .gnav__link_layout::after, .gnav__link_styleguide::after {
-          content: "";
-          display: inline-block;
-          font: normal normal normal 14px/1 FontAwesome;
-          font-size: inherit;
-          text-rendering: auto;
-          -webkit-font-smoothing: antialiased;
-          -moz-osx-font-smoothing: grayscale;
-          position: absolute;
-          top: 50%;
-          right: 24px;
-          margin-top: -.5em; } }
+    .touchevents .touch.gnav__link__sample,
+    .touchevents .touch.gnav__link__layout,
+    .touchevents .touch.gnav__link__styleguide {
+      -webkit-transition: all .3s;
+      transition: all .3s;
+      background-color: #CEC089;
+      color: #fff; }
     body.home .gnav__link_home {
       color: #CEC089; }
     body.contact .gnav__link_contact {
       color: #CEC089; }
+    body._sample .gnav__link__sample {
+      color: #CEC089; }
+    body._layout .gnav__link__layout {
+      color: #CEC089; }
+    body._styleguide .gnav__link__styleguide {
+      color: #CEC089; }
     .gnav__link_contact {
       background-color: #A2324E;
       color: #eee; }
-    body._sample .gnav__link_sample {
-      color: #CEC089; }
-    body._layout .gnav__link_layout {
-      color: #CEC089; }
-    body._styleguide .gnav__link_styleguide {
-      color: #CEC089; }
-  @media screen and (min-width: 667px) {
-    .gnav .gnav-deep .gnav__link, .gnav .gnav-deep .gnav__link_home, .gnav .gnav-deep .gnav__link_contact, .gnav .gnav-deep .gnav__link_sample, .gnav .gnav-deep .gnav__link_layout, .gnav .gnav-deep .gnav__link_styleguide {
-      border: 4px solid transparent;
-      border-left: none;
-      border-right: none; } }
-  .gnav .gnav-deep .gnav__link::after, .gnav .gnav-deep .gnav__link_home::after, .gnav .gnav-deep .gnav__link_contact::after, .gnav .gnav-deep .gnav__link_sample::after, .gnav .gnav-deep .gnav__link_layout::after, .gnav .gnav-deep .gnav__link_styleguide::after {
-    -webkit-transition: all .3s;
-    transition: all .3s;
-    content: "";
-    display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome;
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    margin-left: 4px; }
-  @media screen and (max-width: 666px) {
-    .gnav .gnav-deep .gnav__link::after, .gnav .gnav-deep .gnav__link_home::after, .gnav .gnav-deep .gnav__link_contact::after, .gnav .gnav-deep .gnav__link_sample::after, .gnav .gnav-deep .gnav__link_layout::after, .gnav .gnav-deep .gnav__link_styleguide::after {
+    .gnav-deep .gnav__link::after, .gnav-deep .gnav__link_home::after, .gnav-deep .gnav__link_contact::after, .gnav-deep .gnav__link__sample::after, .gnav-deep .gnav__link__layout::after, .gnav-deep .gnav__link__styleguide::after {
       content: "";
       display: inline-block;
       font: normal normal normal 14px/1 FontAwesome;
       font-size: inherit;
       text-rendering: auto;
       -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale; } }
-  .gnav .gnav-deep.active .gnav__link, .gnav .gnav-deep.active .gnav__link_home, .gnav .gnav-deep.active .gnav__link_contact, .gnav .gnav-deep.active .gnav__link_sample, .gnav .gnav-deep.active .gnav__link_layout, .gnav .gnav-deep.active .gnav__link_styleguide {
-    border-bottom-color: #CEC089; }
-    .gnav .gnav-deep.active .gnav__link::after, .gnav .gnav-deep.active .gnav__link_home::after, .gnav .gnav-deep.active .gnav__link_contact::after, .gnav .gnav-deep.active .gnav__link_sample::after, .gnav .gnav-deep.active .gnav__link_layout::after, .gnav .gnav-deep.active .gnav__link_styleguide::after {
-      -webkit-transition: all .3s;
-      transition: all .3s;
-      -webkit-transform: rotate(-180deg);
-      transform: rotate(-180deg); }
-
-@media screen and (min-width: 667px) {
+      -moz-osx-font-smoothing: grayscale;
+      margin-left: 4px; }
   .gnav-deep {
     position: relative; }
+    .gnav-deep.js-active > .gnav__link, .gnav-deep.js-active > .gnav__link_home, .gnav-deep.js-active > .gnav__link_contact, .gnav-deep.js-active > .gnav__link__sample, .gnav-deep.js-active > .gnav__link__layout, .gnav-deep.js-active > .gnav__link__styleguide {
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid #CEC089; }
     .gnav-deep__nav {
+      display: none;
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
       position: absolute;
       left: 50%;
-      min-width: 200px;
       -webkit-transform: translateX(-50%);
       transform: translateX(-50%);
+      min-width: 200px;
       -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
       margin-top: 16px; }
+      .js-active .gnav-deep__nav {
+        display: block; }
       .gnav-deep__nav::after {
         content: ' ';
         display: block;
@@ -672,36 +529,9 @@ opacity: 0;
       overflow: hidden; }
     .gnav-deep__item {
       border-bottom: 1px solid #eee; }
-      .gnav-deep__item > a {
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        text-decoration: none;
-        background-color: #fff;
-        min-height: 45px;
-        line-height: 1.2;
-        padding: 4px 8px; }
-        .no-js .gnav-deep__item > a:hover,
-        .no-touchevents .gnav-deep__item > a:hover,
-        .touchevents .gnav-deep__item > a.touch {
-          color: #fff;
-          background-color: #CEC089; }
       .gnav-deep__item:last-child {
-        border-bottom: none; } }
-
-@media screen and (max-width: 666px) {
-  .gnav-deep__nav {
-    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25) inset;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25) inset;
-    display: none; }
-  .gnav-deep__item {
-    border-bottom: 1px solid #eee; }
-    .gnav-deep__item > a {
+        border-bottom: none; }
+    .gnav-deep__link {
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
       display: -webkit-box;
@@ -711,24 +541,15 @@ opacity: 0;
       -ms-flex-align: center;
       align-items: center;
       text-decoration: none;
-      background-color: #fbfbfb;
+      background-color: #fff;
       min-height: 45px;
       line-height: 1.2;
-      padding: 4px 8px 4px 16px; }
-      .gnav-deep__item > a::before {
-        content: "└";
-        margin-right: 8px; }
-      .no-js .gnav-deep__item > a:hover,
-      .no-touchevents .gnav-deep__item > a:hover,
-      .touchevents .gnav-deep__item > a.touch {
+      padding: 4px 8px; }
+      .no-js .gnav-deep__link:hover,
+      .no-touchevents .gnav-deep__link:hover,
+      .touchevents .gnav-deep__link.touch {
         color: #fff;
-        background-color: #CEC089; }
-    .gnav-deep__item:first-child > a {
-      -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15) inset;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15) inset; }
-    .gnav-deep__item:last-child > a {
-      -webkit-box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05) inset;
-      box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05) inset; } }
+        background-color: #CEC089; } }
 
 .main {
   padding-top: 48px;

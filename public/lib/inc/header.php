@@ -10,13 +10,13 @@
           <a href="<?php echo $base_url ?>/" class="gnav__link_home">home</a>
         </li>
         <li class="gnav__item">
-          <a href="<?php echo $base_url ?>/_sample/" class="gnav__link_sample">sample</a>
+          <a href="<?php echo $base_url ?>/_sample/" class="gnav__link__sample">sample</a>
         </li>
         <li class="gnav__item">
-          <a href="<?php echo $base_url ?>/_layout/" class="gnav__link_layout">layout</a>
+          <a href="<?php echo $base_url ?>/_layout/" class="gnav__link__layout">layout</a>
         </li>
         <li class="gnav__item gnav-deep">
-          <label class="gnav__link_styleguide">styleguide</label>
+          <a href="<?php echo $base_url; ?>/_styleguide/" class="gnav__link__styleguide">styleguide</a>
 
           <nav class="gnav-deep__nav">
             <ul class="gnav-deep__row">
@@ -24,17 +24,17 @@
                 <a href="<?php echo $base_url ?>/_styleguide/"  class="gnav-deep__link">styleguideTop</a>
               </li>
               <li class="gnav-deep__item">
-                <a href="#" class=" class="gnav-deep__link"">dummy</a>
+                <a href="<?php echo $base_url; ?>/" class="gnav-deep__link">dummy</a>
               </li>
               <li class="gnav-deep__item">
-                <a href="#" class="gnav-deep__link">長いページ名ダミーダミーダミーダミーダミー</a>
+                <a href="<?php echo $base_url; ?>" class="gnav-deep__link">長いページ名ダミーダミーダミーダミーダミー</a>
               </li>
             </ul>
           </nav>
 
         </li>
         <li class="gnav__item gnav-deep">
-          <label class="gnav__link">menu</label>
+          <a href="#" class="gnav__link">menu</a>
 
           <nav class="gnav-deep__nav">
             <ul class="gnav-deep__row">
