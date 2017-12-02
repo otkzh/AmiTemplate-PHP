@@ -30,12 +30,14 @@ include ($inc_path."/lib/inc/header.php");
         <p id="caniuse">確認中</p>
 
         <h3 class="u-ttl_m">2. 動作確認</h3>
-        <p>テキスト内容の変更を監視しています。</p>
+        <p id="test-box">テキスト内容の変更を監視しています。</p>
+
         <style>
         #caniuse_test{
           box-sizing: border-box;
           background-color: #eee;
           padding: 24px;
+          cursor: pointer;
         }
 
         </style>
