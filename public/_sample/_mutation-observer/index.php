@@ -52,8 +52,10 @@ include ($inc_path."/lib/inc/header.php");
       </section>
 
       <section class="conts__item">
-        <h2 class="u-ttl_l">よくありそうな動き</h2>
-
+        <h2 class="u-ttl_l">よくありそうな動作</h2>
+        <h3 class="u-ttl_m">メニューバーの表示非表示を検知</h3>
+				<p>と思っていたけど、css内での変化は取得できず・・・DOMの変化（例えばstyle要素などなら）もちろん取得可能。素直にresizeイベント利用しました。以下はresizeイベントを利用したサンプルです。</p>
+        <p id="sample1">確認中</p>
       </section>
 
     </div>

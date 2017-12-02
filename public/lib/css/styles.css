@@ -269,25 +269,24 @@ html, body {
       height: auto; }
 
 .menubar {
-  display: block;
+  display: none;
   height: 48px;
   width: 48px;
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 100;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center; }
-  @media screen and (min-width: 667px) {
+  z-index: 100; }
+  @media screen and (max-width: 666px) {
     .menubar {
-      display: none; } }
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center; } }
   .no-js .menubar:hover,
   .no-touchevents .menubar:hover,
   .touchevents .menubar.touch {

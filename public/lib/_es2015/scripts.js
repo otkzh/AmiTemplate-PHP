@@ -107,6 +107,7 @@ if($('body._mutation-observer').length){
   mutationObserver_config.caniuse();
   mutationObserver_config.caniuse_polyfill();
   mutationObserver_config.sample1();
+  mutationObserver_config.sample2();
 };
 
 //--------------------- common ---------------------//

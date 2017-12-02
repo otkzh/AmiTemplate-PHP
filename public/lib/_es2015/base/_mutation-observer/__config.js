@@ -64,9 +64,39 @@ export function caniuse_polyfill() {
 
 };
 
-
-//sample
+//sample1
 export function sample1() {
 
+};
+
+
+//sample2
+export function sample2() {
+
+  const chackEl__display_Fn = () => {
+    const menubarEl = document.querySelector('.menubar');
+    const menubarEl__diplay = document.defaultView.getComputedStyle(menubarEl ,null).display;
+    const el = document.getElementById('sample1');
+    if(menubarEl__diplay == 'none'){
+      el.innerHTML = "表示されてませんよ";
+    }else{
+      el.innerHTML = "表示されてるよ";
+    }
+  };
+
+  const resizeEnd = fn => {
+    let timer = 0;
+    window.onresize = () => {
+      if (timer > 0) {
+        clearTimeout(timer);
+      }
+      timer = setTimeout(() => {
+        fn(); //ここに処理の内容が入る
+      }, 200);
+    };
+  }
+
+  chackEl__display_Fn();
+  resizeEnd(chackEl__display_Fn);
 
 };

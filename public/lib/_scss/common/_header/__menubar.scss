@@ -1,18 +1,17 @@
 .menubar {
 	$this:'.menubar';
-	@include min-screen($width-s + 1px){
-		display: none;
-	}
-	display: block;
+  display: none;
+  @include max-screen($width-s){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 	height: $header-height;
 	width: $header-height;
 	position: absolute;
 	top:0;
 	right: 0;
 	z-index: 100;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	@include touch-hover(){
 		background-color: $color-light;
 		cursor: pointer;
