@@ -1,6 +1,6 @@
 /*!
  * modernizr v3.5.0
- * Build https://modernizr.com/download?-MessageChannel-animation-canvas-capture-checked-contains-cors-csstransforms3d-flexbox-hidden-history-json-opacity-performance-placeholder-pointerevents-search-sizes-srcset-svg-target-template-texttrackapi_track-time-touchevents-unicode-addtest-fnbind-printshiv-setclasses-testprop-dontmin
+ * Build https://modernizr.com/download?-MessageChannel-animation-canvas-capture-checked-contains-cors-csstransforms3d-flexbox-hidden-history-json-mutationobserver-opacity-performance-placeholder-pointerevents-search-sizes-srcset-svg-target-template-texttrackapi_track-time-touchevents-unicode-addtest-fnbind-printshiv-setclasses-testprop-dontmin
  *
  * Copyright (c)
  *  Faruk Ates
@@ -2475,6 +2475,29 @@ Does the browser support the HTML5 [hidden] attribute?
 */
 
   Modernizr.addTest('hidden', 'hidden' in createElement('a'));
+
+/*!
+{
+  "name": "DOM4 MutationObserver",
+  "property": "mutationobserver",
+  "caniuse": "mutationobserver",
+  "tags": ["dom"],
+  "authors": ["Karel Sedláček (@ksdlck)"],
+  "polyfills": ["mutationobservers"],
+  "notes": [{
+    "name": "MDN documentation",
+    "href": "https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver"
+  }]
+}
+!*/
+/* DOC
+
+Determines if DOM4 MutationObserver support is available.
+
+*/
+
+  Modernizr.addTest('mutationobserver',
+    !!window.MutationObserver || !!window.WebKitMutationObserver);
 
 /*!
 {
