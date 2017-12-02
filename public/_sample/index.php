@@ -36,6 +36,9 @@ include ($inc_path."/lib/inc/header.php");
         <h4 class="u-ttl_s"><a href="./_pointer-events/index.php" class="u-icon__link">PointerEventsサンプルページ</a></h4>
         <p>mouseEventsとtouchEventsをpointerEventsにまとめてくれるナウいやつ。jqueryにも対応できるpolyfill導入</p>
 
+        <h4 class="u-ttl_s"><a href="./_mutation-observer/index.php" class="u-icon__link">mutationObserverサンプルページ</a></h4>
+        <p>読み方は「ミューテイション」。DOMの変化を監視するナウいやつ。</p>
+
       </section>
       <section class="conts__item">
         <h3 class="u-ttl_m"><a href="./_etc/index.php" class="u-icon__link">未整理サンプルページ</a></h3>

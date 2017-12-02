@@ -102,6 +102,14 @@ if($('body._web-animations').length){
   webAnimations_config.sample1();
 };
 
+import * as mutationObserver_config from './base/_mutation-observer/__config.js';
+if($('body._mutation-observer').length){
+  mutationObserver_config.caniuse();
+  mutationObserver_config.caniuse_polyfill();
+  mutationObserver_config.sample1();
+  mutationObserver_config.sample2();
+};
+
 //--------------------- common ---------------------//
 
 import headerFn from './common/_header/__menubar.js';
