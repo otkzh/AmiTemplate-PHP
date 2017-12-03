@@ -9,12 +9,12 @@ export function caniuse() {
 
   const el = document.getElementById('caniuse');
 
-  if (Modernizr.animation) {
+  if (Modernizr.webanimations) {
     // supported
     el.innerHTML = 'つかえるよ';
   } else {
     // not-supported
-    el.innerHTML = 'つかえないよ<br>※ブラウザ実装が進んでるからChromeとかpolyfillなくても一部動くよ';
+    el.innerHTML = 'つかえないよ';
   }
 
 };

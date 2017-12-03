@@ -1,13 +1,16 @@
 .gnav-deep{
   position: relative;
-  &.js-active > .gnav__link{
+  .gnav__link.js-active{
+    position: relative;
+    z-index: 2;
     border-top: 5px solid transparent;
     border-bottom: 5px solid $color-brand;
   }
   &__nav{
     display: none;
-    .js-active &{
+    .js-active + &{
       display: block;
+      z-index: 1;
     }
     box-sizing: border-box;
     position: absolute;

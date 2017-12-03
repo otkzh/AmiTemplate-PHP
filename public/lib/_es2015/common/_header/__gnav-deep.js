@@ -5,87 +5,78 @@ site:non(AmiTemplate-Orign)
 
 export default function () {
 
-  //------class名setting
+  const gnavDeeps = document.querySelectorAll('.gnav-deep');
+  const gnavDeeps_child = Array.from(gnavDeeps,el => el.children[0]);
 
-  var deepClass = '.gnav-deep';
-  var navClass = '.gnav-deep__nav';
-  var menubarClass = '.menubar';
-  var addDeepClassName = 'active';
+  if (Modernizr.touchevents) {
+    touch_listener(gnavDeeps_child);
+  } else {
+    mouse_listener(gnavDeeps_child);
+  }
 
-  //------メニューバー表示非表示（PC<->SP表示切替）に合わせてdeepNavの表示方法切替
-
-  //表示
-  $.fn.deepIn = function() {
-    if ($(menubarClass).is(':hidden')) {
-      this.stop(false,false).fadeIn();
-    } else {
-      this.stop(false,false).slideDown('100');
-    }
-    return this;
-  };
-
-  //非表示
-  $.fn.deepOut = function() {
-    if ($(menubarClass).is(':hidden')) {
-      this.stop(false,false).fadeOut();
-    } else {
-      this.stop(false,false).slideUp('100');
-    }
-    return this;
-  };
-
-  //------リサイズ時に、deepNavのstyleをd:nのみにする
-
-  // var timer = false;
-  // $(window).resize(function() {
-  //     if (timer !== false) {
-  //         clearTimeout(timer);
-  //     }
-  //     timer = setTimeout(function() {
-  //       $(deepClass).removeClass(addDeepClassName);
-  //       $(navClass).removeAttr('style').css({'display':'none'});
-  //     }, 200);
-  // });
-
-  //--------以下クリック時の挙動
-
-  $(navClass).hide();
-  onClickFn();
-
-  //クリックした対象が「gnav-deep」か「gnav-deep以外」か判定
-  function onClickFn(){
-    $(document).on('pointerdown', function(event) {
-      var item = $(event.target);
-      var item_deep = item.closest(deepClass);
-      if (item_deep.length) { // deepNav
-        itemAdd(event);
-      }else{ // deepNav以外
-        allDell();
-      }
+  function mouse_listener(els){
+    Array.from(els,el => {
+      el.addEventListener("mouseenter", function(ev) {
+        remveClassAllFn(els);
+        addClassFn(ev.target);
+        openAnimateion(ev.target.nextElementSibling);
+      });
     });
   }
 
-  //gnav-deepからactiveとる・deepNavを非表示にする
-  function allDell(){
-    $(deepClass).removeClass(addDeepClassName);
-    $(navClass).deepOut();
-    $('.menubar').removeClass('active');
+  function touch_listener(els){
+    Array.from(els,el => {
+      el.addEventListener("touchstart", function(ev) {
+        if(ev.target.classList.contains('js-active') == false){
+          ev.stopPropagation();
+          ev.preventDefault();
+          remveClassAllFn(els);
+          addClassFn(ev.target);
+          openAnimateion(ev.target.nextElementSibling);
+        }else{
+          remveClassAllFn(els);
+        }
+      });
+    });
   }
 
-  //クリックした対象が、activeClassを持っていれば -> .active削除・deepNavを非表示
-  //クリックした対象が、activeClassを持ってなければ -> .active追加・deepNavを表示
-  function itemAdd(event){
-    var item = $(event.target);
-    var item_deep = item.closest(deepClass);
-    var item_nav = item.nextAll(navClass);
-    if(!item_deep.hasClass(addDeepClassName)){
-      allDell();
-      item_deep.addClass(addDeepClassName);
-      item_nav.deepIn();
-    }else{
-      item_deep.removeClass(addDeepClassName);
-      item_nav.deepOut();
-    }
+  function openAnimateion(el){
+    el.animate([
+      {opacity: 0,transform:'translate3D(-50%,-30px,0)'},
+      {opacity: 1,transform:'translate3D(-50%,0,0)'}
+    ], {
+      direction: 'alternate',
+      duration: 300,
+      easing: 'ease'
+    });
   }
+
+  document.addEventListener("mousedown", function(ev) {
+    if(!ev.target.classList.contains('gnav-deep__link')){
+      remveClassAllFn(gnavDeeps_child);
+    }
+  });
+  window.addEventListener("scroll", function(ev) {
+    remveClassAllFn(gnavDeeps_child);
+  });
+
+  function remveClassAllFn(els){
+    Array.from(els,el => el.classList.remove('js-active'));
+  }
+
+  function addClassFn(el){
+    el.classList.add('js-active');
+  }
+
+
+  // for (const val of els) {
+
+  // }
+  //
+  // document.addEventListener("pointerdown", function(ev) {
+  // 	for (const val of els) {
+  // 		val.classList.remove('js-active');
+  // 	}
+  // });
 
 };

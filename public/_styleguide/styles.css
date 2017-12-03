@@ -495,7 +495,9 @@ html, body {
       margin-left: 4px; }
   .gnav-deep {
     position: relative; }
-    .gnav-deep.js-active > .gnav__link, .gnav-deep.js-active > .gnav__link_home, .gnav-deep.js-active > .gnav__link_contact, .gnav-deep.js-active > .gnav__link__sample, .gnav-deep.js-active > .gnav__link__layout, .gnav-deep.js-active > .gnav__link__styleguide {
+    .gnav-deep .gnav__link.js-active, .gnav-deep .js-active.gnav__link_home, .gnav-deep .js-active.gnav__link_contact, .gnav-deep .js-active.gnav__link__sample, .gnav-deep .js-active.gnav__link__layout, .gnav-deep .js-active.gnav__link__styleguide {
+      position: relative;
+      z-index: 2;
       border-top: 5px solid transparent;
       border-bottom: 5px solid #CEC089; }
     .gnav-deep__nav {
@@ -510,8 +512,9 @@ html, body {
       -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
       margin-top: 16px; }
-      .js-active .gnav-deep__nav {
-        display: block; }
+      .js-active + .gnav-deep__nav {
+        display: block;
+        z-index: 1; }
       .gnav-deep__nav::after {
         content: ' ';
         display: block;
