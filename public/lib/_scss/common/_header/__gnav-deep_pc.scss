@@ -16,7 +16,7 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    min-width: 200px;
+    width: 200px;
     box-shadow: 0 2px 4px rgba(0,0,0,.25);
     margin-top: $bm*2;
     &::after{
@@ -39,6 +39,8 @@
   }
   &__item{
     border-bottom: 1px solid $color-light;
+    height: 45px;
+    width: 200px;
     &:last-child{
       border-bottom: none;
     }
@@ -49,9 +51,9 @@
     align-items: center;
     text-decoration: none;
     background-color: #fff;
-    min-height: 45px;
+    height: 45px;
     line-height: 1.2;
-    padding: $bm/2 $bm;
+    padding: 0 $bm;
     @include touch-hover(){
       color:#fff;
       background-color: $color-brand;
