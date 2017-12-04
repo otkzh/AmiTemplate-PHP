@@ -5,6 +5,8 @@ site:non(AmiTemplate-Orign)
 
 export default function () {
 
+  const mq = window.matchMedia( "(min-width: 667px)" );
+
   const gnavDeeps = document.querySelectorAll('.gnav-deep');
   const gnavDeeps_child = Array.from(gnavDeeps,el => el.children[0]);
 
@@ -17,9 +19,13 @@ export default function () {
   function mouse_listener(els){
     Array.from(els,el => {
       el.addEventListener("mouseenter", function(ev) {
-        remveClassAllFn(els);
-        addClassFn(ev.target);
-        openAnimateion(ev.target.nextElementSibling);
+        if (mq.matches) {
+          remveClassAllFn(els);
+          addClassFn(ev.target);
+          openAnimateion(ev.target.nextElementSibling);
+        } else{
+          console.log('SPの処理');
+        };
       });
     });
   }
@@ -27,15 +33,19 @@ export default function () {
   function touch_listener(els){
     Array.from(els,el => {
       el.addEventListener("touchstart", function(ev) {
-        if(ev.target.classList.contains('js-active') == false){
-          ev.stopPropagation();
-          ev.preventDefault();
-          remveClassAllFn(els);
-          addClassFn(ev.target);
-          openAnimateion(ev.target.nextElementSibling);
+        if (mq.matches) {
+          if(ev.target.classList.contains('js-active') == false){
+            ev.stopPropagation();
+            ev.preventDefault();
+            remveClassAllFn(els);
+            addClassFn(ev.target);
+            openAnimateion(ev.target.nextElementSibling);
+          }else{
+            remveClassAllFn(els);
+          }
         }else{
-          remveClassAllFn(els);
-        }
+          console.log('SPの処理');
+        };
       });
     });
   }
