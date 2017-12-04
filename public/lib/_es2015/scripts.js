@@ -112,8 +112,11 @@ if($('body._mutation-observer').length){
 
 //--------------------- common ---------------------//
 
-import headerFn from './common/_header/__menubar.js';
-headerFn();
+import menubarFn from './common/_header/__menubar.js';
+menubarFn();
+
+import gnavDeepFn from './common/_header/__gnav-deep.js';
+gnavDeepFn();
 
 //タッチホバーイベント
 import touchevents_config from './common/_unit/_touch-events/__config.js';

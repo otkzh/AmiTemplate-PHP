@@ -215,29 +215,36 @@ html, body {
   z-index: 999;
   top: 0;
   right: 0;
-  left: 0;
-  border-top: 4px solid #A2324E; }
+  left: 0; }
   .header__row {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     max-width: 1360px;
     width: 100%;
     margin: 0 auto;
-    padding: 0 24px; }
+    padding: 0 24px;
+    border-top: 4px solid transparent; }
     @media screen and (max-width: 666px) {
       .header__row {
         padding: 0 16px; } }
   .header__bg {
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     background-color: #fff;
+    border-top: 4px solid #A2324E;
     -webkit-box-shadow: 0 0px 24px rgba(0, 0, 0, 0.25);
     box-shadow: 0 0px 24px rgba(0, 0, 0, 0.25);
     height: 48px;
     z-index: 2; }
+    @media screen and (max-width: 666px) {
+      .header__bg {
+        -webkit-box-shadow: 0 0px 5px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 0px 5px rgba(0, 0, 0, 0.25); } }
   .header__logo {
     position: relative;
     z-index: 2;
@@ -267,6 +274,16 @@ html, body {
       max-width: 100%;
       width: 100%;
       height: auto; }
+  .header__gnav {
+    position: relative;
+    z-index: 3;
+    float: right; }
+    @media screen and (max-width: 666px) {
+      .header__gnav {
+        margin-top: 4px;
+        z-index: 1; } }
+  .header__menubar {
+    margin-top: 4px; }
 
 .menubar {
   display: none;
@@ -321,12 +338,12 @@ html, body {
       bottom: 0;
       -webkit-animation: menu-bar02 .75s forwards;
       animation: menu-bar02 .75s forwards; }
-  .menubar.active .menubar__item:nth-of-type(1) {
+  .menubar.js-active .menubar__item:nth-of-type(1) {
     -webkit-animation: active-menu-bar01 .75s forwards;
     animation: active-menu-bar01 .75s forwards; }
-  .menubar.active .menubar__item:nth-of-type(2) {
+  .menubar.js-active .menubar__item:nth-of-type(2) {
     opacity: 0; }
-  .menubar.active .menubar__item:nth-of-type(3) {
+  .menubar.js-active .menubar__item:nth-of-type(3) {
     -webkit-animation: active-menu-bar03 .75s forwards;
     animation: active-menu-bar03 .75s forwards; }
 
@@ -418,82 +435,14 @@ html, body {
     -webkit-transform: translateY(-10px) rotate(-45deg);
     transform: translateY(-10px) rotate(-45deg); } }
 
-/*
----
-name: gnav(グローバルナビゲーション)
-category:
-  - common/header/gnav
-tag:
-  - base
-compile: false
----
-
-見出し関連のサイズを調整します。
-サンプルとして、共通パーツのstyleguideを掲載
-
-```html
-<nav class="gnav">
-  <ul class="gnav__row">
-    <li class="gnav__item">
-      <a href="#">home</a>
-    </li>
-    <li class="gnav__item">
-      <a href="#">sample</a>
-    </li>
-    <li class="gnav__item">
-      <a href="#">menu</a>
-    </li>
-    <li class="gnav__item">
-      <a href="#">menu</a>
-    </li>
-    <li class="gnav__item">
-      <a href="#">menu</a>
-    </li>
-    <li class="gnav__item_contact">
-      <a href="#">contact</a>
-    </li>
-  </ul>
-</nav>
-```
-*/
-.gnav {
-  position: relative;
-  z-index: 3;
-  float: right; }
-  @media screen and (max-width: 666px) {
-    .gnav {
-      z-index: 1;
-      position: absolute;
-      top: 48px;
-      left: 0;
-      float: none;
-      width: 100%;
-      -webkit-transition: -webkit-transform .5s;
-      transition: -webkit-transform .5s;
-      transition: transform .5s;
-      transition: transform .5s, -webkit-transform .5s;
-      -webkit-transform: translate3d(0, -400px, 0);
-      transform: translate3d(0, -400px, 0); }
-      .gnav.active {
-        -webkit-transition: -webkit-transform .5s;
-        transition: -webkit-transform .5s;
-        transition: transform .5s;
-        transition: transform .5s, -webkit-transform .5s;
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0); } }
+@media screen and (min-width: 667px) {
   .gnav__row {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
-    @media screen and (max-width: 666px) {
-      .gnav__row {
-        display: block; } }
-  .gnav__item a, .gnav__item_home a, .gnav__item_sample a, .gnav__item_layout a, .gnav__item_contact a {
-    position: relative;
-    display: block;
+  .gnav__link {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    height: 48px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -503,67 +452,169 @@ compile: false
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
+    height: 48px;
+    padding: 0 8px;
+    text-decoration: none; }
+    .no-js .gnav__link:hover,
+    .no-touchevents .gnav__link:hover,
+    .touchevents .gnav__link.touch {
+      -webkit-transition: all .3s;
+      transition: all .3s;
+      background-color: #CEC089;
+      color: #fff; }
+    body.home .gnav__link.home {
+      color: #CEC089; }
+    body.contact .gnav__link.contact {
+      color: #CEC089; }
+    body._sample .gnav__link._sample {
+      color: #CEC089; }
+    body._layout .gnav__link._layout {
+      color: #CEC089; }
+    body._styleguide .gnav__link._styleguide {
+      color: #CEC089; }
+    .gnav__link_contact {
+      background-color: #A2324E;
+      color: #eee; }
+    .gnav-deep .gnav__link::after {
+      content: "";
+      display: inline-block;
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: inherit;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      margin-left: 4px; }
+  .gnav-deep {
+    position: relative; }
+    .gnav-deep .gnav__link.js-active {
+      position: relative;
+      z-index: 2;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid #CEC089; }
+    .gnav-deep__nav {
+      display: none;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      position: absolute;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+      width: 200px;
+      -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+      margin-top: 16px; }
+      .js-active + .gnav-deep__nav {
+        display: block;
+        z-index: 1; }
+      .gnav-deep__nav::after {
+        content: ' ';
+        display: block;
+        position: absolute;
+        top: -8px;
+        left: calc(50% - 8px);
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 4px 8px 4px;
+        border-color: transparent transparent #CEC089 transparent; }
+    .gnav-deep__row {
+      border-top: 6px solid #CEC089;
+      border-radius: 3px;
+      overflow: hidden; }
+    .gnav-deep__item {
+      border-bottom: 1px solid #eee;
+      height: 45px;
+      width: 200px; }
+      .gnav-deep__item:last-child {
+        border-bottom: none; }
+    .gnav-deep__link {
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      text-decoration: none;
+      background-color: #fff;
+      height: 45px;
+      line-height: 1.2;
+      padding: 0 8px; }
+      .no-js .gnav-deep__link:hover,
+      .no-touchevents .gnav-deep__link:hover,
+      .touchevents .gnav-deep__link.touch {
+        color: #fff;
+        background-color: #CEC089; } }
+
+@media screen and (max-width: 666px) {
+  body.js-fixed {
+    position: fixed;
+    overflow: hidden;
+    height: 100%; }
+  .gnav {
+    display: none;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding-left: 70px;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: -1; }
+    .gnav.js-active {
+      display: block; }
+    .gnav__row {
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      height: 100vh;
+      padding-top: 48px;
+      padding-bottom: 80px;
+      -webkit-overflow-scrolling: touch;
+      background-color: #fff;
+      overflow-y: auto; }
+    .gnav__item {
+      background-color: #fff; }
+    .gnav__link {
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      height: 55px;
+      padding: 0 8px;
+      text-decoration: none;
+      border-bottom: 1px solid #eee;
+      line-height: 1.2; }
+      .gnav__link.contact {
+        color: #fff;
+        background-color: #A2324E; }
+  .gnav-deep__row {
+    -webkit-box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.25);
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.25);
+    background-color: #eee; }
+  .gnav-deep__link {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 55px;
     padding: 0 8px;
     text-decoration: none;
-    background-color: #fff; }
-    .no-js .gnav__item a:hover, .no-js .gnav__item_home a:hover, .no-js .gnav__item_sample a:hover, .no-js .gnav__item_layout a:hover, .no-js .gnav__item_contact a:hover,
-    .no-touchevents .gnav__item a:hover,
-    .no-touchevents .gnav__item_home a:hover,
-    .no-touchevents .gnav__item_sample a:hover,
-    .no-touchevents .gnav__item_layout a:hover,
-    .no-touchevents .gnav__item_contact a:hover,
-    .touchevents .gnav__item a.touch,
-    .touchevents .gnav__item_home a.touch,
-    .touchevents .gnav__item_sample a.touch,
-    .touchevents .gnav__item_layout a.touch,
-    .touchevents .gnav__item_contact a.touch {
-      background-color: #eee;
-      color: #fff; }
-    @media screen and (max-width: 666px) {
-      .gnav__item a, .gnav__item_home a, .gnav__item_sample a, .gnav__item_layout a, .gnav__item_contact a {
-        -webkit-box-pack: start;
-        -ms-flex-pack: start;
-        justify-content: flex-start;
-        border-bottom: 1px solid #eee; }
-        .gnav__item a::after, .gnav__item_home a::after, .gnav__item_sample a::after, .gnav__item_layout a::after, .gnav__item_contact a::after {
-          content: "";
-          display: inline-block;
-          font: normal normal normal 14px/1 FontAwesome;
-          font-size: inherit;
-          text-rendering: auto;
-          -webkit-font-smoothing: antialiased;
-          -moz-osx-font-smoothing: grayscale;
-          position: absolute;
-          top: 0;
-          right: 24px;
-          bottom: 0;
-          display: -webkit-box;
-          display: -ms-flexbox;
-          display: flex;
-          -webkit-box-align: center;
-          -ms-flex-align: center;
-          align-items: center;
-          -webkit-box-pack: center;
-          -ms-flex-pack: center;
-          justify-content: center; } }
-  body.home .gnav__item_home a {
-    background-color: #eee;
-    color: #fff; }
-  body._sample .gnav__item_sample a {
-    background-color: #eee;
-    color: #fff; }
-  body.sample .gnav__item_sample a {
-    background-color: #eee;
-    color: #fff; }
-  body._layout .gnav__item_layout a {
-    background-color: #eee;
-    color: #fff; }
-  .gnav__item_contact a {
-    background-color: #A2324E;
-    color: #eee; }
-    body.contact .gnav__item_contact a {
-      background-color: #eee;
-      color: #fff; }
+    border-top: 1px solid #c8c8c8;
+    line-height: 1.2; }
+    .gnav-deep__link::before {
+      content: '└';
+      margin-right: 8px; } }
 
 .main {
   padding-top: 48px;

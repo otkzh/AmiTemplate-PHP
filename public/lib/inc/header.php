@@ -5,24 +5,84 @@
       <a href="<?php echo $base_url; ?>/"><?php echo $metaTtl; ?></a>
     </h1>
     <nav class="header__gnav gnav">
-      <ul class="gnav__row">
-        <li class="gnav__item_home">
-          <a href="<?php echo $base_url; ?>/">home</a>
-        </li>
-        <li class="gnav__item_sample">
-          <a href="<?php echo $base_url; ?>/_sample/">sample</a>
-        </li>
-        <li class="gnav__item_layout">
-          <a href="<?php echo $base_url; ?>/_layout/">layout</a>
+      <ul class="gnav__row"　data-scroll-scope>
+        <li class="gnav__item">
+          <a href="<?php echo $base_url ?>/" class="gnav__link home">home</a>
         </li>
         <li class="gnav__item">
-          <a href="#">menu</a>
+          <a href="<?php echo $base_url ?>/_sample/" class="gnav__link _sample">sample</a>
         </li>
         <li class="gnav__item">
-          <a href="#">menu</a>
+          <a href="<?php echo $base_url ?>/_layout/" class="gnav__link _layout">layout</a>
         </li>
-        <li class="gnav__item_contact">
-          <a href="#">contact</a>
+        <li class="gnav__item">
+          <a href="<?php echo $base_url; ?>/_styleguide/" target="_blank" class="gnav__link _styleguide u-icon__link">styleguide</a>
+        </li>
+        <li class="gnav__item gnav-deep">
+          <a href="#" class="gnav__link">menu</a>
+
+          <nav class="gnav-deep__nav">
+            <ul class="gnav-deep__row">
+              <li class="gnav-deep__item">
+                <a href="<?php echo $base_url; ?>" class="gnav-deep__link">dummy</a>
+              </li>
+              <li class="gnav-deep__item">
+                <a href="<?php echo $base_url; ?>" class="gnav-deep__link">dummy</a>
+              </li>
+              <li class="gnav-deep__item">
+                <a href="<?php echo $base_url; ?>" class="gnav-deep__link">dummy</a>
+              </li>
+            </ul>
+          </nav>
+
+        </li>
+        <li class="gnav__item gnav-deep">
+          <a href="#" class="gnav__link">menu</a>
+
+          <nav class="gnav-deep__nav">
+            <ul class="gnav-deep__row">
+              <li class="gnav-deep__item">
+                <a href="<?php echo $base_url; ?>" class="gnav-deep__link">dummy</a>
+              </li>
+              <li class="gnav-deep__item">
+                <a href="<?php echo $base_url; ?>" class="gnav-deep__link">dummy</a>
+              </li>
+              <li class="gnav-deep__item">
+                <a href="<?php echo $base_url; ?>" class="gnav-deep__link">dummy</a>
+              </li>
+              <li class="gnav-deep__item">
+                <a href="<?php echo $base_url; ?>" class="gnav-deep__link">dummy</a>
+              </li>
+              <li class="gnav-deep__item">
+                <a href="<?php echo $base_url; ?>" class="gnav-deep__link">dummy</a>
+              </li>
+              <li class="gnav-deep__item">
+                <a href="<?php echo $base_url; ?>" class="gnav-deep__link">dummy</a>
+              </li>
+              <li class="gnav-deep__item">
+                <a href="<?php echo $base_url; ?>" class="gnav-deep__link">dummy</a>
+              </li>
+              <li class="gnav-deep__item">
+                <a href="<?php echo $base_url; ?>" class="gnav-deep__link">dummy</a>
+              </li>
+              <li class="gnav-deep__item">
+                <a href="<?php echo $base_url; ?>" class="gnav-deep__link">dummy</a>
+              </li>
+              <li class="gnav-deep__item">
+                <a href="<?php echo $base_url; ?>" class="gnav-deep__link">dummy</a>
+              </li>
+              <li class="gnav-deep__item">
+                <a href="<?php echo $base_url; ?>" class="gnav-deep__link">dummy</a>
+              </li>
+              <li class="gnav-deep__item">
+                <a href="<?php echo $base_url; ?>" class="gnav-deep__link">dummy</a>
+              </li>
+            </ul>
+          </nav>
+
+        </li>
+        <li class="gnav__item">
+          <a href="#" class="gnav__link contact">contact</a>
         </li>
       </ul>
     </nav>
