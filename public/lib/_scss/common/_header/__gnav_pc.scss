@@ -20,8 +20,7 @@
       color: #fff;
     }
     @each $class in home,contact,_sample,_layout,_styleguide {
-      &_#{$class}{
-        @extend #{$link};
+      &.#{$class}{
         body.#{$class} & {
           color:$color-brand;
         }

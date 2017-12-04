@@ -21,6 +21,9 @@
   @import "common/_header/__gnav_pc.scss";
   @import "common/_header/__gnav-deep_pc.scss";
 }
+@include max-screen($width-s){
+  @import "common/_header/__gnav_sp.scss";
+}
 
 //メインエリア
 @import "common/_main/__main.scss";

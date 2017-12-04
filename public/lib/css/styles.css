@@ -243,8 +243,8 @@ html, body {
     z-index: 2; }
     @media screen and (max-width: 666px) {
       .header__bg {
-        -webkit-box-shadow: 0 0px 10px rgba(0, 0, 0, 0.25);
-        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.25); } }
+        -webkit-box-shadow: 0 0px 5px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 0px 5px rgba(0, 0, 0, 0.25); } }
   .header__logo {
     position: relative;
     z-index: 2;
@@ -280,7 +280,8 @@ html, body {
     float: right; }
     @media screen and (max-width: 666px) {
       .header__gnav {
-        margin-top: 4px; } }
+        margin-top: 4px;
+        z-index: 1; } }
   .header__menubar {
     margin-top: 4px; }
 
@@ -337,12 +338,12 @@ html, body {
       bottom: 0;
       -webkit-animation: menu-bar02 .75s forwards;
       animation: menu-bar02 .75s forwards; }
-  .menubar.active .menubar__item:nth-of-type(1) {
+  .menubar.js-active .menubar__item:nth-of-type(1) {
     -webkit-animation: active-menu-bar01 .75s forwards;
     animation: active-menu-bar01 .75s forwards; }
-  .menubar.active .menubar__item:nth-of-type(2) {
+  .menubar.js-active .menubar__item:nth-of-type(2) {
     opacity: 0; }
-  .menubar.active .menubar__item:nth-of-type(3) {
+  .menubar.js-active .menubar__item:nth-of-type(3) {
     -webkit-animation: active-menu-bar03 .75s forwards;
     animation: active-menu-bar03 .75s forwards; }
 
@@ -439,7 +440,7 @@ html, body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
-  .gnav__link, .gnav__link_home, .gnav__link_contact, .gnav__link__sample, .gnav__link__layout, .gnav__link__styleguide {
+  .gnav__link {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     display: -webkit-box;
@@ -454,37 +455,27 @@ html, body {
     height: 48px;
     padding: 0 8px;
     text-decoration: none; }
-    .no-js .gnav__link:hover, .no-js .gnav__link_home:hover, .no-js .gnav__link_contact:hover, .no-js .gnav__link__sample:hover, .no-js .gnav__link__layout:hover, .no-js .gnav__link__styleguide:hover,
+    .no-js .gnav__link:hover,
     .no-touchevents .gnav__link:hover,
-    .no-touchevents .gnav__link_home:hover,
-    .no-touchevents .gnav__link_contact:hover,
-    .no-touchevents .gnav__link__sample:hover,
-    .no-touchevents .gnav__link__layout:hover,
-    .no-touchevents .gnav__link__styleguide:hover,
-    .touchevents .gnav__link.touch,
-    .touchevents .touch.gnav__link_home,
-    .touchevents .touch.gnav__link_contact,
-    .touchevents .touch.gnav__link__sample,
-    .touchevents .touch.gnav__link__layout,
-    .touchevents .touch.gnav__link__styleguide {
+    .touchevents .gnav__link.touch {
       -webkit-transition: all .3s;
       transition: all .3s;
       background-color: #CEC089;
       color: #fff; }
-    body.home .gnav__link_home {
+    body.home .gnav__link.home {
       color: #CEC089; }
-    body.contact .gnav__link_contact {
+    body.contact .gnav__link.contact {
       color: #CEC089; }
-    body._sample .gnav__link__sample {
+    body._sample .gnav__link._sample {
       color: #CEC089; }
-    body._layout .gnav__link__layout {
+    body._layout .gnav__link._layout {
       color: #CEC089; }
-    body._styleguide .gnav__link__styleguide {
+    body._styleguide .gnav__link._styleguide {
       color: #CEC089; }
     .gnav__link_contact {
       background-color: #A2324E;
       color: #eee; }
-    .gnav-deep .gnav__link::after, .gnav-deep .gnav__link_home::after, .gnav-deep .gnav__link_contact::after, .gnav-deep .gnav__link__sample::after, .gnav-deep .gnav__link__layout::after, .gnav-deep .gnav__link__styleguide::after {
+    .gnav-deep .gnav__link::after {
       content: "";
       display: inline-block;
       font: normal normal normal 14px/1 FontAwesome;
@@ -495,7 +486,7 @@ html, body {
       margin-left: 4px; }
   .gnav-deep {
     position: relative; }
-    .gnav-deep .gnav__link.js-active, .gnav-deep .js-active.gnav__link_home, .gnav-deep .js-active.gnav__link_contact, .gnav-deep .js-active.gnav__link__sample, .gnav-deep .js-active.gnav__link__layout, .gnav-deep .js-active.gnav__link__styleguide {
+    .gnav-deep .gnav__link.js-active {
       position: relative;
       z-index: 2;
       border-top: 5px solid transparent;
@@ -555,6 +546,75 @@ html, body {
       .touchevents .gnav-deep__link.touch {
         color: #fff;
         background-color: #CEC089; } }
+
+@media screen and (max-width: 666px) {
+  body.js-fixed {
+    position: fixed;
+    overflow: hidden;
+    height: 100%; }
+  .gnav {
+    display: none;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding-left: 70px;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: -1; }
+    .gnav.js-active {
+      display: block; }
+    .gnav__row {
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      height: 100vh;
+      padding-top: 48px;
+      padding-bottom: 80px;
+      -webkit-overflow-scrolling: touch;
+      background-color: #fff;
+      overflow-y: auto; }
+    .gnav__item {
+      background-color: #fff; }
+    .gnav__link {
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      height: 55px;
+      padding: 0 8px;
+      text-decoration: none;
+      border-bottom: 1px solid #eee;
+      line-height: 1.2; }
+      .gnav__link.contact {
+        color: #fff;
+        background-color: #A2324E; }
+  .gnav-deep__row {
+    -webkit-box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.25);
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.25);
+    background-color: #eee; }
+  .gnav-deep__link {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 55px;
+    padding: 0 8px;
+    text-decoration: none;
+    border-top: 1px solid #c8c8c8;
+    line-height: 1.2; }
+    .gnav-deep__link::before {
+      content: '└';
+      margin-right: 8px; } }
 
 .main {
   padding-top: 48px;

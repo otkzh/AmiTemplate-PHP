@@ -1,7 +1,8 @@
 /*
-jquery-deepNav
+deepNav
 site:non(AmiTemplate-Orign)
 */
+
 
 export default function () {
 

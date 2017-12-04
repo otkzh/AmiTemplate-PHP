@@ -1,31 +1,41 @@
 export default function () {
 
+  const body = document.querySelector('body');
+  const gnav = document.querySelector('.gnav');
+  const menubar = document.querySelector('.menubar');
 
-
-  //gnav_bg要素を生成
-  var gnavBg = $('<label class="gnav__bg" style="display:none;"></label>');
-  $('body').append(gnavBg);
-
-  //gnav以外を叩いたときに、クローズするように設定
-  $('.gnav__bg').on('pointerdown', function(e) {
-    alert($(this));
-    $(this).fadeOut();
+  menubar.addEventListener("pointerdown", function(ev) {
+    menubar.classList.toggle('js-active');
+    gnav.classList.toggle('js-active');
+    gnavSlide_in(gnav);
   });
 
-  $('.menubar').on('pointerdown', function(){
-    if(!$(this).hasClass('active')) {
-      $('.menubar').addClass('active');
-      $('.gnav').addClass('active');
-      $('.gnav__bg').fadeIn();
-    } else {
-      $('.menubar').removeClass('active');
-      $('.gnav').removeClass('active');
-      $('.gnav__bg').fadeOut();
-    }
-  });
+  function gnavSlide_in(el){
 
+    const bg = el.animate([
+      {opacity: 0},
+      {opacity: 1}
+    ], {
+      direction: 'alternate',
+      duration: 300,
+      easing: 'ease'
+    });
+    const nav = el.children[0].animate([
+      {opacity: 0,transform:'translate3D(50%,0,0)'},
+      {opacity: 1,transform:'translate3D(0,0,0)'}
+    ], {
+      direction: 'alternate',
+      duration: 300,
+      easing: 'ease'
+    });
 
+    body.style.pointerEvents = "none";
+    bg.play();
+    nav.play();
+    bg.addEventListener('finish', (ev) => {
+      body.style.pointerEvents = "auto";
+    });
 
-
+  };
 
 };

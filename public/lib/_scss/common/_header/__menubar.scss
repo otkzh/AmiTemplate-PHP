@@ -45,7 +45,7 @@
 			animation: menu-bar02 .75s forwards;
 		}
 	}
-	&.active {
+	&.js-active {
 		#{$this}__item {
 			&:nth-of-type(1) {
 				animation: active-menu-bar01 .75s forwards;
