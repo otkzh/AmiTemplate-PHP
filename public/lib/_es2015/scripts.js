@@ -102,6 +102,11 @@ if($('body._web-animations').length){
   webAnimations_config.sample1();
 };
 
+import * as animations_config from './base/_web-animations/__sample.js';
+if($('body._animations').length){
+  animations_config.sample1();
+};
+
 import * as mutationObserver_config from './base/_mutation-observer/__config.js';
 if($('body._mutation-observer').length){
   mutationObserver_config.caniuse();
