@@ -25,8 +25,42 @@ include ($inc_path."/lib/inc/header.php");
 
     <div class="main__conts conts">
 
-      <div class="dot"></div>
+      <style>
+      .box{
+        display: inline-block;
+        background-color: #eee;
+        height: 200px;
+        width: 200px;
+        margin: 8px;
+      }
+      .box2{
+        position: relative;
+        background-color: #eee;
+        height: 500px;
+        width: 500px;
+        margin: 8px;
+        overflow: hidden;
+      }
+      </style>
 
+      <div class="box" id="sample-x">
+        <div class="dot"></div>
+      </div>
+
+			<div class="box" id="sample-y">
+        <div class="dot"></div>
+      </div>
+
+      <div class="box" id="sample-xy">
+        <div class="dot"></div>
+      </div>
+
+      <div class="box" id="sample-r">
+        <div class="dot"></div>
+      </div>
+
+      <div class="box2" id="sample-test">
+      </div>
 
     </div>
   </article>
