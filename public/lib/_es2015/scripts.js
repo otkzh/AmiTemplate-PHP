@@ -96,10 +96,16 @@ if($('body._intersection-observer').length){
 };
 
 import * as webAnimations_config from './base/_web-animations/__config.js';
+import * as animations_config from './base/_web-animations/__sample.js';
 if($('body._web-animations').length){
   webAnimations_config.caniuse();
   webAnimations_config.caniuse_polyfill();
   webAnimations_config.sample1();
+  animations_config.sampleX();
+	animations_config.sampleY();
+	animations_config.sampleXY();
+	animations_config.sampleR();
+  animations_config.sampleTest()
 };
 
 import * as mutationObserver_config from './base/_mutation-observer/__config.js';

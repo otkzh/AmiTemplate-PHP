@@ -45,8 +45,8 @@ include ($inc_path."/lib/inc/header.php");
         </style>
         <div class="box" id="caniuse_polyfill">box</div>
         <div class="u-btn">
-        <label class="u-btn__item_s" id="caniuse_polyfill__btn_play">再生</label>
-        <label class="u-btn__item_s" id="caniuse_polyfill__btn_pause">停止</label>
+          <label class="u-btn__item_s" id="caniuse_polyfill__btn_play">再生</label>
+          <label class="u-btn__item_s" id="caniuse_polyfill__btn_pause">停止</label>
         </div>
       </section>
 
@@ -57,6 +57,47 @@ include ($inc_path."/lib/inc/header.php");
         <p>使い方は<a href="http://defghi1977.html.xdomain.jp/tech/webanim/webanim.htm" target="_blank" class="u-icon__link">こちら</a>が非常にわかりやすい。</p>
 
         <label class="box" id="sample1">クリックすると動くよ</label>
+
+        <h3 class="u-ttl_m">点の動き</h3>
+
+
+        <style>
+        .box2{
+          background-color: #eee;
+          height: 200px;
+          max-width: 500px;
+          width: 100%;
+          margin-bottom: 8px;
+        }
+        .box3{
+          position: relative;
+          background-color: #eee;
+          height: 500px;
+          max-width: 500px;
+          width: 100%;
+          overflow: hidden;
+        }
+        </style>
+
+        <div class="box2" id="sample-x">
+          <div class="dot"></div>
+        </div>
+
+        <div class="box2" id="sample-y">
+          <div class="dot"></div>
+        </div>
+
+        <div class="box2" id="sample-xy">
+          <div class="dot"></div>
+        </div>
+
+        <div class="box2" id="sample-r">
+          <div class="dot"></div>
+        </div>
+
+        <h4 class="u-ttl_s">JavaScriptだとランダムがつかえるよね。</h4>
+        <div class="box3" id="sample-test">
+        </div>
 
       </section>
 
