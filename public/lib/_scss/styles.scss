@@ -16,7 +16,7 @@
 
 //common
 @import "common/_header/__layout.scss";
-@import "common/_header/__menubar.scss";
+@import "common/_header/__menubar.scss";/*
 @include min-screen($width-s + 1px){
   @import "common/_header/__gnav_pc.scss";
   @import "common/_header/__gnav-deep_pc.scss";
@@ -71,4 +71,4 @@
 @import "common/_layout/__column.scss";
 
 //ページ個別
-@import "page/_home/__main-v.scss";
+@import "page/_home/__main-v.scss"; */

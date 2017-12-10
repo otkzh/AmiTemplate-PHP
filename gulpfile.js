@@ -28,9 +28,15 @@ var watch = require('gulp-watch');
 var sass = require('gulp-sass');
 var sassImage = require('gulp-sass-image');
 var autoprefixer = require('gulp-autoprefixer');
-var sourcemaps = require("gulp-sourcemaps");
 var cssmin = require('gulp-cssmin');
 var aigis = require("gulp-aigis");
+
+var postcss    = require('gulp-postcss');
+var sourcemaps = require('gulp-sourcemaps');
+var postCSS_InlineComment = require('postcss-inline-comment');
+var syntax = require('postcss-scss');
+var atImport = require("postcss-import")
+
 
 //html php
 var htmlbeautify = require('gulp-html-beautify');
@@ -131,18 +137,36 @@ gulp.task("doc", function() {
 });
 
 //scssをcssへ変換
+
+var vars   = require('postcss-simple-vars')
+
 gulp.task('css', function () {
-  return gulp.src(paths.scss + '/**/*.scss')
+  return gulp.src(paths.scss + '/**/styles.scss')
   .pipe(plumber(plumberErrorHandler))
   .pipe(sourcemaps.init())
-  .pipe(sass.sync().on('error', sass.logError))
-  .pipe(autoprefixer({
-    browsers: ['last 2 versions', 'android >= 4.4', 'IE 11'],
-    cascade: false,
-  }))
+  .pipe(postcss([
+
+    atImport(),
+    vars()
+    //postCSS_InlineComment()
+    //cssnano()
+  ], {syntax: require('postcss-scss')}))
   .pipe(sourcemaps.write('./'))
   .pipe(gulp.dest(paths.css));
 });
+
+// gulp.task('css', function () {
+//   return gulp.src(paths.scss + '/**/*.scss')
+//   .pipe(plumber(plumberErrorHandler))
+//   .pipe(sourcemaps.init())
+//   .pipe(sass.sync().on('error', sass.logError))
+//   .pipe(autoprefixer({
+//     browsers: ['last 2 versions', 'android >= 4.4', 'IE 11'],
+//     cascade: false,
+//   }))
+//   .pipe(sourcemaps.write('./'))
+//   .pipe(gulp.dest(paths.css));
+// });
 
 //cssを圧縮して納品用に書き出し
 gulp.task('css-dest', function () {

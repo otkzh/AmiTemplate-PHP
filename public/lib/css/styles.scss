@@ -1,0 +1,1509 @@
+@import 'https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i';
+//mixin
+//--------------------Color
+//暗い色
+$color-dark: #3C3C48;
+$color-dark-darken: darken($color-dark, 5%);
+$color-dark-lighten: lighten($color-dark, 10%);
+$color-dark-more-lighten: lighten($color-dark, 35%);
+//明るい色
+$color-light: #eee;
+$color-light-darken: darken($color-light, 15%);
+$color-light-lighten: lighten($color-light, 5%);
+//ブランドカラー
+$color-brand:#CEC089;
+$color-brand-darken: darken($color-brand, 15%);
+$color-brand-lighten: lighten($color-brand, 15%);
+//ポイントカラー
+$color-point:#A2324E;
+$color-point-darken: darken($color-point, 15%);
+$color-point-lighten: lighten($color-point, 15%);
+//その他
+$color-etc:#3D2F28;
+$color-etc-darken: darken($color-etc, 5%);
+$color-etc-lighten: lighten($color-etc, 15%);
+//エラーメッセージ
+$color-info:#00529B;
+$color-info-lighten:#bde5f8;
+$color-success:#4F8A10;
+$color-success-lighten:#DFF2BF;
+$color-warning: #9F6000;
+$color-warning-lighten: #FEEFB3;
+$color-error:#D8000C;
+$color-error-lighten:#FFBABA;
+//snsカラー
+$color-line: #1dcd00;
+$color-facebook: #3B5998;
+$color-twitter: #55acee;
+$color-youtube: #EC3324;
+$color-instagram: #CDA98A;
+//--------------------ベースマージンの設定
+$bm: 8px;
+//ベースマージンサイズ 8pxは扱いやすい
+$bm-inner:$bm*3;
+//ブロック内で使うマージン 通常24px
+$bm-outer:$bm*6;
+//ブロック間の大きいマージン 通常48px
+//--------------------横幅の設定
+$width-xs: 320px;
+//iphone5
+$width-s: 666px;
+//LG G3など、5.5incタイプの大型スマートフォン
+$width-m: 970px;
+//ipad縦 ipad横
+$width-l: 1360px;
+//MackBook 12/Pro 13/Surface2/3/Pro/Nexus10
+$width-xl: 1600px;
+//--------------------グローバルナビの設定
+$header-height: $bm-outer;
+//--------------------wrapper
+@mixin wrap {
+  box-sizing: border-box;
+	max-width: $width-l;
+  width: 100%;
+  margin: 0 auto;
+	padding: 0 $bm-inner;
+	@include max-screen($width-s){
+		padding: 0 $bm*2;
+	}
+}
+//bg-img
+@mixin media-mixin {
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 2) ,
+  only screen and (   min--moz-device-pixel-ratio: 2) ,
+  only screen and (     -o-min-device-pixel-ratio: 2/1),
+  only screen and (        min-device-pixel-ratio: 2),
+  only screen and (                min-resolution: 192dpi),
+  only screen and (                min-resolution: 2dppx)
+  {
+    @content;
+  }
+}
+//背景画像
+@mixin img($imgURL, $extension:png, $repeat:repeat) {
+  $img-path:"#{$imgURL}.#{$extension}";
+  $img-path2x:"#{$imgURL}@2x.#{$extension}";
+  $w: image-width($img-path);
+  $h: image-height($img-path);
+  background-image: image-url($img-path);
+  background-size: $w $h;
+  background-repeat: $repeat;
+  @include media-mixin {
+    background-image: image-url($img-path2x);
+  }
+}
+//画像置換
+@mixin bg-img($imgURL, $extension:png,$repeat:repeat) {
+  $img-path:"#{$imgURL}.#{$extension}";
+  $img-path2x:"#{$imgURL}@2x.#{$extension}";
+  $w: image-width($img-path);
+  $h: image-height($img-path);
+  display: block;
+  overflow: hidden;
+  width: $w;
+  height: 0;
+  padding-top: $h;
+  background-image: image-url($img-path);
+  background-size: $w $h;
+  @include media-mixin {
+    background-image: image-url($img-path2x);
+  }
+}
+//cover背景画像
+@mixin cover-img($imgURL, $extension:png,$repeat:no-repeat) {
+    $img-path:"#{$imgURL}.#{$extension}";
+  $img-path2x:"#{$imgURL}@2x.#{$extension}";
+  background-image: image-url($img-path);
+  background-repeat: $repeat;
+  background-size: cover;
+  @include media-mixin{
+    background-image: image-url($img-path2x);
+  }
+}
+//---------------- touch-hover
+@mixin touch-hover() {
+  .no-js &:hover,
+  .no-touchevents &:hover,
+  .touchevents &.touch {
+    @content;
+  }
+}
+// Author: amiten
+// thanks: Rafal Bromirski
+// Licensed under a MIT License
+@mixin screen($resMin, $resMax)
+{
+  @media screen and (min-width: $resMin) and (max-width: $resMax)
+  {
+    @content;
+  }
+}
+@mixin max-screen($res)
+{
+  @media screen and (max-width: $res)
+  {
+    @content;
+  }
+}
+@mixin min-screen($res)
+{
+  @media screen and (min-width: $res)
+  {
+    @content;
+  }
+}
+@mixin screen-height($resMin, $resMax)
+{
+  @media screen and (min-height: $resMin) and (max-height: $resMax)
+  {
+    @content;
+  }
+}
+@mixin max-screen-height($res)
+{
+  @media screen and (max-height: $res)
+  {
+    @content;
+  }
+}
+@mixin min-screen-height($res)
+{
+  @media screen and (min-height: $res)
+  {
+    @content;
+  }
+}
+@mixin hdpi($ratio: 1.3)
+{
+  @media only screen and (-webkit-min-device-pixel-ratio: $ratio),
+  only screen and (min--moz-device-pixel-ratio: $ratio),
+  only screen and (-o-min-device-pixel-ratio: #{$ratio}/1),
+  only screen and (min-resolution: #{round($ratio*96)}dpi),
+  only screen and (min-resolution: #{$ratio}dppx)
+  {
+    @content;
+  }
+}
+@mixin cf{
+	&::after{
+		content:"";
+		display:block;
+		clear:both;
+	}
+}
+//iconフォント
+@mixin icon-font($icon:"\f105") {
+	content: $icon;
+	display: inline-block;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+// =================================================================
+// This file is dynamically generated by gulp-compass-imagehelper
+// Do NOT edit!
+// =================================================================
+// Returns if the image is accessible for these image-helpers
+// Note: Not part of the official compass functions, but still useful
+@function image-exists($image) {
+  @return map-has-key($compass-imagehelper-imagesmap, $image);
+}
+// Returns the width of the image found at the path supplied by $image relative to your project's images directory.
+@function image-width($image) {
+  @if image-exists($image) {
+    $list: map-get($compass-imagehelper-imagesmap, $image);
+    $width: unquote(map-get($list, 'width'));
+    @if ($width and str-length($width) > 0) {
+      @return number($width) * 1px;
+    }
+  }
+  @warn "Image '#{$image}' not found.";
+  @return null;
+}
+// Returns the height of the image found at the path supplied by $image relative to your project's images directory.
+@function image-height($image) {
+  @if image-exists($image) {
+    $list: map-get($compass-imagehelper-imagesmap, $image);
+    $height: unquote(map-get($list, 'height'));
+    @if ($height and str-length($height) > 0) {
+      @return number($height) * 1px;
+    }
+  }
+  @warn "Image '#{$image}' not found.";
+  @return null;
+}
+// Generates a path to an asset found relative to the project's images directory.
+// Passing a true value as the second argument will cause only the path to be returned instead of a url() function
+// The third argument is used to control the cache buster on a per-use basis. When set to false no cache buster will be used.
+// When true a md5-hash of the file is appended to the url. When a string, that value will be used as the cache buster.
+@function image-url($image, $only-path: false, $cache-buster: false) {
+  $result: $compass-imagehelper-path-prefix + $image;
+
+  @if not(image-exists($image)) {
+    @warn "Image '#{$image}' not found.";
+  } @else {
+    @if (type-of($cache-buster) == string) {
+      $result: $result + '?' + $cache-buster;
+    }
+
+    @if ($cache-buster == true) {
+      $list: map-get($compass-imagehelper-imagesmap, $image);
+      $hash: map-get($list, 'hash');
+      $result: $result + '?' + $hash;
+    }
+  }
+
+  $result: quote($result);
+
+  @if ($only-path == false) {
+    $result: url($result);
+  }
+
+  @return $result;
+}
+// Two helper functions for casting string to number by Hugo Giraudel
+// http://hugogiraudel.com/2014/01/15/sass-string-to-number/
+// http://sassmeister.com/gist/9647408
+@function _length($number, $unit) {
+  $strings: 'px' 'cm' 'mm' '%' 'ch' 'pica' 'in' 'em' 'rem' 'pt' 'pc' 'ex' 'vw' 'vh' 'vmin' 'vmax';
+  $units: 1px 1cm 1mm 1% 1ch 1 pica 1in 1em 1rem 1pt 1pc 1ex 1vw 1vh 1vmin 1vmax;
+  $index: index($strings, $unit);
+
+  @if not ($index) {
+    @warn "Unknown unit `#{$unit}`.";
+    @return false;
+  }
+
+  @return $number * nth($units, $index);
+}
+@function number($string) {
+  // Matrices
+  $strings: '0' '1' '2' '3' '4' '5' '6' '7' '8' '9';
+  $numbers: 0 1 2 3 4 5 6 7 8 9;
+
+  // Result
+  $result: 0;
+  $divider: 0;
+  $minus: false;
+
+  // Looping through all characters
+  @for $i from 1 through str-length($string) {
+    $character: str-slice($string, $i, $i);
+    $index: index($strings, $character);
+
+    @if $character == '-' {
+      $minus: true;
+    } @else if $character == '.' {
+      $divider: 1;
+    } @else {
+      @if not ($index) {
+        $result: if($minus, $result * -1, $result);
+        @return _length($result, str-slice($string, $i));
+      }
+
+      $number: nth($numbers, $index);
+
+      @if $divider == 0 {
+        $result: $result * 10;
+      } @else {
+        // Move the decimal dot to the left
+        $divider: $divider * 10;
+        $number: $number / $divider;
+      }
+
+      $result: $result + $number;
+    }
+  }
+
+  @return if($minus, $result * -1, $result);
+}
+$compass-imagehelper-path-prefix: '../img/';
+$compass-imagehelper-imagesmap: (
+  'dummy/bronze.png': (
+    width: '1652',
+    height: '500',
+    hash: '36deeecf6d60735f852f46d557121e2e'
+  ),
+  'dummy/bronze@2x.png': (
+    width: '3303',
+    height: '1000',
+    hash: '2fc8dc4351b44288db984bd9888fdd79'
+  ),
+  'dummy/golden.png': (
+    width: '809',
+    height: '500',
+    hash: '3c68002c058cc548213ee8ab8b7c60b5'
+  ),
+  'dummy/golden@2x.png': (
+    width: '1618',
+    height: '1000',
+    hash: '01d85bcbbe0857b4ba8696c2d8188f5a'
+  ),
+  'dummy/platinum.png': (
+    width: '809',
+    height: '500',
+    hash: '31ca630ac87ffc73405279e1bdd62c91'
+  ),
+  'dummy/platinum@2x.png': (
+    width: '1618',
+    height: '1000',
+    hash: '2ab619b638aaf6bbaf93c18af459ba55'
+  ),
+  'dummy/silver.png': (
+    width: '1207',
+    height: '500',
+    hash: 'f7846278adf83e66de18da9e18925147'
+  ),
+  'dummy/silver@2x.png': (
+    width: '2414',
+    height: '1000',
+    hash: '2e551a414d91512d4c2552dc2e4f00e8'
+  ),
+  'dummy/square.png': (
+    width: '500',
+    height: '500',
+    hash: '03fcff7f8e3d40415556b74cedbc5cfd'
+  ),
+  'dummy/square@2x.png': (
+    width: '1000',
+    height: '1000',
+    hash: 'ab9ee5eadc770eff680bca063cc014f3'
+  ),
+  'dummy/yamato.png': (
+    width: '707',
+    height: '500',
+    hash: '7f0be6a967a903652e79c3d3a945b159'
+  ),
+  'dummy/yamato@2x.png': (
+    width: '1414',
+    height: '1000',
+    hash: '93e43cb8b84cb55a3775f52632285df3'
+  ),
+  'icons/apple-touch-icon.png': (
+    width: '152',
+    height: '152',
+    hash: '86808878396824e717c23a2ec6019549'
+  ),
+  'icons/favicon-16.png': (
+    width: '16',
+    height: '16',
+    hash: 'cf99e57566defffc5b2fa93c5a17aa5b'
+  ),
+  'icons/favicon-32.png': (
+    width: '32',
+    height: '32',
+    hash: '7b44043892edf11f4633022a8cf02aab'
+  ),
+  'icons/favicon-48.png': (
+    width: '48',
+    height: '48',
+    hash: 'a15e09ad89c9405d3df08721a4d100a5'
+  ),
+  'thum/home.png': (
+    width: '600',
+    height: '315',
+    hash: '0d9a45c94c7151100de0e733291a7b30'
+  ),
+  'thum/home@2x.png': (
+    width: '1200',
+    height: '630',
+    hash: '7e34b8e200e20f9534e1de39df1ec92c'
+  ),
+  'common/header/logo.png': (
+    width: '142',
+    height: '26',
+    hash: 'b97ecf71d44349c0268f00f71225d0fd'
+  ),
+  'common/header/logo@2x.png': (
+    width: '283',
+    height: '52',
+    hash: '23de48e16f2ec83af2d2160f4920a81e'
+  ),
+);
+//base
+/* 
+html5doctor.com Reset Stylesheet v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com 
+Twitter: @rich_clark
+*/
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+body {
+  line-height: 1;
+}
+main,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+del {
+  text-decoration: line-through;
+}
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
+}
+input,
+select {
+  vertical-align: middle;
+}
+img {
+  vertical-align: top;
+  font-size: 0;
+  line-height: 0;
+}
+//ベースフォント設定
+//Author: Masato Amishiro
+//--------------------- web fonts ---------------------//
+//@import "__font-family/_noto-sans.scss";
+//  Font Awesome 4.3.0 by @davegandy - http://fontawesome.io - @fontawesome
+//  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+// Variables
+// --------------------------
+$fa-font-path:        "../fonts" !default;
+$fa-font-size-base:   14px !default;
+//$fa-font-path:        "//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts" !default; // for referencing Bootstrap CDN font files directly
+$fa-css-prefix:       fa !default;
+$fa-version:          "4.3.0" !default;
+$fa-border-color:     #eee !default;
+$fa-inverse:          #fff !default;
+$fa-li-width:         (30em / 14) !default;
+$fa-var-adjust: "\f042";
+$fa-var-adn: "\f170";
+$fa-var-align-center: "\f037";
+$fa-var-align-justify: "\f039";
+$fa-var-align-left: "\f036";
+$fa-var-align-right: "\f038";
+$fa-var-ambulance: "\f0f9";
+$fa-var-anchor: "\f13d";
+$fa-var-android: "\f17b";
+$fa-var-angellist: "\f209";
+$fa-var-angle-double-down: "\f103";
+$fa-var-angle-double-left: "\f100";
+$fa-var-angle-double-right: "\f101";
+$fa-var-angle-double-up: "\f102";
+$fa-var-angle-down: "\f107";
+$fa-var-angle-left: "\f104";
+$fa-var-angle-right: "\f105";
+$fa-var-angle-up: "\f106";
+$fa-var-apple: "\f179";
+$fa-var-archive: "\f187";
+$fa-var-area-chart: "\f1fe";
+$fa-var-arrow-circle-down: "\f0ab";
+$fa-var-arrow-circle-left: "\f0a8";
+$fa-var-arrow-circle-o-down: "\f01a";
+$fa-var-arrow-circle-o-left: "\f190";
+$fa-var-arrow-circle-o-right: "\f18e";
+$fa-var-arrow-circle-o-up: "\f01b";
+$fa-var-arrow-circle-right: "\f0a9";
+$fa-var-arrow-circle-up: "\f0aa";
+$fa-var-arrow-down: "\f063";
+$fa-var-arrow-left: "\f060";
+$fa-var-arrow-right: "\f061";
+$fa-var-arrow-up: "\f062";
+$fa-var-arrows: "\f047";
+$fa-var-arrows-alt: "\f0b2";
+$fa-var-arrows-h: "\f07e";
+$fa-var-arrows-v: "\f07d";
+$fa-var-asterisk: "\f069";
+$fa-var-at: "\f1fa";
+$fa-var-automobile: "\f1b9";
+$fa-var-backward: "\f04a";
+$fa-var-ban: "\f05e";
+$fa-var-bank: "\f19c";
+$fa-var-bar-chart: "\f080";
+$fa-var-bar-chart-o: "\f080";
+$fa-var-barcode: "\f02a";
+$fa-var-bars: "\f0c9";
+$fa-var-bed: "\f236";
+$fa-var-beer: "\f0fc";
+$fa-var-behance: "\f1b4";
+$fa-var-behance-square: "\f1b5";
+$fa-var-bell: "\f0f3";
+$fa-var-bell-o: "\f0a2";
+$fa-var-bell-slash: "\f1f6";
+$fa-var-bell-slash-o: "\f1f7";
+$fa-var-bicycle: "\f206";
+$fa-var-binoculars: "\f1e5";
+$fa-var-birthday-cake: "\f1fd";
+$fa-var-bitbucket: "\f171";
+$fa-var-bitbucket-square: "\f172";
+$fa-var-bitcoin: "\f15a";
+$fa-var-bold: "\f032";
+$fa-var-bolt: "\f0e7";
+$fa-var-bomb: "\f1e2";
+$fa-var-book: "\f02d";
+$fa-var-bookmark: "\f02e";
+$fa-var-bookmark-o: "\f097";
+$fa-var-briefcase: "\f0b1";
+$fa-var-btc: "\f15a";
+$fa-var-bug: "\f188";
+$fa-var-building: "\f1ad";
+$fa-var-building-o: "\f0f7";
+$fa-var-bullhorn: "\f0a1";
+$fa-var-bullseye: "\f140";
+$fa-var-bus: "\f207";
+$fa-var-buysellads: "\f20d";
+$fa-var-cab: "\f1ba";
+$fa-var-calculator: "\f1ec";
+$fa-var-calendar: "\f073";
+$fa-var-calendar-o: "\f133";
+$fa-var-camera: "\f030";
+$fa-var-camera-retro: "\f083";
+$fa-var-car: "\f1b9";
+$fa-var-caret-down: "\f0d7";
+$fa-var-caret-left: "\f0d9";
+$fa-var-caret-right: "\f0da";
+$fa-var-caret-square-o-down: "\f150";
+$fa-var-caret-square-o-left: "\f191";
+$fa-var-caret-square-o-right: "\f152";
+$fa-var-caret-square-o-up: "\f151";
+$fa-var-caret-up: "\f0d8";
+$fa-var-cart-arrow-down: "\f218";
+$fa-var-cart-plus: "\f217";
+$fa-var-cc: "\f20a";
+$fa-var-cc-amex: "\f1f3";
+$fa-var-cc-discover: "\f1f2";
+$fa-var-cc-mastercard: "\f1f1";
+$fa-var-cc-paypal: "\f1f4";
+$fa-var-cc-stripe: "\f1f5";
+$fa-var-cc-visa: "\f1f0";
+$fa-var-certificate: "\f0a3";
+$fa-var-chain: "\f0c1";
+$fa-var-chain-broken: "\f127";
+$fa-var-check: "\f00c";
+$fa-var-check-circle: "\f058";
+$fa-var-check-circle-o: "\f05d";
+$fa-var-check-square: "\f14a";
+$fa-var-check-square-o: "\f046";
+$fa-var-chevron-circle-down: "\f13a";
+$fa-var-chevron-circle-left: "\f137";
+$fa-var-chevron-circle-right: "\f138";
+$fa-var-chevron-circle-up: "\f139";
+$fa-var-chevron-down: "\f078";
+$fa-var-chevron-left: "\f053";
+$fa-var-chevron-right: "\f054";
+$fa-var-chevron-up: "\f077";
+$fa-var-child: "\f1ae";
+$fa-var-circle: "\f111";
+$fa-var-circle-o: "\f10c";
+$fa-var-circle-o-notch: "\f1ce";
+$fa-var-circle-thin: "\f1db";
+$fa-var-clipboard: "\f0ea";
+$fa-var-clock-o: "\f017";
+$fa-var-close: "\f00d";
+$fa-var-cloud: "\f0c2";
+$fa-var-cloud-download: "\f0ed";
+$fa-var-cloud-upload: "\f0ee";
+$fa-var-cny: "\f157";
+$fa-var-code: "\f121";
+$fa-var-code-fork: "\f126";
+$fa-var-codepen: "\f1cb";
+$fa-var-coffee: "\f0f4";
+$fa-var-cog: "\f013";
+$fa-var-cogs: "\f085";
+$fa-var-columns: "\f0db";
+$fa-var-comment: "\f075";
+$fa-var-comment-o: "\f0e5";
+$fa-var-comments: "\f086";
+$fa-var-comments-o: "\f0e6";
+$fa-var-compass: "\f14e";
+$fa-var-compress: "\f066";
+$fa-var-connectdevelop: "\f20e";
+$fa-var-copy: "\f0c5";
+$fa-var-copyright: "\f1f9";
+$fa-var-credit-card: "\f09d";
+$fa-var-crop: "\f125";
+$fa-var-crosshairs: "\f05b";
+$fa-var-css3: "\f13c";
+$fa-var-cube: "\f1b2";
+$fa-var-cubes: "\f1b3";
+$fa-var-cut: "\f0c4";
+$fa-var-cutlery: "\f0f5";
+$fa-var-dashboard: "\f0e4";
+$fa-var-dashcube: "\f210";
+$fa-var-database: "\f1c0";
+$fa-var-dedent: "\f03b";
+$fa-var-delicious: "\f1a5";
+$fa-var-desktop: "\f108";
+$fa-var-deviantart: "\f1bd";
+$fa-var-diamond: "\f219";
+$fa-var-digg: "\f1a6";
+$fa-var-dollar: "\f155";
+$fa-var-dot-circle-o: "\f192";
+$fa-var-download: "\f019";
+$fa-var-dribbble: "\f17d";
+$fa-var-dropbox: "\f16b";
+$fa-var-drupal: "\f1a9";
+$fa-var-edit: "\f044";
+$fa-var-eject: "\f052";
+$fa-var-ellipsis-h: "\f141";
+$fa-var-ellipsis-v: "\f142";
+$fa-var-empire: "\f1d1";
+$fa-var-envelope: "\f0e0";
+$fa-var-envelope-o: "\f003";
+$fa-var-envelope-square: "\f199";
+$fa-var-eraser: "\f12d";
+$fa-var-eur: "\f153";
+$fa-var-euro: "\f153";
+$fa-var-exchange: "\f0ec";
+$fa-var-exclamation: "\f12a";
+$fa-var-exclamation-circle: "\f06a";
+$fa-var-exclamation-triangle: "\f071";
+$fa-var-expand: "\f065";
+$fa-var-external-link: "\f08e";
+$fa-var-external-link-square: "\f14c";
+$fa-var-eye: "\f06e";
+$fa-var-eye-slash: "\f070";
+$fa-var-eyedropper: "\f1fb";
+$fa-var-facebook: "\f09a";
+$fa-var-facebook-f: "\f09a";
+$fa-var-facebook-official: "\f230";
+$fa-var-facebook-square: "\f082";
+$fa-var-fast-backward: "\f049";
+$fa-var-fast-forward: "\f050";
+$fa-var-fax: "\f1ac";
+$fa-var-female: "\f182";
+$fa-var-fighter-jet: "\f0fb";
+$fa-var-file: "\f15b";
+$fa-var-file-archive-o: "\f1c6";
+$fa-var-file-audio-o: "\f1c7";
+$fa-var-file-code-o: "\f1c9";
+$fa-var-file-excel-o: "\f1c3";
+$fa-var-file-image-o: "\f1c5";
+$fa-var-file-movie-o: "\f1c8";
+$fa-var-file-o: "\f016";
+$fa-var-file-pdf-o: "\f1c1";
+$fa-var-file-photo-o: "\f1c5";
+$fa-var-file-picture-o: "\f1c5";
+$fa-var-file-powerpoint-o: "\f1c4";
+$fa-var-file-sound-o: "\f1c7";
+$fa-var-file-text: "\f15c";
+$fa-var-file-text-o: "\f0f6";
+$fa-var-file-video-o: "\f1c8";
+$fa-var-file-word-o: "\f1c2";
+$fa-var-file-zip-o: "\f1c6";
+$fa-var-files-o: "\f0c5";
+$fa-var-film: "\f008";
+$fa-var-filter: "\f0b0";
+$fa-var-fire: "\f06d";
+$fa-var-fire-extinguisher: "\f134";
+$fa-var-flag: "\f024";
+$fa-var-flag-checkered: "\f11e";
+$fa-var-flag-o: "\f11d";
+$fa-var-flash: "\f0e7";
+$fa-var-flask: "\f0c3";
+$fa-var-flickr: "\f16e";
+$fa-var-floppy-o: "\f0c7";
+$fa-var-folder: "\f07b";
+$fa-var-folder-o: "\f114";
+$fa-var-folder-open: "\f07c";
+$fa-var-folder-open-o: "\f115";
+$fa-var-font: "\f031";
+$fa-var-forumbee: "\f211";
+$fa-var-forward: "\f04e";
+$fa-var-foursquare: "\f180";
+$fa-var-frown-o: "\f119";
+$fa-var-futbol-o: "\f1e3";
+$fa-var-gamepad: "\f11b";
+$fa-var-gavel: "\f0e3";
+$fa-var-gbp: "\f154";
+$fa-var-ge: "\f1d1";
+$fa-var-gear: "\f013";
+$fa-var-gears: "\f085";
+$fa-var-genderless: "\f1db";
+$fa-var-gift: "\f06b";
+$fa-var-git: "\f1d3";
+$fa-var-git-square: "\f1d2";
+$fa-var-github: "\f09b";
+$fa-var-github-alt: "\f113";
+$fa-var-github-square: "\f092";
+$fa-var-gittip: "\f184";
+$fa-var-glass: "\f000";
+$fa-var-globe: "\f0ac";
+$fa-var-google: "\f1a0";
+$fa-var-google-plus: "\f0d5";
+$fa-var-google-plus-square: "\f0d4";
+$fa-var-google-wallet: "\f1ee";
+$fa-var-graduation-cap: "\f19d";
+$fa-var-gratipay: "\f184";
+$fa-var-group: "\f0c0";
+$fa-var-h-square: "\f0fd";
+$fa-var-hacker-news: "\f1d4";
+$fa-var-hand-o-down: "\f0a7";
+$fa-var-hand-o-left: "\f0a5";
+$fa-var-hand-o-right: "\f0a4";
+$fa-var-hand-o-up: "\f0a6";
+$fa-var-hdd-o: "\f0a0";
+$fa-var-header: "\f1dc";
+$fa-var-headphones: "\f025";
+$fa-var-heart: "\f004";
+$fa-var-heart-o: "\f08a";
+$fa-var-heartbeat: "\f21e";
+$fa-var-history: "\f1da";
+$fa-var-home: "\f015";
+$fa-var-hospital-o: "\f0f8";
+$fa-var-hotel: "\f236";
+$fa-var-html5: "\f13b";
+$fa-var-ils: "\f20b";
+$fa-var-image: "\f03e";
+$fa-var-inbox: "\f01c";
+$fa-var-indent: "\f03c";
+$fa-var-info: "\f129";
+$fa-var-info-circle: "\f05a";
+$fa-var-inr: "\f156";
+$fa-var-instagram: "\f16d";
+$fa-var-institution: "\f19c";
+$fa-var-ioxhost: "\f208";
+$fa-var-italic: "\f033";
+$fa-var-joomla: "\f1aa";
+$fa-var-jpy: "\f157";
+$fa-var-jsfiddle: "\f1cc";
+$fa-var-key: "\f084";
+$fa-var-keyboard-o: "\f11c";
+$fa-var-krw: "\f159";
+$fa-var-language: "\f1ab";
+$fa-var-laptop: "\f109";
+$fa-var-lastfm: "\f202";
+$fa-var-lastfm-square: "\f203";
+$fa-var-leaf: "\f06c";
+$fa-var-leanpub: "\f212";
+$fa-var-legal: "\f0e3";
+$fa-var-lemon-o: "\f094";
+$fa-var-level-down: "\f149";
+$fa-var-level-up: "\f148";
+$fa-var-life-bouy: "\f1cd";
+$fa-var-life-buoy: "\f1cd";
+$fa-var-life-ring: "\f1cd";
+$fa-var-life-saver: "\f1cd";
+$fa-var-lightbulb-o: "\f0eb";
+$fa-var-line-chart: "\f201";
+$fa-var-link: "\f0c1";
+$fa-var-linkedin: "\f0e1";
+$fa-var-linkedin-square: "\f08c";
+$fa-var-linux: "\f17c";
+$fa-var-list: "\f03a";
+$fa-var-list-alt: "\f022";
+$fa-var-list-ol: "\f0cb";
+$fa-var-list-ul: "\f0ca";
+$fa-var-location-arrow: "\f124";
+$fa-var-lock: "\f023";
+$fa-var-long-arrow-down: "\f175";
+$fa-var-long-arrow-left: "\f177";
+$fa-var-long-arrow-right: "\f178";
+$fa-var-long-arrow-up: "\f176";
+$fa-var-magic: "\f0d0";
+$fa-var-magnet: "\f076";
+$fa-var-mail-forward: "\f064";
+$fa-var-mail-reply: "\f112";
+$fa-var-mail-reply-all: "\f122";
+$fa-var-male: "\f183";
+$fa-var-map-marker: "\f041";
+$fa-var-mars: "\f222";
+$fa-var-mars-double: "\f227";
+$fa-var-mars-stroke: "\f229";
+$fa-var-mars-stroke-h: "\f22b";
+$fa-var-mars-stroke-v: "\f22a";
+$fa-var-maxcdn: "\f136";
+$fa-var-meanpath: "\f20c";
+$fa-var-medium: "\f23a";
+$fa-var-medkit: "\f0fa";
+$fa-var-meh-o: "\f11a";
+$fa-var-mercury: "\f223";
+$fa-var-microphone: "\f130";
+$fa-var-microphone-slash: "\f131";
+$fa-var-minus: "\f068";
+$fa-var-minus-circle: "\f056";
+$fa-var-minus-square: "\f146";
+$fa-var-minus-square-o: "\f147";
+$fa-var-mobile: "\f10b";
+$fa-var-mobile-phone: "\f10b";
+$fa-var-money: "\f0d6";
+$fa-var-moon-o: "\f186";
+$fa-var-mortar-board: "\f19d";
+$fa-var-motorcycle: "\f21c";
+$fa-var-music: "\f001";
+$fa-var-navicon: "\f0c9";
+$fa-var-neuter: "\f22c";
+$fa-var-newspaper-o: "\f1ea";
+$fa-var-openid: "\f19b";
+$fa-var-outdent: "\f03b";
+$fa-var-pagelines: "\f18c";
+$fa-var-paint-brush: "\f1fc";
+$fa-var-paper-plane: "\f1d8";
+$fa-var-paper-plane-o: "\f1d9";
+$fa-var-paperclip: "\f0c6";
+$fa-var-paragraph: "\f1dd";
+$fa-var-paste: "\f0ea";
+$fa-var-pause: "\f04c";
+$fa-var-paw: "\f1b0";
+$fa-var-paypal: "\f1ed";
+$fa-var-pencil: "\f040";
+$fa-var-pencil-square: "\f14b";
+$fa-var-pencil-square-o: "\f044";
+$fa-var-phone: "\f095";
+$fa-var-phone-square: "\f098";
+$fa-var-photo: "\f03e";
+$fa-var-picture-o: "\f03e";
+$fa-var-pie-chart: "\f200";
+$fa-var-pied-piper: "\f1a7";
+$fa-var-pied-piper-alt: "\f1a8";
+$fa-var-pinterest: "\f0d2";
+$fa-var-pinterest-p: "\f231";
+$fa-var-pinterest-square: "\f0d3";
+$fa-var-plane: "\f072";
+$fa-var-play: "\f04b";
+$fa-var-play-circle: "\f144";
+$fa-var-play-circle-o: "\f01d";
+$fa-var-plug: "\f1e6";
+$fa-var-plus: "\f067";
+$fa-var-plus-circle: "\f055";
+$fa-var-plus-square: "\f0fe";
+$fa-var-plus-square-o: "\f196";
+$fa-var-power-off: "\f011";
+$fa-var-print: "\f02f";
+$fa-var-puzzle-piece: "\f12e";
+$fa-var-qq: "\f1d6";
+$fa-var-qrcode: "\f029";
+$fa-var-question: "\f128";
+$fa-var-question-circle: "\f059";
+$fa-var-quote-left: "\f10d";
+$fa-var-quote-right: "\f10e";
+$fa-var-ra: "\f1d0";
+$fa-var-random: "\f074";
+$fa-var-rebel: "\f1d0";
+$fa-var-recycle: "\f1b8";
+$fa-var-reddit: "\f1a1";
+$fa-var-reddit-square: "\f1a2";
+$fa-var-refresh: "\f021";
+$fa-var-remove: "\f00d";
+$fa-var-renren: "\f18b";
+$fa-var-reorder: "\f0c9";
+$fa-var-repeat: "\f01e";
+$fa-var-reply: "\f112";
+$fa-var-reply-all: "\f122";
+$fa-var-retweet: "\f079";
+$fa-var-rmb: "\f157";
+$fa-var-road: "\f018";
+$fa-var-rocket: "\f135";
+$fa-var-rotate-left: "\f0e2";
+$fa-var-rotate-right: "\f01e";
+$fa-var-rouble: "\f158";
+$fa-var-rss: "\f09e";
+$fa-var-rss-square: "\f143";
+$fa-var-rub: "\f158";
+$fa-var-ruble: "\f158";
+$fa-var-rupee: "\f156";
+$fa-var-save: "\f0c7";
+$fa-var-scissors: "\f0c4";
+$fa-var-search: "\f002";
+$fa-var-search-minus: "\f010";
+$fa-var-search-plus: "\f00e";
+$fa-var-sellsy: "\f213";
+$fa-var-send: "\f1d8";
+$fa-var-send-o: "\f1d9";
+$fa-var-server: "\f233";
+$fa-var-share: "\f064";
+$fa-var-share-alt: "\f1e0";
+$fa-var-share-alt-square: "\f1e1";
+$fa-var-share-square: "\f14d";
+$fa-var-share-square-o: "\f045";
+$fa-var-shekel: "\f20b";
+$fa-var-sheqel: "\f20b";
+$fa-var-shield: "\f132";
+$fa-var-ship: "\f21a";
+$fa-var-shirtsinbulk: "\f214";
+$fa-var-shopping-cart: "\f07a";
+$fa-var-sign-in: "\f090";
+$fa-var-sign-out: "\f08b";
+$fa-var-signal: "\f012";
+$fa-var-simplybuilt: "\f215";
+$fa-var-sitemap: "\f0e8";
+$fa-var-skyatlas: "\f216";
+$fa-var-skype: "\f17e";
+$fa-var-slack: "\f198";
+$fa-var-sliders: "\f1de";
+$fa-var-slideshare: "\f1e7";
+$fa-var-smile-o: "\f118";
+$fa-var-soccer-ball-o: "\f1e3";
+$fa-var-sort: "\f0dc";
+$fa-var-sort-alpha-asc: "\f15d";
+$fa-var-sort-alpha-desc: "\f15e";
+$fa-var-sort-amount-asc: "\f160";
+$fa-var-sort-amount-desc: "\f161";
+$fa-var-sort-asc: "\f0de";
+$fa-var-sort-desc: "\f0dd";
+$fa-var-sort-down: "\f0dd";
+$fa-var-sort-numeric-asc: "\f162";
+$fa-var-sort-numeric-desc: "\f163";
+$fa-var-sort-up: "\f0de";
+$fa-var-soundcloud: "\f1be";
+$fa-var-space-shuttle: "\f197";
+$fa-var-spinner: "\f110";
+$fa-var-spoon: "\f1b1";
+$fa-var-spotify: "\f1bc";
+$fa-var-square: "\f0c8";
+$fa-var-square-o: "\f096";
+$fa-var-stack-exchange: "\f18d";
+$fa-var-stack-overflow: "\f16c";
+$fa-var-star: "\f005";
+$fa-var-star-half: "\f089";
+$fa-var-star-half-empty: "\f123";
+$fa-var-star-half-full: "\f123";
+$fa-var-star-half-o: "\f123";
+$fa-var-star-o: "\f006";
+$fa-var-steam: "\f1b6";
+$fa-var-steam-square: "\f1b7";
+$fa-var-step-backward: "\f048";
+$fa-var-step-forward: "\f051";
+$fa-var-stethoscope: "\f0f1";
+$fa-var-stop: "\f04d";
+$fa-var-street-view: "\f21d";
+$fa-var-strikethrough: "\f0cc";
+$fa-var-stumbleupon: "\f1a4";
+$fa-var-stumbleupon-circle: "\f1a3";
+$fa-var-subscript: "\f12c";
+$fa-var-subway: "\f239";
+$fa-var-suitcase: "\f0f2";
+$fa-var-sun-o: "\f185";
+$fa-var-superscript: "\f12b";
+$fa-var-support: "\f1cd";
+$fa-var-table: "\f0ce";
+$fa-var-tablet: "\f10a";
+$fa-var-tachometer: "\f0e4";
+$fa-var-tag: "\f02b";
+$fa-var-tags: "\f02c";
+$fa-var-tasks: "\f0ae";
+$fa-var-taxi: "\f1ba";
+$fa-var-tencent-weibo: "\f1d5";
+$fa-var-terminal: "\f120";
+$fa-var-text-height: "\f034";
+$fa-var-text-width: "\f035";
+$fa-var-th: "\f00a";
+$fa-var-th-large: "\f009";
+$fa-var-th-list: "\f00b";
+$fa-var-thumb-tack: "\f08d";
+$fa-var-thumbs-down: "\f165";
+$fa-var-thumbs-o-down: "\f088";
+$fa-var-thumbs-o-up: "\f087";
+$fa-var-thumbs-up: "\f164";
+$fa-var-ticket: "\f145";
+$fa-var-times: "\f00d";
+$fa-var-times-circle: "\f057";
+$fa-var-times-circle-o: "\f05c";
+$fa-var-tint: "\f043";
+$fa-var-toggle-down: "\f150";
+$fa-var-toggle-left: "\f191";
+$fa-var-toggle-off: "\f204";
+$fa-var-toggle-on: "\f205";
+$fa-var-toggle-right: "\f152";
+$fa-var-toggle-up: "\f151";
+$fa-var-train: "\f238";
+$fa-var-transgender: "\f224";
+$fa-var-transgender-alt: "\f225";
+$fa-var-trash: "\f1f8";
+$fa-var-trash-o: "\f014";
+$fa-var-tree: "\f1bb";
+$fa-var-trello: "\f181";
+$fa-var-trophy: "\f091";
+$fa-var-truck: "\f0d1";
+$fa-var-try: "\f195";
+$fa-var-tty: "\f1e4";
+$fa-var-tumblr: "\f173";
+$fa-var-tumblr-square: "\f174";
+$fa-var-turkish-lira: "\f195";
+$fa-var-twitch: "\f1e8";
+$fa-var-twitter: "\f099";
+$fa-var-twitter-square: "\f081";
+$fa-var-umbrella: "\f0e9";
+$fa-var-underline: "\f0cd";
+$fa-var-undo: "\f0e2";
+$fa-var-university: "\f19c";
+$fa-var-unlink: "\f127";
+$fa-var-unlock: "\f09c";
+$fa-var-unlock-alt: "\f13e";
+$fa-var-unsorted: "\f0dc";
+$fa-var-upload: "\f093";
+$fa-var-usd: "\f155";
+$fa-var-user: "\f007";
+$fa-var-user-md: "\f0f0";
+$fa-var-user-plus: "\f234";
+$fa-var-user-secret: "\f21b";
+$fa-var-user-times: "\f235";
+$fa-var-users: "\f0c0";
+$fa-var-venus: "\f221";
+$fa-var-venus-double: "\f226";
+$fa-var-venus-mars: "\f228";
+$fa-var-viacoin: "\f237";
+$fa-var-video-camera: "\f03d";
+$fa-var-vimeo-square: "\f194";
+$fa-var-vine: "\f1ca";
+$fa-var-vk: "\f189";
+$fa-var-volume-down: "\f027";
+$fa-var-volume-off: "\f026";
+$fa-var-volume-up: "\f028";
+$fa-var-warning: "\f071";
+$fa-var-wechat: "\f1d7";
+$fa-var-weibo: "\f18a";
+$fa-var-weixin: "\f1d7";
+$fa-var-whatsapp: "\f232";
+$fa-var-wheelchair: "\f193";
+$fa-var-wifi: "\f1eb";
+$fa-var-windows: "\f17a";
+$fa-var-won: "\f159";
+$fa-var-wordpress: "\f19a";
+$fa-var-wrench: "\f0ad";
+$fa-var-xing: "\f168";
+$fa-var-xing-square: "\f169";
+$fa-var-yahoo: "\f19e";
+$fa-var-yelp: "\f1e9";
+$fa-var-yen: "\f157";
+$fa-var-youtube: "\f167";
+$fa-var-youtube-play: "\f16a";
+$fa-var-youtube-square: "\f166";
+// Mixins
+// --------------------------
+@mixin fa-icon() {
+  display: inline-block;
+  font: normal normal normal #{$fa-font-size-base}/1 FontAwesome; // shortening font declaration
+  font-size: inherit; // can't have font-size inherit on line above, so need to override
+  text-rendering: auto; // optimizelegibility throws things off #1094
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0); // ensures no half-pixel rendering in firefox
+
+}
+@mixin fa-icon-rotate($degrees, $rotation) {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=#{$rotation});
+  -webkit-transform: rotate($degrees);
+      -ms-transform: rotate($degrees);
+          transform: rotate($degrees);
+}
+@mixin fa-icon-flip($horiz, $vert, $rotation) {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=#{$rotation});
+  -webkit-transform: scale($horiz, $vert);
+      -ms-transform: scale($horiz, $vert);
+          transform: scale($horiz, $vert);
+}
+/* FONT PATH
+ * -------------------------- */
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('#{$fa-font-path}/fontawesome-webfont.eot?v=#{$fa-version}');
+  src: url('#{$fa-font-path}/fontawesome-webfont.eot?#iefix&v=#{$fa-version}') format('embedded-opentype'),
+    url('#{$fa-font-path}/fontawesome-webfont.woff2?v=#{$fa-version}') format('woff2'),
+    url('#{$fa-font-path}/fontawesome-webfont.woff?v=#{$fa-version}') format('woff'),
+    url('#{$fa-font-path}/fontawesome-webfont.ttf?v=#{$fa-version}') format('truetype'),
+    url('#{$fa-font-path}/fontawesome-webfont.svg?v=#{$fa-version}#fontawesomeregular') format('svg');
+//  src: url('#{$fa-font-path}/FontAwesome.otf') format('opentype'); // used when developing fonts
+  font-weight: normal;
+  font-style: normal;
+}
+//@import "core";
+//@import "larger";
+//@import "fixed-width";
+//@import "list";
+//@import "bordered-pulled";
+//@import "animated";
+//@import "rotated-flipped";
+//@import "stacked";
+//@import "icons";
+//--------------------- font-family mixin ---------------------//
+// ゴシック体
+@mixin gothic {
+	font-family: Linotte, YuGothic, 'Yu Gothic', 游ゴシック体, 游ゴシック, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Roboto, メイリオ, Meiryo, 'ＭＳ Ｐゴシック', Osaka, 'MS PGothic', Arial, Helvetica, Verdana, sans-serif;
+}
+// 明朝体 - コンテンツ用
+@mixin mincho {
+	font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+}
+@mixin mincho-en {
+	font-family: 'Libre Baskerville', serif;
+}
+//--------------------- setting ---------------------//
+html {
+	font-size: 62.5%; //remベースサイズ設定 1.6rem = 16px
+	-webkit-text-size-adjust: 100%; //スマフォ縦横切替時設定
+}
+body {
+	font-size: 1.6rem; // 1.6rem = 16px
+	font-feature-settings: "Kana"; //opentypeの文字詰めを有効
+	@include gothic; //ゴシック体を利用
+	line-height: 1.8;
+	color:$color-dark-lighten;
+}
+//テキストリンク
+a {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0); //タップ時のハイライト削除
+	outline: none;
+	color:$color-dark;
+	@include touch-hover() {
+		text-decoration: none;
+	}
+}
+//文字選択
+::-moz-selection,
+::selection {
+	background: rgba(0, 0, 0, 0);
+	text-shadow: none;
+}
+html,body{
+	width: 100%;
+	overflow-x: hidden;
+}
+#all{
+	width: 100%;
+}
+//common
+.header{
+  position: fixed;
+  z-index: 999;
+  top:0;
+  right: 0;
+  left: 0;
+  &__row{
+    @include wrap;
+    border-top: 4px solid transparent;
+  }
+  &__bg{
+    box-sizing: content-box;
+    position: absolute;
+    top:0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    border-top: 4px solid $color-point;
+    box-shadow: 0 0px 24px rgba(0,0,0,.25);
+    height: $header-height;
+    z-index: 2;
+    @include max-screen($width-s){
+      box-shadow: 0 0px 5px rgba(0,0,0,.25);
+    }
+  }
+  &__logo{
+    position: relative;
+    z-index: 2;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: $header-height;
+    a{
+      @include bg-img(common/header/logo,png);
+    }
+    img{
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+    }
+  }
+  &__gnav{
+    position: relative;
+    z-index: 3;
+    float: right;
+    @include max-screen($width-s){
+      margin-top: 4px;
+      z-index: 1;
+    }
+  }
+  &__menubar{
+    margin-top: 4px;
+  }
+}
+.menubar {
+	$this:'.menubar';
+  display: none;
+  @include max-screen($width-s){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+	height: $header-height;
+	width: $header-height;
+	position: absolute;
+	top:0;
+	right: 0;
+	z-index: 100;
+	@include touch-hover(){
+		background-color: $color-light;
+		cursor: pointer;
+	}
+	&__row{
+		position: relative;
+		width: 50px * .5;
+		height: 44px * .5;
+	}
+	&__item {
+		display: inline-block;
+		transition: all .4s;
+		box-sizing: border-box;
+		position: absolute;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background-color: $color-dark;
+		border-radius: 3px;
+		&:nth-of-type(1) {
+			top: 0;
+			animation: menu-bar01 .75s forwards;
+		}
+		&:nth-of-type(2) {
+			top: 20px * .5;
+			transition: all .25s .25s;
+			opacity: 1;
+		}
+		&:nth-of-type(3) {
+			bottom: 0;
+			animation: menu-bar02 .75s forwards;
+		}
+	}
+	&.js-active {
+		#{$this}__item {
+			&:nth-of-type(1) {
+				animation: active-menu-bar01 .75s forwards;
+			}
+			&:nth-of-type(2) {
+				opacity: 0;
+			}
+			&:nth-of-type(3) {
+				animation: active-menu-bar03 .75s forwards;
+			}
+		}
+	}//active
+}
+@keyframes menu-bar01 {
+	0% {
+		transform: translateY(20px * .5) rotate(45deg);
+	}
+	50% {
+		transform: translateY(20px * .5) rotate(0);
+	}
+	100% {
+		transform: translateY(0) rotate(0);
+	}
+}
+@keyframes menu-bar02 {
+	0% {
+		transform: translateY(-20px * .5) rotate(-45deg);
+	}
+	50% {
+		transform: translateY(-20px * .5) rotate(0);
+	}
+	100% {
+		transform: translateY(0) rotate(0);
+	}
+}
+@keyframes active-menu-bar01 {
+	0% {
+		transform: translateY(0) rotate(0);
+	}
+	50% {
+		transform: translateY(20px * .5) rotate(0);
+	}
+	100% {
+		transform: translateY(20px * .5) rotate(45deg);
+	}
+}
+@keyframes active-menu-bar03 {
+	0% {
+		transform: translateY(0) rotate(0);
+	}
+	50% {
+		transform: translateY(-20px * .5) rotate(0);
+	}
+	100% {
+		transform: translateY(-20px * .5) rotate(-45deg);
+	}
+}
+/*
+@include min-screen($width-s + 1px){
+  @import "common/_header/__gnav_pc.scss";
+  @import "common/_header/__gnav-deep_pc.scss";
+}
+@include max-screen($width-s){
+  @import "common/_header/__gnav_sp.scss";
+}
+
+//メインエリア
+@import "common/_main/__main.scss";
+@import "common/_main/__main-header.scss";
+@import "common/_main/__main-footer.scss";
+@import "common/_main/__pan.scss";
+
+//コンテンツエリア
+@import "common/_conts/__index.scss";
+
+//サイドエリア
+@import "common/_side/__index.scss";
+
+//フッター
+@import "common/_footer/__layout.scss";
+@import "common/_footer/__fnav.scss";
+@import "common/_footer/__footadr.scss";
+
+//ユニット
+@import "common/_unit/__img.scss";
+@import "common/_unit/__btn.scss";
+@import "common/_unit/__icon.scss";
+@import "common/_unit/__small.scss";
+@import "common/_unit/__figure.scss";
+@import "common/_unit/__only.scss";
+@import "common/_unit/__ttl.scss";
+@import "common/_unit/__assist.scss";
+@import "common/_unit/__position.scss";
+@import "common/_unit/__list.scss";
+@import "common/_unit/__pagination.scss";
+@import "common/_unit/__table.scss";
+@import "common/_unit/__iframe.scss";
+@import "common/_unit/__etc.scss";
+@import "common/_unit/__sns.scss";
+
+//ページレイアウト
+@import "common/_layout/__page-card/_index.scss";
+@import "common/_layout/__page-column/_index.scss";
+@import "common/_layout/__page-free/_index.scss";
+@import "common/_layout/__page-full/_index.scss";
+@import "common/_layout/__page-single/_index.scss";
+
+//レイアウトコンポーネント
+@import "common/_layout/__full.scss";
+@import "common/_layout/__column.scss";
+
+//ページ個別
+@import "page/_home/__main-v.scss"; */
